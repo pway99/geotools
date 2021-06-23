@@ -38,7 +38,7 @@ public class CatalogApplicationSchemaConfigurationTest extends AppSchemaTestSupp
 
     /** Test that a schema known to be in the catalog is resolved to the expected local file. */
     @Test
-    public void testCatalogSchemaResolution() throws Exception {
+    public void testCatalogSchemaResolution() {
         URL catalogLocation = getClass().getResource(schemaBase + "mappedPolygons.oasis.xml");
         String namespace = "http://www.cgi-iugs.org/xml/GeoSciML/2";
         String schemaLocation = "http://schemas.opengis.net/GeoSciML/geosciml.xsd";

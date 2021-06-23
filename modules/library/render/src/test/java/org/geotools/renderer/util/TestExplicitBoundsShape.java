@@ -32,7 +32,7 @@ public class TestExplicitBoundsShape {
     }
 
     @Test
-    public void testConstructor_NullShape() throws Exception {
+    public void testConstructor_NullShape() {
 
         try {
             new ExplicitBoundsShape(null);

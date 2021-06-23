@@ -85,7 +85,7 @@ public class GeoJSONDataStore extends ContentDataStore implements FileDataStore 
     }
 
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         if (schema != null) {
             return Collections.singletonList(new NameImpl(schema.getTypeName()));
         }
@@ -101,7 +101,7 @@ public class GeoJSONDataStore extends ContentDataStore implements FileDataStore 
     }
 
     @Override
-    public void createSchema(SimpleFeatureType featureType) throws IOException {
+    public void createSchema(SimpleFeatureType featureType) {
         schema = featureType;
     }
 
@@ -114,7 +114,7 @@ public class GeoJSONDataStore extends ContentDataStore implements FileDataStore 
     }
 
     @Override
-    public void updateSchema(SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(SimpleFeatureType featureType) {
         schema = featureType;
     }
 
@@ -152,19 +152,18 @@ public class GeoJSONDataStore extends ContentDataStore implements FileDataStore 
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            Filter filter, Transaction transaction) throws IOException {
+            Filter filter, Transaction transaction) {
         return null;
     }
 
     @Override
-    public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(Transaction transaction)
-            throws IOException {
+    public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(Transaction transaction) {
         return null;
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriterAppend(
-            Transaction transaction) throws IOException {
+            Transaction transaction) {
         return null;
     }
 

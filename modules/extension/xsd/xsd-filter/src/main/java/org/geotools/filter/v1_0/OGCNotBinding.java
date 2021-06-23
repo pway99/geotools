@@ -78,7 +78,7 @@ public class OGCNotBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Filter filter = node.getChildValue(Filter.class);
         if (filter == null) {
             // look for an Identifier, not in the spec but something we handle
@@ -92,7 +92,7 @@ public class OGCNotBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         Not not = (Not) object;
 
         if (OGC.spatialOps.equals(name) && not.getFilter() instanceof BinarySpatialOperator) {

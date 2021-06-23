@@ -40,7 +40,7 @@ public class ProcessFunctionTest {
     FilterFactory ff = CommonFactoryFinder.getFilterFactory();
 
     @Test
-    public void testBuffer() throws Exception {
+    public void testBuffer() {
         URL url = TestData.getResource(TestData.class, "shapes/archsites.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
         SimpleFeatureCollection features = store.getFeatureSource().getFeatures();
@@ -72,7 +72,7 @@ public class ProcessFunctionTest {
     }
 
     @Test
-    public void testUnavailable() throws Exception {
+    public void testUnavailable() {
         ProcessFunctionFactory factory = new ProcessFunctionFactory();
         List<FunctionName> list = factory.getFunctionNames();
         assertFalse("available", list.contains(new NameImpl("test", "unavailable")));

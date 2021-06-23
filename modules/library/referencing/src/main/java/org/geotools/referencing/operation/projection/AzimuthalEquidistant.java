@@ -44,7 +44,6 @@ import org.opengis.parameter.ParameterDescriptor;
 import org.opengis.parameter.ParameterDescriptorGroup;
 import org.opengis.parameter.ParameterNotFoundException;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.operation.MathTransform;
 
 /**
@@ -80,7 +79,7 @@ public class AzimuthalEquidistant {
         SOUTH_POLAR,
         EQUATORIAL,
         OBLIQUE;
-    };
+    }
 
     /** Abstract base class for Azimuthal Equidistant projections. */
     @SuppressWarnings("serial")
@@ -153,7 +152,7 @@ public class AzimuthalEquidistant {
             set(descriptors, Provider.LATITUDE_OF_CENTRE, values, latitudeOfOrigin);
             return values;
         }
-    };
+    }
 
     /** Spherical Azimuthal Equidistant projection. */
     @SuppressWarnings("serial")
@@ -348,8 +347,7 @@ public class AzimuthalEquidistant {
          *     double, java.awt.geom.Point2D)
          */
         @Override
-        protected Point2D transformNormalized(double lambda, double phi, Point2D ptDst)
-                throws ProjectionException {
+        protected Point2D transformNormalized(double lambda, double phi, Point2D ptDst) {
             double x = 0;
             double y = 0;
             double coslam = cos(lambda);
@@ -446,7 +444,7 @@ public class AzimuthalEquidistant {
                             // see: http://geotiff.maptools.org/proj_list/azimuthal_equidistant.html
                             new NamedIdentifier(Citations.OGC, "Azimuthal_Equidistant"),
                             new NamedIdentifier(Citations.GEOTIFF, "CT_AzimuthalEquidistant"),
-                            new NamedIdentifier(Citations.GEOTOOLS, "Azimuthal Equidistant"),
+                            new NamedIdentifier(Citations.GEOTOOLS, "Azimuthal Equidistant")
                             // there is no EPSG code for this projection
                             // @formatter:on
                         },
@@ -477,7 +475,7 @@ public class AzimuthalEquidistant {
         @Override
         protected MathTransform createMathTransform(ParameterValueGroup parameters)
                 throws InvalidParameterNameException, ParameterNotFoundException,
-                        InvalidParameterValueException, FactoryException {
+                        InvalidParameterValueException {
             if (isSpherical(parameters)) {
                 return new Spherical(parameters);
             } else {

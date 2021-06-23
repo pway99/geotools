@@ -17,7 +17,6 @@
 package org.geotools.swing.process;
 
 import java.awt.Dialog;
-import java.awt.HeadlessException;
 import org.geotools.swing.wizard.JWizard;
 
 /**
@@ -46,7 +45,7 @@ public class JProcessWizard extends JWizard {
     private ProcessSelectionPage selectionPage;
 
     /** Create a JProcessWizard for use */
-    public JProcessWizard(String title) throws HeadlessException {
+    public JProcessWizard(String title) {
         this(null, title != null ? title : "Process Wizard");
     }
 

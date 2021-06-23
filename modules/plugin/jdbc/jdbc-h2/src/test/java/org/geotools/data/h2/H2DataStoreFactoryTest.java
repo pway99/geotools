@@ -42,7 +42,7 @@ public class H2DataStoreFactoryTest {
     Map<String, Object> params;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new H2DataStoreFactory();
         params = new HashMap<>();
         params.put(JDBCDataStoreFactory.NAMESPACE.key, "http://www.geotools.org/test");
@@ -51,7 +51,7 @@ public class H2DataStoreFactoryTest {
     }
 
     @Test
-    public void testCanProcess() throws Exception {
+    public void testCanProcess() {
         assertFalse(factory.canProcess(Collections.emptyMap()));
         assertTrue(factory.canProcess(params));
     }

@@ -17,7 +17,6 @@
  */
 package org.geotools.tutorial.csv3;
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import org.geotools.data.FeatureReader;
@@ -59,12 +58,12 @@ public class CSVDataStore extends ContentDataStore implements FileDataStore {
 
     // docs start dataStoreOperations
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         return Collections.singletonList(getTypeName());
     }
 
     @Override
-    protected ContentFeatureSource createFeatureSource(ContentEntry entry) throws IOException {
+    protected ContentFeatureSource createFeatureSource(ContentEntry entry) {
         if (csvFileState.getFile().canWrite()) {
             return new CSVFeatureStore(csvStrategy, csvFileState, entry, Query.ALL);
         } else {
@@ -73,40 +72,39 @@ public class CSVDataStore extends ContentDataStore implements FileDataStore {
     }
 
     @Override
-    public SimpleFeatureType getSchema() throws IOException {
+    public SimpleFeatureType getSchema() {
         return this.csvStrategy.getFeatureType();
     }
 
     @Override
-    public void updateSchema(SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(SimpleFeatureType featureType) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public SimpleFeatureSource getFeatureSource() throws IOException {
+    public SimpleFeatureSource getFeatureSource() {
         return new CSVFeatureSource(this);
     }
 
     @Override
-    public FeatureReader<SimpleFeatureType, SimpleFeature> getFeatureReader() throws IOException {
+    public FeatureReader<SimpleFeatureType, SimpleFeature> getFeatureReader() {
         return new CSVFeatureSource(this).getReader();
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            Filter filter, Transaction transaction) throws IOException {
+            Filter filter, Transaction transaction) {
         return super.getFeatureWriter(this.csvFileState.getTypeName(), filter, transaction);
     }
 
     @Override
-    public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(Transaction transaction)
-            throws IOException {
+    public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(Transaction transaction) {
         return super.getFeatureWriter(this.csvFileState.getTypeName(), transaction);
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriterAppend(
-            Transaction transaction) throws IOException {
+            Transaction transaction) {
         return super.getFeatureWriterAppend(this.csvFileState.getTypeName(), transaction);
     }
 
@@ -115,7 +113,7 @@ public class CSVDataStore extends ContentDataStore implements FileDataStore {
     }
 
     @Override
-    public void createSchema(SimpleFeatureType featureType) throws IOException {
+    public void createSchema(SimpleFeatureType featureType) {
         this.csvStrategy.createSchema(featureType);
     }
     // docs end dataStoreOperations

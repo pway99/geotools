@@ -35,7 +35,7 @@ public class H2TypeNamesTestSetup extends JDBCTypeNamesTestSetup {
     }
 
     @Override
-    protected void dropTypes() throws Exception {
+    protected void dropTypes() {
         runSafe("DROP VIEW \"geotools\".\"ftnview\"");
         runSafe("DROP TABLE \"geotools\".\"ftntable\"");
     }

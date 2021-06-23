@@ -29,7 +29,7 @@ public class IndexedFidWriterTest extends FIDTestCase {
     private IndexFile indexFile;
     private IndexedFidWriter writer;
 
-    private void initWriter() throws IOException, MalformedURLException {
+    private void initWriter() throws IOException {
         close();
         indexFile = new IndexFile(shpFiles, false);
         writer = new IndexedFidWriter(shpFiles);

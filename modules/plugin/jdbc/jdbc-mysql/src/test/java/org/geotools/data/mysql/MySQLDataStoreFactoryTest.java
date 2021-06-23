@@ -28,12 +28,12 @@ public class MySQLDataStoreFactoryTest {
     MySQLDataStoreFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new MySQLDataStoreFactory();
     }
 
     @Test
-    public void testCanProcess() throws Exception {
+    public void testCanProcess() {
         Map<String, Object> params = new HashMap<>();
         Assert.assertFalse(factory.canProcess(params));
 
@@ -49,7 +49,7 @@ public class MySQLDataStoreFactoryTest {
 
     /** check fix of possible NPE issue during MySQLVersion56 check (pull request #2033) */
     @Test
-    public void testNoNpeOnConnectionFailure() throws Exception {
+    public void testNoNpeOnConnectionFailure() {
         // create a dummy JDBC store
         JDBCDataStore store = new JDBCDataStore();
         store.setSQLDialect(new MySQLDialectBasic(store));

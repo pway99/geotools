@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class SLDLayerFeatureConstraintsBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(
                 LayerFeatureConstraints.class,
                 new SLDLayerFeatureConstraintsBinding(null).getType());

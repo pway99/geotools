@@ -29,7 +29,6 @@ import com.mongodb.MongoClient;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.net.UnknownHostException;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import org.geotools.TestData;
@@ -64,7 +63,7 @@ public class MongoTestUtil {
     }
 
     @Test
-    public void testConnect() throws UnknownHostException {
+    public void testConnect() {
         try (MongoClient mc = new MongoClient("localhost", PORT)) {
             assertThat(mc, is(notNullValue()));
             DB db = mc.getDB("db");
@@ -125,8 +124,7 @@ public class MongoTestUtil {
     }
 
     private DBCollection grabDBCollection(
-            MongoClient client, String dbName, String dbcName, boolean init)
-            throws UnknownHostException {
+            MongoClient client, String dbName, String dbcName, boolean init) {
         DB db = client.getDB(dbName);
         DBCollection dbc = db.getCollection(dbcName);
         if (init) {

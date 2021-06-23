@@ -50,7 +50,7 @@ public class GeometryFunctionFilterTest extends FunctionTestSupport {
     }
 
     @Test
-    public void testNull() throws Exception {
+    public void testNull() {
         assertNull(ff.function("buffer", ff.literal(null), ff.literal(10)).evaluate(null));
     }
 }

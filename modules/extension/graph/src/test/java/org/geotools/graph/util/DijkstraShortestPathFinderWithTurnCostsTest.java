@@ -34,7 +34,7 @@ public class DijkstraShortestPathFinderWithTurnCostsTest {
     private Graph graph;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         LineSegment ld1 = new LineSegment();
         ld1.setCoordinates(new Coordinate(0, 0), new Coordinate(1, 1));

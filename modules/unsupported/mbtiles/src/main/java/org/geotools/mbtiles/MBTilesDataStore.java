@@ -124,7 +124,7 @@ public class MBTilesDataStore extends ContentDataStore {
     }
 
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         return schemas.keySet()
                 .stream()
                 .map(id -> new NameImpl(getNamespaceURI(), id))
@@ -132,7 +132,7 @@ public class MBTilesDataStore extends ContentDataStore {
     }
 
     @Override
-    protected ContentFeatureSource createFeatureSource(ContentEntry entry) throws IOException {
+    protected ContentFeatureSource createFeatureSource(ContentEntry entry) {
         SimpleFeatureType schema = schemas.get(entry.getTypeName());
         return new MBTilesFeatureSource(entry, schema, mbtiles, tileCache);
     }

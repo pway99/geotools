@@ -24,7 +24,6 @@ import org.geotools.util.factory.AbstractFactory;
 import org.opengis.metadata.citation.Citation;
 import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.IdentifiedObject;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CRSAuthorityFactory;
 import org.opengis.referencing.crs.CompoundCRS;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
@@ -72,13 +71,13 @@ public class EPSGCRSAuthorityFactory extends AbstractFactory implements CRSAutho
 
     @Override
     public InternationalString getDescriptionText(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            throws FactoryException {
         throw new FactoryException(EXCEPTION_MESSAGE);
     }
 
     @Override
     public IdentifiedObject createObject(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            throws FactoryException {
         throw new FactoryException(EXCEPTION_MESSAGE);
     }
 
@@ -89,61 +88,61 @@ public class EPSGCRSAuthorityFactory extends AbstractFactory implements CRSAutho
 
     @Override
     public CoordinateReferenceSystem createCoordinateReferenceSystem(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            throws FactoryException {
         throw new FactoryException(EXCEPTION_MESSAGE);
     }
 
     @Override
     public CompoundCRS createCompoundCRS(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            throws FactoryException {
         throw new FactoryException(EXCEPTION_MESSAGE);
     }
 
     @Override
     public DerivedCRS createDerivedCRS(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            throws FactoryException {
         throw new FactoryException(EXCEPTION_MESSAGE);
     }
 
     @Override
     public EngineeringCRS createEngineeringCRS(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            throws FactoryException {
         throw new FactoryException(EXCEPTION_MESSAGE);
     }
 
     @Override
     public GeographicCRS createGeographicCRS(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            throws FactoryException {
         throw new FactoryException(EXCEPTION_MESSAGE);
     }
 
     @Override
     public GeocentricCRS createGeocentricCRS(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            throws FactoryException {
         throw new FactoryException(EXCEPTION_MESSAGE);
     }
 
     @Override
     public ImageCRS createImageCRS(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            throws FactoryException {
         throw new FactoryException(EXCEPTION_MESSAGE);
     }
 
     @Override
     public ProjectedCRS createProjectedCRS(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            throws FactoryException {
         throw new FactoryException(EXCEPTION_MESSAGE);
     }
 
     @Override
     public TemporalCRS createTemporalCRS(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            throws FactoryException {
         throw new FactoryException(EXCEPTION_MESSAGE);
     }
 
     @Override
     public VerticalCRS createVerticalCRS(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            throws FactoryException {
         throw new FactoryException(EXCEPTION_MESSAGE);
     }
 }

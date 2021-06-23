@@ -110,7 +110,7 @@ public class SLDHaloBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // get the children and apply the defaults in case they are missing
         Fill fill = (Fill) node.getChildValue("Fill");
         if (fill == null) {

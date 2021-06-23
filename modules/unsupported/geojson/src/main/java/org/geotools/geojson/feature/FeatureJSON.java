@@ -394,7 +394,7 @@ public class FeatureJSON {
      * @return A feature iterator.
      * @throws IOException In the event of a parsing error or if the input json is invalid.
      */
-    public FeatureIterator<SimpleFeature> streamFeatureCollection(Object input) throws IOException {
+    public FeatureIterator<SimpleFeature> streamFeatureCollection(Object input) {
         return new FeatureCollectionIterator(input);
     }
 
@@ -438,7 +438,7 @@ public class FeatureJSON {
      * @param crs CoordinateReferenceSystem or null for default
      * @return properties map naming crs identifier
      */
-    Map<String, Object> createCRS(CoordinateReferenceSystem crs) throws IOException {
+    Map<String, Object> createCRS(CoordinateReferenceSystem crs) {
         Map<String, Object> obj = new LinkedHashMap<>();
         obj.put("type", "name");
 

@@ -818,8 +818,7 @@ public class FilterCQLSample {
         }
     } // end static initialization
 
-    private static Or buildDuringOrAfterFilter(final PropertyName property, Period period)
-            throws ParseException {
+    private static Or buildDuringOrAfterFilter(final PropertyName property, Period period) {
         During during = FACTORY.during(property, FACTORY.literal(period));
 
         final Date lastDate = period.getEnding().getPosition().getDate();

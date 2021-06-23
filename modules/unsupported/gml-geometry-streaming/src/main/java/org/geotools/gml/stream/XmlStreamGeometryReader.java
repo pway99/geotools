@@ -691,7 +691,7 @@ public class XmlStreamGeometryReader {
         return geom;
     }
 
-    private Coordinate parseCoord() throws XMLStreamException, IOException {
+    private Coordinate parseCoord() throws XMLStreamException {
         reader.require(START_ELEMENT, this.gmlNamespace, GML.coord);
 
         double z = 0;
@@ -715,8 +715,7 @@ public class XmlStreamGeometryReader {
         return new Coordinate(x, y, z);
     }
 
-    private CoordinateReferenceSystem crs(CoordinateReferenceSystem defaultValue)
-            throws NoSuchAuthorityCodeException, FactoryException {
+    private CoordinateReferenceSystem crs(CoordinateReferenceSystem defaultValue) {
         String srsName = reader.getAttributeValue(null, "srsName");
         if (srsName == null) {
             return defaultValue;
@@ -739,7 +738,7 @@ public class XmlStreamGeometryReader {
     }
 
     private Coordinate[] parseCoordList(int dimension, CoordinateReferenceSystem crs)
-            throws XMLStreamException, IOException {
+            throws XMLStreamException {
         // we might be on a posList tag with srsDimension defined
         dimension = crsDimension(dimension);
         String rawTextValue = reader.getElementText();
@@ -747,7 +746,7 @@ public class XmlStreamGeometryReader {
     }
 
     private Coordinate[] parseCoordinates(int dimension, CoordinateReferenceSystem crs)
-            throws XMLStreamException, IOException {
+            throws XMLStreamException {
         reader.require(START_ELEMENT, this.gmlNamespace, GML.coordinates);
         // we might be on a posList tag with srsDimension defined
         dimension = crsDimension(dimension);

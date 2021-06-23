@@ -38,7 +38,7 @@ public class WMSLab extends JFrame {
      * Prompts the user for a wms service, connects, and asks for a layer and then and displays its
      * contents on the screen in a map frame.
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         // display a data store file chooser dialog for shapefiles
         URL capabilitiesURL = WMSChooser.showChooseWMS();
         if (capabilitiesURL == null) {

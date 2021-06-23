@@ -21,7 +21,6 @@ import org.geotools.referencing.datum.BursaWolfParameters;
 import org.geotools.referencing.operation.matrix.GeneralMatrix;
 import org.geotools.referencing.operation.transform.GeocentricTranslation;
 import org.opengis.geometry.DirectPosition;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.cs.CartesianCS;
 import org.opengis.referencing.datum.GeodeticDatum;
 import org.opengis.referencing.operation.MathTransform;
@@ -515,7 +514,7 @@ public class BursaWolfTransformBuilder extends MathTransformBuilder {
      *     the number of points is too small to define such transformation.
      */
     @Override
-    protected MathTransform computeMathTransform() throws FactoryException {
+    protected MathTransform computeMathTransform() {
         return new GeocentricTranslation(getBursaWolfParameters(targetDatum));
     }
 }

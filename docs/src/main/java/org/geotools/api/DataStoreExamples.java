@@ -59,7 +59,7 @@ public class DataStoreExamples {
         // exampleInfo end
     }
 
-    void exampleCreateSchema() throws Exception {
+    void exampleCreateSchema() {
         // exampleCreateSchema start
         SimpleFeatureType schema =
                 DataUtilities.createType("LINE", "centerline:LineString,name:\"\",id:0");
@@ -69,7 +69,7 @@ public class DataStoreExamples {
 
     }
 
-    void exampleRemoveSchema() throws Exception {
+    void exampleRemoveSchema() {
         // exampleRemoveSchema start
         Name schemaName = new NameImpl("myTable");
         dataStore.removeSchema(schemaName);
@@ -77,7 +77,7 @@ public class DataStoreExamples {
 
     }
 
-    void exampleAllCount() throws Exception {
+    void exampleAllCount() {
         // all start
         int count = featureSource.getCount(Query.ALL);
         if (count == -1) {
@@ -86,7 +86,7 @@ public class DataStoreExamples {
         // all end
     }
 
-    void exampleQueryCount() throws Exception {
+    void exampleQueryCount() {
         // count start
         Query query = new Query("typeName", CQL.toFilter("REGION = 3"));
         int count = featureSource.getCount(query);

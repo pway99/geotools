@@ -38,7 +38,7 @@ public class WalkTest {
     private GraphBuilder m_builder;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         m_builder = createBuilder();
     }
 

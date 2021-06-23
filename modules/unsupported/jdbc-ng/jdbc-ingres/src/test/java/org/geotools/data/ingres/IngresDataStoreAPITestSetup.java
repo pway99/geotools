@@ -71,24 +71,24 @@ public class IngresDataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropBuildingTable() throws Exception {
+    protected void dropBuildingTable() {
         runSafe("DROP TABLE \"building\"");
     }
 
     @Override
-    protected void dropLakeTable() throws Exception {
+    protected void dropLakeTable() {
         runSafe("DROP TABLE \"lake\"");
         runSafe("DROP SEQUENCE LAKE_FID_SEQUENCE");
     }
 
     @Override
-    protected void dropRiverTable() throws Exception {
+    protected void dropRiverTable() {
         runSafe("DROP TABLE \"river\"");
         runSafe("DROP SEQUENCE RIVER_FID_SEQUENCE");
     }
 
     @Override
-    protected void dropRoadTable() throws Exception {
+    protected void dropRoadTable() {
         runSafe("DROP TABLE \"road\"");
         runSafe("DROP SEQUENCE ROAD_FID_SEQUENCE");
     }

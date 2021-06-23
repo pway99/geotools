@@ -1185,8 +1185,7 @@ public class DataAccessMappingFeatureIterator extends AbstractMappingFeatureIter
         }
     }
 
-    protected List<Feature> setNextFeature(String fId, List<Object> foreignIdValues)
-            throws IOException {
+    protected List<Feature> setNextFeature(String fId, List<Object> foreignIdValues) {
         List<Feature> features = new ArrayList<>();
         features.add(curSrcFeature);
         curSrcFeature = null;
@@ -1636,7 +1635,7 @@ public class DataAccessMappingFeatureIterator extends AbstractMappingFeatureIter
     }
 
     @Override
-    protected Feature populateFeatureData(String id) throws IOException {
+    protected Feature populateFeatureData(String id) {
         throw new UnsupportedOperationException("populateFeatureData should not be called!");
     }
 

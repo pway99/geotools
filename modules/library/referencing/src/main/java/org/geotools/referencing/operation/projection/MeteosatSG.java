@@ -36,7 +36,6 @@ import org.opengis.parameter.ParameterDescriptor;
 import org.opengis.parameter.ParameterDescriptorGroup;
 import org.opengis.parameter.ParameterNotFoundException;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.operation.MathTransform;
 
 /**
@@ -144,8 +143,7 @@ public class MeteosatSG extends MapProjection {
      * @param y The latitude of the coordinate, in <strong>radians</strong>.
      */
     @Override
-    protected Point2D transformNormalized(double x, double y, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double x, double y, Point2D ptDst) {
 
         /* x - lon, y -lat */
 
@@ -249,8 +247,7 @@ public class MeteosatSG extends MapProjection {
      * "normalized" pixels) and stores the result in {@code ptDst}.
      */
     @Override
-    protected Point2D inverseTransformNormalized(double x, double y, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D inverseTransformNormalized(double x, double y, Point2D ptDst) {
 
         // x- column, y -row
         double s1 = 0.0, s2 = 0.0, s3 = 0.0, sn = 0.0;
@@ -388,7 +385,7 @@ public class MeteosatSG extends MapProjection {
         static final ParameterDescriptorGroup PARAMETERS =
                 createDescriptorGroup(
                         new NamedIdentifier[] {
-                            new NamedIdentifier(Citations.AUTO, "MeteosatSG"),
+                            new NamedIdentifier(Citations.AUTO, "MeteosatSG")
                         },
                         new ParameterDescriptor[] {
                             SEMI_MAJOR,
@@ -414,7 +411,7 @@ public class MeteosatSG extends MapProjection {
          */
         @Override
         protected MathTransform createMathTransform(final ParameterValueGroup parameters)
-                throws ParameterNotFoundException, FactoryException {
+                throws ParameterNotFoundException {
             if (isSpherical(parameters)) {
                 LOGGER.log(
                         Level.INFO,

@@ -17,8 +17,6 @@
 package org.geotools.geopkg;
 
 import java.awt.geom.AffineTransform;
-import java.io.IOException;
-import java.sql.SQLException;
 import org.geotools.data.Query;
 import org.geotools.data.simple.SimpleFeatureIterator;
 import org.geotools.data.simple.SimpleFeatureSource;
@@ -39,21 +37,21 @@ public class GeoPkgFeatureStoreOnlineTest extends JDBCFeatureStoreOnlineTest {
     }
 
     @Override
-    public void testAddNullAttributes() throws IOException {
+    public void testAddNullAttributes() {
         // JD: as far as I can tell you can't have null geometries
         // in GeoPkg...
     }
 
     @Override
-    public void testModifyNullAttributes() throws IOException {}
+    public void testModifyNullAttributes() {}
 
     @Override
-    public void testAddInTransaction() throws IOException {
+    public void testAddInTransaction() {
         // does not work, see GEOT-2832
     }
 
     @Override
-    public void testExternalConnection() throws IOException, SQLException {
+    public void testExternalConnection() {
         // SQLite locking does not allow one connection to write while another one reads on the
         // same table
     }

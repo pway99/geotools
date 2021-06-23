@@ -94,10 +94,8 @@ import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.filter.Filter;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.ParameterValue;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.MathTransform;
-import org.opengis.referencing.operation.TransformException;
 
 /** Testing whether a simple mosaic correctly has its elements reprojected */
 public class HeterogenousCRSTest {
@@ -106,12 +104,12 @@ public class HeterogenousCRSTest {
     @Rule public TemporaryFolder crsMosaicFolder = new TemporaryFolder();
 
     @BeforeClass
-    public static void ignoreReciprocals() throws Exception {
+    public static void ignoreReciprocals() {
         MapProjection.SKIP_SANITY_CHECKS = true;
     }
 
     @BeforeClass
-    public static void resetReciprocals() throws Exception {
+    public static void resetReciprocals() {
         MapProjection.SKIP_SANITY_CHECKS = false;
     }
 
@@ -131,7 +129,7 @@ public class HeterogenousCRSTest {
     @Ignore
     @Test
     public void testHeterogeneousCRS()
-            throws IOException, URISyntaxException, TransformException, FactoryException {
+            throws IOException, URISyntaxException {
         testMosaic(
                 "heterogeneous_crs",
                 "location D, crs A",
@@ -162,7 +160,7 @@ public class HeterogenousCRSTest {
     }
 
     @Test
-    public void testUpdatingMosaic() throws IOException, URISyntaxException {
+    public void testUpdatingMosaic() throws IOException {
         File second = TestData.file(this, "heterogeneous_crs/zblue.tiff");
         File indexer = TestData.file(this, "heterogeneous_crs/indexer.properties");
         File first = TestData.file(this, "heterogeneous_crs/red.tiff");
@@ -498,7 +496,7 @@ public class HeterogenousCRSTest {
 
     @Test
     public void testHeteroCRSDateline()
-            throws IOException, URISyntaxException, TransformException, FactoryException {
+            throws IOException, URISyntaxException {
         ImageMosaicReader imReader = getTestMosaic("hetero_crs_dateline");
         assertEquals(CRS.toSRS(imReader.getCoordinateReferenceSystem()), "EPSG:4326");
 
@@ -538,7 +536,7 @@ public class HeterogenousCRSTest {
 
     @Test
     public void testHeteroCRSRasterMask()
-            throws IOException, URISyntaxException, TransformException, FactoryException {
+            throws IOException, URISyntaxException {
         URL storeUrl = TestData.url(this, "rastermask2");
 
         File testDataFolder = new File(storeUrl.toURI());

@@ -47,7 +47,7 @@ public class ECQLRelGeoOpTest extends CQLRelGeoOpTest {
     }
 
     @Test
-    public void functionDwithinGeometry() throws Exception {
+    public void functionDwithinGeometry() {
 
         // DWITHIN
         Filter resultFilter =
@@ -64,7 +64,7 @@ public class ECQLRelGeoOpTest extends CQLRelGeoOpTest {
     }
 
     @Test
-    public void functionDwithinFunction() throws Exception {
+    public void functionDwithinFunction() {
 
         // DWITHIN
         Filter filter =
@@ -82,7 +82,7 @@ public class ECQLRelGeoOpTest extends CQLRelGeoOpTest {
     }
 
     @Test
-    public void geometryDwithinGeometry() throws Exception {
+    public void geometryDwithinGeometry() {
 
         // DWITHIN
         Filter resultFilter =
@@ -93,7 +93,7 @@ public class ECQLRelGeoOpTest extends CQLRelGeoOpTest {
     }
 
     @Test
-    public void geometryBeyondGeometry() throws Exception {
+    public void geometryBeyondGeometry() {
 
         Filter resultFilter =
                 CompilerUtil.parseFilter(
@@ -110,7 +110,7 @@ public class ECQLRelGeoOpTest extends CQLRelGeoOpTest {
     }
 
     @Test
-    public void functionBeyondFunction() throws Exception {
+    public void functionBeyondFunction() {
 
         Filter resultFilter =
                 CompilerUtil.parseFilter(

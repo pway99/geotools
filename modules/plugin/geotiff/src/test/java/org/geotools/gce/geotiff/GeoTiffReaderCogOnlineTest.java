@@ -30,7 +30,6 @@ import java.awt.Rectangle;
 import java.awt.image.Raster;
 import java.awt.image.RenderedImage;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import org.geotools.coverage.grid.GridCoverage2D;
 import org.geotools.coverage.grid.GridEnvelope2D;
 import org.geotools.coverage.grid.GridGeometry2D;
@@ -60,7 +59,7 @@ public class GeoTiffReaderCogOnlineTest extends Assert {
     }
 
     @Test
-    public void testCogRead() throws URISyntaxException, IOException {
+    public void testCogRead() throws IOException {
         GeoTiffReader reader = new GeoTiffReader(getInputProvider());
         assertEquals(
                 "LC08_L1TP_153075_20190515_20190515_01_RT_B2", reader.getGridCoverageNames()[0]);
@@ -77,7 +76,7 @@ public class GeoTiffReaderCogOnlineTest extends Assert {
     }
 
     @Test
-    public void testCogOverview() throws URISyntaxException, IOException {
+    public void testCogOverview() throws IOException {
         GeoTiffReader reader = new GeoTiffReader(getInputProvider());
         assertEquals(
                 "LC08_L1TP_153075_20190515_20190515_01_RT_B2", reader.getGridCoverageNames()[0]);

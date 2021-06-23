@@ -80,7 +80,7 @@ public class ValidatorHandler extends DefaultHandler2 {
     }
 
     @Override
-    public void startDocument() throws SAXException {
+    public void startDocument() {
         errors = new ArrayList<>();
     }
 

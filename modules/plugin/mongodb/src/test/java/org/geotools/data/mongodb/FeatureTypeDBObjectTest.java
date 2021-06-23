@@ -24,8 +24,6 @@ import static org.junit.Assert.assertTrue;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Date;
 import java.util.Map;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
@@ -46,7 +44,7 @@ public class FeatureTypeDBObjectTest {
 
     @Test
     public void testRoundTripConversion()
-            throws FileNotFoundException, IOException, FactoryException {
+            throws FactoryException {
 
         SimpleFeatureType original = buildDummyFeatureType("dummy");
 
@@ -72,7 +70,7 @@ public class FeatureTypeDBObjectTest {
         assertTrue(CRS.equalsIgnoreMetadata(DefaultGeographicCRS.WGS84, result));
     }
 
-    static SimpleFeatureType buildDummyFeatureType(String typeName) throws FactoryException {
+    static SimpleFeatureType buildDummyFeatureType(String typeName) {
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
         builder.setName(typeName);
 

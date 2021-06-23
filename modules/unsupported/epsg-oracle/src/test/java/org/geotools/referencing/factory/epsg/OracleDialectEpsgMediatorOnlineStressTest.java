@@ -28,7 +28,6 @@ import org.geotools.referencing.factory.epsg.oracle.OracleDialectEpsgMediator;
 import org.geotools.referencing.factory.epsg.oracle.OracleOnlineTestCase;
 import org.geotools.util.factory.Hints;
 import org.opengis.geometry.DirectPosition;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.MathTransform;
 
@@ -319,7 +318,7 @@ public class OracleDialectEpsgMediatorOnlineStressTest extends OracleOnlineTestC
             return codes[rand.nextInt(codes.length)];
         }
 
-        private CoordinateReferenceSystem acquireCRS(String code) throws FactoryException {
+        private CoordinateReferenceSystem acquireCRS(String code) {
             return mediator.createCoordinateReferenceSystem(code);
         }
 

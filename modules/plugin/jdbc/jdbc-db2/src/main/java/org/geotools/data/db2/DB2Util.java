@@ -17,7 +17,6 @@
  */
 package org.geotools.data.db2;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.Blob;
@@ -172,8 +171,7 @@ public class DB2Util {
         sql.append(MessageFormat.format(pattern, new Object[] {Integer.toString(srid)}));
     }
 
-    public static void encodeGeometryValue(Geometry value, int srid, StringBuffer sql)
-            throws IOException {
+    public static void encodeGeometryValue(Geometry value, int srid, StringBuffer sql) {
 
         if (value == null || value.isEmpty()) {
             sql.append("null");

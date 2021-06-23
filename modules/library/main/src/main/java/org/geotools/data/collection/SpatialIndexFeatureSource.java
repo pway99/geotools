@@ -102,7 +102,7 @@ public class SpatialIndexFeatureSource implements SimpleFeatureSource {
     }
 
     @Override
-    public ReferencedEnvelope getBounds() throws IOException {
+    public ReferencedEnvelope getBounds() {
         return contents.getBounds();
     }
 
@@ -122,7 +122,7 @@ public class SpatialIndexFeatureSource implements SimpleFeatureSource {
     }
 
     @Override
-    public SimpleFeatureCollection getFeatures() throws IOException {
+    public SimpleFeatureCollection getFeatures() {
         return contents;
     }
 
@@ -138,8 +138,7 @@ public class SpatialIndexFeatureSource implements SimpleFeatureSource {
         return getFeatureCollection(query, bounds);
     }
 
-    private SimpleFeatureCollection getFeatureCollection(Query query, Envelope bounds)
-            throws IOException {
+    private SimpleFeatureCollection getFeatureCollection(Query query, Envelope bounds) {
         query = DataUtilities.resolvePropertyNames(query, getSchema());
         final int offset = query.getStartIndex() != null ? query.getStartIndex() : 0;
         if (offset > 0 && query.getSortBy() == null) {

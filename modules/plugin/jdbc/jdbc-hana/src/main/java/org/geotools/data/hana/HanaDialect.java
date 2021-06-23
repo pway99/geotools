@@ -392,7 +392,7 @@ public class HanaDialect extends PreparedStatementSQLDialect {
 
     @Override
     public Envelope decodeGeometryEnvelope(ResultSet rs, int column, Connection cx)
-            throws SQLException, IOException {
+            throws SQLException {
         String senvelope = rs.getString(column);
         if (senvelope == null) return new Envelope();
         String[] comps = senvelope.split(":");
@@ -525,7 +525,7 @@ public class HanaDialect extends PreparedStatementSQLDialect {
 
     @Override
     public void postCreateTable(String schemaName, SimpleFeatureType featureType, Connection cx)
-            throws SQLException, IOException {
+            throws SQLException {
         registerMetadata(schemaName, featureType, cx);
         createSequences(schemaName, featureType, cx);
     }
@@ -843,7 +843,7 @@ public class HanaDialect extends PreparedStatementSQLDialect {
     }
 
     private String resolveSchema(String schemaName, Connection cx)
-            throws SQLException, AssertionError {
+            throws SQLException {
         if (schemaName == null) {
             schemaName = getCurrentSchema(cx);
         }

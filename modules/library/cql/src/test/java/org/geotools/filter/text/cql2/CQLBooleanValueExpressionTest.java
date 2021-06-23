@@ -108,7 +108,7 @@ public class CQLBooleanValueExpressionTest {
 
     /** Sample: NOT ATTR1 < 10 */
     @Test
-    public void not() throws Exception {
+    public void not() {
 
         final String stmt = "NOT " + FilterCQLSample.LESS_FILTER_SAMPLE;
         Filter result = CompilerUtil.parseFilter(language, stmt);
@@ -136,7 +136,7 @@ public class CQLBooleanValueExpressionTest {
      * </pre>
      */
     @Test
-    public void andNot() throws Exception {
+    public void andNot() {
 
         // ATTR3 < 4 AND (NOT( ATTR1 < 10 AND ATTR2 < 2))
         Filter result = CompilerUtil.parseFilter(language, FilterCQLSample.FILTER_AND_NOT_AND);

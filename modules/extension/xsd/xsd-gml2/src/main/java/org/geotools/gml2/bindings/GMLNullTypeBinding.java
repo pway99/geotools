@@ -94,7 +94,7 @@ public class GMLNullTypeBinding implements SimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         // dont do anything special, here just return the string
         return value;
     }

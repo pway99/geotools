@@ -28,7 +28,7 @@ public class RenamingGranuleStore extends RenamingGranuleSource implements Granu
 
     private final GranuleStore store;
 
-    public RenamingGranuleStore(String name, GranuleStore delegate) throws IOException {
+    public RenamingGranuleStore(String name, GranuleStore delegate) {
         super(name, delegate);
         this.store = delegate;
     }

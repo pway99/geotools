@@ -16,7 +16,6 @@
  */
 package org.geotools.data.shapefile;
 
-import java.io.IOException;
 import java.util.Iterator;
 import org.geotools.data.CloseableIterator;
 
@@ -44,7 +43,7 @@ class CloseableIteratorWrapper<E> implements CloseableIterator<E> {
     }
 
     @Override
-    public void close() throws IOException {
+    public void close() {
         // Just makes the API happy, the delegate does not really have a close method
     }
 }

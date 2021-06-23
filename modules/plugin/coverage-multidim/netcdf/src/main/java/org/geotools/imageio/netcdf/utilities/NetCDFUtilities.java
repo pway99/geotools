@@ -901,7 +901,7 @@ public class NetCDFUtilities {
      * @param input the input to check.
      * @return the file or <code>null</code> if it is not file based.
      */
-    public static File getFile(Object input) throws IOException {
+    public static File getFile(Object input) {
         File guessedFile = null;
         if (input instanceof File) {
             guessedFile = (File) input;

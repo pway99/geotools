@@ -16,7 +16,6 @@
  */
 package org.geotools.data.hana;
 
-import java.io.IOException;
 import org.geotools.jdbc.JDBCInEncodingOnlineTest;
 import org.geotools.jdbc.JDBCTestSetup;
 
@@ -29,7 +28,7 @@ public class HanaInEncodingOnlineTest extends JDBCInEncodingOnlineTest {
     }
 
     @Override
-    public void testGreater() throws IOException {
+    public void testGreater() {
         // '>' cannot be combined with 'IN' in HANA.
     }
 }

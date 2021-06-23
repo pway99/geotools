@@ -106,7 +106,7 @@ public class FilterComplexTypes {
         @Override
         public Object getValue(
                 Element element, ElementValue[] value, Attributes attrs, Map<String, Object> hints)
-                throws SAXException, SAXNotSupportedException {
+                throws SAXException {
             if ((element == null) || (value == null)) {
                 throw new SAXException("Parameter missing for Comparison_OperatorsType");
             }
@@ -201,7 +201,7 @@ public class FilterComplexTypes {
         @Override
         public Object getValue(
                 Element element, ElementValue[] value, Attributes attrs, Map<String, Object> hints)
-                throws SAXException, SAXNotSupportedException {
+                throws SAXException {
             if ((element == null) || (value == null)) {
                 throw new SAXException("Parameter missing for Comparison_OperatorsType");
             }
@@ -513,7 +513,7 @@ public class FilterComplexTypes {
         @Override
         public Object getValue(
                 Element element, ElementValue[] value, Attributes attrs, Map<String, Object> hints)
-                throws SAXException, SAXNotSupportedException {
+                throws SAXException {
             if ((element == null) || (value == null)) {
                 throw new SAXException("Parameter missing for Filter_Capabilities Type");
             }
@@ -643,7 +643,7 @@ public class FilterComplexTypes {
         @Override
         public Object getValue(
                 Element element, ElementValue[] value, Attributes attrs, Map<String, Object> hints)
-                throws SAXException, SAXNotSupportedException {
+                throws SAXException {
             if ((element == null) || (value == null)) {
                 throw new SAXException("Missing paramters for Scalar_CapabilitiesType");
             }
@@ -744,7 +744,7 @@ public class FilterComplexTypes {
         @Override
         public Object getValue(
                 Element element, ElementValue[] value, Attributes attrs, Map<String, Object> hints)
-                throws SAXException, SAXNotSupportedException {
+                throws SAXException {
             if ((element == null) || (value == null) || (value.length != 1)) {
                 throw new SAXException("Invalid parameters specified for Spatial_CapabilitiesType");
             }
@@ -837,7 +837,7 @@ public class FilterComplexTypes {
         @Override
         public Object getValue(
                 Element element, ElementValue[] value, Attributes attrs, Map<String, Object> hints)
-                throws SAXException, SAXNotSupportedException {
+                throws SAXException {
             if ((element == null) || (value == null)) {
                 throw new SAXException("Missing parameter for Spatial_OperatorsType");
             }

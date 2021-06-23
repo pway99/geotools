@@ -57,7 +57,7 @@ public class GeoServerIntegrationTest extends AbstractIntegrationTest {
     }
 
     @Override
-    public DataStore tearDownDataStore(DataStore data) throws Exception {
+    public DataStore tearDownDataStore(DataStore data) {
         data.dispose();
         return data;
     }
@@ -130,7 +130,7 @@ public class GeoServerIntegrationTest extends AbstractIntegrationTest {
     @Override
     @Ignore
     @Test
-    public void testFeatureEvents() throws Exception {
+    public void testFeatureEvents() {
         // temporarily disabled until events issue solved
     }
 }

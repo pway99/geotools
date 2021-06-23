@@ -17,7 +17,6 @@
  */
 package org.geotools.process.raster;
 
-import java.io.IOException;
 import org.geotools.coverage.grid.GridCoverage2D;
 import org.geotools.coverage.processing.CoverageProcessor;
 import org.geotools.geometry.GeneralEnvelope;
@@ -52,8 +51,7 @@ public class CropCoverage implements RasterProcess {
                     GridCoverage2D coverage,
             @DescribeParameter(name = "cropShape", description = "Geometry used to crop the raster")
                     Geometry cropShape,
-            ProgressListener progressListener)
-            throws IOException {
+            ProgressListener progressListener) {
         // get the bounds
         CoordinateReferenceSystem crs;
         if (cropShape.getUserData() instanceof CoordinateReferenceSystem) {

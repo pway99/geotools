@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class SLDNamedLayerBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(NamedLayer.class, new SLDNamedLayerBinding(null).getType());
     }
 

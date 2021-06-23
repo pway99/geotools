@@ -59,8 +59,7 @@ final class TestUtils extends Assert {
             GeneralParameterValue[] values,
             String title,
             final GridCoverage2D coverage,
-            final Rectangle rect)
-            throws FactoryException {
+            final Rectangle rect) {
         final RenderedImage image = coverage.getRenderedImage();
         if (ImageMosaicReaderTest.INTERACTIVE) show(image, title);
         else PlanarImage.wrapRenderedImage(image).getTiles();
@@ -162,8 +161,7 @@ final class TestUtils extends Assert {
      * @param hints hints to be used while looking for a format.
      * @return a suitable {@link AbstractGridFormat}.
      */
-    static AbstractGridFormat getFormat(URL testURL, Hints hints)
-            throws NoSuchAuthorityCodeException, FactoryException {
+    static AbstractGridFormat getFormat(URL testURL, Hints hints) {
         // Get format
         final AbstractGridFormat format = GridFormatFinder.findFormat(testURL, hints);
         Assert.assertNotNull(format);
@@ -180,8 +178,7 @@ final class TestUtils extends Assert {
      * @param format to use for instantiating such a reader.
      * @return a suitable {@link ImageMosaicReader}.
      */
-    static ImageMosaicReader getReader(URL testURL, final AbstractGridFormat format)
-            throws NoSuchAuthorityCodeException, FactoryException {
+    static ImageMosaicReader getReader(URL testURL, final AbstractGridFormat format) {
 
         //		final Hints hints= new Hints(Hints.DEFAULT_COORDINATE_REFERENCE_SYSTEM,
         // CRS.decode("EPSG:4326", true));

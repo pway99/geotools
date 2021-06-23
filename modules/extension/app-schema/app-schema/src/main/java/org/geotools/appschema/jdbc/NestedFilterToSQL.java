@@ -381,8 +381,7 @@ public class NestedFilterToSQL extends FilterToSQL {
     }
 
     private void encodeAliasedColumnName(
-            JDBCDataStore store, String colName, String typeName, StringBuffer sql, Hints hints)
-            throws SQLException {
+            JDBCDataStore store, String colName, String typeName, StringBuffer sql, Hints hints) {
         store.dialect.encodeTableName(typeName, sql);
         sql.append(".");
         store.dialect.encodeColumnName(null, colName, sql);

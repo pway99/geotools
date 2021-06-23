@@ -310,7 +310,7 @@ public class WMS1_3_0_OnlineTest extends WMS1_1_1_OnlineTest {
 
     @Override
     @Test
-    public void testCreateDescribeLayerRequest() throws Exception {
+    public void testCreateDescribeLayerRequest() {
         /*try{
 
                     WebMapServer wms = new CustomWMS(server2);
@@ -352,7 +352,7 @@ public class WMS1_3_0_OnlineTest extends WMS1_1_1_OnlineTest {
 
     @Override
     @Test
-    public void testCreateGetLegendGraphicRequest() throws Exception {
+    public void testCreateGetLegendGraphicRequest() {
         /*try{
             WebMapServer wms = new CustomWMS(server2);
             GetLegendGraphicRequest request = wms.createGetLegendGraphicRequest();
@@ -397,7 +397,7 @@ public class WMS1_3_0_OnlineTest extends WMS1_1_1_OnlineTest {
     }
 
     @Test
-    public void testParamEncoding() throws Exception {
+    public void testParamEncoding() {
         // this request does not work because it is encoded properly
         // Let's make sure that this doesn't happen again.
         //
@@ -441,7 +441,7 @@ public class WMS1_3_0_OnlineTest extends WMS1_1_1_OnlineTest {
     private class CustomWMS extends WebMapServer {
 
         /** */
-        public CustomWMS(URL serverURL) throws SAXException, URISyntaxException, IOException {
+        public CustomWMS(URL serverURL) throws SAXException, IOException {
             super(serverURL);
             // TODO Auto-generated constructor stub
         }

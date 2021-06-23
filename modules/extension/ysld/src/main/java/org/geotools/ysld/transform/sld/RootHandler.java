@@ -71,7 +71,7 @@ public class RootHandler extends SldTransformHandler {
 
         @Override
         public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             if ("UserStyle".equalsIgnoreCase(xml.getLocalName())) {
                 context.endSequence().endMapping().pop();
             }

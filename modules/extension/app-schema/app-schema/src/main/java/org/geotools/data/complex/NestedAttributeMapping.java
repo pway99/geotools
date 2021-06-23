@@ -99,8 +99,7 @@ public class NestedAttributeMapping extends AttributeMapping {
             Map<Name, Expression> clientProperties,
             Expression sourceElement,
             StepList sourcePath,
-            NamespaceSupport namespaces)
-            throws IOException {
+            NamespaceSupport namespaces) {
         super(
                 idExpression,
                 parentExpression,

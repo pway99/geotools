@@ -96,7 +96,7 @@ public class RecordBinding extends ComplexEMFBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         return null;
     }
 }

@@ -67,7 +67,7 @@ public class GMLFilterGeometry extends org.xml.sax.helpers.XMLFilterImpl
      * @throws SAXException parser error.
      */
     @Override
-    public void geometryStart(String localName, org.xml.sax.Attributes atts) throws SAXException {
+    public void geometryStart(String localName, org.xml.sax.Attributes atts) {
         String srs = null;
         for (int i = 0; i < atts.getLength(); i++) {
             final String NAME = atts.getQName(i);
@@ -93,7 +93,7 @@ public class GMLFilterGeometry extends org.xml.sax.helpers.XMLFilterImpl
      * @throws SAXException parser error.
      */
     @Override
-    public void geometryEnd(String localName) throws SAXException {
+    public void geometryEnd(String localName) {
         if (currentHandler.isComplete(localName)) {
             parent.geometry(currentHandler.create(geometryFactory));
             currentHandler = null;
@@ -111,7 +111,7 @@ public class GMLFilterGeometry extends org.xml.sax.helpers.XMLFilterImpl
      * @throws SAXException parser error.
      */
     @Override
-    public void geometrySub(String localName) throws SAXException {
+    public void geometrySub(String localName) {
         currentHandler.subGeometry(localName, currentHandler.GEOMETRY_SUB);
     }
 
@@ -123,7 +123,7 @@ public class GMLFilterGeometry extends org.xml.sax.helpers.XMLFilterImpl
      * @throws SAXException parser error.
      */
     @Override
-    public void gmlCoordinates(double x, double y) throws SAXException {
+    public void gmlCoordinates(double x, double y) {
         currentHandler.addCoordinate(new org.locationtech.jts.geom.Coordinate(x, y));
     }
 
@@ -136,7 +136,7 @@ public class GMLFilterGeometry extends org.xml.sax.helpers.XMLFilterImpl
      * @throws SAXException parser error.
      */
     @Override
-    public void gmlCoordinates(double x, double y, double z) throws SAXException {
+    public void gmlCoordinates(double x, double y, double z) {
         currentHandler.addCoordinate(new org.locationtech.jts.geom.Coordinate(x, y, z));
     }
 

@@ -75,7 +75,7 @@ public class SortByTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // &lt;xsd:element maxOccurs="unbounded" name="SortProperty"
         // type="ogc:SortPropertyType"/&gt;
         List<SortBy> sortBy = node.getChildValues(SortBy.class);
@@ -84,7 +84,7 @@ public class SortByTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if ("SortProperty".equals(name.getLocalPart())) {
             SortBy[] sortBy = (SortBy[]) object;
 

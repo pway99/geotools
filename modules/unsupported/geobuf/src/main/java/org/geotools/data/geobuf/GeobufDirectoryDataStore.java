@@ -69,7 +69,7 @@ public class GeobufDirectoryDataStore extends ContentDataStore {
     }
 
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         File[] files = directory.listFiles((dir, name) -> name.endsWith(".pbf"));
         List<Name> names = new ArrayList<>();
         if (files != null) {

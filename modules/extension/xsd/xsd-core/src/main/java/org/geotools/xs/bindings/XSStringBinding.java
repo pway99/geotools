@@ -95,7 +95,7 @@ public class XSStringBinding implements SimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         return value;
     }
 

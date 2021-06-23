@@ -100,7 +100,7 @@ public abstract class TestCaseSupport {
     }
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         Assume.assumeTrue("Skipping test, GDAL is not available", gdalAvailable());
         dataStoreFactory = createDataStoreFactory();
         ogr = dataStoreFactory.createOGR();
@@ -111,7 +111,7 @@ public abstract class TestCaseSupport {
      * after each test.
      */
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         // it seems that not all files marked as temp will get erased, perhaps
         // this is because they have been rewritten? Don't know, don't _really_
         // care, so I'll just delete everything

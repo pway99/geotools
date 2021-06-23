@@ -95,7 +95,7 @@ public final class ScaledColorSpaceTest {
      * @param args The command line arguments (ignored).
      * @throws Exception if any error occured.
      */
-    public static void main(final String[] args) throws Exception {
+    public static void main(final String[] args) {
         final ScaledColorSpaceTest test = new ScaledColorSpaceTest();
         test.setUp();
         test.testColorSpace();

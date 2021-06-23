@@ -277,7 +277,7 @@ public class TransformFeatureSource implements SimpleFeatureSource {
     }
 
     @Override
-    public SimpleFeatureCollection getFeatures(Query query) throws IOException {
+    public SimpleFeatureCollection getFeatures(Query query) {
         return new TransformFeatureCollection(this, transformer, query);
     }
 }

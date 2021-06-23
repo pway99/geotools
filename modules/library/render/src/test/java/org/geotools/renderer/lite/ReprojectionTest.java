@@ -57,7 +57,7 @@ public class ReprojectionTest {
     protected int errors;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
         builder.setName("Lines");

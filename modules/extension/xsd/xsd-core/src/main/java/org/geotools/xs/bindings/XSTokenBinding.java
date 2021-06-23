@@ -71,7 +71,7 @@ public class XSTokenBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         // Simply return string value, Whitespace facet is already handled
         return value;
     }

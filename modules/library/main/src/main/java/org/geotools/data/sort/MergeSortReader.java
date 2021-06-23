@@ -86,7 +86,7 @@ class MergeSortReader implements SimpleFeatureReader {
     }
 
     @Override
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() {
         return !readers.isEmpty();
     }
 

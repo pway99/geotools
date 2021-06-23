@@ -11,7 +11,7 @@ public class StringFunctionsTest {
     FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2(null);
 
     @Test
-    public void testConcatenate() throws Exception {
+    public void testConcatenate() {
         Function function =
                 ff.function(
                         "Concatenate", ff.literal("hello"), ff.literal(" "), ff.literal("world"));

@@ -36,7 +36,7 @@ public class OptDirectedNodeTest {
     private OptDirectedEdge m_loop;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         m_node = new OptDirectedNode();
         //    m_node.setInDegree(2);

@@ -35,7 +35,7 @@ public class TemporalConverterFactoryTest {
     TemporalConverterFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new TemporalConverterFactory();
     }
 
@@ -45,7 +45,7 @@ public class TemporalConverterFactoryTest {
      * day.
      */
     @Test
-    public void testStitchInTime() throws Exception {
+    public void testStitchInTime() {
         Converter converter = factory.createConverter(Calendar.class, Date.class, null);
 
         Calendar calendar = Calendar.getInstance();
@@ -76,7 +76,7 @@ public class TemporalConverterFactoryTest {
     }
 
     @Test
-    public void testCalendarToDate() throws Exception {
+    public void testCalendarToDate() {
         Calendar calendar = Calendar.getInstance();
         Assert.assertNotNull(factory.createConverter(Calendar.class, Date.class, null));
 
@@ -92,7 +92,7 @@ public class TemporalConverterFactoryTest {
      * after conversion
      */
     @Test
-    public void testCalendarToDateWithMilliseconds() throws Exception {
+    public void testCalendarToDateWithMilliseconds() {
         Calendar calendar = Calendar.getInstance();
         long offset = 123;
         calendar.set(Calendar.MILLISECOND, (int) offset);
@@ -107,7 +107,7 @@ public class TemporalConverterFactoryTest {
     }
 
     @Test
-    public void testCalendarToTime() throws Exception {
+    public void testCalendarToTime() {
         Calendar calendar = Calendar.getInstance(/*TimeZone.getTimeZone("GMT")*/ );
         calendar.clear();
         calendar.set(Calendar.HOUR_OF_DAY, 17);
@@ -129,7 +129,7 @@ public class TemporalConverterFactoryTest {
     }
 
     @Test
-    public void testCalendarToTimestamp() throws Exception {
+    public void testCalendarToTimestamp() {
         Calendar calendar = Calendar.getInstance();
         Assert.assertNotNull(factory.createConverter(Calendar.class, Timestamp.class, null));
 
@@ -142,7 +142,7 @@ public class TemporalConverterFactoryTest {
 
     /** Make sure that milliseconds do not get lost after conversion */
     @Test
-    public void testCalendarToTimestampWithMilliseconds() throws Exception {
+    public void testCalendarToTimestampWithMilliseconds() {
         Calendar calendar = Calendar.getInstance();
         long offset = 123;
 
@@ -159,7 +159,7 @@ public class TemporalConverterFactoryTest {
     }
 
     @Test
-    public void testDateToCalendar() throws Exception {
+    public void testDateToCalendar() {
         Date date = new Date();
         Assert.assertNotNull(factory.createConverter(Date.class, Calendar.class, null));
 
@@ -171,7 +171,7 @@ public class TemporalConverterFactoryTest {
     }
 
     @Test
-    public void testDateToTime() throws Exception {
+    public void testDateToTime() {
         Date date = new Date();
         Assert.assertNotNull(factory.createConverter(Date.class, Time.class, null));
 
@@ -187,7 +187,7 @@ public class TemporalConverterFactoryTest {
     }
 
     @Test
-    public void testDateToTimestamp() throws Exception {
+    public void testDateToTimestamp() {
         Date date = new Date();
         Assert.assertNotNull(factory.createConverter(Date.class, Timestamp.class, null));
 
@@ -206,7 +206,7 @@ public class TemporalConverterFactoryTest {
     }
 
     @Test
-    public void testTimeToCalendar() throws Exception {
+    public void testTimeToCalendar() {
         Time time = new Time(new Date().getTime());
         Assert.assertNotNull(factory.createConverter(Time.class, Calendar.class, null));
 
@@ -218,7 +218,7 @@ public class TemporalConverterFactoryTest {
     }
 
     @Test
-    public void testTimestampToCalendar() throws Exception {
+    public void testTimestampToCalendar() {
         Timestamp timeStamp = new Timestamp(new Date().getTime());
         Assert.assertNotNull(factory.createConverter(Timestamp.class, Calendar.class, null));
 
@@ -250,7 +250,7 @@ public class TemporalConverterFactoryTest {
     }
 
     @Test
-    public void testCalendarToXMLGregorianCalendar() throws Exception {
+    public void testCalendarToXMLGregorianCalendar() {
         Calendar calendar = Calendar.getInstance();
         Assert.assertNotNull(
                 factory.createConverter(Calendar.class, XMLGregorianCalendar.class, null));
@@ -293,7 +293,7 @@ public class TemporalConverterFactoryTest {
     }
 
     @Test
-    public void testDateToXMLGregorianCalendar() throws Exception {
+    public void testDateToXMLGregorianCalendar() {
         Date date = new Date();
         Assert.assertNotNull(factory.createConverter(Date.class, XMLGregorianCalendar.class, null));
 
@@ -307,7 +307,7 @@ public class TemporalConverterFactoryTest {
     }
 
     @Test
-    public void testTimeZoneToString() throws Exception {
+    public void testTimeZoneToString() {
         Converter converter = factory.createConverter(TimeZone.class, String.class, null);
         Assert.assertNotNull(converter);
 
@@ -318,7 +318,7 @@ public class TemporalConverterFactoryTest {
     }
 
     @Test
-    public void testLongtoDate() throws Exception {
+    public void testLongtoDate() {
         Converter converter = factory.createConverter(Long.class, Date.class, null);
         Assert.assertNotNull(converter);
 

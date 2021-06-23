@@ -26,7 +26,7 @@ import org.junit.Test;
 public class DefaultHTTPClientFactoryTest {
 
     @Test
-    public void testBasicUsage() throws Exception {
+    public void testBasicUsage() {
 
         HTTPClient client = new DefaultHTTPClientFactory().createClient(new LinkedList<>());
         assertNotNull(client);
@@ -34,7 +34,7 @@ public class DefaultHTTPClientFactoryTest {
     }
 
     @Test
-    public void testLoggingUsage() throws Exception {
+    public void testLoggingUsage() {
         HTTPClientFactory factory = new DefaultHTTPClientFactory();
         HTTPClient client =
                 factory.createClient(new Hints(Hints.HTTP_LOGGING, "TRUE"), new LinkedList<>());

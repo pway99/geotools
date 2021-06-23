@@ -257,7 +257,7 @@ public final class WorldImageReader extends AbstractGridCoverage2DReader
     }
 
     /** Gets the relevant information for the underlying raster. */
-    private void getHRInfo() throws IOException, TransformException {
+    private void getHRInfo() throws IOException {
 
         // //
         //

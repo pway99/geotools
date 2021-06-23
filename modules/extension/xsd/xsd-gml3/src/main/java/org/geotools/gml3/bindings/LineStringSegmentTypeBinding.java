@@ -113,12 +113,12 @@ public class LineStringSegmentTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return GML3ParsingUtils.lineString(node, gf, csf);
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if ("posList".equals(name.getLocalPart())) {
             return GML3EncodingUtils.positions((LineString) object);
         }

@@ -57,7 +57,7 @@ public class RangeClosureBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         Object result = null;
         if (value != null) {
             result = RangeClosureType.get(value.toString());
@@ -67,7 +67,7 @@ public class RangeClosureBinding extends AbstractSimpleBinding {
     }
 
     @Override
-    public String encode(Object object, String value) throws Exception {
+    public String encode(Object object, String value) {
         return ((RangeClosureType) object).getLiteral();
     }
 }

@@ -57,11 +57,11 @@ public class WMSLayerTest {
     };
     /** @throws java.lang.Exception */
     @BeforeClass
-    public static void setUpBeforeClass() throws Exception {}
+    public static void setUpBeforeClass() {}
 
     /** @throws java.lang.Exception */
     @AfterClass
-    public static void tearDownAfterClass() throws Exception {}
+    public static void tearDownAfterClass() {}
 
     /** @throws java.lang.Exception */
     @Before
@@ -93,7 +93,7 @@ public class WMSLayerTest {
 
     /** @throws java.lang.Exception */
     @After
-    public void tearDown() throws Exception {}
+    public void tearDown() {}
 
     /** Test method for {@link WMSLayer#WMSLayer(WebMapServer, Layer)}. */
     @Test

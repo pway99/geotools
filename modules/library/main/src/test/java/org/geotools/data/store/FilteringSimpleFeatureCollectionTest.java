@@ -26,7 +26,6 @@ import org.geotools.data.DataUtilities;
 import org.geotools.data.collection.ListFeatureCollection;
 import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.factory.CommonFactoryFinder;
-import org.geotools.feature.SchemaException;
 import org.geotools.feature.collection.FilteringSimpleFeatureCollection;
 import org.geotools.feature.visitor.CountVisitor;
 import org.geotools.feature.visitor.MaxVisitor;
@@ -54,10 +53,9 @@ public class FilteringSimpleFeatureCollectionTest extends FeatureCollectionWrapp
         visitorCollection =
                 new ListFeatureCollection(schema) {
                     @Override
-                    public void accepts(FeatureVisitor visitor, ProgressListener progress)
-                            throws java.io.IOException {
+                    public void accepts(FeatureVisitor visitor, ProgressListener progress) {
                         lastVisitor = visitor;
-                    };
+                    }
 
                     @Override
                     public SimpleFeatureCollection subCollection(Filter filter) {
@@ -85,7 +83,7 @@ public class FilteringSimpleFeatureCollectionTest extends FeatureCollectionWrapp
     }
 
     @Test
-    public void testVisitor() throws IOException {
+    public void testVisitor() {
         Filter filter = ff.equal(ff.property("someAtt"), ff.literal("1"), false);
         SimpleFeatureCollection collection = new FilteringSimpleFeatureCollection(delegate, filter);
         collection.accepts(
@@ -93,19 +91,19 @@ public class FilteringSimpleFeatureCollectionTest extends FeatureCollectionWrapp
     }
 
     @Test
-    public void testMaxVisitorDelegation() throws SchemaException, IOException {
+    public void testMaxVisitorDelegation() throws IOException {
         MaxVisitor visitor =
                 new MaxVisitor(CommonFactoryFinder.getFilterFactory2().property("value"));
         assertOptimalVisit(visitor);
     }
 
     @Test
-    public void testCountVisitorDelegation() throws SchemaException, IOException {
+    public void testCountVisitorDelegation() {
         FeatureVisitor visitor = new CountVisitor();
         assertOptimalVisit(visitor);
     }
 
-    private void assertOptimalVisit(FeatureVisitor visitor) throws IOException {
+    private void assertOptimalVisit(FeatureVisitor visitor) {
         FilteringSimpleFeatureCollection retypedCollection =
                 new FilteringSimpleFeatureCollection(visitorCollection, Filter.INCLUDE);
         retypedCollection.accepts(visitor, null);

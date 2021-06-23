@@ -90,7 +90,7 @@ public class WFSFeatureStoreTest {
     }
 
     @After
-    public void tearDown() throws Exception {}
+    public void tearDown() {}
 
     @Test
     public void testAddFeaturesAutoCommit() throws Exception {

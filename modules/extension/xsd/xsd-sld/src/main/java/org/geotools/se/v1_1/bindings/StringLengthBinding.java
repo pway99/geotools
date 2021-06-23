@@ -94,7 +94,7 @@ public class StringLengthBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         Expression e = (Expression) node.getChildValue("StringValue");
         return filterFactory.function("strLength", e);

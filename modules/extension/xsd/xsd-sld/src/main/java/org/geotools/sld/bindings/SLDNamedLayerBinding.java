@@ -110,7 +110,7 @@ public class SLDNamedLayerBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         NamedLayer namedLayer = styleFactory.createNamedLayer();
 
         // &lt;xsd:element ref="sld:Name"/&gt;

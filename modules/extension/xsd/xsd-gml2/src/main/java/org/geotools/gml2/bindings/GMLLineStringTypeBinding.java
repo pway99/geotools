@@ -136,7 +136,7 @@ public class GMLLineStringTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         LineString lineString = (LineString) object;
 
         if (GML.coordinates.equals(name)) {

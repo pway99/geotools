@@ -102,7 +102,7 @@ public class AppSchemaDataAccessTest extends AppSchemaTestSupport {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         DataAccessRegistry.unregisterAndDisposeAll();
     }
 

@@ -91,7 +91,7 @@ public class SLDHistogramBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         AbstractContrastMethodStrategy ret = new HistogramContrastMethodStrategy();
         if (node.getChildValue("Algorithm") != null) {
             Expression algor = (Expression) node.getChildValue("Algorithm");

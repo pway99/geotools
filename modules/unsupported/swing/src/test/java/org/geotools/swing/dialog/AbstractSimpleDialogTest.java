@@ -65,7 +65,7 @@ public class AbstractSimpleDialogTest
         GuiActionRunner.execute(
                 new GuiTask() {
                     @Override
-                    protected void executeInEDT() throws Throwable {
+                    protected void executeInEDT() {
                         MockDialog dialog = new MockDialog(TITLE);
                         dialog.setVisible(true);
                     }
@@ -131,7 +131,7 @@ public class AbstractSimpleDialogTest
                 GuiActionRunner.execute(
                         new GuiQuery<MockDialog>() {
                             @Override
-                            protected MockDialog executeInEDT() throws Throwable {
+                            protected MockDialog executeInEDT() {
                                 MockDialog dialog = new MockDialog(TITLE);
                                 dialog.initComponents();
                                 return dialog;
@@ -146,7 +146,7 @@ public class AbstractSimpleDialogTest
                 GuiActionRunner.execute(
                         new GuiQuery<MockDialog>() {
                             @Override
-                            protected MockDialog executeInEDT() throws Throwable {
+                            protected MockDialog executeInEDT() {
                                 MockDialog dialog = new MockDialog(TITLE, modal, resizable);
                                 dialog.initComponents();
                                 return dialog;

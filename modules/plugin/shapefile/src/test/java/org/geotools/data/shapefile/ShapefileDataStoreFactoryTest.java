@@ -24,7 +24,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.HashMap;
@@ -96,7 +95,7 @@ public class ShapefileDataStoreFactoryTest extends TestCaseSupport {
         QueryCapabilities caps = featureSource.getQueryCapabilities();
 
         SortBy[] sortBy = {
-            SortBy.NATURAL_ORDER,
+            SortBy.NATURAL_ORDER
         };
         assertTrue("Natural", caps.supportsSorting(sortBy));
 
@@ -170,7 +169,7 @@ public class ShapefileDataStoreFactoryTest extends TestCaseSupport {
 
     /** Check non NullPointerException using a http URL instead Filesystem path */
     @Test
-    public void testHttpUrl() throws IOException {
+    public void testHttpUrl() {
         Map<String, Serializable> params = new HashMap<>();
         params.put(URLP.key, "http://geo-solution.it/");
         assertFalse(factory.canProcess(params));

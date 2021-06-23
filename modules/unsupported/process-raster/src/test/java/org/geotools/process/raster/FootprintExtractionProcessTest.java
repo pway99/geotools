@@ -482,7 +482,7 @@ public class FootprintExtractionProcessTest {
     }
 
     @Test
-    public void valuesEqualityTest() throws Exception {
+    public void valuesEqualityTest() {
         double p1 = 0.2;
         double p2 = 2d / 10;
         double p3 = 0.21;

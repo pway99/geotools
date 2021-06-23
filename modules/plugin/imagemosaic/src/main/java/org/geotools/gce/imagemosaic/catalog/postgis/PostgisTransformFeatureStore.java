@@ -16,7 +16,6 @@
  */
 package org.geotools.gce.imagemosaic.catalog.postgis;
 
-import java.io.IOException;
 import java.util.List;
 import org.geotools.data.DataAccess;
 import org.geotools.data.DataStore;
@@ -36,8 +35,7 @@ public class PostgisTransformFeatureStore extends TransformFeatureStore {
     DataStore datastore;
 
     public PostgisTransformFeatureStore(
-            SimpleFeatureStore store, Name name, List<Definition> definitions, DataStore datastore)
-            throws IOException {
+            SimpleFeatureStore store, Name name, List<Definition> definitions, DataStore datastore) {
         super(store, name, definitions);
         this.datastore = datastore;
     }

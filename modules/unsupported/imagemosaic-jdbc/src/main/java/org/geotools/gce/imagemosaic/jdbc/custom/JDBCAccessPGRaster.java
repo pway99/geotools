@@ -469,7 +469,7 @@ public class JDBCAccessPGRaster extends JDBCAccessCustom {
      * @param con JDBC Connection
      */
     void calculateResolutionsFromDB(String coverageName, Connection con)
-            throws SQLException, IOException {
+            throws SQLException {
 
         // isOutDBMap = new HashMap<ImageLevelInfo, Boolean>();
         try (PreparedStatement stmt =

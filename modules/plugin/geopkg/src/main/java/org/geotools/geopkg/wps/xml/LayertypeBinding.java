@@ -86,7 +86,7 @@ public abstract class LayertypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         GeoPackageProcessRequest.Layer layer = parseLayer(instance, node, value);
 

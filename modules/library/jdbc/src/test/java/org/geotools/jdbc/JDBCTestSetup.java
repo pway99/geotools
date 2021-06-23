@@ -74,13 +74,13 @@ public abstract class JDBCTestSetup {
         return dataSource;
     }
 
-    public void setUp() throws Exception {
+    public void setUp() {
         //
     }
 
-    protected void initializeDatabase() throws Exception {}
+    protected void initializeDatabase() {}
 
-    protected void setUpData() throws Exception {}
+    protected void setUpData() {}
 
     protected void setUpDataStore(JDBCDataStore dataStore) {}
 
@@ -181,7 +181,7 @@ public abstract class JDBCTestSetup {
      * Creates a data source by reading properties from a file called 'db.properties', located
      * paralell to the test setup instance.
      */
-    protected DataSource createDataSource() throws IOException {
+    protected DataSource createDataSource() {
         Properties db = fixture;
 
         BasicDataSource dataSource = new BasicDataSource();
@@ -227,7 +227,7 @@ public abstract class JDBCTestSetup {
      * case should be run or not. This method is only called if a connection can successfully be
      * made to the database.
      */
-    public boolean shouldRunTests(Connection cx) throws SQLException {
+    public boolean shouldRunTests(Connection cx) {
         return true;
     }
 

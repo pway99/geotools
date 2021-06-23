@@ -52,13 +52,13 @@ public class SDMXDataStoreTest {
     private HttpURLConnection clientMock;
 
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
 
     @After
-    public void tearDown() throws Exception {}
+    public void tearDown() {}
 
     @Test
-    public void testTypeNameComposition() throws Exception {
+    public void testTypeNameComposition() {
         assertEquals("population__SDMX", SDMXDataStore.composeDataflowTypeName("population"));
         assertEquals(
                 "population__SDMX__DIMENSIONS",
@@ -78,7 +78,7 @@ public class SDMXDataStoreTest {
     }
 
     @Test
-    public void testDataflowIdentification() throws Exception {
+    public void testDataflowIdentification() {
         assertEquals(false, SDMXDataStore.isDataflowName("population"));
         assertEquals(false, SDMXDataStore.isDataflowName("population_SDMX"));
         assertEquals(true, SDMXDataStore.isDataflowName("population__SDMX"));
@@ -91,7 +91,7 @@ public class SDMXDataStoreTest {
     }
 
     @Test
-    public void testDataflowNameExtraction() throws Exception {
+    public void testDataflowNameExtraction() {
         assertEquals(
                 "population", SDMXDataStore.extractDataflowName("population__SDMX__DIMENSIONS"));
         assertEquals("population", SDMXDataStore.extractDataflowName("population__SDMX"));

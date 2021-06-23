@@ -189,7 +189,7 @@ class OGRDataSourcePool implements AutoCloseable {
         }
 
         @Override
-        public void destroyObject(Object obj) throws Exception {
+        public void destroyObject(Object obj) {
             OGRDataSource ds = (OGRDataSource) obj;
             ds.destroy();
         }

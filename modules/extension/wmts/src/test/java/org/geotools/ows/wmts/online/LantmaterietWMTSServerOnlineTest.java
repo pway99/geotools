@@ -46,7 +46,6 @@ import org.junit.Test;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
-import org.opengis.referencing.operation.TransformException;
 
 public class LantmaterietWMTSServerOnlineTest extends OnlineTestCase {
 
@@ -69,7 +68,7 @@ public class LantmaterietWMTSServerOnlineTest extends OnlineTestCase {
 
     @Test
     public void testGetTiles()
-            throws IOException, ServiceException, FactoryException, TransformException {
+            throws IOException, ServiceException, FactoryException {
         WebMapTileServer wmts = new WebMapTileServer(server);
 
         WMTSCapabilities capabilities = wmts.getCapabilities();
@@ -118,7 +117,7 @@ public class LantmaterietWMTSServerOnlineTest extends OnlineTestCase {
 
     @Test
     public void testWMTSCoverageReader()
-            throws IOException, ServiceException, FactoryException, TransformException {
+            throws IOException, ServiceException, FactoryException {
         WebMapTileServer wmts = new WebMapTileServer(server);
         WMTSCapabilities capabilities = wmts.getCapabilities();
         CoordinateReferenceSystem crs = CRS.decode("EPSG:3857");
@@ -159,7 +158,7 @@ public class LantmaterietWMTSServerOnlineTest extends OnlineTestCase {
 
     @Test
     public void testGetTilesWithStylePlaceHolder()
-            throws IOException, ServiceException, FactoryException, TransformException {
+            throws IOException, ServiceException, FactoryException {
         WebMapTileServer wmts = new WebMapTileServer(serverWithStyle);
 
         WMTSCapabilities capabilities = wmts.getCapabilities();
@@ -179,7 +178,7 @@ public class LantmaterietWMTSServerOnlineTest extends OnlineTestCase {
 
     @Test
     public void testWMTSCoverageReaderWithStylePlaceholder()
-            throws IOException, ServiceException, FactoryException, TransformException {
+            throws IOException, ServiceException, FactoryException {
         WebMapTileServer wmts = new WebMapTileServer(serverWithStyle);
 
         WMTSCapabilities capabilities = wmts.getCapabilities();

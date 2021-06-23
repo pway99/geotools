@@ -77,7 +77,7 @@ public class SpatialOperatorTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // &lt;xsd:element minOccurs="0" name="GeometryOperands"
         // type="ogc:GeometryOperandsType"/&gt;
         GeometryOperand[] gos = node.getChildValue(GeometryOperand[].class);
@@ -87,7 +87,7 @@ public class SpatialOperatorTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         SpatialOperator sop = (SpatialOperator) object;
 
         if ("GeometryOperands".equals(name.getLocalPart())) {

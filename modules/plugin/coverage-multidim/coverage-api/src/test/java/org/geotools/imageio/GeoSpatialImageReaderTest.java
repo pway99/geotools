@@ -225,22 +225,22 @@ public class GeoSpatialImageReaderTest {
         }
 
         @Override
-        public int getWidth(int imageIndex) throws IOException {
+        public int getWidth(int imageIndex) {
             return RasterLayoutTest.testRasterLayout.getWidth();
         }
 
         @Override
-        public int getHeight(int imageIndex) throws IOException {
+        public int getHeight(int imageIndex) {
             return RasterLayoutTest.testRasterLayout.getHeight();
         }
 
         @Override
-        public Iterator<ImageTypeSpecifier> getImageTypes(int imageIndex) throws IOException {
+        public Iterator<ImageTypeSpecifier> getImageTypes(int imageIndex) {
             return null;
         }
 
         @Override
-        public BufferedImage read(int imageIndex, ImageReadParam param) throws IOException {
+        public BufferedImage read(int imageIndex, ImageReadParam param) {
             return null;
         }
 
@@ -324,12 +324,12 @@ public class GeoSpatialImageReaderTest {
         }
 
         @Override
-        public boolean canDecodeInput(Object source) throws IOException {
+        public boolean canDecodeInput(Object source) {
             return true;
         }
 
         @Override
-        public ImageReader createReaderInstance(Object extension) throws IOException {
+        public ImageReader createReaderInstance(Object extension) {
             return new TestGeospatialImageReader();
         }
 

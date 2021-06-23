@@ -90,7 +90,7 @@ public class JDBCFeatureSource extends ContentFeatureSource {
      *
      * @param featureSource jdbc feature source
      */
-    protected JDBCFeatureSource(JDBCFeatureSource featureSource) throws IOException {
+    protected JDBCFeatureSource(JDBCFeatureSource featureSource) {
         super(featureSource.entry, featureSource.query);
     }
 

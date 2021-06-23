@@ -93,7 +93,7 @@ public class Function_NameTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         FunctionName function = (FunctionName) object;
         value.appendChild(document.createTextNode(function.getName()));
         value.setAttributeNS("", "nArgs", function.getArgumentCount() + "");

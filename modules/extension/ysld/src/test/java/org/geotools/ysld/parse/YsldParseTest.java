@@ -440,7 +440,7 @@ public class YsldParseTest {
     }
 
     @Test
-    public void testLabelShield() throws Exception {
+    public void testLabelShield() {
         String yaml =
                 "feature-styles:\n"
                         + "- name: name\n"
@@ -1032,7 +1032,7 @@ public class YsldParseTest {
     }
 
     @SuppressWarnings("unchecked")
-    private void doTestForGoogleMercator(StyledLayerDescriptor sld) throws IOException {
+    private void doTestForGoogleMercator(StyledLayerDescriptor sld) {
         double[] scaleDenominators = new double[GOOGLE_MERCATOR_PIXEL_SIZES.length];
         for (int i = 0; i < GOOGLE_MERCATOR_PIXEL_SIZES.length; i++) {
             scaleDenominators[i] = OGC_DPI * INCHES_PER_METRE * GOOGLE_MERCATOR_PIXEL_SIZES[i];
@@ -1090,7 +1090,7 @@ public class YsldParseTest {
     }
 
     @Test
-    public void testWGS84Scales() throws Exception {
+    public void testWGS84Scales() {
         ZoomContext context = WellKnownZoomContextFinder.getInstance().get("DEFAULT");
 
         for (int i = 0; i < WGS84_SCALE_DENOMS.length; i++) {
@@ -1100,7 +1100,7 @@ public class YsldParseTest {
     }
 
     @SuppressWarnings("unchecked")
-    private void doTestForWGS84(StyledLayerDescriptor sld) throws IOException {
+    private void doTestForWGS84(StyledLayerDescriptor sld) {
         FeatureTypeStyle fs = SLD.defaultStyle(sld).featureTypeStyles().get(0);
 
         assertThat(fs.rules().size(), is(21));

@@ -157,7 +157,7 @@ public class PostgisFilterToSQL extends FilterToSQL {
     }
 
     @Override
-    protected String cast(String encodedProperty, Class target) throws IOException {
+    protected String cast(String encodedProperty, Class target) {
         return helper.cast(encodedProperty, target);
     }
 

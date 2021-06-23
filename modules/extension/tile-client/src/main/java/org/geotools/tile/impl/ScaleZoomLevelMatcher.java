@@ -114,8 +114,7 @@ public class ScaleZoomLevelMatcher {
     public static ReferencedEnvelope getProjectedEnvelope(
             ReferencedEnvelope envelope,
             CoordinateReferenceSystem destinationCRS,
-            MathTransform transformation)
-            throws TransformException, FactoryException {
+            MathTransform transformation) {
 
         CoordinateReferenceSystem sourceCRS = envelope.getCoordinateReferenceSystem();
 

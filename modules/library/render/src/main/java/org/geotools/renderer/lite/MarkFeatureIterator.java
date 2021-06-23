@@ -114,12 +114,12 @@ abstract class MarkFeatureIterator implements FeatureIterator<Feature> {
         }
 
         @Override
-        public void mark() throws IOException {
+        public void mark() {
             mark = curr;
         }
 
         @Override
-        public void reset() throws IOException {
+        public void reset() {
             curr = mark;
         }
 
@@ -242,7 +242,7 @@ abstract class MarkFeatureIterator implements FeatureIterator<Feature> {
 
         @Override
         @SuppressWarnings("deprecation") // finalize is deprecated in Java 9
-        protected void finalize() throws Throwable {
+        protected void finalize() {
             if (io != null) {
                 LOGGER.warning(
                         "There is code leaving DiskMarkFeatureIterator open, "

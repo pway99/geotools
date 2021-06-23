@@ -46,7 +46,7 @@ class ElasticFeatureSource extends ContentFeatureSource {
 
     private Boolean filterFullySupported;
 
-    public ElasticFeatureSource(ContentEntry entry, Query query) throws IOException {
+    public ElasticFeatureSource(ContentEntry entry, Query query) {
         super(entry, query);
 
         final ElasticDataStore dataStore = getDataStore();
@@ -241,7 +241,7 @@ class ElasticFeatureSource extends ContentFeatureSource {
         return searchRequest;
     }
 
-    private void setSourceIncludes(final ElasticRequest searchRequest) throws IOException {
+    private void setSourceIncludes(final ElasticRequest searchRequest) {
         final ElasticDataStore dataStore = getDataStore();
         final List<ElasticAttribute> attributes = dataStore.getElasticAttributes(entry.getName());
         for (final ElasticAttribute attribute : attributes) {

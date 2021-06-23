@@ -15,7 +15,7 @@ public class SpatialFilterVisitorTest {
     private SpatialFilterVisitor visitor;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         visitor = new SpatialFilterVisitor();
     }
 

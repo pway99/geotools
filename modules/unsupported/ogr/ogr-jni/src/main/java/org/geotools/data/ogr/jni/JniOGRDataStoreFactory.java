@@ -33,7 +33,7 @@ public class JniOGRDataStoreFactory extends OGRDataStoreFactory {
     }
 
     @Override
-    protected boolean doIsAvailable() throws Throwable {
+    protected boolean doIsAvailable() {
         try {
             // GDAL version >= 2.3.0
             System.loadLibrary("gdalalljni");

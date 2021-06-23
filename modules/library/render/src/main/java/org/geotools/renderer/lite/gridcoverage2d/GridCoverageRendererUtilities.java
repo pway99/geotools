@@ -120,8 +120,7 @@ public final class GridCoverageRendererUtilities {
             final Interpolation interpolation,
             final GeneralEnvelope destinationEnvelope,
             final double[] bkgValues,
-            final Hints hints)
-            throws FactoryException {
+            final Hints hints) {
         // paranoiac check
         assert CRS.equalsIgnoreMetadata(destinationEnvelope.getCoordinateReferenceSystem(), crs)
                 || CRS.findMathTransform(destinationEnvelope.getCoordinateReferenceSystem(), crs)
@@ -147,8 +146,7 @@ public final class GridCoverageRendererUtilities {
             final GeneralEnvelope destinationEnvelope,
             final double[] bkgValues,
             GridCoverageFactory gridCoverageFactory,
-            final Hints hints)
-            throws FactoryException {
+            final Hints hints) {
         List<GridCoverage2D> reprojectedCoverages = new ArrayList<>();
         for (GridCoverage2D coverage : coverages) {
             if (coverage == null) {
@@ -183,8 +181,7 @@ public final class GridCoverageRendererUtilities {
             final GeneralEnvelope destinationEnvelope,
             final double[] bkgValues,
             GridCoverageFactory gridCoverageFactory,
-            final Hints hints)
-            throws FactoryException {
+            final Hints hints) {
 
         // always have a ROI to account for pixels outside the image
         coverage = addRoiIfMissing(coverage, gridCoverageFactory);
@@ -358,8 +355,7 @@ public final class GridCoverageRendererUtilities {
 
     /** */
     static GeneralEnvelope reprojectEnvelope(
-            GeneralEnvelope inputEnvelope, final CoordinateReferenceSystem outputCRS)
-            throws Exception {
+            GeneralEnvelope inputEnvelope, final CoordinateReferenceSystem outputCRS) {
 
         GeneralEnvelope outputEnvelope = null;
         CoordinateReferenceSystem inputCRS = inputEnvelope.getCoordinateReferenceSystem();
@@ -377,7 +373,7 @@ public final class GridCoverageRendererUtilities {
 
     /** */
     static GeneralEnvelope reprojectEnvelopeWithWGS84Pivot(
-            GeneralEnvelope inputEnvelope, CoordinateReferenceSystem targetCRS) throws Exception {
+            GeneralEnvelope inputEnvelope, CoordinateReferenceSystem targetCRS) {
 
         GridCoverageRendererUtilities.ensureNotNull(inputEnvelope, "destinationEnvelope");
         GridCoverageRendererUtilities.ensureNotNull(targetCRS, "coverageCRS");

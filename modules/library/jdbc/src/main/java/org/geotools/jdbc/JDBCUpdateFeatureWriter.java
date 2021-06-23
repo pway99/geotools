@@ -81,7 +81,7 @@ public class JDBCUpdateFeatureWriter extends JDBCFeatureReader
     }
 
     @Override
-    public void remove() throws IOException {
+    public void remove() {
         try {
             dataStore.delete(featureType, last.getID(), st.getConnection());
 

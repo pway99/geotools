@@ -37,7 +37,7 @@ import org.opengis.feature.type.GeometryType;
 public class SolrSpatialStrategyTest {
 
     @Test
-    public void testCreate() throws Exception {
+    public void testCreate() {
 
         assertTrue(
                 SolrSpatialStrategy.createStrategy(newDescriptor(null)) instanceof DefaultStrategy);

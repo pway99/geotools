@@ -55,7 +55,7 @@ public class GeoPkgNoPrimaryKeyTestSetup extends JDBCNoPrimaryKeyTestSetup {
     }
 
     @Override
-    protected void dropLakeTable() throws Exception {
+    protected void dropLakeTable() {
         ((GeoPkgTestSetup) delegate).removeTable("lake");
     }
 }

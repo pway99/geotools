@@ -81,7 +81,7 @@ public class LineStringTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         CoordinateSequence coordinates =
                 (CoordinateSequence) node.getChildValue(KML.coordinates.getLocalPart());
 
@@ -89,7 +89,7 @@ public class LineStringTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (KML.coordinates.getLocalPart().equals(name.getLocalPart())) {
             LineString l = (LineString) object;
             return l.getCoordinateSequence();

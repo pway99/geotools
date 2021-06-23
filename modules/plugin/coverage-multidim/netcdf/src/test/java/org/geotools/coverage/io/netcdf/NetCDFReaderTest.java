@@ -87,8 +87,6 @@ import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.ParameterDescriptor;
 import org.opengis.parameter.ParameterValue;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.util.InternationalString;
 import si.uom.SI;
@@ -108,7 +106,7 @@ public class NetCDFReaderTest extends Assert {
      * 80,80,80,90,90; lon= 10,15,20,25,30; lat= 70,60,50,40;
      */
     @Test
-    public void testHDF5Image() throws IOException, FactoryException {
+    public void testHDF5Image() throws IOException {
         final File testURL = TestData.file(this, "2DLatLonCoverage.nc");
         // Get format
         // final AbstractGridFormat format = (AbstractGridFormat)
@@ -151,7 +149,7 @@ public class NetCDFReaderTest extends Assert {
     }
 
     @Test
-    public void testFullReadOnCoverageWithIncreasingLat() throws IOException, FactoryException {
+    public void testFullReadOnCoverageWithIncreasingLat() throws IOException {
         final File testURL = TestData.file(this, "O3-NO2.nc");
         // Get format
         // final AbstractGridFormat format = (AbstractGridFormat)
@@ -193,7 +191,7 @@ public class NetCDFReaderTest extends Assert {
     }
 
     @Test
-    public void testScaleAndOffset() throws IOException, FactoryException, ParseException {
+    public void testScaleAndOffset() throws IOException {
         // Capture the current enhance mode, so we can change it now and set it back later
         Set<NetcdfDataset.Enhance> currentEnhanceMode = NetcdfDataset.getDefaultEnhanceMode();
         Set<NetcdfDataset.Enhance> newEnhanceMode =
@@ -248,7 +246,7 @@ public class NetCDFReaderTest extends Assert {
 
     @Test
     public void NetCDFTestOn4Dcoverages()
-            throws NoSuchAuthorityCodeException, FactoryException, IOException, ParseException {
+            throws IOException, ParseException {
         File mosaic = new File(TestData.file(this, "."), "NetCDFTestOn4Dcoverages");
         if (mosaic.exists()) {
             FileUtils.deleteDirectory(mosaic);
@@ -393,7 +391,7 @@ public class NetCDFReaderTest extends Assert {
 
     @Test
     public void NetCDFTestOnFilter()
-            throws NoSuchAuthorityCodeException, FactoryException, IOException, ParseException {
+            throws IOException {
         File mosaic = new File(TestData.file(this, "."), "NetCDFTestOnFilter");
         if (mosaic.exists()) {
             FileUtils.deleteDirectory(mosaic);
@@ -501,7 +499,7 @@ public class NetCDFReaderTest extends Assert {
 
     @Test
     public void NetCDFTestOn4DcoveragesWithDifferentSchemas()
-            throws NoSuchAuthorityCodeException, FactoryException, IOException, ParseException {
+            throws IOException, ParseException {
         File mosaic =
                 new File(TestData.file(this, "."), "NetCDFTestOn4DcoveragesWithDifferentSchemas");
         if (mosaic.exists()) {
@@ -645,7 +643,7 @@ public class NetCDFReaderTest extends Assert {
 
     @Test
     public void NetCDFTestOn4DcoveragesWithImposedSchemas()
-            throws NoSuchAuthorityCodeException, FactoryException, IOException, ParseException {
+            throws IOException, ParseException {
         File mosaic =
                 new File(TestData.file(this, "."), "NetCDFTestOn4DcoveragesWithImposedSchemas");
         if (mosaic.exists()) {
@@ -789,7 +787,7 @@ public class NetCDFReaderTest extends Assert {
 
     @Test
     public void NetCDFTestAscatL1()
-            throws NoSuchAuthorityCodeException, FactoryException, IOException, ParseException {
+            throws IOException {
         File mosaic = new File(TestData.file(this, "."), "NetCDFTestAscatL1");
         if (mosaic.exists()) {
             FileUtils.deleteDirectory(mosaic);
@@ -896,7 +894,7 @@ public class NetCDFReaderTest extends Assert {
 
     @Test
     public void NetCDFGOME2()
-            throws NoSuchAuthorityCodeException, FactoryException, IOException, ParseException {
+            throws IOException {
         File mosaic = new File(TestData.file(this, "."), "NetCDFGOME2");
         if (mosaic.exists()) {
             FileUtils.deleteDirectory(mosaic);
@@ -949,7 +947,7 @@ public class NetCDFReaderTest extends Assert {
 
     @Test
     @SuppressWarnings("PMD.UseShortArrayInitializer")
-    public void NetCDFTinyRead() throws FactoryException, IOException {
+    public void NetCDFTinyRead() throws IOException {
         File dir = new File(TestData.file(this, "."), "2DLatLonCoverageTiny");
         if (dir.exists()) {
             FileUtils.deleteDirectory(dir);
@@ -995,7 +993,7 @@ public class NetCDFReaderTest extends Assert {
 
     @Test
     public void testFileInfo()
-            throws NoSuchAuthorityCodeException, FactoryException, IOException, ParseException {
+            throws IOException, ParseException {
         File nc2 = new File(TestData.file(this, "."), "nc2");
         if (nc2.exists()) {
             FileUtils.deleteDirectory(nc2);
@@ -1072,7 +1070,7 @@ public class NetCDFReaderTest extends Assert {
 
     @Test
     public void NetCDFProjectedEnvelopeTest()
-            throws NoSuchAuthorityCodeException, FactoryException, IOException, ParseException {
+            throws IOException {
         File mosaic = new File(TestData.file(this, "."), "NetCDFProjection");
         if (mosaic.exists()) {
             FileUtils.deleteDirectory(mosaic);
@@ -1134,7 +1132,7 @@ public class NetCDFReaderTest extends Assert {
 
     @Test
     public void NetCDFNoData()
-            throws NoSuchAuthorityCodeException, FactoryException, IOException, ParseException {
+            throws IOException {
         File mosaic = new File(TestData.file(this, "."), "NetCDFGOME2");
         if (mosaic.exists()) {
             FileUtils.deleteDirectory(mosaic);
@@ -1176,7 +1174,7 @@ public class NetCDFReaderTest extends Assert {
 
     @Test
     public void NetCDFTestOnClimatologicalTime()
-            throws NoSuchAuthorityCodeException, FactoryException, IOException, ParseException {
+            throws IOException {
         final File workDir = new File(TestData.file(this, "."), "climatological");
         if (!workDir.mkdir()) {
             FileUtils.deleteDirectory(workDir);
@@ -1289,7 +1287,7 @@ public class NetCDFReaderTest extends Assert {
 
     @Test
     public void NetCDFNoDataOperation()
-            throws NoSuchAuthorityCodeException, FactoryException, IOException, ParseException {
+            throws IOException {
         File mosaic = new File(TestData.file(this, "."), "NetCDFGOME2");
         if (mosaic.exists()) {
             FileUtils.deleteDirectory(mosaic);

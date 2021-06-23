@@ -49,7 +49,7 @@ public class SortedReaderTest {
     private SortBy[] dateAsc;
 
     @Before
-    public void setup() throws IOException {
+    public void setup() {
         SimpleFeatureTypeBuilder typeBuilder = new SimpleFeatureTypeBuilder();
 
         typeBuilder.setName("test");
@@ -249,7 +249,7 @@ public class SortedReaderTest {
     }
 
     private void assertSortedOnPeopleAsc(SimpleFeatureIterator fi)
-            throws IllegalArgumentException, NoSuchElementException, IOException {
+            throws IllegalArgumentException, NoSuchElementException {
         double prev = -1;
         while (fi.hasNext()) {
             SimpleFeature f = fi.next();

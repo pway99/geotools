@@ -24,14 +24,14 @@ import org.opengis.filter.expression.Function;
 
 public class ArrayFunctionTest {
     @Test
-    public void testArrayOfStrings() throws Exception {
+    public void testArrayOfStrings() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func = ff.function("array", ff.literal("string1"), ff.literal("string2"));
         assertTrue(func.evaluate(new Object(), String[].class) instanceof String[]);
     }
 
     @Test
-    public void testArrayOfIntegers() throws Exception {
+    public void testArrayOfIntegers() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func = ff.function("array", ff.literal(1), ff.literal(2));
         assertTrue(func.evaluate(new Object(), Integer[].class) instanceof Integer[]);

@@ -78,7 +78,7 @@ public class TimeInstantTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Position pos = node.getChildValue(Position.class);
         return new DefaultInstant(pos);
     }

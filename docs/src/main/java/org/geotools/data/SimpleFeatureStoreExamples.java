@@ -47,7 +47,7 @@ public class SimpleFeatureStoreExamples {
 
     String typeName;
 
-    private void addFeaturesExample() throws Exception {
+    private void addFeaturesExample() {
         // addExample start
         SimpleFeatureStore store = (SimpleFeatureStore) dataStore.getFeatureSource(typeName);
 
@@ -125,7 +125,7 @@ public class SimpleFeatureStoreExamples {
         // addEvents end
     }
 
-    private void removeExample() throws Exception {
+    private void removeExample() {
         // removeExample start
         Transaction transaction = new DefaultTransaction("removeExample");
         SimpleFeatureStore store = (SimpleFeatureStore) dataStore.getFeatureSource(typeName);
@@ -142,7 +142,7 @@ public class SimpleFeatureStoreExamples {
         // removeExample end
     }
 
-    private void removeExample2() throws Exception {
+    private void removeExample2() {
         // removeExample2 start
         Transaction transaction = new DefaultTransaction("removeExample");
         SimpleFeatureStore store = (SimpleFeatureStore) dataStore.getFeatureSource(typeName);

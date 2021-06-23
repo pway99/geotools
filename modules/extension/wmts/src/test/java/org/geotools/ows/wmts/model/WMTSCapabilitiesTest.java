@@ -16,7 +16,6 @@ package org.geotools.ows.wmts.model;
 import static org.geotools.ows.wmts.WMTSTestUtils.createCapabilities;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
 import java.util.Properties;
@@ -37,7 +36,7 @@ public class WMTSCapabilitiesTest {
 
     protected WMTSSpecification spec;
 
-    public WMTSCapabilitiesTest() throws Exception {
+    public WMTSCapabilitiesTest() {
         this.spec = new WMTSSpecification();
     }
 
@@ -309,7 +308,7 @@ public class WMTSCapabilitiesTest {
     }
 
     protected WebMapTileServer getCustomWMS(URL featureURL)
-            throws SAXException, URISyntaxException, IOException {
+            throws SAXException, IOException {
         return new WebMapTileServer(featureURL);
     }
 }

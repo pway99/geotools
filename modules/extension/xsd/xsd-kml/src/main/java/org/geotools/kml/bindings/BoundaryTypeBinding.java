@@ -68,12 +68,12 @@ public class BoundaryTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return node.getChildValue(LinearRing.class);
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (KML.LinearRing.getLocalPart().equals(name.getLocalPart())) {
             return object;
         }

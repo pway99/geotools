@@ -16,8 +16,6 @@
  */
 package org.geotools.data.teradata;
 
-import java.io.IOException;
-import java.sql.SQLException;
 import org.geotools.jdbc.JDBCFeatureStoreOnlineTest;
 import org.geotools.jdbc.JDBCTestSetup;
 
@@ -29,12 +27,12 @@ public class TeradataFeatureStoreOnlineTest extends JDBCFeatureStoreOnlineTest {
     }
 
     @Override
-    public void testAddInTransaction() throws IOException {
+    public void testAddInTransaction() {
         // TODO enable transaction isolation  (non-blocking)
     }
 
     @Override
-    public void testExternalConnection() throws IOException, SQLException {
+    public void testExternalConnection() {
         // TODO enable transaction isolation  (non-blocking)
     }
 }

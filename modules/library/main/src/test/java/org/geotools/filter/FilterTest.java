@@ -26,7 +26,6 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.geotools.factory.CommonFactoryFinder;
-import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
 import org.geotools.filter.capability.FunctionNameImpl;
@@ -107,7 +106,7 @@ public class FilterTest {
      * @throws SchemaException If there is a problem setting up the schema.
      */
     @Before
-    public void setUp() throws SchemaException {
+    public void setUp() {
         if (set) {
             return;
         }
@@ -1247,7 +1246,7 @@ public class FilterTest {
     private final class GeometryFunction implements Function {
         final Geometry ls;
 
-        public GeometryFunction(Geometry geom) throws Exception {
+        public GeometryFunction(Geometry geom) {
             ls = geom;
         }
 

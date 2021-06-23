@@ -63,7 +63,7 @@ public final class GeocentricTransformTest extends TransformTestBase {
      * <p>Source: Office de la langue française, 1996 http://www.granddictionnaire.com
      */
     @Test
-    public void testEllipsoid() throws FactoryException {
+    public void testEllipsoid() {
         final DefaultEllipsoid e = DefaultEllipsoid.WGS84;
         final double hm = 0.5 / 60; // Half of a minute of angle, in degrees.
         /*

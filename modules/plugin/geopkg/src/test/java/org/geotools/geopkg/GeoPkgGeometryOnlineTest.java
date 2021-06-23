@@ -27,7 +27,7 @@ public class GeoPkgGeometryOnlineTest extends JDBCGeometryOnlineTest {
     }
 
     @Override
-    public void testLinearRing() throws Exception {
+    public void testLinearRing() {
         // JD: GeoPkg does not do linear rings
     }
 }

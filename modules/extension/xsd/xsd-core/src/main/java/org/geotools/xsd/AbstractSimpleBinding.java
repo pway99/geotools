@@ -34,7 +34,7 @@ public abstract class AbstractSimpleBinding implements SimpleBinding {
 
     /** Subclasses need to override this method, this implementation returns <code>null</code>. */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         return null;
     }
 
@@ -47,7 +47,7 @@ public abstract class AbstractSimpleBinding implements SimpleBinding {
      * @return A String representing the object.
      */
     @Override
-    public String encode(Object object, String value) throws Exception {
+    public String encode(Object object, String value) {
         // just return the value passed in, subclasses should override to provide new value
         return value;
     }

@@ -79,21 +79,21 @@ public class Oracle3DTestSetup extends JDBC3DTestSetup {
     }
 
     @Override
-    protected void dropLine3DTable() throws Exception {
+    protected void dropLine3DTable() {
         runSafe("DROP SEQUENCE line3d_fid_seq");
         runSafe("DROP TABLE line3d");
         runSafe("DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME='LINE3D'");
     }
 
     @Override
-    protected void dropPoly3DTable() throws Exception {
+    protected void dropPoly3DTable() {
         runSafe("DROP SEQUENCE poly3d_fid_seq");
         runSafe("DROP TABLE poly3d");
         runSafe("DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME='POLY3D'");
     }
 
     @Override
-    protected void dropPoint3DTable() throws Exception {
+    protected void dropPoint3DTable() {
         runSafe("DROP SEQUENCE point3d_fid_seq");
         runSafe("DROP TABLE point3d");
         runSafe("DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME='POINT3D'");

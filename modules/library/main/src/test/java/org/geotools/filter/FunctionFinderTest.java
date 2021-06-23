@@ -44,27 +44,27 @@ public class FunctionFinderTest {
     private FunctionName name;
 
     @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
+    public static void setUpBeforeClass() {
         ff = CommonFactoryFinder.getFilterFactory(null);
     }
 
     @AfterClass
-    public static void tearDownAfterClass() throws Exception {
+    public static void tearDownAfterClass() {
         ff = null;
     }
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         finder = new FunctionFinder(new Hints(Hints.FILTER_FACTORY, ff));
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         finder = null;
     }
 
     @Test
-    public void testAllFunctionDescriptions() throws Exception {
+    public void testAllFunctionDescriptions() {
         List<FunctionName> all = finder.getAllFunctionDescriptions();
         assertFalse(all.isEmpty());
         boolean found = false;
@@ -78,7 +78,7 @@ public class FunctionFinderTest {
     }
 
     @Test
-    public void testFindInteropolate() throws Exception {
+    public void testFindInteropolate() {
         function = finder.findFunction("interpolate");
         assertNotNull("interpolate", function);
         assertTrue(function instanceof InterpolateFunction);

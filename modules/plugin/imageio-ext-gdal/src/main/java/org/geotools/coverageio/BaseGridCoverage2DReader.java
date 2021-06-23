@@ -22,9 +22,7 @@ import java.awt.Rectangle;
 import java.awt.geom.AffineTransform;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.channels.FileChannel;
@@ -245,7 +243,7 @@ public abstract class BaseGridCoverage2DReader extends AbstractGridCoverage2DRea
      *     pointing to a file and {@link AccessibleStream}
      */
     private void checkSource(Object input)
-            throws UnsupportedEncodingException, IOException, FileNotFoundException {
+            throws IOException {
 
         // //
         //
@@ -329,7 +327,7 @@ public abstract class BaseGridCoverage2DReader extends AbstractGridCoverage2DRea
      *
      * @param reader an {@link ImageReader} to use for getting the resolution information.
      */
-    private void getResolutionInfo(ImageReader reader) throws IOException, TransformException {
+    private void getResolutionInfo(ImageReader reader) throws IOException {
         // //
         //
         // get the dimension of the high resolution image and compute the
@@ -364,7 +362,7 @@ public abstract class BaseGridCoverage2DReader extends AbstractGridCoverage2DRea
      */
     @Override
     public GridCoverage2D read(GeneralParameterValue[] params)
-            throws IllegalArgumentException, IOException {
+            throws IllegalArgumentException {
 
         // Setup a new coverage request
         final RasterLayerRequest request = new RasterLayerRequest(params, this);

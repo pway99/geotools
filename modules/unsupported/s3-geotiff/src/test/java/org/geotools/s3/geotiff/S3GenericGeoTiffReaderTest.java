@@ -21,7 +21,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import javax.imageio.stream.FileImageInputStream;
 import org.geotools.coverage.grid.GridCoverage2D;
@@ -116,7 +115,7 @@ public class S3GenericGeoTiffReaderTest {
     }
 
     @Test
-    public void testS3GeoTiffFormat() throws MalformedURLException {
+    public void testS3GeoTiffFormat() {
         S3GeoTiffFormat format = new S3GeoTiffFormat();
 
         Assert.assertTrue(format.accepts("s3://bucket/file.tiff"));

@@ -78,7 +78,7 @@ public class OGCDistanceBufferTypeBinding extends AbstractComplexBinding {
     public void initialize(ElementInstance instance, Node node, MutablePicoContainer context) {}
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         DistanceBufferOperator operator = (DistanceBufferOperator) object;
         Object property =
                 OGCUtils.property(operator.getExpression1(), operator.getExpression2(), name);

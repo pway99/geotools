@@ -82,12 +82,12 @@ public class OGCPropertyIsNullTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return factory.isNull(node.getChildValue(Expression.class));
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         PropertyIsNull isNull = (PropertyIsNull) object;
 
         if (OGC.PropertyName.equals(name) && isNull.getExpression() instanceof PropertyName) {

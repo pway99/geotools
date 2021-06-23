@@ -87,7 +87,7 @@ public class OGCPropertyIsLikeTypeBinding extends AbstractComplexBinding {
      */
     @Override
     @SuppressWarnings("unchecked")
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Expression name = null;
         List<Expression> names = node.getChildValues(Expression.class);
         if (names.size() == 2) { // simple pair extract PropertyName
@@ -121,7 +121,7 @@ public class OGCPropertyIsLikeTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         PropertyIsLike isLike = (PropertyIsLike) object;
 
         if (OGC.expression.equals(name) && !(isLike.getExpression() instanceof Literal)) {

@@ -69,7 +69,7 @@ public class DSFinderRepository implements Repository {
         return url;
     }
 
-    private Map<String, Serializable> getMapForShapeFile(URL shapeFileURL) throws IOException {
+    private Map<String, Serializable> getMapForShapeFile(URL shapeFileURL) {
         Map<String, Serializable> result = new HashMap<>();
         result.put(ShapefileDataStoreFactory.URLP.key, shapeFileURL);
         return result;

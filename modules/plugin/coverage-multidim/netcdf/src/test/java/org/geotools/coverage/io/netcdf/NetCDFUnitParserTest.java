@@ -157,7 +157,7 @@ public class NetCDFUnitParserTest {
         }
 
         @Test
-        public void testDU() throws Exception {
+        public void testDU() {
             // could not find a way to make this work with the above test, so doing it another way
             Unit<?> unit = NetCDFUnitFormat.parse("DU");
             assertEquals("(1/m²)*446.2·μmol", unit.toString());

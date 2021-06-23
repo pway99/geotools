@@ -123,7 +123,7 @@ public class GeometryTransformationTest {
     }
 
     @Test
-    public void testOutOfThinAir() throws Exception {
+    public void testOutOfThinAir() {
         // generate a collection with just strings (but one is wkt)
         SimpleFeatureTypeBuilder typeBuilder = new SimpleFeatureTypeBuilder();
         typeBuilder.setName("points");

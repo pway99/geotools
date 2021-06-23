@@ -14,7 +14,6 @@ import static org.junit.Assert.fail;
 import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.HashMap;
@@ -38,7 +37,7 @@ public class CSVDataStoreFactoryTest {
     private URL locationsResource;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         csvDataStoreFactory = new CSVDataStoreFactory();
         locationsResource = TestData.getResource(CSVDataStoreFactoryTest.class, "locations.csv");
         assert locationsResource != null : "Could not find locations.csv resource";
@@ -46,7 +45,7 @@ public class CSVDataStoreFactoryTest {
     }
 
     @Test
-    public void testBasicGetters() throws MalformedURLException {
+    public void testBasicGetters() {
         assertEquals("CSV", csvDataStoreFactory.getDisplayName());
         assertEquals("Comma delimited text file", csvDataStoreFactory.getDescription());
         assertTrue(csvDataStoreFactory.canProcess(locationsResource));
@@ -84,7 +83,7 @@ public class CSVDataStoreFactoryTest {
     }
 
     @Test
-    public void testCreateDataStoreURL() throws MalformedURLException, IOException {
+    public void testCreateDataStoreURL() throws IOException {
         FileDataStore dataStore = csvDataStoreFactory.createDataStore(locationsResource);
         assertNotNull("Failure creating data store", dataStore);
     }

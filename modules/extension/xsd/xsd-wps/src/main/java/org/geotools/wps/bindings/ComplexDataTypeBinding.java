@@ -86,7 +86,7 @@ public class ComplexDataTypeBinding extends AbstractComplexBinding {
     */
     @Override
     @SuppressWarnings("unchecked")
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         ComplexDataType data = factory.createComplexDataType();
 
         if (node.hasAttribute("schema")) {
@@ -107,8 +107,7 @@ public class ComplexDataTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public List<Object[]> getProperties(Object object, XSDElementDeclaration element)
-            throws Exception {
+    public List<Object[]> getProperties(Object object, XSDElementDeclaration element) {
         ComplexDataType complex = (ComplexDataType) object;
         if (!complex.getData().isEmpty() && complex.getData().get(0) instanceof EncoderDelegate) {
             EncoderDelegate delegate = (EncoderDelegate) complex.getData().get(0);

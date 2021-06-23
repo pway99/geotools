@@ -1216,8 +1216,7 @@ public class sldComplexTypes2 {
          */
         @Override
         public Object getValue(
-                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints)
-                throws OperationNotSupportedException {
+                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints) {
             PointSymbolizer symbol =
                     CommonFactoryFinder.getStyleFactory().getDefaultPointSymbolizer();
             // symbol.setGraphic(null);
@@ -1306,8 +1305,7 @@ public class sldComplexTypes2 {
          */
         @Override
         public Object getValue(
-                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints)
-                throws OperationNotSupportedException {
+                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints) {
             PolygonSymbolizer symbol =
                     CommonFactoryFinder.getStyleFactory().getDefaultPolygonSymbolizer();
             // symbol.setGraphic(null);
@@ -1474,8 +1472,7 @@ public class sldComplexTypes2 {
          */
         @Override
         public Object getValue(
-                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints)
-                throws OperationNotSupportedException {
+                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints) {
             RasterSymbolizer symbol =
                     CommonFactoryFinder.getStyleFactory().getDefaultRasterSymbolizer();
             // symbol.setGraphic(null);
@@ -1883,8 +1880,7 @@ public class sldComplexTypes2 {
          */
         @Override
         public Object getValue(
-                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints)
-                throws OperationNotSupportedException {
+                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints) {
             Stroke symbol = CommonFactoryFinder.getStyleFactory().getDefaultStroke();
 
             for (ElementValue elementValue : value) {
@@ -2007,8 +2003,7 @@ public class sldComplexTypes2 {
          */
         @Override
         public Object getValue(
-                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints)
-                throws OperationNotSupportedException, SAXException {
+                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints) {
             StyledLayerDescriptor sld =
                     CommonFactoryFinder.getStyleFactory().createStyledLayerDescriptor();
 
@@ -2111,8 +2106,7 @@ public class sldComplexTypes2 {
          */
         @Override
         public Object getValue(
-                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints)
-                throws OperationNotSupportedException {
+                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints) {
             TextSymbolizer symbol = CommonFactoryFinder.getStyleFactory().createTextSymbolizer();
             symbol.setFill(null);
 
@@ -2220,8 +2214,7 @@ public class sldComplexTypes2 {
          */
         @Override
         public Object getValue(
-                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints)
-                throws OperationNotSupportedException, SAXException {
+                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints) {
             UserLayer sld = new UserLayerImpl();
 
             for (ElementValue elementValue : value) {

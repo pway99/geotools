@@ -1,6 +1,5 @@
 package org.geotools.data.oracle;
 
-import java.io.IOException;
 import org.geotools.jdbc.JDBCTestSetup;
 import org.geotools.jdbc.JDBCTransactionOnlineTest;
 
@@ -12,7 +11,7 @@ public class OracleTransactionOnlineTest extends JDBCTransactionOnlineTest {
     }
 
     @Override
-    public void testConcurrentTransactions() throws IOException {
+    public void testConcurrentTransactions() {
         // Oracle won't pass this one
     }
 }

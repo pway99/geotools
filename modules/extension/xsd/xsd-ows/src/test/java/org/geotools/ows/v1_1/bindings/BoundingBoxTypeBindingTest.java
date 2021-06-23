@@ -32,12 +32,12 @@ import org.w3c.dom.Node;
 
 public class BoundingBoxTypeBindingTest extends OWSTestSupport_1_1 {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(BoundingBoxType.class, binding(OWS.BoundingBoxType).getType());
     }
 
     @Test
-    public void testExecutionMode() throws Exception {
+    public void testExecutionMode() {
         assertEquals(Binding.OVERRIDE, binding(OWS.BoundingBoxType).getExecutionMode());
     }
 
@@ -61,7 +61,7 @@ public class BoundingBoxTypeBindingTest extends OWSTestSupport_1_1 {
     }
 
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         BoundingBoxType bbox = Ows11Factory.eINSTANCE.createBoundingBoxType();
         bbox.setLowerCorner(Arrays.asList(-180.0, -90.0));
         bbox.setUpperCorner(Arrays.asList(180.0, 90.0));

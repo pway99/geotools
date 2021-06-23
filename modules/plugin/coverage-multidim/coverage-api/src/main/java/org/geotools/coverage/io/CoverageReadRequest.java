@@ -39,7 +39,6 @@ import org.opengis.geometry.MismatchedDimensionException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.datum.PixelInCell;
 import org.opengis.referencing.operation.MathTransform2D;
-import org.opengis.referencing.operation.TransformException;
 
 /**
  * Request information from a {@link CoverageSource}.
@@ -120,7 +119,7 @@ public class CoverageReadRequest extends CoverageRequest {
             final Rectangle rasterArea,
             final MathTransform2D gridToWorldTrasform,
             final CoordinateReferenceSystem crs)
-            throws MismatchedDimensionException, TransformException {
+            throws MismatchedDimensionException {
 
         // get input elements
         this.rasterArea = (Rectangle) rasterArea.clone();

@@ -22,7 +22,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -216,8 +215,7 @@ class FootprintUtils {
     static void writeFootprintSummary(
             final File footprintSummaryFile,
             final File indexFile,
-            final Map<String, Geometry> footprintsLocationGeometryMap)
-            throws MalformedURLException {
+            final Map<String, Geometry> footprintsLocationGeometryMap) {
         Utilities.ensureNonNull("footprintSummaryFile", footprintSummaryFile);
         Utilities.ensureNonNull("indexFile", indexFile);
         Utilities.ensureNonNull("footprintsLocationGeometryMap", footprintsLocationGeometryMap);

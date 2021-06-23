@@ -43,7 +43,7 @@ public class OptEdgeTest {
     private OptEdge m_loopB;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         m_nodeA = new OptNode();
         m_nodeA.setDegree(3);
         m_nodeB = new OptNode();

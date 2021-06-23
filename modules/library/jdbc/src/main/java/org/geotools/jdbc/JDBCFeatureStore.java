@@ -168,7 +168,7 @@ public final class JDBCFeatureStore extends ContentFeatureStore {
     }
 
     @Override
-    protected SimpleFeatureType buildFeatureType() throws IOException {
+    protected SimpleFeatureType buildFeatureType() {
         return delegate.buildFeatureType();
     }
 
@@ -213,13 +213,12 @@ public final class JDBCFeatureStore extends ContentFeatureStore {
     }
 
     @Override
-    protected FeatureReader<SimpleFeatureType, SimpleFeature> getReaderInternal(Query query)
-            throws IOException {
+    protected FeatureReader<SimpleFeatureType, SimpleFeature> getReaderInternal(Query query) {
         return delegate.getReaderInternal(query);
     }
 
     @Override
-    protected boolean handleVisitor(Query query, FeatureVisitor visitor) throws IOException {
+    protected boolean handleVisitor(Query query, FeatureVisitor visitor) {
         return delegate.handleVisitor(query, visitor);
     }
 

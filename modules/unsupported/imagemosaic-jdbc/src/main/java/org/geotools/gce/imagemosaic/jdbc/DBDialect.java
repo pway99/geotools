@@ -131,7 +131,7 @@ public abstract class DBDialect {
     }
 
     /** @return the create table statement for the master table */
-    String getCreateMasterStatement() throws Exception {
+    String getCreateMasterStatement() {
         Config config = getConfig();
         String doubleType = getDoubleSQLType();
         String statement = "CREATE TABLE " + config.getMasterTable();
@@ -178,7 +178,7 @@ public abstract class DBDialect {
     }
 
     /** @return the create table statment for a tile table named tableName */
-    String getCreateTileTableStatement(String tableName) throws Exception {
+    String getCreateTileTableStatement(String tableName) {
         String statement = "CREATE TABLE " + tableName;
         statement += ("(" + getConfig().getKeyAttributeNameInTileTable() + " CHAR(64) NOT NULL ");
         statement += ("," + getConfig().getBlobAttributeNameInTileTable() + " " + getBLOBSQLType());
@@ -193,7 +193,7 @@ public abstract class DBDialect {
     }
 
     /** @return the sql create table statement for a spatial table */
-    protected String getCreateSpatialTableStatement(String tableName) throws Exception {
+    protected String getCreateSpatialTableStatement(String tableName) {
         String statement = "CREATE TABLE " + tableName;
         statement +=
                 (" ( "
@@ -214,7 +214,7 @@ public abstract class DBDialect {
     }
 
     /** @return the sql create table statement for a combined spatial/tile table named tableName */
-    protected String getCreateSpatialTableStatementJoined(String tableName) throws Exception {
+    protected String getCreateSpatialTableStatementJoined(String tableName) {
         String statement = "CREATE TABLE " + tableName;
         statement +=
                 (" ( "

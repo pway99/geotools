@@ -9,7 +9,7 @@ import org.junit.Test;
 public class ExceptionReportTest {
 
     @Test
-    public void testEncodeException() throws Exception {
+    public void testEncodeException() {
         ExceptionType e = Ows20Factory.eINSTANCE.createExceptionType();
         e.setExceptionCode("testCode");
         e.setLocator("testLocator");

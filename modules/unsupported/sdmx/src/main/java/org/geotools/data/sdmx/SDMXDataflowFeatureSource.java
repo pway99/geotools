@@ -146,7 +146,7 @@ public class SDMXDataflowFeatureSource extends SDMXFeatureSource {
      * @param query GeoTools query to transform into SDMX constraints
      * @return The SDMX expression
      */
-    public String buildConstraints(Query query) throws SdmxException {
+    public String buildConstraints(Query query) {
 
         // Check tha MEASUREs are not in there, Add "All" for the MEASURE dimension
         Map<String, String> expressions;
@@ -189,7 +189,7 @@ public class SDMXDataflowFeatureSource extends SDMXFeatureSource {
      * @param query GeoTools query to transform into SDMX constraints
      * @return The start and end periods of the time interval
      */
-    public ArrayList<String> getTimeInterval(Query query) throws SdmxException {
+    public ArrayList<String> getTimeInterval(Query query) {
 
         Map<String, String> expressions;
         ArrayList<String> constraints = new ArrayList<String>();

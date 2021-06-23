@@ -40,7 +40,7 @@ public class ArcGISRestFeatureReaderTest {
     String json;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
         builder.setName("jsonfeature");
         builder.add("vint", Integer.class);

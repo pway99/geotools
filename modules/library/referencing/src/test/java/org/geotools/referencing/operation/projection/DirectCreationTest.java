@@ -269,7 +269,7 @@ public final class DirectCreationTest {
 
     /** Some tests for the Oblique Mercator Projection. */
     @Test
-    public void testObliqueMercator() throws FactoryException, TransformException {
+    public void testObliqueMercator() throws FactoryException {
         if (VERBOSE) {
             printParameters("Oblique Mercator");
         }

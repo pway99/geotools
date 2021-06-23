@@ -81,7 +81,7 @@ public class FilterTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // &lt;xsd:element ref="ogc:spatialOps"/&gt;
         // &lt;xsd:element ref="ogc:comparisonOps"/&gt;
         // &lt;xsd:element ref="ogc:logicOps"/&gt;
@@ -105,7 +105,7 @@ public class FilterTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         return FilterParsingUtils.Filter_getProperty(object, name);
     }
 }

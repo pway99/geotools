@@ -170,7 +170,7 @@ public class GrassBinaryImageReader extends ImageReader {
     }
 
     @Override
-    public int getNumImages(final boolean allowSearch) throws IOException {
+    public int getNumImages(final boolean allowSearch) {
         return imagesMap.size();
     }
 
@@ -190,7 +190,7 @@ public class GrassBinaryImageReader extends ImageReader {
     }
 
     @Override
-    public IIOMetadata getStreamMetadata() throws IOException {
+    public IIOMetadata getStreamMetadata() {
         // grass raster data do not support stream metadata.
         return null;
     }

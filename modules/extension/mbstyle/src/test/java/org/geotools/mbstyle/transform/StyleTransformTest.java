@@ -32,7 +32,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.xml.transform.TransformerException;
 import org.geotools.TestData;
 import org.geotools.data.property.PropertyDataStore;
 import org.geotools.data.simple.SimpleFeatureIterator;
@@ -316,7 +315,7 @@ public class StyleTransformTest {
 
     @Test
     public void testLineGapStopWidth()
-            throws IOException, ParseException, TransformerException, CQLException {
+            throws IOException, ParseException, CQLException {
         JSONObject jsonObject = parseTestStyle("lineStyleGapStopsTest.json");
 
         // Find the LineMBLayer and assert it contains the correct FeatureTypeStyle.
@@ -693,7 +692,7 @@ public class StyleTransformTest {
 
     @Test
     public void testSymbolTextIgnorePlacementTrue()
-            throws IOException, ParseException, TransformerException {
+            throws IOException, ParseException {
         JSONObject jsonObject = parseTestStyle("symbolStyleTest3.json");
         JSONArray jsonLayers = (JSONArray) jsonObject.get("layers");
         JSONObject jsonLayer = (JSONObject) jsonLayers.get(0);

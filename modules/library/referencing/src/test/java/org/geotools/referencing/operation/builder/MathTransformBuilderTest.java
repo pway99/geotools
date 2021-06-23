@@ -106,7 +106,7 @@ public final class MathTransformBuilderTest {
      * @param pts MappedPositions of source and target values.
      */
     private void transformTest(MathTransform mt, List<MappedPosition> pts)
-            throws FactoryException, TransformException {
+            throws TransformException {
         double[] points = new double[pts.size() * 2];
         double[] ptCalculated = new double[pts.size() * 2];
         for (int i = 0; i < pts.size(); i++) {
@@ -152,7 +152,7 @@ public final class MathTransformBuilderTest {
 
     /** Test that all Matrixes are filled properly. */
     @Test
-    public void testLSMCalculation() throws FactoryException, TransformException {
+    public void testLSMCalculation() throws FactoryException {
         List<MappedPosition> pts = generateCoords(15, 3121123);
         LSMTester buildTester = new LSMTester(pts);
         buildTester.includeWeights(true);
@@ -192,7 +192,7 @@ public final class MathTransformBuilderTest {
     }
     /** Test for MismatchedSizeException. */
     @Test(expected = IllegalArgumentException.class)
-    public void testMismatchedSizeException() throws TransformException {
+    public void testMismatchedSizeException() {
         // The exception should be thrown when the number of points is less than necessary
         List<MappedPosition> pts = generateCoords(2, 2453655);
         new AffineTransformBuilder(pts);

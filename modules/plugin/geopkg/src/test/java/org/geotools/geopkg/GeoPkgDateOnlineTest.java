@@ -15,5 +15,5 @@ public class GeoPkgDateOnlineTest extends JDBCDateOnlineTest {
     // while the test is running, but for the life of me I cannot figure out why
     @Override
     @Ignore
-    public void testFiltersByDate() throws Exception {}
+    public void testFiltersByDate() {}
 }

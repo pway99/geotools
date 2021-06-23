@@ -29,7 +29,7 @@ public class OptNodeTest {
     private Edge m_otherEdge;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         m_node = new OptNode();
         m_otherNode = new OptNode();
 

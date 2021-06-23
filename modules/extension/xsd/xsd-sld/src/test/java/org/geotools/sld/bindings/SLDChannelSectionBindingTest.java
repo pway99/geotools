@@ -26,7 +26,7 @@ import org.junit.Test;
 public class SLDChannelSectionBindingTest extends SLDTestSupport {
 
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(
                 ChannelSelection.class, new SLDChannelSelectionBinding(styleFactory).getType());
     }

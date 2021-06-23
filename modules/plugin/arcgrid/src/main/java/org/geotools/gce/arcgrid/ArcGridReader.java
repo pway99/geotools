@@ -28,7 +28,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.util.HashMap;
@@ -193,7 +192,7 @@ public final class ArcGridReader extends AbstractGridCoverage2DReader
      * @param hints Hints to be used by this reader throughout his life.
      */
     private void checkSource(Object input, final Hints hints)
-            throws UnsupportedEncodingException, DataSourceException, IOException,
+            throws DataSourceException, IOException,
                     FileNotFoundException {
 
         closeMe = true;
@@ -292,7 +291,7 @@ public final class ArcGridReader extends AbstractGridCoverage2DReader
      *
      * @param reader an {@link ImageReader} to use for getting the resolution information.
      */
-    private void getResolutionInfo(ImageReader reader) throws IOException, TransformException {
+    private void getResolutionInfo(ImageReader reader) throws IOException {
 
         // //
         //
@@ -335,7 +334,7 @@ public final class ArcGridReader extends AbstractGridCoverage2DReader
     @Override
     @SuppressWarnings("unchecked")
     public GridCoverage2D read(GeneralParameterValue[] params)
-            throws IllegalArgumentException, IOException {
+            throws IllegalArgumentException {
         GeneralEnvelope readEnvelope = null;
         Rectangle requestedDim = null;
         OverviewPolicy overviewPolicy = null;

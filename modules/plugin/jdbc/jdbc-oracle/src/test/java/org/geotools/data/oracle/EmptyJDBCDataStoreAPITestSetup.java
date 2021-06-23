@@ -11,23 +11,23 @@ public class EmptyJDBCDataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropRoadTable() throws Exception {}
+    protected void dropRoadTable() {}
 
     @Override
-    protected void dropRiverTable() throws Exception {}
+    protected void dropRiverTable() {}
 
     @Override
-    protected void dropLakeTable() throws Exception {}
+    protected void dropLakeTable() {}
 
     @Override
-    protected void dropBuildingTable() throws Exception {}
+    protected void dropBuildingTable() {}
 
     @Override
-    protected void createRoadTable() throws Exception {}
+    protected void createRoadTable() {}
 
     @Override
-    protected void createRiverTable() throws Exception {}
+    protected void createRiverTable() {}
 
     @Override
-    protected void createLakeTable() throws Exception {}
+    protected void createLakeTable() {}
 }

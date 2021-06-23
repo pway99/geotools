@@ -617,7 +617,7 @@ public class FeatureTransformer extends TransformerBase {
             }
         }
 
-        public void handleFeatureIterator(SimpleFeatureIterator iterator) throws IOException {
+        public void handleFeatureIterator(SimpleFeatureIterator iterator) {
             try {
                 while (iterator.hasNext() && running) {
                     SimpleFeature f = iterator.next();

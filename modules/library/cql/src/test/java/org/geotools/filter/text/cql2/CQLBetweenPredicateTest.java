@@ -76,7 +76,7 @@ public class CQLBetweenPredicateTest {
 
     /** test for between predicate with compound attribute */
     @Test
-    public void compoundAttributeInBetweenPredicate() throws Exception {
+    public void compoundAttributeInBetweenPredicate() {
 
         // test compound attribute gmd:aa:bb.gmd:cc.gmd:dd
         final String prop = "gmd:aa:bb.gmd:cc.gmd:dd";
@@ -93,8 +93,7 @@ public class CQLBetweenPredicateTest {
     }
 
     /** Execute the test with the provided sample */
-    protected void testBetweenPredicate(final String samplePredicate, Filter expected)
-            throws Exception {
+    protected void testBetweenPredicate(final String samplePredicate, Filter expected) {
 
         Filter actual = CompilerUtil.parseFilter(this.language, samplePredicate);
 

@@ -361,8 +361,7 @@ class RasterLayerResponse {
      *     space.
      * @return a {@link GridCoverage}
      */
-    protected GridCoverage createCoverageFromImage(PlanarImage image, MathTransform raster2Model)
-            throws IOException {
+    protected GridCoverage createCoverageFromImage(PlanarImage image, MathTransform raster2Model) {
         // creating bands
         final SampleModel sm = image.getSampleModel();
         final ColorModel cm = image.getColorModel();

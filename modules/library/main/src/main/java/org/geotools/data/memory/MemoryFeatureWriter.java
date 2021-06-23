@@ -44,7 +44,7 @@ public class MemoryFeatureWriter implements FeatureWriter<SimpleFeatureType, Sim
     SimpleFeature live = null;
     SimpleFeature current = null; // current Feature returned to user
 
-    public MemoryFeatureWriter(MemoryState state, Query query) throws IOException {
+    public MemoryFeatureWriter(MemoryState state, Query query) {
         this.state = state;
         this.typeName = state.getEntry().getName();
         this.featureType = state.getFeatureType();

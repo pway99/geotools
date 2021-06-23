@@ -99,7 +99,7 @@ public class _DataBinding extends AbstractComplexEMFBinding {
     }
 
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         DataType complex = (DataType) object;
         if (!complex.getMixed().isEmpty()
                 && complex.getMixed().get(0) != null

@@ -83,19 +83,18 @@ public class GMLGeometryAssociationTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // TODO: xlink and remoteSchema attributes, hard to do because of streaming
         return node.getChildValue(Geometry.class);
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         return GML2EncodingUtils.GeometryPropertyType_getProperty((Geometry) object, name);
     }
 
     @Override
-    public List<Object[]> getProperties(Object object, XSDElementDeclaration element)
-            throws Exception {
+    public List<Object[]> getProperties(Object object, XSDElementDeclaration element) {
         return GML2EncodingUtils.GeometryPropertyType_getProperties((Geometry) object);
     }
 }

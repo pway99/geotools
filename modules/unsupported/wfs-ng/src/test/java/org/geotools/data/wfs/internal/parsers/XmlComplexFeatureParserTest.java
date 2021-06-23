@@ -77,7 +77,7 @@ public class XmlComplexFeatureParserTest {
     }
 
     @Test
-    public void getNumberOfFeatures_WFSResponseWithTwoFeatures_returns2() throws IOException {
+    public void getNumberOfFeatures_WFSResponseWithTwoFeatures_returns2() {
         // Arrange
         XmlComplexFeatureParser mineParser = getParser("wfs_response_two_mines.xml");
 

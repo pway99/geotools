@@ -36,7 +36,7 @@ public class QNameConverterFactory implements ConverterFactory {
                 return new Converter() {
 
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         QName qname = (QName) source;
                         if (qname.getPrefix() == null || "".equals(qname.getPrefix())) {
                             return target.cast(qname.getLocalPart());

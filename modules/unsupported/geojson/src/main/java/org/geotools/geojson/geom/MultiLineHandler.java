@@ -16,7 +16,6 @@
  */
 package org.geotools.geojson.geom;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.parser.ParseException;
@@ -35,7 +34,7 @@ public class MultiLineHandler extends GeometryHandlerBase<MultiLineString> {
     }
 
     @Override
-    public boolean startObjectEntry(String key) throws ParseException, IOException {
+    public boolean startObjectEntry(String key) {
         if ("coordinates".equals(key)) {
             lines = new ArrayList<>();
         }
@@ -43,7 +42,7 @@ public class MultiLineHandler extends GeometryHandlerBase<MultiLineString> {
     }
 
     @Override
-    public boolean startArray() throws ParseException, IOException {
+    public boolean startArray() {
         if (coordinates == null) {
             coordinates = new ArrayList<>();
         } else if (ordinates == null) {
@@ -53,7 +52,7 @@ public class MultiLineHandler extends GeometryHandlerBase<MultiLineString> {
     }
 
     @Override
-    public boolean endArray() throws ParseException, IOException {
+    public boolean endArray() throws ParseException {
         if (ordinates != null) {
             coordinates.add(coordinate(ordinates));
             ordinates = null;
@@ -66,7 +65,7 @@ public class MultiLineHandler extends GeometryHandlerBase<MultiLineString> {
     }
 
     @Override
-    public boolean endObject() throws ParseException, IOException {
+    public boolean endObject() {
         if (lines != null) {
             LineString[] lineStrings = new LineString[lines.size()];
             for (int i = 0; i < lines.size(); i++) {

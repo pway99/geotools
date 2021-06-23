@@ -39,7 +39,7 @@ public class GeometryCollectionHandler extends DelegatingHandler<GeometryCollect
     }
 
     @Override
-    public boolean startObject() throws ParseException, IOException {
+    public boolean startObject() {
         if (geoms != null) {
             // means start of a member geometry object
             delegate = UNINITIALIZED;
@@ -85,7 +85,7 @@ public class GeometryCollectionHandler extends DelegatingHandler<GeometryCollect
     }
 
     @Override
-    public boolean endObjectEntry() throws ParseException, IOException {
+    public boolean endObjectEntry() {
         if (delegateClass != null) {
             delegate = createDelegate(delegateClass, new Object[] {factory});
             delegateClass = null;

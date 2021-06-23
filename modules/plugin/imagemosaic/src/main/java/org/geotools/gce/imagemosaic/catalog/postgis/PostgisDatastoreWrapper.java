@@ -16,7 +16,6 @@
  */
 package org.geotools.gce.imagemosaic.catalog.postgis;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 import org.geotools.data.DataStore;
@@ -62,14 +61,13 @@ public class PostgisDatastoreWrapper extends DataStoreWrapper {
     }
 
     @Override
-    protected FeatureTypeMapper getFeatureTypeMapper(SimpleFeatureType featureType)
-            throws Exception {
+    protected FeatureTypeMapper getFeatureTypeMapper(SimpleFeatureType featureType) {
         return new PostgisFeatureTypeMapper(featureType);
     }
 
     @Override
     protected SimpleFeatureSource transformFeatureStore(
-            SimpleFeatureStore store, FeatureTypeMapper mapper) throws IOException {
+            SimpleFeatureStore store, FeatureTypeMapper mapper) {
         SimpleFeatureSource transformedSource = mapper.getSimpleFeatureSource();
         if (transformedSource != null) {
             return transformedSource;

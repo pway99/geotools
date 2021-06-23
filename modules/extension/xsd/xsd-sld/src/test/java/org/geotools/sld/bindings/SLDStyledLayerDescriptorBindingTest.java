@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class SLDStyledLayerDescriptorBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(
                 StyledLayerDescriptor.class, new SLDStyledLayerDescriptorBinding(null).getType());
     }

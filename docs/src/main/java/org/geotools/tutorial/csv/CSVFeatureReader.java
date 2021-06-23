@@ -134,7 +134,7 @@ public class CSVFeatureReader implements FeatureReader<SimpleFeatureType, Simple
 
     // close start
     /** Close the FeatureReader when not in use. */
-    public void close() throws IOException {
+    public void close() {
         if (reader != null) {
             reader.close();
             reader = null;

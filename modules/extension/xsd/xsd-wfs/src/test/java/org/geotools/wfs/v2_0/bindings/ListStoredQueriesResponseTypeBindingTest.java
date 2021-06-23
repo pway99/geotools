@@ -17,7 +17,7 @@ import org.w3c.dom.Element;
 public class ListStoredQueriesResponseTypeBindingTest extends WFSTestSupport {
 
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         Wfs20Factory factory = Wfs20Factory.eINSTANCE;
 
         StoredQueryListItemType sqli = factory.createStoredQueryListItemType();

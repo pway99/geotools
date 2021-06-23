@@ -95,7 +95,7 @@ public class FormatDateBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         // &lt;xsd:element ref="se:DateValue"/&gt;
         Expression date = (Expression) node.getChildValue("DateValue");

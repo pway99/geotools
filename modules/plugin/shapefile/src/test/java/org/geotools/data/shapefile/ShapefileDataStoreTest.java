@@ -25,7 +25,6 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -1058,7 +1057,7 @@ public class ShapefileDataStoreTest extends TestCaseSupport {
      *
      * @return SimpleFeatureCollection For use in testing.
      */
-    private SimpleFeatureCollection createFeatureCollection() throws Exception {
+    private SimpleFeatureCollection createFeatureCollection() {
         SimpleFeatureType featureType = createExampleSchema();
         SimpleFeatureBuilder build = new SimpleFeatureBuilder(featureType);
 
@@ -2067,7 +2066,7 @@ public class ShapefileDataStoreTest extends TestCaseSupport {
     }
 
     @Test
-    public void testTypeNameSpecialCharacters() throws FileNotFoundException {
+    public void testTypeNameSpecialCharacters() {
         URL url = getClass().getResource(SPECIAL_CHAR_NAME);
         store = new ShapefileDataStore(url);
         Name name = store.getTypeName();

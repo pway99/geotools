@@ -84,7 +84,7 @@ public class FilterExamples {
      * @return Selected Features
      */
     // grabSelectedIds start
-    SimpleFeatureCollection grabSelectedIds(Set<String> selection) throws IOException {
+    SimpleFeatureCollection grabSelectedIds(Set<String> selection) {
         FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
 
         Set<FeatureId> fids = new HashSet<>();
@@ -103,7 +103,7 @@ public class FilterExamples {
      * <p>CQL is very good for one off queries like this:
      */
     // grabSelectedName start
-    SimpleFeatureCollection grabSelectedName(String name) throws Exception {
+    SimpleFeatureCollection grabSelectedName(String name) {
         return featureSource.getFeatures(CQL.toFilter("Name = '" + name + "'"));
     }
 
@@ -114,7 +114,7 @@ public class FilterExamples {
      * (rather than CQL):
      */
     // grabSelectedNameIgnoreCase start
-    SimpleFeatureCollection grabSelectedNameIgnoreCase(String name) throws Exception {
+    SimpleFeatureCollection grabSelectedNameIgnoreCase(String name) {
         FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
 
         Filter filter = ff.equal(ff.property("Name"), ff.literal(name), false);
@@ -130,7 +130,7 @@ public class FilterExamples {
      * case we are doing a check for an attribute called "Name".
      */
     // grabSelectedNames start
-    SimpleFeatureCollection grabSelectedNames(Set<String> selectedNames) throws Exception {
+    SimpleFeatureCollection grabSelectedNames(Set<String> selectedNames) {
         FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
 
         List<Filter> match = new ArrayList<>();
@@ -150,8 +150,7 @@ public class FilterExamples {
      * <p>You can make a bounding box query as shown below:
      */
     // grabFeaturesInBoundingBox start
-    SimpleFeatureCollection grabFeaturesInBoundingBox(double x1, double y1, double x2, double y2)
-            throws Exception {
+    SimpleFeatureCollection grabFeaturesInBoundingBox(double x1, double y1, double x2, double y2) {
         FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
         FeatureType schema = featureSource.getSchema();
 
@@ -169,8 +168,7 @@ public class FilterExamples {
     // grabFeaturesInBoundingBox end
 
     // grabFeaturesInPolygon start
-    SimpleFeatureCollection grabFeaturesInPolygon(double x1, double y1, double x2, double y2)
-            throws Exception {
+    SimpleFeatureCollection grabFeaturesInPolygon(double x1, double y1, double x2, double y2) {
         FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
         FeatureType schema = featureSource.getSchema();
         CoordinateReferenceSystem worldCRS = DefaultGeographicCRS.WGS84;
@@ -198,7 +196,7 @@ public class FilterExamples {
     // grabFeaturesInPolygon end
 
     // grabFeaturesOnScreen start
-    SimpleFeatureCollection grabFeaturesOnScreen(ReferencedEnvelope screen) throws Exception {
+    SimpleFeatureCollection grabFeaturesOnScreen(ReferencedEnvelope screen) {
         FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
         FeatureType schema = featureSource.getSchema();
 
@@ -230,7 +228,7 @@ public class FilterExamples {
     private JMapFrame mapFrame;
 
     // click1 start
-    SimpleFeatureCollection click1(MapMouseEvent ev) throws Exception {
+    SimpleFeatureCollection click1(MapMouseEvent ev) {
         // Construct a 3x3 pixel rectangle centred on the mouse click position
         java.awt.Point screenPos = ev.getPoint();
 
@@ -264,7 +262,7 @@ public class FilterExamples {
     // click1 end
 
     // distance start
-    SimpleFeatureCollection distance(MapMouseEvent ev) throws Exception {
+    SimpleFeatureCollection distance(MapMouseEvent ev) {
         DirectPosition2D worldPosition = ev.getWorldPos();
 
         // get the unit of measurement

@@ -122,7 +122,7 @@ public class LabelObstacleTest {
         }
     }
 
-    Style style(String name) throws Exception {
+    Style style(String name) {
         // return RendererBaseTest.loadStyle(this, "test-data/obstacles/" + name + ".sld");
         SLDParser p =
                 new SLDParser(

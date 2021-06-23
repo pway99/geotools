@@ -74,7 +74,7 @@ public class SEExampleTest extends SETestSupport {
 
     @Override
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         SimpleFeatureTypeBuilder tb = new SimpleFeatureTypeBuilder();
         tb.setName("test");
         tb.add("hospitalName", String.class);

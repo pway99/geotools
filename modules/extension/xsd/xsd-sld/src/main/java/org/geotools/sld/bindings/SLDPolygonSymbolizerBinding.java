@@ -115,7 +115,7 @@ public class SLDPolygonSymbolizerBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         PolygonSymbolizer ps = styleFactory.createPolygonSymbolizer();
 
         // &lt;xsd:element ref="sld:Geometry" minOccurs="0"/&gt;

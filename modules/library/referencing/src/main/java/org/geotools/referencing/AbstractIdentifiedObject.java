@@ -19,7 +19,6 @@
  */
 package org.geotools.referencing;
 
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Collection;
@@ -129,7 +128,7 @@ public class AbstractIdentifiedObject extends Formattable
         }
 
         /** Canonicalizes to the singleton on deserialization. */
-        protected Object readResolve() throws ObjectStreamException {
+        protected Object readResolve() {
             return NAME_COMPARATOR;
         }
     }
@@ -170,7 +169,7 @@ public class AbstractIdentifiedObject extends Formattable
         }
 
         /** Canonicalizes to the singleton on deserialization. */
-        protected Object readResolve() throws ObjectStreamException {
+        protected Object readResolve() {
             return IDENTIFIER_COMPARATOR;
         }
     }
@@ -194,7 +193,7 @@ public class AbstractIdentifiedObject extends Formattable
         }
 
         /** Canonicalizes to the singleton on deserialization. */
-        protected Object readResolve() throws ObjectStreamException {
+        protected Object readResolve() {
             return REMARKS_COMPARATOR;
         }
     }

@@ -28,7 +28,6 @@ import org.geotools.util.factory.Hints;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.ConcatenatedOperation;
 import org.opengis.referencing.operation.CoordinateOperation;
@@ -51,7 +50,7 @@ public class LongitudeFirstFactoryOverrideTest {
 
     /** @throws java.lang.Exception */
     @BeforeClass
-    public static void setUpClass() throws Exception {
+    public static void setUpClass() {
         // force longitude first mode
         System.setProperty("org.geotools.referencing.forceXY", "true");
 
@@ -105,7 +104,7 @@ public class LongitudeFirstFactoryOverrideTest {
 
     /** Check we are actually using the EPSG database for anything not in override */
     @Test
-    public void testFallbackOnEPSGDatabase() throws Exception {
+    public void testFallbackOnEPSGDatabase() {
         // Test CRSs
         CoordinateReferenceSystem source = CRS.decode("EPSG:3003");
         CoordinateReferenceSystem target = CRS.decode("EPSG:4326");
@@ -117,7 +116,7 @@ public class LongitudeFirstFactoryOverrideTest {
     }
 
     @Test
-    public void testCreateFromCRSCodesWGS84() throws FactoryException {
+    public void testCreateFromCRSCodesWGS84() {
         CoordinateReferenceSystem crs5681 = CRS.decode("EPSG:5681");
         // Getting a transformation from a EPSG code to the WGS84 constant, should still
         // pick up the transformation override

@@ -28,7 +28,7 @@ public class PostgisGeometryOnlineTest extends JDBCGeometryOnlineTest {
     }
 
     @Override
-    public void testLinearRing() throws Exception {
+    public void testLinearRing() {
         // linear ring type is not a supported type in postgis
     }
 }

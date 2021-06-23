@@ -55,7 +55,7 @@ public class CSVDataStore extends ContentDataStore {
     // reader end
 
     // createTypeNames start
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         String name = file.getName();
         name = name.substring(0, name.lastIndexOf('.'));
 
@@ -66,7 +66,7 @@ public class CSVDataStore extends ContentDataStore {
 
     // createFeatureSource start
     @Override
-    protected ContentFeatureSource createFeatureSource(ContentEntry entry) throws IOException {
+    protected ContentFeatureSource createFeatureSource(ContentEntry entry) {
         return new CSVFeatureSource(entry, Query.ALL);
     }
     // createFeatureSource end

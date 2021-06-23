@@ -129,7 +129,7 @@ public class SelectionLab {
      * map frame to display the shapefile and adds a custom feature selection tool to the toolbar of
      * the map frame.
      */
-    public void displayShapefile(File file) throws Exception {
+    public void displayShapefile(File file) {
         FileDataStore store = FileDataStoreFinder.getDataStore(file);
         featureSource = store.getFeatureSource();
         setGeometry();

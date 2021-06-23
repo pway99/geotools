@@ -300,8 +300,7 @@ public class Utilities {
      * @return a WGS84 envelope as {@link Envelope2D} in case of request for a
      *         2D WGS84 Envelope, or a {@link GeneralEnvelope} otherwise.
      */
-    public static Envelope getEnvelopeAsWGS84(final Envelope envelope, boolean get2D)
-            throws FactoryException, TransformException {
+    public static Envelope getEnvelopeAsWGS84(final Envelope envelope, boolean get2D) {
         if (envelope == null) throw new IllegalArgumentException("Specified envelope is null");
         Envelope requestedWGS84;
         final CoordinateReferenceSystem crs = envelope.getCoordinateReferenceSystem();
@@ -332,8 +331,7 @@ public class Utilities {
      * @param requestedEnvelope the {@code GeneralEnvelope} to be returned as 2D.
      * @return the 2D requested envelope
      */
-    public static GeneralEnvelope getRequestedEnvelope2D(GeneralEnvelope requestedEnvelope)
-            throws FactoryException, TransformException {
+    public static GeneralEnvelope getRequestedEnvelope2D(GeneralEnvelope requestedEnvelope) {
         if (requestedEnvelope == null)
             throw new IllegalArgumentException("requested envelope is null");
         GeneralEnvelope requestedEnvelope2D = null;
@@ -416,7 +414,7 @@ public class Utilities {
             Rectangle requestedDim,
             MathTransform2D readGridToWorld,
             final Envelope2D wgs84BaseEnvelope2D)
-            throws TransformException, FactoryException {
+            throws TransformException {
 
         if (baseEnvelope2D == null
                 || spatialReferenceSystem2D == null
@@ -657,8 +655,7 @@ public class Utilities {
             MathTransform raster2Model,
             final CoordinateReferenceSystem spatialReferenceSystem2D,
             GeneralEnvelope coverageEnvelope2D,
-            final GridSampleDimension[] sampleDimensions)
-            throws IOException {
+            final GridSampleDimension[] sampleDimensions) {
         final GridSampleDimension[] bands = sampleDimensions;
 
         GridCoverage2D gridCoverage;
@@ -767,8 +764,7 @@ public class Utilities {
             Rectangle requestedDim,
             double[] highestRes,
             GridEnvelope gridRange,
-            PixelInCell pixelInCell)
-            throws IOException, TransformException {
+            PixelInCell pixelInCell) {
         double[] requestedRes = null;
 
         // //
@@ -1018,8 +1014,7 @@ public class Utilities {
             final GridCoverageFactory coverageFactory,
             final MathTransform raster2Model,
             final CoordinateReferenceSystem coordinateReferenceSystem,
-            final GeneralEnvelope envelope2D)
-            throws IOException {
+            final GeneralEnvelope envelope2D) {
 
         if (isEmptyRequest) {
             return null;

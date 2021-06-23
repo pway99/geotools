@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class SLDGraphicFillBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(Graphic.class, new SLDGraphicFillBinding().getType());
     }
 

@@ -93,7 +93,7 @@ public final class SoftValueHashMapTest {
      * mind than some elements in {@code softMap} may disappear at any time.
      */
     @Test
-    public void testSoftReferences() throws InterruptedException {
+    public void testSoftReferences() {
         final Random random = getRandom();
         final SoftValueHashMap<UUID, UUID> softMap = new SoftValueHashMap<>();
         final HashMap<UUID, UUID> strongMap = new HashMap<>();

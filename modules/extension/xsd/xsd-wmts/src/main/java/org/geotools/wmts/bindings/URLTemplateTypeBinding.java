@@ -110,7 +110,7 @@ public class URLTemplateTypeBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         URLTemplateType template = factory.createURLTemplateType();
         template.setFormat((String) node.getAttributeValue("format"));
         // TODO: find resourceType binding?

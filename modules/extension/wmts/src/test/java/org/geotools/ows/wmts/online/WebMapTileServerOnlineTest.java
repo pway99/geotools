@@ -41,7 +41,6 @@ import org.geotools.test.OnlineTestCase;
 import org.geotools.tile.Tile;
 import org.junit.Test;
 import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 /**
@@ -196,7 +195,7 @@ public class WebMapTileServerOnlineTest extends OnlineTestCase {
     }
 
     @Test
-    public void testCRS() throws NoSuchAuthorityCodeException, FactoryException {
+    public void testCRS() {
         CoordinateReferenceSystem crs = service.getProjectedTileCrs();
         assertEquals(
                 "Mismatching CRS in " + service.getName(), expectedCrs.getName(), crs.getName());

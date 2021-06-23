@@ -126,7 +126,7 @@ public class ImageLab {
      * @param rasterFile the GeoTIFF file
      * @param shpFile the Shapefile
      */
-    private void displayLayers(File rasterFile, File shpFile) throws Exception {
+    private void displayLayers(File rasterFile, File shpFile) {
         AbstractGridFormat format = GridFormatFinder.findFormat(rasterFile);
         // this is a bit hacky but does make more geotiffs work
         Hints hints = new Hints();
@@ -170,7 +170,7 @@ public class ImageLab {
 
         menu.add(
                 new SafeAction("Grayscale display") {
-                    public void action(ActionEvent e) throws Throwable {
+                    public void action(ActionEvent e) {
                         Style style = createGreyscaleStyle();
                         if (style != null) {
                             ((StyleLayer) map.layers().get(0)).setStyle(style);
@@ -181,7 +181,7 @@ public class ImageLab {
 
         menu.add(
                 new SafeAction("RGB display") {
-                    public void action(ActionEvent e) throws Throwable {
+                    public void action(ActionEvent e) {
                         Style style = createRGBStyle();
                         if (style != null) {
                             ((StyleLayer) map.layers().get(0)).setStyle(style);

@@ -22,7 +22,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.awt.Rectangle;
 import java.awt.image.RenderedImage;
-import java.io.IOException;
 import org.geotools.coverage.grid.GridCoverage2D;
 import org.geotools.coverage.grid.GridEnvelope2D;
 import org.geotools.coverage.grid.GridGeometry2D;
@@ -35,7 +34,7 @@ import org.opengis.parameter.GeneralParameterValue;
 public class TPKReaderTest {
 
     @Test
-    public void testZoomlevel_0() throws IOException {
+    public void testZoomlevel_0() {
         TPKReader reader = new TPKReader(getClass().getResource("sample_v2.tpkx"), null);
 
         GeneralParameterValue[] parameters = new GeneralParameterValue[1];
@@ -55,7 +54,7 @@ public class TPKReaderTest {
     }
 
     @Test
-    public void testZoomlevel_1() throws IOException {
+    public void testZoomlevel_1() {
         TPKReader reader = new TPKReader(getClass().getResource("sample_v2.tpkx"), null);
 
         GeneralParameterValue[] parameters = new GeneralParameterValue[1];
@@ -75,7 +74,7 @@ public class TPKReaderTest {
     }
 
     @Test
-    public void testZoomlevel_2() throws IOException {
+    public void testZoomlevel_2() {
         TPKReader reader = new TPKReader(getClass().getResource("sample_v2.tpkx"), null);
 
         GeneralParameterValue[] parameters = new GeneralParameterValue[1];

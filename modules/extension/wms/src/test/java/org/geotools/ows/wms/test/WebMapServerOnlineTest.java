@@ -189,7 +189,7 @@ public class WebMapServerOnlineTest {
     }
 
     @Test
-    public void testIssueGetFeatureInfoRequest() throws Exception {
+    public void testIssueGetFeatureInfoRequest() {
         /* TODO fix this
 
         //        http://dev1.dmsolutions.ca/cgi-bin/mswms_gmap?LAYERS=DEMO&FORMAT=image/png&TRANSPARENT=TRUE&HEIGHT=213&REQUEST=GetMap&BBOX=-172.367,35.667300000000004,-11.562400000000014,83.8293&WIDTH=710&STYLES=&SRS=EPSG:4326&VERSION=1.1.1

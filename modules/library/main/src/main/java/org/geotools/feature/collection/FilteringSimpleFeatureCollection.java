@@ -16,7 +16,6 @@
  */
 package org.geotools.feature.collection;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -77,7 +76,7 @@ public class FilteringSimpleFeatureCollection extends DecoratingSimpleFeatureCol
     }
 
     @Override
-    public void accepts(FeatureVisitor visitor, ProgressListener progress) throws IOException {
+    public void accepts(FeatureVisitor visitor, ProgressListener progress) {
         // the delegate might have an optimized way to handle filters and still apply a
         // visitor (e.g., ContentFeatureCollection), but avoid self-looping
         final SimpleFeatureCollection sc = delegate.subCollection(filter);
@@ -144,7 +143,7 @@ public class FilteringSimpleFeatureCollection extends DecoratingSimpleFeatureCol
         return true;
     }
 
-    public FeatureReader<SimpleFeatureType, SimpleFeature> reader() throws IOException {
+    public FeatureReader<SimpleFeatureType, SimpleFeature> reader() {
         return new DelegateFeatureReader<>(getSchema(), features());
     }
 

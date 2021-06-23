@@ -172,12 +172,12 @@ public class EventContentFeatureWriter implements FeatureWriter<SimpleFeatureTyp
      */
     class EventContentTransactionState implements Transaction.State {
         @Override
-        public void commit() throws IOException {
+        public void commit() {
             store.getState().fireBatchFeatureEvent(true);
         }
 
         @Override
-        public void rollback() throws IOException {
+        public void rollback() {
             store.getState().fireBatchFeatureEvent(false);
         }
 
@@ -187,7 +187,7 @@ public class EventContentFeatureWriter implements FeatureWriter<SimpleFeatureTyp
         }
 
         @Override
-        public void addAuthorization(String AuthID) throws IOException {
+        public void addAuthorization(String AuthID) {
             // functionality not restricted by lock authorisation
         }
     }

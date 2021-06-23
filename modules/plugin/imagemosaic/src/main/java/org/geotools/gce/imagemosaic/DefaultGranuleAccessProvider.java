@@ -68,7 +68,7 @@ class DefaultGranuleAccessProvider implements GranuleAccessProvider, GranuleDesc
     }
 
     @Override
-    public void setGranuleInput(Object input) throws IOException {
+    public void setGranuleInput(Object input) {
         if (input == null || !(input instanceof URL)) {
             throw new IllegalArgumentException(
                     "Only URL type is supported by this provider: " + input);

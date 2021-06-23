@@ -108,8 +108,7 @@ public class ShapefileHeader {
             double minX,
             double minY,
             double maxX,
-            double maxY)
-            throws IOException {
+            double maxY) {
         file.order(ByteOrder.BIG_ENDIAN);
 
         file.putInt(MAGIC);

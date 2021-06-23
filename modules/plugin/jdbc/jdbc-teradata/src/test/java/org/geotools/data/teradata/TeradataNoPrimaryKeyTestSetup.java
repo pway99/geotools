@@ -46,7 +46,7 @@ public class TeradataNoPrimaryKeyTestSetup extends JDBCNoPrimaryKeyTestSetup {
     }
 
     @Override
-    protected void dropLakeTable() throws Exception {
+    protected void dropLakeTable() {
         runSafe("DELETE FROM SYSSPATIAL.GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'lake'");
         runSafe("DROP TRIGGER \"lake_geom_mi\"");
         runSafe("DROP TRIGGER \"lake_geom_mu\"");

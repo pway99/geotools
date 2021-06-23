@@ -80,7 +80,7 @@ public class SortOrderTypeBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         if ("ASC".equals(value)) {
             return SortOrder.ASCENDING;
         }
@@ -93,7 +93,7 @@ public class SortOrderTypeBinding extends AbstractSimpleBinding {
     }
 
     @Override
-    public String encode(Object object, String value) throws Exception {
+    public String encode(Object object, String value) {
         SortOrder sortOrder = (SortOrder) object;
 
         if (sortOrder == SortOrder.ASCENDING) {

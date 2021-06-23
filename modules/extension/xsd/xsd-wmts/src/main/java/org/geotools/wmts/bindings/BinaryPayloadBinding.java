@@ -96,7 +96,7 @@ public class BinaryPayloadBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         BinaryPayloadType payload = factory.createBinaryPayloadType();
         payload.setFormat((String) node.getChildValue("Format"));
         payload.setBinaryContent((byte[]) node.getChildValue("BinaryContent"));

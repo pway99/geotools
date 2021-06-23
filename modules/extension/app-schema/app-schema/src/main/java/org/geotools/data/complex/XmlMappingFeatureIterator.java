@@ -200,7 +200,7 @@ public class XmlMappingFeatureIterator extends DataAccessMappingFeatureIterator 
     }
 
     @SuppressWarnings("unchecked")
-    private void setAttributeValues(PathAttributeList elements, Feature target) throws IOException {
+    private void setAttributeValues(PathAttributeList elements, Feature target) {
         for (AttributeMapping attMapping : ((XmlFeatureTypeMapping) mapping).setterAttributes) {
             String parentLabel = attMapping.getParentLabel();
             List<Pair> ls = elements.get(parentLabel);
@@ -254,8 +254,7 @@ public class XmlMappingFeatureIterator extends DataAccessMappingFeatureIterator 
             AttributeMapping attMapping,
             Feature target,
             StepList xpath,
-            Expression idExpression)
-            throws IOException {
+            Expression idExpression) {
         if (LOGGER.isLoggable(Level.FINER)) {
             LOGGER.finer(
                     "setting target="
@@ -414,8 +413,7 @@ public class XmlMappingFeatureIterator extends DataAccessMappingFeatureIterator 
             Pair parentAttribute,
             int count,
             String countXpath,
-            Feature target)
-            throws IOException {
+            Feature target) {
 
         StepList sl = attMapping.getTargetXPath().clone();
         setPathIndex(parentAttribute.getAttribute(), sl);

@@ -43,7 +43,7 @@ public class DCPTypeBinding extends AbstractComplexEMFBinding {
 
     @SuppressWarnings("unchecked")
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Ows10Factory ows10Factory = Ows10Factory.eINSTANCE;
 
         DCPType dcpType = ows10Factory.createDCPType();

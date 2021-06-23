@@ -27,8 +27,6 @@ import static org.junit.Assume.assumeThat;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -127,7 +125,7 @@ public class MongoSchemaDBStoreTest extends MongoSchemaStoreTest<MongoSchemaDBSt
     }
 
     @Override
-    MongoSchemaDBStore createUniqueStore() throws IOException {
+    MongoSchemaDBStore createUniqueStore() {
         MongoClientURI clientURI = generateURI(host, port, createUniqueName(), createUniqueName());
         MongoSchemaDBStore store = new MongoSchemaDBStore(clientURI);
         clientURIs.put(store, clientURI);
@@ -177,8 +175,7 @@ public class MongoSchemaDBStoreTest extends MongoSchemaStoreTest<MongoSchemaDBSt
     }
 
     @Test
-    public void test_Constructor_String_DefaultDatabaseAndCollection()
-            throws URISyntaxException, IOException {
+    public void test_Constructor_String_DefaultDatabaseAndCollection() {
         MongoClientURI clientURI = generateURI(host, port);
         MongoSchemaDBStore store = new MongoSchemaDBStore(clientURI.toString());
         try {
@@ -190,7 +187,7 @@ public class MongoSchemaDBStoreTest extends MongoSchemaStoreTest<MongoSchemaDBSt
     }
 
     @Test
-    public void test_Constructor_String_DefaultCollection() throws URISyntaxException, IOException {
+    public void test_Constructor_String_DefaultCollection() {
         String database = createUniqueName();
         MongoClientURI clientURI = generateURI(host, port, database);
         MongoSchemaDBStore store = new MongoSchemaDBStore(clientURI.toString());
@@ -204,7 +201,7 @@ public class MongoSchemaDBStoreTest extends MongoSchemaStoreTest<MongoSchemaDBSt
     }
 
     @Test
-    public void test_Constructor_String() throws URISyntaxException, IOException {
+    public void test_Constructor_String() {
         String database = createUniqueName();
         String collection = createUniqueName();
         MongoClientURI clientURI = generateURI(host, port, database, collection);
@@ -219,8 +216,7 @@ public class MongoSchemaDBStoreTest extends MongoSchemaStoreTest<MongoSchemaDBSt
     }
 
     @Test
-    public void test_Constructor_URI_DefaultDatabaseAndCollection()
-            throws URISyntaxException, IOException {
+    public void test_Constructor_URI_DefaultDatabaseAndCollection() {
         MongoClientURI clientURI = generateURI(host, port);
         MongoSchemaDBStore store = new MongoSchemaDBStore(clientURI);
         try {
@@ -232,7 +228,7 @@ public class MongoSchemaDBStoreTest extends MongoSchemaStoreTest<MongoSchemaDBSt
     }
 
     @Test
-    public void test_Constructor_URI_DefaultCollection() throws URISyntaxException, IOException {
+    public void test_Constructor_URI_DefaultCollection() {
         String database = createUniqueName();
         MongoClientURI clientURI = generateURI(host, port, database);
         MongoSchemaDBStore store = new MongoSchemaDBStore(clientURI);
@@ -246,7 +242,7 @@ public class MongoSchemaDBStoreTest extends MongoSchemaStoreTest<MongoSchemaDBSt
     }
 
     @Test
-    public void test_Constructor_URI() throws URISyntaxException, IOException {
+    public void test_Constructor_URI() {
         String database = createUniqueName();
         String collection = createUniqueName();
         MongoClientURI clientURI = generateURI(host, port, database, collection);

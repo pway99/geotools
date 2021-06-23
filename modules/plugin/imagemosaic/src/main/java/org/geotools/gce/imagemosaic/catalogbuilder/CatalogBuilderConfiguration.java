@@ -130,7 +130,7 @@ public class CatalogBuilderConfiguration implements Cloneable {
     }
 
     @Override
-    public CatalogBuilderConfiguration clone() throws CloneNotSupportedException {
+    public CatalogBuilderConfiguration clone() {
         return new CatalogBuilderConfiguration(this);
     }
 

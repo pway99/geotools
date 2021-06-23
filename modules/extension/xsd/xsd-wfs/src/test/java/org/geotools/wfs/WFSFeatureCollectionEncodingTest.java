@@ -38,7 +38,7 @@ public class WFSFeatureCollectionEncodingTest {
 
     @Before
     @SuppressWarnings("unchecked")
-    public void setUp() throws Exception {
+    public void setUp() {
         fc = WfsFactory.eINSTANCE.createFeatureCollectionType();
         DefaultFeatureCollection features = new DefaultFeatureCollection();
 
@@ -61,7 +61,7 @@ public class WFSFeatureCollectionEncodingTest {
     }
 
     @Test
-    public void testEncodeFeatureCollection10() throws Exception {
+    public void testEncodeFeatureCollection10() {
         Encoder e = new Encoder(new org.geotools.wfs.v1_0.WFSConfiguration_1_0());
         e.getNamespaces().declarePrefix("geotools", "http://geotools.org");
         e.setIndenting(true);
@@ -79,7 +79,7 @@ public class WFSFeatureCollectionEncodingTest {
     }
 
     @Test
-    public void testEncodeFeatureCollectionCoordinatesFormatting10() throws Exception {
+    public void testEncodeFeatureCollectionCoordinatesFormatting10() {
         org.geotools.wfs.v1_0.WFSConfiguration_1_0 configuration =
                 new org.geotools.wfs.v1_0.WFSConfiguration_1_0();
         configuration.getProperties().add(GMLConfiguration.OPTIMIZED_ENCODING);
@@ -104,7 +104,7 @@ public class WFSFeatureCollectionEncodingTest {
     }
 
     @Test
-    public void testEncodeFeatureCollection11() throws Exception {
+    public void testEncodeFeatureCollection11() {
         Encoder e = new Encoder(new org.geotools.wfs.v1_1.WFSConfiguration());
         e.getNamespaces().declarePrefix("geotools", "http://geotools.org");
         e.setIndenting(true);
@@ -122,7 +122,7 @@ public class WFSFeatureCollectionEncodingTest {
     }
 
     @Test
-    public void testEncodeFeatureCollectionCoordinatesFormatting11() throws Exception {
+    public void testEncodeFeatureCollectionCoordinatesFormatting11() {
         org.geotools.wfs.v1_1.WFSConfiguration configuration =
                 new org.geotools.wfs.v1_1.WFSConfiguration();
         configuration.getProperties().add(GMLConfiguration.OPTIMIZED_ENCODING);
@@ -150,7 +150,7 @@ public class WFSFeatureCollectionEncodingTest {
 
     @Test
     @SuppressWarnings("unchecked")
-    public void testEncodeFeatureCollectionMultipleFeatureTypes() throws Exception {
+    public void testEncodeFeatureCollectionMultipleFeatureTypes() {
         DefaultFeatureCollection features = new DefaultFeatureCollection();
 
         SimpleFeatureTypeBuilder tb = new SimpleFeatureTypeBuilder();

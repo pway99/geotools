@@ -122,7 +122,7 @@ public class SLDMarkBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         String wkName = (String) node.getChildValue("WellKnownName");
         Stroke stroke = (Stroke) node.getChildValue("Stroke");
         Fill fill = (Fill) node.getChildValue("Fill");

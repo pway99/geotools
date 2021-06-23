@@ -86,7 +86,7 @@ public class LineStyleTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Color color = (Color) value;
         Float width = (Float) node.getChildValue("width", Float.valueOf(1f));
 

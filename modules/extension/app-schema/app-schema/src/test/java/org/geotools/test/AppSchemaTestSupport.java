@@ -26,7 +26,7 @@ import org.junit.AfterClass;
 public class AppSchemaTestSupport {
 
     @AfterClass
-    public static void oneTimeTearDown() throws Exception {
+    public static void oneTimeTearDown() {
         DataAccessRegistry.unregisterAndDisposeAll();
         AppSchemaDataAccessRegistry.clearAppSchemaProperties();
         AppSchemaXSDRegistry.getInstance().dispose();

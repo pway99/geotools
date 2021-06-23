@@ -148,7 +148,7 @@ class ShapefileIndexerBoundsHelper {
          * Releases the underlying bounds storage and any other resource being used to such effect.
          */
         @Override
-        default void close() throws IOException {}
+        default void close() {}
     }
 
     /**
@@ -229,7 +229,7 @@ class ShapefileIndexerBoundsHelper {
         }
 
         @Override
-        public void read(int recNumber, Envelope env) throws IOException {
+        public void read(int recNumber, Envelope env) {
             buff.position(offsetOf(recNumber));
             double minx = buff.get();
             double miny = buff.get();
@@ -243,7 +243,7 @@ class ShapefileIndexerBoundsHelper {
         }
 
         @Override
-        public void expandEnvelope(int recNumber, Envelope env) throws IOException {
+        public void expandEnvelope(int recNumber, Envelope env) {
             buff.position(offsetOf(recNumber));
             env.expandToInclude(buff.get(), buff.get());
             if (!pointBounds) {

@@ -41,7 +41,7 @@ public class DB2ThreeValuedLogicTestSetup extends JDBCThreeValuedLogicTestSetup 
     }
 
     @Override
-    protected void dropAbcTable() throws Exception {
+    protected void dropAbcTable() {
         runSafe("DROP TABLE " + DB2TestUtil.SCHEMA_QUOTED + ".\"abc\"");
     }
 }

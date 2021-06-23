@@ -38,13 +38,13 @@ public class UnitRescaleTest {
     private FilterFactory2 ff;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         sf = (StyleFactory2) CommonFactoryFinder.getStyleFactory(null);
         ff = CommonFactoryFinder.getFilterFactory2(null);
     }
 
     @Test
-    public void testUOMEncodingLineSymbolizer() throws Exception {
+    public void testUOMEncodingLineSymbolizer() {
         LineSymbolizer lineSymbolizer = sf.createLineSymbolizer();
         lineSymbolizer.setUnitOfMeasure(UomOgcMapping.METRE.getUnit());
         lineSymbolizer.setStroke(sf.createStroke(ff.literal("#0000FF"), ff.literal("3")));

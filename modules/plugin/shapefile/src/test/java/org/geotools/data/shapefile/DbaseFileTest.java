@@ -185,7 +185,7 @@ public class DbaseFileTest extends TestCaseSupport {
     }
 
     @Test
-    public void testFieldFormatter() throws Exception {
+    public void testFieldFormatter() {
         DbaseFileWriter.FieldFormatter formatter =
                 new DbaseFileWriter.FieldFormatter(
                         StandardCharsets.UTF_8, TimeZone.getDefault(), false);
@@ -214,7 +214,7 @@ public class DbaseFileTest extends TestCaseSupport {
     }
 
     @Test
-    public void testUTF8Chars() throws Exception {
+    public void testUTF8Chars() {
         DbaseFileWriter.FieldFormatter formatter =
                 new DbaseFileWriter.FieldFormatter(
                         StandardCharsets.UTF_8, TimeZone.getDefault(), false);
@@ -243,7 +243,7 @@ public class DbaseFileTest extends TestCaseSupport {
     }
 
     @Test
-    public void testVeryLongStrings() throws Exception {
+    public void testVeryLongStrings() {
         // formatter.setFieldString will truncate input to the desired size. But it should do this
         // in a reasonably performant manner.
         DbaseFileWriter.FieldFormatter formatter =

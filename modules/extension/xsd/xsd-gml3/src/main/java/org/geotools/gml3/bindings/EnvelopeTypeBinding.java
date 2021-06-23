@@ -196,7 +196,7 @@ public class EnvelopeTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         Envelope envelope = (Envelope) object;
 
         if (envelope.isNull()) {

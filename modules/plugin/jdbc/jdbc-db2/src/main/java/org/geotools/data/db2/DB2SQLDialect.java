@@ -335,7 +335,7 @@ public class DB2SQLDialect extends SQLDialect {
     @Override
     public List<ReferencedEnvelope> getOptimizedBounds(
             String schema, SimpleFeatureType featureType, Connection cx)
-            throws SQLException, IOException {
+            throws SQLException {
 
         if (getDb2DialectInfo().isSupportingPrecalculatedExtents() == false) return null;
 
@@ -416,7 +416,7 @@ public class DB2SQLDialect extends SQLDialect {
 
     @Override
     public Envelope decodeGeometryEnvelope(ResultSet rs, int column, Connection cx)
-            throws SQLException, IOException {
+            throws SQLException {
         //        byte[] wkb = rs.getBytes(column);
         //
         //        try {
@@ -464,8 +464,7 @@ public class DB2SQLDialect extends SQLDialect {
         return decodeGeometryValueFromBytes(factory, bytes);
     }
 
-    private Geometry decodeGeometryValueFromBytes(GeometryFactory factory, byte[] bytes)
-            throws IOException {
+    private Geometry decodeGeometryValueFromBytes(GeometryFactory factory, byte[] bytes) {
         if (bytes == null) return null;
 
         try {
@@ -639,8 +638,7 @@ public class DB2SQLDialect extends SQLDialect {
     }
 
     @Override
-    public boolean includeTable(String schemaName, String tableName, Connection cx)
-            throws SQLException {
+    public boolean includeTable(String schemaName, String tableName, Connection cx) {
 
         return true;
 

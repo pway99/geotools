@@ -32,7 +32,7 @@ public class MySQLEmptyTestSetup extends JDBCEmptyTestSetup {
     }
 
     @Override
-    protected void dropEmptyTable() throws Exception {
+    protected void dropEmptyTable() {
         runSafe("DROP TABLE `empty`");
     }
 }

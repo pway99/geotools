@@ -32,7 +32,7 @@ public class OptDirectedGraphBuilderTest {
     private OptDirectedGraphBuilder m_builder;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         m_builder = new OptDirectedGraphBuilder();
     }

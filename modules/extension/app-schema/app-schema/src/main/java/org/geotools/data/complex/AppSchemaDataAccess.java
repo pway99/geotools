@@ -178,7 +178,7 @@ public class AppSchemaDataAccess implements DataAccess<FeatureType, Feature> {
      * refers to the name of one of the types this DataAccess produces by mapping another ones
      * through the definitions stored in its {@linkplain FeatureTypeMapping}s
      */
-    public Name[] getTypeNames() throws IOException {
+    public Name[] getTypeNames() {
         Name[] typeNames = new Name[mappings.size()];
         int i = 0;
         for (FeatureTypeMapping mapping : mappings.values()) {
@@ -765,7 +765,7 @@ public class AppSchemaDataAccess implements DataAccess<FeatureType, Feature> {
      * @see org.geotools.data.DataAccess#createSchema(org.opengis.feature.type.FeatureType)
      */
     @Override
-    public void createSchema(FeatureType featureType) throws IOException {
+    public void createSchema(FeatureType featureType) {
         throw new UnsupportedOperationException();
     }
 
@@ -786,7 +786,7 @@ public class AppSchemaDataAccess implements DataAccess<FeatureType, Feature> {
      *     org.opengis.feature.type.FeatureType)
      */
     @Override
-    public void updateSchema(Name typeName, FeatureType featureType) throws IOException {
+    public void updateSchema(Name typeName, FeatureType featureType) {
         throw new UnsupportedOperationException();
     }
 
@@ -796,7 +796,7 @@ public class AppSchemaDataAccess implements DataAccess<FeatureType, Feature> {
      * @see org.geotools.data.DataAccess#removeSchema(org.opengis.feature.type.Name)
      */
     @Override
-    public void removeSchema(Name typeName) throws IOException {
+    public void removeSchema(Name typeName) {
         throw new UnsupportedOperationException();
     }
 

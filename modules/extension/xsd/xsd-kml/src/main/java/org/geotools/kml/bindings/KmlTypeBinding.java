@@ -70,12 +70,12 @@ public class KmlTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return node.getChildValue(SimpleFeature.class);
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (KML.Feature.getLocalPart().equals(name.getLocalPart())
                 || org.geotools.kml.v22.KML.AbstractFeatureGroup.getLocalPart()
                         .equals(name.getLocalPart())) {

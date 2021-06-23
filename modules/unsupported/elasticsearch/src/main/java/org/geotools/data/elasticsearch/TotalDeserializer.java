@@ -17,7 +17,6 @@
 package org.geotools.data.elasticsearch;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
@@ -36,7 +35,7 @@ public class TotalDeserializer extends StdDeserializer<Long> {
 
     @Override
     public Long deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
-            throws IOException, JsonProcessingException {
+            throws IOException {
         try {
             return jsonParser.readValueAs(Long.class);
         } catch (MismatchedInputException e) {

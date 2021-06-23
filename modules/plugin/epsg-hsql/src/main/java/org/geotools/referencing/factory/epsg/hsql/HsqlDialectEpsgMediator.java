@@ -47,7 +47,7 @@ public class HsqlDialectEpsgMediator extends AbstractEpsgMediator {
      *   <li>If a user downloads the MS-Access database himself, he probably wants to use it.
      * </ul>
      */
-    public HsqlDialectEpsgMediator(final Hints hints) throws FactoryException {
+    public HsqlDialectEpsgMediator(final Hints hints) {
         super(hints, HsqlEpsgDatabase.createDataSource(hints));
     }
 
@@ -72,14 +72,14 @@ public class HsqlDialectEpsgMediator extends AbstractEpsgMediator {
 
     /** Reinitialize an instance to be returned by the pool. */
     @Override
-    protected void activateWorker(AbstractCachedAuthorityFactory obj) throws Exception {
+    protected void activateWorker(AbstractCachedAuthorityFactory obj) {
         HsqlDialectEpsgFactory factory = (HsqlDialectEpsgFactory) obj;
         factory.connect();
     }
 
     /** Destroys an instance no longer needed by the pool. */
     @Override
-    protected void destroyWorker(AbstractCachedAuthorityFactory obj) throws Exception {
+    protected void destroyWorker(AbstractCachedAuthorityFactory obj) {
         HsqlDialectEpsgFactory factory = (HsqlDialectEpsgFactory) obj;
         factory.disconnect();
         factory.dispose();
@@ -88,14 +88,14 @@ public class HsqlDialectEpsgMediator extends AbstractEpsgMediator {
 
     /** Creates an instance that can be returned by the pool. */
     @Override
-    protected AbstractCachedAuthorityFactory makeWorker() throws Exception {
+    protected AbstractCachedAuthorityFactory makeWorker() {
         HsqlDialectEpsgFactory factory = new HsqlDialectEpsgFactory(hints, datasource);
         return factory;
     }
 
     /** Uninitialize an instance to be returned to the pool. */
     @Override
-    protected void passivateWorker(AbstractCachedAuthorityFactory obj) throws Exception {
+    protected void passivateWorker(AbstractCachedAuthorityFactory obj) {
         HsqlDialectEpsgFactory factory = (HsqlDialectEpsgFactory) obj;
         factory.disconnect();
     }

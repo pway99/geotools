@@ -76,7 +76,7 @@ public class OGCSubBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return filterfactory.subtract(
                 (Expression) node.getChildValue(0), (Expression) node.getChildValue(1));
     }

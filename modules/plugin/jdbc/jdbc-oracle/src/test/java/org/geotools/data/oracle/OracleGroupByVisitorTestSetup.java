@@ -58,7 +58,7 @@ public class OracleGroupByVisitorTestSetup extends JDBCGroupByVisitorTestSetup {
     }
 
     @Override
-    protected void dropBuildingsTable() throws Exception {
+    protected void dropBuildingsTable() {
         runSafe("DROP TABLE BUILDINGS_GROUP_BY_TESTS");
     }
 }

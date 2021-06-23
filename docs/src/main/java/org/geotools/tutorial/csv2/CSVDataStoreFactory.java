@@ -108,7 +108,7 @@ public class CSVDataStoreFactory implements DataStoreFactorySpi {
     // canProcess end
 
     // createDataStore start
-    public DataStore createDataStore(Map<String, ?> params) throws IOException {
+    public DataStore createDataStore(Map<String, ?> params) {
         File file = (File) FILE_PARAM.lookUp(params);
         return new CSVDataStore(file);
     }
@@ -117,7 +117,7 @@ public class CSVDataStoreFactory implements DataStoreFactorySpi {
     private static final Logger LOGGER = Logging.getLogger(CSVDataStoreFactory.class);
 
     // createNewDataStore start
-    public DataStore createNewDataStore(Map<String, ?> params) throws IOException {
+    public DataStore createNewDataStore(Map<String, ?> params) {
         File file = (File) FILE_PARAM.lookUp(params);
         if (file.exists()) {
             LOGGER.warning("File already exsists: " + file);

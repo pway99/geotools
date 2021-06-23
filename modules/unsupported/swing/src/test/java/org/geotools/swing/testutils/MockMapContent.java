@@ -43,7 +43,7 @@ public class MockMapContent extends MapContent {
 
     /** Overridden to avoid spurious log messages about memory leaks. */
     @Override
-    protected void finalize() throws Throwable {
+    protected void finalize() {
         // does nothing
     }
 

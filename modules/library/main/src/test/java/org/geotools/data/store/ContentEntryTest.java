@@ -42,13 +42,12 @@ public class ContentEntryTest {
                 new ContentDataStore() {
 
                     @Override
-                    protected List<Name> createTypeNames() throws IOException {
+                    protected List<Name> createTypeNames() {
                         return null;
                     }
 
                     @Override
-                    protected ContentFeatureSource createFeatureSource(ContentEntry entry)
-                            throws IOException {
+                    protected ContentFeatureSource createFeatureSource(ContentEntry entry) {
                         return null;
                     }
                 };

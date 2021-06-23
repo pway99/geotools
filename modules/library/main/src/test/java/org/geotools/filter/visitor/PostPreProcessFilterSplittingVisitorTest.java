@@ -55,7 +55,7 @@ public class PostPreProcessFilterSplittingVisitorTest
     }
 
     @Test
-    public void testVisitBetweenFilter() throws Exception {
+    public void testVisitBetweenFilter() {
         PropertyIsBetween filter = ff.between(ff.literal(0), ff.property(numAtt), ff.literal(4));
         FilterCapabilities caps = new FilterCapabilities(PropertyIsBetween.class);
         runTest(filter, caps, numAtt);
@@ -146,14 +146,14 @@ public class PostPreProcessFilterSplittingVisitorTest
     }
 
     @Test
-    public void testVisitLikeFilter() throws Exception {
+    public void testVisitLikeFilter() {
         Filter filter = ff.like(ff.property(nameAtt), "j*", "*", "?", "\\");
         FilterCapabilities likeCaps = new FilterCapabilities(PropertyIsLike.class);
         runTest(filter, likeCaps, nameAtt);
     }
 
     @Test
-    public void testVisitNullFilter() throws Exception {
+    public void testVisitNullFilter() {
         Filter filter = ff.isNull(ff.property(nameAtt));
         FilterCapabilities nullCaps = new FilterCapabilities(PropertyIsNull.class);
         runTest(filter, nullCaps, nameAtt);
@@ -307,7 +307,7 @@ public class PostPreProcessFilterSplittingVisitorTest
     }
 
     @Test
-    public void testComplicatedOrFilter() throws Exception {
+    public void testComplicatedOrFilter() {
         Filter c1 = ff.equals(ff.property("eventstatus"), ff.literal("deleted"));
 
         Filter c2 = ff.equals(ff.property("eventtype"), ff.literal("road hazard"));
@@ -385,7 +385,7 @@ public class PostPreProcessFilterSplittingVisitorTest
     }
 
     @Test
-    public void testTemporalFilter() throws Exception {
+    public void testTemporalFilter() {
         FilterCapabilities caps = new FilterCapabilities();
         PostPreProcessFilterSplittingVisitor visitor =
                 new PostPreProcessFilterSplittingVisitor(caps, null, null);

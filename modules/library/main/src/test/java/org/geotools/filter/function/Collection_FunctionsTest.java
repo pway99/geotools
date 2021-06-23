@@ -84,14 +84,14 @@ public class Collection_FunctionsTest extends FunctionTestSupport {
     }
 
     @Test
-    public void testNearest() throws Exception {
+    public void testNearest() {
         Function func = ff.function("Collection_Nearest", ff.property("foo"), ff.literal(9));
         Object match = func.evaluate(featureCollection);
         assertEquals("Nearest to 9 is 8", 8, match);
     }
 
     @Test
-    public void testCountFunctionDescription() throws Exception {
+    public void testCountFunctionDescription() {
         // Create instance of function to get hold of the filter capabilities
         PropertyName exp = ff.property("foo");
         Function func = ff.function("Collection_Count", exp);
@@ -108,7 +108,7 @@ public class Collection_FunctionsTest extends FunctionTestSupport {
      *
      * <p>Example: performTest("Collection_Min", 4);
      */
-    public void performNumberTest(String functionName, Object expectedValue) throws Exception {
+    public void performNumberTest(String functionName, Object expectedValue) {
         PropertyName exp = ff.property("foo");
         Function func = ff.function(functionName, exp);
         Object obj = func.evaluate(featureCollection);
@@ -117,7 +117,7 @@ public class Collection_FunctionsTest extends FunctionTestSupport {
         assertEquals(expected.doubleValue(), result.doubleValue(), 0);
     }
 
-    public void performObjectTest(String functionName, Object expectedValue) throws Exception {
+    public void performObjectTest(String functionName, Object expectedValue) {
         PropertyName exp = ff.property("foo");
         Function func = ff.function(functionName, exp);
         Object result = func.evaluate(featureCollection);

@@ -17,7 +17,6 @@
 package org.geotools.data.collection;
 
 import java.awt.RenderingHints.Key;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -101,17 +100,17 @@ public class CollectionFeatureSource implements SimpleFeatureSource {
     }
 
     @Override
-    public ReferencedEnvelope getBounds() throws IOException {
+    public ReferencedEnvelope getBounds() {
         return collection.getBounds();
     }
 
     @Override
-    public ReferencedEnvelope getBounds(Query query) throws IOException {
+    public ReferencedEnvelope getBounds(Query query) {
         return getFeatures(query).getBounds();
     }
 
     @Override
-    public int getCount(Query query) throws IOException {
+    public int getCount(Query query) {
         return getFeatures(query).size();
     }
 
@@ -179,7 +178,7 @@ public class CollectionFeatureSource implements SimpleFeatureSource {
     // Use: DataUtilities.mixQueries(this.query, query, "subCollection" ) as needed
     //
     @Override
-    public SimpleFeatureCollection getFeatures() throws IOException {
+    public SimpleFeatureCollection getFeatures() {
         return getFeatures(Query.ALL);
     }
 

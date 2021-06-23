@@ -50,11 +50,11 @@ public class YsldParser extends YamlParser {
                 }
             };
 
-    public YsldParser(InputStream ysld) throws IOException {
+    public YsldParser(InputStream ysld) {
         super(ysld);
     }
 
-    public YsldParser(Reader reader) throws IOException {
+    public YsldParser(Reader reader) {
         super(reader);
     }
 

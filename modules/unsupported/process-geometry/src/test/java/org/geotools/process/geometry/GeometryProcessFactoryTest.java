@@ -24,7 +24,7 @@ public class GeometryProcessFactoryTest {
     GeometryProcessFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new GeometryProcessFactory();
     }
 
@@ -103,7 +103,7 @@ public class GeometryProcessFactoryTest {
     }
 
     @Test
-    public void testSPI() throws Exception {
+    public void testSPI() {
         NameImpl bufferName = new NameImpl("geo", "buffer");
         ProcessFactory factory = Processors.createProcessFactory(bufferName);
         Assert.assertNotNull(factory);

@@ -253,7 +253,7 @@ class NetCDFFileResourceInfo extends DefaultResourceInfo implements FileResource
         }
 
         @Override
-        public void close() throws IOException {
+        public void close() {
             // Does nothing... the underlying iterator
             // is made on top of a List
         }

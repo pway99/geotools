@@ -112,7 +112,7 @@ public class PostGISJsonTestSetup extends JDBCDelegatingTestSetup {
         run(sql);
     }
 
-    private void dropTestJsonTable() throws Exception {
+    private void dropTestJsonTable() {
         runSafe("DROP TABLE \"jsontest\" cascade");
     }
 }

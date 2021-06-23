@@ -54,7 +54,7 @@ public class TeradataAggregateTestSetup extends JDBCAggregateTestSetup {
     }
 
     @Override
-    protected void dropAggregateTable() throws Exception {
+    protected void dropAggregateTable() {
         runSafe("DELETE FROM SYSSPATIAL.GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'aggregate'");
         runSafe("DROP TRIGGER \"aggregate_geom_mi\"");
         runSafe("DROP TRIGGER \"aggregate_geom_mu\"");

@@ -33,7 +33,7 @@ public class DefaultCRSFilterVisitorTest {
     FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
 
     @Test
-    public void force3DCRS2DEnvelope() throws Exception {
+    public void force3DCRS2DEnvelope() {
         CoordinateReferenceSystem crs = CRS.decode("EPSG:4939", true);
         CoordinateReferenceSystem hcrs = CRS.getHorizontalCRS(crs);
         BBOX bbox = ff.bbox("the_geom", -180, -90, 180, 90, null);
@@ -45,7 +45,7 @@ public class DefaultCRSFilterVisitorTest {
     }
 
     @Test
-    public void force3DCRS3DEnvelope() throws Exception {
+    public void force3DCRS3DEnvelope() {
         CoordinateReferenceSystem crs = CRS.decode("EPSG:4939", true);
         BBOX bbox =
                 ff.bbox(

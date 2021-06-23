@@ -75,7 +75,7 @@ public class GeobufFeatureReader implements FeatureReader<SimpleFeatureType, Sim
 
     @Override
     public SimpleFeature next()
-            throws IOException, IllegalArgumentException, NoSuchElementException {
+            throws IllegalArgumentException, NoSuchElementException {
         SimpleFeature feature;
         if (nextFeature != null) {
             feature = nextFeature;
@@ -88,7 +88,7 @@ public class GeobufFeatureReader implements FeatureReader<SimpleFeatureType, Sim
     }
 
     @Override
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() {
         if (nextFeature != null) {
             return true;
         } else {

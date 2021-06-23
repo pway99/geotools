@@ -240,7 +240,7 @@ public abstract class RendererBaseTest {
     }
 
     /** Load a style from the test-data directory associated with the object. */
-    public static Style loadStyle(Object loader, String sldFilename) throws IOException {
+    public static Style loadStyle(Object loader, String sldFilename) {
         StyleFactory factory = CommonFactoryFinder.getStyleFactory(null);
 
         java.net.URL surl = TestData.getResource(loader, sldFilename);

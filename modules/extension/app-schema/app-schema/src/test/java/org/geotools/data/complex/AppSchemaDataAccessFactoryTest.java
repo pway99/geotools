@@ -60,7 +60,7 @@ public class AppSchemaDataAccessFactoryTest extends AppSchemaTestSupport {
     static final Name mappedTypeName = Types.typeName(NSURI, "RoadSegment");
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new AppSchemaDataAccessFactory();
         params = new HashMap<>();
         params.put("dbtype", "app-schema");
@@ -72,7 +72,7 @@ public class AppSchemaDataAccessFactoryTest extends AppSchemaTestSupport {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         factory = null;
         params = null;
     }
@@ -225,7 +225,7 @@ public class AppSchemaDataAccessFactoryTest extends AppSchemaTestSupport {
         }
 
         @After
-        public void tearDown() throws Exception {
+        public void tearDown() {
             factory = null;
             params = null;
         }

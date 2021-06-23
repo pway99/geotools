@@ -47,12 +47,12 @@ public class ZoomOutToolTest extends CursorToolTestBase {
     }
 
     @Test
-    public void zoomOutDoesNotSupportDragging() throws Exception {
+    public void zoomOutDoesNotSupportDragging() {
         assertFalse(tool.drawDragBox());
     }
 
     @Test
-    public void clickZoomAtCentreOfMap() throws Exception {
+    public void clickZoomAtCentreOfMap() {
         ReferencedEnvelope startEnv = mapPane.getDisplayArea();
         mapPane.setCursorTool(tool);
 

@@ -51,12 +51,12 @@ public class HexagonTest extends HexagonTestBase {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void badSideLen() throws Exception {
+    public void badSideLen() {
         new HexagonImpl(0.0, 0.0, 0.0, HexagonOrientation.FLAT, null);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void badOrientation() throws Exception {
+    public void badOrientation() {
         new HexagonImpl(0.0, 0.0, SIDE_LEN, null, null);
     }
 
@@ -80,7 +80,7 @@ public class HexagonTest extends HexagonTestBase {
     }
 
     @Test
-    public void getCenterFlat() throws Exception {
+    public void getCenterFlat() {
         PolygonElement hexagon = new HexagonImpl(0.0, 0.0, SIDE_LEN, HexagonOrientation.FLAT, null);
         Coordinate expected = new Coordinate(SIDE_LEN, 0.5 * Math.sqrt(3.0) * SIDE_LEN);
         Coordinate result = hexagon.getCenter();

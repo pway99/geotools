@@ -27,16 +27,13 @@ import org.geotools.data.mongodb.MongoTestSupport;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.feature.FeatureIterator;
 import org.geotools.feature.FeatureTypes;
-import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
 import org.geotools.geometry.jts.GeometryCoordinateSequenceTransformer;
 import org.geotools.referencing.CRS;
 import org.locationtech.jts.geom.Geometry;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
-import org.opengis.referencing.operation.TransformException;
 
 public abstract class MongoComplexUtilitiesTest extends MongoTestSupport {
 
@@ -48,7 +45,7 @@ public abstract class MongoComplexUtilitiesTest extends MongoTestSupport {
      * Checks no exception occurs when an empty list is evaluated by the complex utilities get value
      * method.
      */
-    public void testGetValueEmptyList() throws IOException {
+    public void testGetValueEmptyList() {
         final BasicDBList list = new BasicDBList();
         Object value =
                 MongoComplexUtilities.getValue(list, Collections.emptyMap(), "path1.path2", null);
@@ -57,7 +54,7 @@ public abstract class MongoComplexUtilitiesTest extends MongoTestSupport {
     }
 
     public void testFeatureAttributeValueIsReturnedFromJsonPath()
-            throws IOException, FactoryException, TransformException {
+            throws IOException {
         // test that in case of a jsonpath can be resolved against the feature,
         // the feature value is picked up instead of the one from the DBObject
         SimpleFeatureSource source = dataStore.getFeatureSource("ft3");
@@ -87,7 +84,7 @@ public abstract class MongoComplexUtilitiesTest extends MongoTestSupport {
     }
 
     public void testReprojectedValuesNotIgnored()
-            throws IOException, FactoryException, TransformException, SchemaException {
+            throws IOException {
         SimpleFeatureSource source = dataStore.getFeatureSource("ft3");
         try (FeatureIterator<SimpleFeature> it = source.getFeatures().features()) {
             GeometryCoordinateSequenceTransformer transformer =

@@ -80,7 +80,7 @@ public final class CanonicalSetTest {
      * than some elements in <code>weakSet</code> may disaspear at any time!
      */
     @Test
-    public void testWeakReferences() throws InterruptedException {
+    public void testWeakReferences() {
         final Random random = new Random();
         for (int pass = 0; pass < 2; pass++) {
             final CanonicalSet<UUID> weakSet = CanonicalSet.newInstance(UUID.class);

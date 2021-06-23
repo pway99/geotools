@@ -72,14 +72,14 @@ public class CurveSegmentArrayPropertyTypeBinding extends AbstractComplexBinding
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         List<LineString> lines = node.getChildValues(LineString.class);
 
         return lines.toArray(new LineString[lines.size()]);
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if ("_CurveSegment".equals(name.getLocalPart())
                 ||
                 /*gml 3.2*/ "AbstractCurveSegment".equals(name.getLocalPart())) {

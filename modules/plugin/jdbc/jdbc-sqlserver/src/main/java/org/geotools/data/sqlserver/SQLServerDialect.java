@@ -138,8 +138,7 @@ public class SQLServerDialect extends BasicSQLDialect {
     }
 
     @Override
-    public boolean includeTable(String schemaName, String tableName, Connection cx)
-            throws SQLException {
+    public boolean includeTable(String schemaName, String tableName, Connection cx) {
         return !("INFORMATION_SCHEMA".equals(schemaName) || "sys".equals(schemaName));
     }
 
@@ -178,7 +177,7 @@ public class SQLServerDialect extends BasicSQLDialect {
 
     @Override
     public void postCreateTable(String schemaName, SimpleFeatureType featureType, Connection cx)
-            throws SQLException, IOException {
+            throws SQLException {
 
         String tableName = featureType.getName().getLocalPart();
 
@@ -580,8 +579,7 @@ public class SQLServerDialect extends BasicSQLDialect {
     }
 
     @Override
-    public void encodeGeometryValue(Geometry value, int dimension, int srid, StringBuffer sql)
-            throws IOException {
+    public void encodeGeometryValue(Geometry value, int dimension, int srid, StringBuffer sql) {
 
         if (value == null) {
             sql.append("NULL");
@@ -623,7 +621,7 @@ public class SQLServerDialect extends BasicSQLDialect {
         }
     }
 
-    Geometry decodeGeometry(String s, GeometryFactory factory) throws IOException {
+    Geometry decodeGeometry(String s, GeometryFactory factory) {
         if (s == null) {
             return null;
         }

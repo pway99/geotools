@@ -89,7 +89,7 @@ public class MultiGeometryTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         List<Geometry> geometries = new ArrayList<>();
 
@@ -108,7 +108,7 @@ public class MultiGeometryTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (GML.geometryMember.getLocalPart().equals(name.getLocalPart())) {
             GeometryCollection multiGeometry = (GeometryCollection) object;
             Geometry[] members = new Geometry[multiGeometry.getNumGeometries()];

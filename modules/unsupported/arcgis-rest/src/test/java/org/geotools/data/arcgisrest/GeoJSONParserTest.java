@@ -49,7 +49,7 @@ public class GeoJSONParserTest {
     String json;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
         builder.setName("jsonfeature");
@@ -433,7 +433,7 @@ public class GeoJSONParserTest {
     }
 
     @Test
-    public void parseFeature() throws Exception {
+    public void parseFeature() {
 
         SimpleFeature feat =
                 (new GeoJSONParser(
@@ -452,7 +452,7 @@ public class GeoJSONParserTest {
     }
 
     @Test
-    public void parseFeatureNoProperties() throws Exception {
+    public void parseFeatureNoProperties() {
 
         SimpleFeature feat =
                 (new GeoJSONParser(
@@ -467,7 +467,7 @@ public class GeoJSONParserTest {
     }
 
     @Test
-    public void parseFeatureNoPropertiesNoGeometry() throws Exception {
+    public void parseFeatureNoPropertiesNoGeometry() {
 
         SimpleFeature feat =
                 (new GeoJSONParser(

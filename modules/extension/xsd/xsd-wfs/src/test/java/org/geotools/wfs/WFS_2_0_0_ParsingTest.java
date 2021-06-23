@@ -73,7 +73,7 @@ public class WFS_2_0_0_ParsingTest {
     Configuration configuration;
 
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
 
     @Test
     public void testParseEmptyGetCapabilities() throws Exception {

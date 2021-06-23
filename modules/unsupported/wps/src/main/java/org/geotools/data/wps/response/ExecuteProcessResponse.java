@@ -112,7 +112,7 @@ public class ExecuteProcessResponse extends Response {
         }
     }
 
-    private void parseDocumentResponse(InputStream inputStream) throws IOException {
+    private void parseDocumentResponse(InputStream inputStream) {
         // Map hints = new HashMap();
         // hints.put(DocumentHandler.DEFAULT_NAMESPACE_HINT_KEY, WPSSchema.getInstance());
         Configuration config = new WPSConfiguration();

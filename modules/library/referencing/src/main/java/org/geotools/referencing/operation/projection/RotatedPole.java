@@ -35,7 +35,6 @@ import org.opengis.parameter.ParameterDescriptor;
 import org.opengis.parameter.ParameterDescriptorGroup;
 import org.opengis.parameter.ParameterNotFoundException;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.operation.MathTransform;
 
 /**
@@ -80,8 +79,7 @@ public class RotatedPole extends MapProjection {
      * @param y The latitude of the coordinate, in <strong>radians</strong>.
      */
     @Override
-    protected Point2D transformNormalized(double x, double y, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double x, double y, Point2D ptDst) {
         final double sinlat = sin(y);
         final double coslat = cos(y);
         final double sinlatP = sin(PI / 2 - latitudeOfOrigin);
@@ -109,8 +107,7 @@ public class RotatedPole extends MapProjection {
      * stores the result in {@code ptDst} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D inverseTransformNormalized(double x, double y, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D inverseTransformNormalized(double x, double y, Point2D ptDst) {
         final double scalePI = globalScale * PI / 180;
         final double sinlat = sin(y * scalePI);
         final double coslat = cos(y * scalePI);
@@ -162,7 +159,7 @@ public class RotatedPole extends MapProjection {
         static final ParameterDescriptorGroup PARAMETERS =
                 createDescriptorGroup(
                         new NamedIdentifier[] {
-                            new NamedIdentifier(Citations.AUTO, "Rotated_Pole"),
+                            new NamedIdentifier(Citations.AUTO, "Rotated_Pole")
                         },
                         new ParameterDescriptor[] {
                             SEMI_MAJOR,
@@ -188,7 +185,7 @@ public class RotatedPole extends MapProjection {
          */
         @Override
         protected MathTransform createMathTransform(final ParameterValueGroup parameters)
-                throws ParameterNotFoundException, FactoryException {
+                throws ParameterNotFoundException {
             if (isSpherical(parameters)) {
                 return new RotatedPole(parameters);
             } else {

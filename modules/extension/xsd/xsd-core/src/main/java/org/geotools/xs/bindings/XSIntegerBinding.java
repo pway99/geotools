@@ -85,7 +85,7 @@ public class XSIntegerBinding implements SimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         String string = (String) value;
 
         if (string.startsWith("+")) {

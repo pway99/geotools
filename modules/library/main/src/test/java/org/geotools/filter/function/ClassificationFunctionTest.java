@@ -28,7 +28,7 @@ public class ClassificationFunctionTest extends FunctionTestSupport {
             org.geotools.util.logging.Logging.getLogger(ClassificationFunctionTest.class);
 
     @Test
-    public void testDecimalPlaces() throws Exception {
+    public void testDecimalPlaces() {
         EqualIntervalFunction eif =
                 (EqualIntervalFunction) ff.function("EqualInterval", Expression.NIL);
         assertEquals(0, eif.decimalPlaces(100.0));
@@ -41,7 +41,7 @@ public class ClassificationFunctionTest extends FunctionTestSupport {
     }
 
     @Test
-    public void testRound() throws Exception {
+    public void testRound() {
         QuantileFunction classifier = (QuantileFunction) ff.function("Quantile", Expression.NIL);
         assertEquals(100.0, classifier.round(100.0, 0), 0);
         assertEquals(1.1, classifier.round(1.12, 1), 0);
@@ -49,7 +49,7 @@ public class ClassificationFunctionTest extends FunctionTestSupport {
     }
 
     @Test
-    public void testRoundOverflow() throws Exception {
+    public void testRoundOverflow() {
         EqualIntervalFunction eif =
                 (EqualIntervalFunction) ff.function("EqualInterval", Expression.NIL);
         assertEquals(1477946338495.3d, eif.round(1477946338495.25d, 1), 0d);

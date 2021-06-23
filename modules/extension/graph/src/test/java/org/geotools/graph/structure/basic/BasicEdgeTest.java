@@ -43,7 +43,7 @@ public class BasicEdgeTest {
     private BasicEdge m_loopB;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         m_nodeA = new BasicNode();
         m_nodeB = new BasicNode();
         m_otherNode1 = new BasicNode();

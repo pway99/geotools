@@ -17,7 +17,6 @@
 package org.geotools.temporal.object;
 
 import java.sql.Time;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.geotools.util.SimpleInternationalString;
@@ -57,7 +56,7 @@ public class DefaultPosition implements Position {
      *
      * @throws java.text.ParseException
      */
-    public DefaultPosition(final InternationalString datetime) throws ParseException {
+    public DefaultPosition(final InternationalString datetime) {
         this.position = Utils.getDateFromString(datetime.toString());
     }
 

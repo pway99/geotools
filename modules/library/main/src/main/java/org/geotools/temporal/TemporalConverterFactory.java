@@ -46,7 +46,7 @@ public class TemporalConverterFactory implements ConverterFactory {
             new Converter() {
 
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     // first go to java.util.Date
                     Date d = Converters.convert(source, Date.class);
 

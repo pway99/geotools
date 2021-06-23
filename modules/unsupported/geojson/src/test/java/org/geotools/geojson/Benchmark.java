@@ -74,7 +74,7 @@ public class Benchmark {
         it.close();
     }
 
-    static FeatureSource loadData() throws Exception {
+    static FeatureSource loadData() {
         /*ShapefileDataStore ds = new ShapefileDataStore(new File("/Users/jdeolive/Downloads/data/world_borders.shp").toURL());
         return ds.getFeatureSource();*/
         return null;

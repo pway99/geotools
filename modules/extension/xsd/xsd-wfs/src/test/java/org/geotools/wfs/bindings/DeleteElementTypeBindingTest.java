@@ -51,7 +51,7 @@ public class DeleteElementTypeBindingTest extends WFSTestSupport {
 
     @Override
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
 
         final DeleteElementType delete = factory.createDeleteElementType();
         final QName typeName = new QName("http://www.openplans.org/topp", "TestType", "topp");

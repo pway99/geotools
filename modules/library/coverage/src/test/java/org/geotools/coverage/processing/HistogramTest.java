@@ -36,7 +36,7 @@ public class HistogramTest extends GridProcessingTestBase {
     }
 
     @Test
-    public void testHistogram() throws Exception {
+    public void testHistogram() {
         GridCoverage2D source = coverage;
         CoverageProcessor processor = CoverageProcessor.getInstance();
 
@@ -52,7 +52,7 @@ public class HistogramTest extends GridProcessingTestBase {
     }
 
     @Test
-    public void testHistogramWithNumBins() throws Exception {
+    public void testHistogramWithNumBins() {
         GridCoverage2D source = coverage;
         CoverageProcessor processor = CoverageProcessor.getInstance();
 
@@ -69,7 +69,7 @@ public class HistogramTest extends GridProcessingTestBase {
     }
 
     @Test
-    public void testHistogramWithHighLow() throws Exception {
+    public void testHistogramWithHighLow() {
         GridCoverage2D source = coverage;
         CoverageProcessor processor = CoverageProcessor.getInstance();
 

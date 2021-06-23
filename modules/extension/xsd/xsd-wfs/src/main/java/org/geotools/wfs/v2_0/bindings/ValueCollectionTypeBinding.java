@@ -84,7 +84,7 @@ public class ValueCollectionTypeBinding extends AbstractComplexEMFBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (WFS.member.equals(name)) {
             return ((ValueCollectionType) object).getMember().iterator().next();
         }

@@ -37,7 +37,7 @@ public class MySQLPrimaryKeyTestSetup extends JDBCPrimaryKeyTestSetup {
     }
 
     @Override
-    protected void createSequencedPrimaryKeyTable() throws Exception {}
+    protected void createSequencedPrimaryKeyTable() {}
 
     @Override
     protected void createNonIncrementingPrimaryKeyTable() throws Exception {
@@ -95,7 +95,7 @@ public class MySQLPrimaryKeyTestSetup extends JDBCPrimaryKeyTestSetup {
     }
 
     @Override
-    protected void dropSequencedPrimaryKeyTable() throws Exception {}
+    protected void dropSequencedPrimaryKeyTable() {}
 
     @Override
     protected void dropNonIncrementingPrimaryKeyTable() throws Exception {

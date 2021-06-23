@@ -17,7 +17,6 @@
  */
 package org.geotools.ysld.validate;
 
-import java.io.IOException;
 import java.io.Reader;
 import java.util.Collections;
 import java.util.EmptyStackException;
@@ -45,7 +44,7 @@ public class YsldValidator {
      * @return List of {@link MarkedYAMLException} representing any errors, or an empty list if the
      *     style is valid
      */
-    public List<MarkedYAMLException> validate(Reader input) throws IOException {
+    public List<MarkedYAMLException> validate(Reader input) {
         YsldValidateContext context = new YsldValidateContext();
         context.zCtxtFinders = this.zCtxtFinders;
         context.push(new RootValidator());

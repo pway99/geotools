@@ -10,7 +10,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -44,7 +43,7 @@ public class CSVDataStoreTest {
     private CSVDataStore csvDataStore;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         URL resource = TestData.getResource(CSVDataStoreTest.class, "locations.csv");
         assertNotNull("Failure finding locations csv file", resource);
         File file = URLs.urlToFile(resource);
@@ -189,7 +188,7 @@ public class CSVDataStoreTest {
 
     /** Test query with a start index */
     @Test
-    public void testOffset() throws FileNotFoundException, IOException {
+    public void testOffset() throws IOException {
         Query query = new Query(Query.ALL);
         query.setStartIndex(3);
         SimpleFeatureSource rows = csvDataStore.getFeatureSource();
@@ -212,7 +211,7 @@ public class CSVDataStoreTest {
 
     /** Test query with maxFeatures */
     @Test
-    public void testLimit() throws FileNotFoundException, IOException {
+    public void testLimit() throws IOException {
         Query query = new Query(Query.ALL);
         query.setMaxFeatures(3);
         SimpleFeatureSource rows = csvDataStore.getFeatureSource();
@@ -235,7 +234,7 @@ public class CSVDataStoreTest {
 
     /** Test query with maxFeatures and startIndex */
     @Test
-    public void testLimitOffset() throws FileNotFoundException, IOException {
+    public void testLimitOffset() throws IOException {
         Query query = new Query(Query.ALL);
         query.setMaxFeatures(3);
         query.setStartIndex(3);

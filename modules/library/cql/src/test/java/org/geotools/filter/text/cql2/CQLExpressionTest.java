@@ -89,7 +89,7 @@ public class CQLExpressionTest {
     }
 
     @Test
-    public void testCombinedOperations() throws Exception {
+    public void testCombinedOperations() {
         final String combinedOperations = "4 / (1 + 3) + 5 * (10 - 8)";
         Expression exp = CompilerUtil.parseExpression(language, combinedOperations);
         assertExpectedExpressionsStructure(exp);

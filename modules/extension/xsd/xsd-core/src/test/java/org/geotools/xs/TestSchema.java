@@ -99,7 +99,7 @@ public abstract class TestSchema {
         throw new IllegalArgumentException(name);
     }
 
-    public Binding stratagy(QName qname) throws Exception {
+    public Binding stratagy(QName qname) {
         return factory.loadBinding(qname, new DefaultPicoContainer());
     }
 

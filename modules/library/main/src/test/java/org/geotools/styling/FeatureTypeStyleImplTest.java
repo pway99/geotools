@@ -30,7 +30,7 @@ public class FeatureTypeStyleImplTest {
 
     /** Checks if clone method works. */
     @Test
-    public void testCloneMethod() throws Exception {
+    public void testCloneMethod() {
 
         final StyleBuilder sb = new StyleBuilder();
         final Symbolizer symbolizer = sb.createPointSymbolizer();

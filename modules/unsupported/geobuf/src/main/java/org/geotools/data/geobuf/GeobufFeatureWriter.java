@@ -106,12 +106,12 @@ public class GeobufFeatureWriter implements FeatureWriter<SimpleFeatureType, Sim
     }
 
     @Override
-    public void remove() throws IOException {
+    public void remove() {
         this.currentFeature = null;
     }
 
     @Override
-    public void write() throws IOException {
+    public void write() {
         if (this.currentFeature == null) {
             return;
         }

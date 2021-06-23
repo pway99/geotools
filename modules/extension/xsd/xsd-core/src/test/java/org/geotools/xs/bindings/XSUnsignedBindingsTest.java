@@ -37,7 +37,7 @@ public class XSUnsignedBindingsTest {
     Parser p;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         XSConfiguration xs = new XSConfiguration();
         p = new Parser(xs);
     }

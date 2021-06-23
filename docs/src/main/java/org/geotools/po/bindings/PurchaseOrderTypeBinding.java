@@ -72,7 +72,7 @@ public class PurchaseOrderTypeBinding extends AbstractComplexBinding {
      *
      * @generated modifiable
      */
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         PurchaseOrderType purchaseOrder = factory.createPurchaseOrderType();
 
         purchaseOrder.setShipTo((USAddress) node.getChildValue("shipTo"));

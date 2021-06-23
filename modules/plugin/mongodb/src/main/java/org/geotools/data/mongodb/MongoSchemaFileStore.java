@@ -83,7 +83,7 @@ public class MongoSchemaFileStore implements MongoSchemaStore {
     }
 
     @Override
-    public void deleteSchema(Name name) throws IOException {
+    public void deleteSchema(Name name) {
         if (name == null) {
             return;
         }

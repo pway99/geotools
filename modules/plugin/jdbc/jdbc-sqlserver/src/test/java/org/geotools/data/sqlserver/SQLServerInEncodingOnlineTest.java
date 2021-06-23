@@ -16,7 +16,6 @@
  */
 package org.geotools.data.sqlserver;
 
-import java.io.IOException;
 import org.geotools.jdbc.JDBCInEncodingOnlineTest;
 import org.geotools.jdbc.JDBCTestSetup;
 
@@ -28,7 +27,7 @@ public class SQLServerInEncodingOnlineTest extends JDBCInEncodingOnlineTest {
     }
 
     @Override
-    public void testGreater() throws IOException {
+    public void testGreater() {
         // SQLServer cannot handle this "odd" case
     }
 }

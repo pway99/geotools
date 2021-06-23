@@ -49,7 +49,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 /**
  * External graphic factory accepting an Expression that can be evaluated to a URL pointing to a SVG
@@ -103,7 +102,7 @@ public class SVGGraphicFactory implements Factory, ExternalGraphicFactory, Graph
     }
 
     protected RenderableSVG toRenderableSVG(String svgfile, URL svgUrl)
-            throws SAXException, IOException {
+            throws IOException {
         String parser = XMLResourceDescriptor.getXMLParserClassName();
         SAXSVGDocumentFactory f = new SAXSVGDocumentFactory(parser);
         String svgUri = svgfile;

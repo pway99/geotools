@@ -10,7 +10,7 @@ import org.opengis.feature.simple.SimpleFeatureType;
 
 public class SchemaTypeBindingTest extends KMLTestSupport {
     @Test
-    public void testExecutionMode() throws Exception {
+    public void testExecutionMode() {
         assertEquals(Binding.OVERRIDE, binding(KML.SchemaType).getExecutionMode());
     }
 

@@ -139,18 +139,17 @@ public class NetCDFAuxiliaryStoreFactory implements DataStoreFactorySpi {
                 }
 
                 @Override
-                public void createSchema(SimpleFeatureType featureType) throws IOException {
+                public void createSchema(SimpleFeatureType featureType) {
                     throw new UnsupportedOperationException();
                 }
 
                 @Override
-                public void updateSchema(Name typeName, SimpleFeatureType featureType)
-                        throws IOException {
+                public void updateSchema(Name typeName, SimpleFeatureType featureType) {
                     throw new UnsupportedOperationException();
                 }
 
                 @Override
-                public void removeSchema(Name typeName) throws IOException {
+                public void removeSchema(Name typeName) {
                     throw new UnsupportedOperationException();
                 }
 
@@ -160,7 +159,7 @@ public class NetCDFAuxiliaryStoreFactory implements DataStoreFactorySpi {
                 }
 
                 @Override
-                public SimpleFeatureType getSchema(Name name) throws IOException {
+                public SimpleFeatureType getSchema(Name name) {
                     return delegate.getSchema(name);
                 }
 
@@ -170,13 +169,12 @@ public class NetCDFAuxiliaryStoreFactory implements DataStoreFactorySpi {
                 }
 
                 @Override
-                public void updateSchema(String typeName, SimpleFeatureType featureType)
-                        throws IOException {
+                public void updateSchema(String typeName, SimpleFeatureType featureType) {
                     throw new UnsupportedOperationException();
                 }
 
                 @Override
-                public void removeSchema(String typeName) throws IOException {
+                public void removeSchema(String typeName) {
                     throw new UnsupportedOperationException();
                 }
 
@@ -208,20 +206,19 @@ public class NetCDFAuxiliaryStoreFactory implements DataStoreFactorySpi {
 
                 @Override
                 public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-                        String typeName, Filter filter, Transaction transaction)
-                        throws IOException {
+                        String typeName, Filter filter, Transaction transaction) {
                     throw new UnsupportedOperationException();
                 }
 
                 @Override
                 public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-                        String typeName, Transaction transaction) throws IOException {
+                        String typeName, Transaction transaction) {
                     throw new UnsupportedOperationException();
                 }
 
                 @Override
                 public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriterAppend(
-                        String typeName, Transaction transaction) throws IOException {
+                        String typeName, Transaction transaction) {
                     throw new UnsupportedOperationException();
                 }
 
@@ -236,7 +233,7 @@ public class NetCDFAuxiliaryStoreFactory implements DataStoreFactorySpi {
     }
 
     @Override
-    public DataStore createNewDataStore(Map<String, ?> params) throws IOException {
+    public DataStore createNewDataStore(Map<String, ?> params) {
         throw new UnsupportedOperationException();
     }
 }

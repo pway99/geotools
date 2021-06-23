@@ -16,7 +16,6 @@
  */
 package org.geotools.data.store;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -49,7 +48,7 @@ public class MaxFeaturesFeatureCollection<T extends FeatureType, F extends Featu
         this.max = max;
     }
 
-    public FeatureReader<T, F> reader() throws IOException {
+    public FeatureReader<T, F> reader() {
         return new DelegateFeatureReader<>(getSchema(), features());
     }
 

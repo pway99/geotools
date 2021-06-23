@@ -109,7 +109,7 @@ public class SLDPointPlacementBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // &lt;xsd:element ref="sld:AnchorPoint" minOccurs="0"/&gt;
         AnchorPoint anchorPoint = (AnchorPoint) node.getChildValue("AnchorPoint");
 

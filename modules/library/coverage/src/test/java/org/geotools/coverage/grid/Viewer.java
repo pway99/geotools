@@ -23,7 +23,6 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.ColorModel;
 import java.awt.image.IndexColorModel;
 import java.awt.image.RenderedImage;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Locale;
 import javax.media.jai.GraphicsJAI;
@@ -252,7 +251,7 @@ public class Viewer extends JPanel {
      * @throws IOException if an error occured while reading an image.
      */
     @SuppressWarnings("PMD.CloseResource")
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         final Arguments arguments = new Arguments(args);
         final PrintWriter out = arguments.out;
         final Locale locale = arguments.locale;

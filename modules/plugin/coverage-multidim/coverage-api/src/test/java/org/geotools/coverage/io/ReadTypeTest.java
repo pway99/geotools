@@ -260,7 +260,7 @@ public class ReadTypeTest {
     }
 
     @Test(expected = UnsupportedOperationException.class)
-    public void testUnspecifiedReadType() throws IOException {
+    public void testUnspecifiedReadType() {
         // Definition of the read type
         ReadType directRead = ReadType.UNSPECIFIED;
 

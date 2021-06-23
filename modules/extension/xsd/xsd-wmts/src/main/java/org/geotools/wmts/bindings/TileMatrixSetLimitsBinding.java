@@ -96,7 +96,7 @@ public class TileMatrixSetLimitsBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         TileMatrixSetLimitsType limits = factory.createTileMatrixSetLimitsType();
 

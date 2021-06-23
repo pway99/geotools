@@ -57,7 +57,7 @@ public class ReprojectFeatureResultsTest extends FeatureCollectionWrapperTestSup
     }
 
     @Test
-    public void testNormal() throws Exception {
+    public void testNormal() {
 
         Iterator reproject = new ReprojectFeatureResults(delegate, target).iterator();
         Iterator reader = delegate.iterator();
@@ -90,7 +90,7 @@ public class ReprojectFeatureResultsTest extends FeatureCollectionWrapperTestSup
     }
 
     @Test
-    public void testBounds() throws Exception {
+    public void testBounds() {
         ReprojectFeatureResults rfr = new ReprojectFeatureResults(delegate, target);
         rfr.getBounds();
     }

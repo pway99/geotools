@@ -65,22 +65,22 @@ public class SingleFeatureSourceDataStore implements DataStore {
     }
 
     @Override
-    public void createSchema(SimpleFeatureType featureType) throws IOException {
+    public void createSchema(SimpleFeatureType featureType) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public void updateSchema(Name typeName, SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(Name typeName, SimpleFeatureType featureType) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public List<Name> getNames() throws IOException {
+    public List<Name> getNames() {
         return Arrays.asList(source.getSchema().getName());
     }
 
     @Override
-    public SimpleFeatureType getSchema(Name name) throws IOException {
+    public SimpleFeatureType getSchema(Name name) {
         SimpleFeatureType schema = source.getSchema();
         if (schema.getName().equals(name)) {
             return schema;
@@ -95,22 +95,22 @@ public class SingleFeatureSourceDataStore implements DataStore {
     }
 
     @Override
-    public void updateSchema(String typeName, SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(String typeName, SimpleFeatureType featureType) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public void removeSchema(Name typeName) throws IOException {
+    public void removeSchema(Name typeName) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public void removeSchema(String typeName) throws IOException {
+    public void removeSchema(String typeName) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public String[] getTypeNames() throws IOException {
+    public String[] getTypeNames() {
         return new String[] {source.getSchema().getName().getLocalPart()};
     }
 
@@ -146,7 +146,7 @@ public class SingleFeatureSourceDataStore implements DataStore {
 
     @Override
     public FeatureReader<SimpleFeatureType, SimpleFeature> getFeatureReader(
-            Query query, Transaction transaction) throws IOException {
+            Query query, Transaction transaction) {
         throw new UnsupportedOperationException(
                 "This store is wrapping a FeatureSource/FeatureStore, which handles "
                         + "transactions in a stateful way as opposed to a per call way. "
@@ -155,7 +155,7 @@ public class SingleFeatureSourceDataStore implements DataStore {
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            String typeName, Filter filter, Transaction transaction) throws IOException {
+            String typeName, Filter filter, Transaction transaction) {
         throw new UnsupportedOperationException(
                 "This store is wrapping a FeatureSource/FeatureStore, which handles "
                         + "transactions in a stateful way as opposed to a per call way. "
@@ -164,7 +164,7 @@ public class SingleFeatureSourceDataStore implements DataStore {
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            String typeName, Transaction transaction) throws IOException {
+            String typeName, Transaction transaction) {
         throw new UnsupportedOperationException(
                 "This store is wrapping a FeatureSource/FeatureStore, which handles "
                         + "transactions in a stateful way as opposed to a per call way. "
@@ -173,7 +173,7 @@ public class SingleFeatureSourceDataStore implements DataStore {
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriterAppend(
-            String typeName, Transaction transaction) throws IOException {
+            String typeName, Transaction transaction) {
         throw new UnsupportedOperationException(
                 "This store is wrapping a FeatureSource/FeatureStore, which handles "
                         + "transactions in a stateful way as opposed to a per call way. "

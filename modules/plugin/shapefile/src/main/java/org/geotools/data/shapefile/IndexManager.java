@@ -40,7 +40,6 @@ import org.geotools.data.shapefile.files.ShpFiles;
 import org.geotools.data.shapefile.index.CachedQuadTree;
 import org.geotools.data.shapefile.index.Data;
 import org.geotools.data.shapefile.index.DataDefinition;
-import org.geotools.data.shapefile.index.TreeException;
 import org.geotools.data.shapefile.index.quadtree.QuadTree;
 import org.geotools.data.shapefile.index.quadtree.StoreException;
 import org.geotools.data.shapefile.index.quadtree.fs.FileSystemIndexStore;
@@ -134,7 +133,7 @@ class IndexManager {
         return false;
     }
 
-    protected void doCreateSpatialIndex() throws Exception {
+    protected void doCreateSpatialIndex() {
         ShapefileDataStoreFactory.LOGGER.fine("Creating spatial index for " + shpFiles.get(SHP));
 
         ShapeFileIndexer indexer = new ShapeFileIndexer();
@@ -306,7 +305,7 @@ class IndexManager {
 
     /** Queries the spatial index for features available in the specified bbox */
     protected CloseableIterator<Data> querySpatialIndex(Envelope bbox)
-            throws DataSourceException, IOException, TreeException {
+            throws DataSourceException, IOException {
         CloseableIterator<Data> tmp = null;
 
         // check if the spatial index needs recreating

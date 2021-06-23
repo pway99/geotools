@@ -417,8 +417,7 @@ public class OracleDialect extends PreparedStatementSQLDialect {
     }
 
     @Override
-    public boolean includeTable(String schemaName, String tableName, Connection cx)
-            throws SQLException {
+    public boolean includeTable(String schemaName, String tableName, Connection cx) {
 
         if (tableName.endsWith("$")) {
             return false;
@@ -580,7 +579,7 @@ public class OracleDialect extends PreparedStatementSQLDialect {
 
     @SuppressWarnings("PMD.CloseResource") // the connection is managed by the caller
     Geometry readGeometry(Object struct, GeometryFactory factory, Connection cx)
-            throws IOException, SQLException {
+            throws SQLException {
         if (struct == null) {
             return null;
         }

@@ -121,7 +121,7 @@ public class SchemasTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
 
         new File(tmp, "root.xsd").delete();
         new File(tmp, "import1.xsd").delete();
@@ -245,7 +245,7 @@ public class SchemasTest {
      */
     private final class MockServerBehaviour extends HTTPURIHandler {
         @Override
-        public InputStream createInputStream(URI uri, Map<?, ?> options) throws IOException {
+        public InputStream createInputStream(URI uri, Map<?, ?> options) {
             try {
                 return executorService.invokeAny(
                         Collections.singletonList(

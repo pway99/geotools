@@ -111,7 +111,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
         wps = new WebProcessingService(url);
     }
 
-    public void testGetCaps() throws ServiceException, IOException {
+    public void testGetCaps() {
 
         // don't run the test if the server is not up
         if (fixture == null) {
@@ -156,7 +156,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
         assertNotNull(response.getProcessDesc());
     }
 
-    public void testAddReferenceTypeInput() throws ServiceException, IOException {
+    public void testAddReferenceTypeInput() throws IOException {
 
         // don't run the test if the server is not up
         if (fixture == null) {
@@ -225,7 +225,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
     }
 
     private void runExecuteProcessBufferLocal(Geometry geom1)
-            throws ServiceException, IOException, ParseException {
+            throws ServiceException, IOException {
 
         WPSCapabilitiesType capabilities = wps.getCapabilities();
 
@@ -289,8 +289,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
     }
 
     private void setLocalInputDataBufferPoly(
-            ExecuteProcessRequest exeRequest, ProcessDescriptionsType processDesc, Geometry geom1)
-            throws ParseException {
+            ExecuteProcessRequest exeRequest, ProcessDescriptionsType processDesc, Geometry geom1) {
 
         // this process takes 2 input, a geometry and a buffer amount.
         ProcessDescriptionType pdt =
@@ -330,7 +329,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
         }
     }
 
-    public void testExecuteProcessBuffer52N() throws ServiceException, IOException, ParseException {
+    public void testExecuteProcessBuffer52N() throws ServiceException, IOException {
 
         // don't run the test if the server is not up or if we are doing local tests
         if (fixture == null) {
@@ -408,7 +407,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
     }
 
     /** Do some more local process tests, such as union */
-    public void testExecuteLocalUnion() throws ServiceException, IOException, ParseException {
+    public void testExecuteLocalUnion() throws ServiceException, IOException {
 
         // don't run the test if the server is not up
         if (fixture == null) {
@@ -470,8 +469,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
     }
 
     private void setLocalInputDataUnion(
-            ExecuteProcessRequest exeRequest, ProcessDescriptionsType processDesc)
-            throws ParseException {
+            ExecuteProcessRequest exeRequest, ProcessDescriptionsType processDesc) {
 
         // this process takes 2+ inputs, all geometries to union together.
         ProcessDescriptionType pdt =
@@ -513,7 +511,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
     }
 
     /** Do some more local process tests, such as double addtion */
-    public void testExecuteLocalAdd() throws ServiceException, IOException, ParseException {
+    public void testExecuteLocalAdd() throws ServiceException, IOException {
 
         // don't run the test if the server is not up
         if (fixture == null) {
@@ -584,8 +582,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
     }
 
     private void setLocalInputDataAdd(
-            ExecuteProcessRequest exeRequest, ProcessDescriptionsType processDesc)
-            throws ParseException {
+            ExecuteProcessRequest exeRequest, ProcessDescriptionsType processDesc) {
 
         // this process takes 2 inputs, two double to add together.
         ProcessDescriptionType pdt =
@@ -610,7 +607,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
     }
 
     /** Try to get an area grid in arcgrid format, raw */
-    public void testExecuteLocalAreaGrid() throws ServiceException, IOException, ParseException {
+    public void testExecuteLocalAreaGrid() throws ServiceException, IOException {
 
         // don't run the test if the server is not up
         if (fixture == null) {
@@ -706,7 +703,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
      * exception
      */
     public void testExecuteLocalAreaGridException()
-            throws ServiceException, IOException, ParseException {
+            throws ServiceException, IOException {
 
         // don't run the test if the server is not up
         if (fixture == null) {
@@ -773,7 +770,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
     }
 
     /** Try to get an area grid with output in asynchronous mode */
-    public void testExecuteAsynchAreaGrid() throws ServiceException, IOException, ParseException {
+    public void testExecuteAsynchAreaGrid() throws ServiceException, IOException {
 
         // don't run the test if the server is not up
         if (fixture == null) {
@@ -882,7 +879,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
     }
 
     /** Test exception parsing on invalid process request */
-    public void testInvalidProcess() throws ServiceException, IOException, ParseException {
+    public void testInvalidProcess() throws ServiceException, IOException {
 
         // don't run the test if the server is not up
         if (fixture == null) {
@@ -942,7 +939,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
     }
 
     /** Make sure we get the proper exception report */
-    public void testInvalidParamsRawOutput() throws ServiceException, IOException, ParseException {
+    public void testInvalidParamsRawOutput() throws ServiceException, IOException {
 
         // don't run the test if the server is not up
         if (fixture == null) {
@@ -997,7 +994,7 @@ public class WPSManualRequestOnlineTest extends OnlineTestCase {
     }
 
     @SuppressWarnings("unchecked")
-    public void testChainingCall() throws ServiceException, IOException, ParseException {
+    public void testChainingCall() throws ServiceException, IOException {
 
         // don't run the test if the server is not up
         if (fixture == null) {
@@ -1122,7 +1119,7 @@ class WPSEncodeDelegate implements EncoderDelegate {
     }
 
     @Override
-    public void encode(ContentHandler output) throws Exception {
+    public void encode(ContentHandler output) {
         WPSConfiguration config = new WPSConfiguration();
         Encoder encoder = new Encoder(config);
         encoder.encode(value, qname, output);

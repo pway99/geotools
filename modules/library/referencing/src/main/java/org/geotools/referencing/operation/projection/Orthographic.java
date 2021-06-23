@@ -32,7 +32,6 @@ import org.opengis.parameter.ParameterDescriptor;
 import org.opengis.parameter.ParameterDescriptorGroup;
 import org.opengis.parameter.ParameterNotFoundException;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.operation.MathTransform;
 import org.opengis.referencing.operation.PlanarProjection;
 
@@ -152,7 +151,7 @@ public abstract class Orthographic extends MapProjection {
          */
         @Override
         protected MathTransform createMathTransform(final ParameterValueGroup parameters)
-                throws ParameterNotFoundException, FactoryException {
+                throws ParameterNotFoundException {
             // Values here are in radians (the standard units for the map projection package)
             final double latitudeOfOrigin =
                     abs(AbstractProvider.doubleValue(LATITUDE_OF_ORIGIN, parameters));

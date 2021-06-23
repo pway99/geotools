@@ -23,7 +23,7 @@ import org.opengis.feature.simple.SimpleFeature;
 public class WKTReadTest {
 
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
 
     @Test
     public void testReadWKT() throws FileNotFoundException, IOException {

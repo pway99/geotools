@@ -31,7 +31,7 @@ import org.opengis.referencing.datum.GeodeticDatum;
  */
 public class ThreadedOracleEpsgAuthorityOnlineTest extends OracleOnlineTestCase {
 
-    public void testWSG84() throws Exception {
+    public void testWSG84() {
         CoordinateReferenceSystem crs = CRS.decode("EPSG:4326");
         assertNotNull(crs);
     }
@@ -48,14 +48,14 @@ public class ThreadedOracleEpsgAuthorityOnlineTest extends OracleOnlineTestCase 
      * It is a little hard to test this thing, the DefaultAuthorityFactory holds a field "buffered"
      * that is an AbstractAuthorityFactory which in turn is an FactoryUsing
      */
-    public void testCRSCreation() throws Exception {
+    public void testCRSCreation() {
         ThreadedOracleEpsgFactory oracle = new ThreadedOracleEpsgFactory();
 
         CoordinateReferenceSystem crs = oracle.createCoordinateReferenceSystem("4326");
         assertNotNull(crs);
     }
 
-    public void testDatumCreation() throws Exception {
+    public void testDatumCreation() {
         ThreadedOracleEpsgFactory oracle = new ThreadedOracleEpsgFactory();
 
         GeodeticDatum datum = oracle.createGeodeticDatum("6326");

@@ -85,7 +85,7 @@ public class GridTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         RectifiedGridType grid = Gml4wcsFactory.eINSTANCE.createRectifiedGridType();
 
         if (node.hasAttribute("srsName")) {

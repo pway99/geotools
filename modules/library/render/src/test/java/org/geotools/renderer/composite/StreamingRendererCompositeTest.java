@@ -393,7 +393,7 @@ public class StreamingRendererCompositeTest {
     }
 
     private BufferedImage composePoint(GridCoverage2D first, Style pointStyle)
-            throws SchemaException, IOException {
+            throws SchemaException {
         // build the map content
         MapContent mc = new MapContent();
         StyleBuilder sb = new StyleBuilder();
@@ -436,7 +436,7 @@ public class StreamingRendererCompositeTest {
     }
 
     private BufferedImage composeLine(GridCoverage2D first, Style lineStyle)
-            throws SchemaException, IOException {
+            throws SchemaException {
         // build the map content
         MapContent mc = new MapContent();
         StyleBuilder sb = new StyleBuilder();
@@ -482,7 +482,7 @@ public class StreamingRendererCompositeTest {
     }
 
     private BufferedImage composePolygon(GridCoverage2D first, Style polygonStyle)
-            throws SchemaException, IOException {
+            throws SchemaException {
         // build the map content
         MapContent mc = new MapContent();
         StyleBuilder sb = new StyleBuilder();

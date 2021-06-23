@@ -16,7 +16,6 @@
  */
 package org.geotools.process.raster;
 
-import java.io.IOException;
 import java.lang.reflect.Array;
 import org.geotools.coverage.grid.GridCoverage2D;
 import org.geotools.coverage.processing.CoverageProcessor;
@@ -36,8 +35,7 @@ public class NormalizeCoverageProcess implements RasterProcess {
 
     @DescribeResult(name = "result", description = "Normalized raster")
     public GridCoverage2D execute(
-            @DescribeParameter(name = "data", description = "Input raster") GridCoverage2D coverage)
-            throws IOException {
+            @DescribeParameter(name = "data", description = "Input raster") GridCoverage2D coverage) {
 
         ParameterValueGroup param = PROCESSOR.getOperation("Extrema").getParameters();
         param.parameter("Source").setValue(coverage);

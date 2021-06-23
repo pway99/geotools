@@ -351,7 +351,7 @@ public abstract class JDBCCurvesTest extends JDBCTestSupport {
         testClosedCompoundCurve();
     }
 
-    protected SimpleFeature getSingleFeatureByName(String name) throws IOException {
+    protected SimpleFeature getSingleFeatureByName(String name) {
         return getSingleFeatureByName("curves", name);
     }
 

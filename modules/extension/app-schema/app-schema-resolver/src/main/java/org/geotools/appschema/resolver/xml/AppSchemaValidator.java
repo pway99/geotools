@@ -32,7 +32,6 @@ import org.geotools.xml.resolver.SchemaCatalog;
 import org.geotools.xml.resolver.SchemaResolver;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.ext.EntityResolver2;
@@ -291,12 +290,11 @@ public class AppSchemaValidator {
          * @see org.xml.sax.EntityResolver#resolveEntity(java.lang.String, java.lang.String)
          */
         @Override
-        public InputSource resolveEntity(String publicId, String systemId)
-                throws SAXException, IOException {
+        public InputSource resolveEntity(String publicId, String systemId) {
             throw new UnsupportedOperationException(
                     "Misconfigured parser: EntityResolver2 interface must be used "
                             + "so that relative URLs are resolved correctly");
-        };
+        }
 
         /**
          * Always returns null to indicate that there is no external subset.
@@ -322,8 +320,7 @@ public class AppSchemaValidator {
          */
         @Override
         public InputSource resolveEntity(
-                String name, String publicId, String baseURI, String systemId)
-                throws SAXException, IOException {
+                String name, String publicId, String baseURI, String systemId) {
             return new InputSource(resolver.resolve(systemId, baseURI));
         }
     }
@@ -336,19 +333,19 @@ public class AppSchemaValidator {
 
         /** @see org.xml.sax.ErrorHandler#error(org.xml.sax.SAXParseException) */
         @Override
-        public void error(SAXParseException exception) throws SAXException {
+        public void error(SAXParseException exception) {
             failures.add("ERROR: " + exception.getMessage());
         }
 
         /** @see org.xml.sax.ErrorHandler#fatalError(org.xml.sax.SAXParseException) */
         @Override
-        public void fatalError(SAXParseException exception) throws SAXException {
+        public void fatalError(SAXParseException exception) {
             failures.add("FATAL ERROR: " + exception.getMessage());
         }
 
         /** @see org.xml.sax.ErrorHandler#warning(org.xml.sax.SAXParseException) */
         @Override
-        public void warning(SAXParseException exception) throws SAXException {
+        public void warning(SAXParseException exception) {
             if (failOnWarning) {
                 failures.add("WARNING: " + exception.getMessage());
             }

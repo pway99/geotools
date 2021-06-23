@@ -71,7 +71,7 @@ public class SLDParserNamespaceTest {
     static StyleFactory styleFactory = CommonFactoryFinder.getStyleFactory(null);
 
     @Test
-    public void testNamespace() throws Exception {
+    public void testNamespace() {
         SLDParser parser = new SLDParser(styleFactory, input());
         Style[] styles = parser.readXML();
         Assert.assertEquals(styles.length, 1);

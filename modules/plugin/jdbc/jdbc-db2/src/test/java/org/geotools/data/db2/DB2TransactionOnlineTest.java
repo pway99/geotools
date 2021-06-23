@@ -16,7 +16,6 @@
  */
 package org.geotools.data.db2;
 
-import java.io.IOException;
 import org.geotools.jdbc.JDBCTestSetup;
 import org.geotools.jdbc.JDBCTransactionOnlineTest;
 
@@ -27,7 +26,7 @@ public class DB2TransactionOnlineTest extends JDBCTransactionOnlineTest {
     }
 
     @Override
-    public void testConcurrentTransactions() throws IOException {
+    public void testConcurrentTransactions() {
         // TODO does not work
     }
 }

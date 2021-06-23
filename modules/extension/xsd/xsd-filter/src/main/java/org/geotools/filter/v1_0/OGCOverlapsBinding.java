@@ -79,7 +79,7 @@ public class OGCOverlapsBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Expression[] operands = OGCUtils.spatial(node, filterFactory, geometryFactory);
 
         return filterFactory.overlaps(operands[0], operands[1]);

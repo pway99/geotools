@@ -27,7 +27,6 @@ import java.awt.image.RenderedImage;
 import java.awt.image.SampleModel;
 import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -121,7 +120,7 @@ public final class GTopo30Writer extends AbstractGridCoverageWriter implements G
      * @param dest The destination object can be a File (a directory actually), an URL to a
      *     directory, or a String representing a directory or an URL to a directory.
      */
-    public GTopo30Writer(final Object dest, final Hints hints) throws DataSourceException {
+    public GTopo30Writer(final Object dest, final Hints hints) {
 
         // /////////////////////////////////////////////////////////////////////
         //
@@ -650,7 +649,7 @@ public final class GTopo30Writer extends AbstractGridCoverageWriter implements G
      * @throws IOException If the file could not be written
      */
     private void writeSRC(GridCoverage2D gc, final String name, Object dest)
-            throws FileNotFoundException, IOException {
+            throws IOException {
 
         // /////////////////////////////////////////////////////////////////////
         // TODO @task @todo
@@ -986,7 +985,7 @@ public final class GTopo30Writer extends AbstractGridCoverageWriter implements G
      * @throws IOException If the file could not be written
      */
     private void writeDEM(PlanarImage image, final String name, Object dest)
-            throws FileNotFoundException, IOException {
+            throws IOException {
         try (ImageOutputStream out = getImageOutputStream(dest, image, name + ".DEM")) {
             out.setByteOrder(java.nio.ByteOrder.BIG_ENDIAN);
 

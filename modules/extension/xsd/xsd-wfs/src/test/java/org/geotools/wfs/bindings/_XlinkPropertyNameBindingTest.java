@@ -35,7 +35,7 @@ public class _XlinkPropertyNameBindingTest extends WFSTestSupport {
 
     @Override
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         XlinkPropertyNameType xlink = factory.createXlinkPropertyNameType();
         xlink.setTraverseXlinkDepth("1");
         xlink.setTraverseXlinkExpiry(BigInteger.valueOf(10));

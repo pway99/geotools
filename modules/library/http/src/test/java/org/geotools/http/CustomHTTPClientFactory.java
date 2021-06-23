@@ -1,6 +1,5 @@
 package org.geotools.http;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Collections;
@@ -22,13 +21,12 @@ public class CustomHTTPClientFactory extends AbstractHTTPClientFactory {
     static class CustomHttpClient extends AbstractHttpClient {
 
         @Override
-        public HTTPResponse get(URL url) throws IOException {
+        public HTTPResponse get(URL url) {
             return null;
         }
 
         @Override
-        public HTTPResponse post(URL url, InputStream content, String contentType)
-                throws IOException {
+        public HTTPResponse post(URL url, InputStream content, String contentType) {
             return null;
         }
     }

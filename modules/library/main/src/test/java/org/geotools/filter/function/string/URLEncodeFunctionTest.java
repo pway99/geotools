@@ -52,7 +52,7 @@ public class URLEncodeFunctionTest {
 
     /** Test of evaluate method, of class URLEncodeFunction. */
     @Test
-    public void testURLEncodeWithDefault() throws Exception {
+    public void testURLEncodeWithDefault() {
         URLEncodeFunction f = new URLEncodeFunction();
 
         List<Expression> params = Arrays.asList(filterFactory.literal("Value With Spaces"));
@@ -63,7 +63,7 @@ public class URLEncodeFunctionTest {
 
     /** Test of evaluate method, of class URLEncodeFunction. */
     @Test
-    public void testURLEncode() throws Exception {
+    public void testURLEncode() {
         URLEncodeFunction f = new URLEncodeFunction();
 
         List<Expression> params =
@@ -76,7 +76,7 @@ public class URLEncodeFunctionTest {
 
     /** Test of evaluate method, of class URLEncodeFunction. */
     @Test
-    public void testFormURLEncode() throws Exception {
+    public void testFormURLEncode() {
         URLEncodeFunction f = new URLEncodeFunction();
 
         List<Expression> params =

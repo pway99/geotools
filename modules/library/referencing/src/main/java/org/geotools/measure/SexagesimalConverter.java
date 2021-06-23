@@ -16,7 +16,6 @@
  */
 package org.geotools.measure;
 
-import java.io.ObjectStreamException;
 import javax.measure.UnitConverter;
 import tech.units.indriya.function.AbstractConverter;
 
@@ -173,7 +172,7 @@ class SexagesimalConverter extends AbstractConverter {
     }
 
     /** On deserialization, returns an existing instance. */
-    protected Object readResolve() throws ObjectStreamException {
+    protected Object readResolve() {
         UnitConverter candidate = INTEGER;
         for (int i = 0; i <= 3; i++) {
             switch (i) {

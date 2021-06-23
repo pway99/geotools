@@ -380,7 +380,7 @@ public class MongoDataStore extends ContentDataStore {
     }
 
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
 
         Set<String> collectionNames = new LinkedHashSet<>(dataStoreDB.getCollectionNames());
         Set<String> typeNameSet = new LinkedHashSet<>();
@@ -477,7 +477,7 @@ public class MongoDataStore extends ContentDataStore {
     }
 
     @Override
-    protected ContentFeatureSource createFeatureSource(ContentEntry entry) throws IOException {
+    protected ContentFeatureSource createFeatureSource(ContentEntry entry) {
         ContentState state = entry.getState(null);
         SimpleFeatureType type = state.getFeatureType();
         if (type == null) {

@@ -33,7 +33,7 @@ import org.opengis.feature.simple.SimpleFeatureType;
  */
 public class MainExamples {
 
-    void exampleDataUtilities() throws Exception {
+    void exampleDataUtilities() {
         FeatureCollection<SimpleFeatureType, SimpleFeature> collection = null;
 
         // exampleDataUtilities start
@@ -42,7 +42,7 @@ public class MainExamples {
     }
 
     // exampleRetype start
-    void exampleRetype() throws Exception {
+    void exampleRetype() {
         SimpleFeatureType origional =
                 DataUtilities.createType("LINE", "centerline:LineString,name:\"\",id:0");
         SimpleFeatureType modified = DataUtilities.createSubType(origional, "centerline");
@@ -54,7 +54,7 @@ public class MainExamples {
     // exampleRetype end
 
     @SuppressFBWarnings
-    void exampleIterator() throws Exception {
+    void exampleIterator() {
         SimpleFeatureCollection featureCollection = null;
         // exampleIterator start
         try (SimpleFeatureIterator iterator = featureCollection.features()) {

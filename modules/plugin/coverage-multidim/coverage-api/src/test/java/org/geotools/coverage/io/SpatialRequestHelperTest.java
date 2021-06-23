@@ -45,9 +45,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.opengis.geometry.Envelope;
 import org.opengis.metadata.spatial.PixelOrientation;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
-import org.opengis.referencing.operation.TransformException;
 
 /** @author Nicola Lagomarsini Geosolutions */
 public class SpatialRequestHelperTest {
@@ -164,8 +161,7 @@ public class SpatialRequestHelperTest {
 
     @Test
     public void testHelperWithReprojection()
-            throws DataSourceException, NoSuchAuthorityCodeException, TransformException,
-                    FactoryException {
+            throws DataSourceException {
         // Initialization of the helper
         SpatialRequestHelper helper = new SpatialRequestHelper();
         // Final GridGeometry
@@ -204,8 +200,7 @@ public class SpatialRequestHelperTest {
 
     @Test
     public void testHelperWithNoGridGeometry()
-            throws DataSourceException, NoSuchAuthorityCodeException, TransformException,
-                    FactoryException {
+            throws DataSourceException {
         // Initialization of the helper
         SpatialRequestHelper helper = new SpatialRequestHelper();
         // Setting the properties

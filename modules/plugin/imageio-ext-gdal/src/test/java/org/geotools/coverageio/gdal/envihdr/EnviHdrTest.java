@@ -42,8 +42,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.ParameterValue;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 
 /**
  * @author Mathew Wyatt, CSIRO Australia
@@ -141,7 +139,7 @@ public class EnviHdrTest extends GDALTestCase {
     }
 
     @Test
-    public void testIsAvailable() throws NoSuchAuthorityCodeException, FactoryException {
+    public void testIsAvailable() {
         if (!testingEnabled()) {
             return;
         }

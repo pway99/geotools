@@ -71,7 +71,7 @@ public class SpatialIndexInputStream extends VPFInputStream {
      * @exception IOException if an error occurs
      */
     @Override
-    public VPFRow readRow() throws IOException {
+    public VPFRow readRow() {
         return null;
     }
 

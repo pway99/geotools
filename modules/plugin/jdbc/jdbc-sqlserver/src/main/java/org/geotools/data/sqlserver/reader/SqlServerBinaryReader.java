@@ -169,7 +169,7 @@ public class SqlServerBinaryReader {
         return cgf.createCircularString(sequence);
     }
 
-    private Geometry decodeCompoundCurve(int shapeIndex) throws SqlServerBinaryParseException {
+    private Geometry decodeCompoundCurve(int shapeIndex) {
         Shape shape = binary.getShape(shapeIndex);
         Figure figure = binary.getFigure(shape.getFigureOffset());
         CoordinateSequence[] sequences = binary.getSequence(shape.getFigureOffset());

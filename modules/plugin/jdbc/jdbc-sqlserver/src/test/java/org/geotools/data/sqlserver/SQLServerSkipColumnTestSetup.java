@@ -23,7 +23,7 @@ public class SQLServerSkipColumnTestSetup extends JDBCSkipColumnTestSetup {
     }
 
     @Override
-    protected void dropSkipColumnTable() throws Exception {
+    protected void dropSkipColumnTable() {
         runSafe("DELETE FROM GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'skipcolumn'");
         runSafe("DROP TABLE \"skipcolumn\"");
     }

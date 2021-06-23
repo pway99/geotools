@@ -33,7 +33,7 @@ public class BigDateConverterFactory implements ConverterFactory {
             return new Converter() {
 
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     return target.cast(new BigDate((Long) source));
                 }
             };

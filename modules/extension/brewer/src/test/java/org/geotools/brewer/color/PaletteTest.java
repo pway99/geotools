@@ -23,7 +23,7 @@ public class PaletteTest {
     ColorBrewer brewer;
 
     @Test
-    public void testSequential() throws Exception {
+    public void testSequential() {
         brewer = new ColorBrewer();
         brewer.loadPalettes(ColorBrewer.SEQUENTIAL);
 
@@ -37,7 +37,7 @@ public class PaletteTest {
     }
 
     @Test
-    public void testDiverging() throws Exception {
+    public void testDiverging() {
         brewer = new ColorBrewer();
         brewer.loadPalettes(ColorBrewer.DIVERGING);
 
@@ -51,7 +51,7 @@ public class PaletteTest {
     }
 
     @Test
-    public void testQualitative() throws Exception {
+    public void testQualitative() {
         brewer = new ColorBrewer();
         brewer.loadPalettes(ColorBrewer.QUALITATIVE);
 
@@ -65,7 +65,7 @@ public class PaletteTest {
     }
 
     @Test
-    public void testAll() throws Exception {
+    public void testAll() {
         // load all palettes (defaults)
         brewer = new ColorBrewer();
         brewer.loadPalettes();

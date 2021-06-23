@@ -47,7 +47,7 @@ public class PropertyFeatureStore extends ContentFeatureStore {
     SimpleFeatureType featureType;
     PropertyDataStore store;
 
-    PropertyFeatureStore(ContentEntry entry, Query query) throws IOException {
+    PropertyFeatureStore(ContentEntry entry, Query query) {
         super(entry, query);
         this.store = (PropertyDataStore) entry.getDataStore();
         this.typeName = entry.getTypeName();

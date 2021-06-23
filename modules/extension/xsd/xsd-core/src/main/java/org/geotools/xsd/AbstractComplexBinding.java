@@ -56,7 +56,7 @@ public abstract class AbstractComplexBinding implements ComplexBinding {
      * Subclasses should override this method, the default implementation return <code>null</code>.
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return null;
     }
 
@@ -67,7 +67,7 @@ public abstract class AbstractComplexBinding implements ComplexBinding {
      * @see ComplexBinding#encode(Object, Document, Element).
      */
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         return value;
     }
 
@@ -78,7 +78,7 @@ public abstract class AbstractComplexBinding implements ComplexBinding {
      * @see ComplexBinding#getProperty(Object, QName)
      */
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         // do nothing, subclasses should override
         return null;
     }
@@ -91,8 +91,7 @@ public abstract class AbstractComplexBinding implements ComplexBinding {
      * in which the contents are not specifically specified by the schema.
      */
     @Override
-    public List<Object[]> getProperties(Object object, XSDElementDeclaration element)
-            throws Exception {
+    public List<Object[]> getProperties(Object object, XSDElementDeclaration element) {
         // do nothing, subclasses should override
         return null;
     }

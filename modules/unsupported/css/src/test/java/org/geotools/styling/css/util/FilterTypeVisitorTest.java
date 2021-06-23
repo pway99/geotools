@@ -40,7 +40,7 @@ public class FilterTypeVisitorTest {
     }
 
     @Test
-    public void testGreterThan() throws Exception {
+    public void testGreterThan() {
         Filter filter = CQL.toFilter("myAtt > 10");
         filter.accept(visitor, null);
         assertEquals(1, aggregator.types.size());
@@ -48,7 +48,7 @@ public class FilterTypeVisitorTest {
     }
 
     @Test
-    public void testTimeEquals() throws Exception {
+    public void testTimeEquals() {
         Filter filter = CQL.toFilter("time TEQUALS 2006-11-30T01:30:00Z");
         filter.accept(visitor, null);
         assertEquals(1, aggregator.types.size());
@@ -56,7 +56,7 @@ public class FilterTypeVisitorTest {
     }
 
     @Test
-    public void testBetween() throws Exception {
+    public void testBetween() {
         Filter filter = CQL.toFilter("a between 10 and 20.5");
         filter.accept(visitor, null);
         assertEquals(1, aggregator.types.size());
@@ -64,7 +64,7 @@ public class FilterTypeVisitorTest {
     }
 
     @Test
-    public void testMath() throws Exception {
+    public void testMath() {
         Filter filter = ECQL.toFilter("a + 3 > 5");
         filter.accept(visitor, null);
         assertEquals(1, aggregator.types.size());
@@ -72,7 +72,7 @@ public class FilterTypeVisitorTest {
     }
 
     @Test
-    public void testAnd() throws Exception {
+    public void testAnd() {
         Filter filter = ECQL.toFilter("a > 5 and a < 10.0");
         filter.accept(visitor, null);
         assertEquals(1, aggregator.types.size());
@@ -80,7 +80,7 @@ public class FilterTypeVisitorTest {
     }
 
     @Test
-    public void testGeometry() throws Exception {
+    public void testGeometry() {
         Filter filter = ECQL.toFilter("CONTAINS(geom, POINT(1 2))");
         filter.accept(visitor, null);
         assertEquals(1, aggregator.types.size());
@@ -88,7 +88,7 @@ public class FilterTypeVisitorTest {
     }
 
     @Test
-    public void testFunction() throws Exception {
+    public void testFunction() {
         Filter filter = ECQL.toFilter("CONTAINS(buffer(geom, distance), POINT(1 2))");
         filter.accept(visitor, null);
         assertEquals(2, aggregator.types.size());

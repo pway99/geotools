@@ -223,7 +223,7 @@ public final class WorldImageWriter extends AbstractGridCoverageWriter
             final RenderedImage image,
             final String baseFile,
             final String extension)
-            throws IOException, TransformException {
+            throws IOException {
         // /////////////////////////////////////////////////////////////////////
         //
         // CRS information

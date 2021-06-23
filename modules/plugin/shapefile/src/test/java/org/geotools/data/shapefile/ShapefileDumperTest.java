@@ -76,7 +76,7 @@ public class ShapefileDumperTest {
     List<ShapefileDataStore> shapefileStores = new ArrayList<>();
 
     @Before
-    public void setup() throws IOException {
+    public void setup() {
         if (dumperFolder.exists()) {
             FileUtils.deleteQuietly(dumperFolder);
         }
@@ -86,7 +86,7 @@ public class ShapefileDumperTest {
     }
 
     @After
-    public void teardown() throws IOException {
+    public void teardown() {
         if (propertyStore != null) {
             propertyStore.dispose();
         }

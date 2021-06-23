@@ -16,7 +16,6 @@
  */
 package org.geotools.data;
 
-import java.io.IOException;
 import java.util.List;
 import org.geotools.data.simple.SimpleFeatureStore;
 import org.geotools.feature.FeatureCollection;
@@ -43,7 +42,7 @@ class SimpleFeatureStoreBridge extends SimpleFeatureSourceBridge implements Simp
 
     @Override
     public List<FeatureId> addFeatures(
-            FeatureCollection<SimpleFeatureType, SimpleFeature> collection) throws IOException {
+            FeatureCollection<SimpleFeatureType, SimpleFeature> collection) {
         return delegate().addFeatures(collection);
     }
 
@@ -53,34 +52,33 @@ class SimpleFeatureStoreBridge extends SimpleFeatureSourceBridge implements Simp
     }
 
     @Override
-    public void modifyFeatures(Name[] names, Object[] values, Filter filter) throws IOException {
+    public void modifyFeatures(Name[] names, Object[] values, Filter filter) {
         delegate().modifyFeatures(names, values, filter);
     }
 
     @Override
-    public void modifyFeatures(Name name, Object value, Filter filter) throws IOException {
+    public void modifyFeatures(Name name, Object value, Filter filter) {
         delegate().modifyFeatures(name, value, filter);
     }
 
     @Override
-    public void modifyFeatures(String name, Object attributeValue, Filter filter)
-            throws IOException {
+    public void modifyFeatures(String name, Object attributeValue, Filter filter) {
         if (delegate instanceof SimpleFeatureStore) {
             ((SimpleFeatureStore) delegate).modifyFeatures(name, attributeValue, filter);
         } else {
             modifyFeatures(
                     new Name[] {
-                        new NameImpl(name),
+                        new NameImpl(name)
                     },
                     new Object[] {
-                        attributeValue,
+                        attributeValue
                     },
                     filter);
         }
     }
 
     @Override
-    public void modifyFeatures(String[] names, Object[] values, Filter filter) throws IOException {
+    public void modifyFeatures(String[] names, Object[] values, Filter filter) {
         if (delegate instanceof SimpleFeatureStore) {
             ((SimpleFeatureStore) delegate).modifyFeatures(names, values, filter);
         } else {
@@ -93,13 +91,12 @@ class SimpleFeatureStoreBridge extends SimpleFeatureSourceBridge implements Simp
     }
 
     @Override
-    public void removeFeatures(Filter filter) throws IOException {
+    public void removeFeatures(Filter filter) {
         delegate().removeFeatures(filter);
     }
 
     @Override
-    public void setFeatures(FeatureReader<SimpleFeatureType, SimpleFeature> reader)
-            throws IOException {
+    public void setFeatures(FeatureReader<SimpleFeatureType, SimpleFeature> reader) {
         delegate().setFeatures(reader);
     }
 

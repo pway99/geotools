@@ -52,7 +52,7 @@ public class SQLServerJoinTestSetup extends JDBCJoinTestSetup {
     }
 
     @Override
-    protected void dropJoinTable() throws Exception {
+    protected void dropJoinTable() {
         runSafe("DROP TABLE ftjoin");
         runSafe("DROP TABLE ftjoin2");
     }

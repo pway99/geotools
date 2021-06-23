@@ -74,7 +74,7 @@ public class CurvePropertyTypeBinding extends org.geotools.gml3.bindings.CurvePr
     }
 
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return node.getChildValue(LineString.class);
     }
 

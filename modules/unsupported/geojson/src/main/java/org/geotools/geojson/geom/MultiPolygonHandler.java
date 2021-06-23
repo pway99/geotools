@@ -16,7 +16,6 @@
  */
 package org.geotools.geojson.geom;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.parser.ParseException;
@@ -37,7 +36,7 @@ public class MultiPolygonHandler extends GeometryHandlerBase<MultiPolygon> {
     }
 
     @Override
-    public boolean startObjectEntry(String key) throws ParseException, IOException {
+    public boolean startObjectEntry(String key) {
         if ("coordinates".equals(key)) {
             polys = new ArrayList<>();
         }
@@ -46,7 +45,7 @@ public class MultiPolygonHandler extends GeometryHandlerBase<MultiPolygon> {
     }
 
     @Override
-    public boolean startArray() throws ParseException, IOException {
+    public boolean startArray() {
         if (rings == null) {
             rings = new ArrayList<>();
         } else if (coordinates == null) {
@@ -58,7 +57,7 @@ public class MultiPolygonHandler extends GeometryHandlerBase<MultiPolygon> {
     }
 
     @Override
-    public boolean endArray() throws ParseException, IOException {
+    public boolean endArray() throws ParseException {
         if (ordinates != null) {
             coordinates.add(coordinate(ordinates));
             ordinates = null;
@@ -74,7 +73,7 @@ public class MultiPolygonHandler extends GeometryHandlerBase<MultiPolygon> {
     }
 
     @Override
-    public boolean endObject() throws ParseException, IOException {
+    public boolean endObject() {
         if (polys != null) {
             Polygon[] polygons = new Polygon[polys.size()];
             for (int i = 0; i < polys.size(); i++) {

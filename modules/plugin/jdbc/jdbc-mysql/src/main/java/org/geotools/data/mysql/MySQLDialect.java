@@ -291,7 +291,7 @@ public class MySQLDialect extends SQLDialect {
 
     @Override
     public Envelope decodeGeometryEnvelope(ResultSet rs, int column, Connection cx)
-            throws SQLException, IOException {
+            throws SQLException {
         byte[] wkb = rs.getBytes(column);
 
         try {
@@ -319,7 +319,7 @@ public class MySQLDialect extends SQLDialect {
             GeometryFactory factory,
             Connection cx,
             Hints hints)
-            throws IOException, SQLException {
+            throws SQLException {
         byte[] bytes = rs.getBytes(name);
         if (bytes == null) {
             return null;
@@ -395,7 +395,7 @@ public class MySQLDialect extends SQLDialect {
 
     @Override
     public void postCreateTable(String schemaName, SimpleFeatureType featureType, Connection cx)
-            throws SQLException, IOException {
+            throws SQLException {
 
         // create the geometry_columns table if necessary
         DatabaseMetaData md = cx.getMetaData();

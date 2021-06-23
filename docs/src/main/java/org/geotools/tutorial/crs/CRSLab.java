@@ -96,7 +96,7 @@ public class CRSLab {
      * </ol>
      */
     // docs start display
-    private void displayShapefile() throws Exception {
+    private void displayShapefile() {
         sourceFile = JFileDataStoreChooser.showOpenFile("shp", null);
         if (sourceFile == null) {
             return;
@@ -266,7 +266,7 @@ public class CRSLab {
      * @return the number of invalid geometries found
      */
     // docs start validate
-    private int validateFeatureGeometry(ProgressListener progress) throws Exception {
+    private int validateFeatureGeometry(ProgressListener progress) {
         final SimpleFeatureCollection featureCollection = featureSource.getFeatures();
 
         // Rather than use an iterator, create a FeatureVisitor to check each fature
@@ -351,7 +351,7 @@ public class CRSLab {
             // displayed properly
             SwingWorker worker =
                     new SwingWorker<String, Object>() {
-                        protected String doInBackground() throws Exception {
+                        protected String doInBackground() {
                             // For shapefiles with many features its nice to display a progress bar
                             final JProgressWindow progress = new JProgressWindow(null);
                             progress.setTitle("Validating feature geometry");

@@ -151,7 +151,7 @@ public class WFSDataStoreFactory extends WFSDataAccessFactory implements DataSto
     }
 
     @Override
-    public DataStore createNewDataStore(final Map<String, ?> params) throws IOException {
+    public DataStore createNewDataStore(final Map<String, ?> params) {
         throw new UnsupportedOperationException("Operation not applicable to a WFS service");
     }
 

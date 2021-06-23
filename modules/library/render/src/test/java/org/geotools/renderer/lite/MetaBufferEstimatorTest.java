@@ -136,7 +136,7 @@ public class MetaBufferEstimatorTest extends DataTestCase {
     }
 
     @Test
-    public void testMarkNoSizeNoStroke() throws Exception {
+    public void testMarkNoSizeNoStroke() {
         StyleBuilder sb = new StyleBuilder();
         Mark mark = sb.createMark("square");
         mark.setStroke(null);
@@ -152,7 +152,7 @@ public class MetaBufferEstimatorTest extends DataTestCase {
     }
 
     @Test
-    public void testMarkStroke() throws Exception {
+    public void testMarkStroke() {
         StyleBuilder sb = new StyleBuilder();
         Mark mark = sb.createMark("square");
         mark.getStroke().setWidth(sb.getFilterFactory().literal(10));
@@ -168,7 +168,7 @@ public class MetaBufferEstimatorTest extends DataTestCase {
     }
 
     @Test
-    public void testNullStroke() throws Exception {
+    public void testNullStroke() {
         StyleBuilder sb = new StyleBuilder();
         LineSymbolizer ls = sb.createLineSymbolizer(Stroke.NULL);
         Style style = sb.createStyle(ls);
@@ -180,7 +180,7 @@ public class MetaBufferEstimatorTest extends DataTestCase {
     }
 
     @Test
-    public void testGraphicSizeFunction() throws Exception {
+    public void testGraphicSizeFunction() {
         StyleBuilder sb = new StyleBuilder();
         Mark mark = sb.createMark("square");
         mark.setStroke(null);
@@ -211,7 +211,7 @@ public class MetaBufferEstimatorTest extends DataTestCase {
     }
 
     @Test
-    public void testFeatureBound() throws Exception {
+    public void testFeatureBound() {
         StyleBuilder sb = new StyleBuilder();
         LineSymbolizer ls = sb.createLineSymbolizer(Color.BLUE);
         ls.getStroke().setWidth(ff.multiply(ff.literal(2), ff.property("flow")));

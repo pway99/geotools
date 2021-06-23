@@ -41,7 +41,7 @@ public class DuplicatorFilterVisitorTest {
     FilterFactory fac;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         fac = CommonFactoryFinder.getFilterFactory(null);
     }
 

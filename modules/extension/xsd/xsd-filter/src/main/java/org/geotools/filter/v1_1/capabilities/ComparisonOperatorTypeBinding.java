@@ -88,12 +88,12 @@ public class ComparisonOperatorTypeBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         return factory.operator((String) value);
     }
 
     @Override
-    public String encode(Object object, String value) throws Exception {
+    public String encode(Object object, String value) {
         Operator op = (Operator) object;
 
         return op.getName();

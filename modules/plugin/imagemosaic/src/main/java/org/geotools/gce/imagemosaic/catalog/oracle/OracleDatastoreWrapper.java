@@ -16,7 +16,6 @@
  */
 package org.geotools.gce.imagemosaic.catalog.oracle;
 
-import java.io.IOException;
 import org.geotools.data.DataStore;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.data.simple.SimpleFeatureStore;
@@ -36,14 +35,13 @@ public class OracleDatastoreWrapper extends DataStoreWrapper {
     }
 
     @Override
-    protected FeatureTypeMapper getFeatureTypeMapper(SimpleFeatureType featureType)
-            throws Exception {
+    protected FeatureTypeMapper getFeatureTypeMapper(SimpleFeatureType featureType) {
         return new OracleFeatureTypeMapper(featureType);
     }
 
     @Override
     protected SimpleFeatureSource transformFeatureStore(
-            SimpleFeatureStore store, FeatureTypeMapper mapper) throws IOException {
+            SimpleFeatureStore store, FeatureTypeMapper mapper) {
         SimpleFeatureSource transformedSource = mapper.getSimpleFeatureSource();
         if (transformedSource != null) {
             return transformedSource;

@@ -36,7 +36,7 @@ public class MultiSurfaceTypeBinding extends org.geotools.gml3.bindings.MultiSur
     }
 
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         // we keep the same sequence order as in the xsd:
 

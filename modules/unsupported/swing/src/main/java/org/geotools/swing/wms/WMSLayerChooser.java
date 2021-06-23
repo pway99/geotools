@@ -21,7 +21,6 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -60,12 +59,12 @@ public class WMSLayerChooser extends JDialog implements ActionListener {
 
     private DefaultListModel<Layer> model;
 
-    public WMSLayerChooser() throws HeadlessException {
+    public WMSLayerChooser() {
         super();
         init();
     }
 
-    public WMSLayerChooser(Frame owner, boolean modal) throws HeadlessException {
+    public WMSLayerChooser(Frame owner, boolean modal) {
         super(owner, modal);
         init();
     }
@@ -75,17 +74,17 @@ public class WMSLayerChooser extends JDialog implements ActionListener {
         init();
     }
 
-    public WMSLayerChooser(Frame owner, String title, boolean modal) throws HeadlessException {
+    public WMSLayerChooser(Frame owner, String title, boolean modal) {
         super(owner, title, modal);
         init();
     }
 
-    public WMSLayerChooser(Frame owner, String title) throws HeadlessException {
+    public WMSLayerChooser(Frame owner, String title) {
         super(owner, title);
         init();
     }
 
-    public WMSLayerChooser(Frame owner) throws HeadlessException {
+    public WMSLayerChooser(Frame owner) {
         super(owner);
         init();
     }

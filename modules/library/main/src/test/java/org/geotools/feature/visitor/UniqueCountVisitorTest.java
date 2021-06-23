@@ -102,7 +102,7 @@ public class UniqueCountVisitorTest {
     }
 
     @Test
-    public void testUniqueCountVisitorWithFilter() throws IOException {
+    public void testUniqueCountVisitorWithFilter() {
         UniqueCountVisitor uniqueCountVisitor = new UniqueCountVisitor("aStringValue");
         Filter f =
                 ff.or(
@@ -114,7 +114,7 @@ public class UniqueCountVisitorTest {
     }
 
     @Test
-    public void testUniqueCountVisitorWithFilter2() throws IOException {
+    public void testUniqueCountVisitorWithFilter2() {
         UniqueCountVisitor uniqueCountVisitor = new UniqueCountVisitor("aDoubleValue");
         Filter f =
                 ff.or(

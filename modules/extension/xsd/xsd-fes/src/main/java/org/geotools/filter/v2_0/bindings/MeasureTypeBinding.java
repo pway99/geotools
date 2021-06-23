@@ -86,7 +86,7 @@ public class MeasureTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Object uom = node.getAttributeValue("uom");
         DistanceUnits distanceUnits =
                 DistanceUnits.of((Double) value, uom != null ? uom.toString() : null);

@@ -140,8 +140,7 @@ public class StrictWFS_1_x_Strategy extends AbstractWFSStrategy {
      */
     @SuppressWarnings("unchecked")
     @Override
-    protected GetFeatureType createGetFeatureRequestPost(GetFeatureRequest query)
-            throws IOException {
+    protected GetFeatureType createGetFeatureRequestPost(GetFeatureRequest query) {
 
         final QName typeName = query.getTypeName();
         final FeatureTypeInfo featureTypeInfo = getFeatureTypeInfo(typeName);
@@ -241,23 +240,21 @@ public class StrictWFS_1_x_Strategy extends AbstractWFSStrategy {
     }
 
     @Override
-    protected EObject createListStoredQueriesRequestPost(ListStoredQueriesRequest request)
-            throws IOException {
+    protected EObject createListStoredQueriesRequestPost(ListStoredQueriesRequest request) {
         // Not implemented in 1.0.0 or 1.1.0, this method should never be entered
         throw new UnsupportedOperationException(
                 "WFS 1.0.0 / 1.1.0 does not support Stored Queries!");
     }
 
     @Override
-    protected EObject createDescribeStoredQueriesRequestPost(DescribeStoredQueriesRequest request)
-            throws IOException {
+    protected EObject createDescribeStoredQueriesRequestPost(DescribeStoredQueriesRequest request) {
         // Not implemented in 1.0.0 or 1.1.0, this method should never be entered
         throw new UnsupportedOperationException(
                 "WFS 1.0.0 / 1.1.0 does not support Stored Queries!");
     }
 
     @Override
-    protected EObject createTransactionRequest(TransactionRequest request) throws IOException {
+    protected EObject createTransactionRequest(TransactionRequest request) {
         final WfsFactory factory = WfsFactory.eINSTANCE;
 
         TransactionType tx = factory.createTransactionType();
@@ -353,7 +350,7 @@ public class StrictWFS_1_x_Strategy extends AbstractWFSStrategy {
         return update;
     }
 
-    protected DeleteElementType createDelete(WfsFactory factory, Delete elem) throws Exception {
+    protected DeleteElementType createDelete(WfsFactory factory, Delete elem) {
         DeleteElementType delete = factory.createDeleteElementType();
 
         QName typeName = elem.getTypeName();

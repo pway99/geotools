@@ -117,7 +117,7 @@ public class DeleteElementTypeBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         DeleteElementType deleteElement = wfsfactory.createDeleteElementType();
 
         // &lt;xsd:element maxOccurs="1" minOccurs="1" ref="ogc:Filter"&gt;

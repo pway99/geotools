@@ -31,7 +31,7 @@ public class SubFeatureCollectionTest extends DataTestCase {
     DefaultFeatureCollection features = new DefaultFeatureCollection(null, null);
 
     @Override
-    public void init() throws Exception {
+    public void init() {
         SimpleFeatureTypeBuilder tb = new SimpleFeatureTypeBuilder();
         tb.setName("Dummy");
 

@@ -46,14 +46,13 @@ import org.geotools.image.ImageWorker;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.opengis.referencing.operation.TransformException;
 
 /** @author Simone Giannecchini, GeoSolutions. */
 public class TestPiecewise {
 
     /** Testing {@link DefaultConstantPiecewiseTransformElement}. */
     @Test
-    public void linearTransform() throws IOException, TransformException, TransformationException {
+    public void linearTransform() throws TransformationException {
 
         // /////////////////////////////////////////////////////////////////////
         //
@@ -96,7 +95,7 @@ public class TestPiecewise {
     }
     /** Testing {@link org.geotools.renderer.lite.gridcoverage2d.MathTransformationAdapter}. */
     @Test
-    public void mathTransform1DAdapter() throws IOException, TransformException {
+    public void mathTransform1DAdapter() {
         // default adapter
         final MathTransformationAdapter defaultAdapter = new MathTransformationAdapter();
         Assert.assertEquals(defaultAdapter.getSourceDimensions(), 1);
@@ -124,7 +123,7 @@ public class TestPiecewise {
     @Test
     @SuppressWarnings("SelfEquals")
     public void constantTransform()
-            throws IOException, TransformException,
+            throws
                     it.geosolutions.jaiext.piecewise.NoninvertibleTransformException,
                     TransformationException {
 
@@ -240,7 +239,7 @@ public class TestPiecewise {
     /** Testing testPiecewiseLogarithm. */
     @Test
     public void piecewiseLogarithm()
-            throws IOException, TransformException, TransformationException {
+            throws TransformationException {
 
         // /////////////////////////////////////////////////////////////////////
         //
@@ -257,7 +256,7 @@ public class TestPiecewise {
                         new MathTransformation() {
 
                             @Override
-                            public double derivative(double arg0) throws TransformException {
+                            public double derivative(double arg0) {
 
                                 return 1 / arg0;
                             }
@@ -290,8 +289,7 @@ public class TestPiecewise {
                             }
 
                             @Override
-                            public Position transform(Position ptSrc, Position ptDst)
-                                    throws TransformationException {
+                            public Position transform(Position ptSrc, Position ptDst) {
                                 if (ptDst == null) {
                                     ptDst = new Position();
                                 }
@@ -368,7 +366,7 @@ public class TestPiecewise {
 
     /** Testing DefaultPiecewiseTransform1DElement. */
     @Test
-    public void defaultTransform() throws IOException, TransformException, TransformationException {
+    public void defaultTransform() throws TransformationException {
         ////
         //
         // Create first element and test it
@@ -470,7 +468,7 @@ public class TestPiecewise {
     /** Testing DefaultPassthroughPiecewiseTransform1DElement . */
     @Test
     public void passthroughTransform()
-            throws IOException, TransformException, TransformationException {
+            throws TransformationException {
         ////
         //
         // testing the passthrough through direct instantion
@@ -546,7 +544,7 @@ public class TestPiecewise {
 
     /** Testing Short input values. */
     @Test
-    public void lookupByte() throws IOException, TransformException {
+    public void lookupByte() throws IOException {
 
         // /////////////////////////////////////////////////////////////////////
         //
@@ -618,7 +616,7 @@ public class TestPiecewise {
                         new MathTransformationAdapter() {
 
                             @Override
-                            public double derivative(double arg0) throws TransformException {
+                            public double derivative(double arg0) {
 
                                 return 1 / arg0;
                             }

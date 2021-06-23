@@ -42,7 +42,7 @@ public class EnumerationConverterFactory implements ConverterFactory {
 
         @Override
         @SuppressWarnings("unchecked")
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             if (source instanceof String && target.isEnum()) {
                 return (T) Enum.valueOf((Class<Enum>) target, (String) source);
             } else if (source.getClass().isEnum() && String.class.equals(target)) {

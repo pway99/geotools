@@ -55,7 +55,7 @@ public class RenamingGranuleSource implements GranuleSource {
     }
 
     @Override
-    public SimpleFeatureCollection getGranules(Query q) throws IOException {
+    public SimpleFeatureCollection getGranules(Query q) {
         Query renamed = renameQuery(q);
         SimpleFeatureCollection granules = delegate.getGranules(renamed);
         SimpleFeatureType targetSchema = this.schema;
@@ -72,17 +72,17 @@ public class RenamingGranuleSource implements GranuleSource {
     }
 
     @Override
-    public int getCount(Query q) throws IOException {
+    public int getCount(Query q) {
         return delegate.getCount(renameQuery(q));
     }
 
     @Override
-    public ReferencedEnvelope getBounds(Query q) throws IOException {
+    public ReferencedEnvelope getBounds(Query q) {
         return delegate.getBounds(renameQuery(q));
     }
 
     @Override
-    public SimpleFeatureType getSchema() throws IOException {
+    public SimpleFeatureType getSchema() {
         return schema;
     }
 

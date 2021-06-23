@@ -146,7 +146,7 @@ public class DirectoryDataStore implements DataStore {
     }
 
     @Override
-    public SimpleFeatureSource getFeatureSource(Name typeName) throws IOException {
+    public SimpleFeatureSource getFeatureSource(Name typeName) {
         return getFeatureSource(typeName.getLocalPart());
     }
 
@@ -174,12 +174,12 @@ public class DirectoryDataStore implements DataStore {
     }
 
     @Override
-    public SimpleFeatureType getSchema(Name name) throws IOException {
+    public SimpleFeatureType getSchema(Name name) {
         return getSchema(name.getLocalPart());
     }
 
     @Override
-    public void updateSchema(Name typeName, SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(Name typeName, SimpleFeatureType featureType) {
         updateSchema(typeName.getLocalPart(), featureType);
     }
 
@@ -192,7 +192,7 @@ public class DirectoryDataStore implements DataStore {
     }
 
     @Override
-    public void removeSchema(Name name) throws IOException {
+    public void removeSchema(Name name) {
         removeSchema(name.getLocalPart());
     }
 

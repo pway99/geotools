@@ -87,7 +87,7 @@ public class GetCapabilitiesBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         GetCapabilitiesType capabilities = factory.createGetCapabilitiesType();
         capabilities.setAcceptFormats((AcceptFormatsType) node.getChildValue("AcceptFormats"));
         return capabilities;

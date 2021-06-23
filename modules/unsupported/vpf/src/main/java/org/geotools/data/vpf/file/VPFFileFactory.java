@@ -63,7 +63,7 @@ public class VPFFileFactory implements DataStoreFactorySpi {
      * @see org.geotools.data.DataStoreFactorySpi#createNewDataStore(java.util.Map)
      */
     @Override
-    public DataStore createNewDataStore(Map<String, ?> params) throws IOException {
+    public DataStore createNewDataStore(Map<String, ?> params) {
         throw new UnsupportedOperationException("Only existing data stores may be created.");
     }
 

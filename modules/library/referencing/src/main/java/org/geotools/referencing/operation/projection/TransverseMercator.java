@@ -158,8 +158,7 @@ public class TransverseMercator extends MapProjection {
      * radians) and stores the result in {@code ptDst} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D transformNormalized(double x, double y, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double x, double y, Point2D ptDst) {
         double sinphi = sin(y);
         double cosphi = cos(y);
 

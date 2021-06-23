@@ -28,7 +28,7 @@ public class SimpleFeaturePropertyAccessorFactoryTest {
     SimpleFeaturePropertyAccessorFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new SimpleFeaturePropertyAccessorFactory();
     }
 

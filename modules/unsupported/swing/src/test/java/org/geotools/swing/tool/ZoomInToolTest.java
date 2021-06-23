@@ -51,7 +51,7 @@ public class ZoomInToolTest extends CursorToolTestBase {
     }
 
     @Test
-    public void clickZoomAtCentreOfMap() throws Exception {
+    public void clickZoomAtCentreOfMap() {
         ReferencedEnvelope startEnv = mapPane.getDisplayArea();
         mapPane.setCursorTool(tool);
 
@@ -69,7 +69,7 @@ public class ZoomInToolTest extends CursorToolTestBase {
     }
 
     @Test
-    public void zoomInToolSupportsDragging() throws Exception {
+    public void zoomInToolSupportsDragging() {
         assertTrue(tool.drawDragBox());
     }
 
@@ -78,7 +78,7 @@ public class ZoomInToolTest extends CursorToolTestBase {
      * width and height
      */
     @Test
-    public void drawBoxToZoom() throws Exception {
+    public void drawBoxToZoom() {
         mapPane.setCursorTool(tool);
 
         Rectangle dragBoxRect =

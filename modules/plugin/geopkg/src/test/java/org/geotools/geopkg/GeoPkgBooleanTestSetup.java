@@ -42,7 +42,7 @@ public class GeoPkgBooleanTestSetup extends JDBCBooleanTestSetup {
     }
 
     @Override
-    protected void dropBooleanTable() throws Exception {
+    protected void dropBooleanTable() {
         runSafe("DROP TABLE b");
         runSafe("DELETE FROM gpkg_geometry_columns where table_name = 'b'");
         runSafe("DELETE FROM gpkg_contents where table_name = 'b'");

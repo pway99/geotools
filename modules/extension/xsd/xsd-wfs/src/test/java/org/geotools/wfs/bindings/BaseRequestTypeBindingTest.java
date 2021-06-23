@@ -36,7 +36,7 @@ public class BaseRequestTypeBindingTest extends WFSTestSupport {
 
     @Override
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         // BaseRequestType is abstract, use a concrete subclass instead
         BaseRequestType brq = factory.createDescribeFeatureTypeType();
         brq.setHandle("foo");

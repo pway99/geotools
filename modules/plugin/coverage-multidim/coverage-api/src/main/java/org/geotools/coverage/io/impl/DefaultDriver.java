@@ -192,15 +192,13 @@ public class DefaultDriver implements Driver {
     }
 
     protected CoverageAccess connect(
-            Map<String, Serializable> params, Hints hints, ProgressListener listener)
-            throws IOException {
+            Map<String, Serializable> params, Hints hints, ProgressListener listener) {
 
         throw new UnsupportedOperationException("Operation not currently implemented");
     }
 
     protected CoverageAccess create(
-            Map<String, Serializable> params, Hints hints, ProgressListener listener)
-            throws IOException {
+            Map<String, Serializable> params, Hints hints, ProgressListener listener) {
         throw new UnsupportedOperationException("Operation not currently implemented");
     }
 
@@ -217,8 +215,7 @@ public class DefaultDriver implements Driver {
     }
 
     protected CoverageAccess delete(
-            Map<String, Serializable> params, Hints hints, ProgressListener listener)
-            throws IOException {
+            Map<String, Serializable> params, Hints hints, ProgressListener listener) {
         throw new UnsupportedOperationException("Operation not currently implemented");
     }
 

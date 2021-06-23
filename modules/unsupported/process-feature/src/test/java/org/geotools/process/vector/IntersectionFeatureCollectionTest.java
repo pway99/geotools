@@ -74,7 +74,7 @@ public class IntersectionFeatureCollectionTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testExceptionOpModeFstCollection() throws Exception {
+    public void testExceptionOpModeFstCollection() {
         logger.info("Running testExceptionOpModeFstCollection ...");
         ArrayList<String> toRemoveFst = new ArrayList<>();
         toRemoveFst.add("cat2");
@@ -91,7 +91,7 @@ public class IntersectionFeatureCollectionTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testExceptionOpModeSndCollection() throws Exception {
+    public void testExceptionOpModeSndCollection() {
         logger.info("Running testExceptionOpModeSndCollection ...");
         ArrayList<String> toRetainFst = new ArrayList<>();
         toRetainFst.add("cat2");
@@ -181,7 +181,7 @@ public class IntersectionFeatureCollectionTest {
     }
 
     @Test
-    public void testReturnedAttributes() throws Exception {
+    public void testReturnedAttributes() {
         logger.info("Running testReturnedAttributes ...");
         ArrayList<String> toRetainFst = new ArrayList<>();
         toRetainFst.add("str1");

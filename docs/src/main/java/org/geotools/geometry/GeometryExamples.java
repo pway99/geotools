@@ -48,7 +48,7 @@ public class GeometryExamples {
         // createCurve end
     }
 
-    public void wktCurve() throws Exception {
+    public void wktCurve() {
         // wktCurve start
         GeometryFactory geometryFactory = JTSFactoryFinder.getGeometryFactory();
         CurvedGeometryFactory curvedfactory = new CurvedGeometryFactory(Double.MAX_VALUE);

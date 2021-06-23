@@ -64,7 +64,6 @@ import org.opengis.metadata.spatial.PixelOrientation;
 import org.opengis.parameter.ParameterValueGroup;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.MathTransform;
-import org.opengis.referencing.operation.TransformException;
 
 /**
  * A process computing zonal statistics based on a raster data set and a set of polygonal zones of
@@ -298,7 +297,7 @@ public class RasterZonalStatistics implements RasterProcess {
             builder.add(stats.statistic(Statistic.SDEV).results().get(0).getValue());
         }
 
-        private ZonalStats processStatistics(Geometry geometry) throws TransformException {
+        private ZonalStats processStatistics(Geometry geometry) {
             // double checked with the tasmania simple test data, this transformation
             // actually lines up the polygons where they are supposed to be in raster space
             final AffineTransform dataG2WCorrected =

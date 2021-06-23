@@ -39,7 +39,7 @@ public class OSMServiceOnlineTest extends OnlineTestCase {
     }
 
     @Test
-    public void testImageLoadTileOnline() throws Exception {
+    public void testImageLoadTileOnline() {
         final TileService service = new OSMService("OSM", "http://tile.openstreetmap.org/");
         final Tile tile = new OSMTile(2166, 1189, new WebMercatorZoomLevel(12), service);
         final BufferedImage image = tile.getBufferedImage();

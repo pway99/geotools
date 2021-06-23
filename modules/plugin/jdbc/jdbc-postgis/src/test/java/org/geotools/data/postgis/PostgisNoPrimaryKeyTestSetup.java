@@ -39,7 +39,7 @@ public class PostgisNoPrimaryKeyTestSetup extends JDBCNoPrimaryKeyTestSetup {
     }
 
     @Override
-    protected void dropLakeTable() throws Exception {
+    protected void dropLakeTable() {
         runSafe("DELETE FROM GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'lake'");
         runSafe("DROP TABLE \"lake\" CASCADE");
     }

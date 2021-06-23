@@ -110,7 +110,7 @@ public abstract class JDBCFeatureStoreOnlineTest extends JDBCTestSupport {
      * Tests that returned keys are actually allowing the code to get back the same feature inserted
      * (SQLServer code used to rely on a key generation approach that failed this test)
      */
-    public void testMultithreadedAddFeatures() throws IOException, InterruptedException {
+    public void testMultithreadedAddFeatures() throws InterruptedException {
         SimpleFeatureBuilder b = new SimpleFeatureBuilder(featureStore.getSchema());
 
         // ensure a minimum of concurrency
@@ -268,14 +268,14 @@ public abstract class JDBCFeatureStoreOnlineTest extends JDBCTestSupport {
     }
 
     /** Check null encoding is working properly */
-    public void testAddNullAttributes() throws IOException {
+    public void testAddNullAttributes() {
         SimpleFeatureBuilder b = new SimpleFeatureBuilder(featureStore.getSchema());
         SimpleFeature nullFeature = b.buildFeature("testId");
         featureStore.addFeatures(Arrays.asList(nullFeature));
     }
 
     /** Check null encoding is working properly */
-    public void testModifyNullAttributes() throws IOException {
+    public void testModifyNullAttributes() {
         String[] attributeNames = new String[featureStore.getSchema().getAttributeCount()];
         for (int i = 0; i < attributeNames.length; i++) {
             attributeNames[i] = featureStore.getSchema().getDescriptor(i).getLocalName();
@@ -399,7 +399,7 @@ public abstract class JDBCFeatureStoreOnlineTest extends JDBCTestSupport {
         }
     }
 
-    public void testModifyFeaturesInvalidFilter() throws IOException {
+    public void testModifyFeaturesInvalidFilter() {
         FilterFactory ff = CommonFactoryFinder.getFilterFactory(null);
         PropertyIsEqualTo f = ff.equals(ff.property("invalidAttribute"), ff.literal(5));
 
@@ -425,7 +425,7 @@ public abstract class JDBCFeatureStoreOnlineTest extends JDBCTestSupport {
         assertEquals(0, features.size());
     }
 
-    public void testRemoveFeaturesWithInvalidFilter() throws IOException {
+    public void testRemoveFeaturesWithInvalidFilter() {
         FilterFactory ff = CommonFactoryFinder.getFilterFactory(null);
         PropertyIsEqualTo f = ff.equals(ff.property("invalidAttribute"), ff.literal(5));
 

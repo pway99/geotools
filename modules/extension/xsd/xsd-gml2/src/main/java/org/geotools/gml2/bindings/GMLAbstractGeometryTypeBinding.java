@@ -122,7 +122,7 @@ public class GMLAbstractGeometryTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if ("srsName".equals(name.getLocalPart())) {
             Geometry geometry = (Geometry) object;
 

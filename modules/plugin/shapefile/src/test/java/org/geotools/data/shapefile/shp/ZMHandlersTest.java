@@ -48,7 +48,7 @@ public class ZMHandlersTest {
      * org.geotools.data.shapefile.shp.ShapeType, boolean)}.
      */
     @Test
-    public void testReadMZPoints() throws ShapefileException, IOException {
+    public void testReadMZPoints() throws IOException {
         URL url = TestData.url(ShapefileDataStore.class, "mzvalues/zmpoints.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
         SimpleFeature feature = DataUtilities.first(store.getFeatureSource().getFeatures());
@@ -61,7 +61,7 @@ public class ZMHandlersTest {
     }
 
     @Test
-    public void testReadMPoints() throws ShapefileException, IOException {
+    public void testReadMPoints() throws IOException {
         URL url = TestData.url(ShapefileDataStore.class, "mzvalues/mpoints.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
         SimpleFeature feature = DataUtilities.first(store.getFeatureSource().getFeatures());
@@ -91,7 +91,7 @@ public class ZMHandlersTest {
     }
 
     @Test
-    public void testReadMZMultiPointsWithOptionalM() throws ShapefileException, IOException {
+    public void testReadMZMultiPointsWithOptionalM() throws IOException {
         URL url = TestData.url(ShapefileDataStore.class, "mzvalues/zmmultipoints.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
         SimpleFeature feature = DataUtilities.first(store.getFeatureSource().getFeatures());
@@ -106,7 +106,7 @@ public class ZMHandlersTest {
     }
 
     @Test
-    public void testReadZMultiPointsWithOptionalM() throws ShapefileException, IOException {
+    public void testReadZMultiPointsWithOptionalM() throws IOException {
         // test multipoints with type ArcZ and optional M are parsed
         URL url = TestData.url(ShapefileDataStore.class, "mzvalues/multipointsz.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
@@ -121,7 +121,7 @@ public class ZMHandlersTest {
     }
 
     @Test
-    public void testReadMMultiPoints() throws ShapefileException, IOException {
+    public void testReadMMultiPoints() throws IOException {
         URL url = TestData.url(ShapefileDataStore.class, "mzvalues/zmmultipoints.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
         SimpleFeature feature = DataUtilities.first(store.getFeatureSource().getFeatures());
@@ -135,7 +135,7 @@ public class ZMHandlersTest {
     }
 
     @Test
-    public void testReadMZLineWithOptionalM() throws ShapefileException, IOException {
+    public void testReadMZLineWithOptionalM() throws IOException {
         // test line with type ArcTypeZ and optional M is parsed
         URL url = TestData.url(ShapefileDataStore.class, "mzvalues/mzlines.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
@@ -151,7 +151,7 @@ public class ZMHandlersTest {
     }
 
     @Test
-    public void testReadMLine() throws ShapefileException, IOException {
+    public void testReadMLine() throws IOException {
         URL url = TestData.url(ShapefileDataStore.class, "mzvalues/mlines.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
         SimpleFeature feature = DataUtilities.first(store.getFeatureSource().getFeatures());
@@ -165,7 +165,7 @@ public class ZMHandlersTest {
     }
 
     @Test
-    public void testReadZLineWithOptionalM() throws ShapefileException, IOException {
+    public void testReadZLineWithOptionalM() throws IOException {
         URL url = TestData.url(ShapefileDataStore.class, "mzvalues/linez.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
         SimpleFeature feature = DataUtilities.first(store.getFeatureSource().getFeatures());
@@ -366,7 +366,7 @@ public class ZMHandlersTest {
     }
 
     @Test
-    public void testReadMZPolygon() throws ShapefileException, IOException {
+    public void testReadMZPolygon() throws IOException {
         URL url = TestData.url(ShapefileDataStore.class, "mzvalues/mzpolygons.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
         SimpleFeature feature = DataUtilities.first(store.getFeatureSource().getFeatures());
@@ -381,7 +381,7 @@ public class ZMHandlersTest {
     }
 
     @Test
-    public void testReadMPolygon() throws ShapefileException, IOException {
+    public void testReadMPolygon() throws IOException {
         URL url = TestData.url(ShapefileDataStore.class, "mzvalues/mpolygons.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
         SimpleFeature feature = DataUtilities.first(store.getFeatureSource().getFeatures());
@@ -395,7 +395,7 @@ public class ZMHandlersTest {
     }
 
     @Test
-    public void testReadZPolygonWithOptionalM() throws ShapefileException, IOException {
+    public void testReadZPolygonWithOptionalM() throws IOException {
         // test Polygon with type ArcZ and optional M is parsed
         URL url = TestData.url(ShapefileDataStore.class, "mzvalues/polygonz.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
@@ -416,7 +416,7 @@ public class ZMHandlersTest {
      * @throws IOException
      */
     @Test
-    public void testGeot6599() throws ShapefileException, IOException {
+    public void testGeot6599() throws IOException {
         URL url = TestData.url(ShapefileDataStore.class, "mzvalues/building.shp");
         ShapefileDataStore store = new ShapefileDataStore(url);
         SimpleFeature feature = DataUtilities.first(store.getFeatureSource().getFeatures());

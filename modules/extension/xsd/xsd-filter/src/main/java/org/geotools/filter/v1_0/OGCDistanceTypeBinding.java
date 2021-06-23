@@ -96,7 +96,7 @@ public class OGCDistanceTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         DistanceUnits distance = (DistanceUnits) object;
         value.appendChild(document.createTextNode(Double.toString(distance.getDistance())));
         value.setAttribute("units", distance.getUnits());

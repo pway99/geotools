@@ -28,7 +28,7 @@ import org.junit.Test;
 public class PreGeneralizedFeatureCollectionTest {
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         TestSetup.initialize();
     }
 

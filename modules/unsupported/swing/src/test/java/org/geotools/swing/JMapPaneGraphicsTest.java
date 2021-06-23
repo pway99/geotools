@@ -25,7 +25,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import javax.swing.SwingUtilities;
 import org.assertj.swing.edt.FailOnThreadViolationRepaintManager;
@@ -67,7 +66,7 @@ public class JMapPaneGraphicsTest extends JMapPaneGraphicsTestBase {
                 GuiActionRunner.execute(
                         new GuiQuery<TestFrame>() {
                             @Override
-                            protected TestFrame executeInEDT() throws Throwable {
+                            protected TestFrame executeInEDT() {
                                 return new TestFrame(listener);
                             }
                         });
@@ -85,7 +84,7 @@ public class JMapPaneGraphicsTest extends JMapPaneGraphicsTestBase {
     /** Test for GEOT-6342, background color is not used in 1st rendering of map */
     @Test
     public void drawLayersSetsBackgroundonStartup()
-            throws InvocationTargetException, InterruptedException, IOException {
+            throws InvocationTargetException, InterruptedException {
 
         window.show(new Dimension(WIDTH, HEIGHT));
         MapContent mapContent = createMapContent(createMatchedBounds(mapPane.getVisibleRect()));
@@ -181,12 +180,12 @@ public class JMapPaneGraphicsTest extends JMapPaneGraphicsTestBase {
     }
 
     @Test
-    public void mapPaneShouldHonourInitialViewportBounds() throws Exception {
+    public void mapPaneShouldHonourInitialViewportBounds() {
         window.show(new Dimension(WIDTH, HEIGHT));
         GuiActionRunner.execute(
                 new GuiTask() {
                     @Override
-                    protected void executeInEDT() throws Throwable {
+                    protected void executeInEDT() {
                         window.target().setVisible(false);
                     }
                 });

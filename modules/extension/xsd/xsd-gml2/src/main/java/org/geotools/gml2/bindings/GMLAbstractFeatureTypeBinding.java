@@ -118,13 +118,12 @@ public class GMLAbstractFeatureTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         return GML2EncodingUtils.AbstractFeatureType_encode(object, document, value);
     }
 
     @Override
-    public List<Object[]> getProperties(Object object, XSDElementDeclaration element)
-            throws Exception {
+    public List<Object[]> getProperties(Object object, XSDElementDeclaration element) {
         return GML2EncodingUtils.AbstractFeatureType_getProperties(
                 object,
                 element,

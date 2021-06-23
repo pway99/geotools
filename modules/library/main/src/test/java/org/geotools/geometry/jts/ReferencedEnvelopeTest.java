@@ -66,7 +66,7 @@ public class ReferencedEnvelopeTest {
     }
 
     @Test
-    public void intersection() throws Exception {
+    public void intersection() {
         ReferencedEnvelope australia = new ReferencedEnvelope(DefaultGeographicCRS.WGS84);
         australia.include(40, 110);
         australia.include(10, 150);
@@ -83,7 +83,7 @@ public class ReferencedEnvelopeTest {
     }
 
     @Test
-    public void include() throws Exception {
+    public void include() {
         ReferencedEnvelope australia = new ReferencedEnvelope(DefaultGeographicCRS.WGS84);
         australia.include(40, 110);
         australia.include(10, 150);
@@ -137,7 +137,7 @@ public class ReferencedEnvelopeTest {
     }
 
     @Test
-    public void testFactoryMethod() throws Exception {
+    public void testFactoryMethod() {
         try {
             new ReferencedEnvelope(DefaultGeographicCRS.WGS84_3D);
             fail("ReferencedEnvelope should not be able to represent 3D CRS such as GDA94");
@@ -149,7 +149,7 @@ public class ReferencedEnvelopeTest {
     }
 
     @Test
-    public void testTransformToWGS84() throws Exception {
+    public void testTransformToWGS84() {
         String wkt =
                 "GEOGCS[\"GDA94\","
                         + " DATUM[\"Geocentric Datum of Australia 1994\","
@@ -184,7 +184,7 @@ public class ReferencedEnvelopeTest {
     }
 
     @Test
-    public void testExpandToIncludeNull() throws Exception {
+    public void testExpandToIncludeNull() {
         ReferencedEnvelope r1 = new ReferencedEnvelope(DefaultGeographicCRS.WGS84);
         ReferencedEnvelope r2 = new ReferencedEnvelope(DefaultGeographicCRS.WGS84);
         assertTrue(r1.isNull());
@@ -198,7 +198,7 @@ public class ReferencedEnvelopeTest {
      * emptiness property
      */
     @Test
-    public void testEmptyEnvelopeConversion() throws Exception {
+    public void testEmptyEnvelopeConversion() {
         // conversion of an empty OGC envelope should stay empty
         GeneralEnvelope ge = new GeneralEnvelope(new double[] {0, 0}, new double[] {-1, -1});
         assertTrue(ge.isEmpty());

@@ -38,7 +38,7 @@ import org.opengis.feature.FeatureVisitor;
 public class GraphExamples {
 
     @SuppressFBWarnings
-    void graphExample() throws Exception {
+    void graphExample() {
         SimpleFeatureSource featureSource = null;
 
         // graphExample start

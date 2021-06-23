@@ -20,7 +20,6 @@ import org.geotools.referencing.CRS;
 import org.geotools.referencing.factory.epsg.oracle.OracleOnlineTestCase;
 import org.geotools.util.Version;
 import org.opengis.referencing.AuthorityFactory;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 /**
@@ -39,7 +38,7 @@ public class URN_EPSG_OnlineTest extends OracleOnlineTestCase {
     }
 
     /** Tests the 4326 code. */
-    public void test4326() throws FactoryException {
+    public void test4326() {
         CoordinateReferenceSystem expected = CRS.decode("EPSG:4326");
         CoordinateReferenceSystem actual = CRS.decode("urn:ogc:def:crs:EPSG:6.8:4326");
         assertSame(expected, actual);
@@ -50,7 +49,7 @@ public class URN_EPSG_OnlineTest extends OracleOnlineTestCase {
     }
 
     /** Tests versioning. */
-    public void testVersion() throws FactoryException {
+    public void testVersion() {
         CoordinateReferenceSystem expected = CRS.decode("EPSG:4326");
         final String version = String.valueOf(CRS.getVersion("EPSG"));
         final String urn = "urn:ogc:def:crs:EPSG:" + version + ":4326";
@@ -85,8 +84,7 @@ public class URN_EPSG_OnlineTest extends OracleOnlineTestCase {
     private static final class Versioned extends URN_AuthorityFactory {
         public Version lastVersion;
 
-        protected AuthorityFactory createVersionedFactory(final Version version)
-                throws FactoryException {
+        protected AuthorityFactory createVersionedFactory(final Version version) {
             lastVersion = version;
             return super.createVersionedFactory(version);
         }

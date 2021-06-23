@@ -41,7 +41,7 @@ public class InsertionClassifierTest {
     private GeometryFactory geometryFactory = new GeometryFactory();
 
     @Test
-    public void testSegregateSimple() throws Exception {
+    public void testSegregateSimple() {
         SimpleFeatureType featureType = buildType();
         Collection<SimpleFeature> features = new ArrayList<>();
         features.add(createFeature(featureType, "toto", createLineString(), createPolygon()));
@@ -59,7 +59,7 @@ public class InsertionClassifierTest {
     }
 
     @Test
-    public void testSegregateMultipleGeomKinds() throws Exception {
+    public void testSegregateMultipleGeomKinds() {
         SimpleFeatureType featureType = buildType();
         Collection<SimpleFeature> features = new ArrayList<>();
         features.add(createFeature(featureType, "toto", createLineString(), createPolygon()));
@@ -80,7 +80,7 @@ public class InsertionClassifierTest {
     }
 
     @Test
-    public void testSegregateUseExisting() throws Exception {
+    public void testSegregateUseExisting() {
         SimpleFeatureType featureType = buildType();
         Collection<SimpleFeature> features = new ArrayList<>();
         SimpleFeature f2 = createFeature(featureType, "toto", createLineString(), createPolygon());
@@ -102,7 +102,7 @@ public class InsertionClassifierTest {
     }
 
     @Test
-    public void testSegregateNullGeom() throws Exception {
+    public void testSegregateNullGeom() {
         SimpleFeatureType featureType = buildType();
         Collection<SimpleFeature> features = new ArrayList<>();
         features.add(createFeature(featureType, "toto", createLineString(), createPolygon()));

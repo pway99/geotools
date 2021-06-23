@@ -81,7 +81,7 @@ public class EmfComplexFeatureReader {
      * @param configuration configuration object used to access the XSDSchema to parse. This
      *     configuration object might contain {@link Binding}s
      */
-    public SchemaIndex parse(Configuration configuration) throws IOException {
+    public SchemaIndex parse(Configuration configuration) {
         // find out the schemas involved in the app schema configuration
         final SchemaIndex appSchemaIndex = Schemas.findSchemas(configuration);
 
@@ -97,7 +97,7 @@ public class EmfComplexFeatureReader {
      * @throws IOException if any non recoverable problem occurs while parsing the application
      *     schema pointed out by <code>location</code> or one of its dependencies.
      */
-    public SchemaIndex parse(String nameSpace, String schemaLocation) throws IOException {
+    public SchemaIndex parse(String nameSpace, String schemaLocation) {
         AppSchemaConfiguration configuration =
                 new AppSchemaConfiguration(nameSpace, schemaLocation, resolver);
         return parse(configuration);

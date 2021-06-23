@@ -83,7 +83,7 @@ public class WFSParsingTest {
     Configuration configuration;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         configuration = new org.geotools.wfs.v1_0.WFSConfiguration_1_0();
     }
 

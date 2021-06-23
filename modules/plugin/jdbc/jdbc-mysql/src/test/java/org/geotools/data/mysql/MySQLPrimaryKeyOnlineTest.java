@@ -27,7 +27,7 @@ public class MySQLPrimaryKeyOnlineTest extends JDBCPrimaryKeyOnlineTest {
     }
 
     @Override
-    public void testSequencedPrimaryKey() throws Exception {
+    public void testSequencedPrimaryKey() {
         // seems mysql does not really do explicit sequences...
     }
 }

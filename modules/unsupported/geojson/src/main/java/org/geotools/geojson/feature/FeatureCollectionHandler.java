@@ -141,7 +141,7 @@ public class FeatureCollectionHandler extends DelegatingHandler<SimpleFeature>
     }
 
     @Override
-    public void endJSON() throws ParseException, IOException {
+    public void endJSON() {
         delegate = null;
         feature = null;
         // crs = null; //JD: keep crs around because we need it post parsing json

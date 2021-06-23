@@ -72,14 +72,14 @@ public class TestSchemaTest extends TestSchema {
 
     /** Look into "builtin" schema for schema (aka xsd ?) */
     @Test
-    public void testXSDSimpleTypes() throws Exception {
+    public void testXSDSimpleTypes() {
         XSDSimpleTypeDefinition any = xsdSimple("anySimpleType");
         assertNotNull("Found", any);
     }
 
     /** Look into parsed schema - should agree with XMLSchema */
     @Test
-    public void testSchemaSimpleTypes() throws Exception {
+    public void testSchemaSimpleTypes() {
         XSDSimpleTypeDefinition any = xsdSimple("anySimpleType");
         assertNotNull("Found", any);
     }

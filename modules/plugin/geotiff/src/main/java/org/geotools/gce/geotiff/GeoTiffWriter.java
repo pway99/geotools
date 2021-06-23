@@ -99,7 +99,7 @@ public class GeoTiffWriter extends AbstractGridCoverageWriter implements GridCov
      * @see GeoTiffIIOMetadataEncoder.TagSet
      */
     @Override
-    public void setMetadataValue(String name, String value) throws IOException {
+    public void setMetadataValue(String name, String value) {
         if (name != null && name.length() > 0) {
             metadataKeyValue.put(name, value);
         }
@@ -296,8 +296,7 @@ public class GeoTiffWriter extends AbstractGridCoverageWriter implements GridCov
             final GeoTiffIIOMetadataEncoder metadata,
             final AffineTransform rasterToModel,
             GridEnvelope2D range,
-            boolean retainAxesOrder)
-            throws IOException {
+            boolean retainAxesOrder) {
 
         //
         // We have to set an affine transformation which is going to be 2D

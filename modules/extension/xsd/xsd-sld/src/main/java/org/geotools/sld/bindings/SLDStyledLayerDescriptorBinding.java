@@ -116,7 +116,7 @@ public class SLDStyledLayerDescriptorBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         StyledLayerDescriptor sld = styleFactory.createStyledLayerDescriptor();
 
         // &lt;xsd:element ref="sld:Name" minOccurs="0"/&gt;

@@ -68,7 +68,7 @@ public class StoredQueryDescriptionTypeBindingTest extends WFSTestSupport {
     }
 
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         Wfs20Factory f = Wfs20Factory.eINSTANCE;
         StoredQueryDescriptionType sqd = f.createStoredQueryDescriptionType();
         sqd.setId("foo");

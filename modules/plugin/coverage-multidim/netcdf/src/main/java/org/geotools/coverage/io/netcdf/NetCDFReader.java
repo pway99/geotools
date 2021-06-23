@@ -105,7 +105,6 @@ import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.datum.PixelInCell;
 import org.opengis.referencing.operation.MathTransform;
 import org.opengis.referencing.operation.MathTransform2D;
-import org.opengis.referencing.operation.TransformException;
 
 /**
  * A NetCDF Reader implementation
@@ -521,7 +520,7 @@ public class NetCDFReader extends AbstractGridCoverage2DReader
             ReferenceIdentifier name,
             CoverageReadRequest request,
             CoverageSource gridSource)
-            throws MismatchedDimensionException, InvalidGridGeometryException, TransformException,
+            throws MismatchedDimensionException, InvalidGridGeometryException,
                     IOException {
 
         // //
@@ -635,7 +634,7 @@ public class NetCDFReader extends AbstractGridCoverage2DReader
     }
 
     /** Return a {@link CoverageSource} related to the specified coverageName */
-    private CoverageSource getGridCoverageSource(final String coverageName) throws IOException {
+    private CoverageSource getGridCoverageSource(final String coverageName) {
         // Preliminar check on name availability
         checkIsSupported(coverageName);
         synchronized (coverages) {
@@ -905,7 +904,7 @@ public class NetCDFReader extends AbstractGridCoverage2DReader
 
     @Override
     public GranuleSource getGranules(String coverageName, boolean readOnly)
-            throws IOException, UnsupportedOperationException {
+            throws UnsupportedOperationException {
         NetCDFImageReader reader = (NetCDFImageReader) ((NetCDFAccess) access).reader;
         final CoverageSlicesCatalog catalog = reader.getCatalog();
         return new CoverageSlicesCatalogSource(catalog, coverageName);
@@ -919,13 +918,13 @@ public class NetCDFReader extends AbstractGridCoverage2DReader
     @Override
     public void createCoverage(String coverageName, SimpleFeatureType schema /*,
             Set<DimensionDescriptor> dimensions*/)
-            throws IOException, UnsupportedOperationException {
+            throws UnsupportedOperationException {
         throw new UnsupportedOperationException("This operation is not supported on this reader");
     }
 
     @Override
     public List<HarvestedSource> harvest(String defaultCoverage, Object source, Hints hints)
-            throws IOException, UnsupportedOperationException {
+            throws UnsupportedOperationException {
         throw new UnsupportedOperationException("This operation is not supported on this reader");
     }
 
@@ -963,7 +962,7 @@ public class NetCDFReader extends AbstractGridCoverage2DReader
     }
 
     @Override
-    public void delete(boolean deleteData) throws IOException {
+    public void delete(boolean deleteData) {
         ((NetCDFAccess) access).purge();
         if (deleteData) {
             // hold hands off the files first

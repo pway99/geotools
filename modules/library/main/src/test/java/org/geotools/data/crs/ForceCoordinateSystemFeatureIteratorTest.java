@@ -41,7 +41,7 @@ public class ForceCoordinateSystemFeatureIteratorTest {
     private static final String FEATURE_TYPE_NAME = "testType";
 
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
 
     /**
      * create a datastore with 1 feature in it.
@@ -49,8 +49,7 @@ public class ForceCoordinateSystemFeatureIteratorTest {
      * @param crs the CRS of the featuretype
      * @param p the point to add, should be same CRS as crs
      */
-    private SimpleFeatureCollection createDatastore(CoordinateReferenceSystem crs, Point p)
-            throws Exception {
+    private SimpleFeatureCollection createDatastore(CoordinateReferenceSystem crs, Point p) {
 
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
         builder.setName(FEATURE_TYPE_NAME);
@@ -131,7 +130,7 @@ public class ForceCoordinateSystemFeatureIteratorTest {
     }
 
     @Test
-    public void testNullDestination() throws Exception {
+    public void testNullDestination() {
         CoordinateReferenceSystem crs = DefaultGeographicCRS.WGS84;
         GeometryFactory fac = new GeometryFactory();
         Point p = fac.createPoint(new Coordinate(10, 10));

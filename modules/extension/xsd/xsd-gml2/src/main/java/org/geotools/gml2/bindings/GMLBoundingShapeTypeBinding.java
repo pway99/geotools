@@ -75,7 +75,7 @@ public class GMLBoundingShapeTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // do the null check
         if (node.getChild("null") != null) {
             // ignore the description as to why its null
@@ -90,7 +90,7 @@ public class GMLBoundingShapeTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         Envelope e = (Envelope) object;
 
         if (GML.Box.equals(name) && !e.isNull()) {

@@ -30,7 +30,7 @@ public class TTFMarkFactoryTest {
     private FilterFactory ff;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         ttf = new TTFMarkFactory();
         ff = CommonFactoryFinder.getFilterFactory(null);
     }

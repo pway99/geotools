@@ -51,7 +51,7 @@ public class FastBBOXTest {
     }
 
     @Test
-    public void evaluate_envelopeOverlapsBBOX() throws Exception {
+    public void evaluate_envelopeOverlapsBBOX() {
         FastBBOX fastBBOX =
                 new FastBBOX(
                         filterFactory.property("geometry"),
@@ -61,7 +61,7 @@ public class FastBBOXTest {
     }
 
     @Test
-    public void evaluate_envelopeIntersectsGeometry() throws Exception {
+    public void evaluate_envelopeIntersectsGeometry() {
         FastBBOX fastBBOX =
                 new FastBBOX(
                         filterFactory.property("geometry"),
@@ -71,7 +71,7 @@ public class FastBBOXTest {
     }
 
     @Test
-    public void evaluate_envelopeDisjoint() throws Exception {
+    public void evaluate_envelopeDisjoint() {
         FastBBOX fastBBOX =
                 new FastBBOX(
                         filterFactory.property("geometry"),

@@ -71,7 +71,7 @@ public class VectorToRasterProcessTest {
     static final Logger LOGGER = Logging.getLogger(VectorToRasterProcessTest.class);
 
     @Test
-    public void testCreateProcess() throws Exception {
+    public void testCreateProcess() {
         Process p = Processors.createProcess(new NameImpl("vec", "VectorToRaster"));
         assertNotNull(p);
     }

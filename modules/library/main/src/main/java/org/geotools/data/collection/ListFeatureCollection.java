@@ -16,7 +16,6 @@
  */
 package org.geotools.data.collection;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -104,7 +103,7 @@ public class ListFeatureCollection extends AbstractFeatureCollection
      * use a simple iterator so there is no performance advantaged to be gained over using an
      * ArrayList vs a LinkedList (other then for the size() method of course).
      */
-    public ListFeatureCollection(SimpleFeatureCollection copy) throws IOException {
+    public ListFeatureCollection(SimpleFeatureCollection copy) {
         this(copy.getSchema());
         copy.accepts(feature -> list.add((SimpleFeature) feature), null);
     }

@@ -23,7 +23,7 @@ import org.junit.Test;
 
 public class NamePatternEscapingTest {
     @Test
-    public void escapeWithBackslash() throws Exception {
+    public void escapeWithBackslash() {
         NamePatternEscaping escaping = new NamePatternEscaping("\\");
         assertNull(escaping.escape(null));
         assertEquals("TABLE", escaping.escape("TABLE"));
@@ -35,7 +35,7 @@ public class NamePatternEscapingTest {
     }
 
     @Test
-    public void escapeWithSlash() throws Exception {
+    public void escapeWithSlash() {
         NamePatternEscaping escaping = new NamePatternEscaping("/");
         assertNull(escaping.escape(null));
         assertEquals("TABLE", escaping.escape("TABLE"));

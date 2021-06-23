@@ -27,7 +27,7 @@ public class SQLServerPrimaryKeyFinderOnlineTest extends JDBCPrimaryKeyFinderOnl
     }
 
     @Override
-    public void testSequencedPrimaryKey() throws Exception {
+    public void testSequencedPrimaryKey() {
         // SQLSErver does not do explicit sequences
     }
 }

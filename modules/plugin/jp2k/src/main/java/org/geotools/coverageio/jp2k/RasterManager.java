@@ -325,7 +325,7 @@ class RasterManager {
         /** The base grid range for the coverage */
         Rectangle coverageRasterArea;
         /** Initialize the 2D properties (CRS and Envelope) of this coverage */
-        private void prepareCoverageSpatialElements() throws TransformException, FactoryException {
+        private void prepareCoverageSpatialElements() {
             //
             // basic initialization
             //

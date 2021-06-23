@@ -104,7 +104,7 @@ public class OGCBinarySpatialOpTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // implemented by element bindings
         return null;
 
@@ -177,7 +177,7 @@ public class OGCBinarySpatialOpTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         BinarySpatialOperator operator = (BinarySpatialOperator) object;
 
         return OGCUtils.property(operator.getExpression1(), operator.getExpression2(), name);

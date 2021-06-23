@@ -31,7 +31,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.opengis.geometry.DirectPosition;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.MathTransform;
 
@@ -322,7 +321,7 @@ public class HsqlDialectEpsgMediatorStressTest {
             return codes[rand.nextInt(codes.length)];
         }
 
-        private CoordinateReferenceSystem acquireCRS(String code) throws FactoryException {
+        private CoordinateReferenceSystem acquireCRS(String code) {
             return mediator.createCoordinateReferenceSystem(code);
         }
 

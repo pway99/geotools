@@ -74,7 +74,7 @@ public class GeoPkgEmptyGeometryTestSetup extends JDBCEmptyGeometryTestSetup {
     }
 
     @Override
-    protected void dropEmptyGeometryTable() throws Exception {
+    protected void dropEmptyGeometryTable() {
         for (String type : types) {
             ((GeoPkgTestSetup) delegate).removeTable("empty_" + type.toLowerCase());
         }

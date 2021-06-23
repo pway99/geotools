@@ -47,7 +47,7 @@ public class JCRSStatusBarItemTest extends GraphicsTestBase {
         GuiActionRunner.execute(
                 new GuiTask() {
                     @Override
-                    protected void executeInEDT() throws Throwable {
+                    protected void executeInEDT() {
                         mapPane = new MockMapPane();
                     }
                 });
@@ -70,7 +70,7 @@ public class JCRSStatusBarItemTest extends GraphicsTestBase {
         GuiActionRunner.execute(
                 new GuiTask() {
                     @Override
-                    protected void executeInEDT() throws Throwable {
+                    protected void executeInEDT() {
                         new JCRSStatusBarItem(mapPane);
                     }
                 });

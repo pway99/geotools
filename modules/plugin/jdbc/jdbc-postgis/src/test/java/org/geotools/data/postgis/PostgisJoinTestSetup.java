@@ -55,7 +55,7 @@ public class PostgisJoinTestSetup extends JDBCJoinTestSetup {
     }
 
     @Override
-    protected void dropJoinTable() throws Exception {
+    protected void dropJoinTable() {
         runSafe("DROP TABLE \"ftjoin\"");
         runSafe("DROP TABLE \"ftjoin2\"");
         runSafe("DELETE FROM geometry_columns WHERE f_table_name = 'ftjoin'");

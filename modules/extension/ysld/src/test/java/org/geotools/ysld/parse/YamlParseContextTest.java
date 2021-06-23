@@ -30,7 +30,7 @@ import org.junit.Test;
 public class YamlParseContextTest {
 
     @Test
-    public void testDocHints() throws Exception {
+    public void testDocHints() {
         YamlParseContext ctxt = new YamlParseContext();
         YamlParseHandler handler = createMock(YamlParseHandler.class);
         YamlObject obj1 = createMock(YamlObject.class);

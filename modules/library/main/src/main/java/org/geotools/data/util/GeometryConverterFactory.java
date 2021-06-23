@@ -64,7 +64,7 @@ public class GeometryConverterFactory implements ConverterFactory {
             if (Envelope.class.isAssignableFrom(source)) {
                 return new Converter() {
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         Envelope e = (Envelope) source;
                         GeometryFactory factory = new GeometryFactory();
                         return target.cast(
@@ -88,7 +88,7 @@ public class GeometryConverterFactory implements ConverterFactory {
             if (Envelope.class.equals(target)) {
                 return new Converter() {
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         Geometry geometry = (Geometry) source;
                         Envelope envelope = geometry.getEnvelopeInternal();
                         if (geometry.getUserData() instanceof CoordinateReferenceSystem) {
@@ -106,7 +106,7 @@ public class GeometryConverterFactory implements ConverterFactory {
             if (String.class.equals(target)) {
                 return new Converter() {
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         Geometry geometry = (Geometry) source;
                         return target.cast(geometry.toText());
                     }

@@ -558,8 +558,7 @@ public abstract class AbstractTest extends TestCase {
             GeneralEnvelope envelope,
             int width,
             int heigth,
-            boolean expectsData)
-            throws IOException {
+            boolean expectsData) {
         imageMosaic(name, configUrl, envelope, width, heigth, null, null, null, expectsData);
     }
 
@@ -952,9 +951,9 @@ public abstract class AbstractTest extends TestCase {
         }
     }
 
-    void executeRegister(String stmt) throws SQLException {}
+    void executeRegister(String stmt) {}
 
-    void executeUnRegister(String stmt) throws SQLException {}
+    void executeUnRegister(String stmt) {}
 
     protected abstract String getXMLConnectFragmentName();
 

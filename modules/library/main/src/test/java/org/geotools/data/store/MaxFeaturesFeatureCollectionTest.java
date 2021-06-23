@@ -27,7 +27,7 @@ import org.junit.Test;
 public class MaxFeaturesFeatureCollectionTest extends FeatureCollectionWrapperTestSupport {
 
     @Test
-    public void testSize() throws Exception {
+    public void testSize() {
         // in the common case it's as big as the max
         MaxSimpleFeatureCollection max = new MaxSimpleFeatureCollection(delegate, 2);
         assertEquals(2, max.size());
@@ -65,7 +65,7 @@ public class MaxFeaturesFeatureCollectionTest extends FeatureCollectionWrapperTe
     }
 
     @Test
-    public void testIteratorSkipMoreSize() throws Exception {
+    public void testIteratorSkipMoreSize() {
         MaxSimpleFeatureCollection max =
                 new MaxSimpleFeatureCollection(delegate, delegate.size() + 1, 2);
         try (SimpleFeatureIterator i = max.features()) {

@@ -40,7 +40,7 @@ import org.opengis.referencing.crs.CoordinateReferenceSystem;
 public class CoverageExamples {
 
     @SuppressWarnings("unused")
-    void exampleGridFormat() throws Exception {
+    void exampleGridFormat() {
 
         // exampleGridFormat start
         File file = new File("test.tiff");
@@ -53,7 +53,7 @@ public class CoverageExamples {
     }
 
     @SuppressWarnings("unused")
-    void exampleGridCoverageFactory() throws Exception {
+    void exampleGridCoverageFactory() {
 
         ReferencedEnvelope referencedEnvelope = null;
         BufferedImage bufferedImage = null;
@@ -64,7 +64,7 @@ public class CoverageExamples {
     }
 
     @SuppressWarnings("unused")
-    void exampleGridCoverageUsing() throws Exception {
+    void exampleGridCoverageUsing() {
         File file = new File("test.tiff");
         AbstractGridFormat format = GridFormatFinder.findFormat(file);
         GridCoverage2DReader reader = format.getReader(file);
@@ -77,7 +77,7 @@ public class CoverageExamples {
         // exampleGridCoverageUsing end
     }
 
-    void exampleGridCoverageDirect() throws Exception {
+    void exampleGridCoverageDirect() {
         double x = 0;
         double y = 0;
         CoordinateReferenceSystem crs = null;

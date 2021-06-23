@@ -53,7 +53,7 @@ public class ExtensionTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         ExtensionType et = Wcs20Factory.eINSTANCE.createExtensionType();
 

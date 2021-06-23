@@ -91,7 +91,7 @@ public class ContentsTypeBinding extends AbstractComplexEMFBinding {
      */
     @Override
     @SuppressWarnings("unchecked")
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         ContentsType contents = factory.createContentsType();
 
         List<Node> children = node.getChildren("Layer");

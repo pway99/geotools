@@ -35,7 +35,7 @@ public class GridtypeBindingTest extends GPKGTestSupport {
     }
 
     @Test
-    public void testParse() throws Exception {
+    public void testParse() {
         buildDocument(
                 "<grid>"
                         + "<zoomlevel>3</zoomlevel>"

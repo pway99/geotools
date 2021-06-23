@@ -103,7 +103,7 @@ public class XSDateTimeBinding implements SimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Timestamp parse(InstanceComponent instance, Object value) throws Exception {
+    public Timestamp parse(InstanceComponent instance, Object value) {
         String str = (String) value;
         if (StringUtils.isEmpty(str)) return null;
         Calendar calendar = DatatypeConverterImpl.getInstance().parseDateTime(str, true);

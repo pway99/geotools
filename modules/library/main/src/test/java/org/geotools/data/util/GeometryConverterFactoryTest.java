@@ -29,12 +29,12 @@ public class GeometryConverterFactoryTest {
     GeometryConverterFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new GeometryConverterFactory();
     }
 
     @Test
-    public void testEnvelopeToGeometry() throws Exception {
+    public void testEnvelopeToGeometry() {
         Geometry geometry =
                 factory.createConverter(Envelope.class, Geometry.class, null)
                         .convert(
@@ -58,7 +58,7 @@ public class GeometryConverterFactoryTest {
     }
 
     @Test
-    public void testGeometryToEnvelope() throws Exception {
+    public void testGeometryToEnvelope() {
         Envelope envelope =
                 factory.createConverter(Geometry.class, Envelope.class, null)
                         .convert(
@@ -80,7 +80,7 @@ public class GeometryConverterFactoryTest {
     }
 
     @Test
-    public void testStringToGeometry() throws Exception {
+    public void testStringToGeometry() {
         Geometry geometry =
                 factory.createConverter(String.class, Geometry.class, null)
                         .convert("POLYGON((0 0, 1 0, 1 1, 0 1, 0 0))", Geometry.class);
@@ -102,7 +102,7 @@ public class GeometryConverterFactoryTest {
     }
 
     @Test
-    public void testGeometryToString() throws Exception {
+    public void testGeometryToString() {
         String wkt =
                 factory.createConverter(Geometry.class, String.class, null)
                         .convert(

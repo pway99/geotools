@@ -48,7 +48,7 @@ public class TextSymbolTest {
     }
 
     @org.junit.Test
-    public void testRender() throws Exception {
+    public void testRender() {
         // System.out.println("\n\nTextSymbolTest\n");
 
         // Request extent

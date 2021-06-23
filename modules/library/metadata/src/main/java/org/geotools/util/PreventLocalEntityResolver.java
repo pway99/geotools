@@ -72,8 +72,7 @@ public class PreventLocalEntityResolver implements EntityResolver2, Serializable
     }
 
     @Override
-    public InputSource getExternalSubset(String name, String baseURI)
-            throws SAXException, IOException {
+    public InputSource getExternalSubset(String name, String baseURI) {
         return null;
     }
 

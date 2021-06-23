@@ -73,7 +73,7 @@ public class ColorStyleTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Color color = null;
 
         if (node.hasChild(Color.class)) {

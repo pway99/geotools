@@ -53,7 +53,7 @@ public class MBFeatureDataTest extends AbstractMBExpressionTest {
         return MBFeatureData.class;
     }
 
-    private MultiPoint createMultiPoint(int index) throws Exception {
+    private MultiPoint createMultiPoint(int index) {
         // create 5 coordinates based off the supplied index
         double d1 = (5 * index) + 10;
         double d2 = (5 * index) + 11;
@@ -69,7 +69,7 @@ public class MBFeatureDataTest extends AbstractMBExpressionTest {
                 new CoordinateArraySequence(new Coordinate[] {c1, c2, c3, c4, c5}));
     }
 
-    private LineString createLineString(int index) throws Exception {
+    private LineString createLineString(int index) {
         // create 5 coordinates based off the supplied index
         double d1 = (5 * index) + 10;
         double d2 = (5 * index) + 11;
@@ -84,7 +84,7 @@ public class MBFeatureDataTest extends AbstractMBExpressionTest {
         return geometryFactory.createLineString(new Coordinate[] {c1, c2, c3, c4, c5});
     }
 
-    private Polygon createPolygon(int index) throws Exception {
+    private Polygon createPolygon(int index) {
         // create 2 coordinates based off the supplied index
         double d1 = (5 * index) + 10;
         double d2 = (5 * index) + 11;
@@ -185,7 +185,7 @@ public class MBFeatureDataTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testFeatureDataId() throws Exception {
+    public void testFeatureDataId() {
         final JSONObject j = getObjectByLayerId("featureDataId", "layout");
         // validate the feature ids
         for (int i = 0; i < intVals.length; ++i) {
@@ -211,7 +211,7 @@ public class MBFeatureDataTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testGeometryType() throws Exception {
+    public void testGeometryType() {
         final JSONObject j = getObjectByLayerId("featureDataId", "layout");
         // validate the geometry types
         for (int i = 0; i < intVals.length; ++i) {
@@ -235,7 +235,7 @@ public class MBFeatureDataTest extends AbstractMBExpressionTest {
     // Currently, "properties" is not implemented. When it is, the expected Exception should be
     // removed.
     @Test(expected = UnsupportedOperationException.class)
-    public void testProperties() throws Exception {
+    public void testProperties() {
         final JSONObject j = getObjectByLayerId("featureDataId", "layout");
         // validate the properties
         final Collection<String> pointProps =

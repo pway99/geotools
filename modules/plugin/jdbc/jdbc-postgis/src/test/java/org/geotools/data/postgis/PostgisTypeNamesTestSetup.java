@@ -32,7 +32,7 @@ public class PostgisTypeNamesTestSetup extends JDBCTypeNamesTestSetup {
     }
 
     @Override
-    protected void dropTypes() throws Exception {
+    protected void dropTypes() {
         runSafe("DROP VIEW \"ftnview\"");
         runSafe("DROP TABLE \"ftntable\"");
     }

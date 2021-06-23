@@ -71,7 +71,7 @@ public class SingleLayerMapContent extends MapContent {
 
     /** Does nothing. */
     @Override
-    protected void finalize() throws Throwable {
+    protected void finalize() {
         // does nothing
     }
 }

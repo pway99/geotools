@@ -26,7 +26,7 @@ public class RenderingSelectorStyleVisitorTest {
     FilterFactory2 ff;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         sf = CommonFactoryFinder.getStyleFactory(null);
         ff = CommonFactoryFinder.getFilterFactory2(null);
         sb = new StyleBuilder(sf, ff);

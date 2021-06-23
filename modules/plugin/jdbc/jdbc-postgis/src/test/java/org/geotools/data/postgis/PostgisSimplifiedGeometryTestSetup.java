@@ -63,7 +63,7 @@ public class PostgisSimplifiedGeometryTestSetup extends JDBCGeometryTestSetup {
     }
 
     @Override
-    public void tearDown() throws Exception {
+    public void tearDown() {
         dropSpatialTable("simplify_point");
         dropSpatialTable("simplify_line");
         dropSpatialTable("simplify_polygon");

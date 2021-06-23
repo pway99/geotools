@@ -62,7 +62,7 @@ public class GeoRestDataStore extends ContentDataStore {
     }
 
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         return typeNames;
     }
 

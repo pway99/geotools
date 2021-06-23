@@ -18,7 +18,6 @@ package org.geotools.geopkg;
 
 import org.geotools.jdbc.JDBCDataStoreOnlineTest;
 import org.geotools.referencing.CRS;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 public class GeoPkgDataStoreOnlineTest extends JDBCDataStoreOnlineTest {
@@ -29,13 +28,13 @@ public class GeoPkgDataStoreOnlineTest extends JDBCDataStoreOnlineTest {
     }
 
     @Override
-    public void testCreateSchemaWithConstraints() throws Exception {
+    public void testCreateSchemaWithConstraints() {
         // SQLite does not enforce length restrictions on strings
         // See FAQ (9) from http://www.sqlite.org/faq.html
     }
 
     @Override
-    protected CoordinateReferenceSystem getUTMCRS() throws FactoryException {
+    protected CoordinateReferenceSystem getUTMCRS() {
         return CRS.decode("EPSG:26713", true);
     }
 }

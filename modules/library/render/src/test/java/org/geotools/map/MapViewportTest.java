@@ -247,7 +247,7 @@ public class MapViewportTest extends LoggerTest {
     }
 
     @Test
-    public void coordinateTransform_MatchingAspectRatioDisabled() throws Exception {
+    public void coordinateTransform_MatchingAspectRatioDisabled() {
         MapViewport vp = new MapViewport(false);
 
         // world and screen bounds with different aspect ratios
@@ -270,7 +270,7 @@ public class MapViewportTest extends LoggerTest {
     }
 
     @Test
-    public void coordinateTransform_MatchingAspectRatioEnabled() throws Exception {
+    public void coordinateTransform_MatchingAspectRatioEnabled() {
         MapViewport vp = new MapViewport(true);
 
         // world and screen bounds with different aspect ratios
@@ -337,7 +337,7 @@ public class MapViewportTest extends LoggerTest {
     }
 
     @Test
-    public void callSetBoundsWhenNonEditable() throws Exception {
+    public void callSetBoundsWhenNonEditable() {
         MapViewport vp = new MapViewport();
         vp.setBounds(WORLD_1_1);
         vp.setEditable(false);
@@ -352,7 +352,7 @@ public class MapViewportTest extends LoggerTest {
     }
 
     @Test
-    public void callSetScreenAreaWhenNonEditable() throws Exception {
+    public void callSetScreenAreaWhenNonEditable() {
         MapViewport vp = new MapViewport();
         vp.setScreenArea(SCREEN_1_1);
         vp.setEditable(false);
@@ -367,7 +367,7 @@ public class MapViewportTest extends LoggerTest {
     }
 
     @Test
-    public void callSetCoordinateReferenceSystemWhenNonEditable() throws Exception {
+    public void callSetCoordinateReferenceSystemWhenNonEditable() {
         final CoordinateReferenceSystem crs = WORLD_1_1.getCoordinateReferenceSystem();
         MapViewport vp = new MapViewport();
         vp.setCoordinateReferenceSystem(crs);
@@ -383,7 +383,7 @@ public class MapViewportTest extends LoggerTest {
     }
 
     @Test
-    public void callSetMatchingAspectRatioWhenNonEditable() throws Exception {
+    public void callSetMatchingAspectRatioWhenNonEditable() {
         MapViewport vp = new MapViewport();
         boolean original = vp.isMatchingAspectRatio();
         vp.setEditable(false);

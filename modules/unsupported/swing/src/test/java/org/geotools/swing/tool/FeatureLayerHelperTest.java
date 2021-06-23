@@ -48,7 +48,7 @@ public class FeatureLayerHelperTest {
     private FeatureLayerHelper helper;
 
     @Before
-    public void setup() throws Exception {
+    public void setup() {
         helper = new FeatureLayerHelper();
     }
 

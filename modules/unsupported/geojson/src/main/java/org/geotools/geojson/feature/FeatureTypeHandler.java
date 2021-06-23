@@ -205,7 +205,7 @@ public class FeatureTypeHandler extends DelegatingHandler<SimpleFeatureType>
     }
 
     @Override
-    public void endJSON() throws ParseException, IOException {
+    public void endJSON() {
         buildType();
     }
 

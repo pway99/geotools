@@ -40,7 +40,6 @@ import org.opengis.filter.spatial.Intersects;
 import org.opengis.filter.spatial.Overlaps;
 import org.opengis.filter.spatial.Touches;
 import org.opengis.filter.spatial.Within;
-import org.opengis.referencing.FactoryException;
 
 /**
  * Test Geo Operations.
@@ -229,7 +228,7 @@ public class CQLGeoOperationTest {
 
     /** OVERLAPS geooperation operation test */
     @Test
-    public void overlaps() throws Exception {
+    public void overlaps() {
 
         Filter resultFilter = CompilerUtil.parseFilter(language, "OVERLAPS(ATTR1, POINT(1 2))");
 
@@ -260,7 +259,7 @@ public class CQLGeoOperationTest {
     /** BBOX test */
     @Test
     @SuppressWarnings("PMD.UseAssertEqualsInsteadOfAssertTrue") // not the same equals
-    public void bbox() throws CQLException, FactoryException {
+    public void bbox() throws CQLException {
 
         // BBOX
         Filter resultFilter =

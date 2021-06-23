@@ -73,7 +73,7 @@ public abstract class SolrTestSupport extends OnlineTestCase {
     private HttpSolrClient solrClient;
 
     @Override
-    protected void setUpInternal() throws Exception {
+    protected void setUpInternal() {
         // add to provided Solr core the necessary data
         String coreUrl = fixture.getProperty(SolrDataStoreFactory.URL.key);
         this.solrClient = TestsSolrUtils.instantiateClient(coreUrl);

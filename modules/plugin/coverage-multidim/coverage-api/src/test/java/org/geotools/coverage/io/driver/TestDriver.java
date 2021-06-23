@@ -123,8 +123,7 @@ public class TestDriver extends DefaultFileDriver implements Driver {
         }
 
         @Override
-        public CoverageResponse read(CoverageReadRequest request, ProgressListener listener)
-                throws IOException {
+        public CoverageResponse read(CoverageReadRequest request, ProgressListener listener) {
             return null;
         }
     }
@@ -137,8 +136,7 @@ public class TestDriver extends DefaultFileDriver implements Driver {
                 Map<String, Serializable> params,
                 AccessType accessType,
                 Hints hints,
-                ProgressListener listener)
-                throws IOException {
+                ProgressListener listener) {
             return new TestCoverageSource(
                     name,
                     new TestCoverageSourceDescriptor(TestCoverageSourceDescriptor.TEST_COVERAGE));
@@ -152,8 +150,7 @@ public class TestDriver extends DefaultFileDriver implements Driver {
         }
 
         @Override
-        public boolean canDelete(Name name, Map<String, Serializable> params, Hints hints)
-                throws IOException {
+        public boolean canDelete(Name name, Map<String, Serializable> params, Hints hints) {
             return false;
         }
 
@@ -165,8 +162,7 @@ public class TestDriver extends DefaultFileDriver implements Driver {
         }
 
         @Override
-        public boolean delete(Name name, Map<String, Serializable> params, Hints hints)
-                throws IOException {
+        public boolean delete(Name name, Map<String, Serializable> params, Hints hints) {
             throw new UnsupportedOperationException();
         }
 

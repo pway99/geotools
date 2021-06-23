@@ -31,7 +31,7 @@ public class CartesianAuthorityFactoryTest {
     }
 
     @Test
-    public void testIdentifier() throws NoSuchAuthorityCodeException, FactoryException {
+    public void testIdentifier() {
         Set<ReferenceIdentifier> identifiers =
                 CartesianAuthorityFactory.GENERIC_2D.getIdentifiers();
         assertEquals(1, identifiers.size());

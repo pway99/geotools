@@ -164,7 +164,7 @@ public class AppSchemaDataAccessFactory implements DataAccessFactory {
         return url;
     }
 
-    public DataStore createNewDataStore(Map<String, Serializable> params) throws IOException {
+    public DataStore createNewDataStore(Map<String, Serializable> params) {
         throw new UnsupportedOperationException();
     }
 

@@ -346,13 +346,12 @@ public class MongoUtil {
         private File lastDirectory = null;
 
         @Override
-        public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)
-                throws IOException {
+        public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) {
             return FileVisitResult.CONTINUE;
         }
 
         @Override
-        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
             if (file.toString().endsWith(MongoSchemaFileStore.SUFFIX_json.toLowerCase())) {
                 Path parent = file.getParent();
                 if (parent != null) {
@@ -364,12 +363,12 @@ public class MongoUtil {
         }
 
         @Override
-        public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+        public FileVisitResult visitFileFailed(Path file, IOException exc) {
             return FileVisitResult.CONTINUE;
         }
 
         @Override
-        public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+        public FileVisitResult postVisitDirectory(Path dir, IOException exc) {
             return FileVisitResult.CONTINUE;
         }
 

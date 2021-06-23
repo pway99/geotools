@@ -54,7 +54,7 @@ public class MultiRepTestRunner extends org.junit.internal.runners.JUnit4ClassRu
         notifier.addListener(
                 new RunListener() {
                     @Override
-                    public void testFailure(Failure failure) throws Exception {
+                    public void testFailure(Failure failure) {
                         numFailures++;
                     }
                 });

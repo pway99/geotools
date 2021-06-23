@@ -41,12 +41,12 @@ public class ColorConverterFactoryTest {
     ColorConverterFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new ColorConverterFactory();
     }
 
     @Test
-    public void testVsConstantExpression() throws Exception {
+    public void testVsConstantExpression() {
         ConstantExpression expr = ConstantExpression.color(Color.RED);
         String expected = expr.evaluate(null, String.class);
 
@@ -82,7 +82,7 @@ public class ColorConverterFactoryTest {
     }
 
     @Test
-    public void testToCSS() throws Exception {
+    public void testToCSS() {
         Converter converter =
                 factory.createConverter(
                         Color.class, String.class, new Hints(Hints.COLOR_DEFINITION, "CSS"));
@@ -107,7 +107,7 @@ public class ColorConverterFactoryTest {
     }
 
     @Test
-    public void testFromCss() throws Exception {
+    public void testFromCss() {
         Converter converter =
                 factory.createConverter(
                         String.class, Color.class, new Hints(Hints.COLOR_DEFINITION, "CSS"));
@@ -138,14 +138,14 @@ public class ColorConverterFactoryTest {
     }
 
     @Test
-    public void testAlpha() throws Exception {
+    public void testAlpha() {
         Converter converter = factory.createConverter(String.class, Color.class, null);
 
         Assert.assertEquals("hex", GRAY, converter.convert("#808080", Color.class));
         Assert.assertNull("hex alpha", converter.convert("#80808080", Color.class));
     }
 
-    Color convert(Object value) throws Exception {
+    Color convert(Object value) {
         Converter converter = factory.createConverter(value.getClass(), Color.class, null);
         return converter.convert(value, Color.class);
     }
@@ -167,7 +167,7 @@ public class ColorConverterFactoryTest {
     }
 
     @Test
-    public void testHsl() throws Exception {
+    public void testHsl() {
         Converter converter =
                 factory.createConverter(
                         String.class, Color.class, new Hints(Hints.COLOR_DEFINITION, "CSS"));
@@ -178,7 +178,7 @@ public class ColorConverterFactoryTest {
     }
 
     @Test
-    public void testHsla() throws Exception {
+    public void testHsla() {
         Converter converter =
                 factory.createConverter(
                         String.class, Color.class, new Hints(Hints.COLOR_DEFINITION, "CSS"));

@@ -48,7 +48,7 @@ public class TextGeometryFactory extends VPFGeometryFactory implements FileConst
 
     @Override
     public synchronized Geometry buildGeometry(VPFFeatureClass featureClass, SimpleFeature values)
-            throws SQLException, IOException, IllegalAttributeException {
+            throws IOException, IllegalAttributeException {
 
         int textId = Integer.parseInt(values.getAttribute("txt_id").toString());
 

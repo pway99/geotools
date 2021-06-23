@@ -46,7 +46,7 @@ public class CapabilityBinding extends AbstractComplexEMFBinding {
     }
 
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Ows10Factory ows10Factory = Ows10Factory.eINSTANCE;
 
         OperationsMetadataType om = ows10Factory.createOperationsMetadataType();

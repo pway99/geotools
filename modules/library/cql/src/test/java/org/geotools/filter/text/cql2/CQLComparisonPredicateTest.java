@@ -68,7 +68,7 @@ public class CQLComparisonPredicateTest {
      * </pre>
      */
     @Test
-    public void comparisonOperators() throws Exception {
+    public void comparisonOperators() {
         // attr1 < 5
         Filter expected = FilterCQLSample.getSample(FilterCQLSample.LESS_FILTER_SAMPLE);
 
@@ -112,7 +112,7 @@ public class CQLComparisonPredicateTest {
      * @see ECQLComparisonPredicateTest
      */
     @Test
-    public void deprecatedPredicate() throws Exception {
+    public void deprecatedPredicate() {
 
         CQL.toFilter("POP_RANK eq 6");
         CQL.toFilter("POP_RANK neq 6");
@@ -128,7 +128,7 @@ public class CQLComparisonPredicateTest {
      * </pre>
      */
     @Test
-    public void attributeName() throws Exception {
+    public void attributeName() {
 
         // "gmd:aa:bb.gmd:cc.gmd:dd"
         final String prop = "gmd:aa:bb.gmd:cc.gmd:dd";
@@ -156,7 +156,7 @@ public class CQLComparisonPredicateTest {
      * </pre>
      */
     @Test
-    public void propertyComparisonSimpleExpressions() throws Exception {
+    public void propertyComparisonSimpleExpressions() {
 
         Filter expected = FilterCQLSample.getSample(FilterCQLSample.FILTER_SIMPLE_EXPR);
         Filter actual = CompilerUtil.parseFilter(this.language, FilterCQLSample.FILTER_SIMPLE_EXPR);
@@ -168,7 +168,7 @@ public class CQLComparisonPredicateTest {
 
     /** Comparison with boolean values */
     @Test
-    public void booleanLiteral() throws Exception {
+    public void booleanLiteral() {
 
         // test true value
         Filter filter = CompilerUtil.parseFilter(this.language, "attr = true");
@@ -238,7 +238,7 @@ public class CQLComparisonPredicateTest {
     }
 
     /** General test for cql expressions */
-    private void testEqualsExpressions(final String cqlSample) throws Exception {
+    private void testEqualsExpressions(final String cqlSample) {
         Filter expected = FilterCQLSample.getSample(cqlSample);
         Filter actual = CompilerUtil.parseFilter(language, cqlSample);
 

@@ -70,7 +70,7 @@ class MosaicQueryBuilder {
      * @return a {@link Query} object with the BBOX {@link Filter} in it.
      * @throws IOException in case something bad happens
      */
-    private Query initQuery() throws TransformException, FactoryException, IOException {
+    private Query initQuery() throws IOException {
         final String typeName = rasterManager.getTypeName();
         Filter bbox = null;
         if (typeName != null) {

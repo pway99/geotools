@@ -30,7 +30,7 @@ public class FilterFunction_setCRSTest {
     }
 
     @Test
-    public void setCRSCode() throws Exception {
+    public void setCRSCode() {
         Function f = ff.function("setCRS", ff.literal(g), ff.literal("EPSG:4326"));
         Geometry sg = (Geometry) f.evaluate(null);
         assertEquals(CRS.decode("EPSG:4326"), sg.getUserData());

@@ -565,7 +565,7 @@ public abstract class ContentFeatureSource implements SimpleFeatureSource {
 
     /** Returns the feature collection of all the features of the feature source. */
     @Override
-    public final ContentFeatureCollection getFeatures() throws IOException {
+    public final ContentFeatureCollection getFeatures() {
         Query query = joinQuery(Query.ALL);
         return new ContentFeatureCollection(this, query);
     }
@@ -575,7 +575,7 @@ public abstract class ContentFeatureSource implements SimpleFeatureSource {
      *
      * <p>This method calls through to {@link #getReader(Query)}.
      */
-    public final FeatureReader<SimpleFeatureType, SimpleFeature> getReader() throws IOException {
+    public final FeatureReader<SimpleFeatureType, SimpleFeature> getReader() {
         return getReader(Query.ALL);
     }
 
@@ -584,7 +584,7 @@ public abstract class ContentFeatureSource implements SimpleFeatureSource {
      * query criteria.
      */
     @Override
-    public final ContentFeatureCollection getFeatures(Query query) throws IOException {
+    public final ContentFeatureCollection getFeatures(Query query) {
         query = joinQuery(query);
 
         return new ContentFeatureCollection(this, query);
@@ -837,7 +837,7 @@ public abstract class ContentFeatureSource implements SimpleFeatureSource {
      * @param visitor The visitor to
      * @return true if the visitor can be handled natively, otherwise false.
      */
-    protected boolean handleVisitor(Query query, FeatureVisitor visitor) throws IOException {
+    protected boolean handleVisitor(Query query, FeatureVisitor visitor) {
         return false;
     }
 
@@ -1009,7 +1009,7 @@ public abstract class ContentFeatureSource implements SimpleFeatureSource {
      * <p>If the current feature source already has a defining query it is joined to the specified
      * query.
      */
-    public final ContentFeatureSource getView(Query query) throws IOException {
+    public final ContentFeatureSource getView(Query query) {
         query = joinQuery(query);
         query = resolvePropertyNames(query);
 
@@ -1044,8 +1044,7 @@ public abstract class ContentFeatureSource implements SimpleFeatureSource {
      *
      * <p>This method calls through to {@link #getReader(Query)}.
      */
-    public final FeatureReader<SimpleFeatureType, SimpleFeature> getReader(Filter filter)
-            throws IOException {
+    public final FeatureReader<SimpleFeatureType, SimpleFeature> getReader(Filter filter) {
         return getReader(new Query(getSchema().getTypeName(), filter));
     }
 
@@ -1220,7 +1219,7 @@ public abstract class ContentFeatureSource implements SimpleFeatureSource {
      *
      * <p>This method calls through to {@link #lockFeatures(Filter)}.
      */
-    public final int lockFeatures() throws IOException {
+    public final int lockFeatures() {
         return lockFeatures(Filter.INCLUDE);
     }
 
@@ -1229,7 +1228,7 @@ public abstract class ContentFeatureSource implements SimpleFeatureSource {
      *
      * <p>This method calls through to {@link #lockFeatures(Filter)}.
      */
-    public final int lockFeatures(Query query) throws IOException {
+    public final int lockFeatures(Query query) {
         return lockFeatures(query.getFilter());
     }
 
@@ -1278,7 +1277,7 @@ public abstract class ContentFeatureSource implements SimpleFeatureSource {
      *
      * <p>This method calls through to {@link #unLockFeatures(Filter)}.
      */
-    public final void unLockFeatures() throws IOException {
+    public final void unLockFeatures() {
         unLockFeatures(Filter.INCLUDE);
     }
 
@@ -1287,7 +1286,7 @@ public abstract class ContentFeatureSource implements SimpleFeatureSource {
      *
      * <p>This method calls through to {@link #unLockFeatures(Filter)}.
      */
-    public final void unLockFeatures(Query query) throws IOException {
+    public final void unLockFeatures(Query query) {
         unLockFeatures(query.getFilter());
     }
 
@@ -1346,7 +1345,7 @@ public abstract class ContentFeatureSource implements SimpleFeatureSource {
      * @param typeName {@link SimpleFeature} type name
      * @param feature {@link SimpleFeature} instance
      */
-    protected void doLockInternal(String typeName, SimpleFeature feature) throws IOException {
+    protected void doLockInternal(String typeName, SimpleFeature feature) {
         throw new UnsupportedOperationException("native locking not implemented");
     }
 
@@ -1357,7 +1356,7 @@ public abstract class ContentFeatureSource implements SimpleFeatureSource {
      * @param typeName {@link Feature} type name
      * @param feature {@link Feature} instance
      */
-    protected void doUnlockInternal(String typeName, SimpleFeature feature) throws IOException {
+    protected void doUnlockInternal(String typeName, SimpleFeature feature) {
         throw new UnsupportedOperationException("native locking not implemented");
     }
 }

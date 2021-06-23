@@ -363,8 +363,7 @@ public final class GridCoverageRenderer {
     private GridCoverage2D renderCoverage(
             final GridCoverage2D gridCoverage,
             final RasterSymbolizer symbolizer,
-            final double[] bkgValues)
-            throws FactoryException {
+            final double[] bkgValues) {
         // Initial checks
         GridCoverageRendererUtilities.ensureNotNull(gridCoverage, "gridCoverage");
         if (LOGGER.isLoggable(Level.FINE)) {
@@ -544,7 +543,7 @@ public final class GridCoverageRenderer {
             final Color background,
             final int tileSizeX,
             final int tileSizeY)
-            throws FactoryException, TransformException, NoninvertibleTransformException {
+            throws FactoryException {
 
         GridCoverage2D coverage =
                 renderCoverage(
@@ -634,7 +633,7 @@ public final class GridCoverageRenderer {
             final Color background,
             final int tileSizeX,
             final int tileSizeY)
-            throws FactoryException, TransformException, NoninvertibleTransformException,
+            throws FactoryException, TransformException,
                     IOException {
         // setup the hints
         setupTilingHints(tileSizeX, tileSizeY);

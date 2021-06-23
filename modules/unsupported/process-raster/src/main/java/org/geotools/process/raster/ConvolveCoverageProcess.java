@@ -16,7 +16,6 @@
  */
 package org.geotools.process.raster;
 
-import java.io.IOException;
 import javax.media.jai.KernelJAI;
 import org.geotools.coverage.grid.GridCoverage2D;
 import org.geotools.coverage.processing.CoverageProcessor;
@@ -57,8 +56,7 @@ public class ConvolveCoverageProcess implements RasterProcess {
                         description = "Height for rectangular kernel",
                         min = 0
                     )
-                    Integer kernelHeight)
-            throws IOException {
+                    Integer kernelHeight) {
         final ParameterValueGroup param = PROCESSOR.getOperation("Convolve").getParameters();
 
         param.parameter("Source").setValue(coverage);

@@ -37,7 +37,7 @@ public class H2EmptyTestSetup extends JDBCEmptyTestSetup {
     }
 
     @Override
-    protected void dropEmptyTable() throws Exception {
+    protected void dropEmptyTable() {
         runSafe("DELETE FROM geometry_columns WHERE f_table_name = 'empty'");
         runSafe("DROP TABLE \"geotools\".\"empty\"");
     }

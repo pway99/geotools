@@ -77,8 +77,7 @@ public class H2Dialect extends SQLDialect {
     }
 
     @Override
-    public boolean includeTable(String schemaName, String tableName, Connection cx)
-            throws SQLException {
+    public boolean includeTable(String schemaName, String tableName, Connection cx) {
         if ("_GEODB".equals(tableName) || tableName.endsWith("_HATBOX")) {
             return false;
         }
@@ -383,13 +382,13 @@ public class H2Dialect extends SQLDialect {
 
     @Override
     public Envelope decodeGeometryEnvelope(ResultSet rs, int column, Connection cx)
-            throws SQLException, IOException {
+            throws SQLException {
 
         // TODO: change spatialdb in a box to return ReferencedEnvelope
         return (Envelope) rs.getObject(column);
     }
 
-    public void encodeGeometryValue(Geometry value, int srid, StringBuffer sql) throws IOException {
+    public void encodeGeometryValue(Geometry value, int srid, StringBuffer sql) {
         if (value == null || value.isEmpty()) {
             sql.append("ST_GeomFromText ('");
             sql.append(new WKTWriter().write(value));
@@ -409,7 +408,7 @@ public class H2Dialect extends SQLDialect {
             GeometryFactory factory,
             Connection cx,
             Hints hints)
-            throws IOException, SQLException {
+            throws SQLException {
         byte[] bytes = rs.getBytes(column);
 
         if (bytes == null) {

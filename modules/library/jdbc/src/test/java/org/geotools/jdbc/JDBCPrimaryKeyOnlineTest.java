@@ -85,8 +85,7 @@ public abstract class JDBCPrimaryKeyOnlineTest extends JDBCTestSupport {
         assertPrimaryKeyValues(features, 4);
     }
 
-    protected void addFeature(SimpleFeatureType featureType, JDBCFeatureStore features)
-            throws Exception {
+    protected void addFeature(SimpleFeatureType featureType, JDBCFeatureStore features) {
         SimpleFeatureBuilder b = new SimpleFeatureBuilder(featureType);
         b.add("four");
         b.add(new GeometryFactory().createPoint(new Coordinate(4, 4)));
@@ -100,8 +99,7 @@ public abstract class JDBCPrimaryKeyOnlineTest extends JDBCTestSupport {
                         .matches(tname(featureType.getTypeName()) + ".4(\\..*)?"));
     }
 
-    protected void assertPrimaryKeyValues(final SimpleFeatureCollection features, int count)
-            throws Exception {
+    protected void assertPrimaryKeyValues(final SimpleFeatureCollection features, int count) {
         assertFeatureIterator(
                 1,
                 count,
@@ -142,8 +140,7 @@ public abstract class JDBCPrimaryKeyOnlineTest extends JDBCTestSupport {
         assertEquals(1, features.size());
     }
 
-    void assertMultiPrimaryKeyValues(final SimpleFeatureCollection features, int count)
-            throws Exception {
+    void assertMultiPrimaryKeyValues(final SimpleFeatureCollection features, int count) {
         assertFeatureIterator(
                 1,
                 count,

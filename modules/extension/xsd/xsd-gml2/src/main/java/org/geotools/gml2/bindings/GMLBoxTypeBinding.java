@@ -115,7 +115,7 @@ public class GMLBoxTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         Envelope e = (Envelope) object;
 
         if (GML.coord.equals(name)) {

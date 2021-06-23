@@ -41,7 +41,7 @@ class SimpleFeatureReaderBrige implements SimpleFeatureReader {
 
     @Override
     public SimpleFeature next()
-            throws IOException, IllegalArgumentException, NoSuchElementException {
+            throws IllegalArgumentException, NoSuchElementException {
         return reader.next();
     }
 

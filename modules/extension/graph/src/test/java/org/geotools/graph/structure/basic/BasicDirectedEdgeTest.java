@@ -43,7 +43,7 @@ public class BasicDirectedEdgeTest {
     private BasicDirectedEdge m_outinEdge;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         m_inNode = new BasicDirectedNode();
         m_outNode = new BasicDirectedNode();
         m_edge = new BasicDirectedEdge(m_inNode, m_outNode);

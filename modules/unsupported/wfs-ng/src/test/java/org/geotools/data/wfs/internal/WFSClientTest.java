@@ -50,7 +50,7 @@ public class WFSClientTest {
     }
 
     @After
-    public void tearDown() throws Exception {}
+    public void tearDown() {}
 
     private WFSClient testInit(String resource, String expectedVersion)
             throws IOException, ServiceException {

@@ -132,7 +132,7 @@ public class CapabilitiesBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         CapabilitiesType capabilities = factory.createCapabilitiesType();
 

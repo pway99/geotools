@@ -68,18 +68,18 @@ public class GeoPkgViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void dropLakesTable() throws Exception {
+    protected void dropLakesTable() {
         ((GeoPkgTestSetup) delegate).removeTable("lakes");
     }
 
     @Override
-    protected void dropLakesView() throws Exception {
+    protected void dropLakesView() {
         ((GeoPkgTestSetup) delegate).removeTable("lakesview");
     }
 
     @Override
-    protected void createLakesViewPk() throws Exception {}
+    protected void createLakesViewPk() {}
 
     @Override
-    protected void dropLakesViewPk() throws Exception {}
+    protected void dropLakesViewPk() {}
 }

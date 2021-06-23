@@ -220,7 +220,7 @@ public class RasterManager implements Cloneable {
         }
 
         /** Initialize the 2D properties (CRS and Envelope) of this coverage */
-        private void prepareCoverageSpatialElements() throws TransformException, FactoryException {
+        private void prepareCoverageSpatialElements() {
             //
             // basic initialization
             //
@@ -1876,8 +1876,7 @@ public class RasterManager implements Cloneable {
     private ReferencedEnvelope reprojectBounds(
             ReferencedEnvelope referenceBounds,
             CoordinateReferenceSystem targetCRS,
-            ReferencedEnvelope bounds)
-            throws FactoryException, TransformException {
+            ReferencedEnvelope bounds) {
         ProjectionHandler ph = ProjectionHandlerFinder.getHandler(referenceBounds, targetCRS, true);
         ReferencedEnvelope targetBounds = null;
         if (ph != null) {

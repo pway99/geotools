@@ -21,7 +21,6 @@ import org.geotools.metadata.iso.citation.Citations;
 import org.geotools.referencing.factory.epsg.FactoryUsingWKT;
 import org.geotools.util.factory.Hints;
 import org.opengis.metadata.citation.Citation;
-import org.opengis.referencing.FactoryException;
 
 /**
  * Extends the EPSG database with {@linkplain CoordinateReferenceSystem Coordinate Reference
@@ -96,7 +95,7 @@ public class EsriExtension extends FactoryUsingWKT {
      * @param args Command line arguments.
      * @throws FactoryException if an error occured.
      */
-    public static void main(final String[] args) throws FactoryException {
+    public static void main(final String[] args) {
         main(args, EsriExtension.class);
     }
 }

@@ -32,7 +32,7 @@ import org.opengis.referencing.operation.MathTransform;
 public class APIExamples {
 
     /** OpenGIS Envelope Exampels (using ReferencedEnvelope) */
-    private void exampleISOEnvelope() throws Exception {
+    private void exampleISOEnvelope() {
         // exampleISOEnvelope start
         CoordinateReferenceSystem wsg84 = CRS.decode("EPSG:4326");
         org.opengis.geometry.Envelope envelope = new ReferencedEnvelope(0, 10, 0, 20, wsg84);
@@ -64,7 +64,7 @@ public class APIExamples {
         // exampleISOEnvelope end
     }
 
-    private void exampleBoundingBox() throws Exception {
+    private void exampleBoundingBox() {
         // exampleBoundingBox start
         CoordinateReferenceSystem wsg84 = CRS.decode("EPSG:4326");
         org.opengis.geometry.BoundingBox bbox = new ReferencedEnvelope(0, 10, 0, 20, wsg84);
@@ -96,7 +96,7 @@ public class APIExamples {
     //
     // JTS Envelope Examples
     //
-    private void exampleEnvelope() throws Exception {
+    private void exampleEnvelope() {
         // exampleEnvelope start
         org.locationtech.jts.geom.Envelope envelope = new Envelope(0, 10, 0, 20);
         double xMin = envelope.getMinX();
@@ -123,7 +123,7 @@ public class APIExamples {
         // exampleEnvelope end
     }
 
-    private void transformEnvelope() throws Exception {
+    private void transformEnvelope() {
         // transformEnvelope start
         CoordinateReferenceSystem sourceCRS = CRS.decode("EPSG:4326");
         CoordinateReferenceSystem targetCRS = CRS.decode("EPSG:23032");
@@ -142,7 +142,7 @@ public class APIExamples {
     //
     // Referenced Envelope Examples
     //
-    private void exampleReferencedEnvelope() throws Exception {
+    private void exampleReferencedEnvelope() {
         // exampleReferencedEnvelope start
         ReferencedEnvelope envelope =
                 new ReferencedEnvelope(0, 10, 0, 20, DefaultGeographicCRS.WGS84);
@@ -180,7 +180,7 @@ public class APIExamples {
     //
     // Referenced Envelope 3D Examples
     //
-    private void exampleReferencedEnvelope3D() throws Exception {
+    private void exampleReferencedEnvelope3D() {
         // exampleReferencedEnvelope3D start
         ReferencedEnvelope3D envelope =
                 new ReferencedEnvelope3D(0, 10, 0, 20, 0, 30, DefaultGeographicCRS.WGS84_3D);
@@ -222,7 +222,7 @@ public class APIExamples {
     //
     // Referenced Envelope Static Methods Examples
     //
-    private void exampleReferencedEnvelopeStaticMethods() throws Exception {
+    private void exampleReferencedEnvelopeStaticMethods() {
         // exampleReferencedEnvelopeStaticMethods start
         ReferencedEnvelope
                 env; // can hold both regular ReferencedEnvelope as well as ReferencedEnvelope3D
@@ -263,7 +263,7 @@ public class APIExamples {
         // exampleReferencedEnvelopeStaticMethods end
     }
 
-    private void transformReferencedEnvelope() throws Exception {
+    private void transformReferencedEnvelope() {
         // transformReferencedEnvelope start
         CoordinateReferenceSystem sourceCRS = CRS.decode("EPSG:4326");
         ReferencedEnvelope envelope = new ReferencedEnvelope(0, 10, 0, 20, sourceCRS);
@@ -277,7 +277,7 @@ public class APIExamples {
     //
     // Geometry Examples
     //
-    private void transformGeometry() throws Exception {
+    private void transformGeometry() {
         // transformGeometry start
         CoordinateReferenceSystem sourceCRS = CRS.decode("EPSG:4326");
         CoordinateReferenceSystem targetCRS = CRS.decode("EPSG:23032");

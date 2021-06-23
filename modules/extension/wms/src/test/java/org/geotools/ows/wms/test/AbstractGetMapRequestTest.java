@@ -16,12 +16,10 @@
  */
 package org.geotools.ows.wms.test;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
 import org.geotools.data.ows.Response;
 import org.geotools.http.HTTPResponse;
-import org.geotools.ows.ServiceException;
 import org.geotools.ows.wms.request.AbstractGetMapRequest;
 import org.geotools.ows.wms.request.GetMapRequest;
 import org.junit.Assert;
@@ -64,8 +62,7 @@ public class AbstractGetMapRequestTest {
         }
 
         @Override
-        public Response createResponse(HTTPResponse httpResponse)
-                throws ServiceException, IOException {
+        public Response createResponse(HTTPResponse httpResponse) {
             // TODO Auto-generated method stub
             return null;
         }

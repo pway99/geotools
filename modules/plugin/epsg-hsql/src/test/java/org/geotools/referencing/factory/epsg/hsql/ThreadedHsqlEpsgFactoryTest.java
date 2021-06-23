@@ -37,7 +37,6 @@ import org.geotools.referencing.factory.epsg.DirectEpsgFactory;
 import org.junit.Before;
 import org.junit.Test;
 import org.opengis.geometry.DirectPosition;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.IdentifiedObject;
 import org.opengis.referencing.ReferenceIdentifier;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
@@ -56,7 +55,7 @@ public class ThreadedHsqlEpsgFactoryTest {
     static final double EPS = 1e-06;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         if (factory == null) {
             factory =
                     (ThreadedHsqlEpsgFactory)
@@ -96,7 +95,7 @@ public class ThreadedHsqlEpsgFactoryTest {
     }
 
     @Test
-    public void testCreation() throws Exception {
+    public void testCreation() {
         assertNotNull(factory);
         CoordinateReferenceSystem epsg4326 = factory.createCoordinateReferenceSystem("EPSG:4326");
         CoordinateReferenceSystem code4326 = factory.createCoordinateReferenceSystem("4326");
@@ -117,14 +116,14 @@ public class ThreadedHsqlEpsgFactoryTest {
     }
 
     @Test
-    public void testAuthorityCodes() throws Exception {
+    public void testAuthorityCodes() {
         Set authorityCodes = factory.getAuthorityCodes(CoordinateReferenceSystem.class);
         assertNotNull(authorityCodes);
         assertTrue(authorityCodes.size() > 3000);
     }
 
     @Test
-    public void testFindWSG84() throws FactoryException {
+    public void testFindWSG84() {
         String wkt =
                 "GEOGCS[\"WGS 84\",\n"
                         + "  DATUM[\"World Geodetic System 1984\",\n"
@@ -152,7 +151,7 @@ public class ThreadedHsqlEpsgFactoryTest {
     }
 
     @Test
-    public void testFindBeijing1954() throws FactoryException {
+    public void testFindBeijing1954() {
         /*
          * The PROJCS below intentionally uses a name different from the one found in the
          * EPSG database, in order to force a full scan (otherwise the EPSG database would
@@ -253,7 +252,7 @@ public class ThreadedHsqlEpsgFactoryTest {
      * GEOT-3497 (given the same accuracy use the transformation method with the largest valid area)
      */
     @Test
-    public void testNad83() throws Exception {
+    public void testNad83() {
         GeographicCRS crs = (GeographicCRS) CRS.decode("EPSG:4269");
         DefaultGeodeticDatum datum = (DefaultGeodeticDatum) crs.getDatum();
         BursaWolfParameters[] params = datum.getBursaWolfParameters();
@@ -275,7 +274,7 @@ public class ThreadedHsqlEpsgFactoryTest {
 
     /** GEOT-3644, make sure we can decode what we generated */
     @Test
-    public void testEncodeAndParse() throws Exception {
+    public void testEncodeAndParse() {
         // a crs with out of standard axis orientation "South along 45 deg East"
         CoordinateReferenceSystem crs = CRS.decode("EPSG:3413");
         // format it in a lenient way
@@ -288,7 +287,7 @@ public class ThreadedHsqlEpsgFactoryTest {
 
     /** GEOT-3482 */
     @Test
-    public void testPPMUnit() throws Exception {
+    public void testPPMUnit() {
         // Create WGS 72 CRS where we know that the EPSG defines a unique
         // Position Vector Transformation to WGS 84 with ppm = 0.219
         GeographicCRS wgs72 = (GeographicCRS) CRS.decode("EPSG:4322");
@@ -331,7 +330,7 @@ public class ThreadedHsqlEpsgFactoryTest {
 
     /** Test data source creation when <code>java.io.tmpdir</code> contains spaces. */
     @Test
-    public void testTmpWithSpaces() throws Exception {
+    public void testTmpWithSpaces() {
         final String JAVA_IO_TMPDIR_PROPERTY = "java.io.tmpdir";
         String oldTmpDir = System.getProperty(JAVA_IO_TMPDIR_PROPERTY);
         File tmpDir = new File("target/tmp with spaces");

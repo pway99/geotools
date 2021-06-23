@@ -186,19 +186,19 @@ class DataAccessStoreWrapper implements DataStore {
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            String typeName, Filter filter, Transaction transaction) throws IOException {
+            String typeName, Filter filter, Transaction transaction) {
         throw new UnsupportedOperationException();
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            String typeName, Transaction transaction) throws IOException {
+            String typeName, Transaction transaction) {
         throw new UnsupportedOperationException();
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriterAppend(
-            String typeName, Transaction transaction) throws IOException {
+            String typeName, Transaction transaction) {
         throw new UnsupportedOperationException();
     }
 

@@ -81,7 +81,7 @@ public class AbstractFeatureCollectionTypeBinding extends AbstractComplexBinding
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         SimpleFeatureCollection featureCollection =
                 (SimpleFeatureCollection) node.getChildValue(FeatureCollection.class);
         if (featureCollection == null) {

@@ -37,7 +37,7 @@ public class DirectoryFeatureLocking extends DirectoryFeatureStore implements Si
     }
 
     @Override
-    public int lockFeatures(Filter filter) throws IOException {
+    public int lockFeatures(Filter filter) {
         return flocking.lockFeatures(filter);
     }
 
@@ -57,7 +57,7 @@ public class DirectoryFeatureLocking extends DirectoryFeatureStore implements Si
     }
 
     @Override
-    public void unLockFeatures(Filter filter) throws IOException {
+    public void unLockFeatures(Filter filter) {
         flocking.unLockFeatures(filter);
     }
 

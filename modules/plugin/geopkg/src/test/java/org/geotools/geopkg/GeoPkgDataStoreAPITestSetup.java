@@ -79,7 +79,7 @@ public class GeoPkgDataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropLakeTable() throws Exception {
+    protected void dropLakeTable() {
         ((GeoPkgTestSetup) delegate).removeTable("lake");
         ((GeoPkgTestSetup) delegate).removeTable("rtree_lake_geom");
     }
@@ -126,7 +126,7 @@ public class GeoPkgDataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropRiverTable() throws Exception {
+    protected void dropRiverTable() {
         ((GeoPkgTestSetup) delegate).removeTable("river");
         ((GeoPkgTestSetup) delegate).removeTable("rtree_river_geom");
     }
@@ -177,21 +177,21 @@ public class GeoPkgDataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropRoadTable() throws Exception {
+    protected void dropRoadTable() {
         ((GeoPkgTestSetup) delegate).removeTable("road");
         ((GeoPkgTestSetup) delegate).removeTable("rtree_road_geom");
     }
 
     @Override
-    protected void dropBuildingTable() throws Exception {
+    protected void dropBuildingTable() {
         ((GeoPkgTestSetup) delegate).removeTable("building");
     }
 
-    protected void dropRecreatedTable() throws Exception {
+    protected void dropRecreatedTable() {
         ((GeoPkgTestSetup) delegate).removeTable("recreated");
     }
 
-    protected void dropDataTypesTable() throws Exception {
+    protected void dropDataTypesTable() {
         ((GeoPkgTestSetup) delegate).removeTable("datatypes");
     }
 }

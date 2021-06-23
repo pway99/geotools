@@ -479,7 +479,7 @@ public class DefaultMathTransformFactory extends ReferencingFactory
      * @throws FactoryException if the object creation failed.
      */
     @Override
-    public MathTransform createAffineTransform(final Matrix matrix) throws FactoryException {
+    public MathTransform createAffineTransform(final Matrix matrix) {
         lastMethod.remove(); // To be strict, we should set ProjectiveTransform.Provider
         return pool.unique(ProjectiveTransform.create(matrix));
     }

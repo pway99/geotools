@@ -9,7 +9,6 @@
  */
 package org.opengis.filter.capability;
 
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -201,7 +200,7 @@ public final class GeometryOperand implements Name, Serializable {
     }
 
     /** Returns the canonical instance on deserialization. */
-    private Object readResolve() throws ObjectStreamException {
+    private Object readResolve() {
         final GeometryOperand unique = POOL.get(this);
         return (unique != null) ? unique : this;
     }

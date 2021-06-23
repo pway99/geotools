@@ -131,8 +131,7 @@ public final class IndexedResourceCompiler implements Comparator<Object> {
             final File sourceDirectory,
             final Class<? extends IndexedResourceBundle> bundleClass,
             final boolean renumber,
-            final PrintWriter out)
-            throws IOException {
+            final PrintWriter out) {
         this.sourceDirectory = sourceDirectory;
         this.out = out;
         if (!renumber)

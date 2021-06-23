@@ -69,7 +69,7 @@ public class AllSomeTypeBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         AttributeImpl att = (AttributeImpl) instance;
         String text = att.getText();
         AllSomeType allSomeType = AllSomeType.get(text);

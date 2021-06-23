@@ -81,7 +81,7 @@ public class CodeTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         CodeType code = Gml4wcsFactory.eINSTANCE.createCodeType();
 
         code.setValue((String) value);

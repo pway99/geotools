@@ -103,7 +103,7 @@ public class XSQNameBinding implements SimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
 
         // if value passed in was null just return "null" qname
         if (value == null) {
@@ -145,7 +145,7 @@ public class XSQNameBinding implements SimpleBinding {
     }
 
     @Override
-    public String encode(Object object, String value) throws Exception {
+    public String encode(Object object, String value) {
         try {
             return DatatypeConverterImpl.getInstance().printQName((QName) object, namespaceContext);
         } catch (Exception e) {

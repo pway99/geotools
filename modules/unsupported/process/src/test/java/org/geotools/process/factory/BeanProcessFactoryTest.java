@@ -84,7 +84,7 @@ public class BeanProcessFactoryTest {
     BeanProcessFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new BeanProcessFactory();
 
         // check SPI will see the factory if we register it using an iterator
@@ -158,7 +158,7 @@ public class BeanProcessFactoryTest {
     }
 
     @Test
-    public void testSPI() throws Exception {
+    public void testSPI() {
         NameImpl boundsName = new NameImpl("bean", "Identity");
         ProcessFactory factory = Processors.createProcessFactory(boundsName);
         assertNotNull(factory);
@@ -211,7 +211,7 @@ public class BeanProcessFactoryTest {
     }
 
     @Test
-    public void testMinMaxAcceptedValues() throws Exception {
+    public void testMinMaxAcceptedValues() {
         // test that the annotation is correctly generating the parameter metadata
         Map<String, Parameter<?>> params =
                 factory.getParameterInfo(new NameImpl("bean", "Defaults"));
@@ -226,7 +226,7 @@ public class BeanProcessFactoryTest {
     }
 
     @Test
-    public void testMetadata() throws Exception {
+    public void testMetadata() {
         // check input metadata
         NameImpl name = new NameImpl("bean", "Meta");
         Map<String, Parameter<?>> params = factory.getParameterInfo(name);

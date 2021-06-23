@@ -156,8 +156,7 @@ public abstract class AbstractGetFeatureParserTest {
             final QName featureName,
             final URL schemaLocation,
             final String epsgCrsId,
-            final String[] properties)
-            throws Exception {
+            final String[] properties) {
 
         SimpleFeatureType subsetType =
                 getTypeView(featureName, schemaLocation, epsgCrsId, properties, wfsConfiguration);
@@ -249,8 +248,7 @@ public abstract class AbstractGetFeatureParserTest {
             URL schemaLocation,
             SimpleFeatureType featureType,
             URL getFeaturesRequest,
-            String axisOrder)
-            throws IOException {
+            String axisOrder) {
         return getParser(
                 featureName,
                 schemaLocation,

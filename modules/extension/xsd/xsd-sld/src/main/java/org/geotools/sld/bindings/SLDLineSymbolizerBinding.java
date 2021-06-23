@@ -112,7 +112,7 @@ public class SLDLineSymbolizerBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         LineSymbolizer ls = styleFactory.createLineSymbolizer();
 
         // &lt;xsd:element ref="sld:Geometry" minOccurs="0"/&gt;

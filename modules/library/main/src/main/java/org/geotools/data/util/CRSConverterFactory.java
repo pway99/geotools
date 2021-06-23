@@ -73,7 +73,7 @@ public class CRSConverterFactory implements ConverterFactory {
     static class CRSConverter implements Converter {
         @Override
         @SuppressWarnings("unchecked")
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             // checks
             if (source == null || target == null) {
                 return null;

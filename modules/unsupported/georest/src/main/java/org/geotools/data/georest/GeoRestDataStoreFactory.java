@@ -76,7 +76,7 @@ public class GeoRestDataStoreFactory implements DataStoreFactorySpi {
     }
 
     /** Returns null. */
-    public DataStore createNewDataStore(Map<String, Serializable> params) throws IOException {
+    public DataStore createNewDataStore(Map<String, Serializable> params) {
         return null;
     }
 

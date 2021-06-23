@@ -95,7 +95,7 @@ public class ChangeCaseBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         // &lt;xsd:element ref="se:StringValue"/&gt;
         Expression str = (Expression) node.getChildValue("StringValue");

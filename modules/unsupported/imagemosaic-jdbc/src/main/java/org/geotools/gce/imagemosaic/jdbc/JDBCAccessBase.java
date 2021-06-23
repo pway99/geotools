@@ -285,7 +285,7 @@ abstract class JDBCAccessBase implements JDBCAccess {
      * @param con JDBC Connection
      * @return Ineger or null
      */
-    protected Integer getSRSID(ImageLevelInfo li, Connection con) throws IOException {
+    protected Integer getSRSID(ImageLevelInfo li, Connection con) {
         return null;
     }
 
@@ -301,7 +301,7 @@ abstract class JDBCAccessBase implements JDBCAccess {
      * @return Envelope for the extent for li
      */
     protected Envelope getExtent(ImageLevelInfo li, Connection con)
-            throws SQLException, IOException {
+            throws SQLException {
         String statementString = getExtentSelectStatment(li);
         Envelope extent = null;
         try (PreparedStatement s = con.prepareStatement(statementString);
@@ -467,7 +467,7 @@ abstract class JDBCAccessBase implements JDBCAccess {
     protected abstract void setGridSelectParams(
             PreparedStatement s, GeneralEnvelope envelope, ImageLevelInfo li) throws SQLException;
 
-    Envelope getBounds(int level) throws IOException {
+    Envelope getBounds(int level) {
         ImageLevelInfo li = levelInfos.get(level);
 
         return li.getEnvelope();

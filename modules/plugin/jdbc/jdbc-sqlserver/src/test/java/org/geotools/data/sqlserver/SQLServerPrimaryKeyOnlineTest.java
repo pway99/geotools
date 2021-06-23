@@ -27,7 +27,7 @@ public class SQLServerPrimaryKeyOnlineTest extends JDBCPrimaryKeyOnlineTest {
     }
 
     @Override
-    public void testSequencedPrimaryKey() throws Exception {
+    public void testSequencedPrimaryKey() {
         // seems sqlserver does not really do explicit sequences...
     }
 }

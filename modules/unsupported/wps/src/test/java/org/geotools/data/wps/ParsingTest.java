@@ -27,7 +27,6 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
-import javax.xml.parsers.ParserConfigurationException;
 import net.opengis.wps10.ExecuteResponseType;
 import net.opengis.wps10.OutputDataType;
 import net.opengis.wps10.ProcessDescriptionsType;
@@ -40,7 +39,6 @@ import org.geotools.xsd.Configuration;
 import org.geotools.xsd.EMFUtils;
 import org.geotools.xsd.Parser;
 import org.junit.Test;
-import org.xml.sax.SAXException;
 import si.uom.SI;
 
 public class ParsingTest {
@@ -145,7 +143,7 @@ public class ParsingTest {
 
     @Test
     public void testExeResponseLiteralDataType()
-            throws IOException, SAXException, ParserConfigurationException {
+            throws IOException {
         if (DISABLE) {
             return;
         }

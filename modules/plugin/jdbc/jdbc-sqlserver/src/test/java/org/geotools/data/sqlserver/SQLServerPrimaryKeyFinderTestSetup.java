@@ -33,7 +33,7 @@ public class SQLServerPrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTest
     }
 
     @Override
-    protected void dropMetadataTable() throws Exception {
+    protected void dropMetadataTable() {
         runSafe("DROP TABLE gt_pk_metadata");
     }
 
@@ -46,7 +46,7 @@ public class SQLServerPrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTest
     }
 
     @Override
-    protected void dropPlainTable() throws Exception {
+    protected void dropPlainTable() {
         runSafe("DROP TABLE plaintable");
     }
 
@@ -59,7 +59,7 @@ public class SQLServerPrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTest
     }
 
     @Override
-    protected void dropAssignedSinglePkView() throws Exception {
+    protected void dropAssignedSinglePkView() {
         runSafe("DROP VIEW assignedsinglepk");
     }
 
@@ -75,15 +75,15 @@ public class SQLServerPrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTest
     }
 
     @Override
-    protected void dropAssignedMultiPkView() throws Exception {
+    protected void dropAssignedMultiPkView() {
         runSafe("DROP VIEW assignedmultipk");
     }
 
     @Override
-    protected void createSequencedPrimaryKeyTable() throws Exception {
+    protected void createSequencedPrimaryKeyTable() {
         // SQLServer does not have sequences
     }
 
     @Override
-    protected void dropSequencedPrimaryKeyTable() throws Exception {}
+    protected void dropSequencedPrimaryKeyTable() {}
 }

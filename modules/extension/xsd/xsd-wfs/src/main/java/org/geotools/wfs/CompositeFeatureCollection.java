@@ -16,7 +16,6 @@
  */
 package org.geotools.wfs;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -47,7 +46,7 @@ public class CompositeFeatureCollection extends DataFeatureCollection {
     }
 
     @Override
-    protected Iterator<SimpleFeature> openIterator() throws IOException {
+    protected Iterator<SimpleFeature> openIterator() {
         return new CompositeIterator();
     }
 
@@ -62,7 +61,7 @@ public class CompositeFeatureCollection extends DataFeatureCollection {
     }
 
     @Override
-    public int getCount() throws IOException {
+    public int getCount() {
         int count = 0;
         Iterator<SimpleFeature> i = iterator();
 

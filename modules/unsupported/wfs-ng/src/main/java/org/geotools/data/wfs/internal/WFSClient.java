@@ -334,7 +334,7 @@ public class WFSClient extends AbstractOpenWebService<WFSGetCapabilities, QName>
 
     @Override
     public GetCapabilitiesResponse issueRequest(GetCapabilitiesRequest request)
-            throws IOException, ServiceException {
+            throws IOException {
         return (GetCapabilitiesResponse) internalIssueRequest(request);
     }
 

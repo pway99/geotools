@@ -71,7 +71,7 @@ public abstract class JDBCFeatureCollectionOnlineTest extends JDBCTestSupport {
         }
     }
 
-    public void testBounds() throws IOException {
+    public void testBounds() {
         ReferencedEnvelope bounds = collection.getBounds();
         assertNotNull(bounds);
 
@@ -81,11 +81,11 @@ public abstract class JDBCFeatureCollectionOnlineTest extends JDBCTestSupport {
         assertEquals(2d, bounds.getMaxY(), 0.1);
     }
 
-    public void testSize() throws IOException {
+    public void testSize() {
         assertEquals(3, collection.size());
     }
 
-    public void testSubCollection() throws Exception {
+    public void testSubCollection() {
         FilterFactory ff = dataStore.getFilterFactory();
         Filter f = ff.equals(ff.property(aname("intProperty")), ff.literal(1));
 

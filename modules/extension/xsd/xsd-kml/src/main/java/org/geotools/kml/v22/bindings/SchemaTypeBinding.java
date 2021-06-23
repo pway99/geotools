@@ -87,7 +87,7 @@ public class SchemaTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         String featureTypeName = null;
         String featureTypeId = null;

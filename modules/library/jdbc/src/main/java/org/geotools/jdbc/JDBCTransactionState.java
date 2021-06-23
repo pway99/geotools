@@ -73,10 +73,10 @@ final class JDBCTransactionState implements State {
     }
 
     @Override
-    public void addAuthorization(String AuthID) throws IOException {}
+    public void addAuthorization(String AuthID) {}
 
     @Override
-    public void commit() throws IOException {
+    public void commit() {
         if (!external) {
             try {
                 cx.commit();
@@ -88,7 +88,7 @@ final class JDBCTransactionState implements State {
     }
 
     @Override
-    public void rollback() throws IOException {
+    public void rollback() {
         if (!external) {
             try {
                 cx.rollback();

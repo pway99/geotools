@@ -38,7 +38,7 @@ public class LineStringGraphGeneratorTest {
     private LineStringGraphGenerator gen;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         c1 = new Coordinate(1, 1);
         c2 = new Coordinate(2, 2);
         c3 = new Coordinate(3, 3);

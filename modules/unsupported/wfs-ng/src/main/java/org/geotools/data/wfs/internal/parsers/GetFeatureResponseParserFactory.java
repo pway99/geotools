@@ -16,7 +16,6 @@
  */
 package org.geotools.data.wfs.internal.parsers;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Collections;
@@ -81,8 +80,7 @@ public class GetFeatureResponseParserFactory extends AbstractGetFeatureResponseP
                             ));
 
     @Override
-    protected GetParser<SimpleFeature> parser(GetFeatureRequest request, InputStream in)
-            throws IOException {
+    protected GetParser<SimpleFeature> parser(GetFeatureRequest request, InputStream in) {
 
         FeatureType queryType = request.getQueryType();
         if (queryType == null) {

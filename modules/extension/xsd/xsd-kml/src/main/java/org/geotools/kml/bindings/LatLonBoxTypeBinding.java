@@ -79,7 +79,7 @@ public class LatLonBoxTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // &lt;element default="180.0" minOccurs="0" name="north" type="kml:angle180"/&gt;
         Double n = (Double) node.getChildValue("north", Double.valueOf(180d));
 

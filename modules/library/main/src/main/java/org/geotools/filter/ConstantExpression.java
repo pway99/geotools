@@ -86,7 +86,7 @@ public class ConstantExpression implements Literal, Cloneable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    protected Object clone() {
         return new ConstantExpression(value);
     }
 

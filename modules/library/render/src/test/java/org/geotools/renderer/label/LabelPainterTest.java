@@ -44,8 +44,6 @@ import org.junit.Test;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.mockito.Mockito;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.operation.TransformException;
 
 public class LabelPainterTest {
 
@@ -58,7 +56,7 @@ public class LabelPainterTest {
 
     @Before
     public void setUp()
-            throws TransformException, FactoryException, IOException, FontFormatException {
+            throws IOException, FontFormatException {
         graphics = Mockito.mock(Graphics2D.class);
         Mockito.when(graphics.getFontRenderContext())
                 .thenReturn(
@@ -141,7 +139,7 @@ public class LabelPainterTest {
     }
 
     @Test
-    public void testFullLabelBoundsNativeSize() throws Exception {
+    public void testFullLabelBoundsNativeSize() {
         TextStyle2D style = new TextStyle2D();
         style.setFont(new Font("Bitstream Vera Sans", Font.PLAIN, 10));
 
@@ -196,7 +194,7 @@ public class LabelPainterTest {
     }
 
     @Test
-    public void testResizeGraphicWithMark2DGraphicResizeStrech() throws Exception {
+    public void testResizeGraphicWithMark2DGraphicResizeStrech() {
         LabelCacheItem labelItem = new LabelCacheItem("LayerID", style, shape, "Test", symbolizer);
         labelItem.setGraphicsResize(LabelCacheItem.GraphicResize.STRETCH);
         Rectangle2D labelBounds = new Rectangle2D.Double(0.0, -0.6875, 0.4, 0.4);

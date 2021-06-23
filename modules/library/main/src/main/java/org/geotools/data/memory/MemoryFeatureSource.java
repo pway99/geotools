@@ -79,7 +79,7 @@ public class MemoryFeatureSource extends ContentFeatureSource {
     }
 
     @Override
-    protected int getCountInternal(Query query) throws IOException {
+    protected int getCountInternal(Query query) {
         if (query.getFilter() == Filter.INCLUDE) {
             MemoryEntry entry = getEntry();
             return entry.getMemory().size();
@@ -102,7 +102,7 @@ public class MemoryFeatureSource extends ContentFeatureSource {
     }
 
     @Override
-    protected boolean handleVisitor(Query query, FeatureVisitor visitor) throws IOException {
+    protected boolean handleVisitor(Query query, FeatureVisitor visitor) {
         return super.handleVisitor(query, visitor);
     }
 }

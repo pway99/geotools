@@ -144,7 +144,7 @@ public class QuantizerTest {
     }
 
     @Test
-    public void testColorWheelTranslucent() throws Exception {
+    public void testColorWheelTranslucent() {
         final int SIZE = 100;
         BufferedImage bi = new BufferedImage(SIZE, SIZE, BufferedImage.TYPE_4BYTE_ABGR);
         Graphics2D gr = bi.createGraphics();

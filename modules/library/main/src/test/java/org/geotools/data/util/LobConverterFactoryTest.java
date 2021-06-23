@@ -34,7 +34,7 @@ public class LobConverterFactoryTest {
     private LobConverterFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new LobConverterFactory();
     }
 
@@ -133,12 +133,12 @@ public class LobConverterFactoryTest {
         }
     }
 
-    private byte[] convert(Blob blob) throws Exception {
+    private byte[] convert(Blob blob) {
         return factory.createConverter(blob.getClass(), byte[].class, null)
                 .convert(blob, byte[].class);
     }
 
-    private String convert(Clob clob) throws Exception {
+    private String convert(Clob clob) {
         return factory.createConverter(clob.getClass(), String.class, null)
                 .convert(clob, String.class);
     }

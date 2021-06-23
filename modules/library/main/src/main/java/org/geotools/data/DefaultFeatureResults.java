@@ -72,7 +72,7 @@ public class DefaultFeatureResults extends DataFeatureCollection {
      * <p>Really? I think it would be, it would just reflect the same query against the
      * SimpleFeatureSource using AUTO_COMMIT.
      */
-    public DefaultFeatureResults(SimpleFeatureSource source, Query query) throws IOException {
+    public DefaultFeatureResults(SimpleFeatureSource source, Query query) {
         super(null, getSchemaInternal(source, query));
         this.featureSource = source;
 
@@ -191,7 +191,7 @@ public class DefaultFeatureResults extends DataFeatureCollection {
      */
     @Override
     @SuppressWarnings("PMD.CloseResource") // returned, the caller will close
-    public FeatureReader<SimpleFeatureType, SimpleFeature> reader() throws IOException {
+    public FeatureReader<SimpleFeatureType, SimpleFeature> reader() {
         FeatureReader<SimpleFeatureType, SimpleFeature> reader =
                 ((DataStore) featureSource.getDataStore())
                         .getFeatureReader(query, getTransaction());
@@ -210,7 +210,7 @@ public class DefaultFeatureResults extends DataFeatureCollection {
      * Retrieve a FeatureReader<SimpleFeatureType, SimpleFeature> for the geometry attributes only,
      * designed for bounds computation
      */
-    protected FeatureReader<SimpleFeatureType, SimpleFeature> boundsReader() throws IOException {
+    protected FeatureReader<SimpleFeatureType, SimpleFeature> boundsReader() {
         List<String> attributes = new ArrayList<>();
         SimpleFeatureType schema = featureSource.getSchema();
         for (int i = 0; i < schema.getAttributeCount(); i++) {

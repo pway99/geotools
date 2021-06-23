@@ -56,7 +56,7 @@ public class EqualIntervalFunctionTest extends FunctionTestSupport {
      * org.geotools.filter.functions.EqualIntervalFunction.
      */
     @Test
-    public void testSetClasses() throws Exception {
+    public void testSetClasses() {
         PropertyName property = ff.property("foo");
         Literal literal = ff.literal(3);
 
@@ -69,7 +69,7 @@ public class EqualIntervalFunctionTest extends FunctionTestSupport {
     }
 
     @Test
-    public void testEvaluateWithExpressions() throws Exception {
+    public void testEvaluateWithExpressions() {
         Literal classes = ff.literal(3);
         PropertyName name = ff.property("foo");
         Function func = ff.function("EqualInterval", name, classes);
@@ -101,7 +101,7 @@ public class EqualIntervalFunctionTest extends FunctionTestSupport {
 
     /** FIXME: Please for the love on binpop */
     @Test
-    public void testEvaulateWithStrings() throws Exception {
+    public void testEvaulateWithStrings() {
         org.opengis.filter.expression.Expression function =
                 ff.function("EqualInterval", ff.property("group"), ff.literal(5));
         Classifier classifier = (Classifier) function.evaluate(featureCollection);

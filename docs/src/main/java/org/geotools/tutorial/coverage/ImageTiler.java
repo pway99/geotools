@@ -29,7 +29,6 @@
 package org.geotools.tutorial.coverage;
 
 import java.io.File;
-import java.io.IOException;
 import org.geotools.coverage.grid.GridCoverage2D;
 import org.geotools.coverage.grid.io.AbstractGridFormat;
 import org.geotools.coverage.grid.io.GridCoverage2DReader;
@@ -199,7 +198,7 @@ public class ImageTiler {
     // docs end make envelope
 
     // docs start load coverage
-    private void tile() throws IOException {
+    private void tile() {
         AbstractGridFormat format = GridFormatFinder.findFormat(this.getInputFile());
         String fileExtension = this.getFileExtension(this.getInputFile());
 

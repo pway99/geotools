@@ -100,7 +100,7 @@ public class FormatNumberBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Expression[] expressions = new Expression[5];
 
         // &lt;xsd:element ref="se:NumericValue"/&gt;

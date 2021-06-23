@@ -75,7 +75,7 @@ public class OperationTypeBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         String string = (String) value;
 
         // &lt;xsd:enumeration value="Insert"/&gt;

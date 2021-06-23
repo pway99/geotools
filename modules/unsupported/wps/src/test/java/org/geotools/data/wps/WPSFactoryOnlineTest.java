@@ -155,7 +155,7 @@ public class WPSFactoryOnlineTest extends OnlineTestCase {
     }
 
     private void runExecuteProcessBufferLocal(Geometry geom1)
-            throws ServiceException, IOException, ParseException, ProcessException {
+            throws ServiceException, IOException, ProcessException {
         if (fixture == null) {
             return;
         }
@@ -320,7 +320,7 @@ public class WPSFactoryOnlineTest extends OnlineTestCase {
     /** Do some more local union test that should return an exception */
     @Test
     public void testBADExecuteLocalUnion()
-            throws ServiceException, IOException, ParseException, ProcessException {
+            throws ServiceException, IOException, ProcessException {
         if (fixture == null) {
             return;
         }
@@ -377,7 +377,7 @@ public class WPSFactoryOnlineTest extends OnlineTestCase {
     /** Do some more local process tests, such as double addition */
     @Test
     public void testExecuteLocalAdd()
-            throws ServiceException, IOException, ParseException, ProcessException {
+            throws ServiceException, IOException, ProcessException {
         if (fixture == null) {
             return;
         }
@@ -445,7 +445,7 @@ public class WPSFactoryOnlineTest extends OnlineTestCase {
     /** GEOT-4364: parsing LiteralOutput with null DataType */
     @Test
     public void testDescribeProcessNullDatatype()
-            throws ServiceException, IOException, ParseException, ProcessException {
+            throws ServiceException, IOException, ProcessException {
         //        Assume.assumeTrue(fixture != null);
         //        Assume.assumeTrue(! DISABLE );
 
@@ -487,7 +487,7 @@ public class WPSFactoryOnlineTest extends OnlineTestCase {
     /** GEOT-4364 [2]: parsing LiteralOutput/DataType with null ows:reference */
     @Test
     public void testDescribeProcessDatatypeWithoutRef()
-            throws ServiceException, IOException, ParseException, ProcessException {
+            throws ServiceException, IOException, ProcessException {
         //        Assume.assumeTrue(fixture != null);
         //        Assume.assumeTrue(! DISABLE );
 

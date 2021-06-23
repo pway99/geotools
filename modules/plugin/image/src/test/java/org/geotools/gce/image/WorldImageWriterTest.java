@@ -22,7 +22,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
 import java.util.logging.Logger;
@@ -60,7 +59,7 @@ public class WorldImageWriterTest extends WorldImageBaseTestCase {
      */
     @Test
     public void testWrite()
-            throws MalformedURLException, IOException, IllegalArgumentException, FactoryException,
+            throws IOException, IllegalArgumentException, FactoryException,
                     TransformException, ParseException {
 
         // checking test data directory for all kind of inputs
@@ -96,8 +95,7 @@ public class WorldImageWriterTest extends WorldImageBaseTestCase {
      * @param source Object The object on disk representing the coverage to test.
      */
     private File write(Object source, String format)
-            throws IOException, IllegalArgumentException, FactoryException, TransformException,
-                    ParseException {
+            throws IOException, IllegalArgumentException {
         // instantiating a reader
         WorldImageReader wiReader = new WorldImageReader(source);
 

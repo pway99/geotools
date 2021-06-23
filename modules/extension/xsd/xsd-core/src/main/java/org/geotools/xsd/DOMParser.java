@@ -27,7 +27,6 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.sax.SAXResult;
 import org.geotools.xsd.impl.ParserHandler;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 /**
  * Parses a DOM (Document Object Model) using the geotools xml binding system.
@@ -58,7 +57,7 @@ public class DOMParser {
      *
      * @return The object representation of the root element of the document.
      */
-    public Object parse() throws IOException, SAXException, ParserConfigurationException {
+    public Object parse() {
         // Prepare the DOM source
         Source source = new DOMSource(document);
 

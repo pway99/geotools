@@ -18,7 +18,6 @@
 package org.geotools.filter.text.commons;
 
 import org.geotools.factory.CommonFactoryFinder;
-import org.geotools.filter.text.cql2.CQLException;
 import org.opengis.filter.FilterFactory;
 
 /**
@@ -37,8 +36,7 @@ public abstract class AbstractCompilerFactory {
      *
      * @return CQLCompiler
      */
-    public ICompiler makeCompiler(final String predicate, final FilterFactory filterFactory)
-            throws CQLException {
+    public ICompiler makeCompiler(final String predicate, final FilterFactory filterFactory) {
 
         FilterFactory ff = filterFactory;
 

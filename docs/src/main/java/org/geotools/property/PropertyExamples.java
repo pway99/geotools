@@ -21,7 +21,6 @@ package org.geotools.property;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -88,7 +87,7 @@ public class PropertyExamples {
         }
     }
 
-    private static void example3() throws IOException {
+    private static void example3() {
         System.out.println("example3 start\n");
         // example3 start
         Map<String, Serializable> params = new HashMap<>();

@@ -82,7 +82,7 @@ public class XSIDBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         // Simply return string value.
         return value;
     }

@@ -33,7 +33,7 @@ public class PolygonGraphGeneratorTest {
     PolygonGraphGenerator gg;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         PolygonGraphGenerator.PolygonRelationship rel =
                 new PolygonGraphGenerator.PolygonRelationship() {
 

@@ -160,7 +160,7 @@ public abstract class AbstractWfsDataStoreOnlineTest {
 
     @Test
     public void testFeatureSourceInfo()
-            throws IOException, NoSuchAuthorityCodeException, FactoryException {
+            throws IOException {
         if (Boolean.FALSE.equals(serviceAvailable)) {
             return;
         }

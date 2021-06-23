@@ -624,7 +624,7 @@ public final class MarchingSquaresVectorizer {
      * @param geometriesList the List of all the geometries found across the dataset
      */
     private void computeFootprint(List<Polygon> geometriesList, MathTransform transform)
-            throws MismatchedDimensionException, TransformException, FactoryException {
+            throws MismatchedDimensionException {
         // Creating the final multipolygon
         Polygon[] polArray = new Polygon[geometriesList.size()];
         Polygon[] polygons = geometriesList.toArray(polArray);
@@ -655,7 +655,7 @@ public final class MarchingSquaresVectorizer {
             final MathTransform transform,
             final int polygonIndex,
             final double area)
-            throws MismatchedDimensionException, TransformException {
+            throws MismatchedDimensionException {
         // Looking for the bigger polygon
         if (computeSimplifiedFootprint && !geometriesList.isEmpty()) {
             Geometry simplifiedFootprintGeometry = geometriesList.get(polygonIndex);
@@ -1004,8 +1004,7 @@ public final class MarchingSquaresVectorizer {
             final int initialY,
             java.awt.Polygon awtPolygon,
             final int sampleDataType,
-            final ScanInfo scanInfo)
-            throws TransformException {
+            final ScanInfo scanInfo) {
         if ((initialX < imageProperties.minX)
                 || (initialX > imageProperties.maxX)
                 || (initialY < imageProperties.minY)

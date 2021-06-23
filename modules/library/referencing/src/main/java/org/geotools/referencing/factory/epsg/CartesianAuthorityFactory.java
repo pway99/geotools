@@ -82,8 +82,7 @@ public class CartesianAuthorityFactory extends DirectAuthorityFactory
     }
 
     @Override
-    public Set<String> getAuthorityCodes(Class<? extends IdentifiedObject> type)
-            throws FactoryException {
+    public Set<String> getAuthorityCodes(Class<? extends IdentifiedObject> type) {
         if (type.isAssignableFrom(EngineeringCRS.class)) {
             final Set<String> set = new LinkedHashSet<>();
             set.add(GENERIC_2D_CODE);
@@ -94,8 +93,7 @@ public class CartesianAuthorityFactory extends DirectAuthorityFactory
     }
 
     @Override
-    public InternationalString getDescriptionText(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+    public InternationalString getDescriptionText(String code) {
         if (code.equals("EPSG:" + GENERIC_2D_CODE)) {
             return new SimpleInternationalString(
                     "A two-dimensional wildcard coordinate system with X,Y axis in meters");
@@ -124,8 +122,7 @@ public class CartesianAuthorityFactory extends DirectAuthorityFactory
     }
 
     @Override
-    public EngineeringCRS createEngineeringCRS(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+    public EngineeringCRS createEngineeringCRS(String code) {
         if (GENERIC_2D_CODE.equals(code) || ("EPSG:" + GENERIC_2D_CODE).equals(code)) {
             return GENERIC_2D;
         } else {
@@ -133,8 +130,7 @@ public class CartesianAuthorityFactory extends DirectAuthorityFactory
         }
     }
 
-    private NoSuchAuthorityCodeException noSuchAuthorityException(String code)
-            throws NoSuchAuthorityCodeException {
+    private NoSuchAuthorityCodeException noSuchAuthorityException(String code) {
         String authority = "EPSG";
         return new NoSuchAuthorityCodeException(
                 Errors.format(

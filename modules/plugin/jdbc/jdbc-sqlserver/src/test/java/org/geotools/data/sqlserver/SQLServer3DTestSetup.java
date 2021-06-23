@@ -62,18 +62,18 @@ public class SQLServer3DTestSetup extends JDBC3DTestSetup {
     }
 
     @Override
-    protected void dropLine3DTable() throws Exception {
+    protected void dropLine3DTable() {
         runSafe("DROP TABLE \"GEOMETRY_COLUMNS_3D_TEST\"");
         runSafe("DROP TABLE \"line3d\"");
     }
 
     @Override
-    protected void dropPoly3DTable() throws Exception {
+    protected void dropPoly3DTable() {
         runSafe("DROP TABLE \"poly3d\"");
     }
 
     @Override
-    protected void dropPoint3DTable() throws Exception {
+    protected void dropPoint3DTable() {
         runSafe("DROP TABLE \"point3d\"");
     }
 }

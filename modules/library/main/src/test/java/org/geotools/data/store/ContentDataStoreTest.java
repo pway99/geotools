@@ -17,8 +17,6 @@
 package org.geotools.data.store;
 
 import static org.junit.Assert.assertEquals;
-
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.geotools.feature.NameImpl;
@@ -30,17 +28,16 @@ public class ContentDataStoreTest extends AbstractContentTest {
     protected static final Name TYPENAME2 = new NameImpl("http://www.geotools.org", "Mock2");
 
     @Test
-    public void testRepeatedTypeListCreation() throws IOException {
+    public void testRepeatedTypeListCreation() {
         // setup a store in which we can count how many times we call createTypeNames()
         final AtomicInteger creationCounter = new AtomicInteger(0);
         MockContentDataStore store =
                 new MockContentDataStore() {
                     @Override
-                    protected java.util.List<org.opengis.feature.type.Name> createTypeNames()
-                            throws java.io.IOException {
+                    protected java.util.List<org.opengis.feature.type.Name> createTypeNames() {
                         creationCounter.incrementAndGet();
                         return super.createTypeNames();
-                    };
+                    }
                 };
 
         store.getFeatureSource(TYPENAME.getLocalPart());
@@ -52,17 +49,16 @@ public class ContentDataStoreTest extends AbstractContentTest {
     }
 
     @Test
-    public void testCallCreateTypeNamesOnce() throws IOException {
+    public void testCallCreateTypeNamesOnce() {
         // setup a store in which we can count how many times we call createTypeNames()
         final AtomicInteger creationCounter = new AtomicInteger(0);
         MockContentDataStore store =
                 new MockContentDataStore() {
                     @Override
-                    protected java.util.List<org.opengis.feature.type.Name> createTypeNames()
-                            throws java.io.IOException {
+                    protected java.util.List<org.opengis.feature.type.Name> createTypeNames() {
                         creationCounter.incrementAndGet();
                         return Arrays.asList(TYPENAME, TYPENAME2);
-                    };
+                    }
                 };
 
         store.getFeatureSource(TYPENAME.getLocalPart());

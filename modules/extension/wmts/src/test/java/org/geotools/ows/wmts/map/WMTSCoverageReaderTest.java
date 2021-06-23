@@ -127,7 +127,7 @@ public class WMTSCoverageReaderTest {
                 new AbstractHttpClient() {
 
                     @Override
-                    public HTTPResponse get(URL url) throws IOException {
+                    public HTTPResponse get(URL url) {
                         throw new NotImplementedException(
                                 "For this test. GET with headers should be called.\n"
                                         + url.toExternalForm());
@@ -149,8 +149,7 @@ public class WMTSCoverageReaderTest {
 
                     @Override
                     public HTTPResponse post(
-                            URL url, InputStream postContent, String postContentType)
-                            throws IOException {
+                            URL url, InputStream postContent, String postContentType) {
                         throw new UnsupportedOperationException("POST shouldn't be called.");
                     }
                 };
@@ -266,7 +265,7 @@ public class WMTSCoverageReaderTest {
         return new WebMapTileServer(capa);
     }
 
-    private WMTSCapabilities createCapabilities(File capa) throws ServiceException {
+    private WMTSCapabilities createCapabilities(File capa) {
         Object object;
         try (InputStream inputStream = new FileInputStream(capa)) {
             Parser parser = new Parser(new WMTSConfiguration());

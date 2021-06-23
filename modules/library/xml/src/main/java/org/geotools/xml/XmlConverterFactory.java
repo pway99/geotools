@@ -64,7 +64,7 @@ public class XmlConverterFactory implements ConverterFactory {
     static class XmlConverter implements Converter {
         @Override
         @SuppressWarnings("unchecked")
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             if (String.class.equals(target)) {
                 return (T) convertToString(source);
             }

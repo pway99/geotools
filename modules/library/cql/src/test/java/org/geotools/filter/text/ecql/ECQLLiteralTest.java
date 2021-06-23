@@ -48,7 +48,6 @@ import org.opengis.filter.expression.Literal;
 import org.opengis.filter.spatial.Beyond;
 import org.opengis.filter.spatial.DWithin;
 import org.opengis.filter.spatial.Intersects;
-import org.opengis.referencing.FactoryException;
 
 /**
  * Literal Test Cases
@@ -163,7 +162,7 @@ public class ECQLLiteralTest extends CQLLiteralTest {
     }
 
     @Test()
-    public void testParseInvalidSRID() throws Exception {
+    public void testParseInvalidSRID() {
         String wkt = "SRID=12345678987654321;POINT(1 2)";
         try {
             CompilerUtil.parseExpression(language, wkt);
@@ -241,7 +240,7 @@ public class ECQLLiteralTest extends CQLLiteralTest {
         assertEquals("BEYOND(the_geom, SRID=4326;POINT (1 2), 10.0, m)", cql2);
     }
 
-    private Literal getWgs84PointLiteral() throws FactoryException {
+    private Literal getWgs84PointLiteral() {
         Point p = new GeometryFactory().createPoint(new Coordinate(1, 2));
         p.setUserData(CRS.decode("EPSG:4326", true));
         return ff.literal(p);

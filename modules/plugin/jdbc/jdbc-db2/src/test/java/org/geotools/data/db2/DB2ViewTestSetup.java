@@ -76,8 +76,8 @@ public class DB2ViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void createLakesViewPk() throws Exception {}
+    protected void createLakesViewPk() {}
 
     @Override
-    protected void dropLakesViewPk() throws Exception {}
+    protected void dropLakesViewPk() {}
 }

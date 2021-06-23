@@ -359,7 +359,7 @@ public class MarkAlongLine implements Stroke {
     }
 
     // we need to draw multipolygons as different polygons so that they can be closed
-    private List<LiteShape2> unPackMultiPolygon(Shape shape) throws Exception {
+    private List<LiteShape2> unPackMultiPolygon(Shape shape) {
 
         LiteShape2 liteShape = (LiteShape2) shape;
         if (MultiPolygon.class.isAssignableFrom(liteShape.getGeometry().getClass())) {

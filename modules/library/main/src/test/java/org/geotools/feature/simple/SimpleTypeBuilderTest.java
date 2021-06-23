@@ -39,7 +39,7 @@ public class SimpleTypeBuilderTest {
     SimpleFeatureTypeBuilder builder;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         Schema schema = new SchemaImpl("test");
 
         FeatureTypeFactoryImpl typeFactory = new FeatureTypeFactoryImpl();

@@ -98,7 +98,7 @@ public class CapabilitiesBaseType_LanguagesBinding extends AbstractComplexEMFBin
     }
 
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         LanguagesType complex = (LanguagesType) object;
         if (!StringUtils.isEmpty(complex.getLanguage())) {
             for (String currentLanguage : complex.getLanguage().split(",")) {

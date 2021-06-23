@@ -75,7 +75,7 @@ public class MultiGeometryPropertyTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         return node.getChildValue(GeometryCollection.class);
     }

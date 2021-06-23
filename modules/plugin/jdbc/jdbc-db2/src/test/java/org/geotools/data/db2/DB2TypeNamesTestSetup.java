@@ -42,7 +42,7 @@ public class DB2TypeNamesTestSetup extends JDBCTypeNamesTestSetup {
     }
 
     @Override
-    protected void dropTypes() throws Exception {
+    protected void dropTypes() {
         runSafe("DROP VIEW " + DB2TestUtil.SCHEMA_QUOTED + ".\"ftnview\"");
         runSafe("DROP TABLE " + DB2TestUtil.SCHEMA_QUOTED + ".\"ftntable\"");
     }

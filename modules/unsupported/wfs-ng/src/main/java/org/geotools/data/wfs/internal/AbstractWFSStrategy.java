@@ -321,7 +321,7 @@ public abstract class AbstractWFSStrategy extends WFSStrategy {
      * Returns a single-line string containing the xml representation of the given filter, as
      * appropriate for the {@code FILTER} parameter in a GetFeature request.
      */
-    protected String encodeGetFeatureGetFilter(final Filter filter) throws IOException {
+    protected String encodeGetFeatureGetFilter(final Filter filter) {
 
         final Configuration filterConfig = getFilterConfiguration();
         final QName encName;

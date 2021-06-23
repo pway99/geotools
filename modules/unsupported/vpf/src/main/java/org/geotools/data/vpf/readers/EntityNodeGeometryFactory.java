@@ -53,7 +53,7 @@ public class EntityNodeGeometryFactory extends VPFGeometryFactory implements Fil
      */
     @Override
     public synchronized Geometry buildGeometry(VPFFeatureClass featureClass, SimpleFeature values)
-            throws SQLException, IOException, IllegalAttributeException {
+            throws IOException, IllegalAttributeException {
         int nodeId = ((Number) values.getAttribute("end_id")).intValue();
         //        VPFFeatureType featureType = (VPFFeatureType)values.getFeatureType();
 

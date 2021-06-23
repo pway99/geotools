@@ -25,7 +25,7 @@ public class BooleanConverterFactoryTest {
     BooleanConverterFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new BooleanConverterFactory();
     }
 
@@ -43,7 +43,7 @@ public class BooleanConverterFactoryTest {
         Assert.assertEquals(Boolean.FALSE, convert(Integer.valueOf(0)));
     }
 
-    Boolean convert(Object value) throws Exception {
+    Boolean convert(Object value) {
         return factory.createConverter(value.getClass(), Boolean.class, null)
                 .convert(value, Boolean.class);
     }

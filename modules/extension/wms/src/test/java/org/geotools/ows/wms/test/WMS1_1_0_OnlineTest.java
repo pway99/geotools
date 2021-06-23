@@ -69,7 +69,7 @@ public class WMS1_1_0_OnlineTest extends WMS1_0_0_OnlineTest {
 
     @Override
     @Test
-    public void testCreateDescribeLayerRequest() throws Exception {
+    public void testCreateDescribeLayerRequest() {
         /* TODO FIX
                 try{
                     WebMapServer wms = new CustomWMS(server);
@@ -108,7 +108,7 @@ public class WMS1_1_0_OnlineTest extends WMS1_0_0_OnlineTest {
     }
 
     @Test
-    public void testCreateGetLegendGraphicRequest() throws Exception {
+    public void testCreateGetLegendGraphicRequest() {
         /* TODO FIX
                 try{
 
@@ -322,7 +322,7 @@ public class WMS1_1_0_OnlineTest extends WMS1_0_0_OnlineTest {
     private class CustomWMS extends WebMapServer {
 
         /** */
-        public CustomWMS(URL serverURL) throws SAXException, URISyntaxException, IOException {
+        public CustomWMS(URL serverURL) throws SAXException, IOException {
             super(serverURL);
             // TODO Auto-generated constructor stub
         }

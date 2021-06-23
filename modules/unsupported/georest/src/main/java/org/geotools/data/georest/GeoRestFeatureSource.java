@@ -44,7 +44,7 @@ public class GeoRestFeatureSource extends ContentFeatureSource implements Simple
 
     private URL url;
 
-    public GeoRestFeatureSource(ContentEntry entry, Query query) throws IOException {
+    public GeoRestFeatureSource(ContentEntry entry, Query query) {
         super(entry, query);
 
         String base = ((GeoRestDataStore) entry.getDataStore()).getUrl().toString();

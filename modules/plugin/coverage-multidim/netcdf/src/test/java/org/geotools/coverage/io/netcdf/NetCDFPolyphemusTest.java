@@ -54,7 +54,6 @@ import org.junit.Test;
 import org.opengis.coverage.Coverage;
 import org.opengis.feature.type.Name;
 import org.opengis.geometry.BoundingBox;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.MathTransform2D;
 
@@ -65,7 +64,7 @@ public final class NetCDFPolyphemusTest extends Assert {
 
     @Test
     public void geoToolsReader()
-            throws IllegalArgumentException, IOException, NoSuchAuthorityCodeException {
+            throws IllegalArgumentException, IOException {
         boolean isInteractiveTest = TestData.isInteractiveTest();
 
         // create a base driver

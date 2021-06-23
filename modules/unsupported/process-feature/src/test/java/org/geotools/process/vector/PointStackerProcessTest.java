@@ -38,8 +38,6 @@ import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.impl.PackedCoordinateSequenceFactory;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.TransformException;
 import org.opengis.util.ProgressListener;
@@ -211,7 +209,7 @@ public class PointStackerProcessTest {
      */
     @Test
     public void testReprojected()
-            throws NoSuchAuthorityCodeException, FactoryException, ProcessException,
+            throws ProcessException,
                     TransformException {
 
         ReferencedEnvelope inBounds =
@@ -259,7 +257,7 @@ public class PointStackerProcessTest {
     @SuppressWarnings("deprecation")
     @Test
     public void testWeightClusterPosition()
-            throws NoSuchAuthorityCodeException, FactoryException, ProcessException,
+            throws ProcessException,
                     TransformException {
 
         ReferencedEnvelope inBounds =

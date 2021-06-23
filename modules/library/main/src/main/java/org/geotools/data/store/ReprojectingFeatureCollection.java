@@ -16,7 +16,6 @@
  */
 package org.geotools.data.store;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.geotools.data.DataUtilities;
@@ -136,7 +135,7 @@ public class ReprojectingFeatureCollection extends DecoratingSimpleFeatureCollec
         }
     }
 
-    public FeatureReader<SimpleFeatureType, SimpleFeature> reader() throws IOException {
+    public FeatureReader<SimpleFeatureType, SimpleFeature> reader() {
         return new DelegateFeatureReader<>(getSchema(), features());
     }
 

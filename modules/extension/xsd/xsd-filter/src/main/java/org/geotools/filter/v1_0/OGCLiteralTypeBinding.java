@@ -107,7 +107,7 @@ public class OGCLiteralTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // number of possibilities here since single child is of type any
 
         // 1. has text child elements
@@ -126,7 +126,7 @@ public class OGCLiteralTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         Literal literal = (Literal) object;
 
         Object unconvertedValue = literal.getValue();

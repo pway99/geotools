@@ -17,7 +17,6 @@
  */
 package org.geotools.ysld.encode;
 
-import java.io.IOException;
 import java.io.Writer;
 import org.geotools.styling.StyledLayerDescriptor;
 import org.geotools.ysld.UomMapper;
@@ -44,7 +43,7 @@ public class YsldEncoder {
     }
 
     /** Encode the passed {@link StyledLayerDescriptor} as YSLD. */
-    public void encode(StyledLayerDescriptor sld) throws IOException {
+    public void encode(StyledLayerDescriptor sld) {
         DumperOptions dumpOpts = new DumperOptions();
         dumpOpts.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
 

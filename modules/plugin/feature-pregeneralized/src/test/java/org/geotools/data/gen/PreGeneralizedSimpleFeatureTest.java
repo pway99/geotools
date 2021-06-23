@@ -41,7 +41,7 @@ import org.opengis.feature.simple.SimpleFeature;
 public class PreGeneralizedSimpleFeatureTest {
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         TestSetup.initialize();
     }
 

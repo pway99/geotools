@@ -80,7 +80,7 @@ public class _Filter_CapabilitiesBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return factory.capabilities(
                 FilterCapabilities.VERSION_110,
                 node.getChildValue(ScalarCapabilities.class),
@@ -89,7 +89,7 @@ public class _Filter_CapabilitiesBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         FilterCapabilities capabilities = (FilterCapabilities) object;
 
         if ("version".equals(name.getLocalPart())) {

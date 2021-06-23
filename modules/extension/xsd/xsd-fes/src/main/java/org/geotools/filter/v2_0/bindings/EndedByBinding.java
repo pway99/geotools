@@ -78,7 +78,7 @@ public class EndedByBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Expression[] e = FESParseEncodeUtil.temporal(node, filterFactory);
         return filterFactory.endedBy(e[0], e[1]);
     }

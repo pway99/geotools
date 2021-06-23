@@ -17,15 +17,12 @@
 package org.geotools.gce.grassraster;
 
 import java.awt.image.RenderedImage;
-import java.io.IOException;
 import javax.media.jai.iterator.RectIter;
 import javax.media.jai.iterator.RectIterFactory;
 import org.geotools.coverage.grid.GridCoverage2D;
 import org.geotools.referencing.CRS;
 import org.junit.Assert;
 import org.junit.Test;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 /**
@@ -37,7 +34,7 @@ import org.opengis.referencing.crs.CoordinateReferenceSystem;
 public class JGrassUtilsTest {
 
     @Test
-    public void testScaling() throws IOException, NoSuchAuthorityCodeException, FactoryException {
+    public void testScaling() {
         double[][] mapData = { //
             {1000.0, 1000.0, 1200.0, 1250.0, 1300.0, 1350.0, 1450.0}, //
             {750.0, 850.0, 860.0, 900.0, 1000.0, 1200.0, 1250.0}, //

@@ -17,7 +17,6 @@
 package org.geotools.xsd;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.StringReader;
 import java.net.MalformedURLException;
 import java.util.List;
@@ -148,46 +147,45 @@ public class ParserTest {
         }
 
         @Override
-        public void characters(char[] ch, int start, int length) throws SAXException {
+        public void characters(char[] ch, int start, int length) {
             if (!bar && "bar".equals(new String(ch, start, length))) {
                 bar = true;
             }
         }
 
         @Override
-        public void endDocument() throws SAXException {}
+        public void endDocument() {}
 
         @Override
-        public void endElement(String uri, String localName, String name) throws SAXException {}
+        public void endElement(String uri, String localName, String name) {}
 
         @Override
-        public void endPrefixMapping(String prefix) throws SAXException {}
+        public void endPrefixMapping(String prefix) {}
 
         @Override
-        public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {}
+        public void ignorableWhitespace(char[] ch, int start, int length) {}
 
         @Override
-        public void processingInstruction(String target, String data) throws SAXException {}
+        public void processingInstruction(String target, String data) {}
 
         @Override
         public void setDocumentLocator(Locator locator) {}
 
         @Override
-        public void skippedEntity(String name) throws SAXException {}
+        public void skippedEntity(String name) {}
 
         @Override
-        public void startDocument() throws SAXException {}
+        public void startDocument() {}
 
         @Override
-        public void startElement(String uri, String localName, String name, Attributes atts)
-                throws SAXException {
+        public void startElement(String uri, String localName, String name, Attributes atts) {
             if (!foo && "foo".equals(localName)) {
                 foo = true;
             }
         }
 
         @Override
-        public void startPrefixMapping(String prefix, String uri) throws SAXException {}
+        public void startPrefixMapping(String prefix, String uri) {}
 
         @Override
         public boolean canHandle(
@@ -254,7 +252,7 @@ public class ParserTest {
         }
 
         @Override
-        public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+        public Object parse(ElementInstance instance, Node node, Object value) {
             for (Node n : node.getChildren()) {
                 if (n.getValue() instanceof Text) {
                     sb.append(((Text) n.getValue()).getValue());
@@ -296,21 +294,18 @@ public class ParserTest {
         parser.setEntityResolver(
                 new EntityResolver2() {
                     @Override
-                    public InputSource resolveEntity(String publicId, String systemId)
-                            throws SAXException, IOException {
+                    public InputSource resolveEntity(String publicId, String systemId) {
                         return new InputSource();
                     }
 
                     @Override
-                    public InputSource getExternalSubset(String name, String baseURI)
-                            throws SAXException, IOException {
+                    public InputSource getExternalSubset(String name, String baseURI) {
                         return new InputSource();
                     }
 
                     @Override
                     public InputSource resolveEntity(
-                            String name, String publicId, String baseURI, String systemId)
-                            throws SAXException, IOException {
+                            String name, String publicId, String baseURI, String systemId) {
                         return new InputSource();
                     }
                 });
@@ -336,8 +331,7 @@ public class ParserTest {
         parser.setEntityResolver(
                 new EntityResolver2() {
                     @Override
-                    public InputSource resolveEntity(String publicId, String systemId)
-                            throws SAXException, IOException {
+                    public InputSource resolveEntity(String publicId, String systemId) {
                         if ("file:///this/file/does/not/exist".equals(systemId)) {
                             return new InputSource(new StringReader("hello"));
                         } else {
@@ -346,16 +340,14 @@ public class ParserTest {
                     }
 
                     @Override
-                    public InputSource getExternalSubset(String name, String baseURI)
-                            throws SAXException, IOException {
+                    public InputSource getExternalSubset(String name, String baseURI) {
                         // TODO Auto-generated method stub
                         return null;
                     }
 
                     @Override
                     public InputSource resolveEntity(
-                            String name, String publicId, String baseURI, String systemId)
-                            throws SAXException, IOException {
+                            String name, String publicId, String baseURI, String systemId) {
                         if ("file:///this/file/does/not/exist".equals(systemId)) {
                             return new InputSource(new StringReader("hello"));
                         } else {

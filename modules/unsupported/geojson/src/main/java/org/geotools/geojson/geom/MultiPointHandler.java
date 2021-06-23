@@ -16,7 +16,6 @@
  */
 package org.geotools.geojson.geom;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.parser.ParseException;
@@ -34,7 +33,7 @@ public class MultiPointHandler extends GeometryHandlerBase<MultiPoint> {
     }
 
     @Override
-    public boolean startObjectEntry(String key) throws ParseException, IOException {
+    public boolean startObjectEntry(String key) {
         if ("coordinates".equals(key)) {
             coordinates = new ArrayList<>();
         }
@@ -42,7 +41,7 @@ public class MultiPointHandler extends GeometryHandlerBase<MultiPoint> {
     }
 
     @Override
-    public boolean startArray() throws ParseException, IOException {
+    public boolean startArray() {
         if (ordinates == null) {
             ordinates = new ArrayList<>();
         }
@@ -51,7 +50,7 @@ public class MultiPointHandler extends GeometryHandlerBase<MultiPoint> {
     }
 
     @Override
-    public boolean endArray() throws ParseException, IOException {
+    public boolean endArray() throws ParseException {
         if (ordinates != null) {
             coordinates.add(coordinate(ordinates));
             ordinates = null;
@@ -60,7 +59,7 @@ public class MultiPointHandler extends GeometryHandlerBase<MultiPoint> {
     }
 
     @Override
-    public boolean endObject() throws ParseException, IOException {
+    public boolean endObject() {
         if (coordinates != null) {
             value = factory.createMultiPoint(new CoordinateArraySequence(coordinates(coordinates)));
             coordinates = null;

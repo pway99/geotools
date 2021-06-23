@@ -21,7 +21,6 @@ import static org.junit.Assert.assertEquals;
 
 import it.geosolutions.jaiext.vectorbin.ROIGeometry;
 import java.awt.Rectangle;
-import java.awt.geom.NoninvertibleTransformException;
 import java.awt.image.Raster;
 import java.awt.image.RenderedImage;
 import java.io.File;
@@ -77,7 +76,7 @@ public class BandProcessTest {
 
     @BeforeClass
     public static void setup()
-            throws FileNotFoundException, IOException, NoninvertibleTransformException {
+            throws FileNotFoundException, IOException {
         // Disable medialib
         System.setProperty("com.sun.media.jai.disableMediaLib", "true");
         // Disable bandmerge and mosaic native operation
@@ -445,7 +444,7 @@ public class BandProcessTest {
 
     /** Method for checking if the coverage values outside ROI are NoData */
     private void ensureNoDataOutside(GridCoverage2D coverage, Geometry geom)
-            throws MismatchedDimensionException, TransformException {
+            throws MismatchedDimensionException {
         // World to Grid transform used to project the Geometry to the RasterSpace
         MathTransform w2g = coverage.getGridGeometry().getCRSToGrid2D(PixelOrientation.UPPER_LEFT);
         // ROI in raster space

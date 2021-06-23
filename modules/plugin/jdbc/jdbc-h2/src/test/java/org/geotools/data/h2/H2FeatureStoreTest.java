@@ -16,8 +16,6 @@
  */
 package org.geotools.data.h2;
 
-import java.io.IOException;
-import java.sql.SQLException;
 import org.geotools.jdbc.JDBCFeatureStoreOnlineTest;
 import org.geotools.jdbc.JDBCTestSetup;
 
@@ -33,12 +31,12 @@ public class H2FeatureStoreTest extends JDBCFeatureStoreOnlineTest {
     }
 
     @Override
-    public void testAddInTransaction() throws IOException {
+    public void testAddInTransaction() {
         // does not work, see GEOT-2832
     }
 
     @Override
-    public void testExternalConnection() throws IOException, SQLException {
+    public void testExternalConnection() {
         // does not work, see GEOT-2832
     }
 }

@@ -16,7 +16,6 @@
  */
 package org.geotools.referencing.factory;
 
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.util.AbstractSet;
 import java.util.Collection;
@@ -233,7 +232,7 @@ public class IdentifiedObjectSet extends AbstractSet implements Serializable {
      * @throws FactoryException if an {@linkplain #createObject object creation} failed.
      */
     @SuppressWarnings("PMD.UnusedLocalVariable")
-    public void resolve(int n) throws FactoryException {
+    public void resolve(int n) {
         if (n > 0)
             try {
                 for (Object o : this) {
@@ -347,7 +346,7 @@ public class IdentifiedObjectSet extends AbstractSet implements Serializable {
      * #factory underlying factory}.
      */
     @SuppressWarnings("unchecked")
-    protected Object writeReplace() throws ObjectStreamException {
+    protected Object writeReplace() {
         return new LinkedHashSet(this);
     }
 

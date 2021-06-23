@@ -31,7 +31,6 @@ import com.mockrunner.mock.jdbc.MockStatement;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -81,8 +80,7 @@ public class JDBCDataStoreTest {
                     new BasicSQLDialect(jdbcDataStore) {
                         @Override
                         public void encodeGeometryValue(
-                                Geometry value, int dimension, int srid, StringBuffer sql)
-                                throws IOException {}
+                                Geometry value, int dimension, int srid, StringBuffer sql) {}
 
                         @Override
                         public void encodeGeometryEnvelope(
@@ -90,8 +88,7 @@ public class JDBCDataStoreTest {
 
                         @Override
                         public Envelope decodeGeometryEnvelope(
-                                ResultSet rs, int column, Connection cx)
-                                throws SQLException, IOException {
+                                ResultSet rs, int column, Connection cx) {
                             return null;
                         }
 
@@ -102,8 +99,7 @@ public class JDBCDataStoreTest {
                                 String column,
                                 GeometryFactory factory,
                                 Connection cx,
-                                Hints hints)
-                                throws IOException, SQLException {
+                                Hints hints) {
                             return null;
                         }
                     };
@@ -154,8 +150,7 @@ public class JDBCDataStoreTest {
                 new PrimaryKeyFinder() {
                     @Override
                     public PrimaryKey getPrimaryKey(
-                            JDBCDataStore store, String schema, String table, Connection cx)
-                            throws SQLException {
+                            JDBCDataStore store, String schema, String table, Connection cx) {
                         return new NullPrimaryKey(table);
                     }
                 });

@@ -274,8 +274,7 @@ public class LambertAzimuthalEqualArea extends MapProjection {
      */
     @Override
     @SuppressWarnings("fallthrough")
-    protected Point2D inverseTransformNormalized(double x, double y, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D inverseTransformNormalized(double x, double y, Point2D ptDst) {
         final double lambda, phi;
         switch (mode) {
             case EQUATORIAL: // Fall through

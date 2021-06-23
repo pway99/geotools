@@ -31,7 +31,7 @@ public class GMLGeometryTest {
     Parser parser;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         SAXParserFactory spf = SAXParserFactory.newInstance();
 
         spf.setNamespaceAware(true);

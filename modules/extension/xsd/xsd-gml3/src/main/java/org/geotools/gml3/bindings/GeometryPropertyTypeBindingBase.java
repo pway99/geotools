@@ -61,7 +61,7 @@ public abstract class GeometryPropertyTypeBindingBase extends AbstractComplexBin
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return node.getChildValue(getGeometryType());
     }
 
@@ -70,20 +70,19 @@ public abstract class GeometryPropertyTypeBindingBase extends AbstractComplexBin
      *     org.w3c.dom.Element)
      */
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         checkExistingId((Geometry) object);
         return value;
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
 
         return encodingUtils.GeometryPropertyType_GetProperty((Geometry) object, name, makeEmpty);
     }
 
     @Override
-    public List<Object[]> getProperties(Object object, XSDElementDeclaration element)
-            throws Exception {
+    public List<Object[]> getProperties(Object object, XSDElementDeclaration element) {
         return encodingUtils.GeometryPropertyType_GetProperties((Geometry) object);
     }
 

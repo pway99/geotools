@@ -86,14 +86,14 @@ public class NullTypeBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         Envelope e = new Envelope();
         e.setToNull();
         return e;
     }
 
     @Override
-    public String encode(Object object, String value) throws Exception {
+    public String encode(Object object, String value) {
         return "unknown";
     }
 }

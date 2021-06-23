@@ -27,12 +27,12 @@ import org.opengis.feature.simple.SimpleFeature;
 
 public class FolderTypeBindingTest extends KMLTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(SimpleFeature.class, binding(KML.FolderType).getType());
     }
 
     @Test
-    public void testExecutionMode() throws Exception {
+    public void testExecutionMode() {
         assertEquals(Binding.AFTER, binding(KML.FolderType).getExecutionMode());
     }
 

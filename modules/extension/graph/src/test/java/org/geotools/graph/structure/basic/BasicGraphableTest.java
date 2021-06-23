@@ -27,7 +27,7 @@ public class BasicGraphableTest {
     private BasicGraphable m_graphable;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         m_graphable =
                 new BasicGraphable() {

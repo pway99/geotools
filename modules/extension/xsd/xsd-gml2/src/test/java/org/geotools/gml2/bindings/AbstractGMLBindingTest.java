@@ -70,7 +70,7 @@ public class AbstractGMLBindingTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         container.dispose();
     }
 

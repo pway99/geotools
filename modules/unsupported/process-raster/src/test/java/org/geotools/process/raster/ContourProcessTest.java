@@ -58,8 +58,6 @@ import org.locationtech.jts.geom.Envelope;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.LineString;
 import org.opengis.feature.simple.SimpleFeature;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 /**
@@ -159,8 +157,7 @@ public class ContourProcessTest {
      */
     @Test
     public void invalidLinestrings()
-            throws FileNotFoundException, IOException, NoSuchAuthorityCodeException,
-                    FactoryException {
+            throws FileNotFoundException, IOException {
         File input = TestData.file(ContourProcessTest.class, "contoursample.tif");
         AbstractGridFormat format = GridFormatFinder.findFormat(input);
         AbstractGridCoverage2DReader reader = null;

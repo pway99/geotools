@@ -68,7 +68,7 @@ public class SDOOnlineTest extends JDBCTestSupport {
         super.disconnect();
     }
 
-    public final void testGType() throws SQLException {
+    public final void testGType() {
         assertEquals(2003, SDO.gType(fixture.rectangle));
     }
 
@@ -88,7 +88,7 @@ public class SDOOnlineTest extends JDBCTestSupport {
         assertEquals(-1, SDO.SRID(fixture.rectangle));
     }
 
-    public final void testElemInfo() throws SQLException {
+    public final void testElemInfo() {
         int[] elemInfo = SDO.elemInfo(fixture.rectangle);
         assertEquals(1, elemInfo[0]);
         assertEquals(1003, elemInfo[1]);
@@ -107,7 +107,7 @@ public class SDOOnlineTest extends JDBCTestSupport {
         assertEquals(3, SDO.elemInfoInterpretation(fixture.rectangle));
     }
 
-    public final void testOrdinates() throws SQLException {
+    public final void testOrdinates() {
         double[] ords = SDO.ordinates(fixture.rectangle);
         assertEquals("length", 4, ords.length);
         assertEquals("x1", 1, ords[0], 0.00001);

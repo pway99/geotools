@@ -29,7 +29,7 @@ public class NumericConverterFactoryTest {
     NumericConverterFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new NumericConverterFactory();
     }
 
@@ -196,7 +196,7 @@ public class NumericConverterFactoryTest {
         Assert.assertEquals(Double.valueOf(4.4), convert("4.4", Number.class));
     }
 
-    Object convert(Object source, Class<?> target) throws Exception {
+    Object convert(Object source, Class<?> target) {
         return factory.createConverter(source.getClass(), target, null).convert(source, target);
     }
 
@@ -210,7 +210,7 @@ public class NumericConverterFactoryTest {
         Assert.assertEquals("3000", NumericConverterFactory.toIntegral("3000,0"));
     }
 
-    Object convertSafe(Object source, Class<?> target) throws Exception {
+    Object convertSafe(Object source, Class<?> target) {
         Hints hints = new Hints();
         hints.put(ConverterFactory.SAFE_CONVERSION, Boolean.TRUE);
         return factory.createConverter(source.getClass(), target, hints).convert(source, target);

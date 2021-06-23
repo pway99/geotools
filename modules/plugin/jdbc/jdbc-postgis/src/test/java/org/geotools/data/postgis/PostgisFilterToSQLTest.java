@@ -155,7 +155,7 @@ public class PostgisFilterToSQLTest extends SQLFilterTestSupport {
     }
 
     @Test
-    public void testEncodeInArrayCapabilities() throws Exception {
+    public void testEncodeInArrayCapabilities() {
         filterToSql.setFeatureType(testSchema);
         PropertyIsEqualTo expr =
                 ff.equals(

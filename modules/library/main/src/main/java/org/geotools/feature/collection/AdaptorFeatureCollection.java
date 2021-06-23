@@ -16,7 +16,6 @@
  */
 package org.geotools.feature.collection;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
 import org.geotools.data.DataUtilities;
@@ -81,7 +80,7 @@ public abstract class AdaptorFeatureCollection implements SimpleFeatureCollectio
 
     /** Accepts a visitor, which then visits each feature in the collection. */
     @Override
-    public void accepts(FeatureVisitor visitor, ProgressListener progress) throws IOException {
+    public void accepts(FeatureVisitor visitor, ProgressListener progress) {
         DataUtilities.visit(this, visitor, progress);
     }
 

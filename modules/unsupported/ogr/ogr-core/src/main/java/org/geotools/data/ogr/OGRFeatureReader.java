@@ -66,7 +66,7 @@ class OGRFeatureReader implements FeatureReader<SimpleFeatureType, SimpleFeature
     }
 
     @Override
-    public void close() throws IOException {
+    public void close() {
         if (curr != null) {
             ogr.FeatureDestroy(curr);
             curr = null;
@@ -94,7 +94,7 @@ class OGRFeatureReader implements FeatureReader<SimpleFeatureType, SimpleFeature
     }
 
     @Override
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() {
         // ugly, but necessary to close the reader when getting to the end, because
         // it would break feature appending otherwise (the reader is used in feature
         // writing too)

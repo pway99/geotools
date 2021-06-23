@@ -26,7 +26,7 @@ import org.w3c.dom.Element;
 
 public class SLDExternalGraphicBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(ExternalGraphic.class, new SLDExternalGraphicBinding(null, null).getType());
     }
 

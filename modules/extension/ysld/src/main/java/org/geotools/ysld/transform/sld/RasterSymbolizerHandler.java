@@ -61,7 +61,7 @@ public class RasterSymbolizerHandler extends SymbolizerHandler {
     static class ColorMapHandler extends SldTransformHandler {
         @Override
         public void element(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if ("ColorMap".equals(name)) {
                 context.mapping();
@@ -91,7 +91,7 @@ public class RasterSymbolizerHandler extends SymbolizerHandler {
 
         @Override
         public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             if ("ColorMap".equals(xml.getLocalName())) {
                 context.endSequence().endMapping().pop();
             }
@@ -116,7 +116,7 @@ public class RasterSymbolizerHandler extends SymbolizerHandler {
 
         @Override
         public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             if ("ContrastEnhancement".equals(xml.getLocalName())) {
                 context.endMapping().pop();
             }
@@ -126,7 +126,7 @@ public class RasterSymbolizerHandler extends SymbolizerHandler {
     static class ChannelSelectionHandler extends SldTransformHandler {
         @Override
         public void element(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if ("ChannelSelection".equals(name)) {
                 context.sequence();
@@ -143,7 +143,7 @@ public class RasterSymbolizerHandler extends SymbolizerHandler {
 
         @Override
         public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if ("ChannelSelection".equals(name)) {
                 context.endSequence();
@@ -167,7 +167,7 @@ public class RasterSymbolizerHandler extends SymbolizerHandler {
 
         @Override
         public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if (name.endsWith("Channel")) {
                 context.endMapping().pop();
@@ -178,7 +178,7 @@ public class RasterSymbolizerHandler extends SymbolizerHandler {
     static class OverlapBehaviorHandler extends SldTransformHandler {
         @Override
         public void element(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if ("LATEST_ON_TOP".equals(name)) {
                 context.scalar("latest-on-top").pop();
@@ -208,7 +208,7 @@ public class RasterSymbolizerHandler extends SymbolizerHandler {
 
         @Override
         public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if ("ShadedRelief".equals(name)) {
                 context.endMapping().pop();
@@ -219,7 +219,7 @@ public class RasterSymbolizerHandler extends SymbolizerHandler {
     static class ImageOutlineHandler extends SldTransformHandler {
         @Override
         public void element(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if ("ImageOutline".equals(name)) {
                 context.scalar("image-outline").mapping();
@@ -232,7 +232,7 @@ public class RasterSymbolizerHandler extends SymbolizerHandler {
 
         @Override
         public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if ("ImageOutline".equals(name)) {
                 context.endMapping().pop();

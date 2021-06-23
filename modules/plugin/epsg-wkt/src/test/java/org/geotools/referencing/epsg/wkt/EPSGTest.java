@@ -44,7 +44,7 @@ public class EPSGTest {
      * @see junit.framework.TestCase#setUp()
      */
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new EPSGCRSAuthorityFactory();
     }
 
@@ -65,7 +65,7 @@ public class EPSGTest {
     }
 
     @Test
-    public void testCodes() throws Exception {
+    public void testCodes() {
         Set codes = factory.getAuthorityCodes(CoordinateReferenceSystem.class);
 
         assertNotNull(codes);
@@ -74,7 +74,7 @@ public class EPSGTest {
 
     /** A random CRS for fun. */
     @Test
-    public void test26910() throws Exception {
+    public void test26910() {
         CoordinateReferenceSystem crs =
                 (CoordinateReferenceSystem) factory.createObject("EPSG:26910");
         assertNotNull(crs);
@@ -82,21 +82,21 @@ public class EPSGTest {
 
     /** UDIG requires this to work */
     @Test
-    public void test4326() throws Exception {
+    public void test4326() {
         CoordinateReferenceSystem crs =
                 (CoordinateReferenceSystem) factory.createObject("EPSG:4326");
         assertNotNull(crs);
     }
     /** UDIG requires this to work */
     @Test
-    public void test4269() throws Exception {
+    public void test4269() {
         CoordinateReferenceSystem crs =
                 (CoordinateReferenceSystem) factory.createObject("EPSG:4269");
         assertNotNull(crs);
     }
     /** UDIG requires this to work */
     @Test
-    public void test42102() throws Exception {
+    public void test42102() {
         CoordinateReferenceSystem crs =
                 (CoordinateReferenceSystem) factory.createObject("EPSG:42102");
         assertNotNull(crs);
@@ -107,7 +107,7 @@ public class EPSGTest {
     }
 
     @Test
-    public void testDecodeAll() throws Exception {
+    public void testDecodeAll() {
         // this test is heavy, only enable with extensive tests
         if (!TestData.isExtensiveTest()) {
             return;
@@ -128,45 +128,45 @@ public class EPSGTest {
 
     /** A random CRS for fun. */
     @Test
-    public void test26910Lower() throws Exception {
+    public void test26910Lower() {
         CoordinateReferenceSystem crs = CRS.decode("epsg:26910");
         assertNotNull(crs);
     }
 
     /** A random CRS for fun. */
     @Test
-    public void test26986Lower() throws Exception {
+    public void test26986Lower() {
         CoordinateReferenceSystem crs = CRS.decode("epsg:26986");
         assertNotNull(crs);
     }
 
     /** wfs requires this to work */
     @Test
-    public void test4326Lower() throws Exception {
+    public void test4326Lower() {
         CoordinateReferenceSystem crs = CRS.decode("epsg:4326");
         assertNotNull(crs);
     }
     /** wfs requires this to work */
     @Test
-    public void test26742Lower() throws Exception {
+    public void test26742Lower() {
         CoordinateReferenceSystem crs = CRS.decode("epsg:26742");
         assertNotNull(crs);
     }
     /** wfs requires this to work */
     @Test
-    public void test4269Lower() throws Exception {
+    public void test4269Lower() {
         CoordinateReferenceSystem crs = CRS.decode("epsg:4269");
         assertNotNull(crs);
     }
     /** wfs requires this to work */
     @Test
-    public void test42304Lower() throws Exception {
+    public void test42304Lower() {
         CoordinateReferenceSystem crs = CRS.decode("epsg:42304");
         assertNotNull(crs);
     }
     /** wfs requires this to work */
     @Test
-    public void test42102Lower() throws Exception {
+    public void test42102Lower() {
         CoordinateReferenceSystem crs = CRS.decode("epsg:42102");
         assertNotNull(crs);
         assertNotNull(crs.getIdentifiers());

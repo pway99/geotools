@@ -32,7 +32,7 @@ public class OGCFilterTest {
     Parser parser;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         Configuration configuration = new OGCConfiguration();
         parser = new Parser(configuration);

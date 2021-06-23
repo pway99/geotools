@@ -95,7 +95,6 @@ import org.opengis.feature.type.PropertyDescriptor;
 import org.opengis.filter.FilterFactory;
 import org.opengis.filter.identity.Identifier;
 import org.opengis.parameter.GeneralParameterValue;
-import org.opengis.referencing.FactoryException;
 import org.sqlite.SQLiteConfig;
 
 public class GeoPackageTest {
@@ -652,7 +651,7 @@ public class GeoPackageTest {
         return new GeometryFactory()
                 .createLineString(
                         new Coordinate[] {
-                            new Coordinate(0.1, 0.1), new Coordinate(0.2, 0.2),
+                            new Coordinate(0.1, 0.1), new Coordinate(0.2, 0.2)
                         });
     }
 
@@ -762,7 +761,7 @@ public class GeoPackageTest {
      *
      * [1]: http://www.geopackage.org/spec/#tile_matrix
      */
-    public void testTopLeftTile() throws IOException, FactoryException {
+    public void testTopLeftTile() throws IOException {
         File sourceFile =
                 GeoPackageFormat.getFileFromSource(getClass().getResource("Blue_Marble.gpkg"));
         try (GeoPackage geopkg = new GeoPackage(sourceFile)) {

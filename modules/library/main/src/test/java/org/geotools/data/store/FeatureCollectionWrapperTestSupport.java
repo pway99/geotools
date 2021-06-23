@@ -36,7 +36,7 @@ public abstract class FeatureCollectionWrapperTestSupport {
     protected DefaultFeatureCollection delegate;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         crs =
                 CRS.parseWKT(
                         "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.01745329251994328,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]]");

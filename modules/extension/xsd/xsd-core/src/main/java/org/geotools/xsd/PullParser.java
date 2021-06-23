@@ -16,7 +16,6 @@
  */
 package org.geotools.xsd;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -66,7 +65,7 @@ public class PullParser {
         handler.setContextCustomizer(contextCustomizer);
     }
 
-    public Object parse() throws XMLStreamException, IOException, SAXException {
+    public Object parse() throws XMLStreamException, SAXException {
         if (handler.getLogger() == null) {
             handler.startDocument();
         }

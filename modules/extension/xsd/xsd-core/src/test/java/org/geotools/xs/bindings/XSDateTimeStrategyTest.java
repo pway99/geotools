@@ -178,7 +178,7 @@ public class XSDateTimeStrategyTest extends TestSchema {
     }
 
     @Test
-    public void testDirectlyEncodeCalendarDateTime() throws Exception {
+    public void testDirectlyEncodeCalendarDateTime() {
         Calendar cal = calendar(2011, 9, 24, 10, 53, 31);
         String encoded = new XSDateTimeBinding().encode(cal, null);
         assertEquals("2011-10-24T10:53:31Z", encoded);

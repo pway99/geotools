@@ -107,7 +107,7 @@ public class MBTilesDataStoreFactory implements DataStoreFactorySpi {
     }
 
     @Override
-    public DataStore createNewDataStore(Map<String, ?> params) throws IOException {
+    public DataStore createNewDataStore(Map<String, ?> params) {
         return null;
     }
 

@@ -80,7 +80,7 @@ public class Comparison_OperatorsTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         List<Operator> comparisons = new ArrayList<>();
 
         // &lt;xsd:element ref="ogc:Simple_Comparisons"/&gt;
@@ -112,7 +112,7 @@ public class Comparison_OperatorsTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         ComparisonOperators comparison = (ComparisonOperators) object;
 
         if (name.equals(OGC.Simple_Comparisons) && (comparison.getOperator("LessThan") != null)) {

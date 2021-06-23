@@ -17,7 +17,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 @RunWith(Parameterized.class)
@@ -65,7 +64,7 @@ public class EsriLookupTest {
     }
 
     @Test
-    public void testCodeLookup() throws FactoryException {
+    public void testCodeLookup() {
         CoordinateReferenceSystem crs = CRS.parseWKT(wkt);
         Integer actualCode = CRS.lookupEpsgCode(crs, false);
         assertNotNull(

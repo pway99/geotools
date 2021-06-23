@@ -39,7 +39,7 @@ public class OracleDialectEpsgMediatorOnlineTest extends OracleOnlineTestCase {
         // mediator = new OracleDialectEpsgMediator(80, hints, datasource);
     }
 
-    public void testCreation() throws Exception {
+    public void testCreation() {
         assertNotNull(mediator);
         CoordinateReferenceSystem epsg4326 = mediator.createCoordinateReferenceSystem("EPSG:4326");
         CoordinateReferenceSystem code4326 = mediator.createCoordinateReferenceSystem("4326");

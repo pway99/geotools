@@ -92,7 +92,7 @@ public class PlacemarkTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // retype from the abstract feature type, since extended data could have altered the schema
         // placemarks add an additional geometry field
         SimpleFeature feature = (SimpleFeature) value;
@@ -121,7 +121,7 @@ public class PlacemarkTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         SimpleFeature feature = (SimpleFeature) object;
         if (KML.Geometry.getLocalPart().equals(name.getLocalPart())
                 || org.geotools.kml.v22.KML.AbstractGeometryGroup.getLocalPart()

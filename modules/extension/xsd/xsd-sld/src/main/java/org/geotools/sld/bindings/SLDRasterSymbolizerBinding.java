@@ -124,7 +124,7 @@ public class SLDRasterSymbolizerBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         RasterSymbolizer rs = styleFactory.createRasterSymbolizer();
 
         // &lt;xsd:element ref="sld:Geometry" minOccurs="0"/&gt;

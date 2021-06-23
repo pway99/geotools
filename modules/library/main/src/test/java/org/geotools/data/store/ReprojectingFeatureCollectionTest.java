@@ -105,7 +105,7 @@ public class ReprojectingFeatureCollectionTest extends FeatureCollectionWrapperT
     }
 
     @Test
-    public void testBounds() throws Exception {
+    public void testBounds() {
         ReprojectingFeatureCollection rfc = new ReprojectingFeatureCollection(delegate, target);
         ReferencedEnvelope bounds = delegate.getBounds();
         // the reprojection of the full bounds is going to be bigger than the sum of the
@@ -117,7 +117,7 @@ public class ReprojectingFeatureCollectionTest extends FeatureCollectionWrapperT
     }
 
     @Test
-    public void testFilter() throws Exception {
+    public void testFilter() {
         ReprojectingFeatureCollection rfc = new ReprojectingFeatureCollection(delegate, target);
         ReferencedEnvelope bounds = delegate.getBounds();
         ReferencedEnvelope rbounds = bounds.transform(target, true);
@@ -143,7 +143,7 @@ public class ReprojectingFeatureCollectionTest extends FeatureCollectionWrapperT
     }
 
     @Test
-    public void testLenient() throws Exception {
+    public void testLenient() {
 
         CoordinateReferenceSystem lenientTarget =
                 CRS.parseWKT(

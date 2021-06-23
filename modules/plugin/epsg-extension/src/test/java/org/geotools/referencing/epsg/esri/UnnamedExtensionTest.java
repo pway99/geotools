@@ -58,7 +58,7 @@ public class UnnamedExtensionTest {
 
     /** Gets the authority factory for ESRI. */
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         factory =
                 (UnnamedExtension)
@@ -88,7 +88,7 @@ public class UnnamedExtensionTest {
 
     /** Checks for duplication with EPSG-HSQL. */
     @Test
-    public void testDuplication() throws FactoryException {
+    public void testDuplication() {
         final StringWriter buffer = new StringWriter();
         final PrintWriter writer = new PrintWriter(buffer);
         final Set duplicated = factory.reportDuplicatedCodes(writer);
@@ -97,7 +97,7 @@ public class UnnamedExtensionTest {
 
     /** Checks for CRS instantiations. */
     @Test
-    public void testInstantiation() throws FactoryException {
+    public void testInstantiation() {
         final StringWriter buffer = new StringWriter();
         final PrintWriter writer = new PrintWriter(buffer);
         final Set duplicated = factory.reportInstantiationFailures(writer);
@@ -106,7 +106,7 @@ public class UnnamedExtensionTest {
 
     /** Tests the {@code 41001} code. */
     @Test
-    public void test41001() throws FactoryException {
+    public void test41001() {
         CoordinateReferenceSystem expected = factory.createCoordinateReferenceSystem("41001");
         CoordinateReferenceSystem actual = CRS.decode("EPSG:41001");
         assertSame(expected, actual);
@@ -131,7 +131,7 @@ public class UnnamedExtensionTest {
 
     /** WFS requires this to work. */
     @Test
-    public void test42102Lower() throws FactoryException {
+    public void test42102Lower() {
         CoordinateReferenceSystem crs = CRS.decode("epsg:42102");
         assertNotNull(crs);
         assertNotNull(crs.getIdentifiers());
@@ -142,7 +142,7 @@ public class UnnamedExtensionTest {
 
     /** WFS requires this to work. */
     @Test
-    public void test42304Lower() throws FactoryException {
+    public void test42304Lower() {
         CoordinateReferenceSystem crs = CRS.decode("epsg:42304");
         assertNotNull(crs);
     }
@@ -180,7 +180,7 @@ public class UnnamedExtensionTest {
      * @see http://jira.codehaus.org/browse/GEOT-1563
      */
     @Test
-    public void testURI() throws FactoryException {
+    public void testURI() {
         final String id = "100001";
         final CoordinateReferenceSystem crs = CRS.decode("EPSG:" + id);
         assertSame(crs, CRS.decode("urn:x-ogc:def:crs:EPSG:6.11.2:" + id));

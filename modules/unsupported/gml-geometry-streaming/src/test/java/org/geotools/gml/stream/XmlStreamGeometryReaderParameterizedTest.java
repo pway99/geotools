@@ -20,7 +20,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringReader;
@@ -29,7 +28,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamReader;
 import org.geotools.geometry.jts.CompoundCurve;
@@ -46,7 +44,6 @@ import org.locationtech.jts.geom.MultiPoint;
 import org.locationtech.jts.geom.MultiPolygon;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.Polygon;
-import org.xml.sax.SAXException;
 
 @RunWith(Parameterized.class)
 public class XmlStreamGeometryReaderParameterizedTest {
@@ -192,8 +189,7 @@ public class XmlStreamGeometryReaderParameterizedTest {
         }
     }
 
-    private static Geometry parseWithXSD(final String gml, final boolean isGml3_2)
-            throws IOException, ParserConfigurationException, SAXException {
+    private static Geometry parseWithXSD(final String gml, final boolean isGml3_2) {
         org.geotools.xsd.Configuration configuration;
         if (isGml3_2) {
             configuration = new org.geotools.gml3.v3_2.GMLConfiguration();

@@ -156,7 +156,7 @@ public class DataAccessRegistry implements Repository {
     // mapping file, specified in the <includedTypes>
     // directive of some top-level app-schema data access) that are no longer needed (i.e. they are
     // not referenced by any top-level data access).
-    private void disposeHiddenDataAccessInstances(URL url) throws IOException {
+    private void disposeHiddenDataAccessInstances(URL url) {
         List<DataAccess<FeatureType, Feature>> copyRegistry = new ArrayList<>(registry);
         for (DataAccess<FeatureType, Feature> da : copyRegistry) {
             if (da instanceof AppSchemaDataAccess) {
@@ -204,7 +204,7 @@ public class DataAccessRegistry implements Repository {
      *
      * @param name Feature type name
      */
-    public synchronized boolean hasAppSchemaAccessName(Name name) throws IOException {
+    public synchronized boolean hasAppSchemaAccessName(Name name) {
         for (DataAccess<FeatureType, Feature> dataAccess : registry) {
             if (dataAccess instanceof AppSchemaDataAccess
                     && (((AppSchemaDataAccess) dataAccess).hasName(name)

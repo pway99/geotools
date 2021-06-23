@@ -18,7 +18,6 @@ package org.geotools.ows.wms.xml;
 
 import java.io.IOException;
 import java.util.Map;
-import javax.naming.OperationNotSupportedException;
 import org.geotools.xml.PrintHandler;
 import org.geotools.xml.schema.Attribute;
 import org.geotools.xml.schema.ComplexType;
@@ -392,8 +391,7 @@ public class ogcComplexTypes {
 
         @Override
         public void encode(
-                Element element, Object value, PrintHandler output, Map<String, Object> hints)
-                throws OperationNotSupportedException {
+                Element element, Object value, PrintHandler output, Map<String, Object> hints) {
 
             if (canEncode(element, value, hints)) {
                 AttributesImpl attributes = new AttributesImpl();

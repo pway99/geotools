@@ -39,7 +39,7 @@ import org.opengis.feature.type.Name;
 public class PreGeneralizedDataStoreTest {
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         TestSetup.initialize();
     }
 

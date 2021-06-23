@@ -33,7 +33,7 @@ public class GeoPkgPrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSet
     }
 
     @Override
-    protected void dropMetadataTable() throws Exception {
+    protected void dropMetadataTable() {
         runSafe("DROP TABLE gt_pk_metadata");
     }
 
@@ -67,7 +67,7 @@ public class GeoPkgPrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSet
     }
 
     @Override
-    protected void dropPlainTable() throws Exception {
+    protected void dropPlainTable() {
         ((GeoPkgTestSetup) delegate).removeTable("plaintable");
     }
 
@@ -84,7 +84,7 @@ public class GeoPkgPrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSet
     }
 
     @Override
-    protected void dropAssignedSinglePkView() throws Exception {
+    protected void dropAssignedSinglePkView() {
 
         ((GeoPkgTestSetup) delegate).removeTable("assignedsinglepk");
     }
@@ -105,13 +105,13 @@ public class GeoPkgPrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSet
     }
 
     @Override
-    protected void dropAssignedMultiPkView() throws Exception {
+    protected void dropAssignedMultiPkView() {
         ((GeoPkgTestSetup) delegate).removeTable("assignedmultipk");
     }
 
     @Override
-    protected void createSequencedPrimaryKeyTable() throws Exception {}
+    protected void createSequencedPrimaryKeyTable() {}
 
     @Override
-    protected void dropSequencedPrimaryKeyTable() throws Exception {}
+    protected void dropSequencedPrimaryKeyTable() {}
 }

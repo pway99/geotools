@@ -1175,7 +1175,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
 
     @org.junit.Test
     public void bandFloat32_SLD()
-            throws IOException, TransformerException, FactoryRegistryException,
+            throws IOException, FactoryRegistryException,
                     IllegalArgumentException, URISyntaxException {
         // the GridCoverage
         GeneralEnvelope envelope =
@@ -1262,7 +1262,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
 
     @Test
     public void test1BandFloat32_ColorMap_SLD()
-            throws IOException, TransformerException, FactoryRegistryException,
+            throws IOException, FactoryRegistryException,
                     IllegalArgumentException, URISyntaxException {
         // the GridCoverage
         GeneralEnvelope envelope =
@@ -1380,7 +1380,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
 
     @org.junit.Test
     public void bandsUInt16_SLD()
-            throws IOException, TransformerException, FactoryRegistryException,
+            throws IOException, FactoryRegistryException,
                     IllegalArgumentException, URISyntaxException {
         // the GridCoverage
         final GridSampleDimension[] gsd = {
@@ -1477,7 +1477,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
 
     @Test
     public void bandsUInt16_SLDROI()
-            throws IOException, TransformerException, FactoryRegistryException,
+            throws IOException, FactoryRegistryException,
                     IllegalArgumentException, URISyntaxException {
         // the GridCoverage
         final GridSampleDimension[] gsd = {
@@ -1599,7 +1599,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
 
     @org.junit.Test
     public void bandsByte_SLD()
-            throws IOException, TransformerException, FactoryRegistryException,
+            throws IOException, FactoryRegistryException,
                     IllegalArgumentException, URISyntaxException {
         // the GridCoverage
         GridCoverage2D gc = read3BandsByteCoverage();
@@ -1678,7 +1678,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
 
     @org.junit.Test
     public void greenSelection()
-            throws IOException, TransformerException, FactoryRegistryException,
+            throws IOException, FactoryRegistryException,
                     IllegalArgumentException, URISyntaxException {
         GridCoverage2D gc = read3BandsByteCoverage();
 
@@ -1726,7 +1726,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
 
     @org.junit.Test
     public void bandsByte_ColorMap_SLD()
-            throws IOException, TransformerException, FactoryRegistryException,
+            throws IOException, FactoryRegistryException,
                     IllegalArgumentException, URISyntaxException {
         // the GridCoverage
         GridCoverage2D gc = read3BandsByteCoverage();
@@ -1822,7 +1822,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
 
     @org.junit.Test
     public void BandByte_SLD()
-            throws IOException, TransformerException, FactoryRegistryException,
+            throws IOException, FactoryRegistryException,
                     IllegalArgumentException, URISyntaxException {
         // the GridCoverage
         GeneralEnvelope envelope =
@@ -2072,7 +2072,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
         testColorMap(gc);
     }
 
-    private void testColorMap(GridCoverage2D gc) throws IOException, TransformerException {
+    private void testColorMap(GridCoverage2D gc) throws IOException {
 
         ////
         //
@@ -2143,7 +2143,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
     }
 
     @org.junit.Test
-    public void rgb() throws IOException, TransformerException {
+    public void rgb() throws IOException {
         java.net.URL surl = TestData.url(this, "testrgb.sld");
         SLDParser stylereader = new SLDParser(sf, surl);
         StyledLayerDescriptor sld = stylereader.parseSLD();
@@ -2216,7 +2216,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
     }
 
     @org.junit.Test
-    public void dem() throws IOException, TransformerException {
+    public void dem() throws IOException {
 
         ////
         //
@@ -2292,7 +2292,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
     }
 
     @org.junit.Test
-    public void demEmptyRange() throws IOException, TransformerException {
+    public void demEmptyRange() throws IOException {
 
         // An SLD file where two entries have the same value
         ////
@@ -2322,7 +2322,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
     }
 
     @org.junit.Test
-    public void demColorJump() throws IOException, TransformerException {
+    public void demColorJump() throws IOException {
 
         // An SLD file where two entries have the same value
         ////
@@ -2352,7 +2352,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
     }
 
     @org.junit.Test
-    public void landsat() throws IOException, TransformerException {
+    public void landsat() throws IOException {
         java.net.URL surl = TestData.url(this, "landsat.sld");
         SLDParser stylereader = new SLDParser(sf, surl);
         StyledLayerDescriptor sld = stylereader.parseSLD();
@@ -2488,7 +2488,7 @@ public class RasterSymbolizerTest extends org.junit.Assert {
     }
 
     @Test
-    public void contrastEnhancementInChannelSelection() throws IOException {
+    public void contrastEnhancementInChannelSelection() {
 
         StyleBuilder sldBuilder = new StyleBuilder();
         RasterSymbolizer symbolizer = sldBuilder.createRasterSymbolizer();

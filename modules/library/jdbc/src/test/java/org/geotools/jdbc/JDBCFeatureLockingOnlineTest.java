@@ -136,7 +136,7 @@ public abstract class JDBCFeatureLockingOnlineTest extends JDBCTestSupport {
         }
     }
 
-    public void testLockFeaturesWithInvalidFilter() throws Exception {
+    public void testLockFeaturesWithInvalidFilter() {
 
         FeatureLock lock = new FeatureLock(tname("ft1"), 60 * 60 * 1000);
 

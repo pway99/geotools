@@ -112,8 +112,7 @@ public class EmfAppSchemaParserTest {
      *     CoordinateReferenceSystem)}
      */
     private SimpleFeatureType testParseDescribeSimpleFeatureType(
-            final QName featureTypeName, final URL schemaLocation, int expectedAttributeCount)
-            throws IOException {
+            final QName featureTypeName, final URL schemaLocation, int expectedAttributeCount) {
         assertNotNull(schemaLocation);
         final CoordinateReferenceSystem crs = DefaultGeographicCRS.WGS84;
 

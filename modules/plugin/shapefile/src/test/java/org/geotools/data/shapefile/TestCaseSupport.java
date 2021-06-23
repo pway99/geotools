@@ -78,7 +78,7 @@ public class TestCaseSupport {
      * after each test.
      */
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
 
         Runtime.getRuntime().runFinalization();
         // it seems that not all files marked as temp will get erased, perhaps

@@ -56,7 +56,7 @@ public class PostGISAggregateTestSetup extends JDBCAggregateTestSetup {
     }
 
     @Override
-    protected void dropAggregateTable() throws Exception {
+    protected void dropAggregateTable() {
         runSafe("DELETE FROM GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'aggregate'");
         runSafe("DROP TABLE \"aggregate\"");
     }

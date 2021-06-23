@@ -70,7 +70,7 @@ public class Gridsettype_gridsBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         List<TileMatrix> matrices = new ArrayList<>();
 
         for (Object child : node.getChildValues("grid")) {

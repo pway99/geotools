@@ -34,7 +34,6 @@ import org.locationtech.jts.geom.Envelope;
 import org.locationtech.jts.geom.Polygon;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.filter.FilterFactory2;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CRSAuthorityFactory;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
@@ -61,7 +60,7 @@ public class SpatialFilterTest {
     SimpleFeatureSource pointFS;
 
     @BeforeClass
-    public static void setupCRS() throws FactoryException {
+    public static void setupCRS() {
         CRS.reset("all");
         Hints.putSystemDefault(Hints.FORCE_LONGITUDE_FIRST_AXIS_ORDER, Boolean.TRUE);
 

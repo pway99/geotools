@@ -83,7 +83,7 @@ public class RegionTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Object latLonChildElement = node.getChildValue("LatLonAltBox");
         if (latLonChildElement == null) {
             return null;

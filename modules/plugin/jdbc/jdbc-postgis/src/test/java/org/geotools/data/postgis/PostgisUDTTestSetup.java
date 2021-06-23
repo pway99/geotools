@@ -79,7 +79,7 @@ public class PostgisUDTTestSetup extends JDBCUDTTestSetup {
     }
 
     @Override
-    protected void dropUdtTable() throws Exception {
+    protected void dropUdtTable() {
         runSafe("DROP TABLE \"udt\"");
         runSafe("DROP DOMAIN foo");
         runSafe("DROP DOMAIN foo2");
@@ -111,7 +111,7 @@ public class PostgisUDTTestSetup extends JDBCUDTTestSetup {
         run(format("INSERT INTO \"date_udt\" (bd, name) VALUES (%d, 'min');", Long.MIN_VALUE));
     }
 
-    public void dropDateUdtTable() throws Exception {
+    public void dropDateUdtTable() {
         runSafe(format("DROP TABLE \"date_udt\";"));
         runSafe(format("DROP DOMAIN %s;", BIGDATE_UDT));
     }

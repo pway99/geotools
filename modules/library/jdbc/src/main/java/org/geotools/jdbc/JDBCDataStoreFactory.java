@@ -409,13 +409,12 @@ public abstract class JDBCDataStoreFactory implements DataStoreFactorySpi {
      * @param dataStore The newly created datastore.
      * @param params THe datastore parameters.
      */
-    protected JDBCDataStore createDataStoreInternal(JDBCDataStore dataStore, Map<String, ?> params)
-            throws IOException {
+    protected JDBCDataStore createDataStoreInternal(JDBCDataStore dataStore, Map<String, ?> params) {
         return dataStore;
     }
 
     @Override
-    public DataStore createNewDataStore(Map<String, ?> params) throws IOException {
+    public DataStore createNewDataStore(Map<String, ?> params) {
         throw new UnsupportedOperationException();
     }
 

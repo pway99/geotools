@@ -25,7 +25,6 @@ import static org.junit.Assert.assertTrue;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
@@ -315,7 +314,7 @@ public class WorldImageReaderTest extends WorldImageBaseTestCase {
      * @param source Object
      */
     private void read(Object source)
-            throws FileNotFoundException, IOException, IllegalArgumentException {
+            throws IOException, IllegalArgumentException {
 
         // can we read it?
         assertTrue(new WorldImageFormat().accepts(source));

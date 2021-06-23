@@ -81,7 +81,7 @@ public class BBOXTypeBinding extends OGCBBOXTypeBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         BBOX box = (BBOX) object;
 
         if (FES.expression.equals(name)) {
@@ -92,8 +92,7 @@ public class BBOXTypeBinding extends OGCBBOXTypeBinding {
     }
 
     @Override
-    public List<Object[]> getProperties(Object object, XSDElementDeclaration element)
-            throws Exception {
+    public List<Object[]> getProperties(Object object, XSDElementDeclaration element) {
         BBOX box = (BBOX) object;
 
         List<Object[]> properties = new ArrayList<>();

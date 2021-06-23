@@ -98,8 +98,7 @@ public class CassiniSoldner extends MapProjection {
      * the result in {@code ptDst} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D transformNormalized(double lam, double phi, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double lam, double phi, Point2D ptDst) {
         double sinphi = Math.sin(phi);
         double cosphi = Math.cos(phi);
 
@@ -133,8 +132,7 @@ public class CassiniSoldner extends MapProjection {
 
         /** {@inheritDoc} */
         @Override
-        protected Point2D transformNormalized(double x, double y, Point2D ptDst)
-                throws ProjectionException {
+        protected Point2D transformNormalized(double x, double y, Point2D ptDst) {
             double x1 = Math.asin(Math.cos(y) * Math.sin(x));
             double y1 = Math.atan2(Math.tan(y), Math.cos(x)) - latitudeOfOrigin;
             if (ptDst != null) {
@@ -146,8 +144,7 @@ public class CassiniSoldner extends MapProjection {
 
         /** {@inheritDoc} */
         @Override
-        protected Point2D inverseTransformNormalized(double x, double y, Point2D ptDst)
-                throws ProjectionException {
+        protected Point2D inverseTransformNormalized(double x, double y, Point2D ptDst) {
             double dd = y + latitudeOfOrigin;
             double phi = Math.asin(Math.sin(dd) * Math.cos(x));
             double lam = Math.atan2(Math.tan(x), Math.cos(dd));

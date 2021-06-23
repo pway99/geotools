@@ -217,7 +217,7 @@ public class RasterAsPointCollectionProcess implements RasterProcess {
         /** Class used for calculating the GridConvergence Angle */
         private GridConvergenceAngleCalc gridConvergenceAngleManager;
 
-        public RasterAsPointFeatureCollection(final GridCoverage2D gc2d) throws IOException {
+        public RasterAsPointFeatureCollection(final GridCoverage2D gc2d) {
             this(gc2d, false, gc2d.getCoordinateReferenceSystem2D());
         }
 
@@ -539,7 +539,7 @@ public class RasterAsPointCollectionProcess implements RasterProcess {
          *
          * @param point Input Point to handle.
          */
-        private void gridConvergenceAngleManagement(Point point) throws Exception {
+        private void gridConvergenceAngleManagement(Point point) {
             // If the GridConvergence Angle correction is not requested, then nothing is done
             if (fc.gridConvergenceAngleCorrectionNeeded) {
 

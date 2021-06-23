@@ -73,7 +73,7 @@ public class SimpleFeatureIO {
     }
 
     /** Writes the feature to the file */
-    public void write(SimpleFeature sf) throws IOException {
+    public void write(SimpleFeature sf) {
         // write each attribute in the random access file
         List<AttributeDescriptor> attributes = schema.getAttributeDescriptors();
         // write feature id
@@ -345,7 +345,7 @@ public class SimpleFeatureIO {
         }
 
         @Override
-        public void write(byte[] bytes, int len) throws IOException {
+        public void write(byte[] bytes, int len) {
             if (position + len >= buffer.length) {
                 grow(position + len);
             }

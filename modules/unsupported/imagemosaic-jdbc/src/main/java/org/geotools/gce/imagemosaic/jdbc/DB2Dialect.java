@@ -88,7 +88,7 @@ public class DB2Dialect extends DBDialect {
      * @see org.geotools.gce.imagemosaic.jdbc.DBDialect#getCreateIndexStatement(java.lang.String)
      */
     @Override
-    protected String getCreateIndexStatement(String tn) throws Exception {
+    protected String getCreateIndexStatement(String tn) {
         return "CREATE  INDEX IX_"
                 + tn
                 + " ON "

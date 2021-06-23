@@ -16,10 +16,8 @@
  */
 package org.geotools.geojson;
 
-import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import org.json.simple.parser.ParseException;
 
 @SuppressWarnings("PMD.SystemPrintln")
 public class TracingHandler implements InvocationHandler {
@@ -63,48 +61,48 @@ public class TracingHandler implements InvocationHandler {
         return method.invoke(delegate, args);
     }
 
-    void startJSON() throws ParseException, IOException {}
+    void startJSON() {}
 
-    void endJSON() throws ParseException, IOException {}
+    void endJSON() {}
 
-    boolean startObject() throws ParseException, IOException {
+    boolean startObject() {
         // indent();
         System.out.println("{");
         indent++;
         return true;
     }
 
-    boolean endObject() throws ParseException, IOException {
+    boolean endObject() {
         indent--;
         indent();
         System.out.print("}");
         return true;
     }
 
-    boolean startObjectEntry(String key) throws ParseException, IOException {
+    boolean startObjectEntry(String key) {
         indent();
         System.out.print(key + ": ");
         return true;
     }
 
-    boolean endObjectEntry() throws ParseException, IOException {
+    boolean endObjectEntry() {
         System.out.println(",");
         return true;
     }
 
-    boolean startArray() throws ParseException, IOException {
+    boolean startArray() {
         // indent();
         System.out.print("[");
         return true;
     }
 
-    boolean endArray() throws ParseException, IOException {
+    boolean endArray() {
         // indent();
         System.out.print("]");
         return true;
     }
 
-    boolean primitive(Object value) throws ParseException, IOException {
+    boolean primitive(Object value) {
         System.out.print(value);
         return true;
     }

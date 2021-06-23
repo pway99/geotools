@@ -35,7 +35,7 @@ public class NameConverterFactory implements ConverterFactory {
             return new Converter() {
 
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     Name name = (Name) source;
                     return target.cast(name.getURI());
                 }
@@ -45,7 +45,7 @@ public class NameConverterFactory implements ConverterFactory {
             return new Converter() {
 
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     String str = (String) source;
                     String[] split = str.split(":");
                     if (split.length == 2) {

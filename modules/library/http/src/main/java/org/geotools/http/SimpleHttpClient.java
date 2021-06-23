@@ -254,7 +254,7 @@ public class SimpleHttpClient implements HTTPClient {
 
         /** @see org.geotools.data.ows.HTTPResponse#getResponseStream() */
         @Override
-        public InputStream getResponseStream() throws IOException {
+        public InputStream getResponseStream() {
             return responseStream;
         }
 

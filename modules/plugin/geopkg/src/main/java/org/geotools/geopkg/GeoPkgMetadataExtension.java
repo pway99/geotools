@@ -231,7 +231,7 @@ public class GeoPkgMetadataExtension extends GeoPkgExtension {
         }
     }
 
-    private GeoPkgMetadataReference.Scope getReferenceScope(String scope) throws SQLException {
+    private GeoPkgMetadataReference.Scope getReferenceScope(String scope) {
         if (scope != null) {
             Optional<GeoPkgMetadataReference.Scope> enumValue =
                     Arrays.stream(GeoPkgMetadataReference.Scope.values())

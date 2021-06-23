@@ -134,7 +134,7 @@ class RubberSheetTransform extends AbstractMathTransform implements MathTransfor
      * @return Triangle containing p
      * @throws TransformException if points are outside the area of TIN.
      */
-    private TINTriangle searchTriangle(DirectPosition p) throws TransformException {
+    private TINTriangle searchTriangle(DirectPosition p) {
         /* Optimization for finding triangles.
          * Assuming the point are close to each other -
          * so why not to check if next point is in the same triangle as previous one.

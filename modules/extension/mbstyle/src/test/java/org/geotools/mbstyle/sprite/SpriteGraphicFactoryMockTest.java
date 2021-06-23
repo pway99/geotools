@@ -35,12 +35,12 @@ public class SpriteGraphicFactoryMockTest {
             SpriteGraphicFactoryMockTest.class.getResource("test-data/liberty/osm-liberty.json");
 
     @Before
-    public void setup() throws Exception {
+    public void setup() {
         Hints.putSystemDefault(Hints.HTTP_CLIENT_FACTORY, SpriteMockHttpClientFactory.class);
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         Hints.removeSystemDefault(Hints.HTTP_CLIENT_FACTORY);
     }
 

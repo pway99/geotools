@@ -29,7 +29,7 @@ public class IngresSkipColumnTestSetup extends JDBCSkipColumnTestSetup {
     }
 
     @Override
-    protected void dropSkipColumnTable() throws Exception {
+    protected void dropSkipColumnTable() {
         runSafe("DROP TABLE \"skipcolumn\"");
         runSafe("DROP SEQUENCE skipcolumn_fid_sequence");
     }

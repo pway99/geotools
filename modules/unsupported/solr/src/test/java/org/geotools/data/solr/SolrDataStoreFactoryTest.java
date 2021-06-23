@@ -31,7 +31,7 @@ public class SolrDataStoreFactoryTest {
     SolrDataStoreFactory dataStoreFactory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         dataStoreFactory = new SolrDataStoreFactory();
     }
 

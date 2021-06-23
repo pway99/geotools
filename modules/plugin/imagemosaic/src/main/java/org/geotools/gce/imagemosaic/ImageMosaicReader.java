@@ -482,7 +482,7 @@ public class ImageMosaicReader extends AbstractGridCoverage2DReader
         setGridGeometry(null, granuleCatalog, typeName);
     }
 
-    private void extractProperties(final MosaicConfigurationBean configuration) throws IOException {
+    private void extractProperties(final MosaicConfigurationBean configuration) {
 
         // resolutions levels
         numOverviews = configuration.getLevelsNum() - 1;
@@ -789,8 +789,7 @@ public class ImageMosaicReader extends AbstractGridCoverage2DReader
 
     @Override
     public double[] getReadingResolutions(
-            String coverageName, OverviewPolicy policy, double[] requestedResolution)
-            throws IOException {
+            String coverageName, OverviewPolicy policy, double[] requestedResolution) {
         coverageName = checkUnspecifiedCoverage(coverageName);
         RasterManager manager = getRasterManager(coverageName);
         DatasetLayout datasetLayout = getDatasetLayout(coverageName);
@@ -873,7 +872,7 @@ public class ImageMosaicReader extends AbstractGridCoverage2DReader
 
     @Override
     public GranuleSource getGranules(String coverageName, final boolean readOnly)
-            throws IOException, UnsupportedOperationException {
+            throws UnsupportedOperationException {
         if (coverageName == null) {
             coverageName = defaultName;
         }
@@ -998,7 +997,7 @@ public class ImageMosaicReader extends AbstractGridCoverage2DReader
     }
 
     @Override
-    public ImageLayout getImageLayout(String coverageName) throws IOException {
+    public ImageLayout getImageLayout(String coverageName) {
         String name = checkUnspecifiedCoverage(coverageName);
         RasterManager manager = getRasterManager(name);
         return manager.defaultImageLayout;
@@ -1010,7 +1009,7 @@ public class ImageMosaicReader extends AbstractGridCoverage2DReader
     }
 
     @Override
-    public double[][] getResolutionLevels(String coverageName) throws IOException {
+    public double[][] getResolutionLevels(String coverageName) {
         String name = checkUnspecifiedCoverage(coverageName);
         RasterManager manager = getRasterManager(name);
         return manager.levels;
@@ -1063,8 +1062,7 @@ public class ImageMosaicReader extends AbstractGridCoverage2DReader
     }
 
     @Override
-    public List<DimensionDescriptor> getDimensionDescriptors(String coverageName)
-            throws IOException {
+    public List<DimensionDescriptor> getDimensionDescriptors(String coverageName) {
         if (coverageName == null) {
             coverageName = defaultName;
         }

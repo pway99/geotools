@@ -55,7 +55,7 @@ public class H2LobTestSetup extends JDBCLobTestSetup {
     }
 
     @Override
-    protected void dropLobTable() throws Exception {
+    protected void dropLobTable() {
         runSafe("DROP TABLE \"testlob\"");
     }
 }

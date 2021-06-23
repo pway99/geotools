@@ -40,7 +40,7 @@ public class OracleFilterToSqlTest {
     GeometryFactory gf;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         encoder = new OracleFilterToSQL(null);
         ff = CommonFactoryFinder.getFilterFactory2(null);
         gf = new GeometryFactory();

@@ -55,7 +55,7 @@ public class ExecuteTest extends XMLTestSupport {
 
     @SuppressWarnings("unchecked")
     @Test
-    public void testExecuteEncode() throws Exception {
+    public void testExecuteEncode() {
         Wps10Factory f = Wps10Factory.eINSTANCE;
         ExecuteType ex = f.createExecuteType();
 
@@ -84,7 +84,7 @@ public class ExecuteTest extends XMLTestSupport {
 
     @SuppressWarnings("unchecked")
     @Test
-    public void testExecuteResponse() throws Exception {
+    public void testExecuteResponse() {
         Wps10Factory f = Wps10Factory.eINSTANCE;
         ExecuteResponseType response = f.createExecuteResponseType();
 
@@ -111,7 +111,7 @@ public class ExecuteTest extends XMLTestSupport {
     }
 
     @Test
-    public void testExecuteResponseProgress() throws Exception {
+    public void testExecuteResponseProgress() {
         Wps10Factory f = Wps10Factory.eINSTANCE;
         ExecuteResponseType response = f.createExecuteResponseType();
         StatusType status = f.createStatusType();

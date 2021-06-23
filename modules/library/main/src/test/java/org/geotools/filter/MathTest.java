@@ -36,7 +36,7 @@ import org.opengis.feature.simple.SimpleFeatureType;
 public class MathTest {
     SimpleFeatureType schema = null;
 
-    public SimpleFeature[] sampleFeatures() throws Exception {
+    public SimpleFeature[] sampleFeatures() {
         SimpleFeatureTypeBuilder ftb = new SimpleFeatureTypeBuilder();
         ftb.add("value", Integer.class);
         ftb.add("geometry", Geometry.class);
@@ -72,7 +72,7 @@ public class MathTest {
     }
 
     @Test
-    public void testTypeMissmatch() throws Exception {
+    public void testTypeMissmatch() {
         SimpleFeature[] f = sampleFeatures();
 
         // the following are intentionaly backwards
@@ -98,7 +98,7 @@ public class MathTest {
     }
 
     @Test
-    public void testSetupAndExtraction() throws Exception {
+    public void testSetupAndExtraction() {
         // this should move out to a more configurable system run from scripts
         // but we can start with a set of hard coded tests
         SimpleFeature[] f = sampleFeatures();

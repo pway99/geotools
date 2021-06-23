@@ -16,8 +16,6 @@
  */
 package org.geotools.data.db2;
 
-import java.io.IOException;
-import java.sql.SQLException;
 import org.geotools.jdbc.JDBCFeatureStoreOnlineTest;
 import org.geotools.jdbc.JDBCTestSetup;
 
@@ -33,12 +31,12 @@ public class DB2FeatureStoreOnlineTest extends JDBCFeatureStoreOnlineTest {
     }
 
     @Override
-    public void testAddInTransaction() throws IOException {
+    public void testAddInTransaction() {
         // Skip, DB2 does a lock escalation resulting in a table lock
     }
 
     @Override
-    public void testExternalConnection() throws IOException, SQLException {
+    public void testExternalConnection() {
         // skip, never comes back
     }
 }

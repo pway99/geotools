@@ -83,7 +83,7 @@ public class PropertyDataStore3DTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         File dir = new File("target", "threeDimensionsTestData");
         for (File file : dir.listFiles()) {
             file.delete();

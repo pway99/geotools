@@ -61,7 +61,7 @@ public class MLMailsTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         ArrayList<Object> list = new ArrayList<>();
         List<Node> children = node.getChildren();
 
@@ -73,7 +73,7 @@ public class MLMailsTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if ("mail".equals(name.getLocalPart())) {
             return object;
         }

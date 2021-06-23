@@ -51,7 +51,7 @@ public class QuantileFunctionTest extends FunctionTestSupport {
     }
 
     @Test
-    public void testSetParameters() throws Exception {
+    public void testSetParameters() {
         Literal classes = ff.literal(3);
         PropertyName expr = ff.property("foo");
         QuantileFunction func = (QuantileFunction) ff.function("Quantile", expr, classes);
@@ -66,7 +66,7 @@ public class QuantileFunctionTest extends FunctionTestSupport {
     }
 
     @Test
-    public void testEvaluateWithExpressions() throws Exception {
+    public void testEvaluateWithExpressions() {
         Literal classes = ff.literal(2);
         PropertyName exp = ff.property("foo");
         Function func = ff.function("Quantile", exp, classes);
@@ -155,7 +155,7 @@ public class QuantileFunctionTest extends FunctionTestSupport {
     }
 
     @Test
-    public void testEvaluateWithStrings() throws Exception {
+    public void testEvaluateWithStrings() {
         org.opengis.filter.expression.Expression function =
                 ff.function("Quantile", ff.property("group"), ff.literal(2));
         Classifier classifier = (Classifier) function.evaluate(featureCollection);

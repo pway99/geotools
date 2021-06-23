@@ -16,7 +16,6 @@
  */
 package org.geotools.data.oracle;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -42,18 +41,17 @@ class SDO11OracleDialect extends OracleDialect {
 
     @Override
     Geometry readGeometry(ResultSet rs, String column, GeometryFactory factory, Connection cx)
-            throws IOException, SQLException {
+            throws SQLException {
         return readGeometry(rs.getBytes(column), factory, cx);
     }
 
     @Override
     Geometry readGeometry(ResultSet rs, int column, GeometryFactory factory, Connection cx)
-            throws IOException, SQLException {
+            throws SQLException {
         return readGeometry(rs.getBytes(column), factory, cx);
     }
 
-    private Geometry readGeometry(byte[] rawGeometry, GeometryFactory factory, Connection cx)
-            throws SQLException {
+    private Geometry readGeometry(byte[] rawGeometry, GeometryFactory factory, Connection cx) {
         if (rawGeometry == null) return null;
 
         throw new UnsupportedOperationException(

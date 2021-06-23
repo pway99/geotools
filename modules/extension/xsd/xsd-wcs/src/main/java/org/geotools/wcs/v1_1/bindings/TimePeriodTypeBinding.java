@@ -84,7 +84,7 @@ public class TimePeriodTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Instant begining = new DefaultInstant((Position) node.getChild("BeginPosition").getValue());
         Instant ending = new DefaultInstant((Position) node.getChild("EndPosition").getValue());
 
@@ -100,7 +100,7 @@ public class TimePeriodTypeBinding extends AbstractComplexBinding {
      *      org.w3c.dom.Document, org.w3c.dom.Element)
      */
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         Period timePeriod = (Period) object;
 
         if (timePeriod == null) {

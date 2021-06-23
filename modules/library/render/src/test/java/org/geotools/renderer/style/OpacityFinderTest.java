@@ -13,7 +13,7 @@ import org.junit.Test;
 public class OpacityFinderTest {
 
     @Test
-    public void testRasterOpacity() throws Exception {
+    public void testRasterOpacity() {
         StyleFactory factory = CommonFactoryFinder.getStyleFactory(null);
         URL styleURL = TestData.getResource(this, "raster.sld");
 
@@ -29,7 +29,7 @@ public class OpacityFinderTest {
     }
 
     @Test
-    public void testColorMapOpacity() throws Exception {
+    public void testColorMapOpacity() {
         StyleFactory factory = CommonFactoryFinder.getStyleFactory(null);
         URL styleURL = TestData.getResource(this, "raster-cmalpha.sld");
 

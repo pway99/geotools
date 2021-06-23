@@ -275,8 +275,7 @@ enum ReadType {
                 final File rasterFile,
                 final Rectangle readDimension,
                 final Dimension tileDimension,
-                final ImageReaderSpi spi)
-                throws IOException {
+                final ImageReaderSpi spi) {
             throw new UnsupportedOperationException(
                     Errors.format(ErrorKeys.UNSUPPORTED_OPERATION_$1, "read"));
         }

@@ -32,7 +32,7 @@ public class GDALGridFormatFactorySpiTest {
             org.geotools.util.logging.Logging.getLogger(GDALGridFormatFactorySpiTest.class);
 
     @Test
-    public void test() throws Exception {
+    public void test() {
         final BaseGridFormatFactorySPI spi = new BaseGridFormatFactorySPI();
         Assert.assertTrue(spi.createFormat() instanceof UnknownFormat);
         Assert.assertFalse(spi.isAvailable());

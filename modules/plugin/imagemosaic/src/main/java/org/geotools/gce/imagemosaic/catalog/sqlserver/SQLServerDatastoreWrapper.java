@@ -119,14 +119,13 @@ public class SQLServerDatastoreWrapper extends DataStoreWrapper {
     }
 
     @Override
-    protected FeatureTypeMapper getFeatureTypeMapper(SimpleFeatureType featureType)
-            throws Exception {
+    protected FeatureTypeMapper getFeatureTypeMapper(SimpleFeatureType featureType) {
         return new SQLServerTypeMapper(featureType);
     }
 
     @Override
     protected SimpleFeatureSource transformFeatureStore(
-            SimpleFeatureStore store, FeatureTypeMapper mapper) throws IOException {
+            SimpleFeatureStore store, FeatureTypeMapper mapper) {
         SimpleFeatureSource transformedSource = mapper.getSimpleFeatureSource();
         if (transformedSource != null) {
             return transformedSource;

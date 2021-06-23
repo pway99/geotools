@@ -69,7 +69,7 @@ public abstract class CursorToolTestBase extends GraphicsTestBase {
                         new GuiQuery<JFrame>() {
 
                             @Override
-                            protected JFrame executeInEDT() throws Throwable {
+                            protected JFrame executeInEDT() {
                                 JFrame frame = new JFrame("Cursor tool test");
                                 mapPane = new JMapPane(mapContent);
                                 mapPane.setPreferredSize(

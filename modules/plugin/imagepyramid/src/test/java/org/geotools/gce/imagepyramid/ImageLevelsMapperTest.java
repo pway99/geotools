@@ -25,7 +25,6 @@ import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Properties;
 import org.apache.commons.io.filefilter.FileFilterUtils;
@@ -46,7 +45,6 @@ import org.opengis.geometry.MismatchedDimensionException;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.InvalidParameterValueException;
 import org.opengis.parameter.ParameterValue;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 
 /** Test the resolutionLevel-to-ImageMosaicReader mapping machinery. */
 public class ImageLevelsMapperTest extends Assert {
@@ -67,8 +65,8 @@ public class ImageLevelsMapperTest extends Assert {
 
     @Test
     public void multicoveragePyramidWithOverviews()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException,
-                    InvalidParameterValueException, ParseException {
+            throws IOException, MismatchedDimensionException,
+                    InvalidParameterValueException {
 
         //
         // Get the resource.

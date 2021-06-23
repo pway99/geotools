@@ -52,7 +52,7 @@ public class MBFunctionFactoryTest {
     }
 
     @Test
-    public void colorFunction() throws Exception {
+    public void colorFunction() {
         Function expr = (Function) ECQL.toExpression("css('#ff0000')");
         assertEquals("hex", Color.red, expr.evaluate(null, Color.class));
         assertEquals("hex", "#FF0000", expr.evaluate(null, String.class));
@@ -67,7 +67,7 @@ public class MBFunctionFactoryTest {
     }
 
     @Test
-    public void colorFunctionNoContext() throws Exception {
+    public void colorFunctionNoContext() {
         Function expr = (Function) ECQL.toExpression("css('#ff0000')");
         assertEquals("hex", Color.red, expr.evaluate(null));
     }
@@ -99,7 +99,7 @@ public class MBFunctionFactoryTest {
     }
 
     @Test
-    public void exponentialFunctionNumeric() throws Exception {
+    public void exponentialFunctionNumeric() {
         //
         // base 1.0 works as a simple interpolate
         //
@@ -138,7 +138,7 @@ public class MBFunctionFactoryTest {
     }
 
     @Test
-    public void expontentialFunctionColor() throws Exception {
+    public void expontentialFunctionColor() {
         //
         // base 1.0 works as a simple interpolate
         //
@@ -179,7 +179,7 @@ public class MBFunctionFactoryTest {
 
     /** A function must implement evaluate(Object) without a target, Exponential did not */
     @Test
-    public void exponentialFunctionContext() throws Exception {
+    public void exponentialFunctionContext() {
         Function expColor =
                 (Function) ECQL.toExpression("Exponential( 0, 1.0, 0,'#000000', 10,'#ffffff')");
         assertEquals(Color.BLACK, expColor.evaluate(null));
@@ -239,7 +239,7 @@ public class MBFunctionFactoryTest {
 
     /** Same as above, but without providing a target context class. Used to throw an exception */
     @Test
-    public void defaultIfNullNoContextTest() throws Exception {
+    public void defaultIfNullNoContextTest() {
         Function f = (Function) ECQL.toExpression("DefaultIfNull('#FF0000', '#000000')");
         assertEquals("#FF0000", f.evaluate(null));
 
@@ -249,7 +249,7 @@ public class MBFunctionFactoryTest {
 
     /** Tests for {@link ZoomLevelFunction}, converting scale 3857 denominators to zoom levels. */
     @Test
-    public void zoomFunctionTest() throws Exception {
+    public void zoomFunctionTest() {
         double tol = .00000001;
 
         Function f =
@@ -284,7 +284,7 @@ public class MBFunctionFactoryTest {
     }
 
     @Test
-    public void stringTransformFunctionTest() throws Exception {
+    public void stringTransformFunctionTest() {
         Function f = (Function) ECQL.toExpression("StringTransform('SoMeString', 'uppercase')");
         assertEquals("SOMESTRING", f.evaluate(null, String.class));
 
@@ -317,13 +317,13 @@ public class MBFunctionFactoryTest {
     }
 
     @Test
-    public void stringTransformFunctionTestNoContext() throws Exception {
+    public void stringTransformFunctionTestNoContext() {
         Function f = (Function) ECQL.toExpression("StringTransform('SoMeString', 'uppercase')");
         assertEquals("SOMESTRING", f.evaluate(null));
     }
 
     @Test
-    public void testFontFunctions() throws Exception {
+    public void testFontFunctions() {
         FontCache fc = FontCache.getDefaultInstance();
         fc.registerFont(loadFont("DroidSansArmenian.ttf"));
         fc.registerFont(loadFont("DroidSansFallback.ttf"));

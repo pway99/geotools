@@ -477,7 +477,7 @@ public class VPFLibrary extends ContentDataStore {
     }
 
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         // return Collections.singletonList(getTypeName());
         return this.getNames();
     }
@@ -535,7 +535,7 @@ public class VPFLibrary extends ContentDataStore {
         return this.directory;
     }
 
-    public SimpleFeatureType getTypeSchema(String typeName) throws IOException {
+    public SimpleFeatureType getTypeSchema(String typeName) {
         // Look through all of the coverages to find a matching feature type
         SimpleFeatureType result = null;
         Iterator<VPFCoverage> coverageIter = coverages.iterator();

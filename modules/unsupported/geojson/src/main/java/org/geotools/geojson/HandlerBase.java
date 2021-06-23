@@ -16,50 +16,48 @@
  */
 package org.geotools.geojson;
 
-import java.io.IOException;
 import org.json.simple.parser.ContentHandler;
-import org.json.simple.parser.ParseException;
 
 public class HandlerBase implements ContentHandler {
 
     @Override
-    public void startJSON() throws ParseException, IOException {}
+    public void startJSON() {}
 
     @Override
-    public void endJSON() throws ParseException, IOException {}
+    public void endJSON() {}
 
     @Override
-    public boolean startObject() throws ParseException, IOException {
+    public boolean startObject() {
         return true;
     }
 
     @Override
-    public boolean endObject() throws ParseException, IOException {
+    public boolean endObject() {
         return true;
     }
 
     @Override
-    public boolean startObjectEntry(String key) throws ParseException, IOException {
+    public boolean startObjectEntry(String key) {
         return true;
     }
 
     @Override
-    public boolean endObjectEntry() throws ParseException, IOException {
+    public boolean endObjectEntry() {
         return true;
     }
 
     @Override
-    public boolean startArray() throws ParseException, IOException {
+    public boolean startArray() {
         return true;
     }
 
     @Override
-    public boolean endArray() throws ParseException, IOException {
+    public boolean endArray() {
         return true;
     }
 
     @Override
-    public boolean primitive(Object value) throws ParseException, IOException {
+    public boolean primitive(Object value) {
         return true;
     }
 }

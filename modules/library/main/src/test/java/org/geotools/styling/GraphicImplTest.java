@@ -25,7 +25,7 @@ public class GraphicImplTest {
 
     /** Checks if creating a Graphic with an ExternalGraphics works. */
     @Test
-    public void testWithExternalGraphics() throws Exception {
+    public void testWithExternalGraphics() {
         StyleBuilder sb = new StyleBuilder();
 
         URL urlExternal = getClass().getResource("/data/sld/blob.gif");
@@ -37,7 +37,7 @@ public class GraphicImplTest {
 
     /** Checks if the Displacement settings are exported to XML */
     @Test
-    public void testDisplacement() throws Exception {
+    public void testDisplacement() {
         StyleBuilder sb = new StyleBuilder();
 
         Graphic graphic;

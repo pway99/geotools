@@ -39,7 +39,7 @@ public class BasicGraphSerializerTest {
     private SerializedReaderWriter m_serializer;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         m_builder = createBuilder();
         m_rebuilder = createRebuilder();

@@ -114,7 +114,7 @@ public class BoreholeTest extends AppSchemaTestSupport {
     }
 
     /** @param location schema location path discoverable through getClass().getResource() */
-    private SchemaIndex loadSchema(String location) throws IOException {
+    private SchemaIndex loadSchema(String location) {
         // load needed GML types directly from the gml schemas
         URL schemaLocation = getClass().getResource(location);
         assertNotNull(location, schemaLocation);

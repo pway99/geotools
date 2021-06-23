@@ -39,8 +39,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.ParameterValue;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 
 /**
  * @author Daniele Romagnoli, GeoSolutions
@@ -58,7 +56,7 @@ public final class VRTTest extends GDALTestCase {
     }
 
     @Test
-    public void testService() throws NoSuchAuthorityCodeException, FactoryException {
+    public void testService() {
         if (!testingEnabled()) {
             return;
         }

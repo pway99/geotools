@@ -79,7 +79,7 @@ public class ComplexSupportXSAnyTypeBinding extends XSAnyTypeBinding {
 
     /** @see AbstractComplexBinding#getProperty(java.lang.Object, javax.xml.namespace.QName) */
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (object instanceof ComplexAttribute) {
             ComplexAttribute complex = (ComplexAttribute) object;
             Property property = complex.getProperty(toTypeName(name));
@@ -107,8 +107,7 @@ public class ComplexSupportXSAnyTypeBinding extends XSAnyTypeBinding {
      *     org.eclipse.xsd.XSDElementDeclaration)
      */
     @Override
-    public List<Object[]> getProperties(Object object, XSDElementDeclaration element)
-            throws Exception {
+    public List<Object[]> getProperties(Object object, XSDElementDeclaration element) {
         if (object == null) {
             return null;
         }
@@ -384,7 +383,7 @@ public class ComplexSupportXSAnyTypeBinding extends XSAnyTypeBinding {
      *     org.w3c.dom.Element)
      */
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         if (object instanceof ComplexAttribute) {
             ComplexAttribute complex = (ComplexAttribute) object;
             if (complex.getProperties().size() == 1) {

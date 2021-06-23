@@ -50,7 +50,7 @@ public class StandardDeviationFunctionTest extends FunctionTestSupport {
     }
 
     @Test
-    public void testSetNumberOfClasses() throws Exception {
+    public void testSetNumberOfClasses() {
         LOGGER.finer("testSetNumberOfClasses");
 
         Literal classes = ff.literal(3);

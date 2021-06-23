@@ -68,7 +68,7 @@ public abstract class AbstractManageableDataSource implements ManageableDataSour
     }
 
     @Override
-    public boolean isWrapperFor(Class c) throws SQLException {
+    public boolean isWrapperFor(Class c) {
         return false;
     }
 

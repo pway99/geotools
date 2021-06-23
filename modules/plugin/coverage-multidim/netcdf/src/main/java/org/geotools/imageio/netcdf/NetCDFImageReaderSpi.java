@@ -147,7 +147,7 @@ public class NetCDFImageReaderSpi extends ImageReaderSpi {
 
     /** @see javax.imageio.spi.ImageReaderSpi#createReaderInstance(java.lang.Object) */
     @Override
-    public ImageReader createReaderInstance(Object extension) throws IOException {
+    public ImageReader createReaderInstance(Object extension) {
         return new NetCDFImageReader(this);
     }
 

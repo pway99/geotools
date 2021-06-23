@@ -302,7 +302,7 @@ public class ExtractBoundsFilterVisitorTest extends TemporalFilterTestSupport {
     }
 
     @Test
-    public void testAndIsNull() throws Exception {
+    public void testAndIsNull() {
         final Filter f =
                 ff.and(ff.bbox("geom", -10, -10, 10, 10, null), ff.isNull(ff.literal("someDate")));
         final Envelope env = (Envelope) f.accept(visitor, null);
@@ -310,7 +310,7 @@ public class ExtractBoundsFilterVisitorTest extends TemporalFilterTestSupport {
     }
 
     @Test
-    public void testAndIsNil() throws Exception {
+    public void testAndIsNil() {
         final Filter f =
                 ff.and(
                         ff.bbox("geom", -10, -10, 10, 10, null),

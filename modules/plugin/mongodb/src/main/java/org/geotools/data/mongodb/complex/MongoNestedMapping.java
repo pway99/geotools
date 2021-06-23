@@ -242,17 +242,17 @@ public class MongoNestedMapping extends NestedAttributeMapping {
         public void removeFeatureListener(FeatureListener listener) {}
 
         @Override
-        public FeatureCollection<T, F> getFeatures(Filter filter) throws IOException {
+        public FeatureCollection<T, F> getFeatures(Filter filter) {
             return features;
         }
 
         @Override
-        public FeatureCollection<T, F> getFeatures(Query query) throws IOException {
+        public FeatureCollection<T, F> getFeatures(Query query) {
             return features;
         }
 
         @Override
-        public FeatureCollection<T, F> getFeatures() throws IOException {
+        public FeatureCollection<T, F> getFeatures() {
             return features;
         }
 
@@ -262,17 +262,17 @@ public class MongoNestedMapping extends NestedAttributeMapping {
         }
 
         @Override
-        public ReferencedEnvelope getBounds() throws IOException {
+        public ReferencedEnvelope getBounds() {
             return features.getBounds();
         }
 
         @Override
-        public ReferencedEnvelope getBounds(Query query) throws IOException {
+        public ReferencedEnvelope getBounds(Query query) {
             return features.getBounds();
         }
 
         @Override
-        public int getCount(Query query) throws IOException {
+        public int getCount(Query query) {
             return features.size();
         }
 

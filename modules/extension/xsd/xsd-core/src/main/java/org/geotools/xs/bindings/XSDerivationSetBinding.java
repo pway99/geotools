@@ -90,7 +90,7 @@ public class XSDerivationSetBinding implements SimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         // TODO: implement me
         return null;
     }

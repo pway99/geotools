@@ -136,7 +136,7 @@ public class SDMXDimensionFeatureReader extends SDMXFeatureReader {
      * @see FeatureReader#next()
      */
     @Override
-    public SimpleFeature next() throws NoSuchElementException, IOException {
+    public SimpleFeature next() throws NoSuchElementException {
 
         if (this.hasNext() == false) {
             return null;

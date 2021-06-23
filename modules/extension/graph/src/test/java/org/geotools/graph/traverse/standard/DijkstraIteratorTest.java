@@ -39,7 +39,7 @@ public class DijkstraIteratorTest {
     public GraphBuilder m_directed_builder;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         m_builder = createBuilder();
         m_directed_builder = createDirectedBuilder();

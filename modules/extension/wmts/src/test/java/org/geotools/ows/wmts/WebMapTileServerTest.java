@@ -205,7 +205,7 @@ public class WebMapTileServerTest {
     private static class CheckHeadersHttpClient extends AbstractHttpClient {
 
         @Override
-        public HTTPResponse get(URL url) throws IOException {
+        public HTTPResponse get(URL url) {
             throw new RuntimeException("This method should not have been called.");
         }
 
@@ -223,8 +223,7 @@ public class WebMapTileServerTest {
         }
 
         @Override
-        public HTTPResponse post(URL url, InputStream content, String contentType)
-                throws IOException {
+        public HTTPResponse post(URL url, InputStream content, String contentType) {
             throw new RuntimeException("This method should not have been called.");
         }
     }

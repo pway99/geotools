@@ -16,7 +16,6 @@
  */
 package org.geotools.ows.wms.xml;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -111,8 +110,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             org.geotools.data.ows.OperationType operationType = null;
 
@@ -154,7 +152,7 @@ public class WMSComplexTypes {
 
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -224,8 +222,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             WMSCapabilities capabilities = null;
             Service service = null;
@@ -288,7 +285,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -358,8 +355,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             WMSCapabilities capabilities = null;
             Service service = null;
@@ -422,7 +418,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -451,7 +447,7 @@ public class WMSComplexTypes {
             new WMSSchema.WMSElement("WBMP", _WBMPType.getInstance(), 0, 1),
             new WMSSchema.WMSElement("MIME", _MIMEType.getInstance(), 0, 1),
             new WMSSchema.WMSElement("INIMAGE", _INIMAGEType.getInstance(), 0, 1),
-            new WMSSchema.WMSElement("BLANK", _BLANKType.getInstance(), 0, 1),
+            new WMSSchema.WMSElement("BLANK", _BLANKType.getInstance(), 0, 1)
         };
 
         // private static Sequence seq = new SequenceGT(elems);
@@ -499,8 +495,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             List<String> strings = new ArrayList<>();
 
             for (ElementValue elementValue : value) {
@@ -553,7 +548,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
 
@@ -644,8 +639,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             Service service = new Service();
 
@@ -740,7 +734,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -796,8 +790,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             String[] keywords = new String[value.length];
 
             for (int i = 0; i < value.length; i++) {
@@ -846,7 +839,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -900,8 +893,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return value[value.length - 1].getValue();
         }
 
@@ -944,7 +936,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
 
@@ -999,8 +991,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             Object keywords = value[value.length - 1].getValue();
             if (keywords == null) {
                 return null;
@@ -1047,7 +1038,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
 
@@ -1117,8 +1108,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             ResponsiblePartyImpl contactPerson = null;
             for (ElementValue elementValue1 : value) {
@@ -1220,7 +1210,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -1277,8 +1267,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             ResponsiblePartyImpl responsibleParty = new ResponsiblePartyImpl();
 
@@ -1331,7 +1320,7 @@ public class WMSComplexTypes {
 
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -1392,8 +1381,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             AddressImpl address = new AddressImpl();
 
             for (ElementValue elementValue : value) {
@@ -1472,7 +1460,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -1542,8 +1530,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             WMSCapabilities capabilities = new WMSCapabilities();
 
             for (ElementValue elementValue : value) {
@@ -1615,7 +1602,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -1665,8 +1652,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return null;
         }
 
@@ -1709,7 +1695,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -1817,8 +1803,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return null;
         }
 
@@ -1861,7 +1846,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -1916,8 +1901,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return null;
             // throw new OperationNotSupportedException();
         }
@@ -1961,7 +1945,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -2042,8 +2026,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             WMSRequest request = new WMSRequest();
 
@@ -2131,7 +2114,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -2187,8 +2170,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return value[0].getValue();
         }
 
@@ -2231,7 +2213,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -2288,8 +2270,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             org.geotools.data.ows.OperationType operationType =
                     new org.geotools.data.ows.OperationType();
 
@@ -2345,7 +2326,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -2413,8 +2394,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             try {
                 return new URL(attrs.getValue("onlineResource"));
@@ -2463,7 +2443,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -2531,8 +2511,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             try {
                 return new URL(attrs.getValue("onlineResource"));
@@ -2581,7 +2560,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -2637,8 +2616,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             String[] formatStrings = new String[value.length];
 
@@ -2691,7 +2669,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -2830,8 +2808,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             List<Layer> childLayers = new ArrayList<>();
 
@@ -3008,7 +2985,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -3068,8 +3045,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             CRSEnvelope bbox = new CRSEnvelope();
 
             for (ElementValue elementValue : value) {
@@ -3129,7 +3105,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -3173,7 +3149,7 @@ public class WMSComplexTypes {
                     Attribute.REQUIRED,
                     null,
                     null,
-                    false),
+                    false)
         };
 
         public static WMSSchema.WMSComplexType getInstance() {
@@ -3218,8 +3194,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             CRSEnvelope bbox = new CRSEnvelope();
 
             bbox.setMinX(Double.parseDouble(attrs.getValue("minx")));
@@ -3269,7 +3244,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -3379,7 +3354,7 @@ public class WMSComplexTypes {
          */
         @Override
         public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+                throws SAXException {
             CRSEnvelope bbox = new CRSEnvelope();
 
             String crs = attrs.getValue("CRS");
@@ -3439,7 +3414,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -3612,7 +3587,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -3693,7 +3668,7 @@ public class WMSComplexTypes {
          */
         @Override
         public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+                throws SAXException {
             String name = attrs.getValue("name");
             if (name == null || name.length() == 0) {
                 throw new SAXException("Dimension element contains no 'name' attribute");
@@ -3751,7 +3726,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
 
@@ -3814,8 +3789,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             String title = null;
             URL onlineResource = null;
@@ -3882,7 +3856,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
 
@@ -3955,8 +3929,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             String widthName = attrs.getValue("width");
             int width;
@@ -4037,7 +4010,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -4113,8 +4086,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             String type = attrs.getValue("type").toString();
             URL url = (URL) value[1].getValue();
             String format = (String) (((Object[]) value[0].getValue())[0]);
@@ -4163,7 +4135,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -4231,8 +4203,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return null;
             // throw new OperationNotSupportedException();
         }
@@ -4276,7 +4247,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
 
@@ -4349,8 +4320,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return null;
             // throw new OperationNotSupportedException();
         }
@@ -4394,7 +4364,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
         /* (non-Javadoc)
@@ -4458,8 +4428,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return null;
             // throw new OperationNotSupportedException();
         }
@@ -4503,7 +4472,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
         /*
@@ -4567,8 +4536,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return null;
             // throw new OperationNotSupportedException();
         }
@@ -4612,7 +4580,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -4674,8 +4642,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             StyleImpl style = new StyleImpl();
             List<String> legendURLS = new ArrayList<>();
 
@@ -4751,7 +4718,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -4813,8 +4780,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             String legendURL = value[1].getValue() == null ? null : value[1].getValue().toString();
             return legendURL;
@@ -4860,7 +4826,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
         /*
@@ -4924,8 +4890,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return null;
             // throw new OperationNotSupportedException();
         }
@@ -4969,7 +4934,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -5026,8 +4991,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return null;
             // throw new OperationNotSupportedException();
         }
@@ -5071,7 +5035,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
         /*
@@ -5141,8 +5105,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             double[] scaleHint = new double[2];
             scaleHint[0] = Double.parseDouble(attrs.getValue("min"));
             scaleHint[1] = Double.parseDouble(attrs.getValue("max"));
@@ -5188,7 +5151,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -5238,8 +5201,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
 
             if (value != null && value.length >= 1) {
                 try {
@@ -5297,7 +5259,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
 
@@ -5345,8 +5307,7 @@ public class WMSComplexTypes {
          * @see org.geotools.xml.schema.Type#getValue(org.geotools.xml.schema.Element, org.geotools.xml.schema.ElementValue[], org.xml.sax.Attributes, java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return new ServiceException((String) value[value.length - 1].getValue(), null);
         }
 
@@ -5383,8 +5344,7 @@ public class WMSComplexTypes {
          * @see org.geotools.xml.schema.Type#encode(org.geotools.xml.schema.Element, java.lang.Object, org.geotools.xml.PrintHandler, java.util.Map)
          */
         @Override
-        public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+        public void encode(Element element, Object value, PrintHandler output, Map hints) {
             // TODO Auto-generated method stub
 
         }
@@ -5433,8 +5393,7 @@ public class WMSComplexTypes {
          * @see org.geotools.xml.schema.Type#getValue(org.geotools.xml.schema.Element, org.geotools.xml.schema.ElementValue[], org.xml.sax.Attributes, java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             /*
              * ServiceExceptions with codes get bumped to the top of the list.
              */
@@ -5503,8 +5462,7 @@ public class WMSComplexTypes {
          * @see org.geotools.xml.schema.Type#encode(org.geotools.xml.schema.Element, java.lang.Object, org.geotools.xml.PrintHandler, java.util.Map)
          */
         @Override
-        public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+        public void encode(Element element, Object value, PrintHandler output, Map hints) {
             // TODO Auto-generated method stub
 
         }
@@ -5552,8 +5510,7 @@ public class WMSComplexTypes {
          * @see org.geotools.xml.schema.Type#getValue(org.geotools.xml.schema.Element, org.geotools.xml.schema.ElementValue[], org.xml.sax.Attributes, java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             String body = (String) value[value.length - 1].getValue();
             String code = attrs.getValue("code");
             String location = attrs.getValue("location");
@@ -5593,8 +5550,7 @@ public class WMSComplexTypes {
          * @see org.geotools.xml.schema.Type#encode(org.geotools.xml.schema.Element, java.lang.Object, org.geotools.xml.PrintHandler, java.util.Map)
          */
         @Override
-        public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+        public void encode(Element element, Object value, PrintHandler output, Map hints) {
             // TODO Auto-generated method stub
 
         }
@@ -5645,8 +5601,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("GIF");
         }
 
@@ -5689,7 +5644,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -5739,8 +5694,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("JPEG");
         }
 
@@ -5783,7 +5737,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -5833,8 +5787,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("PNG");
         }
 
@@ -5877,7 +5830,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -5927,8 +5880,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("PPM");
         }
 
@@ -5971,7 +5923,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -6021,8 +5973,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("TIFF");
         }
 
@@ -6065,7 +6016,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -6115,8 +6066,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("GeoTIFF");
         }
 
@@ -6159,7 +6109,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -6209,8 +6159,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("WebCGM");
         }
 
@@ -6253,7 +6202,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -6303,8 +6252,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("SVG");
         }
 
@@ -6347,7 +6295,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -6397,8 +6345,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("WMS_XML");
         }
 
@@ -6441,7 +6388,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -6491,8 +6438,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("GML.1");
         }
 
@@ -6535,7 +6481,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -6585,8 +6531,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("GML.2");
         }
 
@@ -6629,7 +6574,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -6679,8 +6624,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("GML.3");
         }
 
@@ -6723,7 +6667,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -6773,8 +6717,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("WBMP");
         }
 
@@ -6817,7 +6760,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -6867,8 +6810,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("BMP");
         }
 
@@ -6911,7 +6853,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -6961,8 +6903,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("MIME");
         }
 
@@ -7005,7 +6946,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -7055,8 +6996,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("INIMAGE");
         }
 
@@ -7099,7 +7039,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -7149,8 +7089,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("BLANK");
         }
 
@@ -7193,7 +7132,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -7243,8 +7182,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return WMS1_0_0.toFormatMIME("CW_WKB");
         }
 
@@ -7287,7 +7225,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -7319,8 +7257,7 @@ public class WMSComplexTypes {
         }
 
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return Double.valueOf((String) value[0].getValue());
         }
 
@@ -7341,7 +7278,7 @@ public class WMSComplexTypes {
 
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }
@@ -7395,8 +7332,7 @@ public class WMSComplexTypes {
          *      java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             return Double.valueOf((String) value[0].getValue());
         }
 
@@ -7439,7 +7375,7 @@ public class WMSComplexTypes {
          */
         @Override
         public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException();
         }
     }

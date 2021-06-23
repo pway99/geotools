@@ -80,7 +80,7 @@ public class DomainSubsetTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         DomainSubsetType domainSubset = Wcs10Factory.eINSTANCE.createDomainSubsetType();
 
         SpatialSubsetType spatialSubset = (SpatialSubsetType) node.getChildValue("spatialSubset");

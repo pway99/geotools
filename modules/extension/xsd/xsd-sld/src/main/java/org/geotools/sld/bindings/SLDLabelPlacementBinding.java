@@ -106,7 +106,7 @@ public class SLDLabelPlacementBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // &lt;xsd:choice&gt;
         //      &lt;xsd:element ref="sld:PointPlacement"/&gt;
         //      &lt;xsd:element ref="sld:LinePlacement"/&gt;

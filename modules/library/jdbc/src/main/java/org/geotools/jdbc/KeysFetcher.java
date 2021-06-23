@@ -72,7 +72,7 @@ abstract class KeysFetcher {
             SimpleFeatureType featureType,
             SimpleFeature feature,
             int curFieldPos)
-            throws IOException, SQLException {
+            throws SQLException {
         final List<Object> keyValues = getNextValues(cx, feature);
         for (int i = 0; i < key.getColumns().size(); i++) {
             final PrimaryKeyColumn col = key.getColumns().get(i);
@@ -99,8 +99,7 @@ abstract class KeysFetcher {
             Connection cx,
             SimpleFeatureType featureType,
             SimpleFeature feature,
-            StringBuffer sql)
-            throws IOException, SQLException {
+            StringBuffer sql) {
         BasicSQLDialect dialect = (BasicSQLDialect) ds.getSQLDialect();
         List<Object> keyValues = getNextValues(cx, feature);
         for (int i = 0; i < key.getColumns().size(); i++) {
@@ -204,8 +203,7 @@ abstract class KeysFetcher {
 
         @Override
         public void postInsert(
-                SimpleFeatureType featureType, SimpleFeature feature, Connection cx, Statement st)
-                throws SQLException {}
+                SimpleFeatureType featureType, SimpleFeature feature, Connection cx, Statement st) {}
 
         @Override
         public boolean isPostInsert() {
@@ -519,7 +517,7 @@ abstract class KeysFetcher {
         }
 
         @Override
-        public Object getNext(Connection cx) throws IOException, SQLException {
+        public Object getNext(Connection cx) throws SQLException {
             if (isPostInsert()) {
                 return NOT_SET_BEFORE_INSERT;
             } else {
@@ -583,7 +581,7 @@ abstract class KeysFetcher {
         }
 
         @Override
-        public Object getLastValue(Connection cx, Statement st) throws SQLException {
+        public Object getLastValue(Connection cx, Statement st) {
             throw new IllegalArgumentException("Column " + col.getName() + " is not generated.");
         }
 
@@ -594,7 +592,7 @@ abstract class KeysFetcher {
         }
 
         @Override
-        public Object getNext(Connection cx) throws IOException, SQLException {
+        public Object getNext(Connection cx) throws SQLException {
             if (isPostInsert()) {
                 return NOT_SET_BEFORE_INSERT;
             } else {

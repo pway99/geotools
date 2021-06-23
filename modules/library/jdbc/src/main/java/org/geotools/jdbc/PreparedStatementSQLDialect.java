@@ -321,8 +321,7 @@ public abstract class PreparedStatementSQLDialect extends SQLDialect {
      * @param cx The database connection
      * @param featureType The feature type the select is executing against.
      */
-    public void onSelect(PreparedStatement select, Connection cx, SimpleFeatureType featureType)
-            throws SQLException {}
+    public void onSelect(PreparedStatement select, Connection cx, SimpleFeatureType featureType) {}
 
     /**
      * Callback invoked before a DELETE statement is executed against the database.
@@ -335,8 +334,7 @@ public abstract class PreparedStatementSQLDialect extends SQLDialect {
      * @param cx The database connection
      * @param featureType The feature type the delete is executing against.
      */
-    public void onDelete(PreparedStatement delete, Connection cx, SimpleFeatureType featureType)
-            throws SQLException {}
+    public void onDelete(PreparedStatement delete, Connection cx, SimpleFeatureType featureType) {}
 
     /**
      * Callback invoked before an INSERT statement is executed against the database.
@@ -349,8 +347,7 @@ public abstract class PreparedStatementSQLDialect extends SQLDialect {
      * @param cx The database connection
      * @param featureType The feature type the insert is executing against.
      */
-    public void onInsert(PreparedStatement insert, Connection cx, SimpleFeatureType featureType)
-            throws SQLException {}
+    public void onInsert(PreparedStatement insert, Connection cx, SimpleFeatureType featureType) {}
 
     /**
      * Callback invoked before an UPDATE statement is executed against the database.
@@ -363,6 +360,5 @@ public abstract class PreparedStatementSQLDialect extends SQLDialect {
      * @param cx The database connection
      * @param featureType The feature type the update is executing against.
      */
-    public void onUpdate(PreparedStatement update, Connection cx, SimpleFeatureType featureType)
-            throws SQLException {}
+    public void onUpdate(PreparedStatement update, Connection cx, SimpleFeatureType featureType) {}
 }

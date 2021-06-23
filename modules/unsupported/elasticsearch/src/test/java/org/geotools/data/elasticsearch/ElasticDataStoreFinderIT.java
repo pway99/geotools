@@ -69,7 +69,7 @@ public class ElasticDataStoreFinderIT extends ElasticTestSupport {
     }
 
     @Test
-    public void testFactoryWithMissingRequired() throws IOException {
+    public void testFactoryWithMissingRequired() {
         ElasticDataStoreFactory factory = new ElasticDataStoreFactory();
         assertTrue(factory.isAvailable());
 

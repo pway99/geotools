@@ -109,7 +109,7 @@ public class SLDCssParameterBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         CssParameter parameter = new CssParameter((String) node.getAttributeValue("name"));
         parameter.setExpression((Expression) value);

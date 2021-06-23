@@ -77,7 +77,7 @@ public class SortPropertyTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         PropertyName name = node.getChildValue(PropertyName.class);
         SortOrder order = node.getChildValue(SortOrder.class);
 
@@ -89,7 +89,7 @@ public class SortPropertyTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         SortBy sortBy = (SortBy) object;
 
         if (OGC.PropertyName.equals(name)) {

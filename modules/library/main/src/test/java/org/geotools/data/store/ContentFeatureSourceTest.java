@@ -105,7 +105,7 @@ public class ContentFeatureSourceTest {
 
                     @SuppressWarnings("serial")
                     @Override
-                    protected List<Name> createTypeNames() throws IOException {
+                    protected List<Name> createTypeNames() {
                         return new ArrayList<Name>() {
                             {
                                 add(TYPENAME);
@@ -114,30 +114,28 @@ public class ContentFeatureSourceTest {
                     }
 
                     @Override
-                    protected ContentFeatureSource createFeatureSource(ContentEntry entry)
-                            throws IOException {
+                    protected ContentFeatureSource createFeatureSource(ContentEntry entry) {
                         return new ContentFeatureSource(entry, null) {
 
                             @Override
-                            protected ReferencedEnvelope getBoundsInternal(Query query)
-                                    throws IOException {
+                            protected ReferencedEnvelope getBoundsInternal(Query query) {
                                 throw new RuntimeException("Unexpected call");
                             }
 
                             @Override
-                            protected int getCountInternal(Query query) throws IOException {
+                            protected int getCountInternal(Query query) {
                                 throw new RuntimeException("Unexpected call");
                             }
 
                             @Override
                             protected FeatureReader<SimpleFeatureType, SimpleFeature>
-                                    getReaderInternal(Query query) throws IOException {
+                                    getReaderInternal(Query query) {
                                 assertEquals(expected, query);
                                 return new EmptyFeatureReader<>(TYPE);
                             }
 
                             @Override
-                            protected SimpleFeatureType buildFeatureType() throws IOException {
+                            protected SimpleFeatureType buildFeatureType() {
                                 return TYPE;
                             }
 

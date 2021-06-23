@@ -316,14 +316,13 @@ public class ShapefileDumper {
     /**
      * Allows subsclasses to perform extra actions against a shapefile that was completely written.
      */
-    protected void shapefileDumped(String fileName, SimpleFeatureType remappedSchema)
-            throws IOException {
+    protected void shapefileDumped(String fileName, SimpleFeatureType remappedSchema) {
         // By default nothing extra is done
     }
 
     /** Creates a shapefile data store for the specified schema */
     private ShapefileDataStore buildStore(SimpleFeatureType schema)
-            throws MalformedURLException, FileNotFoundException, IOException {
+            throws FileNotFoundException, IOException {
         File file = new File(targetDirectory, schema.getTypeName() + ".shp");
         ShapefileDataStore sfds = new ShapefileDataStore(URLs.fileToUrl(file));
 

@@ -76,7 +76,7 @@ public class H2DataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropRoadTable() throws Exception {
+    protected void dropRoadTable() {
         runSafe("DROP TABLE \"road\"");
         runSafe("CALL DropGeometryColumn(NULL, 'road', 'geom')");
         // runSafe("DELETE FROM geometry_columns where f_table_name = 'road'");
@@ -85,7 +85,7 @@ public class H2DataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropRiverTable() throws Exception {
+    protected void dropRiverTable() {
         runSafe("DROP TABLE \"river\"");
         runSafe("CALL DropGeometryColumn(NULL, 'river', 'geom')");
         // runSafe("DELETE FROM geometry_columns where f_table_name = 'river'");
@@ -93,7 +93,7 @@ public class H2DataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropLakeTable() throws Exception {
+    protected void dropLakeTable() {
         runSafe("DROP TABLE \"lake\"");
         runSafe("CALL DropGeometryColumn(NULL, 'lake', 'geom')");
         // runSafe("DELETE FROM geometry_columns where f_table_name = 'lake'");
@@ -101,7 +101,7 @@ public class H2DataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropBuildingTable() throws Exception {
+    protected void dropBuildingTable() {
         runSafe("DROP TABLE \"building\"");
         runSafe("CALL DropGeometryColumn(NULL, 'building', 'geom')");
         // runSafe("DELETE FROM geometry_columns where f_table_name = 'building'");

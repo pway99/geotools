@@ -312,8 +312,7 @@ public class LabelPainter {
      * Paints the label as a non curved one. The positioning and rotation are provided by the
      * transformation
      */
-    public void paintStraightLabel(AffineTransform transform, Coordinate labelPoint)
-            throws Exception {
+    public void paintStraightLabel(AffineTransform transform, Coordinate labelPoint) {
         AffineTransform oldTransform = graphics.getTransform();
         try {
 

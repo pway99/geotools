@@ -87,7 +87,7 @@ public class Spatial_OperatorsTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         List<SpatialOperator> ops = new ArrayList<>();
 
         for (Node child : node.getChildren()) {
@@ -98,7 +98,7 @@ public class Spatial_OperatorsTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         SpatialOperators spatial = (SpatialOperators) object;
 
         return spatial.getOperator(name.getLocalPart());

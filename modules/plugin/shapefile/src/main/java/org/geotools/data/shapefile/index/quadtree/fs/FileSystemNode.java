@@ -45,7 +45,7 @@ public class FileSystemNode extends Node {
     }
 
     @Override
-    public Node copy() throws IOException {
+    public Node copy() {
         FileSystemNode copy =
                 new FileSystemNode(getBounds(), buffer, subNodeStartByte, subNodesLength);
         copy.numShapesId = numShapesId;

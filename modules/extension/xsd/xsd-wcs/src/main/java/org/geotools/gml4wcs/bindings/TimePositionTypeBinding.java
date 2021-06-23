@@ -99,7 +99,7 @@ public class TimePositionTypeBinding extends AbstractComplexBinding {
      * <!-- end-user-doc -->
      */
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         Position timePosition = (Position) object;
 
         if (timePosition == null) {

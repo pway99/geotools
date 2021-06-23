@@ -81,7 +81,7 @@ public class GMLLineStringPropertyTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return node.getChildValue(LineString.class);
     }
 
@@ -91,8 +91,7 @@ public class GMLLineStringPropertyTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public List<Object[]> getProperties(Object object, XSDElementDeclaration element)
-            throws Exception {
+    public List<Object[]> getProperties(Object object, XSDElementDeclaration element) {
         return GML2EncodingUtils.GeometryPropertyType_getProperties((LineString) object);
     }
 }

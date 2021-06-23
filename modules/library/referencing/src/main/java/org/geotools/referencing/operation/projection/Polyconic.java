@@ -147,8 +147,7 @@ public class Polyconic {
          * radians) and stores the result in {@code ptDst} (linear distance on a unit sphere).
          */
         @Override
-        protected Point2D transformNormalized(double lam, double phi, final Point2D ptDst)
-                throws ProjectionException {
+        protected Point2D transformNormalized(double lam, double phi, final Point2D ptDst) {
             double ms, sp, cp, x, y;
 
             if (abs(phi) <= EPSILON) {
@@ -268,8 +267,7 @@ public class Polyconic {
         }
 
         @Override
-        protected Point2D transformNormalized(double lam, double phi, Point2D ptDst)
-                throws ProjectionException {
+        protected Point2D transformNormalized(double lam, double phi, Point2D ptDst) {
             double x, y;
             if (abs(phi) <= EPSILON) {
                 x = lam;

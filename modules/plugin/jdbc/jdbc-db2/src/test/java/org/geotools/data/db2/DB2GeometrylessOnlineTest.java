@@ -47,6 +47,6 @@ public class DB2GeometrylessOnlineTest extends JDBCGeometrylessOnlineTest {
      * hard-coded as "fid".
      */
     @Override
-    public void testWriteFeatures() throws Exception { // TODO - no-op function in parent test class
+    public void testWriteFeatures() { // TODO - no-op function in parent test class
     }
 }

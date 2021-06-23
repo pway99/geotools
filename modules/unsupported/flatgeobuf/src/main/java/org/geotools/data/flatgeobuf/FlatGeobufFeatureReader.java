@@ -112,7 +112,7 @@ public class FlatGeobufFeatureReader implements FeatureReader<SimpleFeatureType,
 
     @Override
     public SimpleFeature next()
-            throws IOException, IllegalArgumentException, NoSuchElementException {
+            throws IllegalArgumentException, NoSuchElementException {
         SimpleFeature feature = null;
         if (nextFeature != null) {
             feature = nextFeature;
@@ -125,7 +125,7 @@ public class FlatGeobufFeatureReader implements FeatureReader<SimpleFeatureType,
     }
 
     @Override
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() {
         if (nextFeature != null) {
             return true;
         } else {

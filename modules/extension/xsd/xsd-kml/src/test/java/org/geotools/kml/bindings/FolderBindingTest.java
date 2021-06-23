@@ -15,12 +15,12 @@ import org.opengis.feature.simple.SimpleFeature;
 
 public class FolderBindingTest extends KMLTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(SimpleFeature.class, binding(KML.Folder).getType());
     }
 
     @Test
-    public void testExecutionMode() throws Exception {
+    public void testExecutionMode() {
         assertEquals(Binding.AFTER, binding(KML.Folder).getExecutionMode());
     }
 

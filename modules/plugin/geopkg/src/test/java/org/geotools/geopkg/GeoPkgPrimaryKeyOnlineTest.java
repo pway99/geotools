@@ -36,12 +36,12 @@ public class GeoPkgPrimaryKeyOnlineTest extends JDBCPrimaryKeyOnlineTest {
     }
 
     @Override
-    public void testSequencedPrimaryKey() throws Exception {
+    public void testSequencedPrimaryKey() {
         // SQLite does not do sequences
     }
 
     @Override
-    public void testMultiColumnPrimaryKey() throws Exception {
+    public void testMultiColumnPrimaryKey() {
         // TODO: find out why this multikey only has one column when queried
     }
 }

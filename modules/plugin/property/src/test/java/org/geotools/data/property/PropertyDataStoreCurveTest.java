@@ -79,7 +79,7 @@ public class PropertyDataStoreCurveTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         File dir = new File("propertyCurveTestData");
         File[] list = dir.listFiles();
         for (File file : list) {

@@ -32,7 +32,6 @@ import org.geotools.test.TestData;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 /**
@@ -63,7 +62,7 @@ public class GeoTiffSkipExternalTest extends org.junit.Assert {
 
     /** Test that the reader didn't access the external prj */
     @Test
-    public void prjIsSkippedTest() throws IllegalArgumentException, IOException, FactoryException {
+    public void prjIsSkippedTest() throws IllegalArgumentException, IOException {
 
         final File noCrs = TestData.file(GeoTiffSkipExternalTest.class, "override/sample.tif");
         final AbstractGridFormat format = new GeoTiffFormat();

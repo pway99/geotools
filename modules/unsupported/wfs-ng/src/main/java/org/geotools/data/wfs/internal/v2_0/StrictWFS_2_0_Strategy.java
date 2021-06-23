@@ -317,7 +317,7 @@ public class StrictWFS_2_0_Strategy extends AbstractWFSStrategy {
 
     @Override
     @SuppressWarnings("CollectionIncompatibleType")
-    protected EObject createGetFeatureRequestPost(GetFeatureRequest query) throws IOException {
+    protected EObject createGetFeatureRequestPost(GetFeatureRequest query) {
         final QName typeName = query.getTypeName();
         final FeatureTypeInfoImpl featureTypeInfo =
                 (FeatureTypeInfoImpl) getFeatureTypeInfo(typeName);
@@ -432,8 +432,7 @@ public class StrictWFS_2_0_Strategy extends AbstractWFSStrategy {
     }
 
     @Override
-    protected EObject createListStoredQueriesRequestPost(ListStoredQueriesRequest request)
-            throws IOException {
+    protected EObject createListStoredQueriesRequestPost(ListStoredQueriesRequest request) {
         final Wfs20Factory factory = Wfs20Factory.eINSTANCE;
 
         ListStoredQueriesType ret = factory.createListStoredQueriesType();
@@ -442,8 +441,7 @@ public class StrictWFS_2_0_Strategy extends AbstractWFSStrategy {
     }
 
     @Override
-    protected EObject createDescribeStoredQueriesRequestPost(DescribeStoredQueriesRequest request)
-            throws IOException {
+    protected EObject createDescribeStoredQueriesRequestPost(DescribeStoredQueriesRequest request) {
         final Wfs20Factory factory = Wfs20Factory.eINSTANCE;
 
         DescribeStoredQueriesType ret = factory.createDescribeStoredQueriesType();
@@ -454,7 +452,7 @@ public class StrictWFS_2_0_Strategy extends AbstractWFSStrategy {
     }
 
     @Override
-    protected EObject createTransactionRequest(TransactionRequest request) throws IOException {
+    protected EObject createTransactionRequest(TransactionRequest request) {
         final Wfs20Factory factory = Wfs20Factory.eINSTANCE;
 
         TransactionType tx = factory.createTransactionType();
@@ -682,8 +680,7 @@ public class StrictWFS_2_0_Strategy extends AbstractWFSStrategy {
         return outputFormats;
     }
 
-    protected AbstractTransactionActionType createInsert(Wfs20Factory factory, Insert elem)
-            throws Exception {
+    protected AbstractTransactionActionType createInsert(Wfs20Factory factory, Insert elem) {
         InsertType insert = factory.createInsertType();
 
         String srsName = getFeatureTypeInfo(elem.getTypeName()).getDefaultSRS();
@@ -738,8 +735,7 @@ public class StrictWFS_2_0_Strategy extends AbstractWFSStrategy {
         return update;
     }
 
-    protected AbstractTransactionActionType createDelete(Wfs20Factory factory, Delete elem)
-            throws Exception {
+    protected AbstractTransactionActionType createDelete(Wfs20Factory factory, Delete elem) {
         DeleteType delete = factory.createDeleteType();
 
         QName typeName = elem.getTypeName();

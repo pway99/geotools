@@ -85,7 +85,7 @@ public class CoverageTest {
     public static final String TEST_URL = "file:/" + TEST_NAME.getLocalPart();
 
     @Test
-    public void testDomains() throws IOException, MismatchedDimensionException, TransformException {
+    public void testDomains() throws IOException, MismatchedDimensionException {
         Map<String, Serializable> connectionParams = new HashMap<>();
         connectionParams.put(DefaultFileDriver.URL.key, new URL(TEST_URL));
 
@@ -110,7 +110,7 @@ public class CoverageTest {
 
     @Test
     public void testAttributes()
-            throws IOException, MismatchedDimensionException, TransformException {
+            throws IOException, MismatchedDimensionException {
         Map<String, Serializable> connectionParams = new HashMap<>();
         connectionParams.put(DefaultFileDriver.URL.key, new URL(TEST_URL));
 
@@ -211,7 +211,7 @@ public class CoverageTest {
 
     @Test
     public void testUpdateRequestAndResponse()
-            throws IOException, MismatchedDimensionException, TransformException {
+            throws IOException, MismatchedDimensionException {
         Map<String, Serializable> connectionParams = new HashMap<>();
         connectionParams.put(DefaultFileDriver.URL.key, new URL(TEST_URL));
 
@@ -263,7 +263,7 @@ public class CoverageTest {
 
         @Override
         public SortedSet<? extends NumberRange<Double>> getVerticalElements(
-                boolean overall, ProgressListener listener) throws IOException {
+                boolean overall, ProgressListener listener) {
             return new DoubleRangeTreeSet(verticalSubset);
         }
 
@@ -282,8 +282,7 @@ public class CoverageTest {
         }
 
         @Override
-        public Set<Object> getElements(boolean overall, ProgressListener listener)
-                throws IOException {
+        public Set<Object> getElements(boolean overall, ProgressListener listener) {
             return test;
         }
 
@@ -345,15 +344,13 @@ public class CoverageTest {
                 Map<String, Serializable> params,
                 AccessType accessType,
                 Hints hints,
-                ProgressListener listener)
-                throws IOException {
+                ProgressListener listener) {
             return new TestCoverageSourceNew(name, new TestCoverageSourceDescriptorNew());
         }
 
         @Override
         public CoverageStore create(
-                Name name, Map<String, Serializable> params, Hints hints, ProgressListener listener)
-                throws IOException {
+                Name name, Map<String, Serializable> params, Hints hints, ProgressListener listener) {
             return new TestCoverageSourceNew(name, new TestCoverageSourceDescriptorNew());
         }
 
@@ -376,8 +373,7 @@ public class CoverageTest {
         }
 
         @Override
-        public CoverageResponse read(CoverageReadRequest request, ProgressListener listener)
-                throws IOException {
+        public CoverageResponse read(CoverageReadRequest request, ProgressListener listener) {
             // creating a simple response
             CoverageResponse response = new CoverageResponse();
             response.setRequest(request);

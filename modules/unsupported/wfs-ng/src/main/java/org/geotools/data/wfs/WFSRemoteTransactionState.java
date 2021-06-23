@@ -74,12 +74,12 @@ class WFSRemoteTransactionState implements State {
     public void setTransaction(Transaction transaction) {}
 
     @Override
-    public void rollback() throws IOException {
+    public void rollback() {
         clear(); // rollback differences
     }
 
     @Override
-    public void addAuthorization(String AuthID) throws IOException {
+    public void addAuthorization(String AuthID) {
         // not needed?
     }
 
@@ -225,8 +225,7 @@ class WFSRemoteTransactionState implements State {
     }
 
     private void applySingleUpdate(
-            QName remoteTypeName, SimpleFeature feature, TransactionRequest transactionRequest)
-            throws IOException {
+            QName remoteTypeName, SimpleFeature feature, TransactionRequest transactionRequest) {
 
         // so bad, this is going to update a lot of unnecessary properties. We'd need to make
         // DiffContentFeatureWriter's live and current attributes protected and extend write so that

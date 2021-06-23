@@ -87,7 +87,7 @@ public class DuplicatingStyleVisitorTest {
     DuplicatingStyleVisitor visitor;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         sf = CommonFactoryFinder.getStyleFactory(null);
         ff = CommonFactoryFinder.getFilterFactory2(null);
         sb = new StyleBuilder(sf, ff);
@@ -129,7 +129,7 @@ public class DuplicatingStyleVisitorTest {
     }
 
     @Test
-    public void testStyle() throws Exception {
+    public void testStyle() {
         FeatureTypeStyle fts = sf.createFeatureTypeStyle();
         fts.featureTypeNames().add(new NameImpl("feature-type-1"));
 
@@ -163,7 +163,7 @@ public class DuplicatingStyleVisitorTest {
     }
 
     @Test
-    public void testFeatureTypeStyle() throws Exception {
+    public void testFeatureTypeStyle() {
         FeatureTypeStyle fts = sf.createFeatureTypeStyle();
         fts.featureTypeNames().add(new NameImpl("feature-type"));
         fts.getOptions().put("key", "value");
@@ -201,7 +201,7 @@ public class DuplicatingStyleVisitorTest {
     }
 
     @Test
-    public void testRule() throws Exception {
+    public void testRule() {
         Symbolizer symb1 = sf.createLineSymbolizer(sf.getDefaultStroke(), "geometry");
 
         Symbolizer symb2 =
@@ -227,7 +227,7 @@ public class DuplicatingStyleVisitorTest {
     }
 
     @Test
-    public void testPointSymbolizer() throws Exception {
+    public void testPointSymbolizer() {
         URL urlExternal = getClass().getResource("/data/sld/blob.gif");
         ExternalGraphic extg = sb.createExternalGraphic(urlExternal, "image/svg+xml");
         Graphic graphic = sb.createGraphic(extg, null, null);
@@ -245,7 +245,7 @@ public class DuplicatingStyleVisitorTest {
     }
 
     @Test
-    public void testRasterSymbolizerWithUOM() throws Exception {
+    public void testRasterSymbolizerWithUOM() {
         RasterSymbolizer rasterSymb = sf.createRasterSymbolizer();
         rasterSymb.setUnitOfMeasure(UomOgcMapping.FOOT.getUnit());
         rasterSymb.accept(visitor);
@@ -260,7 +260,7 @@ public class DuplicatingStyleVisitorTest {
     }
 
     @Test
-    public void testRasterSymbolizerWithOverlapBehavior() throws Exception {
+    public void testRasterSymbolizerWithOverlapBehavior() {
         RasterSymbolizer rasterSymb1 = sf.createRasterSymbolizer();
         rasterSymb1.setOverlapBehavior(OverlapBehavior.AVERAGE);
         rasterSymb1.accept(visitor);
@@ -294,7 +294,7 @@ public class DuplicatingStyleVisitorTest {
     }
 
     @Test
-    public void testPointSymbolizerWithUOM() throws Exception {
+    public void testPointSymbolizerWithUOM() {
         PointSymbolizer pointSymb = sf.createPointSymbolizer();
         pointSymb.setUnitOfMeasure(UomOgcMapping.FOOT.getUnit());
         pointSymb.accept(visitor);
@@ -404,7 +404,7 @@ public class DuplicatingStyleVisitorTest {
     }
 
     @Test
-    public void testLinePlacement() throws Exception {
+    public void testLinePlacement() {
         LinePlacement linePlacement = sf.createLinePlacement(ff.literal(12));
 
         linePlacement.accept(visitor);
@@ -675,7 +675,7 @@ public class DuplicatingStyleVisitorTest {
     }
 
     @Test
-    public void testContrastEnhancementDuplication() throws Exception {
+    public void testContrastEnhancementDuplication() {
 
         ContrastEnhancement ce = sf.createContrastEnhancement();
         ce.setGammaValue(sb.literalExpression(0.5));
@@ -693,7 +693,7 @@ public class DuplicatingStyleVisitorTest {
     }
 
     @Test
-    public void testColorMapEntryDuplication() throws Exception {
+    public void testColorMapEntryDuplication() {
 
         ColorMapEntry cme = sf.createColorMapEntry();
         cme.setColor(sb.colorExpression(Color.YELLOW));
@@ -724,7 +724,7 @@ public class DuplicatingStyleVisitorTest {
     }
 
     @Test
-    public void testPointSymbolizerWithGeomFunction() throws Exception {
+    public void testPointSymbolizerWithGeomFunction() {
         URL urlExternal = getClass().getResource("/data/sld/blob.gif");
         ExternalGraphic extg = sb.createExternalGraphic(urlExternal, "image/svg+xml");
         Graphic graphic = sb.createGraphic(extg, null, null);
@@ -891,7 +891,7 @@ public class DuplicatingStyleVisitorTest {
 
     /** Test SelectedChannelType copy with Expression */
     @Test
-    public void testSelectedChannelTypeDuplication() throws Exception {
+    public void testSelectedChannelTypeDuplication() {
         final String b1 = "b1";
 
         SelectedChannelType sct =

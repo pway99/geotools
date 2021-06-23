@@ -40,7 +40,6 @@ import org.geotools.xsd.Text;
 import org.geotools.xsd.TextInstance;
 import org.picocontainer.defaults.DefaultPicoContainer;
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 
 public class ElementHandlerImpl extends HandlerImpl implements ElementHandler {
     /** parent handler * */
@@ -76,7 +75,7 @@ public class ElementHandlerImpl extends HandlerImpl implements ElementHandler {
     }
 
     @Override
-    public void startElement(QName qName, Attributes attributes) throws SAXException {
+    public void startElement(QName qName, Attributes attributes) {
         // clear handler list
         // childHandlers.clear();
 
@@ -206,7 +205,7 @@ public class ElementHandlerImpl extends HandlerImpl implements ElementHandler {
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
 
         // simply add the text to the element
         element.addText(ch, start, length);
@@ -218,7 +217,7 @@ public class ElementHandlerImpl extends HandlerImpl implements ElementHandler {
     }
 
     @Override
-    public void endElement(QName qName) throws SAXException {
+    public void endElement(QName qName) {
         if (isMixed()) {
             node.collapseWhitespace();
         }

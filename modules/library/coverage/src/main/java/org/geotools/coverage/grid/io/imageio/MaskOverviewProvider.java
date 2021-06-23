@@ -119,8 +119,7 @@ public class MaskOverviewProvider {
                 DEFAULT_SKIP_EXTERNAL_FILES_LOOKUP);
     }
 
-    public MaskOverviewProvider(DatasetLayout layout, File inputFile, SpiHelper spiHelper)
-            throws IOException {
+    public MaskOverviewProvider(DatasetLayout layout, File inputFile, SpiHelper spiHelper) {
         this(layout, URLs.fileToUrl(inputFile), spiHelper, DEFAULT_SKIP_EXTERNAL_FILES_LOOKUP);
     }
 
@@ -775,7 +774,7 @@ public class MaskOverviewProvider {
             }
         }
 
-        public SpiHelper(SourceSPIProvider provider) throws IOException {
+        public SpiHelper(SourceSPIProvider provider) {
             this.sourceSpiProvider = provider;
         }
 

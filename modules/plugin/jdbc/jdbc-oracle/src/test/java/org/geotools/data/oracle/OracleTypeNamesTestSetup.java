@@ -34,7 +34,7 @@ public class OracleTypeNamesTestSetup extends JDBCTypeNamesTestSetup {
     }
 
     @Override
-    protected void dropTypes() throws Exception {
+    protected void dropTypes() {
         runSafe("DROP SYNONYM ftnsyn");
         runSafe("DROP VIEW ftnview");
         runSafe("DROP TABLE ftntable purge");

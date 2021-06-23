@@ -16,12 +16,12 @@ import org.opengis.feature.simple.SimpleFeature;
 
 public class NameBindingTest extends KMLTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(String.class, binding(KML.name).getType());
     }
 
     @Test
-    public void testExecutionMode() throws Exception {
+    public void testExecutionMode() {
         assertEquals(Binding.OVERRIDE, binding(KML.name).getExecutionMode());
     }
 

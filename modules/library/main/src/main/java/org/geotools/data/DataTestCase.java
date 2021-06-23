@@ -334,7 +334,7 @@ public abstract class DataTestCase {
      * automatically invoked after each test.
      */
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         gf = null;
         roadType = null;
         subRoadType = null;

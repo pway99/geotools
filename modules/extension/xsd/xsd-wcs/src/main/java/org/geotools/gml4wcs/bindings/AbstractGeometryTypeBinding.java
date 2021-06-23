@@ -82,7 +82,7 @@ public class AbstractGeometryTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // set the crs
         if (value instanceof Geometry) {
             CoordinateReferenceSystem crs = GML3ParsingUtils.crs(node);
@@ -97,7 +97,7 @@ public class AbstractGeometryTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         Geometry geometry = (Geometry) object;
         if ("srsName".equals(name.getLocalPart())) {
             CoordinateReferenceSystem crs = GML3EncodingUtils.getCRS(geometry);

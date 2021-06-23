@@ -114,7 +114,7 @@ public class CQLRelGeoOpTest {
     }
 
     @Test(expected = CQLException.class)
-    public void syntaxError() throws Exception {
+    public void syntaxError() {
 
         CompilerUtil.parseFilter(language, "EYOND(ATTR1, POINTS(1.0 2.0), 10.0, kilometers)");
     }
@@ -155,7 +155,7 @@ public class CQLRelGeoOpTest {
      */
     @Ignore
     @Test
-    public void testRoutineInvocationGeneric() throws Exception {
+    public void testRoutineInvocationGeneric() {
         // TODO (Mauricio Comments) This case is not implemented because the filter
         // model has not a
         // Routine (Like functions in Expression). We could develop easily the

@@ -64,7 +64,6 @@ import org.geotools.data.vpf.io.VariableIndexInputStream;
 import org.geotools.data.vpf.io.VariableIndexRow;
 import org.geotools.data.vpf.util.DataUtils;
 import org.geotools.feature.FeatureTypes;
-import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
 import org.geotools.feature.type.AnnotationFeatureType;
@@ -140,7 +139,7 @@ public class VPFFile {
      * @throws IOException if the path or the file are invalid
      * @throws SchemaException if the contained feature type can not be constructed
      */
-    public VPFFile(String cPathName) throws IOException, SchemaException {
+    public VPFFile(String cPathName) throws IOException {
         pathName = cPathName;
         inputStream = new RandomAccessFile(cPathName, ACCESS_MODE);
         readHeader();

@@ -64,7 +64,7 @@ public class GeoPkgEnumTest extends JDBCTestSupport {
         dataStore.createSchema(featureType);
     }
 
-    private SimpleFeatureType getEnumFeatureType(String typeName) throws FactoryException {
+    private SimpleFeatureType getEnumFeatureType(String typeName) {
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
         builder.setName(tname(typeName));
         builder.setNamespaceURI(dataStore.getNamespaceURI());
@@ -465,7 +465,7 @@ public class GeoPkgEnumTest extends JDBCTestSupport {
         dataStore.createSchema(featureType);
     }
 
-    private SimpleFeatureType getEnumArrayFeatureType() throws FactoryException {
+    private SimpleFeatureType getEnumArrayFeatureType() {
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
         builder.setName(tname("ft_array"));
         builder.setNamespaceURI(dataStore.getNamespaceURI());

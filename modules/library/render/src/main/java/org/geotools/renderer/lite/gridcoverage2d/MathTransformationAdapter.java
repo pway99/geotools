@@ -21,7 +21,6 @@ import it.geosolutions.jaiext.piecewise.Position;
 import org.geotools.renderer.i18n.ErrorKeys;
 import org.geotools.renderer.i18n.Errors;
 import org.opengis.referencing.operation.MathTransform1D;
-import org.opengis.referencing.operation.TransformException;
 
 /**
  * Adapter class for {@link MathTransform1D}.
@@ -62,7 +61,7 @@ public class MathTransformationAdapter implements MathTransformation {
      * @see org.opengis.referencing.operation.MathTransform1D#derivative(double)
      */
     @Override
-    public double derivative(double value) throws TransformException {
+    public double derivative(double value) {
 
         throw new UnsupportedOperationException(
                 Errors.format(ErrorKeys.UNSUPPORTED_OPERATION_$1, "inverse"));

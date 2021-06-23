@@ -53,7 +53,7 @@ public class DuplicateFilterVisitorTest {
     private org.opengis.filter.FilterFactory2 fac;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         fac = CommonFactoryFinder.getFilterFactory2(GeoTools.getDefaultHints());
     }
 

@@ -32,7 +32,6 @@ import org.opengis.parameter.ParameterDescriptor;
 import org.opengis.parameter.ParameterDescriptorGroup;
 import org.opengis.parameter.ParameterNotFoundException;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.operation.MathTransform;
 
 /**
@@ -109,8 +108,7 @@ public class EqualArea extends MapProjection {
     }
 
     @Override
-    protected Point2D transformNormalized(double lpLambda, double lpPhi, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double lpLambda, double lpPhi, Point2D ptDst) {
         double phi = asin(M * sin(lpPhi));
         double phi2 = phi * phi;
         double phi6 = phi2 * phi2 * phi2;
@@ -142,7 +140,7 @@ public class EqualArea extends MapProjection {
         static final ParameterDescriptorGroup PARAMETERS =
                 createDescriptorGroup(
                         new NamedIdentifier[] {
-                            new NamedIdentifier(Citations.GEOTOOLS, "Equal Earth"),
+                            new NamedIdentifier(Citations.GEOTOOLS, "Equal Earth")
                         },
                         new ParameterDescriptor[] {
                             SEMI_MAJOR, SEMI_MINOR, CENTRAL_MERIDIAN, FALSE_EASTING, FALSE_NORTHING
@@ -162,7 +160,7 @@ public class EqualArea extends MapProjection {
          */
         @Override
         protected MathTransform createMathTransform(final ParameterValueGroup parameters)
-                throws ParameterNotFoundException, FactoryException {
+                throws ParameterNotFoundException {
             return new EqualArea(parameters);
         }
     }

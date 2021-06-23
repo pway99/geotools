@@ -277,8 +277,7 @@ public abstract class Abstract_URI_AuthorityFactory extends AuthorityFactoryAdap
      * @return The factory, of {@code null} if there is none for the specified version.
      * @throws FactoryException if an error occurred while creating the factory.
      */
-    protected AuthorityFactory createVersionedFactory(final Version version)
-            throws FactoryException {
+    protected AuthorityFactory createVersionedFactory(final Version version) {
         final Hints hints = new Hints(factory.getImplementationHints());
         hints.put(Hints.VERSION, version);
         final List<AuthorityFactory> factories =

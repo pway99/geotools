@@ -43,7 +43,6 @@ import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -222,7 +221,7 @@ public class GridCoverageRendererTest {
     }
 
     @After
-    public void close() throws IOException {
+    public void close() {
         MapProjection.SKIP_SANITY_CHECKS = false;
         worldReader.dispose();
         EnvFunction.clearLocalValues();
@@ -237,7 +236,7 @@ public class GridCoverageRendererTest {
      * @throws IOException if an I/O operation was needed and failed.
      */
     private final GridCoverage2D getGC()
-            throws IOException, IllegalArgumentException, ParseException {
+            throws IOException, IllegalArgumentException {
 
         // unit = "°C";
         final String path = "TestGridCoverage.tif";
@@ -2030,7 +2029,7 @@ public class GridCoverageRendererTest {
 
         @Override
         public GridCoverage2D read(GeneralParameterValue[] parameters)
-                throws IllegalArgumentException, IOException {
+                throws IllegalArgumentException {
             assertTrue(
                     Arrays.stream(parameters)
                             .anyMatch(
@@ -2145,7 +2144,7 @@ public class GridCoverageRendererTest {
 
         @Override
         public GridCoverage2D read(GeneralParameterValue[] parameters)
-                throws IllegalArgumentException, IOException {
+                throws IllegalArgumentException {
             for (GeneralParameterValue parameter : parameters) {
                 if ("Bands".equals(parameter.getDescriptor().getName().toString())) {
                     assertArrayEquals(
@@ -2164,7 +2163,7 @@ public class GridCoverageRendererTest {
 
     /** Test painting a request outside the valid area */
     @Test
-    public void testPaintOutsideValidArea() throws Exception {
+    public void testPaintOutsideValidArea() {
 
         StyleBuilder sb = new StyleBuilder();
         Style style = sb.createStyle(sb.createRasterSymbolizer());
@@ -2388,7 +2387,7 @@ public class GridCoverageRendererTest {
     }
 
     @Test
-    public void testRenderRadarOnAzeq() throws Exception {
+    public void testRenderRadarOnAzeq() {
         File file =
                 URLs.urlToFile(
                         GridCoverageRendererTest.class.getResource(
@@ -2403,7 +2402,7 @@ public class GridCoverageRendererTest {
     }
 
     @Test
-    public void testRenderRadarOnAzeqZoomedIn() throws Exception {
+    public void testRenderRadarOnAzeqZoomedIn() {
         File file =
                 URLs.urlToFile(
                         GridCoverageRendererTest.class.getResource(
@@ -2418,7 +2417,7 @@ public class GridCoverageRendererTest {
     }
 
     @Test
-    public void testRenderRadarOnCentralAzeq() throws Exception {
+    public void testRenderRadarOnCentralAzeq() {
         File file =
                 URLs.urlToFile(
                         GridCoverageRendererTest.class.getResource(
@@ -2432,7 +2431,7 @@ public class GridCoverageRendererTest {
     }
 
     private void testImage(GeoTiffReader reader, ReferencedEnvelope vaiEnvelope, String fileName)
-            throws TransformException, NoninvertibleTransformException, FactoryException,
+            throws
                     IOException {
         ReferencedEnvelope mapExtent = vaiEnvelope;
         Rectangle screenSize =

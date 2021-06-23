@@ -101,7 +101,7 @@ public class XSDecimalBinding implements SimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         // DatatypeConverter.setDatatypeConverter(DatatypeConverterImpl.theInstance);
         // BigDecimal decimal = DatatypeConverter.parseDecimal((String) value);
         String text = (String) value;

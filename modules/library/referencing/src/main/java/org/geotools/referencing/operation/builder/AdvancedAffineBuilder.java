@@ -110,7 +110,7 @@ public class AdvancedAffineBuilder extends MathTransformBuilder {
      */
     public AdvancedAffineBuilder(final List<MappedPosition> vectors, AffineTransform2D affineTrans)
             throws IllegalArgumentException, MismatchedDimensionException,
-                    MismatchedReferenceSystemException, FactoryException {
+                    MismatchedReferenceSystemException {
         super.setMappedPositions(vectors);
 
         /** sets approximate values */

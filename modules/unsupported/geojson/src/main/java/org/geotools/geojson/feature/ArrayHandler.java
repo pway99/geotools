@@ -29,7 +29,7 @@ public class ArrayHandler extends HandlerBase implements IContentHandler<List<Ob
     List<Object> list;
 
     @Override
-    public boolean startArray() throws ParseException, IOException {
+    public boolean startArray() {
         values = new ArrayList<>();
         return true;
     }
@@ -45,7 +45,7 @@ public class ArrayHandler extends HandlerBase implements IContentHandler<List<Ob
     }
 
     @Override
-    public boolean endArray() throws ParseException, IOException {
+    public boolean endArray() {
         list = values;
         values = null;
         return true;

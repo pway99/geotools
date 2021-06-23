@@ -118,7 +118,7 @@ public class SLDTransformerTest {
     static SLDTransformer transformer;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         transformer = new SLDTransformer();
         transformer.setIndentation(4);
 
@@ -228,7 +228,7 @@ public class SLDTransformerTest {
      * restore it) and the stroke is comming back black and with width 1 all the time.
      */
     @Test
-    public void testStroke() throws Exception {
+    public void testStroke() {
         String xml =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\"?><sld:UserStyle xmlns=\"http://www.opengis.net/sld\" xmlns:sld=\"http://www.opengis.net/sld\" xmlns:ogc=\"http://www.opengis.net/ogc\" xmlns:gml=\"http://www.opengis.net/gml\"><sld:Name>Default Styler</sld:Name><sld:Title>Default Styler</sld:Title><sld:FeatureTypeStyle><sld:Name>simple</sld:Name><sld:Title>title</sld:Title><sld:Abstract>abstract</sld:Abstract><sld:FeatureTypeName>Feature</sld:FeatureTypeName><sld:SemanticTypeIdentifier>generic:geometry</sld:SemanticTypeIdentifier><sld:SemanticTypeIdentifier>simple</sld:SemanticTypeIdentifier><sld:Rule><sld:Title>title</sld:Title><sld:Abstract>abstract</sld:Abstract><sld:MaxScaleDenominator>1.7976931348623157E308</sld:MaxScaleDenominator><sld:LineSymbolizer><sld:Stroke><sld:CssParameter name=\"stroke\"><ogc:Literal>#0000FF</ogc:Literal></sld:CssParameter><sld:CssParameter name=\"stroke-linecap\"><ogc:Literal>butt</ogc:Literal></sld:CssParameter><sld:CssParameter name=\"stroke-linejoin\"><ogc:Literal>miter</ogc:Literal></sld:CssParameter><sld:CssParameter name=\"stroke-opacity\"><ogc:Literal>1.0</ogc:Literal></sld:CssParameter><sld:CssParameter name=\"stroke-width\"><ogc:Literal>2.0</ogc:Literal></sld:CssParameter><sld:CssParameter name=\"stroke-dashoffset\"><ogc:Literal>0.0</ogc:Literal></sld:CssParameter></sld:Stroke></sld:LineSymbolizer></sld:Rule></sld:FeatureTypeStyle></sld:UserStyle>";
         StringReader reader = new StringReader(xml);
@@ -253,7 +253,7 @@ public class SLDTransformerTest {
 
     /** SLD Fragment reported to produce error on user list - no related Jira. */
     @Test
-    public void testTextSymbolizerLabelPalcement() throws Exception {
+    public void testTextSymbolizerLabelPalcement() {
         String xml =
                 "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>"
                         + "<StyledLayerDescriptor version=\"1.0.0\" "
@@ -440,7 +440,7 @@ public class SLDTransformerTest {
      * it) and the stroke is comming back black and with width 1 all the time.
      */
     @Test
-    public void testPointSymbolizer() throws Exception {
+    public void testPointSymbolizer() {
         String xml =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                         + "<sld:StyledLayerDescriptor xmlns:sld=\"http://www.opengis.net/sld\" "
@@ -2251,7 +2251,7 @@ public class SLDTransformerTest {
     }
 
     @Test
-    public void testVendorOptionsRule() throws Exception {
+    public void testVendorOptionsRule() {
         String xml =
                 "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>"
                         + "<StyledLayerDescriptor version=\"1.0.0\" "

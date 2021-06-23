@@ -16,7 +16,6 @@
  */
 package org.geotools.xml.filter;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Collections;
@@ -319,7 +318,7 @@ public class FilterSchema implements Schema {
     @Override
     public Schema[] getImports() {
         return new Schema[] {
-            GMLSchema.getInstance(),
+            GMLSchema.getInstance()
         };
     }
 
@@ -617,7 +616,7 @@ public class FilterSchema implements Schema {
         @Override
         public void encode(
                 Element element, Object value, PrintHandler output, Map<String, Object> hints)
-                throws IOException, OperationNotSupportedException {
+                throws OperationNotSupportedException {
             throw new OperationNotSupportedException(element.toString() + " encode value " + value);
         }
 

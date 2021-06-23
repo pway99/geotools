@@ -45,17 +45,17 @@ public class H2ConnectionLifecycleTest extends JDBCConnectionLifecycleOnlineTest
         }
 
         @Override
-        public void onRelease(JDBCDataStore store, Connection cx) throws SQLException {
+        public void onRelease(JDBCDataStore store, Connection cx) {
             // nothing to do
         }
 
         @Override
-        public void onCommit(JDBCDataStore store, Connection cx) throws SQLException {
+        public void onCommit(JDBCDataStore store, Connection cx) {
             // nothing to do
         }
 
         @Override
-        public void onRollback(JDBCDataStore store, Connection cx) throws SQLException {
+        public void onRollback(JDBCDataStore store, Connection cx) {
             // nothing to do
         }
     }

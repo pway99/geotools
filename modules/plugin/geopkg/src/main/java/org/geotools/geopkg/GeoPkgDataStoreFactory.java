@@ -224,8 +224,7 @@ public class GeoPkgDataStoreFactory extends JDBCDataStoreFactory {
     }
 
     @Override
-    protected JDBCDataStore createDataStoreInternal(JDBCDataStore dataStore, Map<String, ?> params)
-            throws IOException {
+    protected JDBCDataStore createDataStoreInternal(JDBCDataStore dataStore, Map<String, ?> params) {
         dataStore.setDatabaseSchema(null);
         return dataStore;
     }

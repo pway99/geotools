@@ -864,8 +864,7 @@ public class MBTilesFile implements AutoCloseable {
      * tiles start from west and increase towards east, Y tiles start from north and increase
      * towards south
      */
-    protected RectangleLong toTilesRectangle(Envelope envelope, long zoomLevel)
-            throws SQLException {
+    protected RectangleLong toTilesRectangle(Envelope envelope, long zoomLevel) {
         // From the specification:
         // ---------------------------------------------------------------------------------
         // The tiles table contains tiles and the values used to locate them. The zoom_level,

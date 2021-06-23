@@ -18,7 +18,6 @@
 package org.geotools.appschema.resolver.data;
 
 import java.awt.RenderingHints.Key;
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashMap;
@@ -78,7 +77,7 @@ public class SampleDataAccessFactory implements DataAccessFactory {
      */
     @Override
     public DataAccess<? extends FeatureType, ? extends Feature> createDataStore(
-            Map<String, ?> params) throws IOException {
+            Map<String, ?> params) {
         return new SampleDataAccess();
     }
 

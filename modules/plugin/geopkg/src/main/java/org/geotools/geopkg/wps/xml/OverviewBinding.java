@@ -39,7 +39,7 @@ public class OverviewBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         GeoPackageProcessRequest.Overview overview = new GeoPackageProcessRequest.Overview();
         overview.setName((String) node.getChildValue("name"));
         if (node.hasChild(DISTANCE)) {

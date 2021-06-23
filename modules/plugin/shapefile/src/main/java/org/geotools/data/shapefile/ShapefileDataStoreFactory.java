@@ -126,7 +126,7 @@ public class ShapefileDataStoreFactory implements FileDataStoreFactorySpi {
                  * @see org.geotools.data.DataStoreFactorySpi.Param#parse(java.lang.String)
                  */
                 @Override
-                public Object parse(String text) throws IOException {
+                public Object parse(String text) {
                     return Charset.forName(text);
                 }
 
@@ -162,7 +162,7 @@ public class ShapefileDataStoreFactory implements FileDataStoreFactorySpi {
                     new KVP(Param.LEVEL, "advanced")) {
 
                 @Override
-                public Object parse(String text) throws IOException {
+                public Object parse(String text) {
                     return TimeZone.getTimeZone(text);
                 }
 

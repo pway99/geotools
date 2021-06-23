@@ -52,7 +52,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         fs = dataStore.getFeatureSource(tname("ft1"));
     }
 
-    public void testStrfunc() throws IOException {
+    public void testStrfunc() {
         if (skipTests(FilterFunction_strConcat.class)) {
             return;
         }
@@ -64,7 +64,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0");
     }
 
-    public void testStrfuncNumbers() throws IOException {
+    public void testStrfuncNumbers() {
         if (skipTests(FilterFunction_strConcat.class)) {
             return;
         }
@@ -79,7 +79,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".1");
     }
 
-    public void testStrEndsWith() throws IOException {
+    public void testStrEndsWith() {
         if (skipTests(FilterFunction_strEndsWith.class)) {
             return;
         }
@@ -91,7 +91,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0", tname("ft1") + ".2");
     }
 
-    public void testStrEndsWithOtherProperty() throws IOException {
+    public void testStrEndsWithOtherProperty() {
         if (skipTests(FilterFunction_strEndsWith.class)) {
             return;
         }
@@ -106,7 +106,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0", tname("ft1") + ".1", tname("ft1") + ".2");
     }
 
-    public void testStrStartsWith() throws IOException {
+    public void testStrStartsWith() {
         if (skipTests(FilterFunction_strStartsWith.class)) {
             return;
         }
@@ -119,7 +119,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0");
     }
 
-    public void testStrStartsWithOtherProperty() throws IOException {
+    public void testStrStartsWithOtherProperty() {
         if (skipTests(FilterFunction_strStartsWith.class)) {
             return;
         }
@@ -134,7 +134,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0", tname("ft1") + ".1", tname("ft1") + ".2");
     }
 
-    public void testStrIndexOf() throws IOException {
+    public void testStrIndexOf() {
         if (skipTests(FilterFunction_strIndexOf.class)) {
             return;
         }
@@ -146,7 +146,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0");
     }
 
-    public void testStrLength() throws IOException {
+    public void testStrLength() {
         if (skipTests(FilterFunction_strLength.class)) {
             return;
         }
@@ -157,7 +157,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0");
     }
 
-    public void testLength() throws IOException {
+    public void testLength() {
         if (skipTests(LengthFunction.class)) {
             return;
         }
@@ -168,7 +168,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0");
     }
 
-    public void testStrLower() throws IOException {
+    public void testStrLower() {
         if (skipTests(FilterFunction_strToLowerCase.class)) {
             return;
         }
@@ -179,7 +179,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0");
     }
 
-    public void testStrUpper() throws IOException {
+    public void testStrUpper() {
         if (skipTests(FilterFunction_strToUpperCase.class)) {
             return;
         }
@@ -190,7 +190,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0");
     }
 
-    public void testStrEqualsIgnoreCase() throws IOException {
+    public void testStrEqualsIgnoreCase() {
         if (skipTests(FilterFunction_strEqualsIgnoreCase.class)) {
             return;
         }
@@ -205,7 +205,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0");
     }
 
-    public void testStrSubstring() throws IOException {
+    public void testStrSubstring() {
         if (skipTests(FilterFunction_strSubstring.class)) {
             return;
         }
@@ -222,7 +222,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0");
     }
 
-    public void testStrSubstringStart() throws IOException {
+    public void testStrSubstringStart() {
         if (skipTests(FilterFunction_strSubstringStart.class)) {
             return;
         }
@@ -236,7 +236,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0");
     }
 
-    public void testStrTrim() throws IOException {
+    public void testStrTrim() {
         if (skipTests(FilterFunction_strTrim.class) || skipTests(FilterFunction_strConcat.class)) {
             return;
         }
@@ -250,7 +250,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".0");
     }
 
-    public void testAbs() throws IOException {
+    public void testAbs() {
         if (skipTests(FilterFunction_abs.class)) {
             return;
         }
@@ -263,7 +263,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".1");
     }
 
-    public void testAbs2() throws IOException {
+    public void testAbs2() {
         if (skipTests(FilterFunction_abs_2.class)) {
             return;
         }
@@ -276,7 +276,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".1");
     }
 
-    public void testAbs3() throws IOException {
+    public void testAbs3() {
         if (skipTests(FilterFunction_abs_3.class)) {
             return;
         }
@@ -289,7 +289,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".1", tname("ft1") + ".2");
     }
 
-    public void testAbs4() throws IOException {
+    public void testAbs4() {
         if (skipTests(FilterFunction_abs_4.class)) {
             return;
         }
@@ -302,7 +302,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".1", tname("ft1") + ".2");
     }
 
-    public void testCeil() throws IOException {
+    public void testCeil() {
         if (skipTests(FilterFunction_ceil.class)) {
             return;
         }
@@ -313,7 +313,7 @@ public abstract class JDBCFunctionOnlineTest extends JDBCTestSupport {
         assertFeatures(fs, filter, tname("ft1") + ".1");
     }
 
-    public void testFloor() throws IOException {
+    public void testFloor() {
         if (skipTests(FilterFunction_ceil.class)) {
             return;
         }

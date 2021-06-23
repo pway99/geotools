@@ -89,7 +89,7 @@ public class ZoomInterpolationTest {
 
     @Test
     @Ignore
-    public void testZoomPropertyInterpolationExponential() throws ParseException {
+    public void testZoomPropertyInterpolationExponential() {
         // Define an exponential zoom-and-property function
 
         //        String functionJson =
@@ -120,7 +120,7 @@ public class ZoomInterpolationTest {
 
     @Test
     @Ignore
-    public void testZoomPropertyInterpolationInterval() throws ParseException {
+    public void testZoomPropertyInterpolationInterval() {
         // Define an interval zoom-and-property function
 
         //        String functionJson =

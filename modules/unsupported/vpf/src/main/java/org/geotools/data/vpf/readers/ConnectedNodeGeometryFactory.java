@@ -53,7 +53,7 @@ public class ConnectedNodeGeometryFactory extends VPFGeometryFactory implements 
      */
     @Override
     public synchronized Geometry buildGeometry(VPFFeatureClass featureClass, SimpleFeature values)
-            throws SQLException, IOException, IllegalAttributeException {
+            throws IOException, IllegalAttributeException {
         int nodeId = Integer.parseInt(values.getAttribute("cnd_id").toString());
         //        VPFFeatureType featureType = (VPFFeatureType)values.getFeatureType();
 

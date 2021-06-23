@@ -56,12 +56,12 @@ public class CSVDataStore extends ContentDataStore implements FileDataStore {
     }
 
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         return Collections.singletonList(getTypeName());
     }
 
     @Override
-    protected ContentFeatureSource createFeatureSource(ContentEntry entry) throws IOException {
+    protected ContentFeatureSource createFeatureSource(ContentEntry entry) {
         if (csvFileState.getFile() != null && csvFileState.getFile().canWrite()) {
             return new CSVFeatureStore(csvStrategy, csvFileState, entry, Query.ALL);
         } else {
@@ -70,17 +70,17 @@ public class CSVDataStore extends ContentDataStore implements FileDataStore {
     }
 
     @Override
-    public SimpleFeatureType getSchema() throws IOException {
+    public SimpleFeatureType getSchema() {
         return this.csvStrategy.getFeatureType();
     }
 
     @Override
-    public void updateSchema(SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(SimpleFeatureType featureType) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public SimpleFeatureSource getFeatureSource() throws IOException {
+    public SimpleFeatureSource getFeatureSource() {
         return super.getFeatureSource(getTypeName());
     }
 

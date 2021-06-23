@@ -36,8 +36,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.ParameterValue;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 
 /**
  * @author Daniele Romagnoli, GeoSolutions
@@ -108,7 +106,7 @@ public final class JP2MrSIDTest extends GDALTestCase {
     }
 
     @Test
-    public void testIsAvailable() throws NoSuchAuthorityCodeException, FactoryException {
+    public void testIsAvailable() {
         if (!testingEnabled()) {
             return;
         }

@@ -50,7 +50,7 @@ public class JenksFunctionTest extends FunctionTestSupport {
     }
 
     @Test
-    public void testSetParameters() throws Exception {
+    public void testSetParameters() {
         Literal classes = ff.literal(3);
         PropertyName expr = ff.property("foo");
         JenksNaturalBreaksFunction func =
@@ -68,7 +68,7 @@ public class JenksFunctionTest extends FunctionTestSupport {
     // rework to test with Jenks71 data
     // answer (from R) is [15.57,41.2] (41.2,60.66] (60.66,77.29] (77.29,100.1] (100.1,155.3]
     @Test
-    public void testEvaluateRealData() throws Exception {
+    public void testEvaluateRealData() {
 
         Literal classes = ff.literal(5);
         PropertyName exp = ff.property("jenks71");
@@ -87,7 +87,7 @@ public class JenksFunctionTest extends FunctionTestSupport {
     }
 
     @Test
-    public void testEvaluateWithExpressions() throws Exception {
+    public void testEvaluateWithExpressions() {
         Literal classes = ff.literal(2);
         PropertyName exp = ff.property("foo");
         Function func = ff.function("Jenks", exp, classes);
@@ -243,7 +243,7 @@ public class JenksFunctionTest extends FunctionTestSupport {
     }
 
     @Test
-    public void testEvaluateNumericalWithPercentages() throws Exception {
+    public void testEvaluateNumericalWithPercentages() {
         Literal classes = ff.literal(3);
         PropertyName exp = ff.property("foo");
         Function func = ff.function("Jenks", exp, classes, ff.literal(true));

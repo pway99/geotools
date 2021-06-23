@@ -37,7 +37,6 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -139,7 +138,7 @@ public class StreamingRendererTest {
     }
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
         builder.setName("Lines");
@@ -151,7 +150,7 @@ public class StreamingRendererTest {
         testPointFeatureType = builder.buildFeatureType();
     }
 
-    public SimpleFeatureCollection createLineCollection() throws Exception {
+    public SimpleFeatureCollection createLineCollection() {
         DefaultFeatureCollection fc = new DefaultFeatureCollection();
         fc.add(createLine(-177, 0, -177, 10));
         fc.add(createLine(-177, 0, -200, 0));
@@ -187,7 +186,7 @@ public class StreamingRendererTest {
     }
 
     @Test
-    public void testDensification() throws Exception {
+    public void testDensification() {
         // build a feature source with two zig-zag line occupying the same position
         LiteCoordinateSequence cs = new LiteCoordinateSequence(new double[] {13, 10, 13, 40});
         SimpleFeature line =
@@ -233,7 +232,7 @@ public class StreamingRendererTest {
     }
 
     @Test
-    public void testDensificationWithSmallDomain() throws Exception {
+    public void testDensificationWithSmallDomain() {
         // build a feature source with two zig-zag line occupying the same position
         LiteCoordinateSequence cs = new LiteCoordinateSequence(new double[] {10, 10, 10, 40});
         SimpleFeature line =
@@ -538,7 +537,7 @@ public class StreamingRendererTest {
      * rotated. StreamingRenderer
      */
     @Test
-    public void testRotatedTransform() throws Exception {
+    public void testRotatedTransform() {
         // If we rotate the world rectangle + 90 degrees around (0,0), we get the screen rectangle
         final Rectangle screen = new Rectangle(0, 0, 100, 50);
         final Envelope world = new Envelope(0, 50, 0, -100);
@@ -743,8 +742,7 @@ public class StreamingRendererTest {
         PropertyDataStore dataStore =
                 new PropertyDataStore(dir.getParentFile()) {
                     @Override
-                    protected ContentFeatureSource createFeatureSource(ContentEntry entry)
-                            throws IOException {
+                    protected ContentFeatureSource createFeatureSource(ContentEntry entry) {
                         return new PropertyFeatureSource(entry, Query.ALL) {
                             @Override
                             protected boolean canFilter() {
@@ -882,7 +880,7 @@ public class StreamingRendererTest {
     }
 
     @Test
-    public void testNPEOnMissingProjectionHandler() throws FactoryException, TransformException {
+    public void testNPEOnMissingProjectionHandler() {
         StreamingRendererTester tester = new StreamingRendererTester();
         String wkt =
                 "PROJCS[\"World_Eckert_IV\",GEOGCS[\"WGS_1984\",DATUM[\"WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Eckert_IV\"],PARAMETER[\"Central_Meridian\",0.0],UNIT[\"Meter\",1.0]]";

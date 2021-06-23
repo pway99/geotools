@@ -50,7 +50,7 @@ public class FeatureTypeListTypeBindingTest extends WFSTestSupport {
     @Override
     @SuppressWarnings("unchecked")
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         FeatureTypeListType ftl = factory.createFeatureTypeListType();
         {
             OperationsType ops = factory.createOperationsType();

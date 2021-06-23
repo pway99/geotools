@@ -264,7 +264,7 @@ public class CreateIndexer {
         return longName;
     }
 
-    private static boolean setCoverage(Element cov, StringBuilder builder) throws JDOMException {
+    private static boolean setCoverage(Element cov, StringBuilder builder) {
         builder.append("    <coverage>\n");
         Element name = (Element) XPathFactory.instance().compile("name").evaluateFirst(cov);
         String coverageName = name.getText();
@@ -311,8 +311,7 @@ public class CreateIndexer {
     }
 
     private static void getAttributes(
-            Set<String> timeAttributes, Set<String> elevationAttributes, Element root)
-            throws JDOMException {
+            Set<String> timeAttributes, Set<String> elevationAttributes, Element root) {
         List<?> schemaAttributes =
                 XPathFactory.instance()
                         .compile("coverages/coverage/schema/attributes")

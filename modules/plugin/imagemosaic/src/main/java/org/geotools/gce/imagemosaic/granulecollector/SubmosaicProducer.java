@@ -34,7 +34,7 @@ public interface SubmosaicProducer {
     /**
      * Gives the producer an opportunity to pre-visit the granules, if it needs so for any reason
      */
-    default void init(Query query) throws IOException, Exception {}
+    default void init(Query query) {}
 
     boolean accept(GranuleDescriptor granuleDescriptor);
 

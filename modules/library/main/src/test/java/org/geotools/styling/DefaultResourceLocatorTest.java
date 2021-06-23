@@ -19,7 +19,6 @@ package org.geotools.styling;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
@@ -31,7 +30,7 @@ import org.junit.Test;
 
 public class DefaultResourceLocatorTest {
     @Test
-    public void testRelativeFileURL() throws Exception {
+    public void testRelativeFileURL() {
         DefaultResourceLocator locator = new DefaultResourceLocator();
         locator.setSourceUrl(getClass().getResource("test-data/blob.gif"));
 
@@ -42,7 +41,7 @@ public class DefaultResourceLocatorTest {
     }
 
     @Test
-    public void testPreserveURLQuery() throws Exception {
+    public void testPreserveURLQuery() {
         DefaultResourceLocator locator = new DefaultResourceLocator();
         locator.setSourceUrl(getClass().getResource("test-data/blob.gif"));
 
@@ -54,7 +53,7 @@ public class DefaultResourceLocatorTest {
     }
 
     @Test
-    public void testPreserveURLQueryWithColors() throws Exception {
+    public void testPreserveURLQueryWithColors() {
         DefaultResourceLocator locator = new DefaultResourceLocator();
         locator.setSourceUrl(getClass().getResource("test-data/blob.gif"));
 
@@ -84,11 +83,11 @@ public class DefaultResourceLocatorTest {
                         new URLStreamHandler() {
 
                             @Override
-                            protected URLConnection openConnection(URL u) throws IOException {
+                            protected URLConnection openConnection(URL u) {
                                 return new URLConnection(u) {
 
                                     @Override
-                                    public void connect() throws IOException {}
+                                    public void connect() {}
 
                                     @Override
                                     public long getLastModified() {
@@ -96,12 +95,12 @@ public class DefaultResourceLocatorTest {
                                     }
 
                                     @Override
-                                    public InputStream getInputStream() throws IOException {
+                                    public InputStream getInputStream() {
                                         return new ByteArrayInputStream(new byte[0]);
                                     }
 
                                     @Override
-                                    public OutputStream getOutputStream() throws IOException {
+                                    public OutputStream getOutputStream() {
                                         return new ByteArrayOutputStream();
                                     }
                                 };

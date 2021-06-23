@@ -121,8 +121,7 @@ public class ContentFeatureCollection implements SimpleFeatureCollection {
     // Visitors
     @Override
     public void accepts(
-            org.opengis.feature.FeatureVisitor visitor, org.opengis.util.ProgressListener progress)
-            throws IOException {
+            org.opengis.feature.FeatureVisitor visitor, org.opengis.util.ProgressListener progress) {
         featureSource.accepts(query, visitor, progress);
     }
 

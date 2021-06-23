@@ -124,25 +124,25 @@ public class PostgisDataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropBuildingTable() throws Exception {
+    protected void dropBuildingTable() {
         runSafe("DELETE FROM  GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'building'");
         runSafe("DROP TABLE \"building\"");
     }
 
     @Override
-    protected void dropLakeTable() throws Exception {
+    protected void dropLakeTable() {
         runSafe("DELETE FROM GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'lake'");
         runSafe("DROP TABLE \"lake\"");
     }
 
     @Override
-    protected void dropRiverTable() throws Exception {
+    protected void dropRiverTable() {
         runSafe("DELETE FROM GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'river'");
         runSafe("DROP TABLE \"river\"");
     }
 
     @Override
-    protected void dropRoadTable() throws Exception {
+    protected void dropRoadTable() {
         runSafe("DELETE FROM GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'road'");
         runSafe("DROP TABLE \"road\"");
     }

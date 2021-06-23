@@ -55,7 +55,7 @@ public class FunctionExpressionImplTest {
     TestExpressionVisitor testVisitor;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         function =
                 new FunctionExpressionImpl(
                         FunctionExpressionImpl.functionName(
@@ -64,7 +64,7 @@ public class FunctionExpressionImplTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         function = null;
         testVisitor = null;
     }

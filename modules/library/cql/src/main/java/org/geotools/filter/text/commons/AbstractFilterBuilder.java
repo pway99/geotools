@@ -423,7 +423,7 @@ public abstract class AbstractFilterBuilder {
      *
      * @return String with the time zone
      */
-    private String extractTimeZone(final String cqlDateTime) throws CQLException {
+    private String extractTimeZone(final String cqlDateTime) {
         Matcher m = DATETIME_PATTERN.matcher(cqlDateTime);
         if (m.matches()) {
             return m.group(3) != null ? m.group(3).toUpperCase() : "";
@@ -630,7 +630,7 @@ public abstract class AbstractFilterBuilder {
         return property;
     }
 
-    public Literal buildDistanceUnit(IToken token) throws CQLException {
+    public Literal buildDistanceUnit(IToken token) {
 
         Literal unit = filterFactory.literal(token.toString());
 

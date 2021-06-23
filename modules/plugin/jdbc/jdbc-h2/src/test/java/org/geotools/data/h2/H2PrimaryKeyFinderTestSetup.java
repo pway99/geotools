@@ -38,7 +38,7 @@ public class H2PrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSetup {
     }
 
     @Override
-    protected void dropMetadataTable() throws Exception {
+    protected void dropMetadataTable() {
         runSafe("DROP TABLE gt_pk_metadata");
     }
 
@@ -83,7 +83,7 @@ public class H2PrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSetup {
     }
 
     @Override
-    protected void dropPlainTable() throws Exception {
+    protected void dropPlainTable() {
         runSafe("DROP TABLE \"plaintable\"");
     }
 
@@ -96,7 +96,7 @@ public class H2PrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSetup {
     }
 
     @Override
-    protected void dropAssignedSinglePkView() throws Exception {
+    protected void dropAssignedSinglePkView() {
         runSafe("DROP VIEW \"assignedsinglepk\"");
     }
 
@@ -112,7 +112,7 @@ public class H2PrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSetup {
     }
 
     @Override
-    protected void dropAssignedMultiPkView() throws Exception {
+    protected void dropAssignedMultiPkView() {
         runSafe("DROP VIEW \"assignedmultipk\"");
     }
 }

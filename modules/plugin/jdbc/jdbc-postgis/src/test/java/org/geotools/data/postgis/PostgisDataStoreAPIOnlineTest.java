@@ -35,7 +35,7 @@ public class PostgisDataStoreAPIOnlineTest extends JDBCDataStoreAPIOnlineTest {
     }
 
     @Override
-    public void testGetFeatureWriterConcurrency() throws Exception {
+    public void testGetFeatureWriterConcurrency() {
         // postgis will lock indefinitely, won't throw an exception
     }
 

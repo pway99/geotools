@@ -24,7 +24,7 @@ import org.opengis.referencing.crs.CoordinateReferenceSystem;
 public class URNEPSGTest {
 
     @Test
-    public void test() throws Exception {
+    public void test() {
         CoordinateReferenceSystem crs1 = CRS.decode("EPSG:4326");
         CoordinateReferenceSystem crs2 = CRS.decode("urn:x-ogc:def:crs:EPSG:6.11.2:4326");
 

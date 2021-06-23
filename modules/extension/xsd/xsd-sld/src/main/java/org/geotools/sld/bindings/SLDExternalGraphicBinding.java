@@ -112,7 +112,7 @@ public class SLDExternalGraphicBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // the Converters wrapper here is a workaround for http://jira.codehaus.org/browse/GEOT-2457
         // for some reason on the IBM JDK returns a string, we should really find out why instead
         // of applying this bandaid

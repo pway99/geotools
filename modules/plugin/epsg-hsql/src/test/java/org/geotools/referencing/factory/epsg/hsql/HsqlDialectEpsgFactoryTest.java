@@ -28,7 +28,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.opengis.geometry.DirectPosition;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.IdentifiedObject;
 import org.opengis.referencing.ReferenceIdentifier;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
@@ -53,7 +52,7 @@ public class HsqlDialectEpsgFactoryTest {
     }
 
     @Test
-    public void testCreation() throws Exception {
+    public void testCreation() {
         Assert.assertNotNull(factory);
         CoordinateReferenceSystem epsg4326 = factory.createCoordinateReferenceSystem("EPSG:4326");
         CoordinateReferenceSystem code4326 = factory.createCoordinateReferenceSystem("4326");
@@ -74,14 +73,14 @@ public class HsqlDialectEpsgFactoryTest {
     }
 
     @Test
-    public void testAuthorityCodes() throws Exception {
+    public void testAuthorityCodes() {
         Set authorityCodes = factory.getAuthorityCodes(CoordinateReferenceSystem.class);
         Assert.assertNotNull(authorityCodes);
         Assert.assertTrue(authorityCodes.size() > 3000);
     }
 
     @Test
-    public void testFindWSG84() throws FactoryException {
+    public void testFindWSG84() {
         String wkt =
                 "GEOGCS[\"WGS 84\",\n"
                         + "  DATUM[\"World Geodetic System 1984\",\n"
@@ -124,7 +123,7 @@ public class HsqlDialectEpsgFactoryTest {
     }
 
     @Test
-    public void testFindBeijing1954() throws FactoryException {
+    public void testFindBeijing1954() {
         if (!TestData.isExtensiveTest()) {
             return;
         }

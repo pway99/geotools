@@ -46,7 +46,7 @@ public class GeoPkgTypeNamesTestSetup extends JDBCTypeNamesTestSetup {
     }
 
     @Override
-    protected void dropTypes() throws Exception {
+    protected void dropTypes() {
         ((GeoPkgTestSetup) delegate).removeTable("ftnview");
         ((GeoPkgTestSetup) delegate).removeTable("ftntable");
     }

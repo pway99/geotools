@@ -22,7 +22,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.awt.Color;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -57,7 +56,7 @@ public class InterpolateFunctionTest extends SEFunctionTestBase {
     }
 
     @Parameterized.Parameters(name = "{0}")
-    public static Collection<Object[]> data() throws IOException {
+    public static Collection<Object[]> data() {
         List<Object[]> result = new ArrayList<>();
         result.add(new Object[] {"static", false});
         result.add(new Object[] {"dynamic", true});
@@ -229,7 +228,7 @@ public class InterpolateFunctionTest extends SEFunctionTestBase {
     }
 
     @Test
-    public void testAsRasterData() throws Exception {
+    public void testAsRasterData() {
         // System.out.println("   testRasterData");
 
         setupParameters(data, colors);
@@ -423,7 +422,7 @@ public class InterpolateFunctionTest extends SEFunctionTestBase {
     }
 
     @Test
-    public void testNullSafeColor() throws Exception {
+    public void testNullSafeColor() {
         setupParameters(data, values);
         parameters.add(ff2.literal(InterpolateFunction.METHOD_COLOR));
 
@@ -433,7 +432,7 @@ public class InterpolateFunctionTest extends SEFunctionTestBase {
     }
 
     @Test
-    public void testNullSafeNumeric() throws Exception {
+    public void testNullSafeNumeric() {
         setupParameters(data, values);
         parameters.add(ff2.literal(InterpolateFunction.METHOD_NUMERIC));
 

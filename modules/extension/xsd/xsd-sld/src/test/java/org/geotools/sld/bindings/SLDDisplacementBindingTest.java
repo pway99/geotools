@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class SLDDisplacementBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(Displacement.class, new SLDDisplacementBinding(null).getType());
     }
 

@@ -18,7 +18,6 @@ package org.geotools.geopkg;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.util.Locale;
 import javax.imageio.spi.ImageInputStreamSpi;
 import javax.imageio.stream.ImageInputStream;
@@ -36,8 +35,7 @@ public class ByteArrayImageInputStreamSpi extends ImageInputStreamSpi {
     }
 
     @Override
-    public ImageInputStream createInputStreamInstance(Object input, boolean useCache, File cacheDir)
-            throws IOException {
+    public ImageInputStream createInputStreamInstance(Object input, boolean useCache, File cacheDir) {
         if (input instanceof byte[]) {
             return new MemoryCacheImageInputStream(new ByteArrayInputStream((byte[]) input));
         }

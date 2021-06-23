@@ -60,7 +60,7 @@ public class EmfAppSchemaReaderTest extends AppSchemaTestSupport {
     private static final String NS_URI = "http://online.socialchange.net.au";
 
     @Test
-    public void testParseSimpleFeatureType() throws Exception {
+    public void testParseSimpleFeatureType() {
         String res = "/test-data/simpleFeature.xsd";
         URL resource = getClass().getResource(res);
 
@@ -142,7 +142,7 @@ public class EmfAppSchemaReaderTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testComplexFeatureType() throws Exception {
+    public void testComplexFeatureType() {
         String res = "/test-data/complexFeature.xsd";
         URL resource = getClass().getResource(res);
         SchemaIndex schemaIndex = EmfComplexFeatureReader.newInstance().parse(resource);
@@ -232,7 +232,7 @@ public class EmfAppSchemaReaderTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testSimpleAttributeFromComplexDeclaration() throws Exception {
+    public void testSimpleAttributeFromComplexDeclaration() {
         String res = "/test-data/complexFeature.xsd";
         URL resource = getClass().getResource(res);
         SchemaIndex schemaIndex = EmfComplexFeatureReader.newInstance().parse(resource);

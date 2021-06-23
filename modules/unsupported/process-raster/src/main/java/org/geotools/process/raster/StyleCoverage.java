@@ -17,7 +17,6 @@
  */
 package org.geotools.process.raster;
 
-import java.io.IOException;
 import org.geotools.coverage.grid.GridCoverage2D;
 import org.geotools.process.factory.DescribeParameter;
 import org.geotools.process.factory.DescribeProcess;
@@ -48,8 +47,7 @@ public class StyleCoverage implements RasterProcess {
                         description =
                                 "Styled Layer Descriptor (SLD) style containing a raster symbolizer"
                     )
-                    Style style)
-            throws IOException {
+                    Style style) {
         // TODO: perform a lookup in the entire style?
         final RasterSymbolizer symbolizer =
                 (RasterSymbolizer)

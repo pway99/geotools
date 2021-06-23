@@ -17,28 +17,20 @@
  */
 package org.geotools.ysld.transform.sld;
 
-import java.io.IOException;
-import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 /** Handles xml parse events. */
 public class SldTransformHandler {
 
-    public void document(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {}
+    public void document(XMLStreamReader xml, SldTransformContext context) {}
 
-    public void element(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {}
+    public void element(XMLStreamReader xml, SldTransformContext context) {}
 
-    public void attribute(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {}
+    public void attribute(XMLStreamReader xml, SldTransformContext context) {}
 
-    public void characters(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {}
+    public void characters(XMLStreamReader xml, SldTransformContext context) {}
 
-    public void endElement(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {}
+    public void endElement(XMLStreamReader xml, SldTransformContext context) {}
 
-    public void endDocument(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {}
+    public void endDocument(XMLStreamReader xml, SldTransformContext context) {}
 }

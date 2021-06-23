@@ -43,12 +43,11 @@ import org.opengis.parameter.ParameterValue;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.datum.PixelInCell;
 import org.opengis.referencing.operation.MathTransform;
-import org.opengis.referencing.operation.TransformException;
 
 public class MultiResolutionTest {
 
     @Test
-    public void testCatalogBuilderSample() throws IOException, TransformException {
+    public void testCatalogBuilderSample() throws IOException {
         ImageMosaicFormat format = new ImageMosaicFormat();
         ImageMosaicReader reader = format.getReader(TestData.file(this, "multiresolution"));
         // the following code is copied from GeoServer's CatalogBuilder
@@ -82,7 +81,7 @@ public class MultiResolutionTest {
     }
 
     @Test
-    public void testVirtualNativeResolution() throws IOException, TransformException {
+    public void testVirtualNativeResolution() throws IOException {
         TemporaryFolder folder = new TemporaryFolder();
         folder.create();
         File file = folder.newFile("sample.tif");
@@ -115,7 +114,7 @@ public class MultiResolutionTest {
     }
 
     @Test
-    public void testVirtualNativeResolutionNoOverviews() throws IOException, TransformException {
+    public void testVirtualNativeResolutionNoOverviews() throws IOException {
         TemporaryFolder folder = new TemporaryFolder();
         folder.create();
         File srtm = folder.newFile("sample_noov.tif");
@@ -148,7 +147,7 @@ public class MultiResolutionTest {
     }
 
     @Test
-    public void testPickHighestResolution() throws IOException, TransformException {
+    public void testPickHighestResolution() throws IOException {
         TemporaryFolder folder = new TemporaryFolder();
         folder.create();
         File srtm = folder.newFile("srtm.tiff");
@@ -167,7 +166,7 @@ public class MultiResolutionTest {
     }
 
     @Test
-    public void testVirtualNativeResolutionPreserveAffine() throws IOException, TransformException {
+    public void testVirtualNativeResolutionPreserveAffine() throws IOException {
         TemporaryFolder folder = new TemporaryFolder();
         folder.create();
         File file = folder.newFile("sample.tif");

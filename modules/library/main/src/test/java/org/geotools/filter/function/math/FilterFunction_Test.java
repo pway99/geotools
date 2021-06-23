@@ -46,7 +46,7 @@ public class FilterFunction_Test {
     private FilterFactory ff;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         ff = CommonFactoryFinder.getFilterFactory2(null);
 
         literal_1 = ff.literal("1");
@@ -71,7 +71,7 @@ public class FilterFunction_Test {
     }
 
     @After
-    public void tearDown() throws Exception {}
+    public void tearDown() {}
 
     @Test
     public void testsin() {

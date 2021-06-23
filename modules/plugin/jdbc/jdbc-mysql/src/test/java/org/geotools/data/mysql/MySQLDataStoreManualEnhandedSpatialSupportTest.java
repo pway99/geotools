@@ -40,7 +40,7 @@ public class MySQLDataStoreManualEnhandedSpatialSupportTest extends JDBCTestSupp
         return params;
     }
 
-    public void testManualEnhancedSpatialSupportDetection() throws Exception {
+    public void testManualEnhancedSpatialSupportDetection() {
         // ensure that if not version 5.6 or later then PreciseSpatialOps are
         // disabled
         boolean isMySQL56 = MySQLDataStoreFactory.isMySqlVersion56OrAbove(dataStore);

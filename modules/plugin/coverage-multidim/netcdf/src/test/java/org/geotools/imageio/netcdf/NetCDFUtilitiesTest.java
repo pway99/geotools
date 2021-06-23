@@ -32,7 +32,7 @@ import ucar.ma2.DataType;
 public final class NetCDFUtilitiesTest {
 
     @Test
-    public void testGetArray() throws Exception {
+    public void testGetArray() {
 
         // Test 7 Dimensions
         int[] dimensions = {1, 2, 3, 4, 5, 6, 7};

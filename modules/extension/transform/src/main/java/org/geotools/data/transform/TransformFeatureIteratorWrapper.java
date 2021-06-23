@@ -16,7 +16,6 @@
  */
 package org.geotools.data.transform;
 
-import java.io.IOException;
 import java.util.logging.Logger;
 import org.geotools.data.simple.SimpleFeatureIterator;
 import org.geotools.feature.FeatureIterator;
@@ -45,7 +44,7 @@ class TransformFeatureIteratorWrapper implements SimpleFeatureIterator {
     private SimpleFeatureType target;
 
     public TransformFeatureIteratorWrapper(
-            FeatureIterator<SimpleFeature> wrapped, Transformer transformer) throws IOException {
+            FeatureIterator<SimpleFeature> wrapped, Transformer transformer) {
         this.transformer = transformer;
         this.target = transformer.getSchema();
         this.wrapped = wrapped;

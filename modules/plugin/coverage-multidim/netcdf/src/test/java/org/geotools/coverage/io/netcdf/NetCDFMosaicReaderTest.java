@@ -114,8 +114,6 @@ import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.InvalidParameterValueException;
 import org.opengis.parameter.ParameterDescriptor;
 import org.opengis.parameter.ParameterValue;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import ucar.nc2.Variable;
 
 /**
@@ -1131,8 +1129,7 @@ public class NetCDFMosaicReaderTest {
 
     @Test
     public void testNetCdfMosaicSingleVariableFiles()
-            throws IOException, NoSuchFieldException, SecurityException, IllegalArgumentException,
-                    IllegalAccessException {
+            throws IOException, SecurityException, IllegalArgumentException {
         File ncMosaic = TestData.file(this, "imagemosaic");
         File mosaic = tempFolder.newFolder("ncmosaic");
         FileUtils.copyDirectory(ncMosaic, mosaic);
@@ -1382,7 +1379,7 @@ public class NetCDFMosaicReaderTest {
     @Test
     @Ignore
     public void oracle()
-            throws IOException, ParseException, NoSuchAuthorityCodeException, FactoryException {
+            throws IOException {
         final File workDir = new File("C:\\data\\dlr\\ascatL1_mosaic");
 
         final AbstractGridFormat format = new ImageMosaicFormat();

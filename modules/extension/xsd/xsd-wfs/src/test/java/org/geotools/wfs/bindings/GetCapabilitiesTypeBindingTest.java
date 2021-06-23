@@ -33,7 +33,7 @@ public class GetCapabilitiesTypeBindingTest extends WFSTestSupport {
 
     @Override
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         GetCapabilitiesType getCaps = factory.createGetCapabilitiesType();
         Document dom = encode(getCaps, WFS.GetCapabilities);
 
@@ -43,7 +43,7 @@ public class GetCapabilitiesTypeBindingTest extends WFSTestSupport {
 
     @Override
     @Test
-    public void testParse() throws Exception {
+    public void testParse() {
         // throw new UnsupportedOperationException("Not yet implemented");
         // temporarilly force pass to not break the build
         assertTrue(true);

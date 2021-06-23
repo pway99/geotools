@@ -87,7 +87,7 @@ public abstract class JDBCTemporalFilterOnlineTest extends JDBCTestSupport {
         }
     }
 
-    public void testAfter() throws Exception {
+    public void testAfter() {
         FilterFactory ff = dataStore.getFilterFactory();
 
         After after = ff.after(ff.property(aname("dt")), ff.literal("2009-02-01 00:00:00"));
@@ -106,7 +106,7 @@ public abstract class JDBCTemporalFilterOnlineTest extends JDBCTestSupport {
         assertDatesMatch(after, "2009-01-15 13:10:12");
     }
 
-    public void testBefore() throws Exception {
+    public void testBefore() {
         FilterFactory ff = dataStore.getFilterFactory();
 
         Before before = ff.before(ff.property(aname("dt")), ff.literal("2009-02-01 00:00:00"));
@@ -174,7 +174,7 @@ public abstract class JDBCTemporalFilterOnlineTest extends JDBCTestSupport {
         assertDatesMatch(during, "2009-01-15 13:10:12", "2009-06-28 15:12:41");
     }
 
-    public void testTEquals() throws Exception {
+    public void testTEquals() {
         FilterFactory ff = dataStore.getFilterFactory();
 
         TEquals equals = ff.tequals(ff.literal("2009-01-15 13:10:12"), ff.property(aname("dt")));

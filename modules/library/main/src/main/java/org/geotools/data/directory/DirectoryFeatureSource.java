@@ -71,7 +71,7 @@ public class DirectoryFeatureSource implements SimpleFeatureSource {
     }
 
     @Override
-    public SimpleFeatureCollection getFeatures(Filter filter) throws IOException {
+    public SimpleFeatureCollection getFeatures(Filter filter) {
         return fsource.getFeatures(filter);
     }
 

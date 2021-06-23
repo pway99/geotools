@@ -40,7 +40,7 @@ public class GetFeatureTypeBindingTest extends WFSTestSupport {
     @Override
     @SuppressWarnings("unchecked")
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         GetFeatureType getFeature = factory.createGetFeatureType();
         getFeature.setHandle("handle");
         getFeature.setMaxFeatures(BigInteger.valueOf(10));

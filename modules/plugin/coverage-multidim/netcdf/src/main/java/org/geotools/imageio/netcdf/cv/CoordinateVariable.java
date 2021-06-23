@@ -355,7 +355,7 @@ public abstract class CoordinateVariable<T> {
         return coordinateAxis.getShortName();
     }
 
-    public long getSize() throws IOException {
+    public long getSize() {
         return axisHelper.getSize();
     }
 
@@ -382,11 +382,11 @@ public abstract class CoordinateVariable<T> {
                 : ((CoordinateAxis1D) coordinateAxis).getStart();
     }
 
-    public T getMinimum() throws IOException {
+    public T getMinimum() {
         return axisHelper.getMinimum();
     }
 
-    public T getMaximum() throws IOException {
+    public T getMaximum() {
         return axisHelper.getMaximum();
     }
 

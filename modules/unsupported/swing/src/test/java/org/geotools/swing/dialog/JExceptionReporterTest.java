@@ -97,12 +97,12 @@ public class JExceptionReporterTest extends GraphicsTestBase<DialogFixture, Dial
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void nullExceptionArg() throws Exception {
+    public void nullExceptionArg() {
         JExceptionReporter.showDialog(null);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void nullExceptionArg2() throws Exception {
+    public void nullExceptionArg2() {
         JExceptionReporter.showDialog(null, "User message");
     }
 

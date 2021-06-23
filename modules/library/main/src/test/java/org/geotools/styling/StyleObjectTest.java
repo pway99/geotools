@@ -44,7 +44,7 @@ public class StyleObjectTest {
      * @see TestCase#setUp()
      */
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         styleFactory = CommonFactoryFinder.getStyleFactory();
         filterFactory = CommonFactoryFinder.getFilterFactory(null);
     }
@@ -53,12 +53,12 @@ public class StyleObjectTest {
      * @see TestCase#tearDown()
      */
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         styleFactory = null;
     }
 
     @Test
-    public void testStyle() throws Exception {
+    public void testStyle() {
         FeatureTypeStyle fts = styleFactory.createFeatureTypeStyle();
         fts.featureTypeNames().add(new NameImpl("feature-type-1"));
 
@@ -88,7 +88,7 @@ public class StyleObjectTest {
     }
 
     @Test
-    public void testFeatureTypeStyle() throws Exception {
+    public void testFeatureTypeStyle() {
         FeatureTypeStyle fts = styleFactory.createFeatureTypeStyle();
         fts.featureTypeNames().add(new NameImpl("feature-type"));
 
@@ -116,7 +116,7 @@ public class StyleObjectTest {
     }
 
     @Test
-    public void testRule() throws Exception {
+    public void testRule() {
         Symbolizer symb1 =
                 styleFactory.createLineSymbolizer(styleFactory.getDefaultStroke(), "geometry");
 
@@ -145,7 +145,7 @@ public class StyleObjectTest {
     }
 
     @Test
-    public void testPointSymbolizer() throws Exception {
+    public void testPointSymbolizer() {
         PointSymbolizer pointSymb = styleFactory.createPointSymbolizer();
         PointSymbolizer clone = (PointSymbolizer) ((Cloneable) pointSymb).clone();
         assertClone(pointSymb, clone);
@@ -202,7 +202,7 @@ public class StyleObjectTest {
     }
 
     @Test
-    public void testLinePlacement() throws Exception {
+    public void testLinePlacement() {
         LinePlacement linePlacement = styleFactory.createLinePlacement(filterFactory.literal(12));
         LinePlacement clone = (LinePlacement) ((Cloneable) linePlacement).clone();
         assertClone(linePlacement, clone);
@@ -399,7 +399,7 @@ public class StyleObjectTest {
     }
 
     @Test
-    public void testFeatureStyleImplCopy() throws Exception {
+    public void testFeatureStyleImplCopy() {
         // create FeatureTypeStyleImpl
         FeatureTypeStyle fts = new FeatureTypeStyleImpl();
         Assert.assertNull(fts.getTransformation());

@@ -29,7 +29,7 @@ import org.opengis.parameter.Parameter;
 public class FunctionImplTest {
 
     @Test
-    public void testFunctionName() throws Exception {
+    public void testFunctionName() {
         FunctionName fn =
                 FunctionImpl.functionName(
                         "foo",
@@ -55,7 +55,7 @@ public class FunctionImplTest {
     }
 
     @Test
-    public void testToString() throws Exception {
+    public void testToString() {
         FunctionImpl func = new FunctionImpl();
         Expression param = new LiteralExpressionImpl(42);
         func.setName("TestFunction");

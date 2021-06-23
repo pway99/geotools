@@ -134,7 +134,7 @@ public class EnvelopeTypeBinding extends AbstractComplexBinding {
      * <!-- end-user-doc -->
      */
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         GeneralEnvelope envelope = (GeneralEnvelope) object;
 
         if (envelope == null) {

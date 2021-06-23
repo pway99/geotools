@@ -49,7 +49,6 @@ import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 import org.opengis.feature.type.AttributeDescriptor;
 import org.opengis.feature.type.GeometryDescriptor;
-import org.opengis.referencing.FactoryException;
 
 public class MBTilesDataStoreTest {
 
@@ -70,7 +69,7 @@ public class MBTilesDataStoreTest {
     }
 
     @Test
-    public void testDataTypes() throws IOException, FactoryException {
+    public void testDataTypes() throws IOException {
         File file = URLs.urlToFile(this.getClass().getResource("datatypes.mbtiles"));
         MBTilesDataStore store = new MBTilesDataStore(new MBTilesFile(file));
         assertThat(store.getTypeNames(), arrayContaining("datatypes"));

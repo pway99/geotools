@@ -60,7 +60,7 @@ public class RescaleStyleVisitorTest {
     double scale;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         sf = CommonFactoryFinder.getStyleFactory(null);
         ff = CommonFactoryFinder.getFilterFactory2(null);
         sb = new StyleBuilder(sf, ff);
@@ -88,7 +88,7 @@ public class RescaleStyleVisitorTest {
     }
 
     @Test
-    public void testStyle() throws Exception {
+    public void testStyle() {
         FeatureTypeStyle fts = sf.createFeatureTypeStyle();
         fts.featureTypeNames().add(new NameImpl("feature-type-1"));
 
@@ -116,7 +116,7 @@ public class RescaleStyleVisitorTest {
     }
 
     @Test
-    public void testRule() throws Exception {
+    public void testRule() {
         Symbolizer symb1 = sf.createLineSymbolizer(sf.getDefaultStroke(), "geometry");
 
         Symbolizer symb2 =
@@ -134,7 +134,7 @@ public class RescaleStyleVisitorTest {
     }
 
     @Test
-    public void testStroke() throws Exception {
+    public void testStroke() {
         Stroke original = sb.createStroke(Color.RED, 2, new float[] {5, 10});
         original.accept(visitor);
         Stroke clone = (Stroke) visitor.getCopy();
@@ -234,7 +234,7 @@ public class RescaleStyleVisitorTest {
     }
 
     @Test
-    public void testRescaleLocalUOM() throws Exception {
+    public void testRescaleLocalUOM() {
         Stroke original = sb.createStroke(Color.RED, 2, new float[] {5, 10});
         original.setWidth(ff.literal("2m"));
         original.accept(visitor);
@@ -244,7 +244,7 @@ public class RescaleStyleVisitorTest {
     }
 
     @Test
-    public void testRescaleLocalPixelInMetersSymbolizer() throws Exception {
+    public void testRescaleLocalPixelInMetersSymbolizer() {
         Stroke stroke = sb.createStroke(Color.RED, 2, new float[] {5, 10});
         stroke.setWidth(ff.literal("2px"));
         LineSymbolizer ls = sb.createLineSymbolizer(stroke);
@@ -256,7 +256,7 @@ public class RescaleStyleVisitorTest {
     }
 
     @Test
-    public void testRescaleLocalPixelInPixelSymbolizer() throws Exception {
+    public void testRescaleLocalPixelInPixelSymbolizer() {
         Stroke stroke = sb.createStroke(Color.RED, 2, new float[] {5, 10});
         stroke.setWidth(ff.literal("2px"));
         LineSymbolizer ls = sb.createLineSymbolizer(stroke);
@@ -267,7 +267,7 @@ public class RescaleStyleVisitorTest {
     }
 
     @Test
-    public void testRescalePerpendicularOffset() throws Exception {
+    public void testRescalePerpendicularOffset() {
         Stroke stroke = sb.createStroke(Color.RED, 2, new float[] {5, 10});
         LineSymbolizer ls = sb.createLineSymbolizer(stroke);
         ls.setPerpendicularOffset(ff.literal(2));
@@ -278,7 +278,7 @@ public class RescaleStyleVisitorTest {
     }
 
     @Test
-    public void testRescalePolygonMargin() throws Exception {
+    public void testRescalePolygonMargin() {
         // create a graphic that needs rescaling
         StyleBuilder sb = new StyleBuilder();
 

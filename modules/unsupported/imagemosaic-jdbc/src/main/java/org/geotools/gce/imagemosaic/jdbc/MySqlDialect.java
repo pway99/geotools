@@ -62,7 +62,7 @@ public class MySqlDialect extends DBDialect {
      * @see org.geotools.gce.imagemosaic.jdbc.DBDialect#getCreateIndexStatement(java.lang.String)
      */
     @Override
-    protected String getCreateIndexStatement(String tn) throws Exception {
+    protected String getCreateIndexStatement(String tn) {
         // String stmt = "ALTER TABLE "+tn + " MODIFY
         // "+getConfig().getGeomAttributeNameInSpatialTable() + " "
         // + getMulitPolygonSQLType() + " NOT NULL";

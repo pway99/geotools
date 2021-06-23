@@ -118,8 +118,7 @@ class StereographicUSGS extends Stereographic {
      * radians) and stores the result in {@code ptDst} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D transformNormalized(double x, double y, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double x, double y, Point2D ptDst) {
         final double chi = 2.0 * atan(ssfn(y, sin(y))) - PI / 2;
         final double sinChi = sin(chi);
         final double cosChi = cos(chi);

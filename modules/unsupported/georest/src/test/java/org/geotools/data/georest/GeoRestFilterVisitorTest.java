@@ -29,7 +29,7 @@ public class GeoRestFilterVisitorTest extends TestCase {
 
     private static final FilterFactory2 FF = CommonFactoryFinder.getFilterFactory2(null);
 
-    public void testBBOX() throws Exception {
+    public void testBBOX() {
         StringBuilder builder = new StringBuilder(URL);
         GeoRestFilterVisitor visitor = new GeoRestFilterVisitor(true);
         BBOX bbox = FF.bbox("prop0", 0, 0, 10, 10, "EPSG:4326");
@@ -38,7 +38,7 @@ public class GeoRestFilterVisitorTest extends TestCase {
         Assert.assertEquals(URL + "?bbox=0.0,0.0,10.0,10.0", builder.toString());
     }
 
-    public void testPropertyIsEqualTo() throws Exception {
+    public void testPropertyIsEqualTo() {
         StringBuilder builder = new StringBuilder(URL);
         GeoRestFilterVisitor visitor = new GeoRestFilterVisitor(true);
         PropertyIsEqualTo filter =
@@ -56,7 +56,7 @@ public class GeoRestFilterVisitorTest extends TestCase {
                 builder.toString());
     }
 
-    public void testPropertyIsNotEqualTo() throws Exception {
+    public void testPropertyIsNotEqualTo() {
         StringBuilder builder = new StringBuilder(URL);
         GeoRestFilterVisitor visitor = new GeoRestFilterVisitor(true);
         PropertyIsNotEqualTo filter =
@@ -74,7 +74,7 @@ public class GeoRestFilterVisitorTest extends TestCase {
                 builder.toString());
     }
 
-    public void testPropertyIsGreaterThan() throws Exception {
+    public void testPropertyIsGreaterThan() {
         StringBuilder builder = new StringBuilder(URL);
         GeoRestFilterVisitor visitor = new GeoRestFilterVisitor(true);
         PropertyIsGreaterThan filter =
@@ -92,7 +92,7 @@ public class GeoRestFilterVisitorTest extends TestCase {
                 builder.toString());
     }
 
-    public void testPropertyIsGreaterThanOrEqualTo() throws Exception {
+    public void testPropertyIsGreaterThanOrEqualTo() {
         StringBuilder builder = new StringBuilder(URL);
         GeoRestFilterVisitor visitor = new GeoRestFilterVisitor(true);
         PropertyIsGreaterThanOrEqualTo filter =
@@ -110,7 +110,7 @@ public class GeoRestFilterVisitorTest extends TestCase {
                 builder.toString());
     }
 
-    public void testPropertyIsLessThan() throws Exception {
+    public void testPropertyIsLessThan() {
         StringBuilder builder = new StringBuilder(URL);
         GeoRestFilterVisitor visitor = new GeoRestFilterVisitor(true);
         PropertyIsLessThan filter = FF.less(FF.property(PROPERTY_NAME), FF.literal(PROPERTY_VALUE));
@@ -127,7 +127,7 @@ public class GeoRestFilterVisitorTest extends TestCase {
                 builder.toString());
     }
 
-    public void testPropertyIsLessThanOrEqualTo() throws Exception {
+    public void testPropertyIsLessThanOrEqualTo() {
         StringBuilder builder = new StringBuilder(URL);
         GeoRestFilterVisitor visitor = new GeoRestFilterVisitor(true);
         PropertyIsLessThanOrEqualTo filter =
@@ -145,7 +145,7 @@ public class GeoRestFilterVisitorTest extends TestCase {
                 builder.toString());
     }
 
-    public void testPropertyIsLike() throws Exception {
+    public void testPropertyIsLike() {
         StringBuilder builder = new StringBuilder(URL);
         GeoRestFilterVisitor visitor = new GeoRestFilterVisitor(true);
         PropertyIsLike filter = FF.like(FF.property(PROPERTY_NAME), PROPERTY_VALUE);

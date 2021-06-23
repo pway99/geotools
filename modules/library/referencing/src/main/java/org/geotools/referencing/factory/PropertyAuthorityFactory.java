@@ -214,8 +214,7 @@ public class PropertyAuthorityFactory extends DirectAuthorityFactory
      * @throws FactoryException if access to the underlying database failed.
      */
     @Override
-    public Set<String> getAuthorityCodes(final Class<? extends IdentifiedObject> type)
-            throws FactoryException {
+    public Set<String> getAuthorityCodes(final Class<? extends IdentifiedObject> type) {
         if (type == null || type.isAssignableFrom(IdentifiedObject.class)) {
             return codes;
         }
@@ -287,7 +286,7 @@ public class PropertyAuthorityFactory extends DirectAuthorityFactory
      * @return The Well Know Text (WKT) for the specified code.
      * @throws NoSuchAuthorityCodeException if the specified {@code code} was not found.
      */
-    public String getWKT(final String code) throws NoSuchAuthorityCodeException {
+    public String getWKT(final String code) {
         ensureNonNull("code", code);
         final String wkt = definitions.getProperty(trimAuthority(code));
         if (wkt == null) {

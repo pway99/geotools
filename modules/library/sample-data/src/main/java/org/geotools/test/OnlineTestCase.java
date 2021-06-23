@@ -252,7 +252,7 @@ public abstract class OnlineTestCase extends TestCase {
     }
 
     /** Method for subclasses to latch onto the setup phase. */
-    protected void setUpInternal() throws Exception {}
+    protected void setUpInternal() {}
 
     /** Tear down method for test, calls through to {@link #disconnect()} if the test is active. */
     @Override
@@ -271,7 +271,7 @@ public abstract class OnlineTestCase extends TestCase {
     }
 
     /** Method for subclasses to latch onto the teardown phase. */
-    protected void tearDownInternal() throws Exception {}
+    protected void tearDownInternal() {}
 
     /**
      * Tests if external resources needed to run the tests are online.
@@ -282,7 +282,7 @@ public abstract class OnlineTestCase extends TestCase {
      * @return True if external resources are online, otherwise false.
      * @throws Exception Any errors that occur determining if online resources are available.
      */
-    protected boolean isOnline() throws Exception {
+    protected boolean isOnline() {
         return true;
     }
 
@@ -294,7 +294,7 @@ public abstract class OnlineTestCase extends TestCase {
      *
      * @throws Exception if the connection failed.
      */
-    protected void connect() throws Exception {}
+    protected void connect() {}
 
     /**
      * Disconnection method, called from {@link #tearDown()}.
@@ -303,7 +303,7 @@ public abstract class OnlineTestCase extends TestCase {
      *
      * @throws Exception if the disconnection failed.
      */
-    protected void disconnect() throws Exception {}
+    protected void disconnect() {}
 
     /**
      * Allows tests to create an offline fixture in cases where the user has not specified an

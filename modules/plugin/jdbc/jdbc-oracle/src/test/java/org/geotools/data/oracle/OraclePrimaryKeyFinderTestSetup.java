@@ -42,7 +42,7 @@ public class OraclePrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSet
     }
 
     @Override
-    protected void dropMetadataTable() throws Exception {
+    protected void dropMetadataTable() {
         runSafe("DROP TABLE gt_pk_metadata");
     }
 
@@ -76,7 +76,7 @@ public class OraclePrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSet
     }
 
     @Override
-    protected void dropSequencedPrimaryKeyTable() throws Exception {
+    protected void dropSequencedPrimaryKeyTable() {
         runSafe("DROP TABLE seqtable PURGE");
         runSafe("DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME = 'SEQTABLE'");
         runSafe("DROP SEQUENCE pksequence");
@@ -98,7 +98,7 @@ public class OraclePrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSet
     }
 
     @Override
-    protected void dropPlainTable() throws Exception {
+    protected void dropPlainTable() {
         runSafe("DROP TABLE plaintable");
         runSafe("DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME = 'PLAINTABLE'");
     }
@@ -114,7 +114,7 @@ public class OraclePrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSet
     }
 
     @Override
-    protected void dropAssignedSinglePkView() throws Exception {
+    protected void dropAssignedSinglePkView() {
         runSafe("DROP VIEW assignedsinglepk");
     }
 
@@ -134,7 +134,7 @@ public class OraclePrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestSet
     }
 
     @Override
-    protected void dropAssignedMultiPkView() throws Exception {
+    protected void dropAssignedMultiPkView() {
         runSafe("DROP VIEW assignedmultipk");
     }
 }

@@ -19,7 +19,6 @@ package org.geotools.referencing.epsg.esri;
 import java.net.URL;
 import org.geotools.referencing.factory.epsg.FactoryUsingWKT;
 import org.geotools.util.factory.Hints;
-import org.opengis.referencing.FactoryException;
 
 /**
  * Provides common {@linkplain CoordinateReferenceSystem Coordinate Reference Systems} not found in
@@ -83,7 +82,7 @@ public class UnnamedExtension extends FactoryUsingWKT {
      * @param args Command line arguments.
      * @throws FactoryException if an error occured.
      */
-    public static void main(final String[] args) throws FactoryException {
+    public static void main(final String[] args) {
         main(args, UnnamedExtension.class);
     }
 }

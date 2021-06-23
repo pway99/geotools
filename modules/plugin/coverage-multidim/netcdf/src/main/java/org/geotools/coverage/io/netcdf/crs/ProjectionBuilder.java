@@ -271,7 +271,7 @@ public class ProjectionBuilder {
      */
     public static CoordinateReferenceSystem buildCRS(
             Map<String, ?> props, ParameterValueGroup parameters, Ellipsoid ellipsoid)
-            throws NoSuchIdentifierException, FactoryException {
+            throws FactoryException {
         // Refine the parameters by adding the required ellipsoid's related params
         updateEllipsoidParams(parameters, ellipsoid);
 

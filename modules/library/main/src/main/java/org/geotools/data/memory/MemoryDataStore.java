@@ -95,8 +95,7 @@ public class MemoryDataStore extends ContentDataStore {
         addFeatures(array);
     }
 
-    public MemoryDataStore(FeatureReader<SimpleFeatureType, SimpleFeature> reader)
-            throws IOException {
+    public MemoryDataStore(FeatureReader<SimpleFeatureType, SimpleFeature> reader) {
         addFeatures(reader);
     }
 
@@ -142,7 +141,7 @@ public class MemoryDataStore extends ContentDataStore {
      * @throws IOException If problems are encountered while adding
      * @throws DataSourceException See IOException
      */
-    public void addFeatures(SimpleFeatureIterator reader) throws IOException {
+    public void addFeatures(SimpleFeatureIterator reader) {
         try {
             SimpleFeature feature = reader.next();
 
@@ -334,7 +333,7 @@ public class MemoryDataStore extends ContentDataStore {
     }
 
     @Override
-    public void removeSchema(String typeName) throws IOException {
+    public void removeSchema(String typeName) {
         for (Name name : entries.keySet()) {
             if (name.getLocalPart().equals(typeName)) {
                 removeSchema(name);
@@ -344,7 +343,7 @@ public class MemoryDataStore extends ContentDataStore {
     }
 
     @Override
-    public void removeSchema(Name typeName) throws IOException {
+    public void removeSchema(Name typeName) {
         if (typeName != null) {
             // graceful remove, its fine if the type has never been registered
             synchronized (entries) {

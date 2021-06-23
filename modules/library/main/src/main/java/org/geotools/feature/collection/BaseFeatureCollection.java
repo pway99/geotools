@@ -16,7 +16,6 @@
  */
 package org.geotools.feature.collection;
 
-import java.io.IOException;
 import java.util.Collection;
 import org.geotools.data.DataUtilities;
 import org.geotools.data.simple.SimpleFeatureCollection;
@@ -187,8 +186,7 @@ public abstract class BaseFeatureCollection<T extends FeatureType, F extends Fea
 
     @Override
     public void accepts(
-            org.opengis.feature.FeatureVisitor visitor, org.opengis.util.ProgressListener progress)
-            throws IOException {
+            org.opengis.feature.FeatureVisitor visitor, org.opengis.util.ProgressListener progress) {
         DataUtilities.visit(this, visitor, progress);
     }
 

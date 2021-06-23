@@ -55,7 +55,7 @@ public class GeoJSONReaderTest {
 
     /** Test method for {@link org.geotools.data.geojson.GeoJSONReader#getFeatures()}. */
     @Test
-    public void testGetFeatures() throws IOException, ParseException {
+    public void testGetFeatures() throws IOException {
         URL url = TestData.url(GeoJSONDataStore.class, "locations.json");
 
         try (GeoJSONReader reader = new GeoJSONReader(url)) {
@@ -66,7 +66,7 @@ public class GeoJSONReaderTest {
     }
 
     @Test
-    public void testGetChangingSchema() throws IOException, ParseException {
+    public void testGetChangingSchema() throws IOException {
         URL url = TestData.url(GeoJSONDataStore.class, "locations-changeable.json");
 
         try (GeoJSONReader reader = new GeoJSONReader(url)) {

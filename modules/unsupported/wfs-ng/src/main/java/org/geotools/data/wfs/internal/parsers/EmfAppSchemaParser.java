@@ -79,8 +79,7 @@ public class EmfAppSchemaParser {
             final URL schemaLocation,
             final CoordinateReferenceSystem crs,
             final Configuration wfsConfiguration,
-            final Map<QName, Class<?>> mappedBindings)
-            throws IOException {
+            final Map<QName, Class<?>> mappedBindings) {
         return parseSimpleFeatureType(
                 wfsConfiguration, featureName, schemaLocation, crs, mappedBindings);
     }
@@ -302,8 +301,7 @@ public class EmfAppSchemaParser {
             Configuration configuration,
             QName featureTypeName,
             URL schemaLocation,
-            CoordinateReferenceSystem crs)
-            throws IOException {
+            CoordinateReferenceSystem crs) {
         return parseSimpleFeatureType(configuration, featureTypeName, schemaLocation, crs, null);
     }
 }

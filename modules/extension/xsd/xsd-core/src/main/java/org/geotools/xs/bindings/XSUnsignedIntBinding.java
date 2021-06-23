@@ -83,7 +83,7 @@ public class XSUnsignedIntBinding implements SimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         return ((Number) value).longValue();
     }
 

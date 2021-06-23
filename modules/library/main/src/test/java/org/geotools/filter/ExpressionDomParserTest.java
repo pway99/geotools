@@ -39,7 +39,7 @@ import org.xml.sax.SAXException;
 public class ExpressionDomParserTest {
 
     @Test(expected = NullPointerException.class)
-    public void nullConstructorInjection() throws Exception {
+    public void nullConstructorInjection() {
         new ExpressionDOMParser(null);
     }
 

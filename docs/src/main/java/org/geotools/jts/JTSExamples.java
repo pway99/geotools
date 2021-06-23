@@ -24,7 +24,7 @@ import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 public class JTSExamples {
 
-    void orthodromicDistance() throws Exception {
+    void orthodromicDistance() {
 
         Coordinate start = null;
         Coordinate end = null;

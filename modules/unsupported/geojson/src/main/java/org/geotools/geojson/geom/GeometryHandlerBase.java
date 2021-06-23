@@ -19,8 +19,6 @@ package org.geotools.geojson.geom;
 import static org.geotools.geojson.GeoJSONUtil.addOrdinate;
 import static org.geotools.geojson.GeoJSONUtil.createCoordinate;
 import static org.geotools.geojson.GeoJSONUtil.createCoordinates;
-
-import java.io.IOException;
 import java.util.List;
 import org.geotools.geojson.HandlerBase;
 import org.geotools.geojson.IContentHandler;
@@ -54,7 +52,7 @@ public class GeometryHandlerBase<G extends Geometry> extends HandlerBase
     }
 
     @Override
-    public boolean primitive(Object value) throws ParseException, IOException {
+    public boolean primitive(Object value) {
         // we could be receiving the "type" attribute value
         if (value instanceof Number) {
             return addOrdinate(ordinates, value);

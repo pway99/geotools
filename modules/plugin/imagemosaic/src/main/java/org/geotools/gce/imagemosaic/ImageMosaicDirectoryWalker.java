@@ -79,8 +79,7 @@ public class ImageMosaicDirectoryWalker extends ImageMosaicWalker {
         }
 
         @Override
-        protected boolean handleIsCancelled(final File file, final int depth, Collection results)
-                throws IOException {
+        protected boolean handleIsCancelled(final File file, final int depth, Collection results) {
 
             //
             // Anyone has asked us to stop?

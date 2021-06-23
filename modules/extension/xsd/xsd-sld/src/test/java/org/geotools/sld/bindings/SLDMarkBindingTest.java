@@ -36,7 +36,7 @@ import org.w3c.dom.Element;
 public class SLDMarkBindingTest extends SLDTestSupport {
 
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(Mark.class, new SLDMarkBinding(null, null, null).getType());
     }
 

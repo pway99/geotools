@@ -35,7 +35,7 @@ public class Log4JLoggerFactory extends LoggerFactory<org.apache.log4j.Logger> {
      *
      * @throws NoClassDefFoundError if Apache's {@code Log} class was not found on the classpath.
      */
-    protected Log4JLoggerFactory() throws NoClassDefFoundError {
+    protected Log4JLoggerFactory() {
         super(org.apache.log4j.Logger.class);
     }
 

@@ -39,7 +39,7 @@ public class DescribeFeatureTypeTypeBindingTest extends WFSTestSupport {
     @Override
     @SuppressWarnings("unchecked")
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         final DescribeFeatureTypeType dft = factory.createDescribeFeatureTypeType();
         // set BaseRequestType propertyes (DescribeFeatureType extends
         // BaseRequestType)

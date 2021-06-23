@@ -141,8 +141,7 @@ public class WebProcessingService extends AbstractWPS<WPSCapabilitiesType, Objec
      * <p>The implementation assumes that the server is located at:
      * capabilities.getRequest().getGetCapabilities().getGet()
      */
-    public WebProcessingService(WPSCapabilitiesType capabilities)
-            throws IOException, ServiceException {
+    public WebProcessingService(WPSCapabilitiesType capabilities) {
         super(
                 getOperationURL("getcapabilities", capabilities, true),
                 HTTPClientFinder.createClient(),
@@ -164,8 +163,7 @@ public class WebProcessingService extends AbstractWPS<WPSCapabilitiesType, Objec
     public WebProcessingService(
             final URL serverURL,
             final HTTPClient httpClient,
-            final WPSCapabilitiesType capabilities)
-            throws IOException, ServiceException {
+            final WPSCapabilitiesType capabilities) {
         super(serverURL, httpClient, capabilities);
     }
 

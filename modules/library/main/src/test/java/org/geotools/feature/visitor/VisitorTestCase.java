@@ -46,7 +46,7 @@ public abstract class VisitorTestCase<T, R> {
     protected abstract FeatureCalc createVisitor(int attributeTypeIndex, SimpleFeatureType type);
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         SimpleFeatureTypeBuilder ftb = new SimpleFeatureTypeBuilder();
         ftb.setName("test");
         ftb.add("val", valueClass);

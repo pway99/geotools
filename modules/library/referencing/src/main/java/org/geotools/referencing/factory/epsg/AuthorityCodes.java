@@ -16,7 +16,6 @@
  */
 package org.geotools.referencing.factory.epsg;
 
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -318,7 +317,7 @@ public final class AuthorityCodes extends AbstractSet<String> implements Seriali
      * serialization. The serialised set of authority code is disconnected from the underlying
      * database.
      */
-    protected Object writeReplace() throws ObjectStreamException {
+    protected Object writeReplace() {
         return new LinkedHashSet<>(this);
     }
 

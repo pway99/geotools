@@ -98,7 +98,7 @@ public class MockHttpClient extends AbstractHttpClient {
     }
 
     @Override
-    public HTTPResponse get(URL url) throws IOException {
+    public HTTPResponse get(URL url) {
         return getResponse(new Request(url));
     }
 

@@ -25,7 +25,7 @@ import org.junit.Test;
 public class EscapeSqlTest {
 
     @Test
-    public void testSqlEscaping() throws Exception {
+    public void testSqlEscaping() {
         VirtualTable vt = new VirtualTable("test", "%param1%");
         vt.setEscapeSql(true);
         vt.addParameter(

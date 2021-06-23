@@ -16,7 +16,6 @@
  */
 package org.geotools.feature.collection;
 
-import java.io.IOException;
 import java.util.Collection;
 import org.geotools.data.DataUtilities;
 import org.geotools.data.simple.SimpleFeatureCollection;
@@ -54,8 +53,7 @@ public class DecoratingSimpleFeatureCollection implements SimpleFeatureCollectio
 
     @Override
     public void accepts(
-            org.opengis.feature.FeatureVisitor visitor, org.opengis.util.ProgressListener progress)
-            throws IOException {
+            org.opengis.feature.FeatureVisitor visitor, org.opengis.util.ProgressListener progress) {
         if (canDelegate(visitor)) {
             delegate.accepts(visitor, progress);
         } else {

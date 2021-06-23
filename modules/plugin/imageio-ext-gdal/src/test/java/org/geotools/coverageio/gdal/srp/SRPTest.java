@@ -43,8 +43,6 @@ import org.geotools.util.factory.Hints;
 import org.junit.Test;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.ParameterValue;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 
 /**
  * @author Andrea Aime, GeoSolutions
@@ -60,7 +58,7 @@ public final class SRPTest extends GDALTestCase {
     }
 
     @Test
-    public void testService() throws NoSuchAuthorityCodeException, FactoryException {
+    public void testService() {
         if (!testingEnabled()) {
             return;
         }

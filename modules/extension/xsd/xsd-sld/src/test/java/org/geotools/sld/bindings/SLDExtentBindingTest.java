@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class SLDExtentBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(Extent.class, new SLDExtentBinding(null).getType());
     }
 

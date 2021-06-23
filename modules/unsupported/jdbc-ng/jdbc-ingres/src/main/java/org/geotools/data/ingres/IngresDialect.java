@@ -103,7 +103,7 @@ public class IngresDialect extends PreparedStatementSQLDialect {
     
     @Override
     public Envelope decodeGeometryEnvelope(ResultSet rs, int column, Connection cx)
-            throws SQLException, IOException {
+            throws SQLException {
         try {
             String envelope = rs.getString(column);
             if (envelope != null) {
@@ -402,8 +402,7 @@ public class IngresDialect extends PreparedStatementSQLDialect {
     }
 
     @Override
-    public boolean includeTable(String schemaName, String tableName, Connection cx)
-            throws SQLException {
+    public boolean includeTable(String schemaName, String tableName, Connection cx) {
         if (tableName.equals("geometry_columns")) {
             return false;
         } else if (tableName.startsWith("spatial_ref_sys")) {

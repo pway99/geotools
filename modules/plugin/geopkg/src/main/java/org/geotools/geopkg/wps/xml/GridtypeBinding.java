@@ -76,7 +76,7 @@ public class GridtypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         int zoomlevel = (Integer) node.getChildValue("zoomlevel");
         int tilewidth = ((BigInteger) node.getChildValue("tilewidth")).intValue();

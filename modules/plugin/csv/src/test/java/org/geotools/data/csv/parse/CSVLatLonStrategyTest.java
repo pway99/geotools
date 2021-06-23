@@ -305,7 +305,7 @@ public class CSVLatLonStrategyTest {
     }
 
     @Test
-    public void testDataFewerRowsDifferentType() throws IOException {
+    public void testDataFewerRowsDifferentType() {
         String input = CSVTestStrategySupport.buildInputString("a,b", "foo");
         CSVFileState fileState = new CSVFileState(input, "typename");
         CSVLatLonStrategy strategy = new CSVLatLonStrategy(fileState);

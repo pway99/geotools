@@ -365,7 +365,7 @@ public class GeoPackage implements Closeable {
 
                     @Override
                     public double execute(GeoPkgGeomReader reader)
-                            throws IOException, SQLException {
+                            throws IOException {
                         return reader.getEnvelope().getMinY();
                     }
                 },
@@ -379,7 +379,7 @@ public class GeoPackage implements Closeable {
 
                     @Override
                     public double execute(GeoPkgGeomReader reader)
-                            throws IOException, SQLException {
+                            throws IOException {
                         return reader.getEnvelope().getMaxY();
                     }
                 },
@@ -907,7 +907,7 @@ public class GeoPackage implements Closeable {
         return Features.simple(dataStore().getFeatureReader(q, tx));
     }
 
-    static Integer findSRID(SimpleFeatureType schema) throws Exception {
+    static Integer findSRID(SimpleFeatureType schema) {
         CoordinateReferenceSystem crs = schema.getCoordinateReferenceSystem();
         if (crs == null) {
             GeometryDescriptor gd = findGeometryDescriptor(schema);
@@ -1123,7 +1123,7 @@ public class GeoPackage implements Closeable {
         }
     }
 
-    static Integer findSRID(GridCoverage2D raster) throws Exception {
+    static Integer findSRID(GridCoverage2D raster) {
         return CRS.lookupEpsgCode(raster.getCoordinateReferenceSystem(), true);
     }
 
@@ -1600,7 +1600,7 @@ public class GeoPackage implements Closeable {
         return e;
     }
 
-    static Integer findSRID(ReferencedEnvelope e) throws Exception {
+    static Integer findSRID(ReferencedEnvelope e) {
         return CRS.lookupEpsgCode(e.getCoordinateReferenceSystem(), true);
     }
 
@@ -1633,7 +1633,7 @@ public class GeoPackage implements Closeable {
                         crs));
     }
 
-    static CoordinateReferenceSystem decodeSRID(int srid) throws FactoryException {
+    static CoordinateReferenceSystem decodeSRID(int srid) {
         if (srid == GENERIC_GEOGRAPHIC_SRID || srid == GENERIC_PROJECTED_SRID) {
             return DefaultEngineeringCRS.GENERIC_2D;
         }

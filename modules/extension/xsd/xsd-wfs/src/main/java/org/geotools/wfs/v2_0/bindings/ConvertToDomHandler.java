@@ -22,7 +22,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.Text;
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.NamespaceSupport;
 
@@ -48,8 +47,7 @@ public class ConvertToDomHandler extends DefaultHandler {
     }
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attrs)
-            throws SAXException {
+    public void startElement(String uri, String localName, String qName, Attributes attrs) {
         // start a new namespace context and declare prefixes from this node
         nsContext.pushContext();
 
@@ -87,14 +85,14 @@ public class ConvertToDomHandler extends DefaultHandler {
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         String str = new String(ch, start, length);
         Text text = doc.createTextNode(str);
         node.appendChild(text);
     }
 
     @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
+    public void endElement(String uri, String localName, String qName) {
         node = node.getParentNode();
         nsContext.popContext();
     }

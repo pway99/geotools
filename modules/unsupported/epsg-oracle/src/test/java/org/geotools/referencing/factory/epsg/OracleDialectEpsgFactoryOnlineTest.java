@@ -32,7 +32,7 @@ public class OracleDialectEpsgFactoryOnlineTest extends OracleOnlineTestCase {
         factory = new OracleDialectEpsgFactory(hints, datasource.getConnection());
     }
 
-    public void testCreation() throws Exception {
+    public void testCreation() {
         assertNotNull(factory);
         CoordinateReferenceSystem epsg4326 = factory.createCoordinateReferenceSystem("EPSG:4326");
         CoordinateReferenceSystem code4326 = factory.createCoordinateReferenceSystem("4326");
@@ -42,7 +42,7 @@ public class OracleDialectEpsgFactoryOnlineTest extends OracleOnlineTestCase {
         assertSame("4326 == EPSG:4326", code4326, epsg4326);
     }
 
-    public void testAuthorityCodes() throws Exception {
+    public void testAuthorityCodes() {
         Set authorityCodes = factory.getAuthorityCodes(CoordinateReferenceSystem.class);
 
         assertNotNull(authorityCodes);

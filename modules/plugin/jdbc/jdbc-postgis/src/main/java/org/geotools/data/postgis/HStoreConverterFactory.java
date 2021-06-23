@@ -34,7 +34,7 @@ public class HStoreConverterFactory implements ConverterFactory {
             return new Converter() {
 
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     @SuppressWarnings("unchecked")
                     Map<String, String> cast = (Map<String, String>) source;
                     return target.cast(new HStore(cast));

@@ -49,7 +49,7 @@ public class SVGGraphicFactoryTest {
     private FilterFactory ff;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         ff = CommonFactoryFinder.getFilterFactory(null);
     }

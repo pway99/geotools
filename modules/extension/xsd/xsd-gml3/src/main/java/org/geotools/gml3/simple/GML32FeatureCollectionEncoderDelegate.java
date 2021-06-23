@@ -49,7 +49,6 @@ import org.opengis.feature.type.AttributeDescriptor;
 import org.opengis.feature.type.FeatureType;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
 
 /**
@@ -212,7 +211,7 @@ public class GML32FeatureCollectionEncoderDelegate
         }
 
         @Override
-        public void startFeatures(GMLWriter handler) throws Exception {}
+        public void startFeatures(GMLWriter handler) {}
 
         @Override
         public void startFeature(GMLWriter handler) throws Exception {
@@ -225,7 +224,7 @@ public class GML32FeatureCollectionEncoderDelegate
         }
 
         @Override
-        public void endFeatures(GMLWriter handler) throws Exception {}
+        public void endFeatures(GMLWriter handler) {}
 
         @Override
         public void registerGeometryEncoders(
@@ -249,7 +248,7 @@ public class GML32FeatureCollectionEncoderDelegate
         }
 
         @Override
-        public String getGmlPrefix() throws Exception {
+        public String getGmlPrefix() {
             return gmlPrefix;
         }
 
@@ -259,10 +258,10 @@ public class GML32FeatureCollectionEncoderDelegate
         }
 
         @Override
-        public void startTuple(GMLWriter handler) throws SAXException {}
+        public void startTuple(GMLWriter handler) {}
 
         @Override
-        public void endTuple(GMLWriter handler) throws SAXException {}
+        public void endTuple(GMLWriter handler) {}
 
         @Override
         public XSD getSchema() {

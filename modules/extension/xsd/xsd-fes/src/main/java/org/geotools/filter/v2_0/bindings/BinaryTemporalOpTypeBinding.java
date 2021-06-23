@@ -77,12 +77,12 @@ public class BinaryTemporalOpTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return null;
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         return FESParseEncodeUtil.getProperty((BinaryTemporalOperator) object, name);
     }
 }

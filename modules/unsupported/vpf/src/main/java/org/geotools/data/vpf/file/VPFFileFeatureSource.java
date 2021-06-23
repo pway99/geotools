@@ -47,7 +47,7 @@ public class VPFFileFeatureSource extends VPFFeatureSource {
     }
 
     @Override
-    protected int getCountInternal(Query query) throws IOException {
+    protected int getCountInternal(Query query) {
         return -1; // feature by feature scan required to count records
     }
 
@@ -56,7 +56,7 @@ public class VPFFileFeatureSource extends VPFFeatureSource {
      * the header)
      */
     @Override
-    protected ReferencedEnvelope getBoundsInternal(Query query) throws IOException {
+    protected ReferencedEnvelope getBoundsInternal(Query query) {
         return null; // feature by feature scan required to establish bounds
     }
 

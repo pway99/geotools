@@ -65,7 +65,7 @@ public class PostgisDialect extends DBDialect {
      * @see org.geotools.gce.imagemosaic.jdbc.DBDialect#getCreateSpatialTableStatement(java.lang.String)
      */
     @Override
-    protected String getCreateSpatialTableStatement(String tableName) throws Exception {
+    protected String getCreateSpatialTableStatement(String tableName) {
         String statement = " CREATE TABLE " + tableName;
         statement +=
                 (" (" + getConfig().getKeyAttributeNameInSpatialTable() + " CHAR(64) NOT NULL ");
@@ -85,7 +85,7 @@ public class PostgisDialect extends DBDialect {
      * @see org.geotools.gce.imagemosaic.jdbc.DBDialect#getCreateSpatialTableStatementJoined(java.lang.String)
      */
     @Override
-    protected String getCreateSpatialTableStatementJoined(String tableName) throws Exception {
+    protected String getCreateSpatialTableStatementJoined(String tableName) {
         String statement = " CREATE TABLE " + tableName;
         statement +=
                 (" (" + getConfig().getKeyAttributeNameInSpatialTable() + " CHAR(64) NOT NULL ");
@@ -136,7 +136,7 @@ public class PostgisDialect extends DBDialect {
      * @see org.geotools.gce.imagemosaic.jdbc.DBDialect#getCreateIndexStatement(java.lang.String)
      */
     @Override
-    protected String getCreateIndexStatement(String tn) throws Exception {
+    protected String getCreateIndexStatement(String tn) {
         return "CREATE INDEX IX_"
                 + tn
                 + " ON "

@@ -283,8 +283,7 @@ public class PostGISDialect extends BasicSQLDialect {
     }
 
     @Override
-    public boolean includeTable(String schemaName, String tableName, Connection cx)
-            throws SQLException {
+    public boolean includeTable(String schemaName, String tableName, Connection cx) {
         if (tableName.equals("geometry_columns")) {
             return false;
         } else if (tableName.startsWith("spatial_ref_sys")) {
@@ -513,7 +512,7 @@ public class PostGISDialect extends BasicSQLDialect {
 
     @Override
     public Envelope decodeGeometryEnvelope(ResultSet rs, int column, Connection cx)
-            throws SQLException, IOException {
+            throws SQLException {
         try {
             String envelope = rs.getString(column);
             if (envelope != null) return new WKTReader().read(envelope).getEnvelopeInternal();
@@ -1311,8 +1310,7 @@ public class PostGISDialect extends BasicSQLDialect {
     }
 
     @Override
-    public void encodeGeometryValue(Geometry value, int dimension, int srid, StringBuffer sql)
-            throws IOException {
+    public void encodeGeometryValue(Geometry value, int dimension, int srid, StringBuffer sql) {
         if (value == null || value.isEmpty()) {
             sql.append("NULL");
         } else {

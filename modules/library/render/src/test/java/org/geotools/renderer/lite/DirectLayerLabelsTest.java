@@ -18,7 +18,6 @@ package org.geotools.renderer.lite;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.io.IOException;
 import org.geotools.data.memory.MemoryDataStore;
 import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.factory.CommonFactoryFinder;
@@ -52,7 +51,7 @@ public class DirectLayerLabelsTest {
     private long timout = 3000;
     /** @throws java.lang.Exception */
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         // System.setProperty(TestData.INTERACTIVE_TEST_KEY, "true");
     }
 
@@ -94,7 +93,7 @@ public class DirectLayerLabelsTest {
         map.dispose();
     }
 
-    private Style loadStyle(String sldFilename) throws IOException {
+    private Style loadStyle(String sldFilename) {
         StyleFactory factory = CommonFactoryFinder.getStyleFactory();
 
         java.net.URL surl = TestData.getResource(this, sldFilename);
@@ -126,8 +125,7 @@ public class DirectLayerLabelsTest {
             String name,
             CoordinateReferenceSystem crs,
             GeometryFactory geomFac,
-            AttributeDescriptor[] types)
-            throws Exception {
+            AttributeDescriptor[] types) {
         Coordinate c = new Coordinate(x, y);
         Point point = geomFac.createPoint(c);
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();

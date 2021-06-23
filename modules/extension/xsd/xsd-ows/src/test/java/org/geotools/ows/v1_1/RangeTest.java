@@ -35,7 +35,7 @@ public class RangeTest extends OWSTestSupport_1_1 {
     }
 
     @Test
-    public void testEncodeClosedRange() throws Exception {
+    public void testEncodeClosedRange() {
         Encoder encoder = new Encoder(createConfiguration());
         Ows11Factory factory = Ows11Factory.eINSTANCE;
         RangeType rangeType = factory.createRangeType();
@@ -52,7 +52,7 @@ public class RangeTest extends OWSTestSupport_1_1 {
     }
 
     @Test
-    public void testEncodeClosedOpenRange() throws Exception {
+    public void testEncodeClosedOpenRange() {
         Encoder encoder = new Encoder(createConfiguration());
         Ows11Factory factory = Ows11Factory.eINSTANCE;
         RangeType rangeType = factory.createRangeType();

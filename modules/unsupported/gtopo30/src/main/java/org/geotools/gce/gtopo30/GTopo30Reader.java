@@ -314,7 +314,7 @@ public final class GTopo30Reader extends AbstractGridCoverage2DReader
      */
     @Override
     public GridCoverage2D read(final GeneralParameterValue[] params)
-            throws java.lang.IllegalArgumentException, java.io.IOException {
+            throws java.lang.IllegalArgumentException {
         // /////////////////////////////////////////////////////////////////////
         //
         // do we have parameters to use for reading from the specified source
@@ -360,7 +360,7 @@ public final class GTopo30Reader extends AbstractGridCoverage2DReader
      * @return The bounding box of the datasource or null if unknown and too expensive for the
      *     method to calculate.
      */
-    private GeneralEnvelope getBounds(CoordinateReferenceSystem crs) throws IOException {
+    private GeneralEnvelope getBounds(CoordinateReferenceSystem crs) {
         GeneralEnvelope env = new GeneralEnvelope(new double[] {0, 0}, new double[] {0, 0});
 
         // preparing data for the envelope

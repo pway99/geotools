@@ -125,7 +125,7 @@ public class SLDTextSymbolizerBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         TextSymbolizer ts = styleFactory.createTextSymbolizer();
 
         // &lt;xsd:element ref="sld:Geometry" minOccurs="0"/&gt;

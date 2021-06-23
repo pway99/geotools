@@ -16,12 +16,12 @@ public class IngresDataStoreAPITest extends JDBCDataStoreAPITest {
 	}
 
     @Override
-    public void testGetFeatureWriterConcurrency() throws Exception {
+    public void testGetFeatureWriterConcurrency() {
         // skip, does not work with Ingres
     }
 
     @Override
-    public void testTransactionIsolation() throws Exception {
+    public void testTransactionIsolation() {
         // skip, does not work with Ingres
     }
 }

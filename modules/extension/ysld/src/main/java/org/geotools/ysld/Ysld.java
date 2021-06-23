@@ -209,7 +209,7 @@ public class Ysld {
      * @param sld SLD xml reader.
      * @param ysld Ysld writer.
      */
-    public static void transform(XMLStreamReader sld, Writer ysld) throws IOException {
+    public static void transform(XMLStreamReader sld, Writer ysld) {
         throw new UnsupportedOperationException(); /*
                                                     * SldTransformer tx = new SldTransformer(sld, ysld); try { tx.transform(); }
                                                     * catch(XMLStreamException e) { throw new IOException(e); }

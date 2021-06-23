@@ -99,7 +99,7 @@ public class H2CustomTest extends AbstractTest {
     }
 
     @Override
-    public void setUp() throws Exception {
+    public void setUp() {
         // No fixture check needed
     }
 

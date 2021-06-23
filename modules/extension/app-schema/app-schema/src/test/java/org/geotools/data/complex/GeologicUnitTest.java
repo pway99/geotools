@@ -67,7 +67,7 @@ public class GeologicUnitTest extends AppSchemaTestSupport {
      * @throws Exception If any exception occurs
      */
     @BeforeClass
-    public static void oneTimeSetUp() throws Exception {
+    public static void oneTimeSetUp() {
         reader = EmfComplexFeatureReader.newInstance();
     }
 

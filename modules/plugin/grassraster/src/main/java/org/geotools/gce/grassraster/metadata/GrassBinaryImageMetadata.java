@@ -19,7 +19,6 @@ package org.geotools.gce.grassraster.metadata;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-import javax.imageio.metadata.IIOInvalidTreeException;
 import javax.imageio.metadata.IIOMetadata;
 import javax.imageio.metadata.IIOMetadataFormat;
 import javax.imageio.metadata.IIOMetadataNode;
@@ -237,7 +236,7 @@ public final class GrassBinaryImageMetadata extends IIOMetadata {
     }
 
     @Override
-    public void mergeTree(String formatName, Node root) throws IIOInvalidTreeException {}
+    public void mergeTree(String formatName, Node root) {}
 
     @Override
     public void reset() {

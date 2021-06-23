@@ -65,7 +65,7 @@ public class GeoPkgGeomReader {
         this.input = input;
     }
 
-    public GeoPkgGeomReader(InputStream input) throws IOException {
+    public GeoPkgGeomReader(InputStream input) {
         this.input = new InputStreamInStream(input);
     }
 

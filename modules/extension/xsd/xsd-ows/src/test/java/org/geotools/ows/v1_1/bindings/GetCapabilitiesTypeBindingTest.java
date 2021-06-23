@@ -27,12 +27,12 @@ import org.junit.Test;
 
 public class GetCapabilitiesTypeBindingTest extends OWSTestSupport_1_1 {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(GetCapabilitiesType.class, binding(OWS.GetCapabilitiesType).getType());
     }
 
     @Test
-    public void testExecutionMode() throws Exception {
+    public void testExecutionMode() {
         assertEquals(Binding.OVERRIDE, binding(OWS.GetCapabilitiesType).getExecutionMode());
     }
 

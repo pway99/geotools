@@ -79,7 +79,7 @@ public class ColorConverterFactory implements ConverterFactory {
     public static Converter CONVERT_NUMBER_TO_COLOR =
             new Converter() {
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     Number number = (Number) source;
                     // is it an integral number, and small enough to be an integer?
                     if (((int) number.doubleValue()) == number.doubleValue()
@@ -112,7 +112,7 @@ public class ColorConverterFactory implements ConverterFactory {
             new Converter() {
 
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     Color color = (Color) source;
 
                     if (CSS_COLORS.containsValue(color)) {
@@ -465,7 +465,7 @@ public class ColorConverterFactory implements ConverterFactory {
             new Converter() {
 
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     Color color = (Color) source;
 
                     String redCode = Integer.toHexString(color.getRed());

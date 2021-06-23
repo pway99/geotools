@@ -66,7 +66,7 @@ public class OrderedAxisAuthorityFactoryTest {
     private static final double EPS = 1E-8;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         // this test does not work if there is more than one EPSG factory around
         Set<CRSAuthorityFactory> factories =
@@ -312,7 +312,7 @@ public class OrderedAxisAuthorityFactoryTest {
 
     /** Tests the creation of EPSG:4326 CRS with different axis order. */
     @Test
-    public void testLongitudeFirst() throws FactoryException {
+    public void testLongitudeFirst() {
         final CoordinateReferenceSystem standard = CRS.decode("EPSG:4326", false);
         final CoordinateReferenceSystem modified = CRS.decode("EPSG:4326", true);
         Assert.assertEquals("Expected a left-handed CS.", -90, getAngle(standard), EPS);
@@ -332,7 +332,7 @@ public class OrderedAxisAuthorityFactoryTest {
 
     /** Tests the {@link IdentifiedObjectFinder#find} method with axis order forced. */
     @Test
-    public void testFind() throws FactoryException {
+    public void testFind() {
         final CRSAuthorityFactory factory =
                 ReferencingFactoryFinder.getCRSAuthorityFactory(
                         "EPSG", new Hints(Hints.FORCE_LONGITUDE_FIRST_AXIS_ORDER, Boolean.TRUE));

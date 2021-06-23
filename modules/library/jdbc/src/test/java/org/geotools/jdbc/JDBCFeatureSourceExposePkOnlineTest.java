@@ -34,7 +34,7 @@ public abstract class JDBCFeatureSourceExposePkOnlineTest extends JDBCFeatureSou
     }
 
     @Override
-    public void testSchema() throws Exception {
+    public void testSchema() {
         SimpleFeatureType schema = featureSource.getSchema();
         assertEquals(tname("ft1"), schema.getTypeName());
         assertEquals(dataStore.getNamespaceURI(), schema.getName().getNamespaceURI());

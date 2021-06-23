@@ -145,7 +145,7 @@ public class GetFeatureWithLockTypeBinding extends AbstractComplexEMFBinding {
      */
     @Override
     @SuppressWarnings("unchecked")
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         GetFeatureWithLockType getFeatureWithLock = wfsfactory.createGetFeatureWithLockType();
 
         WFSBindingUtils.service(getFeatureWithLock, node);

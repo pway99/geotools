@@ -25,7 +25,7 @@ public class SQLServerViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void dropLakesTable() throws Exception {
+    protected void dropLakesTable() {
         runSafe("DROP TABLE \"lakes\"");
     }
 
@@ -35,18 +35,18 @@ public class SQLServerViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void dropLakesView() throws Exception {
+    protected void dropLakesView() {
         runSafe("DROP VIEW \"lakesview\"");
     }
 
     @Override
-    protected void createLakesViewPk() throws Exception {
+    protected void createLakesViewPk() {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    protected void dropLakesViewPk() throws Exception {
+    protected void dropLakesViewPk() {
         // TODO Auto-generated method stub
 
     }

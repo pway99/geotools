@@ -107,7 +107,7 @@ public class OGCPropertyNameTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Expression expression = (Expression) value;
         String xpath = Filters.asString(expression);
 
@@ -120,7 +120,7 @@ public class OGCPropertyNameTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         PropertyName propertyName = (PropertyName) object;
 
         if (propertyName.getPropertyName() != null) {

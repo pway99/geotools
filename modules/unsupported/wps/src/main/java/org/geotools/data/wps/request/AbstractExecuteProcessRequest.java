@@ -16,7 +16,6 @@
  */
 package org.geotools.data.wps.request;
 
-import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URL;
 import java.util.Iterator;
@@ -89,7 +88,7 @@ public abstract class AbstractExecuteProcessRequest extends AbstractWPSRequest
     }
 
     @Override
-    public void performPostOutput(OutputStream outputStream) throws IOException {
+    public void performPostOutput(OutputStream outputStream) {
         // Encode the request into GML2 with the schema provided in the
         // describeprocess
         Configuration config = new WPSConfiguration();

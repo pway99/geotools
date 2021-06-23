@@ -29,7 +29,7 @@ import org.w3c.dom.NodeList;
 public class SLDAnchorPointBindingTest extends SLDTestSupport {
 
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(AnchorPoint.class, new SLDAnchorPointBinding(styleFactory).getType());
     }
 

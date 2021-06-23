@@ -31,12 +31,12 @@ public class SQLServerDataStoreAPIOnlineTest extends JDBCDataStoreAPIOnlineTest 
     // (READ_COMMITTED,READ_UNCOMITTED,etc...)
     // is specified. Might be a configuration issue, i leave to an expert.
     @Override
-    public void testTransactionIsolation() throws Exception {
+    public void testTransactionIsolation() {
         // super.testTransactionIsolation();
     }
 
     @Override
-    public void testGetFeatureWriterConcurrency() throws Exception {
+    public void testGetFeatureWriterConcurrency() {
         // super.testGetFeatureWriterConcurrency();
     }
 }

@@ -72,7 +72,7 @@ public class DoubleListBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         @SuppressWarnings("unchecked")
         List<Double> list = (List) value;
 

@@ -44,7 +44,7 @@ public class IngresDataStoreTest extends JDBCDataStoreTest {
         return new IngresTestSetup();
     }
     
-    public void testCreateSchemaWithConstraints() throws Exception {
+    public void testCreateSchemaWithConstraints() {
     	//fails because Ingres truncates on too long varchar, it doesn't fail
     	//otherwise this test passes 100%
     }

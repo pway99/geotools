@@ -374,7 +374,7 @@ public final class RendererUtilities {
      */
     public static double calculateScale(
             ReferencedEnvelope envelope, int imageWidth, int imageHeight, double DPI)
-            throws TransformException, FactoryException {
+            throws TransformException {
 
         final double diagonalGroundDistance;
         if (!(envelope.getCoordinateReferenceSystem() instanceof EngineeringCRS)) {

@@ -58,7 +58,7 @@ public class FunctionParseTest {
 
     /** Verify that a linear color zoom function can be parsed correctly. */
     @Test
-    public void testParseLinearColorFunction() throws IOException, ParseException {
+    public void testParseLinearColorFunction() {
         JSONObject layer = testLayersById.get("function1");
         Optional<JSONObject> o = traverse(layer, JSONObject.class, "paint", "line-color");
         JSONObject j = o.get();
@@ -78,7 +78,7 @@ public class FunctionParseTest {
 
     /** Verify that an exponential (color) zoom function can be parsed correctly. */
     @Test
-    public void testParseExpColorFunction() throws IOException, ParseException {
+    public void testParseExpColorFunction() {
         JSONObject layer = testLayersById.get("function2");
         Optional<JSONObject> o = traverse(layer, JSONObject.class, "paint", "line-color");
         JSONObject j = o.get();
@@ -98,7 +98,7 @@ public class FunctionParseTest {
 
     /** Verify that an exponential (number) zoom function can be parsed correctly. */
     @Test
-    public void testParseExpRadiusFunction() throws IOException, ParseException {
+    public void testParseExpRadiusFunction() {
         JSONObject layer = testLayersById.get("function3");
         Optional<JSONObject> o = traverse(layer, JSONObject.class, "paint", "circle-radius");
         JSONObject j = o.get();
@@ -120,7 +120,7 @@ public class FunctionParseTest {
 
     /** Verify that a linear zoom-and-property function can be parsed correctly. */
     @Test
-    public void testParsePropertyZoomFunction() throws IOException, ParseException {
+    public void testParsePropertyZoomFunction() {
         JSONObject layer = testLayersById.get("function4");
         Optional<JSONObject> o = traverse(layer, JSONObject.class, "paint", "circle-radius");
         JSONObject j = o.get();
@@ -143,7 +143,7 @@ public class FunctionParseTest {
 
     /** Verify that a linear property function can be parsed correctly. */
     @Test
-    public void testParsePropertyFunction() throws IOException, ParseException {
+    public void testParsePropertyFunction() {
         JSONObject layer = testLayersById.get("function5");
         Optional<JSONObject> o = traverse(layer, JSONObject.class, "paint", "circle-color");
         JSONObject j = o.get();
@@ -162,7 +162,7 @@ public class FunctionParseTest {
 
     /** Verify that a categorical property functions can be parsed correctly. */
     @Test
-    public void testParseCategoricalFunction() throws IOException, ParseException {
+    public void testParseCategoricalFunction() {
         JSONObject layer = testLayersById.get("function6");
         Optional<JSONObject> o = traverse(layer, JSONObject.class, "paint", "circle-color");
         JSONObject j = o.get();
@@ -177,7 +177,7 @@ public class FunctionParseTest {
     /** Verify that an interval function for colours can be parsed. */
     @SuppressWarnings("unchecked")
     @Test
-    public void testParseIntervalFunctionColour() throws IOException, ParseException {
+    public void testParseIntervalFunctionColour() {
         JSONObject layer = testLayersById.get("functionIntervalColour");
         JSONObject j = traverse(layer, JSONObject.class, "paint", "circle-color").get();
         MBFunction fn = new MBFunction(j);
@@ -202,7 +202,7 @@ public class FunctionParseTest {
      */
     @Test
     @SuppressWarnings("unchecked")
-    public void testParseIntervalFunctionNumber() throws IOException, ParseException {
+    public void testParseIntervalFunctionNumber() {
         JSONObject layer = testLayersById.get("functionIntervalNumeric");
         JSONObject j = traverse(layer, JSONObject.class, "paint", "circle-radius").get();
         MBFunction fn = new MBFunction(j);

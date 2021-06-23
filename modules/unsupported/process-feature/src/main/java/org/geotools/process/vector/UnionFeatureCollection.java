@@ -75,8 +75,7 @@ public class UnionFeatureCollection implements VectorProcess {
         SimpleFeatureType schema;
 
         public UnitedFeatureCollection(
-                SimpleFeatureCollection delegate, SimpleFeatureCollection features)
-                throws ClassNotFoundException {
+                SimpleFeatureCollection delegate, SimpleFeatureCollection features) {
             super(delegate);
             this.features = features;
 

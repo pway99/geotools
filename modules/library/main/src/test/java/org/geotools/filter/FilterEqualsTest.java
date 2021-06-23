@@ -21,7 +21,6 @@ import static org.junit.Assert.assertNotEquals;
 import java.util.Collections;
 import java.util.logging.Logger;
 import org.geotools.factory.CommonFactoryFinder;
-import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
 import org.geotools.filter.expression.AddImpl;
 import org.geotools.filter.expression.SubtractImpl;
@@ -125,7 +124,7 @@ public class FilterEqualsTest {
     }
 
     @Test
-    public void testExpressionAttribute() throws IllegalFilterException, SchemaException {
+    public void testExpressionAttribute() throws IllegalFilterException {
         SimpleFeatureTypeBuilder ftb = new SimpleFeatureTypeBuilder();
         ftb.add("testBoolean", Boolean.class);
         ftb.add("testString", String.class);

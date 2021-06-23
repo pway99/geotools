@@ -90,12 +90,12 @@ public class GMLMultiPointTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return GML2ParsingUtils.GeometryCollectionType_parse(node, MultiPoint.class, gFactory);
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
 
         if (GML.pointMember.equals(name)) {
             return GML2ParsingUtils.asCollection((MultiPoint) object);

@@ -81,7 +81,7 @@ public class FidQueryTest extends FIDTestCase {
     }
 
     @After
-    public void dispose() throws Exception {
+    public void dispose() {
         ds.dispose();
     }
 

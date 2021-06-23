@@ -47,7 +47,7 @@ public class QuickstartCache {
      * <p>There is just one line extra compared to the main method, where we create an instance of
      * CachingFeatureStore.
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         // display a data store file chooser dialog for shapefiles
         File file = JFileDataStoreChooser.showOpenFile("shp", null);
         if (file == null) {

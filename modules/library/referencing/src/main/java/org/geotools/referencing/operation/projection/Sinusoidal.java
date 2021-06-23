@@ -72,8 +72,7 @@ public class Sinusoidal extends MapProjection {
      * radians) and stores the result in {@code ptDst} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D transformNormalized(double lam, double phi, final Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double lam, double phi, final Point2D ptDst) {
         double x, y;
 
         if (isSpherical) {

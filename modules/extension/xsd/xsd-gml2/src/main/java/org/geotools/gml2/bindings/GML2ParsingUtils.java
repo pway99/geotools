@@ -175,7 +175,7 @@ public class GML2ParsingUtils {
      * @param node The parse node / tree for the feature.
      * @return A geotools feature type
      */
-    public static SimpleFeatureType featureType(Node node) throws Exception {
+    public static SimpleFeatureType featureType(Node node) {
         SimpleFeatureTypeBuilder ftBuilder = new SimpleFeatureTypeBuilder();
         ftBuilder.setName(node.getComponent().getName());
         ftBuilder.setNamespaceURI(node.getComponent().getNamespace());

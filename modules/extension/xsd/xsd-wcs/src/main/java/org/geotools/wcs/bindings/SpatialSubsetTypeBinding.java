@@ -89,7 +89,7 @@ public class SpatialSubsetTypeBinding extends AbstractComplexBinding {
      */
     @Override
     @SuppressWarnings("unchecked")
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         SpatialSubsetType spatialSubset = Wcs10Factory.eINSTANCE.createSpatialSubsetType();
 
         List<Node> envelopes = node.getChildren("Envelope");

@@ -59,7 +59,7 @@ public class RulesHandler extends SldTransformHandler {
 
     @Override
     public void endElement(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+            throws IOException {
         String name = xml.getLocalName();
 
         if ("Rule".equals(name)) {

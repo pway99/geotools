@@ -31,7 +31,7 @@ public class WKTParserTest {
     WKTParser parser;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         MockGeometryFactory mockFactory = new MockGeometryFactory();
         PositionFactory pf = new MockPositionFactory();

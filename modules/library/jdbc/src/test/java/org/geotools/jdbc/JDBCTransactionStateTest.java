@@ -21,8 +21,6 @@ import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Handler;
@@ -86,7 +84,7 @@ public class JDBCTransactionStateTest {
      * statements.
      */
     @Test
-    public void testSetTransactionNullWithInternalConnection() throws IOException, SQLException {
+    public void testSetTransactionNullWithInternalConnection() throws SQLException {
         JDBCTransactionState state = new JDBCTransactionState(mockConnection, dataStore);
         // init state
         state.setTransaction(mockTransaction);

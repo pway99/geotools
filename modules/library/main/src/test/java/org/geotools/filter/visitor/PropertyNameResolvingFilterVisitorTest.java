@@ -34,7 +34,7 @@ public class PropertyNameResolvingFilterVisitorTest {
     SimpleFeatureType featureType;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         factory = CommonFactoryFinder.getFilterFactory(null);
         SimpleFeatureTypeBuilder b = new SimpleFeatureTypeBuilder();

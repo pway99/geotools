@@ -306,7 +306,7 @@ public abstract class AbstractComplexEMFBinding extends AbstractComplexBinding {
      * explicitly.
      */
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (object instanceof EObject) {
             EObject eObject = (EObject) object;
 

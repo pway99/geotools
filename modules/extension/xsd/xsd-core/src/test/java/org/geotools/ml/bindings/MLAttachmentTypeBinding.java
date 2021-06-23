@@ -74,7 +74,7 @@ public class MLAttachmentTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Map mime = (Map) node.getChildValue("mimetype");
         MimeType mimeType = new MimeType((String) mime.get("type"), (String) mime.get("subtype"));
 

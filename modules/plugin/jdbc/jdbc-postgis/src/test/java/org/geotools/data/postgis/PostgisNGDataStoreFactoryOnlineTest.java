@@ -165,7 +165,7 @@ public class PostgisNGDataStoreFactoryOnlineTest extends JDBCTestSupport {
     }
 
     @Override
-    protected void tearDownInternal() throws Exception {
+    protected void tearDownInternal() {
         System.clearProperty("org.geotools.data.postgis.largeGeometriesOptimize");
     }
 }

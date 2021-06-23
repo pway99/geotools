@@ -70,7 +70,7 @@ public class CacheManagementTest {
     }
 
     @Test
-    public void testDoesntFailIfExternalFileDoesntExist() throws Exception {
+    public void testDoesntFailIfExternalFileDoesntExist() {
         File cacheConfigFile = new File("/should/not/exist/ehcache.xml");
         assertFalse(cacheConfigFile.exists());
         String configurationPath = cacheConfigFile.getAbsolutePath();

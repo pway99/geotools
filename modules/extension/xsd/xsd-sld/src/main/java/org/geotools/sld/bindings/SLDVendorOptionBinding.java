@@ -65,7 +65,7 @@ public class SLDVendorOptionBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         CssParameter option = new CssParameter((String) node.getAttributeValue("name"));
         option.setExpression(filterFactory.literal(instance.getText()));
         return option;

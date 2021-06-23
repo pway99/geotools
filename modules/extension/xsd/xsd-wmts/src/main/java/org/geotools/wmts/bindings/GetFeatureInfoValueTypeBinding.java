@@ -78,7 +78,7 @@ public class GetFeatureInfoValueTypeBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         // TODO: check if this works?
         return GetFeatureInfoValueType.valueOf(value.toString());
     }

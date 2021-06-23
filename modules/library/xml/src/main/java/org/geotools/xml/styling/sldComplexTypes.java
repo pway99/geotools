@@ -208,8 +208,7 @@ public class sldComplexTypes {
          */
         @Override
         public Object getValue(
-                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints)
-                throws OperationNotSupportedException, SAXException {
+                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints) {
             ContrastEnhancement symbol = new ContrastEnhancementImpl();
 
             for (ElementValue elementValue : value) {
@@ -769,8 +768,7 @@ public class sldComplexTypes {
          */
         @Override
         public Object getValue(
-                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints)
-                throws OperationNotSupportedException {
+                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints) {
             Graphic symbol = CommonFactoryFinder.getStyleFactory().getDefaultGraphic();
 
             for (ElementValue elementValue : value) {
@@ -954,8 +952,7 @@ public class sldComplexTypes {
          */
         @Override
         public Object getValue(
-                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints)
-                throws OperationNotSupportedException {
+                Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints) {
             Stroke symbol = CommonFactoryFinder.getStyleFactory().getDefaultStroke();
 
             for (ElementValue elementValue : value) {

@@ -75,7 +75,7 @@ public class XSNMTOKENBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         // just return the value passed in
         return value;
     }

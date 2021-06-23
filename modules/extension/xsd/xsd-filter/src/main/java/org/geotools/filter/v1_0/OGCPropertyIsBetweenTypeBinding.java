@@ -92,7 +92,7 @@ public class OGCPropertyIsBetweenTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Expression e = (Expression) node.getChildValue(0);
         Expression l = (Expression) node.getChildValue(1);
         Expression u = (Expression) node.getChildValue(2);
@@ -101,7 +101,7 @@ public class OGCPropertyIsBetweenTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         PropertyIsBetween between = (PropertyIsBetween) object;
 
         // &lt;xsd:element ref="ogc:expression"/&gt;

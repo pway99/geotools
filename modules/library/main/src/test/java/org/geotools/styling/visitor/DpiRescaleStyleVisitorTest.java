@@ -44,7 +44,7 @@ public class DpiRescaleStyleVisitorTest {
     double scale;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         sf = CommonFactoryFinder.getStyleFactory(null);
         ff = CommonFactoryFinder.getFilterFactory2(null);
         sb = new StyleBuilder(sf, ff);
@@ -53,7 +53,7 @@ public class DpiRescaleStyleVisitorTest {
     }
 
     @Test
-    public void testNoUnit() throws Exception {
+    public void testNoUnit() {
         Stroke original = sb.createStroke(Color.RED, 2, new float[] {5, 10});
         LineSymbolizer ls = sb.createLineSymbolizer(original);
         ls.accept(visitor);
@@ -71,7 +71,7 @@ public class DpiRescaleStyleVisitorTest {
     }
 
     @Test
-    public void testAllMeters() throws Exception {
+    public void testAllMeters() {
         Stroke original = sb.createStroke(Color.RED, 2, new float[] {5, 10});
         LineSymbolizer ls = sb.createLineSymbolizer(original);
         ls.setUnitOfMeasure(SI.METRE);
@@ -91,7 +91,7 @@ public class DpiRescaleStyleVisitorTest {
     }
 
     @Test
-    public void testAllFeet() throws Exception {
+    public void testAllFeet() {
         Stroke original = sb.createStroke(Color.RED, 2, new float[] {5, 10});
         LineSymbolizer ls = sb.createLineSymbolizer(original);
         ls.setUnitOfMeasure(USCustomary.FOOT);
@@ -111,7 +111,7 @@ public class DpiRescaleStyleVisitorTest {
     }
 
     @Test
-    public void testSymbolizerMeterOverrideInPixels() throws Exception {
+    public void testSymbolizerMeterOverrideInPixels() {
         Stroke original = sb.createStroke(Color.RED, 2, new float[] {5, 10});
         original.setWidth(ff.literal("2px"));
         LineSymbolizer ls = sb.createLineSymbolizer(original);
@@ -135,7 +135,7 @@ public class DpiRescaleStyleVisitorTest {
     }
 
     @Test
-    public void testSymbolizerPixelOverrideInMeters() throws Exception {
+    public void testSymbolizerPixelOverrideInMeters() {
         Stroke original = sb.createStroke(Color.RED, 2, new float[] {5, 10});
         original.setWidth(ff.literal("2m"));
         LineSymbolizer ls = sb.createLineSymbolizer(original);

@@ -66,7 +66,7 @@ public abstract class GeoSpatialImageReader extends ImageReader
     }
 
     @Override
-    public IIOMetadata getImageMetadata(int imageIndex) throws IOException {
+    public IIOMetadata getImageMetadata(int imageIndex) {
         checkImageIndex(imageIndex);
         // metadata is not supported, the interface allows for returning null
         return null;
@@ -88,7 +88,7 @@ public abstract class GeoSpatialImageReader extends ImageReader
     }
 
     @Override
-    public IIOMetadata getStreamMetadata() throws IOException {
+    public IIOMetadata getStreamMetadata() {
         return null;
     }
 
@@ -115,7 +115,7 @@ public abstract class GeoSpatialImageReader extends ImageReader
     }
 
     @Override
-    public int getNumImages(final boolean allowSearch) throws IOException {
+    public int getNumImages(final boolean allowSearch) {
         return numImages;
     }
 

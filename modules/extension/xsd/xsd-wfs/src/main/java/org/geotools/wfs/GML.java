@@ -365,8 +365,7 @@ public class GML {
         }
     }
 
-    private void encodeLegacyGML2(OutputStream out, SimpleFeatureCollection collection)
-            throws IOException {
+    private void encodeLegacyGML2(OutputStream out, SimpleFeatureCollection collection) {
         final SimpleFeatureType TYPE = collection.getSchema();
 
         FeatureTransformer transform = new FeatureTransformer();
@@ -643,7 +642,7 @@ public class GML {
      *     extends AbstratFeatureType
      */
     public SimpleFeatureIterator decodeFeatureIterator(InputStream in, QName elementName)
-            throws IOException, ParserConfigurationException, SAXException {
+            throws ParserConfigurationException, SAXException {
         if (Version.GML2 == version
                 || Version.GML3 == version
                 || Version.WFS1_0 == version

@@ -66,7 +66,7 @@ public class SortPropertyTypeBinding extends org.geotools.filter.v1_1.SortProper
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         SortBy sortBy = (SortBy) object;
 
         if (FES.ValueReference.equals(name)) {

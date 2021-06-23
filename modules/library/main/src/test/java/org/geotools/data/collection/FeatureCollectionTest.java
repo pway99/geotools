@@ -59,7 +59,7 @@ public abstract class FeatureCollectionTest {
     SimpleFeatureCollection features;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         SimpleFeatureTypeBuilder tb = new SimpleFeatureTypeBuilder();
         tb.setName("Dummy");
         SimpleFeatureType schema = tb.buildFeatureType();
@@ -117,7 +117,7 @@ public abstract class FeatureCollectionTest {
     }
 
     @Test
-    public void testBounds() throws Exception {
+    public void testBounds() {
         PrecisionModel pm = new PrecisionModel();
         Geometry[] g = new Geometry[4];
         GeometryFactory gf = new GeometryFactory(pm);
@@ -155,7 +155,7 @@ public abstract class FeatureCollectionTest {
     }
 
     @Test
-    public void testAddRemoveAllAbilities() throws Exception {
+    public void testAddRemoveAllAbilities() {
         Collection half = randomPiece(features);
         Collection otherHalf = DataUtilities.list(features);
 

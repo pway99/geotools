@@ -91,7 +91,7 @@ public class WMTSConfigurationTest {
     }
 
     @Test
-    public void testParse() throws IOException, SAXException, ParserConfigurationException {
+    public void testParse() {
         Map<String, LayerType> layers = parseCaps("./nasa.getcapa.xml");
 
         assertEquals(519, layers.size());

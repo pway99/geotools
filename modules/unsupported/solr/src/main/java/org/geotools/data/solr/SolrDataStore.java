@@ -213,7 +213,7 @@ public class SolrDataStore extends ContentDataStore {
     }
 
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         try {
             if (nativeTypeNames == null || nativeTypeNames.isEmpty()) {
                 List<Name> temp = new ArrayList<>();
@@ -236,7 +236,7 @@ public class SolrDataStore extends ContentDataStore {
     }
 
     @Override
-    protected ContentFeatureSource createFeatureSource(ContentEntry entry) throws IOException {
+    protected ContentFeatureSource createFeatureSource(ContentEntry entry) {
         ContentEntry type = ensureEntry(entry.getName());
         return new SolrFeatureSource(type, defaultFeatureTypes);
     }

@@ -25,7 +25,7 @@ import org.junit.Test;
 public class SLDFeatureTypeStyleBindingTest extends SLDTestSupport {
 
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(FeatureTypeStyle.class, new SLDFeatureTypeStyleBinding(null).getType());
     }
 

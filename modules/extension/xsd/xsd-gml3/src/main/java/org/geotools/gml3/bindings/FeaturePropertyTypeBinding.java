@@ -98,12 +98,12 @@ public class FeaturePropertyTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return node.getChildValue(Feature.class);
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (GML._Feature.equals(name)) {
             if (object instanceof SimpleFeature) {
                 return object;
@@ -135,7 +135,7 @@ public class FeaturePropertyTypeBinding extends AbstractComplexBinding {
      *     org.w3c.dom.Element)
      */
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         if (object instanceof ComplexAttribute) {
             ComplexAttribute complex = (ComplexAttribute) object;
             checkXlinkHref(complex);

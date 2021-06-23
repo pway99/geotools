@@ -41,14 +41,13 @@ import org.geotools.xsd.Parser;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class GML3EncodingOnlineTest {
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         Map<String, String> namespaces = new HashMap<>();
         namespaces.put("test", TEST.TestFeature.getNamespaceURI());
@@ -136,13 +135,13 @@ public class GML3EncodingOnlineTest {
         DefaultHandler handler =
                 new DefaultHandler() {
                     @Override
-                    public void error(SAXParseException e) throws SAXException {
+                    public void error(SAXParseException e) {
                         // System.out.println(e.getMessage());
                         errors.add(e);
                     }
 
                     @Override
-                    public void fatalError(SAXParseException e) throws SAXException {
+                    public void fatalError(SAXParseException e) {
                         // System.out.println(e.getMessage());
                         errors.add(e);
                     }

@@ -34,7 +34,6 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.util.Collection;
@@ -273,7 +272,7 @@ public final class JP2KReader extends AbstractGridCoverage2DReader implements Gr
 
     private void getGMLJP2(XMLBoxMetadataNode xmlBox)
             throws IOException, ParserConfigurationException, SAXException,
-                    XPathExpressionException, FactoryException, TransformException {
+                    XPathExpressionException, TransformException {
 
         DocumentBuilder b = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         String xml = xmlBox.getXml();
@@ -458,7 +457,7 @@ public final class JP2KReader extends AbstractGridCoverage2DReader implements Gr
         }
     }
 
-    private void getWorldBox(final UUIDBoxMetadataNode uuid) throws IOException {
+    private void getWorldBox(final UUIDBoxMetadataNode uuid) {
 
         // //
         //
@@ -580,7 +579,7 @@ public final class JP2KReader extends AbstractGridCoverage2DReader implements Gr
         }
     }
 
-    private void setEnvelopeFromTransform(AffineTransform tempTransform) throws TransformException {
+    private void setEnvelopeFromTransform(AffineTransform tempTransform) {
         final GeneralEnvelope envelope =
                 CRS.transform(
                         ProjectiveTransform.create(tempTransform),
@@ -765,7 +764,7 @@ public final class JP2KReader extends AbstractGridCoverage2DReader implements Gr
      * Gets the coordinate reference system that will be associated to the {@link GridCoverage} by
      * looking for a related PRJ.
      */
-    protected void parsePRJFile() throws UnsupportedEncodingException {
+    protected void parsePRJFile() {
         String prjPath =
                 new StringBuilder(parentPath)
                         .append(SEPARATOR)

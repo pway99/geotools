@@ -92,8 +92,7 @@ public class JoiningNestedAttributeMapping extends NestedAttributeMapping {
             Map<Name, Expression> clientProperties,
             Expression sourceElement,
             StepList sourcePath,
-            NamespaceSupport namespaces)
-            throws IOException {
+            NamespaceSupport namespaces) {
         super(
                 idExpression,
                 parentExpression,
@@ -238,8 +237,7 @@ public class JoiningNestedAttributeMapping extends NestedAttributeMapping {
      * Open an instance (cursor) for a specific caller. An instance holds a cursor and any
      * additional information to move through the features.
      */
-    public void open(Object caller, Query baseTableQuery, FeatureTypeMapping mapping)
-            throws IOException {
+    public void open(Object caller, Query baseTableQuery, FeatureTypeMapping mapping) {
         if (instances.get(caller) != null) {
             throw new IllegalArgumentException(
                     "Trying to open Joining Nested Attribute Mapping that is already open!");

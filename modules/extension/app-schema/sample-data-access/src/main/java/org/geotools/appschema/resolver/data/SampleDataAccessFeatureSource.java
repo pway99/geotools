@@ -59,7 +59,7 @@ public class SampleDataAccessFeatureSource implements FeatureSource<FeatureType,
      * @see org.geotools.data.FeatureSource#getBounds()
      */
     @Override
-    public ReferencedEnvelope getBounds() throws IOException {
+    public ReferencedEnvelope getBounds() {
         // FIXME implement this
         return null;
     }
@@ -70,7 +70,7 @@ public class SampleDataAccessFeatureSource implements FeatureSource<FeatureType,
      * @see org.geotools.data.FeatureSource#getBounds(org.geotools.data.Query)
      */
     @Override
-    public ReferencedEnvelope getBounds(Query query) throws IOException {
+    public ReferencedEnvelope getBounds(Query query) {
         // FIXME implement this
         return null;
     }
@@ -81,7 +81,7 @@ public class SampleDataAccessFeatureSource implements FeatureSource<FeatureType,
      * @see org.geotools.data.FeatureSource#getCount(org.geotools.data.Query)
      */
     @Override
-    public int getCount(Query query) throws IOException {
+    public int getCount(Query query) {
         // FIXME implement this
         return 0;
     }
@@ -103,7 +103,7 @@ public class SampleDataAccessFeatureSource implements FeatureSource<FeatureType,
      * @see org.geotools.data.FeatureSource#getFeatures()
      */
     @Override
-    public FeatureCollection<FeatureType, Feature> getFeatures() throws IOException {
+    public FeatureCollection<FeatureType, Feature> getFeatures() {
         SampleDataAccessFeatureCollection fc = new SampleDataAccessFeatureCollection();
         fc.addAll(SampleDataAccessData.createMappedFeatures());
         return fc;

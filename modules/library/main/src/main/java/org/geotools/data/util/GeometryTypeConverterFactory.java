@@ -72,7 +72,7 @@ public class GeometryTypeConverterFactory implements ConverterFactory {
             return new Converter() {
 
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     Geometry result = null;
                     Geometry sourceGeometry = (Geometry) source;
                     if (MultiCurvedGeometry.class.isAssignableFrom(target)) {

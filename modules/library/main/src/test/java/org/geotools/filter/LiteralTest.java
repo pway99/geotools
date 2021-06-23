@@ -42,7 +42,7 @@ public class LiteralTest {
     FilterFactory ff;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         ff = CommonFactoryFinder.getFilterFactory(null);
     }
 
@@ -56,7 +56,7 @@ public class LiteralTest {
     }
 
     @Test
-    public void testConversion() throws Exception {
+    public void testConversion() {
         Assert.assertEquals("abc", ff.literal("abc").evaluate(null));
         Assert.assertEquals(Integer.valueOf(12), ff.literal("12").evaluate(null, Integer.class));
         Assert.assertEquals(Double.valueOf(12.0), ff.literal("12.0").evaluate(null, Double.class));
@@ -72,7 +72,7 @@ public class LiteralTest {
     }
 
     @Test
-    public void testDateEquality() throws Exception {
+    public void testDateEquality() {
         Calendar cal = Calendar.getInstance();
         cal.set(2012, 6, 15);
         Date d1 = cal.getTime();

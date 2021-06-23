@@ -17,7 +17,6 @@
 
 package org.geotools.appschema.resolver.data;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.geotools.data.DataAccess;
@@ -43,7 +42,7 @@ public class SampleDataAccess implements DataAccess<FeatureType, Feature> {
      * @see org.geotools.data.DataAccess#createSchema(org.opengis.feature.type.FeatureType)
      */
     @Override
-    public void createSchema(FeatureType featureType) throws IOException {
+    public void createSchema(FeatureType featureType) {
         throw new UnsupportedOperationException();
     }
 
@@ -59,7 +58,7 @@ public class SampleDataAccess implements DataAccess<FeatureType, Feature> {
 
     /** @see org.geotools.data.DataAccess#getFeatureSource(org.opengis.feature.type.Name) */
     @Override
-    public FeatureSource<FeatureType, Feature> getFeatureSource(Name typeName) throws IOException {
+    public FeatureSource<FeatureType, Feature> getFeatureSource(Name typeName) {
         if (typeName.equals(SampleDataAccessData.MAPPEDFEATURE_TYPE_NAME)) {
             return new SampleDataAccessFeatureSource();
         } else if (typeName.equals(SampleDataAccessData.GEOLOGICUNIT_TYPE_NAME)) {
@@ -92,7 +91,7 @@ public class SampleDataAccess implements DataAccess<FeatureType, Feature> {
      * @see org.geotools.data.DataAccess#getNames()
      */
     @Override
-    public List<Name> getNames() throws IOException {
+    public List<Name> getNames() {
         return new ArrayList<Name>() {
             {
                 add(SampleDataAccessData.MAPPEDFEATURE_TYPE_NAME);
@@ -108,7 +107,7 @@ public class SampleDataAccess implements DataAccess<FeatureType, Feature> {
      * @see org.geotools.data.DataAccess#getSchema(org.opengis.feature.type.Name)
      */
     @Override
-    public FeatureType getSchema(Name name) throws IOException {
+    public FeatureType getSchema(Name name) {
         if (name.equals(SampleDataAccessData.MAPPEDFEATURE_TYPE_NAME)) {
             return SampleDataAccessData.MAPPEDFEATURE_TYPE;
         } else if (name.equals(SampleDataAccessData.GEOLOGICUNIT_TYPE_NAME)) {
@@ -125,7 +124,7 @@ public class SampleDataAccess implements DataAccess<FeatureType, Feature> {
      *     org.opengis.feature.type.FeatureType)
      */
     @Override
-    public void updateSchema(Name typeName, FeatureType featureType) throws IOException {
+    public void updateSchema(Name typeName, FeatureType featureType) {
         throw new UnsupportedOperationException();
     }
 
@@ -135,7 +134,7 @@ public class SampleDataAccess implements DataAccess<FeatureType, Feature> {
      * @see org.geotools.data.DataAccess#removeSchema(org.opengis.feature.type.Name)
      */
     @Override
-    public void removeSchema(Name typeName) throws IOException {
+    public void removeSchema(Name typeName) {
         throw new UnsupportedOperationException("Schema removal not supported");
     }
 }

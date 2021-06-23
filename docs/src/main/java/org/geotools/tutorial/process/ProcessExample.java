@@ -80,7 +80,7 @@ public class ProcessExample {
         // octo end
     }
 
-    public static void exampleParam() throws Exception {
+    public static void exampleParam() {
         // param start
         Name name = new NameImpl("tutorial", "octagonalEnvelope");
 

@@ -139,7 +139,7 @@ public class TestData {
      * </pre>
      */
     public static List<AttributeMapping> createMappingsColumnsAndValues(
-            AttributeDescriptor targetFeature) throws Exception {
+            AttributeDescriptor targetFeature) {
 
         List<AttributeMapping> mappings = new LinkedList<>();
 

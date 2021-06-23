@@ -20,8 +20,6 @@ package org.geotools.data.complex;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -39,7 +37,7 @@ public class AttributeCreateOrderListTest extends AppSchemaTestSupport {
     private List<AttributeMapping> unProcessedList;
 
     @Test
-    public void testEmptyTree() throws IOException {
+    public void testEmptyTree() {
         at = new AttributeCreateOrderList(ROOT_LABEL);
         unProcessedList = new ArrayList<>();
 
@@ -47,7 +45,7 @@ public class AttributeCreateOrderListTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testSimpleTree() throws IOException {
+    public void testSimpleTree() {
         at = new AttributeCreateOrderList(ROOT_LABEL);
         unProcessedList = new ArrayList<>();
 
@@ -61,7 +59,7 @@ public class AttributeCreateOrderListTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testComplexTree() throws IOException {
+    public void testComplexTree() {
         at = new AttributeCreateOrderList(ROOT_LABEL);
         unProcessedList = new ArrayList<>();
 
@@ -81,7 +79,7 @@ public class AttributeCreateOrderListTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testInvalidTree() throws IOException {
+    public void testInvalidTree() {
         at = new AttributeCreateOrderList(ROOT_LABEL);
         unProcessedList = new ArrayList<>();
 
@@ -101,7 +99,7 @@ public class AttributeCreateOrderListTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testInvalidRootInTree() throws IOException {
+    public void testInvalidRootInTree() {
         at = new AttributeCreateOrderList(ROOT_LABEL);
         unProcessedList = new ArrayList<>();
 

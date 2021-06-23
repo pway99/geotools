@@ -32,7 +32,7 @@ public class IngresGeometryTest extends JDBCGeometryTest {
     }
     
     @Override
-    public void testLinearRing() throws Exception {
+    public void testLinearRing() {
         // linear ring type is not a supported type in Ingres
     }
 

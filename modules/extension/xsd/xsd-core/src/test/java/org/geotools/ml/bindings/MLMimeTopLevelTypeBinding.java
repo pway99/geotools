@@ -64,7 +64,7 @@ public class MLMimeTopLevelTypeBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         // shouldn't have to do anything special here
         return value;
     }

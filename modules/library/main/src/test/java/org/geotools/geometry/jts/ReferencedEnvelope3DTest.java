@@ -79,7 +79,7 @@ public class ReferencedEnvelope3DTest {
     }
 
     @Test
-    public void intersection() throws Exception {
+    public void intersection() {
         ReferencedEnvelope3D australia = new ReferencedEnvelope3D(DefaultGeographicCRS.WGS84_3D);
         australia.include(40, 110, 0);
         australia.include(10, 150, 10);
@@ -97,7 +97,7 @@ public class ReferencedEnvelope3DTest {
     }
 
     @Test
-    public void include() throws Exception {
+    public void include() {
         ReferencedEnvelope3D australia = new ReferencedEnvelope3D(DefaultGeographicCRS.WGS84_3D);
         australia.include(40, 110, 0);
         australia.include(10, 150, 10);
@@ -139,7 +139,7 @@ public class ReferencedEnvelope3DTest {
     }
 
     @Test
-    public void testTransformToWGS84() throws Exception {
+    public void testTransformToWGS84() {
         String wkt =
                 "GEOGCS[\"GDA94\","
                         + " DATUM[\"Geocentric Datum of Australia 1994\","

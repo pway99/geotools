@@ -157,7 +157,7 @@ public class WMS1_0_0_OnlineTest {
 
     @Test
     @Ignore
-    public void testCreateGetFeatureInfoRequest() throws Exception {
+    public void testCreateGetFeatureInfoRequest() {
         /* TODO FIX THIS
         try{
             URL featureURL = new URL("http://www2.dmsolutions.ca/cgi-bin/mswms_gmap?VERSION=1.1.0&REQUEST=GetCapabilities");
@@ -259,7 +259,7 @@ public class WMS1_0_0_OnlineTest {
     private class CustomWMS extends WebMapServer {
 
         /** */
-        public CustomWMS(URL serverURL) throws SAXException, URISyntaxException, IOException {
+        public CustomWMS(URL serverURL) throws SAXException, IOException {
             super(serverURL);
             // TODO Auto-generated constructor stub
         }

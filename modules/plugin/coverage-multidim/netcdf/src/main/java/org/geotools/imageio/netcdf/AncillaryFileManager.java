@@ -348,8 +348,7 @@ public class AncillaryFileManager implements FileSetManager {
 
     /** Check whether the file have been updated. */
     private static void checkReset(
-            final File mainFile, final File slicesIndexFile, final File destinationDir)
-            throws IOException {
+            final File mainFile, final File slicesIndexFile, final File destinationDir) {
         // TODO: Consider acquiring a LOCK on the file
         if (slicesIndexFile.exists()) {
             final long mainFileTime = mainFile.lastModified();
@@ -851,8 +850,7 @@ public class AncillaryFileManager implements FileSetManager {
      * Check whether the dataStore needs to be wrapped (as an instance, to allow long typeNames and
      * attributes).
      */
-    private void checkStoreWrapping(DataStoreConfiguration datastoreConfiguration)
-            throws IOException {
+    private void checkStoreWrapping(DataStoreConfiguration datastoreConfiguration) {
         Map<String, Serializable> params = datastoreConfiguration.getParams();
         String param = getParameter(Utils.Prop.WRAP_STORE);
         if (param != null && param.trim().equalsIgnoreCase("true")) {

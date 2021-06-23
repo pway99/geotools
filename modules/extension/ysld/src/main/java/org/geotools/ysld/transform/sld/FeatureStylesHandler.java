@@ -45,7 +45,7 @@ public class FeatureStylesHandler extends SldTransformHandler {
 
     @Override
     public void endElement(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+            throws IOException {
         if ("FeatureTypeStyle".equals(xml.getLocalName())) {
             context.endSequence().endMapping();
         } else if ("UserStyle".equals(xml.getLocalName())) {

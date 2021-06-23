@@ -49,7 +49,7 @@ public class MapGetFunctionTest {
     private GeometryFactory gf;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
         builder.setName("map");
         builder.setNamespaceURI(namespace);

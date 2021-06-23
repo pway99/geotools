@@ -58,7 +58,7 @@ public class MapContentConcurrencyTest {
     }
 
     @Test
-    public void addingLayersOnSeparateThreads() throws Exception {
+    public void addingLayersOnSeparateThreads() {
         final CountDownLatch startLatch = new CountDownLatch(1);
 
         Layer layer1 = new MockLayer(WORLD);
@@ -85,7 +85,7 @@ public class MapContentConcurrencyTest {
      * started at the same time (or at least given permission to run at the same time).
      */
     @Test
-    public void addAndRemoveOnSeparateThreads() throws Exception {
+    public void addAndRemoveOnSeparateThreads() {
         final CountDownLatch startLatch = new CountDownLatch(1);
         final int numThreads = 100;
 

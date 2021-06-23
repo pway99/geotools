@@ -36,8 +36,6 @@ import org.geotools.util.factory.Hints;
 import org.junit.Assert;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.ParameterValue;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 
 /** @author Simone Giannecchini, GeoSolutions SAS */
 final class TestUtils extends Assert {
@@ -121,8 +119,7 @@ final class TestUtils extends Assert {
      * @param testURL points to a shapefile that is the index of a certain mosaic.
      * @return a suitable {@link AbstractGridFormat}.
      */
-    static AbstractGridFormat getFormat(URL testURL)
-            throws NoSuchAuthorityCodeException, FactoryException {
+    static AbstractGridFormat getFormat(URL testURL) {
 
         final Hints hints =
                 new Hints(Hints.DEFAULT_COORDINATE_REFERENCE_SYSTEM, CRS.decode("EPSG:4326", true));
@@ -142,8 +139,7 @@ final class TestUtils extends Assert {
      * @param format to use for instantiating such a reader.
      * @return a suitable {@link ImageMosaicReader}.
      */
-    static ImageMosaicReader getReader(URL testURL, final AbstractGridFormat format)
-            throws NoSuchAuthorityCodeException, FactoryException {
+    static ImageMosaicReader getReader(URL testURL, final AbstractGridFormat format) {
 
         // final Hints hints= new Hints(Hints.DEFAULT_COORDINATE_REFERENCE_SYSTEM,
         // CRS.decode("EPSG:4326", true));

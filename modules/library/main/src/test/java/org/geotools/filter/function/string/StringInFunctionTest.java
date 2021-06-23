@@ -29,7 +29,7 @@ public class StringInFunctionTest {
     FilterFactory ff = CommonFactoryFinder.getFilterFactory(null);
 
     @Test
-    public void test() throws Exception {
+    public void test() {
         StringInFunction f = new StringInFunction();
 
         List<Expression> params =
@@ -55,7 +55,7 @@ public class StringInFunctionTest {
     }
 
     @Test
-    public void testTooFewArguments() throws Exception {
+    public void testTooFewArguments() {
         StringInFunction f = new StringInFunction();
 
         List<Expression> params = Arrays.asList(ff.literal("foo"), ff.literal(true));

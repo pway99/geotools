@@ -142,7 +142,7 @@ public class ECQLINPredicateTest {
      * @param propName property name
      * @param exprList list of integer values
      */
-    private void commonAssertForInPredicate(Filter filter) throws CQLException {
+    private void commonAssertForInPredicate(Filter filter) {
 
         Assert.assertNotNull(filter);
         Assert.assertTrue(filter instanceof Or);

@@ -1,11 +1,9 @@
 package org.geotools.wfs.v1_0;
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.namespace.QName;
-import javax.xml.transform.TransformerException;
 import net.opengis.wfs.DeleteElementType;
 import net.opengis.wfs.InsertElementType;
 import net.opengis.wfs.PropertyType;
@@ -33,7 +31,6 @@ import org.opengis.feature.type.AttributeDescriptor;
 import org.opengis.feature.type.FeatureTypeFactory;
 import org.opengis.filter.FilterFactory2;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 public class WFSEncodingTest {
 
@@ -50,7 +47,7 @@ public class WFSEncodingTest {
     @Test
     @SuppressWarnings("unchecked")
     public void encodeUpdate()
-            throws IOException, SAXException, TransformerException, XpathException {
+            throws XpathException {
         WfsFactory wfsfac = WfsFactory.eINSTANCE;
         FilterFactory2 filterfac = CommonFactoryFinder.getFilterFactory2();
         GeometryFactory geomfac = new GeometryFactory(new PrecisionModel(10));
@@ -101,7 +98,7 @@ public class WFSEncodingTest {
     @Test
     @SuppressWarnings("unchecked")
     public void encodeInsert()
-            throws IOException, SAXException, TransformerException, XpathException {
+            throws XpathException {
         WfsFactory wfsfac = WfsFactory.eINSTANCE;
         FeatureFactory ff = CommonFactoryFinder.getFeatureFactory(null);
         FeatureTypeFactory ftf = new FeatureTypeFactoryImpl();
@@ -133,7 +130,7 @@ public class WFSEncodingTest {
 
     @Test
     public void encodeDelete()
-            throws IOException, SAXException, TransformerException, XpathException {
+            throws XpathException {
         WfsFactory wfsfac = WfsFactory.eINSTANCE;
         FilterFactory2 filterfac = CommonFactoryFinder.getFilterFactory2();
 

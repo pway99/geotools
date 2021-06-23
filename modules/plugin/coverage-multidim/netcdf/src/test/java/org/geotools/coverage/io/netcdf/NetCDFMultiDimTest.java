@@ -24,7 +24,6 @@ import static org.junit.Assert.assertTrue;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -670,7 +669,7 @@ public class NetCDFMultiDimTest {
     }
 
     @Test
-    public void testDimensionOrder() throws IOException, ParseException {
+    public void testDimensionOrder() throws IOException {
         NetCDFFormat format = new NetCDFFormat();
 
         File file;

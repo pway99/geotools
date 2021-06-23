@@ -89,7 +89,6 @@ import org.junit.Test;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.ParameterValue;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.crs.GeographicCRS;
 import org.opengis.referencing.crs.ProjectedCRS;
@@ -123,7 +122,7 @@ public class GeoTiffReaderTest {
     /** Testing proper CRS override with PRJ. */
     @Test
     public void prjOverrideTesting1()
-            throws IllegalArgumentException, IOException, FactoryException {
+            throws IllegalArgumentException, IOException {
 
         //
         // PRJ override
@@ -148,7 +147,7 @@ public class GeoTiffReaderTest {
     /** Testing proper CRS override with PRJ. */
     @Test
     public void prjOverrideTesting2()
-            throws IllegalArgumentException, IOException, FactoryException {
+            throws IllegalArgumentException, IOException {
 
         //
         // PRJ override
@@ -186,7 +185,7 @@ public class GeoTiffReaderTest {
     @Test
     //    @Ignore
     public void testReaderBadGeotiff()
-            throws IllegalArgumentException, IOException, FactoryException {
+            throws IllegalArgumentException, IOException {
 
         //
         // no crs geotiff
@@ -356,7 +355,7 @@ public class GeoTiffReaderTest {
 
     private void writeAndReadBackCheck(
             GridCoverage2D coverage, AbstractGridFormat format, File writeDirectory, Object o)
-            throws IOException, FactoryException {
+            throws IOException {
         final File destFile = File.createTempFile("test", ".tif", writeDirectory);
         final GeoTiffWriter writer = new GeoTiffWriter(destFile);
         writer.write(coverage, null);
@@ -1205,7 +1204,7 @@ public class GeoTiffReaderTest {
     }
 
     @Test
-    public void testScaleOffset() throws IllegalArgumentException, IOException, FactoryException {
+    public void testScaleOffset() throws IllegalArgumentException, IOException {
         // prepare reader
         final File scaleOffset = TestData.file(GeoTiffReaderTest.class, "scaleOffset.tif");
         GeoTiffReader reader = new GeoTiffReader(scaleOffset);

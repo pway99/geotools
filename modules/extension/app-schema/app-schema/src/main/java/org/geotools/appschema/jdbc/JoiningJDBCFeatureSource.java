@@ -231,7 +231,7 @@ public class JoiningJDBCFeatureSource extends JDBCFeatureSource {
             Set<String> orderByFields,
             JoiningQuery.QueryJoin join,
             StringBuffer sql)
-            throws IOException, FilterToSQLException, SQLException {
+            throws SQLException {
 
         StringBuffer field2 = new StringBuffer();
         encodeColumnName(
@@ -332,8 +332,7 @@ public class JoiningJDBCFeatureSource extends JDBCFeatureSource {
     }
 
     /** Encode column name with table name included, but do not include schema name (for aliases) */
-    public void encodeColumnName2(String colName, String typeName, StringBuffer sql, Hints hints)
-            throws SQLException {
+    public void encodeColumnName2(String colName, String typeName, StringBuffer sql, Hints hints) {
 
         getDataStore().dialect.encodeTableName(typeName, sql);
         sql.append(".");
@@ -1533,8 +1532,7 @@ public class JoiningJDBCFeatureSource extends JDBCFeatureSource {
             SQLDialect dialect,
             SimpleFeatureType querySchema,
             JoiningQuery query,
-            String idColumnName)
-            throws FilterToSQLException, SQLException {
+            String idColumnName) {
         StringBuffer countSQL = new StringBuffer("SELECT COUNT(").append("DISTINCT ");
         getDataStore().encodeTableName(querySchema.getTypeName(), countSQL, query.getHints());
         countSQL.append(".");

@@ -455,7 +455,7 @@ class RasterLayerRequest {
      *
      * @todo this versions is deeply GDAL based.
      */
-    protected void setReadParameters() throws IOException, TransformException {
+    protected void setReadParameters() {
 
         // set source region
         if (!coverageRequestedRasterArea.isEmpty()) {
@@ -594,7 +594,7 @@ class RasterLayerRequest {
     }
 
     /** Initialize the 2D properties (CRS and Envelope) of this coverage */
-    private void prepareCoverageSpatialElements() throws FactoryException, TransformException {
+    private void prepareCoverageSpatialElements() {
         // basic initialization
         coverageGeographicBBox =
                 GridCoverageUtilities.getReferencedEnvelopeFromGeographicBoundingBox(
@@ -688,7 +688,7 @@ class RasterLayerRequest {
     }
 
     /** Returns the intersection between the base envelope and the requested envelope. */
-    private void adjustRequestedBBox() throws TransformException, FactoryException {
+    private void adjustRequestedBBox() throws TransformException {
 
         final CoordinateReferenceSystem requestedBBoxCRS2D =
                 requestedBBox.getCoordinateReferenceSystem();

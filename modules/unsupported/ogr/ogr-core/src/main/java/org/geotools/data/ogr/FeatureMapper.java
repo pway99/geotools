@@ -137,8 +137,7 @@ class FeatureMapper {
     }
 
     static void setFieldValue(
-            Object featureDefinition, Object ogrFeature, int fieldIdx, Object value, OGR ogr)
-            throws IOException {
+            Object featureDefinition, Object ogrFeature, int fieldIdx, Object value, OGR ogr) {
         if (value == null) {
             ogr.FeatureUnsetField(ogrFeature, fieldIdx);
         } else {

@@ -106,7 +106,7 @@ public class CSVDataStoreFactory implements DataStoreFactorySpi {
     // canProcess end
 
     // createDataStore start
-    public DataStore createDataStore(Map<String, ?> params) throws IOException {
+    public DataStore createDataStore(Map<String, ?> params) {
         File file = (File) FILE_PARAM.lookUp(params);
         return new CSVDataStore(file);
     }
@@ -114,7 +114,7 @@ public class CSVDataStoreFactory implements DataStoreFactorySpi {
     // createDataStore end
 
     // createNewDataStore start
-    public DataStore createNewDataStore(Map<String, ?> params) throws IOException {
+    public DataStore createNewDataStore(Map<String, ?> params) {
         throw new UnsupportedOperationException("CSV Datastore is read only");
     }
     // createNewDataStore end

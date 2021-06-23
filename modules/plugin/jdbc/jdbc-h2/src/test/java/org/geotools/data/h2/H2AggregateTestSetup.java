@@ -47,7 +47,7 @@ public class H2AggregateTestSetup extends JDBCAggregateTestSetup {
     }
 
     @Override
-    protected void dropAggregateTable() throws Exception {
+    protected void dropAggregateTable() {
         runSafe("DROP TABLE \"geotools\".\"aggregate\"");
         runSafe("CALL DropGeometryColumn('geotools', 'aggregate', 'geom')");
         runSafe("DROP TABLE \"geotools\".\"aggregate_HATBOX\"");

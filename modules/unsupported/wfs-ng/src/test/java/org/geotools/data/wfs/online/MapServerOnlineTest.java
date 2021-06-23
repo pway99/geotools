@@ -111,7 +111,7 @@ public class MapServerOnlineTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         if (url_100 != null) {
             wfs100.dispose();
             wfs110.dispose();

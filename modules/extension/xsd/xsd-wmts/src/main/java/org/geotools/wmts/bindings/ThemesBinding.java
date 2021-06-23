@@ -96,7 +96,7 @@ public class ThemesBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         ThemesType themes = factory.createThemesType();
         @SuppressWarnings("unchecked")
         List<ThemeType> children = node.getChildValues("Theme");

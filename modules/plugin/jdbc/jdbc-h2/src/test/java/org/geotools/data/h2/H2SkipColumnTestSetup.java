@@ -28,7 +28,7 @@ public class H2SkipColumnTestSetup extends JDBCSkipColumnTestSetup {
     }
 
     @Override
-    protected void dropSkipColumnTable() throws Exception {
+    protected void dropSkipColumnTable() {
         runSafe("DELETE FROM geometry_columns WHERE f_table_name = 'skipcolumn'");
         runSafe("DROP TABLE \"skipcolumn\"");
     }

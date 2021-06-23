@@ -592,7 +592,7 @@ public class InProcessLockingManager implements LockingManager {
          * @throws IOException Not used
          */
         @Override
-        public void addAuthorization(String AuthID) throws IOException {
+        public void addAuthorization(String AuthID) {
             // we don't need this callback
         }
 
@@ -602,7 +602,7 @@ public class InProcessLockingManager implements LockingManager {
          * @throws IOException If anything goes wrong
          */
         @Override
-        public void commit() throws IOException {
+        public void commit() {
             release();
         }
 
@@ -612,7 +612,7 @@ public class InProcessLockingManager implements LockingManager {
          * @throws IOException If anything goes wrong
          */
         @Override
-        public void rollback() throws IOException {
+        public void rollback() {
             release();
         }
 

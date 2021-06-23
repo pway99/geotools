@@ -36,7 +36,7 @@ public class CharsetConverterFactory implements ConverterFactory {
         if (CharSequence.class.isAssignableFrom(source) && Charset.class.isAssignableFrom(target)) {
             return new Converter() {
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     try {
                         return target.cast(Charset.forName((String) source));
                     } catch (UnsupportedCharsetException e) {
@@ -49,7 +49,7 @@ public class CharsetConverterFactory implements ConverterFactory {
         if (Charset.class.isAssignableFrom(source) && CharSequence.class.isAssignableFrom(target)) {
             return new Converter() {
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     return target.cast(((Charset) source).toString());
                 }
             };

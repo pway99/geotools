@@ -54,7 +54,7 @@ public class TeradataViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void dropLakesTable() throws Exception {
+    protected void dropLakesTable() {
         runSafe("DELETE FROM SYSSPATIAL.GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'lakes'");
         runSafe("DROP TABLE lakes");
     }
@@ -124,8 +124,8 @@ public class TeradataViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void createLakesViewPk() throws Exception {}
+    protected void createLakesViewPk() {}
 
     @Override
-    protected void dropLakesViewPk() throws Exception {}
+    protected void dropLakesViewPk() {}
 }

@@ -120,8 +120,7 @@ public class QGISMarkFactory implements MarkFactory {
     }
 
     @Override
-    public Shape getShape(Graphics2D graphics, Expression symbolUrl, Feature feature)
-            throws Exception {
+    public Shape getShape(Graphics2D graphics, Expression symbolUrl, Feature feature) {
         // cannot handle a null url
         if (symbolUrl == null) return null;
 

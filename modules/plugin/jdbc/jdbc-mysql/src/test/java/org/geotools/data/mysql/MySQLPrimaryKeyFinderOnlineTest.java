@@ -29,7 +29,7 @@ public class MySQLPrimaryKeyFinderOnlineTest extends JDBCPrimaryKeyFinderOnlineT
     }
 
     @Override
-    public void testSequencedPrimaryKey() throws Exception {
+    public void testSequencedPrimaryKey() {
         // MySQL does not do sequences
     }
 

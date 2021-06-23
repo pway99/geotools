@@ -206,7 +206,7 @@ public class MBTilesFeatureSourceTest {
     }
 
     @Test
-    public void testReadMultipleLayers() throws IOException, ParseException {
+    public void testReadMultipleLayers() throws IOException {
         // a bug was causing multiple layers to return the same schema, checking that along with a
         // few extra basic consistency properties
         checkFirstFeature("water", "class", "ocean");
@@ -374,7 +374,7 @@ public class MBTilesFeatureSourceTest {
         return new MBTilesDataStore(mbtiles);
     }
 
-    private int countByVisit(SimpleFeatureCollection fc) throws IOException {
+    private int countByVisit(SimpleFeatureCollection fc) {
         AtomicInteger count = new AtomicInteger();
         fc.accepts(f -> count.incrementAndGet(), null);
         return count.get();

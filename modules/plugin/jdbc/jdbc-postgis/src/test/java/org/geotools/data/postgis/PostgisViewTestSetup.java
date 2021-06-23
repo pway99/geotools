@@ -49,7 +49,7 @@ public class PostgisViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void dropLakesTable() throws Exception {
+    protected void dropLakesTable() {
         runSafe("DELETE FROM GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'lakes'");
         runSafe("DROP TABLE \"lakes\"");
     }
@@ -63,19 +63,19 @@ public class PostgisViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void dropLakesView() throws Exception {
+    protected void dropLakesView() {
         runSafe("DELETE FROM GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'lakesview'");
         runSafe("DROP VIEW \"lakesview\"");
     }
 
     @Override
-    protected void createLakesViewPk() throws Exception {
+    protected void createLakesViewPk() {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    protected void dropLakesViewPk() throws Exception {
+    protected void dropLakesViewPk() {
         // TODO Auto-generated method stub
 
     }

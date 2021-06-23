@@ -28,7 +28,6 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 import org.apache.solr.client.solrj.SolrQuery;
-import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.geotools.data.FeatureReader;
@@ -129,8 +128,7 @@ public class SolrFeatureSource extends ContentFeatureSource {
 
     @SuppressWarnings("PMD.CloseResource") // returned and closed there
     private FeatureReader<SimpleFeatureType, SimpleFeature> getReader(
-            SolrDataStore store, Filter postFilter, SolrQuery q)
-            throws SolrServerException, IOException {
+            SolrDataStore store, Filter postFilter, SolrQuery q) {
         FeatureReader<SimpleFeatureType, SimpleFeature> reader =
                 new SolrFeatureReader(getSchema(), store.getSolrServer(), q, this.getDataStore());
         // if post filter, wrap it
@@ -269,7 +267,7 @@ public class SolrFeatureSource extends ContentFeatureSource {
     }
 
     @Override
-    protected SimpleFeatureType buildFeatureType() throws IOException {
+    protected SimpleFeatureType buildFeatureType() {
         SimpleFeatureTypeBuilder tb = new SimpleFeatureTypeBuilder();
         AttributeTypeBuilder ab = new AttributeTypeBuilder();
         tb.setName(entry.getName());

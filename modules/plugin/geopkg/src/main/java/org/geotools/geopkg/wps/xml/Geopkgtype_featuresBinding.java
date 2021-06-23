@@ -71,7 +71,7 @@ public class Geopkgtype_featuresBinding extends LayertypeBinding {
     }
 
     @Override
-    public Layer parseLayer(ElementInstance instance, Node node, Object value) throws Exception {
+    public Layer parseLayer(ElementInstance instance, Node node, Object value) {
         XSQNameBinding nameBinding = new XSQNameBinding(namespaceContext);
 
         GeoPackageProcessRequest.FeaturesLayer layer = new GeoPackageProcessRequest.FeaturesLayer();

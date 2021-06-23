@@ -165,8 +165,7 @@ public abstract class AbstractIntegrationTest extends CssBaseTest {
         return parser.parseSLD();
     }
 
-    private List validateSLD(String sld)
-            throws IOException, SAXException, ParserConfigurationException {
+    private List validateSLD(String sld) {
         Parser parser = new Parser(new SLDConfiguration());
         parser.validate(new StringReader(sld));
         return parser.getValidationErrors();

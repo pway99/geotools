@@ -56,7 +56,7 @@ public class InterpolationPropertiesTest extends AppSchemaTestSupport {
             IDENTIFIER + "-file-identifier" + ".properties";
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         System.setProperty(TEST_SYSTEM_PROPERTY, TEST_SYSTEM_PROPERTY_VALUE);
         System.setProperty(
                 TEST_FILE_SYSTEM_PROPERTY,

@@ -86,7 +86,7 @@ public class RenderingTask implements Callable<Boolean>, RenderListener {
      * @return result of the task: completed or failed
      */
     @Override
-    public Boolean call() throws Exception {
+    public Boolean call() {
         if (!cancelled.get()) {
             try {
                 renderer.addRenderListener(this);

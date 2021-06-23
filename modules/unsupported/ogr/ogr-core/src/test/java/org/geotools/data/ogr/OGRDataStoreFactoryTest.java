@@ -77,7 +77,7 @@ public abstract class OGRDataStoreFactoryTest extends TestCaseSupport {
     }
 
     @Test
-    public void testNames() throws Exception {
+    public void testNames() {
         Set<String> drivers = dataStoreFactory.getAvailableDrivers();
         assertFalse(drivers.isEmpty());
         assertTrue(drivers.contains("ESRI Shapefile"));

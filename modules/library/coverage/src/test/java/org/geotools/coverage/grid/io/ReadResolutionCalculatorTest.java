@@ -30,7 +30,7 @@ public class ReadResolutionCalculatorTest {
     private static final double NATIVE_RES = 0.02;
 
     @Test
-    public void testReadResolutionCalculator() throws Exception {
+    public void testReadResolutionCalculator() {
         // &BBOX=-10000000,10000000,0,20000000&WIDTH=256&HEIGHT=256
         final CoordinateReferenceSystem requestCRS = CRS.decode("EPSG:3857", true);
         final CoordinateReferenceSystem nativeCRS = CRS.decode("EPSG:4326", true);
@@ -48,7 +48,7 @@ public class ReadResolutionCalculatorTest {
     }
 
     @Test
-    public void testReadResolutionCalculatorNullRes() throws Exception {
+    public void testReadResolutionCalculatorNullRes() {
         final CoordinateReferenceSystem requestCRS = CRS.decode("EPSG:3857", true);
         final CoordinateReferenceSystem nativeCRS = CRS.decode("EPSG:4326", true);
         final ReferencedEnvelope requestBounds =
@@ -78,7 +78,7 @@ public class ReadResolutionCalculatorTest {
     }
 
     @Test
-    public void testOversamplingOnReprojection() throws Exception {
+    public void testOversamplingOnReprojection() {
         // &BBOX=-10000000,10000000,0,20000000&WIDTH=256&HEIGHT=256
         final CoordinateReferenceSystem requestCRS = CRS.decode("EPSG:3857", true);
         final CoordinateReferenceSystem nativeCRS = CRS.decode("EPSG:4326", true);
@@ -108,7 +108,7 @@ public class ReadResolutionCalculatorTest {
     }
 
     @Test
-    public void testOversamplingLimitOnReprojection() throws Exception {
+    public void testOversamplingLimitOnReprojection() {
         final CoordinateReferenceSystem requestCRS = CRS.decode("EPSG:3395", true);
         final CoordinateReferenceSystem nativeCRS = CRS.decode("EPSG:4326", true);
         final ReferencedEnvelope requestBounds =

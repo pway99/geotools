@@ -145,7 +145,7 @@ public class RubberSheetBuilder extends MathTransformBuilder {
      * @throws FactoryException when the size of source and destination point is not the same.
      */
     @Override
-    protected MathTransform computeMathTransform() throws FactoryException {
+    protected MathTransform computeMathTransform() {
         return new RubberSheetTransform(trianglesToKeysMap);
     }
 

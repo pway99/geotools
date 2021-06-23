@@ -19,7 +19,7 @@ public class H2ThreeValuedLogicTestSetup extends JDBCThreeValuedLogicTestSetup {
 
     /** Drops the "testlob" table */
     @Override
-    protected void dropAbcTable() throws Exception {
+    protected void dropAbcTable() {
         runSafe("DROP TABLE \"geotools\".\"abc\"");
     }
 }

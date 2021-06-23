@@ -25,7 +25,7 @@ import org.opengis.filter.expression.Function;
 
 public class SLDPolygonSymbolizerBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(PolygonSymbolizer.class, new SLDPolygonSymbolizerBinding(null).getType());
     }
 

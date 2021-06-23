@@ -51,7 +51,7 @@ public abstract class JDBCGroupByVisitorOnlineTest extends JDBCTestSupport {
         checkValueContains(value, "SCHOOL", "60.0");
     }
 
-    public void testUnkonwnFunction() throws Exception {
+    public void testUnkonwnFunction() {
         // use a made up function that cannot be possibly known by JDBCDataStore,
         // and is not subject to cloning or modifications of any kind
         Function aggregateFunction =
@@ -74,7 +74,7 @@ public abstract class JDBCGroupByVisitorOnlineTest extends JDBCTestSupport {
         checkValueContains(value, "SCHOOL_foo", "60.0");
     }
 
-    public void testAggregateOnMathExpression() throws Exception {
+    public void testAggregateOnMathExpression() {
         FilterFactory ff = dataStore.getFilterFactory();
         PropertyName pn = ff.property("energy_consumption");
         Multiply expression = ff.multiply(pn, ff.literal(10));
@@ -94,7 +94,7 @@ public abstract class JDBCGroupByVisitorOnlineTest extends JDBCTestSupport {
         checkValueContains(value, "1500.0", "1");
     }
 
-    public void testComputeOnMathExpression() throws Exception {
+    public void testComputeOnMathExpression() {
         FilterFactory ff = dataStore.getFilterFactory();
         PropertyName pn = ff.property(aname("energy_consumption"));
         Multiply computeAttribute = ff.multiply(pn, ff.literal(10));
@@ -111,7 +111,7 @@ public abstract class JDBCGroupByVisitorOnlineTest extends JDBCTestSupport {
     }
 
     @SuppressWarnings("PMD.UseCollectionIsEmpty")
-    public void testComputeOnMathExpressionWithLimit() throws Exception {
+    public void testComputeOnMathExpressionWithLimit() {
         FilterFactory ff = dataStore.getFilterFactory();
         // aggregate on expression
         PropertyName pn = ff.property(aname("energy_consumption"));
@@ -129,7 +129,7 @@ public abstract class JDBCGroupByVisitorOnlineTest extends JDBCTestSupport {
         assertTrue(value.size() >= 1 && value.size() <= 2);
     }
 
-    public void testNumericHistogram() throws Exception {
+    public void testNumericHistogram() {
         // buckets with a size of 100, the function returns an integer from 0 onwards, which
         // is a zero based bucket number in the bucket sequence
         FilterFactory ff = dataStore.getFilterFactory();
@@ -153,7 +153,7 @@ public abstract class JDBCGroupByVisitorOnlineTest extends JDBCTestSupport {
     }
 
     protected void testTimestampHistogram(String temporalColumnName)
-            throws ParseException, IOException {
+            throws ParseException {
         // buckets with a size of one day, the function returns an integer from 0 onwards, which
         // is a zero based bucket number in the bucket sequence
         FilterFactory ff = dataStore.getFilterFactory();
@@ -383,8 +383,7 @@ public abstract class JDBCGroupByVisitorOnlineTest extends JDBCTestSupport {
     }
 
     private List<Object[]> genericGroupByTestTest(
-            Query query, Aggregate aggregateVisitor, String... groupByAttributes)
-            throws IOException {
+            Query query, Aggregate aggregateVisitor, String... groupByAttributes) {
         Expression[] expressions =
                 new Expression[groupByAttributes != null ? groupByAttributes.length : 0];
         if (groupByAttributes != null) {
@@ -399,8 +398,7 @@ public abstract class JDBCGroupByVisitorOnlineTest extends JDBCTestSupport {
     }
 
     private List<Object[]> genericGroupByTestTest(
-            Query query, Aggregate aggregateVisitor, Expression... groupByAttributes)
-            throws IOException {
+            Query query, Aggregate aggregateVisitor, Expression... groupByAttributes) {
         return genericGroupByTestTest(query, aggregateVisitor, true, groupByAttributes);
     }
 
@@ -408,8 +406,7 @@ public abstract class JDBCGroupByVisitorOnlineTest extends JDBCTestSupport {
             Query query,
             Aggregate aggregateVisitor,
             boolean expectOptimized,
-            Expression... groupByAttributes)
-            throws IOException {
+            Expression... groupByAttributes) {
         PropertyName aggregateAttribute =
                 CommonFactoryFinder.getFilterFactory().property(aname("energy_consumption"));
         return genericGroupByTestTest(
@@ -491,7 +488,7 @@ public abstract class JDBCGroupByVisitorOnlineTest extends JDBCTestSupport {
     }
 
     private void testTimestampHistogramDateWithDifferenceInSpecificTimeUnits(
-            String timeUnits, int multiplyingFactor) throws ParseException, IOException {
+            String timeUnits, int multiplyingFactor) throws ParseException {
 
         // buckets with a size of one day, the function returns an integer from 0 onwards, which
         // is a zero based bucket number in the bucket sequence

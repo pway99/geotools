@@ -548,7 +548,7 @@ public class JDBCFeatureReader implements FeatureReader<SimpleFeatureType, Simpl
      * Cleans up the reader state without closing the accessory resultset, statement and connection.
      * Use only if the above are shared with another object that will take care of closing them.
      */
-    protected void cleanup() throws IOException {
+    protected void cleanup() {
         // throw away state
         rs = null;
         st = null;
@@ -612,7 +612,7 @@ public class JDBCFeatureReader implements FeatureReader<SimpleFeatureType, Simpl
         /** true if primary keys are not returned (the default is false) */
         boolean exposePrimaryKeys;
 
-        ResultSetFeature(ResultSet rs, Connection cx) throws SQLException, IOException {
+        ResultSetFeature(ResultSet rs, Connection cx) throws SQLException {
             this.rs = rs;
             this.cx = cx;
 

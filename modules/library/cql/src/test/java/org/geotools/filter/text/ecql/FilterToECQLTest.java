@@ -55,7 +55,7 @@ public class FilterToECQLTest extends FilterToCQLTest {
     }
 
     @Override
-    protected void cqlTest(String cql) throws Exception {
+    protected void cqlTest(String cql) {
         Filter filter = ECQL.toFilter(cql);
         Assert.assertNotNull(filter);
         FilterToECQL toECQL = new FilterToECQL();

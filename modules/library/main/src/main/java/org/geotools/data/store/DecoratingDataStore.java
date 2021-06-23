@@ -16,7 +16,6 @@
  */
 package org.geotools.data.store;
 
-import java.io.IOException;
 import java.util.List;
 import org.geotools.data.DataStore;
 import org.geotools.data.FeatureReader;
@@ -46,7 +45,7 @@ public abstract class DecoratingDataStore extends AbstractDecorator<DataStore>
     }
 
     @Override
-    public void createSchema(SimpleFeatureType featureType) throws IOException {
+    public void createSchema(SimpleFeatureType featureType) {
         delegate.createSchema(featureType);
     }
 
@@ -57,35 +56,35 @@ public abstract class DecoratingDataStore extends AbstractDecorator<DataStore>
 
     @Override
     public FeatureReader<SimpleFeatureType, SimpleFeature> getFeatureReader(
-            Query query, Transaction transaction) throws IOException {
+            Query query, Transaction transaction) {
         return delegate.getFeatureReader(query, transaction);
     }
 
     @Override
-    public SimpleFeatureSource getFeatureSource(Name typeName) throws IOException {
+    public SimpleFeatureSource getFeatureSource(Name typeName) {
         return delegate.getFeatureSource(typeName);
     }
 
     @Override
-    public SimpleFeatureSource getFeatureSource(String typeName) throws IOException {
+    public SimpleFeatureSource getFeatureSource(String typeName) {
         return delegate.getFeatureSource(typeName);
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            String typeName, Filter filter, Transaction transaction) throws IOException {
+            String typeName, Filter filter, Transaction transaction) {
         return delegate.getFeatureWriter(typeName, filter, transaction);
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            String typeName, Transaction transaction) throws IOException {
+            String typeName, Transaction transaction) {
         return delegate.getFeatureWriter(typeName, transaction);
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriterAppend(
-            String typeName, Transaction transaction) throws IOException {
+            String typeName, Transaction transaction) {
         return delegate.getFeatureWriterAppend(typeName, transaction);
     }
 
@@ -100,42 +99,42 @@ public abstract class DecoratingDataStore extends AbstractDecorator<DataStore>
     }
 
     @Override
-    public List<Name> getNames() throws IOException {
+    public List<Name> getNames() {
         return delegate.getNames();
     }
 
     @Override
-    public SimpleFeatureType getSchema(Name name) throws IOException {
+    public SimpleFeatureType getSchema(Name name) {
         return delegate.getSchema(name);
     }
 
     @Override
-    public SimpleFeatureType getSchema(String typeName) throws IOException {
+    public SimpleFeatureType getSchema(String typeName) {
         return delegate.getSchema(typeName);
     }
 
     @Override
-    public String[] getTypeNames() throws IOException {
+    public String[] getTypeNames() {
         return delegate.getTypeNames();
     }
 
     @Override
-    public void updateSchema(Name typeName, SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(Name typeName, SimpleFeatureType featureType) {
         delegate.updateSchema(typeName, featureType);
     }
 
     @Override
-    public void updateSchema(String typeName, SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(String typeName, SimpleFeatureType featureType) {
         delegate.updateSchema(typeName, featureType);
     }
 
     @Override
-    public void removeSchema(Name typeName) throws IOException {
+    public void removeSchema(Name typeName) {
         delegate.removeSchema(typeName);
     }
 
     @Override
-    public void removeSchema(String typeName) throws IOException {
+    public void removeSchema(String typeName) {
         delegate.removeSchema(typeName);
     }
 }

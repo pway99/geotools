@@ -116,7 +116,7 @@ public class SLDFeatureTypeStyleBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         FeatureTypeStyle featureTypeStyle = styleFactory.createFeatureTypeStyle();
 
         // &lt;xsd:element ref="sld:Name" minOccurs="0"/&gt;

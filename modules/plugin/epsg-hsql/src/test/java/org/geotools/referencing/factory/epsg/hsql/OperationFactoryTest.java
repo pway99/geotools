@@ -19,8 +19,6 @@ package org.geotools.referencing.factory.epsg.hsql;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-
-import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -84,7 +82,7 @@ public class OperationFactoryTest {
      * test is executed.
      */
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         if (crsAuthFactory == null) {
             crsAuthFactory = ReferencingFactoryFinder.getCRSAuthorityFactory("EPSG", null);
         }
@@ -101,7 +99,7 @@ public class OperationFactoryTest {
      * a test is executed.
      */
     @After
-    public void tearDown() throws Exception {}
+    public void tearDown() {}
 
     /**
      * Tests the creation of an operation from EPSG:4230 to EPSG:4326. They are the same CRS than
@@ -453,7 +451,7 @@ public class OperationFactoryTest {
 
     @Test
     public void testGetSpecificTransform()
-            throws FactoryException, TransformException, ParseException {
+            throws FactoryException, TransformException {
 
         CoordinateReferenceSystem sourceCRS =
                 crsAuthFactory.createCoordinateReferenceSystem("EPSG:21036");
@@ -485,7 +483,7 @@ public class OperationFactoryTest {
     }
 
     @Test
-    public void testGetTransforms() throws FactoryException, TransformException, ParseException {
+    public void testGetTransforms() throws FactoryException {
 
         CoordinateReferenceSystem sourceCRS =
                 crsAuthFactory.createCoordinateReferenceSystem("EPSG:21036");

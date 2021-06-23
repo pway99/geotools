@@ -39,7 +39,7 @@ public class JDBCThreeValuedLogicTestSetup extends JDBCDelegatingTestSetup {
     }
 
     /** Drops the "testlob" table */
-    protected void dropAbcTable() throws Exception {
+    protected void dropAbcTable() {
         runSafe("DROP TABLE \"abc\"");
     }
 }

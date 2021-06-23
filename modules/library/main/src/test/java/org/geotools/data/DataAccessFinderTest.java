@@ -47,10 +47,10 @@ public class DataAccessFinderTest {
     private static final String MOCK_DS_PARAM_KEY = "MOCK_PARAM_KEY";
 
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
 
     @After
-    public void tearDown() throws Exception {}
+    public void tearDown() {}
 
     @Test
     public void testGetDataStore() throws IOException {
@@ -69,7 +69,7 @@ public class DataAccessFinderTest {
 
     /** Can both DataStores and plain DataAccess be aquired through {@link DataAccessFinder}? */
     @Test
-    public void testGetDataAccess() throws IOException {
+    public void testGetDataAccess() {
 
         Map<String, Serializable> params = new HashMap<>();
         params.put(MOCK_DS_PARAM_KEY, MockUnavailableDataStoreFactory.class);
@@ -210,8 +210,7 @@ public class DataAccessFinderTest {
 
         /** @return {@link DataAccessFinderTest#MOCK_DATAACCESS} */
         @Override
-        public DataAccess<FeatureType, Feature> createDataStore(Map<String, ?> params)
-                throws IOException {
+        public DataAccess<FeatureType, Feature> createDataStore(Map<String, ?> params) {
             return MOCK_DATAACCESS;
         }
 
@@ -260,12 +259,12 @@ public class DataAccessFinderTest {
 
         /** @return {@link DataAccessFinderTest#MOCK_DATASTORE} */
         @Override
-        public DataStore createDataStore(Map<String, ?> params) throws IOException {
+        public DataStore createDataStore(Map<String, ?> params) {
             return MOCK_DATASTORE;
         }
 
         @Override
-        public DataStore createNewDataStore(Map<String, ?> params) throws IOException {
+        public DataStore createNewDataStore(Map<String, ?> params) {
             return null;
         }
 
@@ -310,14 +309,13 @@ public class DataAccessFinderTest {
             new DataAccess<FeatureType, Feature>() {
 
                 @Override
-                public void createSchema(FeatureType featureType) throws IOException {}
+                public void createSchema(FeatureType featureType) {}
 
                 @Override
                 public void dispose() {}
 
                 @Override
-                public FeatureSource<FeatureType, Feature> getFeatureSource(Name typeName)
-                        throws IOException {
+                public FeatureSource<FeatureType, Feature> getFeatureSource(Name typeName) {
                     return null;
                 }
 
@@ -327,21 +325,20 @@ public class DataAccessFinderTest {
                 }
 
                 @Override
-                public List<Name> getNames() throws IOException {
+                public List<Name> getNames() {
                     return null;
                 }
 
                 @Override
-                public FeatureType getSchema(Name name) throws IOException {
+                public FeatureType getSchema(Name name) {
                     return null;
                 }
 
                 @Override
-                public void updateSchema(Name typeName, FeatureType featureType)
-                        throws IOException {}
+                public void updateSchema(Name typeName, FeatureType featureType) {}
 
                 @Override
-                public void removeSchema(Name typeName) throws IOException {}
+                public void removeSchema(Name typeName) {}
             };
 
     /** Fake datastore returned by {@link MockDataStoreFactory} */
@@ -350,31 +347,30 @@ public class DataAccessFinderTest {
 
                 @Override
                 public FeatureReader<SimpleFeatureType, SimpleFeature> getFeatureReader(
-                        Query query, Transaction transaction) throws IOException {
+                        Query query, Transaction transaction) {
                     return null;
                 }
 
                 @Override
-                public SimpleFeatureSource getFeatureSource(String typeName) throws IOException {
-                    return null;
-                }
-
-                @Override
-                public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-                        String typeName, Filter filter, Transaction transaction)
-                        throws IOException {
+                public SimpleFeatureSource getFeatureSource(String typeName) {
                     return null;
                 }
 
                 @Override
                 public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-                        String typeName, Transaction transaction) throws IOException {
+                        String typeName, Filter filter, Transaction transaction) {
+                    return null;
+                }
+
+                @Override
+                public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
+                        String typeName, Transaction transaction) {
                     return null;
                 }
 
                 @Override
                 public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriterAppend(
-                        String typeName, Transaction transaction) throws IOException {
+                        String typeName, Transaction transaction) {
                     return null;
                 }
 
@@ -384,30 +380,29 @@ public class DataAccessFinderTest {
                 }
 
                 @Override
-                public SimpleFeatureType getSchema(String typeName) throws IOException {
+                public SimpleFeatureType getSchema(String typeName) {
                     return null;
                 }
 
                 @Override
-                public String[] getTypeNames() throws IOException {
+                public String[] getTypeNames() {
                     return null;
                 }
 
                 @Override
-                public void updateSchema(String typeName, SimpleFeatureType featureType)
-                        throws IOException {}
+                public void updateSchema(String typeName, SimpleFeatureType featureType) {}
 
                 @Override
-                public void removeSchema(String typeName) throws IOException {}
+                public void removeSchema(String typeName) {}
 
                 @Override
-                public void createSchema(SimpleFeatureType featureType) throws IOException {}
+                public void createSchema(SimpleFeatureType featureType) {}
 
                 @Override
                 public void dispose() {}
 
                 @Override
-                public SimpleFeatureSource getFeatureSource(Name typeName) throws IOException {
+                public SimpleFeatureSource getFeatureSource(Name typeName) {
                     return null;
                 }
 
@@ -417,20 +412,19 @@ public class DataAccessFinderTest {
                 }
 
                 @Override
-                public List<Name> getNames() throws IOException {
+                public List<Name> getNames() {
                     return null;
                 }
 
                 @Override
-                public SimpleFeatureType getSchema(Name name) throws IOException {
+                public SimpleFeatureType getSchema(Name name) {
                     return null;
                 }
 
                 @Override
-                public void updateSchema(Name typeName, SimpleFeatureType featureType)
-                        throws IOException {}
+                public void updateSchema(Name typeName, SimpleFeatureType featureType) {}
 
                 @Override
-                public void removeSchema(Name typeName) throws IOException {}
+                public void removeSchema(Name typeName) {}
             };
 }

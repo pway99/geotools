@@ -138,8 +138,7 @@ public class VPFFeatureClass implements SimpleFeatureType {
      * @throws SchemaException For problems making one of the feature classes as a FeatureType.
      */
     public VPFFeatureClass(
-            VPFCoverage cCoverage, String cName, String cDirectoryName, URI cNamespace)
-            throws SchemaException {
+            VPFCoverage cCoverage, String cName, String cDirectoryName, URI cNamespace) {
         coverage = cCoverage;
         directoryName = cDirectoryName;
         typeName = cName;
@@ -380,8 +379,7 @@ public class VPFFeatureClass implements SimpleFeatureType {
         return rootTable.hasNext();
     }
 
-    public synchronized List<SimpleFeature> readAllRows(SimpleFeatureType featureType)
-            throws IOException {
+    public synchronized List<SimpleFeature> readAllRows(SimpleFeatureType featureType) {
 
         this.enableFeatureCache = true;
         this.featureCache.clear();

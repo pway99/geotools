@@ -55,7 +55,7 @@ public class CSVFeatureWriter implements FeatureWriter<SimpleFeatureType, Simple
     private SimpleFeature currentFeature;
 
     // docs start CSVFeatureWriter
-    public CSVFeatureWriter(CSVFileState csvFileState, CSVStrategy csvStrategy) throws IOException {
+    public CSVFeatureWriter(CSVFileState csvFileState, CSVStrategy csvStrategy) {
         this(csvFileState, csvStrategy, Query.ALL);
     }
 
@@ -84,7 +84,7 @@ public class CSVFeatureWriter implements FeatureWriter<SimpleFeatureType, Simple
 
     // hasNext start
     @Override
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() {
         if (csvWriter == null) {
             return false;
         }
@@ -130,13 +130,13 @@ public class CSVFeatureWriter implements FeatureWriter<SimpleFeatureType, Simple
      * Mark our {@link #currentFeature} feature as null, it will be skipped when written effectively
      * removing it.
      */
-    public void remove() throws IOException {
+    public void remove() {
         this.currentFeature = null; // just mark it done which means it will not get written out.
     }
     // remove end
 
     // write start
-    public void write() throws IOException {
+    public void write() {
         if (this.currentFeature == null) {
             return; // current feature has been deleted
         }

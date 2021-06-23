@@ -16,7 +16,6 @@
  */
 package org.geotools.gce.imagemosaic;
 
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageReadParam;
@@ -27,7 +26,6 @@ import org.geotools.gce.imagemosaic.OverviewsController.OverviewLevel;
 import org.geotools.gce.imagemosaic.RasterManager.SpatialDomainManager;
 import org.geotools.util.Utilities;
 import org.geotools.util.factory.Hints;
-import org.opengis.referencing.operation.TransformException;
 
 /**
  * Class that fills up properly read params given a {@link RasterLayerRequest}, an {@link
@@ -159,8 +157,7 @@ public class ReadParamsController {
             final ImageReadParam readParams,
             final RasterManager rasterManager,
             final OverviewsController overviewController,
-            final double[] virtualNativeResolution)
-            throws IOException, TransformException {
+            final double[] virtualNativeResolution) {
 
         Utilities.ensureNonNull("readParams", readParams);
         Utilities.ensureNonNull("RasterManager", rasterManager);

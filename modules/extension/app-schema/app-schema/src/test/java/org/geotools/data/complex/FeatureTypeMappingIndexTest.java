@@ -69,14 +69,14 @@ public class FeatureTypeMappingIndexTest extends AppSchemaTestSupport {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         dataStore.dispose();
         factory = null;
         params = null;
     }
 
     @Test
-    public void testIndexesNames() throws Exception {
+    public void testIndexesNames() {
         List<AttributeMapping> atts = mappedSource.getMapping().getAttributeMappings();
         // check ID index
         assertTrue(atts.stream().anyMatch(att -> "ID".equals(att.getIndexField())));

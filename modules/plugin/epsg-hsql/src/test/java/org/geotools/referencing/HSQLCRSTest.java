@@ -21,11 +21,8 @@ import org.geotools.geometry.DirectPosition2D;
 import org.geotools.referencing.crs.DefaultGeographicCRS;
 import org.junit.Test;
 import org.opengis.geometry.MismatchedDimensionException;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.MathTransform;
-import org.opengis.referencing.operation.TransformException;
 
 /** Tests if the CRS utility class is functioning correctly when using HSQL datastore. */
 public class HSQLCRSTest extends AbstractCRSTest {
@@ -47,8 +44,7 @@ public class HSQLCRSTest extends AbstractCRSTest {
 
     @Test
     public void testMercatorProjectionTolerance()
-            throws NoSuchAuthorityCodeException, FactoryException, MismatchedDimensionException,
-                    TransformException {
+            throws MismatchedDimensionException {
         CoordinateReferenceSystem targetCrs = CRS.decode("EPSG:25831");
         // System.out.println(targetCrs.getDomainOfValidity());
         MathTransform mathTransform =
@@ -59,14 +55,14 @@ public class HSQLCRSTest extends AbstractCRSTest {
     }
 
     @Test
-    public void testSouthPolarEastNorth() throws Exception {
+    public void testSouthPolarEastNorth() {
         // force NE while decoding
         CoordinateReferenceSystem crsEN = CRS.decode("EPSG:32761", true);
         assertEquals(CRS.AxisOrder.EAST_NORTH, CRS.getAxisOrder(crsEN));
     }
 
     @Test
-    public void testSouthPolarNorthEast() throws Exception {
+    public void testSouthPolarNorthEast() {
         // leave native axis order, it should be recognized as north/east
         CoordinateReferenceSystem crsNE = CRS.decode("EPSG:32761", false);
         assertEquals(CRS.AxisOrder.NORTH_EAST, CRS.getAxisOrder(crsNE));

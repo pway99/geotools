@@ -17,7 +17,6 @@
 
 package org.geotools.xml;
 
-import java.io.FileNotFoundException;
 import java.io.StringWriter;
 import javax.xml.transform.TransformerException;
 import org.junit.Assert;
@@ -26,7 +25,7 @@ import org.junit.Test;
 public class TransformerBaseTest {
 
     @Test
-    public void testUnbufferedUsageNoErrors() throws FileNotFoundException, TransformerException {
+    public void testUnbufferedUsageNoErrors() throws TransformerException {
         String expected =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\"?><test:integers xmlns=\"http://geotools.org/test\" xmlns:test=\"http://geotools.org/test\"><test:integer>1</test:integer><test:integer>2</test:integer><test:integer>3</test:integer><test:integer>4</test:integer><test:integer>5</test:integer><test:integer>6</test:integer><test:integer>7</test:integer><test:integer>8</test:integer><test:integer>9</test:integer><test:integer>10</test:integer></test:integers>";
         ExampleTransformer tx = new ExampleTransformer(0, 0, false);
@@ -35,7 +34,7 @@ public class TransformerBaseTest {
     }
 
     @Test
-    public void testUnbufferedUsageOneError() throws FileNotFoundException, TransformerException {
+    public void testUnbufferedUsageOneError() throws TransformerException {
         StringWriter w = new StringWriter();
         try {
             ExampleTransformer tx = new ExampleTransformer(0, 10, false);
@@ -50,7 +49,7 @@ public class TransformerBaseTest {
     }
 
     @Test
-    public void testBufferedUsageNoErrors() throws FileNotFoundException, TransformerException {
+    public void testBufferedUsageNoErrors() throws TransformerException {
         String expected =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\"?><test:integers xmlns=\"http://geotools.org/test\" xmlns:test=\"http://geotools.org/test\"><test:integer>1</test:integer><test:integer>2</test:integer><test:integer>3</test:integer><test:integer>4</test:integer><test:integer>5</test:integer><test:integer>6</test:integer><test:integer>7</test:integer><test:integer>8</test:integer><test:integer>9</test:integer><test:integer>10</test:integer></test:integers>";
         ExampleTransformer tx = new ExampleTransformer(1, 0, false);
@@ -59,7 +58,7 @@ public class TransformerBaseTest {
     }
 
     @Test
-    public void testBufferedUsageOneError() throws FileNotFoundException, TransformerException {
+    public void testBufferedUsageOneError() throws TransformerException {
         StringWriter w = new StringWriter();
         try {
             ExampleTransformer tx = new ExampleTransformer(1, 10, false);
@@ -75,7 +74,7 @@ public class TransformerBaseTest {
 
     @Test
     public void testBufferedUsageIgnoringOneError()
-            throws FileNotFoundException, TransformerException {
+            throws TransformerException {
         ExampleTransformer tx = new ExampleTransformer(1, 10, true);
         String expected =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\"?><test:integers xmlns=\"http://geotools.org/test\" xmlns:test=\"http://geotools.org/test\"><test:integer>1</test:integer><test:integer>2</test:integer><test:integer>3</test:integer><test:integer>4</test:integer><test:integer>5</test:integer><test:integer>6</test:integer><test:integer>7</test:integer><test:integer>8</test:integer><test:integer>9</test:integer></test:integers>";
@@ -85,7 +84,7 @@ public class TransformerBaseTest {
 
     @Test
     public void testBufferedUsageIgnoringMultipleErrors()
-            throws FileNotFoundException, TransformerException {
+            throws TransformerException {
         ExampleTransformer tx = new ExampleTransformer(1, 2, true);
         String expected =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\"?><test:integers xmlns=\"http://geotools.org/test\" xmlns:test=\"http://geotools.org/test\"><test:integer>1</test:integer><test:integer>3</test:integer><test:integer>5</test:integer><test:integer>7</test:integer><test:integer>9</test:integer></test:integers>";
@@ -94,7 +93,7 @@ public class TransformerBaseTest {
     }
 
     @Test
-    public void testPassingInNull() throws FileNotFoundException, TransformerException {
+    public void testPassingInNull() throws TransformerException {
         ExampleTransformer tx = new ExampleTransformer(0, 0, true);
         try {
             tx.transform(null);

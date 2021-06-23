@@ -103,7 +103,7 @@ public class BetweenTest {
     }
 
     @Test
-    public void testEquals() throws Exception {
+    public void testEquals() {
         org.opengis.filter.FilterFactory ff = CommonFactoryFinder.getFilterFactory();
         PropertyIsBetween f1 = ff.between(ff.property("abc"), ff.literal(10), ff.literal(20));
         PropertyIsBetween f2 = ff.between(ff.property("efg"), ff.literal(10), ff.literal(20));

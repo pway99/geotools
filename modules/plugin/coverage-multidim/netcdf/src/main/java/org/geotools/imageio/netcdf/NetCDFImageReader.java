@@ -70,7 +70,6 @@ import org.geotools.data.DefaultTransaction;
 import org.geotools.data.collection.ListFeatureCollection;
 import org.geotools.data.simple.SimpleFeatureIterator;
 import org.geotools.feature.NameImpl;
-import org.geotools.feature.SchemaException;
 import org.geotools.gce.imagemosaic.RasterLayerRequest;
 import org.geotools.gce.imagemosaic.catalog.index.Indexer.Coverages.Coverage;
 import org.geotools.gce.imagemosaic.catalog.index.SchemaType;
@@ -231,7 +230,7 @@ public class NetCDFImageReader extends GeoSpatialImageReader implements FileSetM
     }
 
     @Override
-    public int getHeight(int imageIndex) throws IOException {
+    public int getHeight(int imageIndex) {
         final VariableAdapter wrapper = getCoverageDescriptor(imageIndex);
         if (wrapper != null) {
             return wrapper.getHeight();
@@ -240,7 +239,7 @@ public class NetCDFImageReader extends GeoSpatialImageReader implements FileSetM
     }
 
     @Override
-    public Iterator<ImageTypeSpecifier> getImageTypes(int imageIndex) throws IOException {
+    public Iterator<ImageTypeSpecifier> getImageTypes(int imageIndex) {
         final List<ImageTypeSpecifier> l = new java.util.ArrayList<>();
         final VariableAdapter wrapper = getCoverageDescriptor(imageIndex);
         if (wrapper != null) {
@@ -254,7 +253,7 @@ public class NetCDFImageReader extends GeoSpatialImageReader implements FileSetM
     }
 
     @Override
-    public int getWidth(int imageIndex) throws IOException {
+    public int getWidth(int imageIndex) {
         final VariableAdapter wrapper = getCoverageDescriptor(imageIndex);
         if (wrapper != null) {
             return wrapper.getWidth();
@@ -310,7 +309,7 @@ public class NetCDFImageReader extends GeoSpatialImageReader implements FileSetM
 
     /** Index Initialization. store indexing information. */
     @SuppressWarnings("PMD.UseTryWithResources") // transaction needed in catch
-    protected int initIndex() throws InvalidRangeException, IOException {
+    protected int initIndex() throws IOException {
         DefaultTransaction transaction =
                 new DefaultTransaction("indexTransaction" + System.nanoTime());
         int numImages = 0;
@@ -485,7 +484,7 @@ public class NetCDFImageReader extends GeoSpatialImageReader implements FileSetM
     }
 
     @Override
-    protected void finalize() throws Throwable {
+    protected void finalize() {
         if (numImages > 0) {
             LOGGER.warning(
                     "There is code leaving netcdf image readers open, this might cause "
@@ -572,7 +571,7 @@ public class NetCDFImageReader extends GeoSpatialImageReader implements FileSetM
     }
 
     /** Wraps a generic exception into a {@link IIOException}. */
-    protected IIOException netcdfFailure(final Exception e) throws IOException {
+    protected IIOException netcdfFailure(final Exception e) {
         return new IIOException(
                 new StringBuilder("Can't read file ").append(dataset.getLocation()).toString(), e);
     }
@@ -921,7 +920,7 @@ public class NetCDFImageReader extends GeoSpatialImageReader implements FileSetM
     }
 
     private synchronized Array readSection(VariableAdapter wrapper, Section section)
-            throws IIOException, IOException {
+            throws IOException {
         try {
             // Due to underlying NetCDF file system access (RAF based)
             // and internal caching we do this call within a
@@ -1077,7 +1076,7 @@ public class NetCDFImageReader extends GeoSpatialImageReader implements FileSetM
 
     /** */
     String suggestSchemaFromCoordinateSystem(
-            Coverage coverage, CoordinateSystem cs, boolean isShared) throws SchemaException {
+            Coverage coverage, CoordinateSystem cs, boolean isShared) {
 
         // init with base
         String schemaAttributes = isShared ? BASE_SCHEMA_LOCATION : BASE_SCHEMA;

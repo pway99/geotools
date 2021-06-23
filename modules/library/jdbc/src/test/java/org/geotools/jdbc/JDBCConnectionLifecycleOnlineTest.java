@@ -104,22 +104,22 @@ public abstract class JDBCConnectionLifecycleOnlineTest extends JDBCTestSupport 
         boolean onRollbackCalled;
 
         @Override
-        public void onBorrow(JDBCDataStore store, Connection cx) throws SQLException {
+        public void onBorrow(JDBCDataStore store, Connection cx) {
             onBorrowCalled = true;
         }
 
         @Override
-        public void onRelease(JDBCDataStore store, Connection cx) throws SQLException {
+        public void onRelease(JDBCDataStore store, Connection cx) {
             onReleaseCalled = true;
         }
 
         @Override
-        public void onCommit(JDBCDataStore store, Connection cx) throws SQLException {
+        public void onCommit(JDBCDataStore store, Connection cx) {
             onCommitCalled = true;
         }
 
         @Override
-        public void onRollback(JDBCDataStore store, Connection cx) throws SQLException {
+        public void onRollback(JDBCDataStore store, Connection cx) {
             onRollbackCalled = true;
         }
     }
@@ -127,7 +127,7 @@ public abstract class JDBCConnectionLifecycleOnlineTest extends JDBCTestSupport 
     private static class ExceptionListener implements ConnectionLifecycleListener {
 
         @Override
-        public void onBorrow(JDBCDataStore store, Connection cx) throws SQLException {
+        public void onBorrow(JDBCDataStore store, Connection cx) {
             // nothing to do
         }
 
@@ -142,7 +142,7 @@ public abstract class JDBCConnectionLifecycleOnlineTest extends JDBCTestSupport 
         }
 
         @Override
-        public void onRollback(JDBCDataStore store, Connection cx) throws SQLException {
+        public void onRollback(JDBCDataStore store, Connection cx) {
             // nothing to do
         }
     }

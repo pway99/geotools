@@ -105,7 +105,7 @@ public class GridExamples {
         // exampleCustomFeatureType end
     }
 
-    private void exampleIntersection() throws Exception {
+    private void exampleIntersection() {
         // exampleIntersection start
 
         // Load the outline of Australia from a shapefile

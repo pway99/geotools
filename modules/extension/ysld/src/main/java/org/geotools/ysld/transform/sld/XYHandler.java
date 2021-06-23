@@ -18,7 +18,6 @@
 package org.geotools.ysld.transform.sld;
 
 import java.io.IOException;
-import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 /** Handles xml parse events for co-ordinate tuples. */
@@ -27,15 +26,14 @@ public class XYHandler extends SldTransformHandler {
     String x, y;
 
     @Override
-    public void element(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+    public void element(XMLStreamReader xml, SldTransformContext context) {
         String name = xml.getLocalName();
         if (name.endsWith("X")) {
             context.push(
                     new ExpressionHandler() {
                         @Override
                         protected SldTransformContext onValue(
-                                String value, SldTransformContext context) throws IOException {
+                                String value, SldTransformContext context) {
                             x = value;
                             return context;
                         }
@@ -46,7 +44,7 @@ public class XYHandler extends SldTransformHandler {
                     new ExpressionHandler() {
                         @Override
                         protected SldTransformContext onValue(
-                                String value, SldTransformContext context) throws IOException {
+                                String value, SldTransformContext context) {
                             y = value;
                             return context;
                         }
@@ -56,7 +54,7 @@ public class XYHandler extends SldTransformHandler {
 
     @Override
     public void endElement(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+            throws IOException {
         String name = xml.getLocalName();
         if (!name.endsWith("X") && !name.endsWith("Y")) {
             context.tuple(x, y).pop();

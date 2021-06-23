@@ -95,7 +95,7 @@ public class SLDLinePlacementBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         Expression offset = null;
         if (node.hasChild("PerpendicularOffset")) {

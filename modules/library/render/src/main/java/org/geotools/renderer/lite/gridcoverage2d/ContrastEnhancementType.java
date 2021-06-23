@@ -49,7 +49,6 @@ import org.geotools.styling.NormalizeContrastMethodStrategy;
 import org.geotools.util.Utilities;
 import org.geotools.util.factory.Hints;
 import org.opengis.filter.expression.Expression;
-import org.opengis.referencing.operation.TransformException;
 import org.opengis.style.ContrastMethod;
 
 /**
@@ -130,7 +129,7 @@ public enum ContrastEnhancementType {
                             new MathTransformationAdapter() {
 
                                 @Override
-                                public double derivative(double value) throws TransformException {
+                                public double derivative(double value) {
                                     throw new UnsupportedOperationException(
                                             Errors.format(ErrorKeys.UNSUPPORTED_OPERATION_$1));
                                 }
@@ -224,7 +223,7 @@ public enum ContrastEnhancementType {
                             new MathTransformationAdapter() {
 
                                 @Override
-                                public double derivative(double value) throws TransformException {
+                                public double derivative(double value) {
                                     throw new UnsupportedOperationException(
                                             Errors.format(ErrorKeys.UNSUPPORTED_OPERATION_$1));
                                 }
@@ -717,7 +716,7 @@ public enum ContrastEnhancementType {
      */
     LookupTable createByteLookupTable(Map<String, Object> params) {
         throw new UnsupportedOperationException();
-    };
+    }
 
     /**
      * Create a {@link PiecewiseTransform1D} for the general case (!= Byte dataType). Different
@@ -791,7 +790,7 @@ public enum ContrastEnhancementType {
                         new MathTransformationAdapter() {
 
                             @Override
-                            public double derivative(double value) throws TransformException {
+                            public double derivative(double value) {
 
                                 throw new UnsupportedOperationException(
                                         Errors.format(ErrorKeys.UNSUPPORTED_OPERATION_$1));

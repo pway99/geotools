@@ -16,7 +16,6 @@
  */
 package org.geotools.data.h2;
 
-import java.io.IOException;
 import org.geotools.jdbc.JDBCTestSetup;
 import org.geotools.jdbc.JDBCTransactionOnlineTest;
 
@@ -32,7 +31,7 @@ public class H2JDBCTransactionTest extends JDBCTransactionOnlineTest {
     }
 
     @Override
-    public void testConcurrentTransactions() throws IOException {
+    public void testConcurrentTransactions() {
         // JD: h2 does table level locking so this test fails.
     }
 }

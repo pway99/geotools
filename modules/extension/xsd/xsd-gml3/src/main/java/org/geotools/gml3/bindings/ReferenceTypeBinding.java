@@ -82,7 +82,7 @@ public class ReferenceTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         Property property = (Property) object;
         // I don't think we can assign values to this type, so only encode client properties
         // for the mean time
@@ -92,7 +92,7 @@ public class ReferenceTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         Property association = (Property) object;
 
         // non resolved, return the xlink:href

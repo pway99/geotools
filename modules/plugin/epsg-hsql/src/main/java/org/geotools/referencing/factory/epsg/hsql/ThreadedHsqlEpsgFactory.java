@@ -184,7 +184,7 @@ public class ThreadedHsqlEpsgFactory extends ThreadedEpsgFactory {
 
     /** Returns a data source for the HSQL database. */
     @Override
-    protected DataSource createDataSource() throws SQLException {
+    protected DataSource createDataSource() {
         final Logger logger = Logging.getLogger(ThreadedHsqlEpsgFactory.class);
         logger.log(Level.FINE, "Building new data source for " + getClass().getName());
 
@@ -226,7 +226,7 @@ public class ThreadedHsqlEpsgFactory extends ThreadedEpsgFactory {
      * Returns {@code true} if the database contains data. This method returns {@code false} if an
      * empty EPSG database has been automatically created by HSQL and not yet populated.
      */
-    private static boolean dataExists(File directory) throws SQLException {
+    private static boolean dataExists(File directory) {
         // check if the marker file is there, and all the other database files as well
         // (as some windows cleanup tools delete the .data file only)
         return new File(directory, MARKER_FILE).exists()
@@ -321,7 +321,7 @@ public class ThreadedHsqlEpsgFactory extends ThreadedEpsgFactory {
         FactoryUsingHSQL factory =
                 new FactoryUsingHSQL(hints, getDataSource()) {
                     @Override
-                    protected void shutdown(boolean active) throws SQLException {
+                    protected void shutdown(boolean active) {
                         // Disabled because finalizer shutdown causes concurrent EPSG lookup via
                         // other FactoryUsingHSQL instances using the same database URL and thus
                         // the same org.hsqldb.Database instance to fail in, for example,

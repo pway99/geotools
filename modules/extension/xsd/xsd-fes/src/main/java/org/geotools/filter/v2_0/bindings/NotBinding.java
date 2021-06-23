@@ -52,7 +52,7 @@ public class NotBinding extends OGCNotBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         Not not = (Not) object;
 
         if (FES.spatialOps.equals(name) && not.getFilter() instanceof BinarySpatialOperator) {

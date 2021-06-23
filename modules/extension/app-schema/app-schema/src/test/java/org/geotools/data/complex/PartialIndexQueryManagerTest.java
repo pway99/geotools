@@ -79,7 +79,7 @@ public class PartialIndexQueryManagerTest extends IndexesTest {
     }
 
     private FeatureCollection<? extends FeatureType, ? extends Feature> indexFeatureCollection()
-            throws IOException, URISyntaxException {
+            throws URISyntaxException {
         File dir = new File(getClass().getResource("/test-data/index/").toURI());
         PropertyDataStore datastore = new PropertyDataStore(dir);
         FilterFactory ff1 = datastore.getFilterFactory();

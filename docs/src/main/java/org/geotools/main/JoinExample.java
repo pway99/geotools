@@ -71,8 +71,7 @@ public class JoinExample {
     }
 
     // joinExample start
-    private static void joinExample(SimpleFeatureSource shapes, SimpleFeatureSource shapes2)
-            throws Exception {
+    private static void joinExample(SimpleFeatureSource shapes, SimpleFeatureSource shapes2) {
         SimpleFeatureType schema = shapes.getSchema();
         String typeName = schema.getTypeName();
         String geomName = schema.getGeometryDescriptor().getLocalName();

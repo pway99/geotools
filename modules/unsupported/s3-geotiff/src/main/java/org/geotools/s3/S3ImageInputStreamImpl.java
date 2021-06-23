@@ -51,7 +51,7 @@ public class S3ImageInputStreamImpl extends ImageInputStreamImpl {
         this(input.toString());
     }
 
-    public S3ImageInputStreamImpl(String input) throws IOException {
+    public S3ImageInputStreamImpl(String input) {
         this.connector = new S3Connector(input);
         this.url = input;
         String urlWithoutQueryString = input.split("\\?")[0];
@@ -84,7 +84,7 @@ public class S3ImageInputStreamImpl extends ImageInputStreamImpl {
         return parts[parts.length - 1];
     }
 
-    private byte[] getFromCache(int block) throws IOException {
+    private byte[] getFromCache(int block) {
         int blockSizeForBlock = this.calculateBlockSizeForBlock(block);
         CacheEntryKey keyForBlock =
                 new CacheEntryKey(this.bucket, this.key, block, blockSizeForBlock);
@@ -107,7 +107,7 @@ public class S3ImageInputStreamImpl extends ImageInputStreamImpl {
     }
 
     @Override
-    public int read() throws IOException {
+    public int read() {
         byte rawValue = readRawValue();
         return Byte.toUnsignedInt(rawValue);
     }

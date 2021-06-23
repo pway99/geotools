@@ -43,8 +43,6 @@ import org.junit.Test;
 import org.locationtech.jts.geom.Envelope;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.geometry.MismatchedDimensionException;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 public class GridCoverageRenderingOutOfViewTest {
@@ -53,8 +51,7 @@ public class GridCoverageRenderingOutOfViewTest {
 
     @Test
     public void test()
-            throws IOException, URISyntaxException, MismatchedDimensionException,
-                    NoSuchAuthorityCodeException, FactoryException {
+            throws IOException, URISyntaxException, MismatchedDimensionException {
         StreamingRenderer renderer = new StreamingRenderer();
 
         MapContent map = new MapContent();
@@ -131,15 +128,14 @@ public class GridCoverageRenderingOutOfViewTest {
         coverage.dispose(true);
     }
 
-    public Layer loadGeoReferencedImageFile(GridCoverage2D gc, String title)
-            throws IOException, URISyntaxException {
+    public Layer loadGeoReferencedImageFile(GridCoverage2D gc, String title) {
 
         StyleBuilder sb = new StyleBuilder();
         RasterSymbolizer rs = sb.createRasterSymbolizer();
         return new GridCoverageLayer(gc, sb.createStyle(rs), "");
     }
 
-    public GridCoverage2D readGeoReferencedImageFile(File f) throws IOException {
+    public GridCoverage2D readGeoReferencedImageFile(File f) {
         WorldImageReader reader = null;
         try {
             reader = new WorldImageReader(f);

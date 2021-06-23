@@ -166,7 +166,7 @@ public class H2Test extends AbstractTest {
     }
 
     @Override
-    public void setUp() throws Exception {
+    public void setUp() {
         // No fixture check needed
     }
 

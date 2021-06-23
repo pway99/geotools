@@ -104,7 +104,7 @@ public class QueryTypeBindingTest extends WFSTestSupport {
     @Override
     @SuppressWarnings("unchecked")
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         final QueryType query = buildTestQuery();
 
         final Document dom = encode(query, WFS.Query);

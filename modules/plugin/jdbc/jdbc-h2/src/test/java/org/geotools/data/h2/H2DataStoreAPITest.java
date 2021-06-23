@@ -26,7 +26,7 @@ public class H2DataStoreAPITest extends JDBCDataStoreAPIOnlineTest {
     }
 
     @Override
-    public void testTransactionIsolation() throws Exception {
+    public void testTransactionIsolation() {
         // JD: h2 does table level locking so this test fails.
     }
 }

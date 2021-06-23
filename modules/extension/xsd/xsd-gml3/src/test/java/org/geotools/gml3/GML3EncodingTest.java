@@ -46,7 +46,7 @@ import org.w3c.dom.NodeList;
 public class GML3EncodingTest {
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         Map<String, String> namespaces = new HashMap<>();
         namespaces.put("test", TEST.TestFeature.getNamespaceURI());

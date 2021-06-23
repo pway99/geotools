@@ -63,7 +63,7 @@ public final class BuildResultStack {
         return stack.empty();
     }
 
-    public Result popResult() throws CQLException {
+    public Result popResult() {
         return stack.pop();
     }
 

@@ -23,7 +23,6 @@ import java.nio.channels.ReadableByteChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.logging.Logger;
-import org.geotools.data.shapefile.index.quadtree.StoreException;
 
 /** @author Tommaso Nolli */
 public class IndexHeader {
@@ -44,7 +43,7 @@ public class IndexHeader {
     }
 
     /** */
-    public IndexHeader(ReadableByteChannel channel) throws IOException, StoreException {
+    public IndexHeader(ReadableByteChannel channel) throws IOException {
         ByteBuffer buf = ByteBuffer.allocate(8);
 
         channel.read(buf);

@@ -101,7 +101,7 @@ public abstract class AbstractMBExpressionTest {
         setupInternal();
     }
 
-    protected void setupInternal() throws Exception {
+    protected void setupInternal() {
         // do nothing, subclass can override to provide more setup steps
     }
 

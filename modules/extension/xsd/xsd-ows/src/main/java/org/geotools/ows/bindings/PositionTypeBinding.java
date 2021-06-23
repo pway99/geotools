@@ -79,7 +79,7 @@ public class PositionTypeBinding extends AbstractSimpleBinding {
     }
 
     @Override
-    public String encode(Object object, String value) throws Exception {
+    public String encode(Object object, String value) {
         List list = (List) object;
         StringBuilder sb = new StringBuilder();
         for (Object o : list) {

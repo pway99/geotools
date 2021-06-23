@@ -37,7 +37,7 @@ public class CoveragetypeBindingTest extends GPKGTestSupport {
     }
 
     @Test
-    public void testParse() throws Exception {
+    public void testParse() {
         buildDocument(
                 "<coverage><minZoom>1</minZoom><maxZoom>10</maxZoom><minColumn>100</minColumn><maxColumn>1000</maxColumn><minRow>50</minRow><maxRow>500</maxRow></coverage>");
         Object result = parse(GPKG.coveragetype);

@@ -99,7 +99,7 @@ public final class ECQLTest {
      * @see ECQLComparisonPredicateTest
      */
     @Test
-    public void comparisonPredicate() throws Exception {
+    public void comparisonPredicate() {
         assertFilter("POP_RANK > 6", PropertyIsGreaterThan.class);
         assertFilter("Area(the_geom) < 3000", PropertyIsLessThan.class);
     }
@@ -130,14 +130,14 @@ public final class ECQLTest {
     }
 
     @Test
-    public void dwithinGeometry() throws Exception {
+    public void dwithinGeometry() {
         assertFilter(
                 "DWITHIN(buffer(the_geom,5), POINT (1 2), 10.0, kilometers)",
                 DistanceBufferOperator.class);
     }
 
     @Test
-    public void dwithinReferencedGeometry() throws Exception {
+    public void dwithinReferencedGeometry() {
         assertFilter(
                 "DWITHIN(buffer(the_geom,5), SRID=3857;POINT (1 2), 10.0, kilometers)",
                 DistanceBufferOperator.class);
@@ -149,7 +149,7 @@ public final class ECQLTest {
      * @see ECQLTemporalPredicateTest
      */
     @Test
-    public void temporalPredicate() throws Exception {
+    public void temporalPredicate() {
         Filter filter = ECQL.toFilter("ATTR1 BEFORE 2006-12-31T01:30:00Z");
         Assert.assertTrue(filter instanceof Before);
 
@@ -162,7 +162,7 @@ public final class ECQLTest {
      * @see ECQLBooleanValueExpressionTest
      */
     @Test
-    public void booleanPredicate() throws Exception {
+    public void booleanPredicate() {
         // and sample
         assertFilter("ATTR1 < 10 AND ATTR2 < 2", And.class);
 
@@ -185,7 +185,7 @@ public final class ECQLTest {
      * @see ECQLIDPredicateTest
      */
     @Test
-    public void idPredicate() throws Exception {
+    public void idPredicate() {
         assertFilter("IN (1,2,3,4)", Id.class);
         assertFilter("IN ('river.1','river.2')", Id.class);
     }
@@ -245,7 +245,7 @@ public final class ECQLTest {
      * @see ECQLLikePredicateTest
      */
     @Test
-    public void likePredicate() throws Exception {
+    public void likePredicate() {
 
         // using a property as expression
         assertFilter("aProperty LIKE '%bb%'", PropertyIsLike.class);
@@ -263,7 +263,7 @@ public final class ECQLTest {
      * @see ECQLNullPredicateTest
      */
     @Test
-    public void isNullPredicate() throws Exception {
+    public void isNullPredicate() {
         assertFilter("centroid(the_geom) IS NULL", IsNullImpl.class);
     }
 
@@ -273,19 +273,19 @@ public final class ECQLTest {
      * @see ECQLExistenceTest
      */
     @Test
-    public void existProperty() throws Exception {
+    public void existProperty() {
         PropertyIsEqualTo eq = assertFilter("aProperty EXISTS", PropertyIsEqualTo.class);
         Expression expr = eq.getExpression1();
         Assert.assertTrue(expr instanceof PropertyExistsFunction);
     }
 
     @Test
-    public void expression() throws Exception {
+    public void expression() {
         assertExpression("A + 1", Add.class);
     }
 
     @Test
-    public void listOfPredicates() throws Exception {
+    public void listOfPredicates() {
 
         List<Filter> list = ECQL.toFilterList("A=1; B<4");
 
@@ -297,7 +297,7 @@ public final class ECQLTest {
     }
 
     @Test
-    public void greaterFilterToCQL() throws Exception {
+    public void greaterFilterToCQL() {
 
         String expectedECQL = FilterECQLSample.PROPERTY_GREATER_MINUS_INGEGER;
         Filter filter = FilterECQLSample.getSample(expectedECQL);
@@ -308,7 +308,7 @@ public final class ECQLTest {
     }
 
     @Test
-    public void likeFilterToCQL() throws Exception {
+    public void likeFilterToCQL() {
 
         String expectedECQL = FilterECQLSample.LITERAL_LIKE_ECQL_PATTERN;
         Filter filter = FilterECQLSample.getSample(expectedECQL);
@@ -319,7 +319,7 @@ public final class ECQLTest {
     }
 
     @Test
-    public void functionExpressionToCQL() throws Exception {
+    public void functionExpressionToCQL() {
 
         Expression[] absArgs = new Expression[1];
         FilterFactory ff = CommonFactoryFinder.getFilterFactory(null);
@@ -333,7 +333,7 @@ public final class ECQLTest {
 
     /** Verify the parser uses the provided FilterFactory implementation */
     @Test
-    public void toFilterUsesProvidedFilterFactory() throws Exception {
+    public void toFilterUsesProvidedFilterFactory() {
         final boolean[] called = {false};
 
         FilterFactory ff =
@@ -351,7 +351,7 @@ public final class ECQLTest {
     }
 
     @Test
-    public void filterListToECQL() throws Exception {
+    public void filterListToECQL() {
 
         String expectedECQL = "QUANTITY = 1; YEAR < 1963";
         List<Filter> list = ECQL.toFilterList(expectedECQL);
@@ -364,7 +364,7 @@ public final class ECQLTest {
     }
 
     @Test
-    public void filterListToECQLWithRefencedGeometries() throws Exception {
+    public void filterListToECQLWithRefencedGeometries() {
 
         String expectedECQL =
                 "INTERSECTS(the_geom, SRID=4326;POINT (1 2)); INTERSECTS(abcd, SRID=4962;POINT (0 0))";
@@ -378,7 +378,7 @@ public final class ECQLTest {
     }
 
     @Test
-    public void filterToECQL() throws Exception {
+    public void filterToECQL() {
 
         String expectedECQL = "QUANTITY = 1";
         Filter list = ECQL.toFilter(expectedECQL);
@@ -388,7 +388,7 @@ public final class ECQLTest {
     }
 
     @Test
-    public void filterListToCQL() throws Exception {
+    public void filterListToCQL() {
 
         String expectedCQL = "QUANTITY = 1; YEAR < 1963";
         List<Filter> list = CQL.toFilterList(expectedCQL);
@@ -401,7 +401,7 @@ public final class ECQLTest {
     }
     /** Verify the parser uses the provided FilterFactory implementation */
     @Test
-    public void toExpressionUsesProvidedFilterFactory() throws Exception {
+    public void toExpressionUsesProvidedFilterFactory() {
         final boolean[] called = {false};
 
         FilterFactory ff =
@@ -419,7 +419,7 @@ public final class ECQLTest {
     }
 
     @Test
-    public void testDivideEncode() throws Exception {
+    public void testDivideEncode() {
         final FilterFactory2 filterFactory2 = CommonFactoryFinder.getFilterFactory2();
         final Filter javaFilter =
                 filterFactory2.less(
@@ -431,7 +431,7 @@ public final class ECQLTest {
     }
 
     @Test
-    public void testQuotedComparison() throws Exception {
+    public void testQuotedComparison() {
         Filter filter = ECQL.toFilter("\"a\"=\"b\"");
         final FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
         final Filter expected = ff.equal(ff.property("a"), ff.property("b"), false);

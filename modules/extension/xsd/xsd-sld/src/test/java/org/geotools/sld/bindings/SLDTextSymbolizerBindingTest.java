@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class SLDTextSymbolizerBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(TextSymbolizer.class, new SLDTextSymbolizerBinding(null).getType());
     }
 

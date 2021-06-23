@@ -39,7 +39,7 @@ public class CurveTest {
     private static final long TIME = 40000;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         // System.setProperty("org.geotools.test.interactive", "true");
     }
 

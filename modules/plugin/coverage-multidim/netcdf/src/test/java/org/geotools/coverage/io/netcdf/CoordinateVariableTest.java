@@ -18,7 +18,6 @@ package org.geotools.coverage.io.netcdf;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
@@ -410,7 +409,7 @@ public class CoordinateVariableTest extends Assert {
     }
 
     @Test
-    public void testClimatologicalTimeVariable() throws MalformedURLException, IOException {
+    public void testClimatologicalTimeVariable() throws IOException {
         // Selection of the input file
         final File workDir = new File(TestData.file(this, "."), "climatologicalaxis");
         if (!workDir.mkdir()) {

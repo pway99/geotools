@@ -24,7 +24,7 @@ public class FeatureJSONExtendedTest extends GeoJSONTestSupport {
     SimpleFeatureBuilder fb;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         SimpleFeatureTypeBuilder tb = new SimpleFeatureTypeBuilder();
         tb.setName("feature");
         tb.setSRS("EPSG:4326");

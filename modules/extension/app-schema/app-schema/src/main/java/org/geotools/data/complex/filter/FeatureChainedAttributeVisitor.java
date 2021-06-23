@@ -98,7 +98,7 @@ public class FeatureChainedAttributeVisitor extends DefaultExpressionVisitor {
         return getFeatureChainedAttributes();
     }
 
-    void walkXPath(String xpath, Feature feature) throws IOException {
+    void walkXPath(String xpath, Feature feature) {
         FeatureTypeMapping currentType = rootMapping;
         StepList currentXPath =
                 XPath.steps(rootMapping.getTargetFeature(), xpath, rootMapping.getNamespaces());

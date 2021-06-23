@@ -16,12 +16,10 @@
  */
 package org.geotools.data.crs;
 
-import java.io.IOException;
 import java.util.Iterator;
 import org.geotools.data.store.ReprojectingFeatureCollection;
 import org.geotools.feature.FeatureCollection;
 import org.geotools.feature.FeatureTypes;
-import org.geotools.feature.SchemaException;
 import org.geotools.feature.collection.AbstractFeatureCollection;
 import org.geotools.geometry.jts.ReferencedEnvelope;
 import org.opengis.feature.FeatureVisitor;
@@ -59,16 +57,14 @@ public class ForceCoordinateSystemFeatureResults extends AbstractFeatureCollecti
 
     public ForceCoordinateSystemFeatureResults(
             FeatureCollection<SimpleFeatureType, SimpleFeature> results,
-            CoordinateReferenceSystem forcedCS)
-            throws IOException, SchemaException {
+            CoordinateReferenceSystem forcedCS) {
         this(results, forcedCS, false);
     }
 
     public ForceCoordinateSystemFeatureResults(
             FeatureCollection<SimpleFeatureType, SimpleFeature> results,
             CoordinateReferenceSystem forcedCS,
-            boolean forceOnlyMissing)
-            throws IOException, SchemaException {
+            boolean forceOnlyMissing) {
         super(forceType(origionalType(results), forcedCS, forceOnlyMissing));
 
         this.results = results;
@@ -110,8 +106,7 @@ public class ForceCoordinateSystemFeatureResults extends AbstractFeatureCollecti
     private static SimpleFeatureType forceType(
             SimpleFeatureType startingType,
             CoordinateReferenceSystem forcedCS,
-            boolean forceOnlyMissing)
-            throws SchemaException {
+            boolean forceOnlyMissing) {
         if (forcedCS == null) {
             throw new NullPointerException("CoordinateSystem required");
         }
@@ -164,8 +159,7 @@ public class ForceCoordinateSystemFeatureResults extends AbstractFeatureCollecti
 
     @Override
     public void accepts(
-            org.opengis.feature.FeatureVisitor visitor, org.opengis.util.ProgressListener progress)
-            throws IOException {
+            org.opengis.feature.FeatureVisitor visitor, org.opengis.util.ProgressListener progress) {
         if (canDelegate(visitor)) {
             results.accepts(visitor, progress);
         } else {

@@ -25,7 +25,7 @@ import org.junit.Test;
 
 public class SLDFontTestBinding extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(Font.class, new SLDFontBinding(null, null).getType());
     }
 

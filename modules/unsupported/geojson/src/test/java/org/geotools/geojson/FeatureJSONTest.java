@@ -65,7 +65,7 @@ public class FeatureJSONTest extends GeoJSONTestSupport {
     SimpleFeatureBuilder fbArray;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         SimpleFeatureTypeBuilder tb = new SimpleFeatureTypeBuilder();
         setupNonGeometricAttributes(tb);

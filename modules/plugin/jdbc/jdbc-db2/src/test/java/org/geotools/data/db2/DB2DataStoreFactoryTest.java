@@ -27,7 +27,7 @@ public class DB2DataStoreFactoryTest {
     DB2NGDataStoreFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new DB2NGDataStoreFactory();
     }
 

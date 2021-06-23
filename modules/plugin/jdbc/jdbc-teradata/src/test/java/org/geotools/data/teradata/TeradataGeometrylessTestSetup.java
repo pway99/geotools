@@ -35,12 +35,12 @@ public class TeradataGeometrylessTestSetup extends JDBCGeometrylessTestSetup {
     }
 
     @Override
-    protected void dropPersonTable() throws Exception {
+    protected void dropPersonTable() {
         runSafe("DROP TABLE \"person\"");
     }
 
     @Override
-    protected void dropZipCodeTable() throws Exception {
+    protected void dropZipCodeTable() {
         runSafe("DROP TABLE \"zipcode\"");
     }
 }

@@ -40,11 +40,11 @@ public class WfsQueryTypeTest extends WFSTestSupport {
 
     @Override
     @Test
-    public void testParse() throws Exception {}
+    public void testParse() {}
 
     @Override
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         QName typeName = new QName("http://www.test.com/query", "theType");
 
         QueryType wfsQuery = factory.createQueryType();

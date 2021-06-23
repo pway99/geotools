@@ -28,7 +28,7 @@ public class AddImplTest {
     AddImpl add;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         FilterFactory ff = CommonFactoryFinder.getFilterFactory(null);
         Expression e1 = ff.literal(1);
         Expression e2 = ff.literal(2);

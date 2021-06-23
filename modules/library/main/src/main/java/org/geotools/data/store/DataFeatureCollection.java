@@ -106,7 +106,7 @@ public abstract class DataFeatureCollection implements SimpleFeatureCollection {
         fireChange(features, type);
     }
 
-    public FeatureReader<SimpleFeatureType, SimpleFeature> reader() throws IOException {
+    public FeatureReader<SimpleFeatureType, SimpleFeature> reader() {
         return new DelegateFeatureReader<>(getSchema(), features());
     }
 
@@ -137,7 +137,7 @@ public abstract class DataFeatureCollection implements SimpleFeatureCollection {
      * @throws UnsupportedOperationException To indicate that write support is not avaiable
      * @return the writer, or null if write support is not available
      */
-    protected FeatureWriter<SimpleFeatureType, SimpleFeature> writer() throws IOException {
+    protected FeatureWriter<SimpleFeatureType, SimpleFeature> writer() {
         return null;
     }
     //
@@ -219,7 +219,7 @@ public abstract class DataFeatureCollection implements SimpleFeatureCollection {
         open.remove(close);
     }
 
-    protected void closeIterator(Iterator<SimpleFeature> close) throws IOException {
+    protected void closeIterator(Iterator<SimpleFeature> close) {
         if (close instanceof FeatureReaderIterator) {
             @SuppressWarnings("PMD.CloseResource")
             FeatureReaderIterator<SimpleFeature> iterator =
@@ -405,8 +405,7 @@ public abstract class DataFeatureCollection implements SimpleFeatureCollection {
 
     @Override
     public void accepts(
-            org.opengis.feature.FeatureVisitor visitor, org.opengis.util.ProgressListener progress)
-            throws IOException {
+            org.opengis.feature.FeatureVisitor visitor, org.opengis.util.ProgressListener progress) {
         DataUtilities.visit(this, visitor, progress);
     }
 

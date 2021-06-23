@@ -38,7 +38,7 @@ import org.opengis.filter.expression.PropertyName;
  */
 public class JoinInfo {
 
-    public static JoinInfo create(Query query, JDBCFeatureSource featureSource) throws IOException {
+    public static JoinInfo create(Query query, JDBCFeatureSource featureSource) {
         return create(query, featureSource.getSchema(), featureSource.getDataStore());
     }
 

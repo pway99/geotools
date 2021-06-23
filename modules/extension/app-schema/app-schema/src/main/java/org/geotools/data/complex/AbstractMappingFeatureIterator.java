@@ -30,7 +30,6 @@ import java.util.logging.Logger;
 import net.opengis.wfs20.ResolveValueType;
 import org.geotools.appschema.feature.AppSchemaFeatureFactoryImpl;
 import org.geotools.appschema.filter.FilterFactoryImplNamespaceAware;
-import org.geotools.data.DataSourceException;
 import org.geotools.data.Query;
 import org.geotools.data.Transaction;
 import org.geotools.data.complex.feature.type.ComplexFeatureTypeFactoryImpl;
@@ -202,8 +201,7 @@ public abstract class AbstractMappingFeatureIterator implements IMappingFeatureI
             Query unrolledQuery,
             boolean removeQueryLimitIfDenormalised,
             boolean hasPostFilter,
-            Transaction tx)
-            throws IOException {
+            Transaction tx) {
         this.store = store;
         this.attf = new AppSchemaFeatureFactoryImpl();
 
@@ -430,8 +428,7 @@ public abstract class AbstractMappingFeatureIterator implements IMappingFeatureI
         return next;
     }
 
-    protected Map<Name, Expression> getClientProperties(Property attribute)
-            throws DataSourceException {
+    protected Map<Name, Expression> getClientProperties(Property attribute) {
 
         Map<Object, Object> userData = attribute.getUserData();
         Map<Name, Expression> clientProperties = new HashMap<>();
@@ -472,7 +469,7 @@ public abstract class AbstractMappingFeatureIterator implements IMappingFeatureI
                 // ignore, no resolve
             }
         }
-    };
+    }
 
     protected static String referenceToIdentifier(String reference) {
 

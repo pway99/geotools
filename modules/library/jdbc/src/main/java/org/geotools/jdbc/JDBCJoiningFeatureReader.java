@@ -20,7 +20,6 @@ package org.geotools.jdbc;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -48,8 +47,7 @@ public class JDBCJoiningFeatureReader extends JDBCFeatureReader {
             JDBCFeatureSource featureSource,
             SimpleFeatureType featureType,
             JoinInfo join,
-            Query query)
-            throws SQLException, IOException {
+            Query query) {
 
         // super(sql, cx, featureSource, retype(featureType, join), hints);
         super(sql, cx, featureSource, featureType, query);
@@ -63,8 +61,7 @@ public class JDBCJoiningFeatureReader extends JDBCFeatureReader {
             JDBCFeatureSource featureSource,
             SimpleFeatureType featureType,
             JoinInfo join,
-            Query query)
-            throws SQLException, IOException {
+            Query query) {
 
         super(st, cx, featureSource, featureType, query);
 
@@ -76,8 +73,7 @@ public class JDBCJoiningFeatureReader extends JDBCFeatureReader {
             JDBCFeatureSource featureSource,
             SimpleFeatureType featureType,
             JoinInfo join,
-            Query query)
-            throws SQLException, IOException {
+            Query query) {
         joinReaders = new ArrayList<>();
         int offset =
                 featureType.getAttributeCount()
@@ -95,7 +91,7 @@ public class JDBCJoiningFeatureReader extends JDBCFeatureReader {
                             ft,
                             query) {
                         @Override
-                        protected void finalize() throws Throwable {
+                        protected void finalize() {
                             // Do nothing.
                             //
                             // This override protects the injected result set and connection from

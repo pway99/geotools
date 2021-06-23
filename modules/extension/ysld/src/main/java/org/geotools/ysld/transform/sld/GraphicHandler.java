@@ -27,7 +27,7 @@ public class GraphicHandler extends SldTransformHandler {
 
     @Override
     public void element(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+            throws IOException {
         String name = xml.getLocalName();
         if ("Graphic".equals(name)) {
             context.mapping();
@@ -40,7 +40,7 @@ public class GraphicHandler extends SldTransformHandler {
 
     @Override
     public void endElement(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+            throws IOException {
         String name = xml.getLocalName();
         if ("Graphic".equals(name)) {
             context.endMapping().pop();
@@ -50,7 +50,7 @@ public class GraphicHandler extends SldTransformHandler {
     static class SymbolsHandler extends SldTransformHandler {
         @Override
         public void element(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if ("Mark".equals(name)) {
                 context.push(new MarkHandler());
@@ -65,7 +65,7 @@ public class GraphicHandler extends SldTransformHandler {
     static class MarkHandler extends SldTransformHandler {
         @Override
         public void element(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if ("Mark".equals(name)) {
                 context.mapping().scalar("mark").mapping();
@@ -82,7 +82,7 @@ public class GraphicHandler extends SldTransformHandler {
 
         @Override
         public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             if ("Mark".equals(xml.getLocalName())) {
                 context.endMapping().endMapping().pop();
             }
@@ -105,7 +105,7 @@ public class GraphicHandler extends SldTransformHandler {
 
         @Override
         public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             if ("ExternalGraphic".equals(xml.getLocalName())) {
                 context.endMapping().endMapping().pop();
             }

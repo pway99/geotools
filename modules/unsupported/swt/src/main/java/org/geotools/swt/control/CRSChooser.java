@@ -611,7 +611,7 @@ public class CRSChooser {
     /** */
     private CoordinateReferenceSystem saveCustomizedCRS(
             String text, boolean processWKT, CoordinateReferenceSystem createdCRS)
-            throws CoreException, IOException, BackingStoreException {
+            throws BackingStoreException {
         Preferences root = Preferences.userRoot();
         Preferences node = root.node(CUSTOM_ID);
         int lastID;

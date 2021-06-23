@@ -98,7 +98,7 @@ public class TileMatrixSetLinkBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         TileMatrixSetLinkType link = factory.createTileMatrixSetLinkType();
 
         link.setTileMatrixSet((String) node.getChildValue("TileMatrixSet"));

@@ -29,7 +29,7 @@ public class MatchActionBinding extends EnumSimpleBinding {
     }
 
     @Override
-    public String encode(Object object, String value) throws Exception {
+    public String encode(Object object, String value) {
         if (StringUtils.isBlank(value)) return value;
         return StringUtils.capitalize(value.toLowerCase());
     }

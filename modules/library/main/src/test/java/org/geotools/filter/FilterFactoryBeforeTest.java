@@ -28,7 +28,7 @@ public class FilterFactoryBeforeTest {
     FilterFactory ff = CommonFactoryFinder.getFilterFactory(null);
 
     @Test
-    public void testAfter() throws Exception {
+    public void testAfter() {
         FilterFactory ff = CommonFactoryFinder.getFilterFactory(null);
 
         Expression left = ff.literal(2);

@@ -78,7 +78,7 @@ public class GrassRasterReaderWriterTest {
     }
 
     @Test
-    public void testFormatAccepts() throws Exception {
+    public void testFormatAccepts() {
         URL pitUrl = this.getClass().getClassLoader().getResource("testlocation/test/cellhd/pit");
         AbstractGridFormat format = new GrassCoverageFormatFactory().createFormat();
         File pitFile = URLs.urlToFile(pitUrl);

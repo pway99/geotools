@@ -67,7 +67,7 @@ public class RootNodeTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         root1.dispose(true);
         root2.dispose(true);
         root3.dispose(true);

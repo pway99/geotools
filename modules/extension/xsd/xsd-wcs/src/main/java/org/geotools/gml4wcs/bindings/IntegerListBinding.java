@@ -72,7 +72,7 @@ public class IntegerListBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         List values = (List) value;
 
         int[] integers = new int[values.size()];

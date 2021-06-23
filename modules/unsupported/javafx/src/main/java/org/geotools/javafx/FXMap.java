@@ -65,8 +65,6 @@ import org.geotools.styling.StyleFactory;
 import org.jfree.fx.FXGraphics2D;
 import org.opengis.feature.type.GeometryDescriptor;
 import org.opengis.filter.FilterFactory2;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 /**
@@ -196,8 +194,7 @@ public class FXMap extends Parent {
             Layer layer,
             int dimensionX,
             int dimensionY,
-            org.opengis.geometry.Envelope bounds)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            org.opengis.geometry.Envelope bounds) {
 
         System.setProperty("org.geotools.referencing.forceXY", "true");
         mapCanvas = new Canvas(dimensionX, dimensionY);

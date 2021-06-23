@@ -276,8 +276,7 @@ public class CoordinateOperationFactoryUsingWKT extends DeferredAuthorityFactory
      * @throws NoSuchAuthorityCodeException if a specified code was not found.
      * @throws FactoryException if the object creation failed for some other reason.
      */
-    protected CoordinateOperationAuthorityFactory getFallbackAuthorityFactory()
-            throws NoSuchAuthorityCodeException, FactoryException {
+    protected CoordinateOperationAuthorityFactory getFallbackAuthorityFactory() {
 
         if (!fallbackAuthorityFactorySearched) { // Search once
             CoordinateOperationAuthorityFactory candidate = null;

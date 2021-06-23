@@ -16,7 +16,6 @@
  */
 package org.geotools.data.sort;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.NoSuchElementException;
 import org.geotools.data.simple.DelegateSimpleFeatureReader;
@@ -52,8 +51,7 @@ public class SortedFeatureIterator implements SimpleFeatureIterator {
             SimpleFeatureIterator iterator,
             SimpleFeatureType schema,
             SortBy[] sortBy,
-            int maxFeatures)
-            throws IOException {
+            int maxFeatures) {
         DelegateSimpleFeatureReader reader = new DelegateSimpleFeatureReader(schema, iterator);
         SimpleFeatureReader sorted = new SortedFeatureReader(reader, sortBy, maxFeatures);
         this.delegate = new FeatureReaderFeatureIterator(sorted);

@@ -32,12 +32,12 @@ import org.opengis.feature.simple.SimpleFeatureType;
 
 public class PlacemarkTypeBindingTest extends KMLTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(SimpleFeature.class, binding(KML.PlacemarkType).getType());
     }
 
     @Test
-    public void testExecutionMode() throws Exception {
+    public void testExecutionMode() {
         assertEquals(Binding.AFTER, binding(KML.PlacemarkType).getExecutionMode());
     }
 

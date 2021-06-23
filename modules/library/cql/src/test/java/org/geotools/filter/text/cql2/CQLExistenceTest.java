@@ -76,7 +76,7 @@ public class CQLExistenceTest {
 
     /** Sample: attribute_name EXISTS */
     @Test
-    public void attributeExist() throws Exception {
+    public void attributeExist() {
 
         // -------------------------------------------------------------
         // <attribute_name> EXISTS

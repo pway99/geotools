@@ -103,7 +103,7 @@ public class XSLocalSimpleTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // TODO: implement
         return null;
     }

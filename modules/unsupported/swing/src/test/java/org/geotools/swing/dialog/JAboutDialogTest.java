@@ -59,7 +59,7 @@ public class JAboutDialogTest extends GraphicsTestBase<DialogFixture, Dialog, Di
     private boolean showAppInfo;
 
     @Test
-    public void dialogWithoutApplicationInfo() throws Exception {
+    public void dialogWithoutApplicationInfo() {
         createAndShow(false);
 
         assertEquals(DIALOG_TITLE, windowFixture.target().getTitle());
@@ -72,7 +72,7 @@ public class JAboutDialogTest extends GraphicsTestBase<DialogFixture, Dialog, Di
     }
 
     @Test
-    public void dialogWithApplicationInfo() throws Exception {
+    public void dialogWithApplicationInfo() {
         createAndShow(true);
 
         assertEquals(DIALOG_TITLE, windowFixture.target().getTitle());
@@ -159,7 +159,7 @@ public class JAboutDialogTest extends GraphicsTestBase<DialogFixture, Dialog, Di
                 GuiActionRunner.execute(
                         new GuiQuery<JAboutDialog>() {
                             @Override
-                            protected JAboutDialog executeInEDT() throws Throwable {
+                            protected JAboutDialog executeInEDT() {
                                 JAboutDialog dialog;
                                 if (showAppInfo) {
                                     dialog = new JAboutDialog(DIALOG_TITLE, APP_INFO);

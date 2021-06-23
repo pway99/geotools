@@ -53,7 +53,7 @@ public class SQLServerGeometryOnlineTest extends JDBCGeometryOnlineTest {
     }
 
     @Override
-    public void testLinearRing() throws Exception {
+    public void testLinearRing() {
         // LinearRing is not supported by SQLServer
     }
 

@@ -231,17 +231,17 @@ public abstract class DataStoreWrapper implements DataStore {
     }
 
     @Override
-    public void updateSchema(Name typeName, SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(Name typeName, SimpleFeatureType featureType) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public List<Name> getNames() throws IOException {
+    public List<Name> getNames() {
         return new ArrayList<>(mapping.keySet());
     }
 
     @Override
-    public SimpleFeatureType getSchema(Name name) throws IOException {
+    public SimpleFeatureType getSchema(Name name) {
         if (mapping.containsKey(name)) {
             FeatureTypeMapper mapper = mapping.get(name);
             if (mapper != null) {
@@ -255,7 +255,7 @@ public abstract class DataStoreWrapper implements DataStore {
     }
 
     @Override
-    public SimpleFeatureType getSchema(String typeName) throws IOException {
+    public SimpleFeatureType getSchema(String typeName) {
         return getSchema(new NameImpl(typeName));
     }
 
@@ -265,7 +265,7 @@ public abstract class DataStoreWrapper implements DataStore {
     }
 
     @Override
-    public void updateSchema(String typeName, SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(String typeName, SimpleFeatureType featureType) {
         throw new UnsupportedOperationException();
     }
 
@@ -281,17 +281,17 @@ public abstract class DataStoreWrapper implements DataStore {
     }
 
     @Override
-    public void removeSchema(String typeName) throws IOException {
+    public void removeSchema(String typeName) {
         removeSchema(new NameImpl(typeName));
     }
 
     @Override
-    public String[] getTypeNames() throws IOException {
+    public String[] getTypeNames() {
         return typeNames != null ? typeNames.toArray(new String[typeNames.size()]) : null;
     }
 
     @Override
-    public SimpleFeatureSource getFeatureSource(String typeName) throws IOException {
+    public SimpleFeatureSource getFeatureSource(String typeName) {
         Utilities.ensureNonNull("typeName", typeName);
         return getFeatureSource(new NameImpl(typeName));
     }
@@ -312,31 +312,31 @@ public abstract class DataStoreWrapper implements DataStore {
     }
 
     protected SimpleFeatureSource transformFeatureStore(
-            SimpleFeatureStore source, FeatureTypeMapper mapper) throws IOException {
+            SimpleFeatureStore source, FeatureTypeMapper mapper) {
         return TransformFactory.transform(source, mapper.getName(), mapper.getDefinitions());
     }
 
     @Override
     public FeatureReader<SimpleFeatureType, SimpleFeature> getFeatureReader(
-            Query query, Transaction transaction) throws IOException {
+            Query query, Transaction transaction) {
         throw new UnsupportedOperationException();
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            String typeName, Filter filter, Transaction transaction) throws IOException {
+            String typeName, Filter filter, Transaction transaction) {
         throw new UnsupportedOperationException();
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            String typeName, Transaction transaction) throws IOException {
+            String typeName, Transaction transaction) {
         throw new UnsupportedOperationException();
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriterAppend(
-            String typeName, Transaction transaction) throws IOException {
+            String typeName, Transaction transaction) {
         throw new UnsupportedOperationException();
     }
 

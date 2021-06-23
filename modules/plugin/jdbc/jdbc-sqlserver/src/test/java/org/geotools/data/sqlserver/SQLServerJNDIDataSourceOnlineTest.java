@@ -44,7 +44,7 @@ public class SQLServerJNDIDataSourceOnlineTest extends JDBCJNDIDataSourceOnlineT
     }
 
     @Override
-    protected void runTest() throws Throwable {
+    protected void runTest() {
         if (isMicrosoftDriverAvailable()) {
             super.runTest();
         } else {

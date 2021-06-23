@@ -146,7 +146,7 @@ public class CSVFeatureWriter implements FeatureWriter<SimpleFeatureType, Simple
      * Mark our {@link #currentFeature} feature as null, it will be skipped when written effectively
      * removing it.
      */
-    public void remove() throws IOException {
+    public void remove() {
         this.currentFeature = null; // just mark it done which means it will not get written out.
     }
     // remove end

@@ -17,7 +17,6 @@
  */
 package org.geotools.tutorial.csv3;
 
-import java.io.IOException;
 import org.geotools.data.FeatureReader;
 import org.geotools.data.Query;
 import org.geotools.data.store.ContentEntry;
@@ -50,7 +49,7 @@ public class CSVFeatureSource extends ContentFeatureSource {
     }
 
     // docs start getBoundsInternal
-    protected ReferencedEnvelope getBoundsInternal(Query query) throws IOException {
+    protected ReferencedEnvelope getBoundsInternal(Query query) {
         ReferencedEnvelope bounds =
                 new ReferencedEnvelope(getSchema().getCoordinateReferenceSystem());
         try (FeatureReader<SimpleFeatureType, SimpleFeature> featureReader = getReader(query)) {
@@ -64,7 +63,7 @@ public class CSVFeatureSource extends ContentFeatureSource {
     // docs end getBoundsInternal
 
     // docs start getCountInternal
-    protected int getCountInternal(Query query) throws IOException {
+    protected int getCountInternal(Query query) {
         FeatureReader<SimpleFeatureType, SimpleFeature> featureReader = getReaderInternal(query);
         int n = 0;
         try {
@@ -79,15 +78,14 @@ public class CSVFeatureSource extends ContentFeatureSource {
     // docs end getCountInternal
 
     // docs start getReaderInternal
-    protected FeatureReader<SimpleFeatureType, SimpleFeature> getReaderInternal(Query query)
-            throws IOException {
+    protected FeatureReader<SimpleFeatureType, SimpleFeature> getReaderInternal(Query query) {
         CSVDataStore dataStore = getDataStore();
         return new CSVFeatureReader(dataStore.getCSVStrategy(), query);
     }
     // docs end getReaderInternal
 
     // docs start buildFeatureType
-    protected SimpleFeatureType buildFeatureType() throws IOException {
+    protected SimpleFeatureType buildFeatureType() {
         return getDataStore().getSchema();
     }
     // docs end buildFeatureType

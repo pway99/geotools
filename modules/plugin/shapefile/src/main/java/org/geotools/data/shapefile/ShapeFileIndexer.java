@@ -20,7 +20,6 @@ import static org.geotools.data.shapefile.ShapefileIndexerBoundsHelper.createBou
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -33,8 +32,6 @@ import org.geotools.data.shapefile.files.FileWriter;
 import org.geotools.data.shapefile.files.ShpFileType;
 import org.geotools.data.shapefile.files.ShpFiles;
 import org.geotools.data.shapefile.files.StorageFile;
-import org.geotools.data.shapefile.index.LockTimeoutException;
-import org.geotools.data.shapefile.index.TreeException;
 import org.geotools.data.shapefile.index.quadtree.Node;
 import org.geotools.data.shapefile.index.quadtree.QuadTree;
 import org.geotools.data.shapefile.index.quadtree.StoreException;
@@ -137,8 +134,7 @@ class ShapeFileIndexer implements FileWriter {
      * @return The number of indexed records
      */
     public int index(boolean verbose, /*unused*/ ProgressListener listener)
-            throws MalformedURLException, IOException, TreeException, StoreException,
-                    LockTimeoutException {
+            throws IOException, StoreException {
 
         if (this.shpFiles == null) {
             throw new IOException("You have to set a shape file name!");

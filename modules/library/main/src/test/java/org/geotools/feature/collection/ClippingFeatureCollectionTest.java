@@ -35,7 +35,7 @@ public class ClippingFeatureCollectionTest {
     DefaultFeatureCollection delegate;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         SimpleFeatureTypeBuilder tb = new SimpleFeatureTypeBuilder();
         tb.setName("foo");
         tb.add("geom", Point.class);

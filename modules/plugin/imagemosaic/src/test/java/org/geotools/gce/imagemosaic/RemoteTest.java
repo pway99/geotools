@@ -36,12 +36,11 @@ import org.opengis.parameter.ParameterValue;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.datum.PixelInCell;
 import org.opengis.referencing.operation.MathTransform;
-import org.opengis.referencing.operation.TransformException;
 
 public class RemoteTest {
 
     @Test
-    public void testRemoteMosaic() throws IOException, TransformException {
+    public void testRemoteMosaic() throws IOException {
         ImageMosaicFormat format = new ImageMosaicFormat();
         ImageMosaicReader reader = format.getReader(TestData.file(this, "remote_test"));
 

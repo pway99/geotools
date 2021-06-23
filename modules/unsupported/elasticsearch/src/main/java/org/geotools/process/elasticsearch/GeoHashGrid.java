@@ -37,8 +37,6 @@ import org.geotools.util.factory.GeoTools;
 import org.geotools.util.logging.Logging;
 import org.locationtech.jts.geom.Envelope;
 import org.opengis.feature.simple.SimpleFeature;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.operation.TransformException;
 
 abstract class GeoHashGrid {
 
@@ -75,8 +73,7 @@ abstract class GeoHashGrid {
         this.scale = new RasterScale();
     }
 
-    public void initalize(ReferencedEnvelope srcEnvelope, SimpleFeatureCollection features)
-            throws TransformException, FactoryException {
+    public void initalize(ReferencedEnvelope srcEnvelope, SimpleFeatureCollection features) {
         final List<Map<String, Object>> buckets = readFeatures(features);
 
         final String firstGeohash = buckets.isEmpty() ? null : (String) buckets.get(0).get("key");

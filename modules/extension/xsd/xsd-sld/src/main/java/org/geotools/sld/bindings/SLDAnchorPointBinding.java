@@ -107,7 +107,7 @@ public class SLDAnchorPointBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Expression x = (Expression) node.getChildValue("AnchorPointX");
         Expression y = (Expression) node.getChildValue("AnchorPointY");
 

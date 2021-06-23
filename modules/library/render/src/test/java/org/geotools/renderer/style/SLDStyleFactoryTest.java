@@ -97,7 +97,7 @@ public class SLDStyleFactoryTest {
     SimpleFeature feature;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         SimpleFeatureTypeBuilder ftb = new SimpleFeatureTypeBuilder();
         ftb.setName("test");
         ftb.add("geom", Point.class);
@@ -114,7 +114,7 @@ public class SLDStyleFactoryTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         sld.setVectorRenderingEnabled(false);
         MarkStyle2D.setMaxMarkSizeEnabled(false);
     }
@@ -251,7 +251,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testDefaultSizeExternalGraphic() throws Exception {
+    public void testDefaultSizeExternalGraphic() {
         URL url = StreamingRenderer.class.getResource("test-data/");
         PointSymbolizer symb = sf.createPointSymbolizer();
         ExternalGraphic eg = sf.createExternalGraphic(url + "icon64.png", "image/png");
@@ -286,7 +286,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testResizeExternalGraphic() throws Exception {
+    public void testResizeExternalGraphic() {
         URL url = StreamingRenderer.class.getResource("test-data/");
         PointSymbolizer symb = sf.createPointSymbolizer();
         ExternalGraphic eg = sf.createExternalGraphic(url + "icon64.png", "image/png");
@@ -300,7 +300,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testNonExistingExternalGraphic() throws Exception {
+    public void testNonExistingExternalGraphic() {
         URL url = StreamingRenderer.class.getResource("test-data/");
         PointSymbolizer symb = sf.createPointSymbolizer();
         ExternalGraphic eg = sf.createExternalGraphic(url + "iAmNotThere.png", "image/png");
@@ -314,7 +314,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testNonExistingExternalGraphicNoFallback() throws Exception {
+    public void testNonExistingExternalGraphicNoFallback() {
         URL url = StreamingRenderer.class.getResource("test-data/");
         PointSymbolizer symb = sf.createPointSymbolizer();
         ExternalGraphic eg = sf.createExternalGraphic(url + "iAmNotThere.png", "image/png");
@@ -326,7 +326,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testResizeGraphicFill() throws Exception {
+    public void testResizeGraphicFill() {
         URL url = StreamingRenderer.class.getResource("test-data/");
         PolygonSymbolizer symb = sf.createPolygonSymbolizer();
         ExternalGraphic eg = sf.createExternalGraphic(url + "icon64.png", "image/png");
@@ -343,7 +343,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testDefaultSizeMark() throws Exception {
+    public void testDefaultSizeMark() {
         PointSymbolizer symb = sf.createPointSymbolizer();
         Mark myMark = sf.createMark();
         myMark.setWellKnownName(ff.literal("square"));
@@ -354,7 +354,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testDefaultExpressionSizeMark() throws Exception {
+    public void testDefaultExpressionSizeMark() {
         PointSymbolizer symb = sf.createPointSymbolizer();
         Mark myMark = sf.createMark();
         myMark.setWellKnownName(ff.literal("square"));
@@ -366,7 +366,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testDefaultLineSymbolizerWithColor() throws Exception {
+    public void testDefaultLineSymbolizerWithColor() {
         LineSymbolizer symb = sf.createLineSymbolizer();
         symb.setStroke(sf.createStroke(ff.literal("#0000FF"), ff.literal(1.0)));
         symb.setPerpendicularOffset(ff.literal(10));
@@ -383,7 +383,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testTexturePaintNoSize() throws Exception {
+    public void testTexturePaintNoSize() {
         PolygonSymbolizer symb = sf.createPolygonSymbolizer();
         Mark myMark = sf.createMark();
         myMark.setWellKnownName(ff.literal("square"));
@@ -396,7 +396,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testUnknownFont() throws Exception {
+    public void testUnknownFont() {
         TextSymbolizer ts = sf.createTextSymbolizer();
         ts.setFill(sf.createFill(null));
         Font font =
@@ -442,7 +442,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testMarkSizeCalculation() throws Exception {
+    public void testMarkSizeCalculation() {
         Assert.assertFalse(MarkStyle2D.isMaxMarkSizeEnabled());
 
         PointSymbolizer symb = sf.createPointSymbolizer();
@@ -458,7 +458,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testFallbackGraphicMark() throws Exception {
+    public void testFallbackGraphicMark() {
         PointSymbolizer symb = sf.createPointSymbolizer();
         ExternalGraphic eg =
                 sf.createExternalGraphic("http://foo.com/invalid_or_missing_image_url", null);
@@ -469,12 +469,12 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testSortBySingleAscending() throws Exception {
+    public void testSortBySingleAscending() {
         checkSortByParsing("z", ff.sort("z", SortOrder.ASCENDING));
     }
 
     @Test
-    public void testSortByTwoPropertiesAscending() throws Exception {
+    public void testSortByTwoPropertiesAscending() {
         checkSortByParsing(
                 "cat ,    name",
                 ff.sort("cat", SortOrder.ASCENDING),
@@ -482,12 +482,12 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testSortBySingleDescending() throws Exception {
+    public void testSortBySingleDescending() {
         checkSortByParsing("cat D   ", ff.sort("cat", SortOrder.DESCENDING));
     }
 
     @Test
-    public void testSortByMixed() throws Exception {
+    public void testSortByMixed() {
         checkSortByParsing(
                 "cat D,name A,z D",
                 ff.sort("cat", SortOrder.DESCENDING),
@@ -503,7 +503,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testKerningOnByDefault() throws Exception {
+    public void testKerningOnByDefault() {
         TextSymbolizer ts = sf.createTextSymbolizer();
         ts.setFill(sf.createFill(null));
         Font font =
@@ -522,7 +522,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testKerningOffByDefault() throws Exception {
+    public void testKerningOffByDefault() {
         TextSymbolizer ts = sf.createTextSymbolizer();
         ts.setFill(sf.createFill(null));
         Font font =
@@ -621,7 +621,7 @@ public class SLDStyleFactoryTest {
     }
 
     @Test
-    public void testDashArrayZero() throws Exception {
+    public void testDashArrayZero() {
         LineSymbolizer ls = sf.createLineSymbolizer();
         Stroke stroke = sf.createStroke(ff.literal("red"), ff.literal(1));
         Expression nonObviousZero = ff.subtract(ff.literal(10), ff.literal(10));

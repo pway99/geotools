@@ -370,8 +370,7 @@ public class JDBCAccessOracleGeoRaster extends JDBCAccessCustom {
             GeneralEnvelope requestEnvelope,
             ImageLevelInfo info,
             LinkedBlockingQueue<TileQueueElement> tileQueue,
-            GridCoverageFactory coverageFactory)
-            throws IOException {
+            GridCoverageFactory coverageFactory) {
 
         long start = System.currentTimeMillis();
         LOGGER.fine("Starting GeoRaster Tile Decoder");

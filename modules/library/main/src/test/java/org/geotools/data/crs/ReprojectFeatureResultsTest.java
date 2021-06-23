@@ -48,7 +48,7 @@ public class ReprojectFeatureResultsTest {
     private ListFeatureCollection visitorCollection;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         lastVisitor = null;
         wgs84 = CRS.decode("EPSG:4326");
         utm32n = CRS.decode("EPSG:32632");
@@ -68,8 +68,7 @@ public class ReprojectFeatureResultsTest {
         visitorCollection =
                 new ListFeatureCollection(ft) {
                     @Override
-                    public void accepts(FeatureVisitor visitor, ProgressListener progress)
-                            throws java.io.IOException {
+                    public void accepts(FeatureVisitor visitor, ProgressListener progress) {
                         lastVisitor = visitor;
                     };
 
@@ -92,12 +91,12 @@ public class ReprojectFeatureResultsTest {
     }
 
     @Test
-    public void testCountVisitorDelegation() throws Exception {
+    public void testCountVisitorDelegation() {
         FeatureVisitor visitor = new CountVisitor();
         assertOptimalVisit(visitor);
     }
 
-    private void assertOptimalVisit(FeatureVisitor visitor) throws Exception {
+    private void assertOptimalVisit(FeatureVisitor visitor) {
         SimpleFeatureCollection retypedCollection =
                 new ReprojectFeatureResults(visitorCollection, utm32n);
         retypedCollection.accepts(visitor, null);

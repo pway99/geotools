@@ -72,7 +72,7 @@ public class BboxtypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         double minx = ((BigDecimal) node.getChildValue("minx")).doubleValue();
         double miny = ((BigDecimal) node.getChildValue("miny")).doubleValue();

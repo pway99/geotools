@@ -382,8 +382,7 @@ public class Schemas {
      * @param importee The schema being imported.
      * @return The import object.
      */
-    public static final XSDImport importSchema(XSDSchema schema, final XSDSchema importee)
-            throws IOException {
+    public static final XSDImport importSchema(XSDSchema schema, final XSDSchema importee) {
         Resource resource = schema.eResource();
         if (resource == null) {
             final ResourceSet resourceSet = new ResourceSetImpl();
@@ -546,13 +545,12 @@ public class Schemas {
         }
 
         @Override
-        public void startDocument() throws SAXException {
+        public void startDocument() {
             next.clear();
         }
 
         @Override
-        public void startElement(String uri, String localName, String qName, Attributes attributes)
-                throws SAXException {
+        public void startElement(String uri, String localName, String qName, Attributes attributes) {
             // process import
             if ("import".equals(localName)) {
                 // get the namespace + location

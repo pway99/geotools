@@ -25,7 +25,7 @@ import org.junit.Test;
 
 public class SLDHaloBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(Halo.class, new SLDHaloBinding(null, null).getType());
     }
 

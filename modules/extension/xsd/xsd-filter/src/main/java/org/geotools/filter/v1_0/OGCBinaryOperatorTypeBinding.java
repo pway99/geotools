@@ -97,7 +97,7 @@ public class OGCBinaryOperatorTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // implemented by element bindings
         return null;
 
@@ -136,7 +136,7 @@ public class OGCBinaryOperatorTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         BinaryExpression binary = (BinaryExpression) object;
 
         if (OGC.expression.equals(name)) {

@@ -77,7 +77,7 @@ public class StyleLab {
      * Prompts the user for a shapefile (unless a filename is provided on the command line; then
      * creates a simple Style and displays the shapefile on screen
      */
-    private void displayShapefile() throws Exception {
+    private void displayShapefile() {
         File file = JFileDataStoreChooser.showOpenFile("shp", null);
         if (file == null) {
             return;

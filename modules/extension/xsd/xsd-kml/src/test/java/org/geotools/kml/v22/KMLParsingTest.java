@@ -54,7 +54,7 @@ public class KMLParsingTest extends KMLTestSupport {
     }
 
     @Test
-    public void testParseWithSchema() throws Exception {}
+    public void testParseWithSchema() {}
 
     @Test
     public void testStreamParse() throws Exception {

@@ -19,7 +19,6 @@ package org.geotools.jdbc;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.Statement;
 import org.geotools.data.jdbc.FilterToSQL;
 import org.locationtech.jts.geom.Geometry;
@@ -111,8 +110,7 @@ public abstract class BasicSQLDialect extends SQLDialect {
      * @param cx The database connection
      * @param featureType The feature type the select is executing against.
      */
-    public void onSelect(Statement select, Connection cx, SimpleFeatureType featureType)
-            throws SQLException {}
+    public void onSelect(Statement select, Connection cx, SimpleFeatureType featureType) {}
 
     /**
      * Callback invoked before a DELETE statement is executed against the database.
@@ -125,8 +123,7 @@ public abstract class BasicSQLDialect extends SQLDialect {
      * @param cx The database connection
      * @param featureType The feature type the delete is executing against.
      */
-    public void onDelete(Statement delete, Connection cx, SimpleFeatureType featureType)
-            throws SQLException {}
+    public void onDelete(Statement delete, Connection cx, SimpleFeatureType featureType) {}
 
     /**
      * Callback invoked before an INSERT statement is executed against the database.
@@ -139,8 +136,7 @@ public abstract class BasicSQLDialect extends SQLDialect {
      * @param cx The database connection
      * @param featureType The feature type the insert is executing against.
      */
-    public void onInsert(Statement insert, Connection cx, SimpleFeatureType featureType)
-            throws SQLException {}
+    public void onInsert(Statement insert, Connection cx, SimpleFeatureType featureType) {}
 
     /**
      * Callback invoked before an UPDATE statement is executed against the database.
@@ -153,6 +149,5 @@ public abstract class BasicSQLDialect extends SQLDialect {
      * @param cx The database connection
      * @param featureType The feature type the update is executing against.
      */
-    public void onUpdate(Statement update, Connection cx, SimpleFeatureType featureType)
-            throws SQLException {}
+    public void onUpdate(Statement update, Connection cx, SimpleFeatureType featureType) {}
 }

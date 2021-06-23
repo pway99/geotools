@@ -17,7 +17,6 @@
 
 package org.geotools.ows.wmts.request;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -132,7 +131,7 @@ public abstract class AbstractGetTileRequest extends AbstractWMTSRequest impleme
     }
 
     @Override
-    public Response createResponse(HTTPResponse response) throws ServiceException, IOException {
+    public Response createResponse(HTTPResponse response) {
         // TODO Auto-generated method stub
         return null;
     }

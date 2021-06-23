@@ -46,7 +46,7 @@ import org.xml.sax.helpers.NamespaceSupport;
 public class XPathUtilTest {
 
     @Test
-    public void testSteps() throws Exception {
+    public void testSteps() {
         FeatureType complexType =
                 ComplexTestData.createExample01MultiValuedComplexProperty(
                         new UniqueNameFeatureTypeFactoryImpl());
@@ -117,7 +117,7 @@ public class XPathUtilTest {
      * "property" and what's an (xml) "attribute".
      */
     @Test
-    public void testStepsWithXmlAttribute() throws Exception {
+    public void testStepsWithXmlAttribute() {
         FeatureType complexType =
                 ComplexTestData.createExample01MultiValuedComplexProperty(
                         new UniqueNameFeatureTypeFactoryImpl());

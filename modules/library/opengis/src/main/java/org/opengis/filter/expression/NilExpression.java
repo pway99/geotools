@@ -9,7 +9,6 @@
  */
 package org.opengis.filter.expression;
 
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 
 /**
@@ -53,7 +52,7 @@ public final class NilExpression implements Expression, Serializable {
     }
 
     /** Returns the canonical instance on deserialization. */
-    private Object readResolve() throws ObjectStreamException {
+    private Object readResolve() {
         return Expression.NIL;
     }
 }

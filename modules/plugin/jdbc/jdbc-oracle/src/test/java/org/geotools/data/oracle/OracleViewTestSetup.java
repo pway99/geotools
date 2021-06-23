@@ -31,7 +31,7 @@ public class OracleViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void dropLakesTable() throws Exception {
+    protected void dropLakesTable() {
         runSafe("DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME = 'LAKES'");
         runSafe("DROP TABLE lakes PURGE");
     }
@@ -46,7 +46,7 @@ public class OracleViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void dropLakesView() throws Exception {
+    protected void dropLakesView() {
         runSafe("DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME = 'LAKESVIEW'");
         runSafe("DROP VIEW LAKESVIEW");
     }
@@ -63,7 +63,7 @@ public class OracleViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void dropLakesViewPk() throws Exception {
+    protected void dropLakesViewPk() {
         runSafe("DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME = 'LAKESVIEWPK'");
         runSafe("DROP VIEW LAKESVIEWPK");
     }

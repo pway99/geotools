@@ -71,7 +71,7 @@ public class ArcGISRestFeatureReader implements FeatureReader<SimpleFeatureType,
      * @see FeatureReader#next()
      */
     @Override
-    public SimpleFeature next() throws NoSuchElementException, IOException {
+    public SimpleFeature next() throws NoSuchElementException {
         return this.parser.next();
     }
 

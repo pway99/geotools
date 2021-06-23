@@ -449,7 +449,7 @@ public class SpatialRequestHelper {
      * @throws DataSourceException in case something bad happens during reprojections and/or
      *     intersections.
      */
-    private void computeRequestedResolution() throws DataSourceException {
+    private void computeRequestedResolution() {
 
         try {
 
@@ -538,7 +538,7 @@ public class SpatialRequestHelper {
         requestedResolution = coverageProperties.fullResolution;
     }
 
-    private void computeCropBBOX() throws DataSourceException {
+    private void computeCropBBOX() {
 
         // get the crs for the requested bbox
         if (requestCRS == null)

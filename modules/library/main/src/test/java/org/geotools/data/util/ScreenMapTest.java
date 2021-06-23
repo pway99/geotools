@@ -81,7 +81,7 @@ public class ScreenMapTest {
     }
 
     @Test
-    public void testSubsetScreen() throws Exception {
+    public void testSubsetScreen() {
         xmin = 478;
         ymin = 0;
         width = 283;
@@ -122,7 +122,7 @@ public class ScreenMapTest {
     }
 
     @Test
-    public void testOutsideScreen() throws Exception {
+    public void testOutsideScreen() {
         xmin = 0;
         ymin = 0;
         width = 10;

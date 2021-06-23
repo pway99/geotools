@@ -92,7 +92,7 @@ public class CSVFeatureWriter implements FeatureWriter<SimpleFeatureType, Simple
 
     // hasNext start
     @Override
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() {
         if (csvWriter == null) {
             return false;
         }
@@ -139,14 +139,14 @@ public class CSVFeatureWriter implements FeatureWriter<SimpleFeatureType, Simple
      * removing it.
      */
     @Override
-    public void remove() throws IOException {
+    public void remove() {
         this.currentFeature = null; // just mark it done which means it will not get written out.
     }
     // remove end
 
     // write start
     @Override
-    public void write() throws IOException {
+    public void write() {
         if (this.currentFeature == null) {
             return; // current feature has been deleted
         }

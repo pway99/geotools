@@ -31,7 +31,7 @@ public class CharsetConverterFactoryTest {
     CharsetConverterFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new CharsetConverterFactory();
     }
 
@@ -60,7 +60,7 @@ public class CharsetConverterFactoryTest {
     }
 
     @Test
-    public void testStringToCharset() throws Exception {
+    public void testStringToCharset() {
         Converter c = factory.createConverter(String.class, Charset.class, null);
         Assert.assertNotNull(c);
 
@@ -72,7 +72,7 @@ public class CharsetConverterFactoryTest {
     }
 
     @Test
-    public void testCharsetToString() throws Exception {
+    public void testCharsetToString() {
         Converter c = factory.createConverter(Charset.class, String.class, null);
         Assert.assertNotNull(c);
 

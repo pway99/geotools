@@ -47,7 +47,7 @@ public class CSVFileState {
 
     static final Logger LOGGER = Logging.getLogger(CSVFileState.class);
 
-    private static CoordinateReferenceSystem DEFAULT_CRS() throws FactoryException {
+    private static CoordinateReferenceSystem DEFAULT_CRS() {
         return CRS.decode("EPSG:4326");
     };
 

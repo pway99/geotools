@@ -72,15 +72,15 @@ public class GeoRestFeatureReader implements SimpleFeatureReader {
     }
 
     public SimpleFeature next()
-            throws IOException, IllegalArgumentException, NoSuchElementException {
+            throws IllegalArgumentException, NoSuchElementException {
         return (SimpleFeature) iterator.next();
     }
 
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() {
         return iterator.hasNext();
     }
 
-    public void close() throws IOException {
+    public void close() {
         iterator.close();
     }
 

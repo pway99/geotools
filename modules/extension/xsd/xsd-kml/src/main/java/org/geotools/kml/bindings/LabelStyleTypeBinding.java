@@ -86,7 +86,7 @@ public class LabelStyleTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Color color = (Color) value;
 
         TextSymbolizer textSymbolizer = sb.createTextSymbolizer();

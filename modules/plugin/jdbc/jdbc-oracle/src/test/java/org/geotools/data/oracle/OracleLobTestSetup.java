@@ -30,7 +30,7 @@ public class OracleLobTestSetup extends JDBCLobTestSetup {
     }
 
     @Override
-    protected void dropLobTable() throws Exception {
+    protected void dropLobTable() {
         runSafe("DROP SEQUENCE testlob_fid_seq");
         runSafe("DROP TABLE testlob");
     }

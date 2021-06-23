@@ -39,7 +39,7 @@ public interface MultiLevelROIProvider {
      *
      * @return The files used to load the footprints, or an empty list otherwise
      */
-    default List<File> getFootprintFiles(SimpleFeature sf) throws IOException {
+    default List<File> getFootprintFiles(SimpleFeature sf) {
         return Collections.emptyList();
     }
 

@@ -47,7 +47,7 @@ import org.opengis.referencing.operation.MathTransform;
 public class StyledShapePainterTest {
 
     @Test
-    public void testGraphicLegendNullLegend() throws Exception {
+    public void testGraphicLegendNullLegend() {
         StyledShapePainter painter = new StyledShapePainter();
         BufferedImage image = new BufferedImage(100, 100, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = (Graphics2D) image.getGraphics();
@@ -200,7 +200,7 @@ public class StyledShapePainterTest {
     }
 
     @Test
-    public void testGraphicLegend2() throws Exception {
+    public void testGraphicLegend2() {
 
         StyledShapePainter painter = new StyledShapePainter();
         GraphicImpl legend =

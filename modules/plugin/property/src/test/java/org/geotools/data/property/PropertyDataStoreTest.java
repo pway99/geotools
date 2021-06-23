@@ -161,7 +161,7 @@ public class PropertyDataStoreTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         if (store != null) {
             store.dispose();
         }

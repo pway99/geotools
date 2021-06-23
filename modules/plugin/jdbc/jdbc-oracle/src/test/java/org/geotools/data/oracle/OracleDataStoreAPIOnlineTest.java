@@ -33,7 +33,7 @@ public class OracleDataStoreAPIOnlineTest extends JDBCDataStoreAPIOnlineTest {
     }
 
     @Override
-    public void testGetFeatureWriterConcurrency() throws Exception {
+    public void testGetFeatureWriterConcurrency() {
         // skip, does not work with Oracle
     }
 

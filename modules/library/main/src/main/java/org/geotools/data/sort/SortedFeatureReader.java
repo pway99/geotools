@@ -72,8 +72,7 @@ public class SortedFeatureReader implements SimpleFeatureReader {
      * @param sortBy The sorting directives
      * @param maxFeatures The maximum number of features to keep in memory
      */
-    public SortedFeatureReader(SimpleFeatureReader reader, SortBy[] sortBy, int maxFeatures)
-            throws IOException {
+    public SortedFeatureReader(SimpleFeatureReader reader, SortBy[] sortBy, int maxFeatures) {
         this.delegate = MergeSortDumper.getDelegateReader(reader, sortBy, maxFeatures);
     }
 
@@ -84,7 +83,7 @@ public class SortedFeatureReader implements SimpleFeatureReader {
 
     @Override
     public SimpleFeature next()
-            throws IOException, IllegalArgumentException, NoSuchElementException {
+            throws IllegalArgumentException, NoSuchElementException {
         return delegate.next();
     }
 

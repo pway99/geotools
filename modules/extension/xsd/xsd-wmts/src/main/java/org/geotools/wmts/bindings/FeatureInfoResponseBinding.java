@@ -118,7 +118,7 @@ public class FeatureInfoResponseBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // TODO: check if this is right
         FeatureInfoResponseType fir = factory.createFeatureInfoResponseType();
         fir.setTextPayload((TextPayloadType) node.getChildValue("TextPayload"));

@@ -65,13 +65,13 @@ public class EnsureAuthorizationTest {
         MockPreparedStatement pstmt;
 
         @Override
-        public Statement createStatement() throws SQLException {
+        public Statement createStatement() {
             // statement used for all queries
             stmt =
                     new MockStatement(this) {
 
                         @Override
-                        public ResultSet executeQuery(String sql) throws SQLException {
+                        public ResultSet executeQuery(String sql) {
                             // check if the condition ID = 'some text' is present in the query
                             if (sql.matches("^.*\"ID\"\\s+=\\s+'.*'.*$")) {
                                 filteredOnIds = true;
@@ -89,13 +89,12 @@ public class EnsureAuthorizationTest {
         }
 
         @Override
-        public PreparedStatement prepareStatement(final String sql, int arg1, int arg2)
-                throws SQLException {
+        public PreparedStatement prepareStatement(final String sql, int arg1, int arg2) {
             pstmt =
                     new MockPreparedStatement(this, sql, arg1, arg2) {
 
                         @Override
-                        public ResultSet executeQuery() throws SQLException {
+                        public ResultSet executeQuery() {
                             // check if the condition ID = ? is present in the query
                             if (sql.matches("^.*\"ID\"\\s+=\\s+\\?.*$")) {
                                 filteredOnIds = true;
@@ -145,20 +144,20 @@ public class EnsureAuthorizationTest {
     }
 
     @Test
-    public void testQueryIsNotExecutedIfThereAreNoLocks() throws IOException, SQLException {
+    public void testQueryIsNotExecutedIfThereAreNoLocks() {
         dataStore.ensureAuthorization(featureType, Filter.INCLUDE, tx, cx);
         assertEquals(0, cx.calls);
     }
 
     @Test
-    public void testQueryIsExecutedIfThereAreLocks() throws IOException, SQLException {
+    public void testQueryIsExecutedIfThereAreLocks() throws IOException {
         createLock();
         dataStore.ensureAuthorization(featureType, Filter.INCLUDE, tx, cx);
         assertNotEquals(0, cx.calls);
     }
 
     @Test
-    public void testQueryIsFilteredOnLockedFeatureIds() throws IOException, SQLException {
+    public void testQueryIsFilteredOnLockedFeatureIds() throws IOException {
         createLock();
         dataStore.ensureAuthorization(featureType, Filter.INCLUDE, tx, cx);
         assertTrue(cx.filteredOnIds);
@@ -166,7 +165,7 @@ public class EnsureAuthorizationTest {
 
     @Test
     public void testQueryIsFilteredOnLockedFeatureIdsWithPreparedStatements()
-            throws IOException, SQLException {
+            throws IOException {
         dataStore.setSQLDialect(createPreparedSQLDialect());
         createLock();
         dataStore.ensureAuthorization(featureType, Filter.INCLUDE, tx, cx);
@@ -175,7 +174,7 @@ public class EnsureAuthorizationTest {
 
     @Test
     public void testQueryIsNotFilteredOnLockedFeatureIdsIfThereAreTooManyLocks()
-            throws IOException, SQLException {
+            throws IOException {
         createManyLocks();
         dataStore.ensureAuthorization(featureType, Filter.INCLUDE, tx, cx);
         assertFalse(cx.filteredOnIds);
@@ -237,15 +236,14 @@ public class EnsureAuthorizationTest {
 
             @Override
             public void encodeGeometryValue(
-                    Geometry value, int dimension, int srid, StringBuffer sql) throws IOException {}
+                    Geometry value, int dimension, int srid, StringBuffer sql) {}
 
             @Override
             public void encodeGeometryEnvelope(
                     String tableName, String geometryColumn, StringBuffer sql) {}
 
             @Override
-            public Envelope decodeGeometryEnvelope(ResultSet rs, int column, Connection cx)
-                    throws SQLException, IOException {
+            public Envelope decodeGeometryEnvelope(ResultSet rs, int column, Connection cx) {
                 return null;
             }
 
@@ -256,8 +254,7 @@ public class EnsureAuthorizationTest {
                     String column,
                     GeometryFactory factory,
                     Connection cx,
-                    Hints hints)
-                    throws IOException, SQLException {
+                    Hints hints) {
                 return null;
             }
         };
@@ -270,8 +267,7 @@ public class EnsureAuthorizationTest {
                     String tableName, String geometryColumn, StringBuffer sql) {}
 
             @Override
-            public Envelope decodeGeometryEnvelope(ResultSet rs, int column, Connection cx)
-                    throws SQLException, IOException {
+            public Envelope decodeGeometryEnvelope(ResultSet rs, int column, Connection cx) {
                 return null;
             }
 
@@ -282,8 +278,7 @@ public class EnsureAuthorizationTest {
                     String column,
                     GeometryFactory factory,
                     Connection cx,
-                    Hints hints)
-                    throws IOException, SQLException {
+                    Hints hints) {
                 return null;
             }
 
@@ -294,8 +289,7 @@ public class EnsureAuthorizationTest {
                     int srid,
                     Class binding,
                     PreparedStatement ps,
-                    int column)
-                    throws SQLException {}
+                    int column) {}
         };
     }
 }

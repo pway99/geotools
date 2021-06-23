@@ -65,7 +65,7 @@ public class MapServerTest {
                         new AbstractHttpClient() {
 
                             @Override
-                            public HTTPResponse get(URL url) throws IOException {
+                            public HTTPResponse get(URL url) {
                                 if (url.getQuery().contains("REQUEST=GetCapabilities")) {
                                     return new TestHttpResponse(
                                             url("MapServer/GetCapabilities_1_1_0.xml"), "text/xml");

@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 /**
@@ -53,7 +52,7 @@ public class ParameterHandler extends SldTransformHandler {
 
     @Override
     public void element(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+            throws IOException {
         String name = xml.getLocalName();
         if ("CssParameter".equals(name) || "SvgParameter".equals(name)) {
             String parameter = xml.getAttributeValue(null, "name");
@@ -78,8 +77,7 @@ public class ParameterHandler extends SldTransformHandler {
     }
 
     @Override
-    public void endElement(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+    public void endElement(XMLStreamReader xml, SldTransformContext context) {
         String name = xml.getLocalName();
         if ("CssParameter".equals(name) || "SvgParameter".equals(name)) {
             context.pop();

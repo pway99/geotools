@@ -21,7 +21,6 @@ import org.geotools.filter.FilterHandler;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
 
 /**
  * Uses SAX to extact a GetFeature query from and incoming GetFeature request XML stream.
@@ -61,19 +60,19 @@ public class TestFilterHandler implements ContentHandler, FilterHandler {
 
     /** Notes the start of the document. */
     @Override
-    public void startDocument() throws SAXException {
+    public void startDocument() {
         // _log.info("start of document");
     }
 
     /** Notes the start of the document. */
     @Override
-    public void endDocument() throws SAXException {
+    public void endDocument() {
         // _log.info( "at end of document");
     }
 
     /** Notes processing instructions. */
     @Override
-    public void processingInstruction(String target, String data) throws SAXException {}
+    public void processingInstruction(String target, String data) {}
 
     /** Notes start of prefix mappings. */
     @Override
@@ -92,8 +91,7 @@ public class TestFilterHandler implements ContentHandler, FilterHandler {
      * @param atts Element attributes.
      */
     @Override
-    public void startElement(String namespaceURI, String localName, String rawName, Attributes atts)
-            throws SAXException {}
+    public void startElement(String namespaceURI, String localName, String rawName, Attributes atts) {}
 
     /**
      * Notes the end of the element exists query or bounding box.
@@ -103,8 +101,7 @@ public class TestFilterHandler implements ContentHandler, FilterHandler {
      * @param rawName Raw name of element.
      */
     @Override
-    public void endElement(String namespaceURI, String localName, String rawName)
-            throws SAXException {}
+    public void endElement(String namespaceURI, String localName, String rawName) {}
 
     /**
      * Checks if inside parsed element and adds its contents to the appropriate variable.
@@ -114,7 +111,7 @@ public class TestFilterHandler implements ContentHandler, FilterHandler {
      * @param length Raw name of element.
      */
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {}
+    public void characters(char[] ch, int start, int length) {}
 
     /**
      * Notes ignorable whitespace.
@@ -124,7 +121,7 @@ public class TestFilterHandler implements ContentHandler, FilterHandler {
      * @param length Raw name of element.
      */
     @Override
-    public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {}
+    public void ignorableWhitespace(char[] ch, int start, int length) {}
 
     /**
      * Notes skipped entity.
@@ -132,7 +129,7 @@ public class TestFilterHandler implements ContentHandler, FilterHandler {
      * @param name Name of skipped entity.
      */
     @Override
-    public void skippedEntity(String name) throws SAXException {}
+    public void skippedEntity(String name) {}
 
     /**
      * Gets filter.

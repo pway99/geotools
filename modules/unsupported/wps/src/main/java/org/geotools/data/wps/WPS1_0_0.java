@@ -239,8 +239,7 @@ public class WPS1_0_0 extends WPSSpecification {
         }
 
         @Override
-        public Response createResponse(HTTPResponse httpResponse)
-                throws ServiceException, IOException {
+        public Response createResponse(HTTPResponse httpResponse) {
             return new ExecuteProcessResponse(
                     httpResponse, responseForm != null && responseForm.getRawDataOutput() != null);
         }

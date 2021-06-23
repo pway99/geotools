@@ -71,7 +71,7 @@ public class NameBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         value.setTextContent(object.toString());
         return value;
     }

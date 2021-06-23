@@ -408,8 +408,7 @@ public abstract class AbstractCoordinateOperationFactory extends ReferencingFact
             final CoordinateReferenceSystem targetCRS,
             final MathTransform transform,
             final OperationMethod method,
-            final Class<? extends CoordinateOperation> type)
-            throws FactoryException {
+            final Class<? extends CoordinateOperation> type) {
         CoordinateOperation operation;
         if (transform instanceof CoordinateOperation) {
             operation = (CoordinateOperation) transform;
@@ -446,8 +445,7 @@ public abstract class AbstractCoordinateOperationFactory extends ReferencingFact
     public Conversion createDefiningConversion(
             final Map<String, ?> properties,
             final OperationMethod method,
-            final ParameterValueGroup parameters)
-            throws FactoryException {
+            final ParameterValueGroup parameters) {
         Conversion conversion = new DefiningConversion(properties, method, parameters);
         conversion = pool.unique(conversion);
         return conversion;

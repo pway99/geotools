@@ -106,7 +106,7 @@ public class ComplexAttributeConverterFactoryTest {
 
     /** Test converting String to FeatureId successful. This is required by feature chaining. */
     @Test
-    public void testFeatureId() throws Exception {
+    public void testFeatureId() {
         FeatureId id = Converters.convert("blah", FeatureId.class);
         Assert.assertNotNull(id);
         Assert.assertEquals(id.getID(), "blah");

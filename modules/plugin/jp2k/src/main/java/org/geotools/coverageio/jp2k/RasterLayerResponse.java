@@ -574,8 +574,7 @@ class RasterLayerResponse {
     private int setReadParams(
             final OverviewPolicy overviewPolicy,
             final ImageReadParam readParams,
-            final RasterLayerRequest request)
-            throws IOException, TransformException {
+            final RasterLayerRequest request) {
 
         // Default image index 0
         int imageChoice = 0;

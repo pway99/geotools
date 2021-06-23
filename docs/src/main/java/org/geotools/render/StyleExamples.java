@@ -154,7 +154,7 @@ public class StyleExamples {
         // styleFactoryExample end
     }
 
-    private void styleBuilderExample() throws Exception {
+    private void styleBuilderExample() {
         // styleBuilderExample start
         //
         // We are using the GeoTools StyleBuilder that is helpful for quickly making things

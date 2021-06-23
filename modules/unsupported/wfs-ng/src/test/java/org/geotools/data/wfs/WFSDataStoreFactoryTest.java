@@ -46,13 +46,13 @@ public class WFSDataStoreFactoryTest {
     private Map<String, Serializable> params;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         dsf = new WFSDataStoreFactory();
         params = new HashMap<>();
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         dsf = null;
         params = null;
     }

@@ -18,7 +18,6 @@ package org.geotools.data.property;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import org.geotools.data.Query;
@@ -115,7 +114,7 @@ public class PropertyDataStore2Test {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         File dir = new File(TARGET_DIR, "propertyTestData");
         File[] list = dir.listFiles();
         for (File item : list) {
@@ -253,7 +252,7 @@ public class PropertyDataStore2Test {
 
     /** Test query with a start index */
     @Test
-    public void testOffset() throws FileNotFoundException, IOException {
+    public void testOffset() throws IOException {
         Query query = new Query(Query.ALL);
         query.setStartIndex(3);
         SimpleFeatureSource features = store.getFeatureSource("road");
@@ -266,7 +265,7 @@ public class PropertyDataStore2Test {
 
     /** Test query with maxFeatures */
     @Test
-    public void testLimit() throws FileNotFoundException, IOException {
+    public void testLimit() throws IOException {
         Query query = new Query(Query.ALL);
         query.setMaxFeatures(3);
         SimpleFeatureSource features = store.getFeatureSource("road");
@@ -279,7 +278,7 @@ public class PropertyDataStore2Test {
 
     /** Test query with maxFeatures and startIndex */
     @Test
-    public void testLimitOffset() throws FileNotFoundException, IOException {
+    public void testLimitOffset() throws IOException {
         Query query = new Query(Query.ALL);
         query.setMaxFeatures(3);
         query.setStartIndex(3);

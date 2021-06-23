@@ -91,7 +91,7 @@ public class TransformFeatureCollectionTest {
         }
 
         @Override
-        public SimpleFeatureCollection getFeatures(Query query) throws IOException {
+        public SimpleFeatureCollection getFeatures(Query query) {
             return new TransformFeatureCollectionWrapper(this, transformer, query);
         }
 
@@ -227,7 +227,7 @@ public class TransformFeatureCollectionTest {
         checkVisitorApplication(transformed, visitors, expectedPass, expectedResult);
     }
 
-    public SimpleFeatureSource transformWithSelection() throws IOException {
+    public SimpleFeatureSource transformWithSelection() {
         List<Definition> definitions = new ArrayList<>();
         definitions.add(new Definition("state_fips"));
         definitions.add(new Definition("male"));
@@ -239,7 +239,7 @@ public class TransformFeatureCollectionTest {
                 (SimpleFeatureStore) SOURCE, new NameImpl(STORE_NAME), definitions, dataStore);
     }
 
-    public SimpleFeatureSource transformWithRename() throws Exception {
+    public SimpleFeatureSource transformWithRename() {
         List<Definition> definitions = new ArrayList<>();
         definitions.add(new Definition("fips", ECQL.toExpression("state_fips")));
         definitions.add(new Definition("num_of_male", ECQL.toExpression("male")));
@@ -251,7 +251,7 @@ public class TransformFeatureCollectionTest {
                 (SimpleFeatureStore) SOURCE, new NameImpl(STORE_NAME), definitions, dataStore);
     }
 
-    public SimpleFeatureSource transformWithExpressions() throws Exception {
+    public SimpleFeatureSource transformWithExpressions() {
         List<Definition> definitions = new ArrayList<>();
         definitions.add(new Definition("fips", ECQL.toExpression("state_fips")));
         definitions.add(new Definition("total", ECQL.toExpression("male + female")));

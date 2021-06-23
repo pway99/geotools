@@ -45,17 +45,17 @@ public class TeradataPrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestS
     }
 
     @Override
-    protected void dropMetadataTable() throws Exception {
+    protected void dropMetadataTable() {
         runSafe("DROP TABLE \"gt_pk_metadata\"");
     }
 
     @Override
-    protected void createSequencedPrimaryKeyTable() throws Exception {
+    protected void createSequencedPrimaryKeyTable() {
         // not supported
     }
 
     @Override
-    protected void dropSequencedPrimaryKeyTable() throws Exception {}
+    protected void dropSequencedPrimaryKeyTable() {}
 
     @Override
     protected void createPlainTable() throws Exception {
@@ -75,7 +75,7 @@ public class TeradataPrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestS
     }
 
     @Override
-    protected void dropPlainTable() throws Exception {
+    protected void dropPlainTable() {
         runSafe("DROP TABLE \"plaintable\"");
         runSafe("delete from SYSSPATIAL.GEOMETRY_COLUMNS where f_table_name='plaintable'");
     }
@@ -90,7 +90,7 @@ public class TeradataPrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestS
     }
 
     @Override
-    protected void dropAssignedSinglePkView() throws Exception {
+    protected void dropAssignedSinglePkView() {
         runSafe("DROP VIEW \"assignedsinglepk\"");
     }
 
@@ -108,7 +108,7 @@ public class TeradataPrimaryKeyFinderTestSetup extends JDBCPrimaryKeyFinderTestS
     }
 
     @Override
-    protected void dropAssignedMultiPkView() throws Exception {
+    protected void dropAssignedMultiPkView() {
         runSafe("DROP VIEW \"assignedmultipk\"");
     }
 }

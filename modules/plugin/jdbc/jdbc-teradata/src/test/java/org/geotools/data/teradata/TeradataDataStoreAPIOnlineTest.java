@@ -33,12 +33,12 @@ public class TeradataDataStoreAPIOnlineTest extends JDBCDataStoreAPIOnlineTest {
     }
 
     @Override
-    public void testGetFeatureWriterConcurrency() throws Exception {
+    public void testGetFeatureWriterConcurrency() {
         // Teradata will lock indefinitely, won't throw an exception
     }
 
     @Override
-    public void testTransactionIsolation() throws Exception {
+    public void testTransactionIsolation() {
         // TODO implement writing
     }
 }

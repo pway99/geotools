@@ -87,7 +87,7 @@ public class KMLDataStore extends ContentDataStore {
         this.namespaceURI = namespaceURI;
     }
 
-    protected java.util.List<Name> createTypeNames() throws IOException {
+    protected java.util.List<Name> createTypeNames() {
         String name = file.getName();
         String typeName = name.substring(0, name.lastIndexOf('.'));
         List<Name> typeNames = new ArrayList<Name>();
@@ -105,7 +105,7 @@ public class KMLDataStore extends ContentDataStore {
     }
 
     @Override
-    protected ContentFeatureSource createFeatureSource(ContentEntry entry) throws IOException {
+    protected ContentFeatureSource createFeatureSource(ContentEntry entry) {
         if (file.canWrite()) {
             return new KMLFeatureSource(entry, Query.ALL);
         } else {

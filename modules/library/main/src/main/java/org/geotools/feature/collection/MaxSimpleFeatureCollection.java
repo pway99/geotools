@@ -16,7 +16,6 @@
  */
 package org.geotools.feature.collection;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -59,7 +58,7 @@ public class MaxSimpleFeatureCollection extends DecoratingSimpleFeatureCollectio
         this.max = max;
     }
 
-    FeatureReader<SimpleFeatureType, SimpleFeature> reader() throws IOException {
+    FeatureReader<SimpleFeatureType, SimpleFeature> reader() {
         return new DelegateFeatureReader<>(getSchema(), features());
     }
 

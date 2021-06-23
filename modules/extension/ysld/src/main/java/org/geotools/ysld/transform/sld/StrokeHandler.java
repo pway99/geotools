@@ -18,7 +18,6 @@
 package org.geotools.ysld.transform.sld;
 
 import java.io.IOException;
-import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 /** Handles xml parse events for {@link org.geotools.styling.Stroke} elements. */
@@ -26,7 +25,7 @@ public class StrokeHandler extends SldTransformHandler {
 
     @Override
     public void element(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+            throws IOException {
         String name = xml.getLocalName();
         if ("CssParameter".equals(name) || "SvgParameter".equals(name)) {
             context.push(new ParameterHandler().rename("stroke", "stroke-color"));
@@ -38,8 +37,7 @@ public class StrokeHandler extends SldTransformHandler {
     }
 
     @Override
-    public void endElement(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+    public void endElement(XMLStreamReader xml, SldTransformContext context) {
         String name = xml.getLocalName();
         if ("Stroke".equals(name)) {
             context.pop();

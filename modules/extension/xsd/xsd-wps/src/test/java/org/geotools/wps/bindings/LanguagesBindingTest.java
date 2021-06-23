@@ -19,7 +19,7 @@ public class LanguagesBindingTest extends WPSTestSupport {
 
     @SuppressWarnings("unchecked")
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         Wps10Factory f = Wps10Factory.eINSTANCE;
         LanguagesType1 languages = f.createLanguagesType1();
 

@@ -25,7 +25,7 @@ import org.junit.Test;
 
 public class SLDRasterSymbolizerBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(RasterSymbolizer.class, new SLDRasterSymbolizerBinding(null).getType());
     }
 

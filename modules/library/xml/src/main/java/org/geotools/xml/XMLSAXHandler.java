@@ -191,7 +191,7 @@ public class XMLSAXHandler extends DefaultHandler {
      * @see org.xml.sax.ContentHandler#characters(char[], int, int)
      */
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         characters.append(ch, start, length);
     }
 

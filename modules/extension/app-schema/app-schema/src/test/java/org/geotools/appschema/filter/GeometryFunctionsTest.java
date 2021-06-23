@@ -51,8 +51,6 @@ import org.opengis.filter.expression.Function;
 import org.opengis.filter.expression.Literal;
 import org.opengis.filter.expression.PropertyName;
 import org.opengis.geometry.DirectPosition;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 /**
@@ -175,7 +173,7 @@ public class GeometryFunctionsTest extends AppSchemaTestSupport {
 
     @Test
     /** Test toPoint function */
-    public void testToPoint() throws NoSuchAuthorityCodeException, FactoryException {
+    public void testToPoint() {
         // 2 points with SRS name and gml:id
         Function function =
                 ff.function(

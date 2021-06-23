@@ -21,8 +21,6 @@
 package com.bedatadriven.jackson.datatype.jts.parsers;
 
 import static com.bedatadriven.jackson.datatype.jts.GeoJson.COORDINATES;
-
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.LineString;
@@ -40,7 +38,7 @@ public class LineStringParser extends BaseParser implements GeometryParser<LineS
     }
 
     @Override
-    public LineString geometryFromJson(JsonNode node) throws JsonMappingException {
+    public LineString geometryFromJson(JsonNode node) {
         return lineStringFromJson(node);
     }
 }

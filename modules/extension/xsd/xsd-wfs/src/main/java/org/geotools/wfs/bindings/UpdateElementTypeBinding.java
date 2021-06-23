@@ -155,7 +155,7 @@ public class UpdateElementTypeBinding extends AbstractComplexEMFBinding {
      */
     @Override
     @SuppressWarnings("unchecked")
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         UpdateElementType updateElement = wfsfactory.createUpdateElementType();
 
         // &lt;xsd:element maxOccurs="unbounded" ref="wfs:Property"&gt;

@@ -53,7 +53,7 @@ import org.opengis.filter.temporal.TOverlaps;
 public class FilterToCQLTest {
 
     @Test
-    public void testSample() throws Exception {
+    public void testSample() {
         Filter filter = CQL.toFilter(FilterCQLSample.LESS_FILTER_SAMPLE);
         FilterToCQL toCQL = new FilterToCQL();
 
@@ -83,7 +83,7 @@ public class FilterToCQLTest {
     }
 
     @Test
-    public void testNotEqualTo() throws Exception {
+    public void testNotEqualTo() {
         String cql = "ATTR1 <> 'foo'";
         Filter filter = CQL.toFilter(cql);
         Assert.assertNotNull(filter);
@@ -232,7 +232,7 @@ public class FilterToCQLTest {
     }
 
     @Test
-    public void testColorLiteral() throws Exception {
+    public void testColorLiteral() {
         FilterFactory ff = CommonFactoryFinder.getFilterFactory();
         PropertyIsEqualTo filter = ff.equal(ff.property("color"), ff.literal(Color.RED), false);
 
@@ -295,7 +295,7 @@ public class FilterToCQLTest {
 
     @Ignore // Parser doesn't implement this
     @Test
-    public void testAttributeContainsQuote() throws Exception {
+    public void testAttributeContainsQuote() {
         String cql = "INTERSECTS(\"the\"\"geom\", POINT (1 2))";
         Filter filter = CQL.toFilter(cql);
         Assert.assertNotNull(filter);
@@ -349,7 +349,7 @@ public class FilterToCQLTest {
         ecqlReparseTest("PropertyExists('name') IN (true, false)");
     }
 
-    protected void cqlTest(String cql) throws Exception {
+    protected void cqlTest(String cql) {
         Filter filter = CQL.toFilter(cql);
         Assert.assertNotNull(filter);
 
@@ -358,7 +358,7 @@ public class FilterToCQLTest {
         Assert.assertEquals(cql, output);
     }
 
-    protected void ecqlReparseTest(String cql) throws Exception {
+    protected void ecqlReparseTest(String cql) {
         Filter filter = ECQL.toFilter(cql);
         Assert.assertNotNull(filter);
         Assert.assertEquals(ECQL.toFilter(ECQL.toCQL(filter)), filter);

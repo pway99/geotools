@@ -94,7 +94,7 @@ public class CSVWriteTest {
     }
 
     @After
-    public void removeTemporaryLocations() throws IOException {
+    public void removeTemporaryLocations() {
         File[] list = tmp.listFiles();
         if (list != null) {
             for (File file : list) {

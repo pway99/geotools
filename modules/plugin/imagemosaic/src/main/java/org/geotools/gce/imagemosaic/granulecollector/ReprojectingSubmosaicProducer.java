@@ -184,8 +184,7 @@ class ReprojectingSubmosaicProducer extends BaseSubmosaicProducer {
         return accepted;
     }
 
-    protected static CoordinateReferenceSystem getCRS(String granuleCRSCode)
-            throws FactoryException {
+    protected static CoordinateReferenceSystem getCRS(String granuleCRSCode) {
         return CRS.decode(granuleCRSCode);
     }
 

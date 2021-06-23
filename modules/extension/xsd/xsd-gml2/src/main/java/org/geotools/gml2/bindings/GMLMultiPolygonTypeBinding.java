@@ -98,12 +98,12 @@ public class GMLMultiPolygonTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return GML2ParsingUtils.GeometryCollectionType_parse(node, MultiPolygon.class, gFactory);
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (GML.polygonMember.equals(name)) {
             return GML2ParsingUtils.asCollection((MultiPolygon) object);
         }

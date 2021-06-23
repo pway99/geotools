@@ -29,7 +29,7 @@ public class GeoJSON {
     static GeometryJSON gjson = new GeometryJSON();
     static FeatureJSON fjson = new FeatureJSON();
 
-    public static Object read(Object input) throws IOException {
+    public static Object read(Object input) {
         throw new UnsupportedOperationException();
     }
 

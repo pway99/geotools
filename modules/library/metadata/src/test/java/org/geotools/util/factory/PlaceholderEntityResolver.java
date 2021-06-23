@@ -16,10 +16,8 @@
  */
 package org.geotools.util.factory;
 
-import java.io.IOException;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 
 /** Placeholder EntityResolver used to test {@link SVGGraphicFactory#defaultResolver()}. */
 public class PlaceholderEntityResolver implements EntityResolver {
@@ -27,8 +25,7 @@ public class PlaceholderEntityResolver implements EntityResolver {
     public PlaceholderEntityResolver() {}
 
     @Override
-    public InputSource resolveEntity(String publicId, String systemId)
-            throws SAXException, IOException {
+    public InputSource resolveEntity(String publicId, String systemId) {
         return null;
     }
 }

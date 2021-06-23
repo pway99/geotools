@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class SLDUserStyleBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(Style.class, new SLDUserStyleBinding(null).getType());
     }
 

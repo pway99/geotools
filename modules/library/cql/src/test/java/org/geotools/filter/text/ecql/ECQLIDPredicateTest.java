@@ -40,7 +40,7 @@ public class ECQLIDPredicateTest {
 
     /** Sample: IN( 'states.1', 'states.2', 'states.3' </pre> */
     @Test
-    public void filterIdWithListOfIdValues() throws Exception {
+    public void filterIdWithListOfIdValues() {
 
         final String strId1 = "states.1";
         final String strId2 = "states.2";
@@ -68,7 +68,7 @@ public class ECQLIDPredicateTest {
      * </pre>
      */
     @Test
-    public void notFilterId() throws Exception {
+    public void notFilterId() {
 
         final String strId1 = "states.1";
         final String strId2 = "states.2";
@@ -97,7 +97,7 @@ public class ECQLIDPredicateTest {
     }
 
     @Test
-    public void idUsingIntegerValues() throws Exception {
+    public void idUsingIntegerValues() {
 
         final String strId1 = "1";
         final String strId2 = "2";
@@ -116,7 +116,7 @@ public class ECQLIDPredicateTest {
     }
 
     @Test
-    public void IdUsingDateValues() throws Exception {
+    public void IdUsingDateValues() {
 
         final String date1 = "2010-01-01";
         final String date2 = "2010-02-02";
@@ -139,7 +139,7 @@ public class ECQLIDPredicateTest {
     }
 
     @Test
-    public void IdUsingTimeStamp() throws Exception {
+    public void IdUsingTimeStamp() {
 
         final String timeStamp1 = "2010-01-01 00:01:01";
         final String timeStamp2 = "2010-02-02 00:01:01";
@@ -177,7 +177,7 @@ public class ECQLIDPredicateTest {
      * </pre>
      */
     @Test
-    public void filterIdSimple() throws Exception {
+    public void filterIdSimple() {
         assertFilterId("15521.3566");
         assertFilterId("fid-_df58120_11814e5d8b3__7ffb");
         assertFilterId("states.1");
@@ -211,7 +211,7 @@ public class ECQLIDPredicateTest {
      * syntax, you should use IN (...) "
      */
     @Test
-    public void deprecatedSyntax() throws Exception {
+    public void deprecatedSyntax() {
 
         Filter filter = ECQL.toFilter("ID IN ('river.1', 'river.2')");
 

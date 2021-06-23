@@ -89,7 +89,7 @@ public class ResultTypeTypeBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         assert value instanceof String;
         String literal = (String) value;
         ResultTypeType resultTypeType = ResultTypeType.get(literal);

@@ -191,7 +191,7 @@ public class ECQLExamples {
         System.out.println("Result of filter evaluation: " + result);
     }
 
-    private static void afterPredicateWithLefHandtExpression() throws Exception {
+    private static void afterPredicateWithLefHandtExpression() {
 
         // afterPredicateWithLefHandtExpression start
         Filter filter = ECQL.toFilter("2006-11-30T01:00:00Z AFTER 2006-11-30T01:30:00Z");
@@ -202,7 +202,7 @@ public class ECQLExamples {
         System.out.println("Result of filter evaluation: " + result);
     }
 
-    private static void beforePredicateWithLefHandtExpression() throws Exception {
+    private static void beforePredicateWithLefHandtExpression() {
 
         // beforePredicateWithLefHandtExpression start
         Filter filter = ECQL.toFilter("2006-11-30T01:00:00Z BEFORE 2006-11-30T01:30:00Z");
@@ -213,7 +213,7 @@ public class ECQLExamples {
         System.out.println("Result of filter evaluation: " + result);
     }
 
-    private static void duringPredicateWithLefHandtExpression() throws Exception {
+    private static void duringPredicateWithLefHandtExpression() {
 
         // duringPredicateWithLefHandtExpression start
         Filter filter =
@@ -226,7 +226,7 @@ public class ECQLExamples {
         System.out.println("Result of filter evaluation: " + result);
     }
 
-    private static void utcTimeZone() throws Exception {
+    private static void utcTimeZone() {
 
         // utcTimeZone start
         Filter filter =
@@ -341,7 +341,7 @@ public class ECQLExamples {
         System.out.println("Result of filter evaluation: " + result);
     }
 
-    private static void betweenUsingExpression() throws Exception {
+    private static void betweenUsingExpression() {
 
         // betweenUsingExpression start
         Filter filter =
@@ -386,7 +386,7 @@ public class ECQLExamples {
     }
 
     /** Matching a literal string */
-    private static void likePredicateInString() throws Exception {
+    private static void likePredicateInString() {
         // ecql likePredicateInString start
         Filter filter = ECQL.toFilter("'aabbcc' LIKE '%bb%'");
         // ecql likePredicateInString end

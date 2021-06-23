@@ -33,8 +33,6 @@ import org.geotools.test.TestData;
 import org.geotools.util.factory.Hints;
 import org.junit.Assert;
 import org.junit.Test;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 
 /**
  * @author Andrea Antonello (www.hydrologis.com)
@@ -92,7 +90,7 @@ public final class AIGTest extends GDALTestCase {
     }
 
     @Test
-    public void testIsAvailable() throws NoSuchAuthorityCodeException, FactoryException {
+    public void testIsAvailable() {
         if (!testingEnabled()) {
             return;
         }

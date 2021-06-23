@@ -146,7 +146,7 @@ class JDBCAccessPostGis extends JDBCAccessBase {
      */
     @Override
     protected Envelope getExtent(ImageLevelInfo li, Connection con)
-            throws SQLException, IOException {
+            throws SQLException {
         String extentSelect = getExtentSelectStatment(li);
 
         String statementString =

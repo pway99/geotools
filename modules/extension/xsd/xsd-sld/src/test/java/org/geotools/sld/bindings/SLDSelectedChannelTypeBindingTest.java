@@ -27,7 +27,7 @@ import org.w3c.dom.Element;
 
 public class SLDSelectedChannelTypeBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(SelectedChannelType.class, new SLDSelectedChannelTypeBinding(null).getType());
     }
 

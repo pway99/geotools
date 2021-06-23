@@ -60,7 +60,7 @@ class TemporalConverterFactoryHack implements ConverterFactory {
                 return new Converter() {
                     @Override
                     @SuppressWarnings("unchecked")
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         if (source instanceof Date) {
                             return (T) df.format((Date) source);
                         }
@@ -82,7 +82,7 @@ class TemporalConverterFactoryHack implements ConverterFactory {
                 return new Converter() {
                     @Override
                     @SuppressWarnings("unchecked")
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         if (source instanceof Calendar) {
                             return (T) df.format(((Calendar) source).getTime());
                         }
@@ -101,7 +101,7 @@ class TemporalConverterFactoryHack implements ConverterFactory {
                 return new Converter() {
                     @Override
                     @SuppressWarnings("unchecked")
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         if (source instanceof XMLGregorianCalendar) {
                             return (T)
                                     df.format(

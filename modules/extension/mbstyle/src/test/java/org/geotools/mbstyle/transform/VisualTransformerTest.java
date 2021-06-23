@@ -24,7 +24,6 @@ import java.awt.Font;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
 import org.geotools.TestData;
 import org.geotools.data.property.PropertyDataStore;
@@ -879,7 +878,7 @@ public class VisualTransformerTest {
         return style;
     }
 
-    File file(String name) throws IOException {
+    File file(String name) {
         // The first time you run a new test, the reference image must be generated. To do so, run
         // the test with
         // -Dorg.geotools.image.test.interactive=true</code>

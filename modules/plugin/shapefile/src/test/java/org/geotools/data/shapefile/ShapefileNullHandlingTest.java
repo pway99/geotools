@@ -26,7 +26,7 @@ public class ShapefileNullHandlingTest extends TestCaseSupport {
     private SimpleFeature[] features;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         SimpleFeatureTypeBuilder tb = new SimpleFeatureTypeBuilder();
         tb.add("geom", Point.class, 4326);
         tb.add("name", String.class);

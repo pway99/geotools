@@ -94,7 +94,7 @@ public class ArcGISRestFeatureSource extends ContentFeatureSource {
     protected DefaultResourceInfo resInfo;
     protected String objectIdField;
 
-    public ArcGISRestFeatureSource(ContentEntry entry, Query query) throws IOException {
+    public ArcGISRestFeatureSource(ContentEntry entry, Query query) {
 
         super(entry, query);
         this.dataStore = (ArcGISRestDataStore) entry.getDataStore();
@@ -234,7 +234,7 @@ public class ArcGISRestFeatureSource extends ContentFeatureSource {
 
     // TODO: it shuold return the bounds of the query, if not null
     @Override
-    protected ReferencedEnvelope getBoundsInternal(Query arg0) throws IOException {
+    protected ReferencedEnvelope getBoundsInternal(Query arg0) {
         return this.getInfo().getBounds();
     }
 

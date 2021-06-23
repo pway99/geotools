@@ -327,7 +327,7 @@ public class GridCoverageReaderHelperTest {
 
                     @Override
                     public GridCoverage2D read(GeneralParameterValue[] parameters)
-                            throws IllegalArgumentException, IOException {
+                            throws IllegalArgumentException {
                         // return fake coveage
                         return coverage;
                     }

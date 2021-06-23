@@ -334,7 +334,7 @@ public class ManyAuthoritiesFactory extends AuthorityFactoryAdapter
      * @throws FactoryException if a failure occured while fetching the engine description.
      */
     @Override
-    public String getBackingStoreDescription() throws FactoryException {
+    public String getBackingStoreDescription() {
         // We have no authority code, so we can't pick a particular factory.
         return null;
     }
@@ -420,8 +420,7 @@ public class ManyAuthoritiesFactory extends AuthorityFactoryAdapter
      * @throws NoSuchAuthorityCodeException if no suitable factory were found.
      */
     @Override
-    final <T extends AuthorityFactory> T getAuthorityFactory(final Class<T> type, final String code)
-            throws NoSuchAuthorityCodeException {
+    final <T extends AuthorityFactory> T getAuthorityFactory(final Class<T> type, final String code) {
         ensureNonNull("code", code);
         String authority = null;
         FactoryRegistryException cause = null;
@@ -777,8 +776,7 @@ public class ManyAuthoritiesFactory extends AuthorityFactoryAdapter
      * implementation delegates the lookups to the underlying factories.
      */
     @Override
-    public IdentifiedObjectFinder getIdentifiedObjectFinder(Class<? extends IdentifiedObject> type)
-            throws FactoryException {
+    public IdentifiedObjectFinder getIdentifiedObjectFinder(Class<? extends IdentifiedObject> type) {
         return new Finder(this, type);
     }
 

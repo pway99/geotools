@@ -65,7 +65,7 @@ public class GeometryTypeConverterTest {
     }
 
     @After
-    public void tearDown() throws Exception {}
+    public void tearDown() {}
 
     @Test
     public void testData() throws Exception {
@@ -87,7 +87,7 @@ public class GeometryTypeConverterTest {
         }
     }
 
-    private Geometry convert(Geometry source, Class<?> target) throws Exception {
+    private Geometry convert(Geometry source, Class<?> target) {
         Converter converter = getConverter(source, target);
         Object dest = converter.convert(source, target);
         Assert.assertNotNull("Cannot convert " + source.toText() + " to " + target.getName(), dest);

@@ -73,7 +73,7 @@ public class OracleJoinTestSetup extends JDBCJoinTestSetup {
     }
 
     @Override
-    protected void dropJoinTable() throws Exception {
+    protected void dropJoinTable() {
         runSafe("DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME = 'FTJOIN'");
         runSafe("DROP TABLE ftjoin purge");
         runSafe("DROP TABLE ftjoin2 purge");

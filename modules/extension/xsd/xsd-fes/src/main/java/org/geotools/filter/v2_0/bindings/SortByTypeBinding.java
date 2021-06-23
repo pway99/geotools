@@ -64,7 +64,7 @@ public class SortByTypeBinding extends org.geotools.filter.v1_1.SortByTypeBindin
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if ("SortProperty".equals(name.getLocalPart())) {
             UniqueEList sortBy = (UniqueEList) object;
 

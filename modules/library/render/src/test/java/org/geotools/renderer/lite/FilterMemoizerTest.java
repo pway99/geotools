@@ -34,7 +34,7 @@ public class FilterMemoizerTest extends DataTestCase {
     static FilterFactory2 FF = CommonFactoryFinder.getFilterFactory2();
 
     @Test
-    public void testMemoizeFilter() throws Exception {
+    public void testMemoizeFilter() {
         SimpleFeature rf0 = Mockito.spy(roadFeatures[0]);
         SimpleFeature rf1 = Mockito.spy(roadFeatures[1]);
 
@@ -56,7 +56,7 @@ public class FilterMemoizerTest extends DataTestCase {
     }
 
     @Test
-    public void testVolatileFunction() throws Exception {
+    public void testVolatileFunction() {
         Function random = FF.function("random");
         Function spy = Mockito.spy(random);
 

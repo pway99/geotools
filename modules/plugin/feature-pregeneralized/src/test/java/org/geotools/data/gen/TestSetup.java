@@ -252,7 +252,7 @@ public class TestSetup {
     }
 
     private static void addGeneralizedFeatureVertical(
-            SimpleFeature feature, MemoryDataStore memDS, double distance) throws IOException {
+            SimpleFeature feature, MemoryDataStore memDS, double distance) {
         Geometry geomNew =
                 TopologyPreservingSimplifier.simplify(
                         (Geometry) feature.getDefaultGeometry(), distance);

@@ -34,7 +34,6 @@ import static org.geotools.measure.Units.SEXAGESIMAL_DMS;
 import java.awt.RenderingHints;
 import java.io.File;
 import java.io.IOException;
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -463,8 +462,7 @@ public abstract class AbstractEpsgFactory extends AbstractCachedAuthorityFactory
      * @throws FactoryException if access to the underlying database failed.
      */
     @Override
-    protected synchronized Set<String> generateAuthorityCodes(final Class type)
-            throws FactoryException {
+    protected synchronized Set<String> generateAuthorityCodes(final Class type) {
         Set<String> result = new HashSet<>();
         for (final TableInfo table : TABLES_INFO) {
             if (table.isTypeOf(type)) {
@@ -2899,7 +2897,7 @@ public abstract class AbstractEpsgFactory extends AbstractCachedAuthorityFactory
      * @return {@code true} if the code is probably a primary key.
      * @throws FactoryException if an unexpected error occured while inspecting the code.
      */
-    protected boolean isPrimaryKey(final String code) throws FactoryException {
+    protected boolean isPrimaryKey(final String code) {
         final int length = code.length();
         for (int i = 0; i < length; i++) {
             final char c = code.charAt(i);
@@ -3009,7 +3007,7 @@ public abstract class AbstractEpsgFactory extends AbstractCachedAuthorityFactory
      *     second time with {@code active} set to {@code false}.
      * @throws SQLException if this method failed to shutdown the database engine.
      */
-    protected void shutdown(final boolean active) throws SQLException {}
+    protected void shutdown(final boolean active) {}
 
     /**
      * Invokes {@link #dispose} when this factory is garbage collected.
@@ -3461,7 +3459,7 @@ public abstract class AbstractEpsgFactory extends AbstractCachedAuthorityFactory
          * serialization. The serialised set of authority code is disconnected from the underlying
          * database.
          */
-        protected LinkedHashSet<String> writeReplace() throws ObjectStreamException {
+        protected LinkedHashSet<String> writeReplace() {
             return new LinkedHashSet<>(this);
         }
 

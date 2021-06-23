@@ -248,7 +248,7 @@ public class SolrFeatureReader implements FeatureReader<SimpleFeatureType, Simpl
     }
 
     @Override
-    public void close() throws IOException {
+    public void close() {
         // nothing to do
     }
 }

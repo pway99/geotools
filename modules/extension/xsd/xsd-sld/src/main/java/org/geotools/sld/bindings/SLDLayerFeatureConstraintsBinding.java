@@ -106,7 +106,7 @@ public class SLDLayerFeatureConstraintsBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         @SuppressWarnings("unchecked")
         List<FeatureTypeConstraint> ftc = node.getChildValues("FeatureTypeConstraint");
 

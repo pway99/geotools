@@ -30,7 +30,7 @@ public class VPFTest extends OnlineTestCase {
     File vmap = null;
 
     @Override
-    protected boolean isOnline() throws Exception {
+    protected boolean isOnline() {
         File file = new File(fixture.getProperty("vmap"));
 
         return file.exists();

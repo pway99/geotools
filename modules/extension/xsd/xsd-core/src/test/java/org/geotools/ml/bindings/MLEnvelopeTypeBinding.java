@@ -69,7 +69,7 @@ public class MLEnvelopeTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         String from = (String) node.getChildValue("From");
         String to = (String) node.getChildValue("To");
         Calendar date = (Calendar) node.getChildValue("Data");
@@ -90,7 +90,7 @@ public class MLEnvelopeTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         Envelope e = (Envelope) object;
 
         if ("From".equals(name.getLocalPart())) {

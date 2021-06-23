@@ -56,7 +56,7 @@ public class SimpleContentComplexEMFBinding extends ComplexEMFBinding {
 
     /** Calls getValue() and appends the result as child text of <tt>value</tt>. */
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         EObject eobject = (EObject) object;
         if (EMFUtils.has(eobject, "value")) {
             Object v = EMFUtils.get(((EObject) object), "value");

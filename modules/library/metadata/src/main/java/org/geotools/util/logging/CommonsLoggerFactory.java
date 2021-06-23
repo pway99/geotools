@@ -37,7 +37,7 @@ public class CommonsLoggerFactory extends LoggerFactory<Log> {
      *
      * @throws NoClassDefFoundError if Apache's {@code Log} class was not found on the classpath.
      */
-    protected CommonsLoggerFactory() throws NoClassDefFoundError {
+    protected CommonsLoggerFactory() {
         super(Log.class);
     }
 

@@ -16,7 +16,6 @@
  */
 package org.geotools.data.mongodb;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
@@ -44,14 +43,13 @@ public class MockHTTPClient implements HTTPClient {
     }
 
     @Override
-    public HTTPResponse post(URL url, InputStream postContent, String postContentType)
-            throws IOException {
+    public HTTPResponse post(URL url, InputStream postContent, String postContentType) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public HTTPResponse get(URL url) throws IOException {
+    public HTTPResponse get(URL url) {
         return expectGet.get(url.toExternalForm());
     }
 

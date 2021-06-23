@@ -210,7 +210,7 @@ class DDLGenerator extends AbstractCmd {
         if (logger.isLoggable(Level.INFO)) logger.info(fn + " generated");
     }
 
-    void writeFillMeta(PrintWriter w) throws IOException {
+    void writeFillMeta(PrintWriter w) {
 
         String statmentString =
                 "INSERT INTO "
@@ -232,7 +232,7 @@ class DDLGenerator extends AbstractCmd {
         }
     }
 
-    void writeDeleteMeta(PrintWriter w) throws IOException {
+    void writeDeleteMeta(PrintWriter w) {
 
         String statmentString =
                 "DELETE FROM "
@@ -294,7 +294,7 @@ class DDLGenerator extends AbstractCmd {
         if (logger.isLoggable(Level.INFO)) logger.info(FN_DROPMETA + " generated");
     }
 
-    void writeDropTables(PrintWriter w) throws IOException {
+    void writeDropTables(PrintWriter w) {
 
         for (int i = 0; i <= pyramids; i++) {
             w.print(dbDialect.getDropTableStatement(getTableName(spatialTNPrefix, i)));
@@ -311,7 +311,7 @@ class DDLGenerator extends AbstractCmd {
         }
     }
 
-    void writeDropIndexes(PrintWriter w) throws IOException {
+    void writeDropIndexes(PrintWriter w) {
 
         for (int i = 0; i <= pyramids; i++) {
             w.print(dbDialect.getDropIndexStatment(getTableName(spatialTNPrefix, i)));
@@ -331,7 +331,7 @@ class DDLGenerator extends AbstractCmd {
         return false;
     }
 
-    void writeRegister(PrintWriter w) throws IOException {
+    void writeRegister(PrintWriter w) {
         if (needsSpatialRegistry(config) == false) {
             return;
         }
@@ -342,7 +342,7 @@ class DDLGenerator extends AbstractCmd {
         }
     }
 
-    void writeUnRegister(PrintWriter w) throws IOException {
+    void writeUnRegister(PrintWriter w) {
         if (needsSpatialRegistry(config) == false) {
             return;
         }

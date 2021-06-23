@@ -73,31 +73,31 @@ public class ShpFileTypesTest {
     }
 
     @Test
-    public void testNoExtension() throws Exception {
+    public void testNoExtension() {
         File noExtension = new File("name.");
         assertNull(ShpFileType.DBF.toBase(noExtension));
     }
 
     @Test
-    public void testNoBaseName() throws Exception {
+    public void testNoBaseName() {
         File noBase = new File(".dbf");
         assertNull(ShpFileType.DBF.toBase(noBase));
     }
 
     @Test
-    public void testNoBaseNameMixedCase() throws Exception {
+    public void testNoBaseNameMixedCase() {
         File noBase = new File(".dbF");
         assertNull(ShpFileType.DBF.toBase(noBase));
     }
 
     @Test
-    public void testUppercase() throws Exception {
+    public void testUppercase() {
         File file = new File("BLOOB.DBF");
         assertEquals("BLOOB", ShpFileType.DBF.toBase(file));
     }
 
     @Test
-    public void testMixedcase() throws Exception {
+    public void testMixedcase() {
         File file = new File("Beebop.dBf");
         assertEquals("Beebop", ShpFileType.DBF.toBase(file));
     }

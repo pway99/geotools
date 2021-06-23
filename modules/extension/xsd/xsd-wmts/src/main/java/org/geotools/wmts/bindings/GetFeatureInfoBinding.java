@@ -105,7 +105,7 @@ public class GetFeatureInfoBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         GetFeatureInfoType fti = factory.createGetFeatureInfoType();
         fti.setService((String) node.getChildValue("service"));
         fti.setVersion((String) node.getChildValue("version"));

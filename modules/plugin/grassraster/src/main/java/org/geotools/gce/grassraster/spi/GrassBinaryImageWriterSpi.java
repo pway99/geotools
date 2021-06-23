@@ -17,7 +17,6 @@
 package org.geotools.gce.grassraster.spi;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Locale;
 import javax.imageio.ImageTypeSpecifier;
 import javax.imageio.ImageWriter;
@@ -104,7 +103,7 @@ public class GrassBinaryImageWriterSpi extends ImageWriterSpi {
     }
 
     @Override
-    public ImageWriter createWriterInstance(Object extension) throws IOException {
+    public ImageWriter createWriterInstance(Object extension) {
         return new GrassBinaryImageWriter(this, null);
     }
 

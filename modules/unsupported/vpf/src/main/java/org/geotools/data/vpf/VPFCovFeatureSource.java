@@ -47,7 +47,7 @@ public class VPFCovFeatureSource extends VPFFeatureSource {
     }
 
     @Override
-    protected int getCountInternal(Query query) throws IOException {
+    protected int getCountInternal(Query query) {
         return -1; // feature by feature scan required to count records
     }
 
@@ -82,7 +82,7 @@ public class VPFCovFeatureSource extends VPFFeatureSource {
     }
 
     @Override
-    protected SimpleFeatureType buildFeatureType() throws IOException {
+    protected SimpleFeatureType buildFeatureType() {
         return this.featureType;
     }
 }

@@ -41,7 +41,7 @@ public interface FootprintGeometryProvider {
      * @param feature the granule representative feature (if any)
      * @return A list of files defining the masks for this granule (might be more than one)
      */
-    default List<File> getSidecars(SimpleFeature feature) throws IOException {
+    default List<File> getSidecars(SimpleFeature feature) {
         return Collections.emptyList();
     }
 

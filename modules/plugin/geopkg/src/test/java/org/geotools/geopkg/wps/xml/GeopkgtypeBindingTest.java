@@ -41,7 +41,7 @@ public class GeopkgtypeBindingTest extends GPKGTestSupport {
     }
 
     @Test
-    public void testParse() throws Exception {
+    public void testParse() {
         buildDocument(
                 "<geopackage name='mygeopackage' path='file://test' remove='true'>"
                         + "<features name=\"features1\" identifier=\"f1\">"

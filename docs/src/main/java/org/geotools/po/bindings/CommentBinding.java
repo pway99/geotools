@@ -45,7 +45,7 @@ public class CommentBinding extends AbstractSimpleBinding {
      *
      * @generated modifiable
      */
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         String comment = (String) value;
         return comment;
     }

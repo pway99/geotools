@@ -75,7 +75,7 @@ public class SpatialIndexFeatureCollection implements SimpleFeatureCollection {
         this.schema = schema;
     }
 
-    public SpatialIndexFeatureCollection(SimpleFeatureCollection copy) throws IOException {
+    public SpatialIndexFeatureCollection(SimpleFeatureCollection copy) {
         this(copy.getSchema());
 
         addAll(copy);

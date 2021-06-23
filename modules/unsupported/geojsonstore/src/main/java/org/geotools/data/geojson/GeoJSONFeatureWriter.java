@@ -124,7 +124,7 @@ public class GeoJSONFeatureWriter
     }
 
     @Override
-    public void remove() throws IOException {
+    public void remove() {
         this.currentFeature = null;
     }
 

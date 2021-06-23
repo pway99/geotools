@@ -32,7 +32,7 @@ public class OptDirectedLineGraphGeneratorTest {
     private OptDirectedLineGraphGenerator m_gen;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         m_gen = createGenerator();
     }

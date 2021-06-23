@@ -44,7 +44,7 @@ public class JDBCInsertFeatureWriter extends JDBCFeatureReader
 
     public JDBCInsertFeatureWriter(
             String sql, Connection cx, JDBCFeatureSource featureSource, Query query)
-            throws SQLException, IOException {
+            throws SQLException {
         super(sql, cx, featureSource, featureSource.getSchema(), query);
         md = rs.getMetaData();
         buffer = new ResultSetFeature[dataStore.getBatchInsertSize()];
@@ -52,13 +52,13 @@ public class JDBCInsertFeatureWriter extends JDBCFeatureReader
 
     public JDBCInsertFeatureWriter(
             PreparedStatement ps, Connection cx, JDBCFeatureSource featureSource, Query query)
-            throws SQLException, IOException {
+            throws SQLException {
         super(ps, cx, featureSource, featureSource.getSchema(), query);
         md = rs.getMetaData();
         buffer = new ResultSetFeature[dataStore.getBatchInsertSize()];
     }
 
-    public JDBCInsertFeatureWriter(JDBCUpdateFeatureWriter other) throws IOException {
+    public JDBCInsertFeatureWriter(JDBCUpdateFeatureWriter other) {
         super(other);
         buffer = new ResultSetFeature[dataStore.getBatchInsertSize()];
     }
@@ -77,7 +77,7 @@ public class JDBCInsertFeatureWriter extends JDBCFeatureReader
     }
 
     @Override
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() {
         return false;
     }
 
@@ -91,7 +91,7 @@ public class JDBCInsertFeatureWriter extends JDBCFeatureReader
     }
 
     @Override
-    public void remove() throws IOException {
+    public void remove() {
         // noop
     }
 

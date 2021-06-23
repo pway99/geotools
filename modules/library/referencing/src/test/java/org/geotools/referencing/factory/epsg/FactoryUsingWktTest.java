@@ -64,7 +64,7 @@ public final class FactoryUsingWktTest {
      * @throws Exception If a factory or a transform exception occured.
      */
     @Test
-    public void testCrsAuthorityExtraDirectoryHint() throws Exception {
+    public void testCrsAuthorityExtraDirectoryHint() {
         Hints hints = new Hints(Hints.CRS_AUTHORITY_FACTORY, FactoryUsingWKT.class);
         try {
             hints.put(Hints.CRS_AUTHORITY_EXTRA_DIRECTORY, "invalid");

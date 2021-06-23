@@ -31,7 +31,7 @@ public class BasicNodeTest {
     private Edge m_loop;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         m_node = new BasicNode();
         m_otherNode = new BasicNode();
 

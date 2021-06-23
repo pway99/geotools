@@ -16,7 +16,6 @@
  */
 package org.geotools.gce.imagemosaic.catalog.sqlserver;
 
-import java.io.IOException;
 import java.util.List;
 import org.geotools.data.DataAccess;
 import org.geotools.data.DataStore;
@@ -37,8 +36,7 @@ public class SQLServerTransformFeatureStore extends TransformFeatureStore {
     DataStore datastore;
 
     public SQLServerTransformFeatureStore(
-            SimpleFeatureStore store, Name name, List<Definition> definitions, DataStore datastore)
-            throws IOException {
+            SimpleFeatureStore store, Name name, List<Definition> definitions, DataStore datastore) {
         super(store, name, definitions);
         this.datastore = datastore;
     }

@@ -96,7 +96,7 @@ public class OGCBinaryComparisonOpTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // implemented by comcreate elements;
         return null;
 
@@ -142,7 +142,7 @@ public class OGCBinaryComparisonOpTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (OGC.expression.equals(name)) {
             BinaryComparisonOperator op = (BinaryComparisonOperator) object;
 

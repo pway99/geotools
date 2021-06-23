@@ -29,7 +29,7 @@ public class OracleNoPrimaryKeyTestSetup extends JDBCNoPrimaryKeyTestSetup {
     }
 
     @Override
-    protected void dropLakeTable() throws Exception {
+    protected void dropLakeTable() {
         runSafe("DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME = 'LAKE'");
         runSafe("DROP TABLE lake PURGE");
     }

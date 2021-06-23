@@ -21,7 +21,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import org.geotools.factory.CommonFactoryFinder;
-import org.geotools.feature.SchemaException;
 import org.geotools.filter.function.EnvFunction;
 import org.junit.Assert;
 import org.junit.Before;
@@ -59,7 +58,7 @@ public class FilterAttributeExtractorTest {
      * @throws SchemaException If there is a problem setting up the schema.
      */
     @Before
-    public void setUp() throws SchemaException {
+    public void setUp() {
         if (set) {
             return;
         }
@@ -201,7 +200,7 @@ public class FilterAttributeExtractorTest {
     }
 
     @Test
-    public void testDistanceGeometry() throws Exception {
+    public void testDistanceGeometry() {
         Coordinate[] coords2 = new Coordinate[5];
         coords2[0] = new Coordinate(10, 10);
         coords2[1] = new Coordinate(15, 10);
@@ -246,7 +245,7 @@ public class FilterAttributeExtractorTest {
     }
 
     @Test
-    public void testDynamicProperty() throws Exception {
+    public void testDynamicProperty() {
         Function func = fac.function("property", fac.function("env", fac.literal("pname")));
         PropertyIsEqualTo filter = fac.equals(func, fac.literal("test"));
         try {

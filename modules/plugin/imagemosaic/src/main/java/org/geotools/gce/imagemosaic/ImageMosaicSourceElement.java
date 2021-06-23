@@ -211,7 +211,7 @@ abstract class ImageMosaicSourceElement<T> {
         }
 
         @Override
-        String getLocation(CatalogBuilderConfiguration config) throws IOException {
+        String getLocation(CatalogBuilderConfiguration config) {
             return url.toString();
         }
 

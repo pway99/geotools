@@ -44,7 +44,6 @@ import org.geotools.image.util.ComponentColorModelJAI;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.opengis.referencing.operation.TransformException;
 
 /** @author Simone Giannecchini, GeoSolutions */
 public class TestLinearClassifier extends Assert {
@@ -64,7 +63,7 @@ public class TestLinearClassifier extends Assert {
 
     /** Synthetic with Double Sample Model! */
     @Test
-    public void Synthetic_Double() throws IOException {
+    public void Synthetic_Double() {
 
         // /////////////////////////////////////////////////////////////////////
         //
@@ -182,7 +181,7 @@ public class TestLinearClassifier extends Assert {
      * @return {@linkplain BufferedImage}
      */
     @Test
-    public void Synthetic_Float() throws IOException {
+    public void Synthetic_Float() {
 
         // /////////////////////////////////////////////////////////////////////
         //
@@ -574,7 +573,7 @@ public class TestLinearClassifier extends Assert {
 
     /** NoData only test-case. */
     @Test
-    public void noDataOnly() throws IOException, TransformException, TransformationException {
+    public void noDataOnly() throws TransformationException {
 
         // /////////////////////////////////////////////////////////////////////
         //

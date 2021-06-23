@@ -167,7 +167,7 @@ public class DateConversionTimezoneTest {
         return sut2.encode(date, null);
     }
 
-    private String sut3Convert(Date date) throws Exception {
+    private String sut3Convert(Date date) {
         return sut3.encode(date, null);
     }
 }

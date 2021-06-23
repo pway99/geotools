@@ -148,7 +148,7 @@ public class TWKBReader {
     }
 
     private MultiLineString readMultiLineString(TWKBMetadata metadata)
-            throws IOException, ParseException {
+            throws IOException {
         if (!metadata.isEmpty()) {
             int numGeom = dis.readUnsignedInt();
             LineString[] geoms = new LineString[numGeom];
@@ -162,7 +162,7 @@ public class TWKBReader {
     }
 
     private MultiPolygon readMultiPolygon(TWKBMetadata metadata)
-            throws IOException, ParseException {
+            throws IOException {
         if (!metadata.isEmpty()) {
             int numGeom = dis.readUnsignedInt();
             Polygon[] geoms = new Polygon[numGeom];

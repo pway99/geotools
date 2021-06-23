@@ -109,8 +109,7 @@ public class Mollweide extends MapProjection {
      * radians) and stores the result in {@code ptDst} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D transformNormalized(double lam, double phi, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double lam, double phi, Point2D ptDst) {
 
         double k = C_p * sin(phi);
         int i = MAX_ITER;
@@ -137,8 +136,7 @@ public class Mollweide extends MapProjection {
      * {@code ptDst}.
      */
     @Override
-    protected Point2D inverseTransformNormalized(double x, double y, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D inverseTransformNormalized(double x, double y, Point2D ptDst) {
 
         double phi = aasin(y / C_y);
         double lam = x / (C_x * cos(phi));

@@ -50,7 +50,7 @@ public class CQLExtensionTest {
 
     /** An INCLUDE token is parsed as {@link Filter#INCLUDE} */
     @Test
-    public void testIncludeFilter() throws Exception {
+    public void testIncludeFilter() {
         Filter filter = CQL.toFilter("INCLUDE");
         Assert.assertNotNull(filter);
         Assert.assertEquals(Filter.INCLUDE, filter);
@@ -66,7 +66,7 @@ public class CQLExtensionTest {
 
     /** An EXCLUDE token is parsed as {@link Filter#EXCLUDE} */
     @Test
-    public void testExcludeFilter() throws Exception {
+    public void testExcludeFilter() {
         Filter filter = CQL.toFilter("EXCLUDE");
         Assert.assertNotNull(filter);
         Assert.assertEquals(Filter.EXCLUDE, filter);
@@ -95,7 +95,7 @@ public class CQLExtensionTest {
      * <p>
      */
     @Test
-    public void testSequenceOfSearchConditionsWithOneFilter() throws Exception {
+    public void testSequenceOfSearchConditionsWithOneFilter() {
         String valueWithDelimiter = "text" + DELIMITER + "with" + DELIMITER + "delimiter";
         final String singleFilterStr = "attr3 = '" + valueWithDelimiter + "'";
         List<Filter> filters = CQL.toFilterList(singleFilterStr);
@@ -124,7 +124,7 @@ public class CQLExtensionTest {
      * <p>Sample: attr1 > 5;attr2 between 1 and 7;attr3
      */
     @Test
-    public void testSequenceOfSearchConditionsWithManyFilters() throws Exception {
+    public void testSequenceOfSearchConditionsWithManyFilters() {
         String valueWithDelimiter = "text" + DELIMITER + "with" + DELIMITER + "delimiter";
 
         // "attr1 > 5; attr2 between 1 and 7; attr3 = 'text;with;delimiter
@@ -160,7 +160,7 @@ public class CQLExtensionTest {
 
     /** An empty filter int the constraints list shall be parsed as {@link Filter#INCLUDE} */
     @Test
-    public void testParseFilterListWithEmptyFilter() throws Exception {
+    public void testParseFilterListWithEmptyFilter() {
         String valueWithDelimiter = "text" + DELIMITER + "with" + DELIMITER + "delimiter";
 
         // "attr1 > 5;INCLUDE;attr3 = 'text;with;delimiter'"
@@ -203,7 +203,7 @@ public class CQLExtensionTest {
     }
     /** Tests null factory as parameter. */
     @Test
-    public void testNullFilterFactory() throws Exception {
+    public void testNullFilterFactory() {
 
         CQL.toFilter("attName > 20", null);
 
@@ -216,7 +216,7 @@ public class CQLExtensionTest {
      * <p>Note: this solves the bug GEOT-1167
      */
     @Test
-    public void testFuncitionExpression() throws Exception {
+    public void testFuncitionExpression() {
 
         final String cqlExpression = "strConcat(A, B)";
 
@@ -281,7 +281,7 @@ public class CQLExtensionTest {
      * </pre>
      */
     @Test
-    public void testFunctionComposition() throws Exception {
+    public void testFunctionComposition() {
 
         // Test 1
         String cqlExpression = "strConcat(A, abs(B))";
@@ -323,7 +323,7 @@ public class CQLExtensionTest {
 
     /** complex case Created to analyze http://jira.codehaus.org/browse/GEOT-1655 */
     @Test
-    public void testFunctionCompositionComplexCase() throws Exception {
+    public void testFunctionCompositionComplexCase() {
 
         Expression result =
                 CQL.toExpression(
@@ -333,7 +333,7 @@ public class CQLExtensionTest {
     }
 
     @Test
-    public void testFunctionCompositionComplexCaseInFilter() throws Exception {
+    public void testFunctionCompositionComplexCaseInFilter() {
 
         final String propName = "A";
         Filter result =
@@ -402,7 +402,7 @@ public class CQLExtensionTest {
      * </pre>
      */
     @Test
-    public void testUnaryExpressionFunction() throws Exception {
+    public void testUnaryExpressionFunction() {
 
         String cqlUnaryExp = FilterCQLSample.FILTER_WITH_FUNCTION_ABS;
         Filter result = CQL.toFilter(cqlUnaryExp);

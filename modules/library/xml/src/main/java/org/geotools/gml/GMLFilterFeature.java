@@ -225,7 +225,7 @@ public class GMLFilterFeature extends XMLFilterImpl implements GMLHandlerJTS {
      * @throws SAXException Some parsing error occurred while reading coordinates.
      */
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         characters.append(ch, start, length);
     }
 

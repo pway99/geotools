@@ -126,7 +126,7 @@ public class CachedQuadTree {
             }
 
             @Override
-            public void close() throws IOException {
+            public void close() {
                 indices.clear();
             }
         };

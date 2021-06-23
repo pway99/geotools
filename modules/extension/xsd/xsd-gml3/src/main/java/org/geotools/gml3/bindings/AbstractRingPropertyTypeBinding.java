@@ -71,12 +71,12 @@ public class AbstractRingPropertyTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return node.getChildValue(LinearRing.class);
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         // GML3  -> _Ring
         // GML32 -> AbstractRing
         if ("_Ring".equals(name.getLocalPart()) || "AbstractRing".equals(name.getLocalPart())) {

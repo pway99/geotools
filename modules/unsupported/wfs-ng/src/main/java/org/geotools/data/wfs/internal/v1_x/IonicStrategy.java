@@ -67,7 +67,7 @@ public class IonicStrategy extends StrictWFS_1_x_Strategy {
          * Ionic understands
          */
         @Override
-        public Object getProperty(Object object, QName name) throws Exception {
+        public Object getProperty(Object object, QName name) {
             Envelope e = (Envelope) object;
             if (GML.coordinates.equals(name)) {
                 double[] seq = {e.getMinX(), e.getMinY(), e.getMaxX(), e.getMaxY()};

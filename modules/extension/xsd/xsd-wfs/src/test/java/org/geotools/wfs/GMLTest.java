@@ -25,7 +25,6 @@ import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
@@ -226,7 +225,7 @@ public class GMLTest {
 
     // WFS 1.1
     @Test
-    public void testGML3ParseSimpleFeatureType() throws IOException {
+    public void testGML3ParseSimpleFeatureType() {
         URL schemaLocation = TestData.getResource(this, "states.xsd");
 
         GML gml = new GML(Version.WFS1_1);
@@ -248,7 +247,7 @@ public class GMLTest {
     }
 
     @Test
-    public void testGML2ParseSimpleFeatureType() throws IOException {
+    public void testGML2ParseSimpleFeatureType() {
         URL schemaLocation = TestData.getResource(this, "states_gml2.xsd");
 
         GML gml = new GML(Version.WFS1_0);

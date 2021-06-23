@@ -41,7 +41,6 @@ import org.locationtech.jts.geom.Point;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 public class AxisOrderTest {
@@ -96,7 +95,7 @@ public class AxisOrderTest {
     }
 
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
 
     @AfterClass
     public static void tearClassDown() {
@@ -136,7 +135,7 @@ public class AxisOrderTest {
     }
 
     @Test
-    public void test31287() throws IOException, NoSuchAuthorityCodeException, FactoryException {
+    public void test31287() throws IOException {
 
         File file2 = new File(directory, "out31287.geojson");
 

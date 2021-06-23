@@ -185,7 +185,7 @@ public abstract class SQLDialect {
      *
      * @param cx The new database connection.
      */
-    public void initializeConnection(Connection cx) throws SQLException {}
+    public void initializeConnection(Connection cx) {}
 
     /**
      * Determines if the specified table should be included in those published
@@ -205,8 +205,7 @@ public abstract class SQLDialect {
      * @param cx Database connection.
      *
      */
-    public boolean includeTable(String schemaName, String tableName, Connection cx)
-            throws SQLException {
+    public boolean includeTable(String schemaName, String tableName, Connection cx) {
         return true;
     }
 
@@ -240,7 +239,7 @@ public abstract class SQLDialect {
      * @param cx The connection used to retrieve the metadata
      * @return The class mapped to the to column, or <code>null</code>.
      */
-    public Class<?> getMapping(ResultSet columnMetaData, Connection cx) throws SQLException {
+    public Class<?> getMapping(ResultSet columnMetaData, Connection cx) {
         return null;
     }
 
@@ -251,7 +250,7 @@ public abstract class SQLDialect {
      * @param cx The connection used to retrieve the metadata
      * @return The restriction, or null if no restriction applies
      */
-    public Filter getRestrictions(ResultSet columnMetaData, Connection cx) throws SQLException {
+    public Filter getRestrictions(ResultSet columnMetaData, Connection cx) {
         return null;
     }
 
@@ -271,7 +270,7 @@ public abstract class SQLDialect {
      * @param cx The database connection, not to be closed.
      */
     public void handleUserDefinedType(
-            ResultSet columnMetaData, ColumnMetadata metadata, Connection cx) throws SQLException {}
+            ResultSet columnMetaData, ColumnMetadata metadata, Connection cx) {}
 
     /**
      * Registers the sql type to java type mappings that the dialect uses when reading and writing
@@ -582,8 +581,7 @@ public abstract class SQLDialect {
      * @param cx The database connection.
      */
     public Integer getGeometrySRID(
-            String schemaName, String tableName, String columnName, Connection cx)
-            throws SQLException {
+            String schemaName, String tableName, String columnName, Connection cx) {
         return null;
     }
 
@@ -603,8 +601,7 @@ public abstract class SQLDialect {
      * @param cx The database connection.
      */
     public int getGeometryDimension(
-            String schemaName, String tableName, String columnName, Connection cx)
-            throws SQLException {
+            String schemaName, String tableName, String columnName, Connection cx) {
         return 2;
     }
 
@@ -622,7 +619,7 @@ public abstract class SQLDialect {
      * <p>Most overrides will try out to decode the official EPSG code first, and fall back on the
      * custom database definition otherwise
      */
-    public CoordinateReferenceSystem createCRS(int srid, Connection cx) throws SQLException {
+    public CoordinateReferenceSystem createCRS(int srid, Connection cx) {
         try {
             return CRS.decode("EPSG:" + srid);
         } catch (Exception e) {
@@ -648,8 +645,7 @@ public abstract class SQLDialect {
      * @return a list of referenced envelopes (some of which may be null or empty)
      */
     public List<ReferencedEnvelope> getOptimizedBounds(
-            String schema, SimpleFeatureType featureType, Connection cx)
-            throws SQLException, IOException {
+            String schema, SimpleFeatureType featureType, Connection cx) {
         return null;
     }
 
@@ -758,7 +754,7 @@ public abstract class SQLDialect {
             GeometryFactory factory,
             Connection cx,
             Hints hints)
-            throws IOException, SQLException {
+            throws SQLException {
 
         String columnName = rs.getMetaData().getColumnName(column);
         return decodeGeometryValue(descriptor, rs, columnName, factory, cx, hints);
@@ -858,8 +854,7 @@ public abstract class SQLDialect {
      * @param featureType The feature type that has just been created on the database.
      * @param cx Database connection.
      */
-    public void postCreateTable(String schemaName, SimpleFeatureType featureType, Connection cx)
-            throws SQLException, IOException {}
+    public void postCreateTable(String schemaName, SimpleFeatureType featureType, Connection cx) {}
 
     /**
      * Callback which executes after an attribute descriptor has been built from a table column.
@@ -875,8 +870,7 @@ public abstract class SQLDialect {
      * @param cx The database connection.
      */
     public void postCreateAttribute(
-            AttributeDescriptor att, String tableName, String schemaName, Connection cx)
-            throws SQLException {}
+            AttributeDescriptor att, String tableName, String schemaName, Connection cx) {}
 
     /**
      * Callback which executes after a feature type has been built from a database table.
@@ -892,8 +886,7 @@ public abstract class SQLDialect {
             SimpleFeatureType featureType,
             DatabaseMetaData metadata,
             String schemaName,
-            Connection cx)
-            throws SQLException {}
+            Connection cx) {}
 
     /**
      * Callback which executes before a table is about to be dropped.
@@ -904,8 +897,7 @@ public abstract class SQLDialect {
      * @param featureType The featureType/table being dropped.
      * @param cx The database connection.
      */
-    public void preDropTable(String schemaName, SimpleFeatureType featureType, Connection cx)
-            throws SQLException {}
+    public void preDropTable(String schemaName, SimpleFeatureType featureType, Connection cx) {}
 
     /**
      * Callback which executes after a table has been dropped.
@@ -916,8 +908,7 @@ public abstract class SQLDialect {
      * @param featureType The featureType/table being dropped.
      * @param cx The database connection.
      */
-    public void postDropTable(String schemaName, SimpleFeatureType featureType, Connection cx)
-            throws SQLException {}
+    public void postDropTable(String schemaName, SimpleFeatureType featureType, Connection cx) {}
 
     /**
      * Controls whether keys are looked up post or pre insert.
@@ -964,8 +955,7 @@ public abstract class SQLDialect {
      * @return The next value of the column, or <code>null</code>.
      */
     public Object getNextAutoGeneratedValue(
-            String schemaName, String tableName, String columnName, Connection cx)
-            throws SQLException {
+            String schemaName, String tableName, String columnName, Connection cx) {
         return null;
     }
 
@@ -1015,8 +1005,7 @@ public abstract class SQLDialect {
      * @return The previous value of the column, or <code>null</code>.
      */
     public Object getLastAutoGeneratedValue(
-            String schemaName, String tableName, String columnName, Connection cx)
-            throws SQLException {
+            String schemaName, String tableName, String columnName, Connection cx) {
         return null;
     }
 
@@ -1036,8 +1025,7 @@ public abstract class SQLDialect {
      * @param cx The database connection.
      */
     public String getSequenceForColumn(
-            String schemaName, String tableName, String columnName, Connection cx)
-            throws SQLException {
+            String schemaName, String tableName, String columnName, Connection cx) {
         return null;
     }
 
@@ -1059,8 +1047,7 @@ public abstract class SQLDialect {
      * @param cx The database connection.
      * @return The next value of the sequence, or <code>null</code>.
      */
-    public Object getNextSequenceValue(String schemaName, String sequenceName, Connection cx)
-            throws SQLException {
+    public Object getNextSequenceValue(String schemaName, String sequenceName, Connection cx) {
         return null;
     }
 

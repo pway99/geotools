@@ -76,13 +76,13 @@ public class GmlObjectIdTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // &lt;xsd:attribute ref="gml:id" use="required"/&gt;
         return filterfactory.gmlObjectId((String) node.getAttributeValue("id"));
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if ("id".equals(name.getLocalPart())) {
             GmlObjectId id = (GmlObjectId) object;
 

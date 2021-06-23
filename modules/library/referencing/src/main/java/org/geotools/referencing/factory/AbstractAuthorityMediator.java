@@ -949,7 +949,7 @@ public abstract class AbstractAuthorityMediator extends AbstractAuthorityFactory
      */
     @Override
     public IdentifiedObjectFinder getIdentifiedObjectFinder(
-            final Class<? extends IdentifiedObject> type) throws FactoryException {
+            final Class<? extends IdentifiedObject> type) {
         return new LazyCachedFinder(type);
     }
     /**

@@ -178,7 +178,7 @@ public class TransformedAuthorityFactory extends AuthorityFactoryAdapter {
      * @throws FactoryException if an error occured while creating the new units.
      */
     @Override
-    protected Unit<?> replace(final Unit<?> units) throws FactoryException {
+    protected Unit<?> replace(final Unit<?> units) {
         return units;
     }
 
@@ -191,7 +191,7 @@ public class TransformedAuthorityFactory extends AuthorityFactoryAdapter {
      * @return The new direction, or {@code direction} if no change were needed.
      * @throws FactoryException if an error occured while creating the new axis direction.
      */
-    protected AxisDirection replace(final AxisDirection direction) throws FactoryException {
+    protected AxisDirection replace(final AxisDirection direction) {
         return direction;
     }
 

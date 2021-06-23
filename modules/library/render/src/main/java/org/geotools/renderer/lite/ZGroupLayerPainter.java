@@ -51,8 +51,7 @@ class ZGroupLayerPainter implements AutoCloseable {
             MarkFeatureIterator iterator,
             List<LiteFeatureTypeStyle> lfts,
             StreamingRenderer renderer,
-            String layerId)
-            throws IOException {
+            String layerId) {
         super();
         this.iterator = iterator;
         this.lfts = lfts;

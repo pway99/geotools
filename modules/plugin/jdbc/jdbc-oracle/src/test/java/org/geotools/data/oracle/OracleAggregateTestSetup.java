@@ -56,7 +56,7 @@ public class OracleAggregateTestSetup extends JDBCAggregateTestSetup {
     }
 
     @Override
-    protected void dropAggregateTable() throws Exception {
+    protected void dropAggregateTable() {
         runSafe("DROP TRIGGER aggregate_pkey_trigger");
         runSafe("DROP SEQUENCE aggregate_fid_seq");
         runSafe("DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME = 'AGGREGATE'");

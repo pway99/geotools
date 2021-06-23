@@ -42,7 +42,7 @@ public class FilterTransformerTest {
     FilterTransformer transform = new FilterTransformer();
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         // init xmlunit
         Map<String, String> namespaces = new HashMap<>();
         namespaces.put("ogc", "http://www.opengis.net/ogc");

@@ -80,7 +80,7 @@ public abstract class AbstractContentTest {
         /** @see org.geotools.data.store.ContentDataStore#createTypeNames() */
         @SuppressWarnings("serial")
         @Override
-        protected List<Name> createTypeNames() throws IOException {
+        protected List<Name> createTypeNames() {
             return new ArrayList<Name>() {
                 {
                     add(TYPENAME);
@@ -93,7 +93,7 @@ public abstract class AbstractContentTest {
          *     org.geotools.data.store.ContentDataStore#createFeatureSource(org.geotools.data.store.ContentEntry)
          */
         @Override
-        protected ContentFeatureSource createFeatureSource(ContentEntry entry) throws IOException {
+        protected ContentFeatureSource createFeatureSource(ContentEntry entry) {
             return new MockContentFeatureStore(entry, null);
         }
     }
@@ -108,7 +108,7 @@ public abstract class AbstractContentTest {
 
         /** Not implemented. */
         @Override
-        protected ReferencedEnvelope getBoundsInternal(Query query) throws IOException {
+        protected ReferencedEnvelope getBoundsInternal(Query query) {
             throw new UnsupportedOperationException();
         }
 
@@ -134,20 +134,19 @@ public abstract class AbstractContentTest {
          *     org.geotools.data.store.ContentFeatureSource#getReaderInternal(org.geotools.data.Query)
          */
         @Override
-        protected FeatureReader<SimpleFeatureType, SimpleFeature> getReaderInternal(Query query)
-                throws IOException {
+        protected FeatureReader<SimpleFeatureType, SimpleFeature> getReaderInternal(Query query) {
             return new MockSimpleFeatureReader();
         }
 
         /** @see org.geotools.data.store.ContentFeatureSource#buildFeatureType() */
         @Override
-        protected SimpleFeatureType buildFeatureType() throws IOException {
+        protected SimpleFeatureType buildFeatureType() {
             return TYPE;
         }
 
         @Override
         protected FeatureWriter<SimpleFeatureType, SimpleFeature> getWriterInternal(
-                Query query, int flags) throws IOException {
+                Query query, int flags) {
             return new MockSimpleFeatureWriter();
         }
     }
@@ -167,19 +166,19 @@ public abstract class AbstractContentTest {
         /** @see org.geotools.data.FeatureReader#next() */
         @Override
         public SimpleFeature next()
-                throws IOException, IllegalArgumentException, NoSuchElementException {
+                throws IllegalArgumentException, NoSuchElementException {
             return FEATURES.get(index++);
         }
 
         /** @see org.geotools.data.FeatureReader#hasNext() */
         @Override
-        public boolean hasNext() throws IOException {
+        public boolean hasNext() {
             return index < FEATURES.size();
         }
 
         /** @see org.geotools.data.FeatureReader#close() */
         @Override
-        public void close() throws IOException {
+        public void close() {
             // ignored
         }
     }
@@ -198,7 +197,7 @@ public abstract class AbstractContentTest {
         }
 
         @Override
-        public SimpleFeature next() throws IOException {
+        public SimpleFeature next() {
             if (index >= FEATURES.size()) {
                 newFeature = buildFeature("mock." + (++index));
                 return newFeature;
@@ -207,26 +206,26 @@ public abstract class AbstractContentTest {
         }
 
         @Override
-        public void remove() throws IOException {
+        public void remove() {
             if (index > 0 && index <= FEATURES.size()) {
                 FEATURES.remove(index - 1);
             }
         }
 
         @Override
-        public void write() throws IOException {
+        public void write() {
             if (index > FEATURES.size()) {
                 FEATURES.add(newFeature);
             }
         }
 
         @Override
-        public boolean hasNext() throws IOException {
+        public boolean hasNext() {
             return index < FEATURES.size();
         }
 
         @Override
-        public void close() throws IOException {
+        public void close() {
             // ignored
         }
     }

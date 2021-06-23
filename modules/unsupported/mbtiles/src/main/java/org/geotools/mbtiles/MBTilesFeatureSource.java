@@ -95,13 +95,13 @@ class MBTilesFeatureSource extends ContentFeatureSource {
     }
 
     @Override
-    protected int getCountInternal(Query query) throws IOException {
+    protected int getCountInternal(Query query) {
         // no reasonable way to count quickly, each tile can contain a different number of features
         return -1;
     }
 
     @Override
-    protected SimpleFeatureType buildFeatureType() throws IOException {
+    protected SimpleFeatureType buildFeatureType() {
         // feature types are built parsing the json metadata entry in the geopackage, here returning
         // the result of that process
         return schema;

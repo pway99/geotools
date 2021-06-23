@@ -78,7 +78,7 @@ class WFSFeatureSource extends ContentFeatureSource {
     }
 
     @Override
-    protected boolean handleVisitor(Query query, FeatureVisitor visitor) throws IOException {
+    protected boolean handleVisitor(Query query, FeatureVisitor visitor) {
         return false;
     }
 

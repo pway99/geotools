@@ -31,10 +31,10 @@ import org.opengis.filter.FilterFactory2;
 public class FilterCompliancePreProcessorTest {
 
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
 
     @Test
-    public void testSingleNOTHighCompliance() throws Exception {
+    public void testSingleNOTHighCompliance() {
         FilterFactory2 ff2 = CommonFactoryFinder.getFilterFactory2(null);
         FilterCompliancePreProcessor compliancePreProcessor =
                 new FilterCompliancePreProcessor(XMLHandlerHints.VALUE_FILTER_COMPLIANCE_HIGH);

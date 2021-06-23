@@ -437,7 +437,7 @@ public final class ParserTest {
 
     @Test
     public void test404000Parsing()
-            throws IOException, ParseException, NoSuchAuthorityCodeException, FactoryException {
+            throws ParseException, NoSuchAuthorityCodeException, FactoryException {
         final String wkt =
                 "LOCAL_CS[\"Wildcard 2D cartesian plane in metric unit\", \n"
                         + "  LOCAL_DATUM[\"Unknown\", 0], \n"

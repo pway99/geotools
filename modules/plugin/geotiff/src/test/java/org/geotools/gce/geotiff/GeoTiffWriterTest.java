@@ -26,7 +26,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.text.ParseException;
 import java.util.Map;
 import java.util.logging.Logger;
 import javax.imageio.stream.FileImageOutputStream;
@@ -62,11 +61,9 @@ import org.opengis.coverage.grid.GridEnvelope;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.ParameterValue;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.datum.PixelInCell;
 import org.opengis.referencing.operation.MathTransform;
-import org.opengis.referencing.operation.TransformException;
 import org.opengis.util.InternationalString;
 import org.opengis.util.ProgressListener;
 
@@ -116,8 +113,7 @@ public class GeoTiffWriterTest extends Assert {
     @Test
     @SuppressWarnings("PMD.UseAssertEqualsInsteadOfAssertTrue")
     public void testWriteCroppedCoverage()
-            throws IllegalArgumentException, IOException, UnsupportedOperationException,
-                    ParseException, FactoryException, TransformException {
+            throws IllegalArgumentException, IOException, UnsupportedOperationException {
 
         // /////////////////////////////////////////////////////////////////////
         //

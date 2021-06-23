@@ -20,7 +20,6 @@ import javax.sql.DataSource;
 import org.geotools.referencing.factory.AbstractCachedAuthorityFactory;
 import org.geotools.referencing.factory.AbstractEpsgMediator;
 import org.geotools.util.factory.Hints;
-import org.opengis.referencing.FactoryException;
 
 /**
  * Mediator which delegates the creation of referencing objects to the OracleDialectEpsgFactory.
@@ -34,7 +33,7 @@ public class OracleDialectEpsgMediator extends AbstractEpsgMediator {
     /** No argument constructor - must not fail for factory finder registration. */
     public OracleDialectEpsgMediator() {}
 
-    public OracleDialectEpsgMediator(Hints hints) throws FactoryException {
+    public OracleDialectEpsgMediator(Hints hints) {
         super(hints);
         config = hints;
     }
@@ -62,26 +61,26 @@ public class OracleDialectEpsgMediator extends AbstractEpsgMediator {
     }
 
     /** Reinitialize an instance to be returned by the pool. */
-    protected void activateWorker(AbstractCachedAuthorityFactory obj) throws Exception {
+    protected void activateWorker(AbstractCachedAuthorityFactory obj) {
         OracleDialectEpsgFactory factory = (OracleDialectEpsgFactory) obj;
         factory.connect();
     }
 
     /** Destroys an instance no longer needed by the pool. */
-    protected void destroyWorker(AbstractCachedAuthorityFactory obj) throws Exception {
+    protected void destroyWorker(AbstractCachedAuthorityFactory obj) {
         OracleDialectEpsgFactory factory = (OracleDialectEpsgFactory) obj;
         factory.disconnect();
         factory.dispose();
     }
 
     /** Creates an instance that can be returned by the pool. */
-    protected AbstractCachedAuthorityFactory makeWorker() throws Exception {
+    protected AbstractCachedAuthorityFactory makeWorker() {
         OracleDialectEpsgFactory factory = new OracleDialectEpsgFactory(config, datasource);
         return factory;
     }
 
     /** Uninitialized an instance to be returned to the pool. */
-    protected void passivateWorker(AbstractCachedAuthorityFactory obj) throws Exception {
+    protected void passivateWorker(AbstractCachedAuthorityFactory obj) {
         // Each implementation has the choice of closing connections when they
         // are returned to the worker pool, or when the objects are destroyed.
         // In this implementation, we have chosen to keep connections open

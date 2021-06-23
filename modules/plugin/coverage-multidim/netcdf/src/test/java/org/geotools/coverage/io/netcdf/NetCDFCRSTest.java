@@ -55,7 +55,6 @@ import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import org.opengis.coverage.grid.GridEnvelope;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.crs.DerivedCRS;
 import org.opengis.referencing.crs.GeographicCRS;
@@ -379,7 +378,7 @@ public class NetCDFCRSTest {
     }
 
     @Test
-    public void testMultipleBoundingBoxesSupport() throws IOException, FactoryException {
+    public void testMultipleBoundingBoxesSupport() throws IOException {
         final File testURL = TestData.file(this, "dualbbox.nc");
 
         final NetCDFReader reader = new NetCDFReader(testURL, null);
@@ -434,7 +433,7 @@ public class NetCDFCRSTest {
 
     @Test
     public void testMultipleBoundingBoxesAuxiliaryCoordinatesSupport()
-            throws IOException, FactoryException {
+            throws IOException {
         final File testURL = TestData.file(this, "dualbboxAuxiliaryCoordinates.nc");
 
         final NetCDFReader reader = new NetCDFReader(testURL, null);
@@ -541,7 +540,7 @@ public class NetCDFCRSTest {
 
     /** Cleanup the custom definitions */
     @After
-    public void cleanUpDefinitions() throws Exception {
+    public void cleanUpDefinitions() {
         System.clearProperty(NetCDFCRSAuthorityFactory.SYSTEM_DEFAULT_USER_PROJ_FILE);
     }
 }

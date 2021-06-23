@@ -93,7 +93,7 @@ public class DialogUtilsTest extends GraphicsTestBase {
                 GuiActionRunner.execute(
                         new GuiQuery<JFrame>() {
                             @Override
-                            protected JFrame executeInEDT() throws Throwable {
+                            protected JFrame executeInEDT() {
                                 JFrame frame = new JFrame();
 
                                 /**

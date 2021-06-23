@@ -106,7 +106,7 @@ public class XSAnyTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         String text = null;
 
         if ((value != null) && value instanceof String) {

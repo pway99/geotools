@@ -83,7 +83,7 @@ public class GMLCoordTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         double x = ((BigDecimal) node.getChild("X").getValue()).doubleValue();
         double y = Double.NaN;
         double z = Double.NaN;
@@ -100,7 +100,7 @@ public class GMLCoordTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         Coordinate c = (Coordinate) object;
 
         if ("X".equals(name.getLocalPart())) {

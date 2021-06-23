@@ -17,7 +17,6 @@
 package org.geotools.coverage.grid.io.footprint;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 import org.locationtech.jts.geom.Geometry;
 
@@ -42,7 +41,7 @@ public interface FootprintLoader {
      * @param pathNoExtension The base path plus the file name, but no extension
      * @return @return The files used to load the footprints, or an empty list otherwise
      */
-    default List<File> getFootprintFiles(String pathNoExtension) throws IOException {
+    default List<File> getFootprintFiles(String pathNoExtension) {
         return null;
     }
 }

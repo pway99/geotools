@@ -120,7 +120,7 @@ public class MongoFeatureSource extends ContentFeatureSource {
     }
 
     @Override
-    protected int getCountInternal(Query query) throws IOException {
+    protected int getCountInternal(Query query) {
         Filter f = query.getFilter();
         if (isAll(f)) {
             LOG.fine("count(all)");
@@ -141,8 +141,7 @@ public class MongoFeatureSource extends ContentFeatureSource {
 
     @Override
     @SuppressWarnings("PMD.CloseResource") // r is re-assigned, but also wrapped
-    protected FeatureReader<SimpleFeatureType, SimpleFeature> getReaderInternal(Query query)
-            throws IOException {
+    protected FeatureReader<SimpleFeatureType, SimpleFeature> getReaderInternal(Query query) {
 
         List<Filter> postFilterList = new ArrayList<>();
         List<String> postFilterAttributes = new ArrayList<>();

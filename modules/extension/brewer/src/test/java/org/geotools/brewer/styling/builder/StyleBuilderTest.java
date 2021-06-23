@@ -398,7 +398,7 @@ public class StyleBuilderTest {
     }
 
     @Test
-    public void fill() throws Exception {
+    public void fill() {
         FillBuilder b = new FillBuilder();
         Fill fill = b.color(Color.BLUE).opacity(0.75).build();
         assertNotNull(fill);

@@ -200,8 +200,7 @@ public class TeradataDialect extends PreparedStatementSQLDialect {
     }
 
     @Override
-    public boolean includeTable(String schemaName, String tableName, Connection cx)
-            throws SQLException {
+    public boolean includeTable(String schemaName, String tableName, Connection cx) {
 
         if (tableName.equalsIgnoreCase("geometry_columns")) {
             return false;
@@ -305,7 +304,7 @@ public class TeradataDialect extends PreparedStatementSQLDialect {
 
     @Override
     public Envelope decodeGeometryEnvelope(ResultSet rs, int column, Connection cx)
-            throws SQLException, IOException {
+            throws IOException {
         Geometry envelope = getWkbReader(null).read(rs, column);
         if (envelope != null) {
             return envelope.getEnvelopeInternal();
@@ -360,7 +359,7 @@ public class TeradataDialect extends PreparedStatementSQLDialect {
     @Override
     public List<ReferencedEnvelope> getOptimizedBounds(
             String schema, SimpleFeatureType featureType, Connection cx)
-            throws SQLException, IOException {
+            throws SQLException {
         if (!estimatedBounds) {
             return null;
         }

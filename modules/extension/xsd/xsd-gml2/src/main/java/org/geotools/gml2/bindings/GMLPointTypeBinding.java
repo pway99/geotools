@@ -110,7 +110,7 @@ public class GMLPointTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         Point point = (Point) object;
 
         if (GML.coord.equals(name)) {

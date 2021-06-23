@@ -72,7 +72,7 @@ public class FlatGeobufDataStoreFactoryTest {
     }
 
     @Test
-    public void cantProcessWrongName() throws IOException {
+    public void cantProcessWrongName() {
         File file = temporaryFolder.newFile("points.shp");
         Map<String, Serializable> params = new HashMap<>();
         params.put("wrong name", file);

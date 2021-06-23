@@ -38,7 +38,7 @@ public class SLDTest {
     StyleBuilder sb = new StyleBuilder(ff);
 
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
     /**
      * We should have a test case for the expected default values so we can be sure of correct SLD
      * rendering.

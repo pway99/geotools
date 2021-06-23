@@ -194,7 +194,7 @@ public class DiffTransactionState implements Transaction.State {
     }
 
     private FeatureWriter<SimpleFeatureType, SimpleFeature> getWriter(
-            Name name, ContentDataStore dataStore, ContentFeatureSource source) throws IOException {
+            Name name, ContentDataStore dataStore, ContentFeatureSource source) {
         ContentFeatureStore store;
         FeatureWriter<SimpleFeatureType, SimpleFeature> writer;
         if (source instanceof ContentFeatureStore) {
@@ -209,7 +209,7 @@ public class DiffTransactionState implements Transaction.State {
 
     @Override
     /** @see org.geotools.data.Transaction.State#rollback() */
-    public synchronized void rollback() throws IOException {
+    public synchronized void rollback() {
         diff.clear(); // rollback differences
         state.fireBatchFeatureEvent(false);
     }
@@ -217,7 +217,7 @@ public class DiffTransactionState implements Transaction.State {
     @Override
 
     /** @see org.geotools.data.Transaction.State#addAuthorization(java.lang.String) */
-    public synchronized void addAuthorization(String AuthID) throws IOException {
+    public synchronized void addAuthorization(String AuthID) {
         // not required for TransactionStateDiff
     }
 

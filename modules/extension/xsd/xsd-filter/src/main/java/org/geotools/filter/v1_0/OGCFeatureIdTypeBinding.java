@@ -67,7 +67,7 @@ public class OGCFeatureIdTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return factory.featureId(node.getAttributeValue("fid").toString());
     }
 

@@ -28,7 +28,6 @@ import java.util.List;
 import java.util.Map;
 import org.apache.commons.io.FileUtils;
 import org.geotools.data.Query;
-import org.geotools.filter.text.cql2.CQLException;
 import org.geotools.gce.imagemosaic.acceptors.ColorCheckAcceptor;
 import org.geotools.gce.imagemosaic.acceptors.DefaultGranuleAcceptorFactory;
 import org.geotools.gce.imagemosaic.acceptors.GranuleAcceptor;
@@ -54,7 +53,7 @@ public class DefaultSubmosaicProducerSPITest {
 
     @Test
     public void testCustomizedGranuleAcceptor()
-            throws IOException, URISyntaxException, CQLException {
+            throws IOException, URISyntaxException {
         URL testDataURL = TestData.url(this, "diffprojections");
         File testDataFolder = new File(testDataURL.toURI());
         File testDirectory = testFolder.newFolder("diffprojectionstest");

@@ -76,12 +76,12 @@ public abstract class WFSTestSupport extends XMLTestSupport {
     }
 
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(bindingTargetClass, binding.getType());
     }
 
     @Test
-    public void testExecutionMode() throws Exception {
+    public void testExecutionMode() {
         assertEquals(toExModeString(executionMode), executionMode, binding.getExecutionMode());
     }
 

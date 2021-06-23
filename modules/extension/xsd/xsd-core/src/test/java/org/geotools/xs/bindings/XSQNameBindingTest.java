@@ -27,7 +27,7 @@ public class XSQNameBindingTest {
     XSQNameBinding binding;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         NamespaceSupport ns = new NamespaceSupport();
         ns.declarePrefix("foo", "http://foo");
 

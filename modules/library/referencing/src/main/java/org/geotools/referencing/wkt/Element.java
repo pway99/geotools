@@ -211,8 +211,7 @@ public final class Element {
      * @throws ParseException if the separator was not found.
      */
     private void parseSeparator(
-            final String text, final ParsePosition position, final char separator)
-            throws ParseException {
+            final String text, final ParsePosition position, final char separator) {
         if (!parseOptionalSeparator(text, position, separator)) {
             position.setErrorIndex(position.getIndex());
             throw unparsableString(text, position);
@@ -349,7 +348,7 @@ public final class Element {
      * @return The next {@link Number} on the list as a {@code double}.
      * @throws ParseException if no more number is available.
      */
-    public double pullDouble(final String key) throws ParseException {
+    public double pullDouble(final String key) {
         final Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
             final Object object = iterator.next();
@@ -393,7 +392,7 @@ public final class Element {
      * @return The next {@link String} on the list.
      * @throws ParseException if no more string is available.
      */
-    public String pullString(final String key) throws ParseException {
+    public String pullString(final String key) {
         String optionalString = pullOptionalString(key);
         if (optionalString != null) {
             return optionalString;
@@ -426,7 +425,7 @@ public final class Element {
      * @return The next {@link Element} on the list.
      * @throws ParseException if no more element is available.
      */
-    public Element pullElement(final String key) throws ParseException {
+    public Element pullElement(final String key) {
         final Element element = pullOptionalElement(key);
         if (element != null) {
             return element;
@@ -465,7 +464,7 @@ public final class Element {
      * @return The next {@link Element} in the list, with no bracket.
      * @throws ParseException if no more void element is available.
      */
-    public Element pullVoidElement(final String key) throws ParseException {
+    public Element pullVoidElement(final String key) {
         final Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
             final Object object = iterator.next();
@@ -487,7 +486,7 @@ public final class Element {
      * @return The next {@link Element} in the list, with no bracket, or null if none was found
      * @throws ParseException if no more void element is available.
      */
-    public Element pullOptionalVoidElement() throws ParseException {
+    public Element pullOptionalVoidElement() {
         final Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
             final Object object = iterator.next();

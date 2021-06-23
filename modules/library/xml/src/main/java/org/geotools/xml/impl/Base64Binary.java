@@ -32,7 +32,6 @@
  */
 package org.geotools.xml.impl;
 
-import java.io.IOException;
 import java.util.Base64;
 
 /**
@@ -53,7 +52,7 @@ public class Base64Binary {
     }
 
     /** Converts the string <code>pValue</code> into a base64 encoded byte array. */
-    public static byte[] decode(String pValue) throws IOException {
+    public static byte[] decode(String pValue) {
         return DECODER.decode(pValue);
     }
 

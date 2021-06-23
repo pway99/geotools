@@ -43,7 +43,6 @@ import org.geotools.data.collection.ListFeatureCollection;
 import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.data.sort.SortedFeatureReader;
 import org.geotools.feature.FeatureCollection;
-import org.geotools.feature.SchemaException;
 import org.geotools.feature.visitor.FeatureCalc;
 import org.geotools.gce.imagemosaic.GranuleDescriptor;
 import org.geotools.gce.imagemosaic.ImageMosaicReader;
@@ -155,7 +154,7 @@ class STRTreeGranuleCatalog extends GranuleCatalog {
 
     /** Constructs a {@link STRTreeGranuleCatalog} out of a {@link FeatureCollection}. */
     @SuppressFBWarnings("UL_UNRELEASED_LOCK")
-    private void checkIndex(Lock readLock) throws IOException {
+    private void checkIndex(Lock readLock) {
         final Lock writeLock = rwLock.writeLock();
         try {
             // upgrade the read lock to write lock
@@ -493,32 +492,28 @@ class STRTreeGranuleCatalog extends GranuleCatalog {
     }
 
     @Override
-    public void addGranule(String typeName, SimpleFeature granule, Transaction transaction)
-            throws IOException {
+    public void addGranule(String typeName, SimpleFeature granule, Transaction transaction) {
         throw new UnsupportedOperationException("Unsupported operation");
     }
 
     @Override
     public void addGranules(
-            String typeName, Collection<SimpleFeature> granules, Transaction transaction)
-            throws IOException {
+            String typeName, Collection<SimpleFeature> granules, Transaction transaction) {
         throw new UnsupportedOperationException("Unsupported operation");
     }
 
     @Override
-    public void createType(String namespace, String typeName, String typeSpec)
-            throws IOException, SchemaException {
+    public void createType(String namespace, String typeName, String typeSpec) {
         throw new UnsupportedOperationException("Unsupported operation");
     }
 
     @Override
-    public void createType(SimpleFeatureType featureType) throws IOException {
+    public void createType(SimpleFeatureType featureType) {
         throw new UnsupportedOperationException("Unsupported operation");
     }
 
     @Override
-    public void createType(String identification, String typeSpec)
-            throws SchemaException, IOException {
+    public void createType(String identification, String typeSpec) {
         throw new UnsupportedOperationException("Unsupported operation");
     }
 

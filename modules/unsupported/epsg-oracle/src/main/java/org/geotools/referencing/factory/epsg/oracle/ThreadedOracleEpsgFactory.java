@@ -21,7 +21,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.Properties;
 import javax.sql.DataSource;
 import org.geotools.referencing.factory.AbstractAuthorityFactory;
@@ -158,7 +157,7 @@ public class ThreadedOracleEpsgFactory extends ThreadedEpsgFactory {
     }
 
     /** Returns a data source for the PostgreSQL database. */
-    protected DataSource createDataSource() throws SQLException {
+    protected DataSource createDataSource() {
         DataSource source = super.createDataSource();
         if (source != null) {
             return source;
@@ -188,7 +187,7 @@ public class ThreadedOracleEpsgFactory extends ThreadedEpsgFactory {
      * @return The EPSG factory using Oracle syntax.
      * @throws SQLException if connection to the database failed.
      */
-    protected AbstractAuthorityFactory createBackingStore(final Hints hints) throws SQLException {
+    protected AbstractAuthorityFactory createBackingStore(final Hints hints) {
         try (Connection connection = getDataSource().getConnection()) {
             final FactoryUsingOracleSQL factory = new FactoryUsingOracleSQL(hints, connection);
             if (schema != null) {

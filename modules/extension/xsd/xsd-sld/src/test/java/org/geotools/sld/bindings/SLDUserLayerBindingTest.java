@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class SLDUserLayerBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(UserLayer.class, new SLDUserLayerBinding(null).getType());
     }
 

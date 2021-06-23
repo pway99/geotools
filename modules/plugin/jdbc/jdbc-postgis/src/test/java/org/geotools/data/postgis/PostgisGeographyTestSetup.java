@@ -43,7 +43,7 @@ public class PostgisGeographyTestSetup extends JDBCGeographyTestSetup {
     }
 
     @Override
-    protected void dropGeoPointTable() throws Exception {
+    protected void dropGeoPointTable() {
         runSafe("DROP TABLE geopoint");
     }
 
@@ -69,7 +69,7 @@ public class PostgisGeographyTestSetup extends JDBCGeographyTestSetup {
     }
 
     @Override
-    protected void dropGeoLineTable() throws Exception {
+    protected void dropGeoLineTable() {
         runSafe("DROP TABLE geoline");
     }
 }

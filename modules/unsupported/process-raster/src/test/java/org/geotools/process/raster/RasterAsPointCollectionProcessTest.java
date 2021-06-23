@@ -72,7 +72,6 @@ import org.opengis.metadata.spatial.PixelOrientation;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.ParameterValue;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.MathTransform2D;
 import org.opengis.referencing.operation.TransformException;
@@ -257,7 +256,7 @@ public class RasterAsPointCollectionProcessTest {
 
     @Test
     public void testCoverageWithTargetCRS()
-            throws MismatchedDimensionException, TransformException, FactoryException {
+            throws MismatchedDimensionException, TransformException {
         // Execution of the RasterAsPointCollectionProcess setting hemisphere, scaleFactor, nearest
         // interpolation and targetCRS
         boolean hemisphere = true;
@@ -286,7 +285,7 @@ public class RasterAsPointCollectionProcessTest {
 
     @Test
     public void testCoverageDifferentCRS()
-            throws MismatchedDimensionException, TransformException, FactoryException {
+            throws MismatchedDimensionException, TransformException {
         // Execution of the RasterAsPointCollectionProcess setting hemisphere, scaleFactor, nearest
         // interpolation and targetCRS
         boolean hemisphere = true;
@@ -421,7 +420,7 @@ public class RasterAsPointCollectionProcessTest {
             boolean hemisphere,
             Float scaleFactor,
             CoordinateReferenceSystem targetCRS)
-            throws MismatchedDimensionException, TransformException {
+            throws MismatchedDimensionException {
         // World2Grid transform associated to the coverage
         MathTransform2D w2g =
                 coverage.getGridGeometry().getCRSToGrid2D(PixelOrientation.UPPER_LEFT);

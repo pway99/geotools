@@ -100,7 +100,7 @@ public class XSTimeBinding implements SimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Time parse(InstanceComponent instance, Object value) throws Exception {
+    public Time parse(InstanceComponent instance, Object value) {
         Calendar calTime = DatatypeConverterImpl.getInstance().parseTime((String) value);
         Time time = new Time(calTime.getTimeInMillis());
         return time;

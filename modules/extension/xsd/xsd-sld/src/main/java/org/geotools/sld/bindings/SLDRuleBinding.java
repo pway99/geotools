@@ -120,7 +120,7 @@ public class SLDRuleBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Rule rule = styleFactory.createRule();
 
         // &lt;xsd:element ref="sld:Name" minOccurs="0"/&gt;

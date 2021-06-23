@@ -75,7 +75,7 @@ public class CQLLikePredicateTest {
      * </pre>
      */
     @Test
-    public void likePredicate() throws Exception {
+    public void likePredicate() {
 
         // Like
         Filter resultFilter = CompilerUtil.parseFilter(this.language, FilterCQLSample.LIKE_FILTER);
@@ -102,7 +102,7 @@ public class CQLLikePredicateTest {
      * </pre>
      */
     @Test
-    public void notLikePredicate() throws Exception {
+    public void notLikePredicate() {
         // not Like
         Filter resultFilter =
                 CompilerUtil.parseFilter(this.language, FilterCQLSample.NOT_LIKE_FILTER);

@@ -20,7 +20,6 @@ import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Set;
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.NamespaceSupport;
 
@@ -39,8 +38,7 @@ public class CopyingHandler extends DefaultHandler {
     }
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes)
-            throws SAXException {
+    public void startElement(String uri, String localName, String qName, Attributes attributes) {
 
         if (buffer == null) {
             buffer = new StringBuffer();
@@ -98,7 +96,7 @@ public class CopyingHandler extends DefaultHandler {
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         if (buffer == null) {
             buffer = new StringBuffer();
             root++;
@@ -107,14 +105,14 @@ public class CopyingHandler extends DefaultHandler {
     }
 
     @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
+    public void endElement(String uri, String localName, String qName) {
         if (buffer != null) {
             buffer.append("</").append(qName).append(">");
         }
     }
 
     @Override
-    public void endDocument() throws SAXException {
+    public void endDocument() {
         buffer = null;
     }
 }

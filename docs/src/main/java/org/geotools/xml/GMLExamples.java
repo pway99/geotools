@@ -151,7 +151,7 @@ public class GMLExamples {
         // transformExample end
     }
 
-    private void transformExample2() throws Exception {
+    private void transformExample2() {
         SimpleFeatureCollection fc = null;
         OutputStream out = null;
         // transformExample2 start
@@ -201,7 +201,7 @@ public class GMLExamples {
         return parser.getXMLReader();
     }
 
-    private void rawSchemaExample() throws Exception {
+    private void rawSchemaExample() {
         Name typeName = null;
         URL schemaLocation = null;
         CoordinateReferenceSystem crs = null;
@@ -222,7 +222,7 @@ public class GMLExamples {
         // rawSchemaExample end
     }
 
-    private void rawSchemaExample2() throws Exception {
+    private void rawSchemaExample2() {
         Name typeName = null;
         URL schemaLocation = null;
         CoordinateReferenceSystem crs = null;

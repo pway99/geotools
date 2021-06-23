@@ -43,7 +43,7 @@ public class OptDirectedEdgeTest {
     private OptDirectedEdge m_outinEdge;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         m_inNode = new OptDirectedNode();
         m_inNode.setInDegree(1);
         m_inNode.setOutDegree(1);

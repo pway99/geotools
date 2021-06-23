@@ -346,7 +346,7 @@ public class WMTSCoverageReader extends AbstractGridCoverage2DReader {
      * @throws TransformException
      */
     private ReferencedEnvelope toEastNorthAxisOrder(ReferencedEnvelope envelope)
-            throws FactoryException, TransformException {
+            throws FactoryException {
         CoordinateReferenceSystem crsExtent = envelope.getCoordinateReferenceSystem();
         if (CRS.getAxisOrder(crsExtent) == CRS.AxisOrder.NORTH_EAST) {
             String srsExtent = CRS.toSRS(crsExtent);

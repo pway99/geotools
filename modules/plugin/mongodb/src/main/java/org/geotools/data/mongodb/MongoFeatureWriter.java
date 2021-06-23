@@ -19,7 +19,6 @@ package org.geotools.data.mongodb;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
-import java.io.IOException;
 import org.geotools.data.simple.SimpleFeatureWriter;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
@@ -47,17 +46,17 @@ public class MongoFeatureWriter implements SimpleFeatureWriter {
     }
 
     @Override
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() {
         return false;
     }
 
     @Override
-    public SimpleFeature next() throws IOException {
+    public SimpleFeature next() {
         return current = new MongoDBObjectFeature(new BasicDBObject(), featureType, mapper);
     }
 
     @Override
-    public void write() throws IOException {
+    public void write() {
         if (current == null) {
             throw new IllegalStateException("No current feature, must call next() before write()");
         }
@@ -65,12 +64,12 @@ public class MongoFeatureWriter implements SimpleFeatureWriter {
     }
 
     @Override
-    public void remove() throws IOException {
+    public void remove() {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public void close() throws IOException {
+    public void close() {
         collection.createIndex(new BasicDBObject(mapper.getGeometryPath(), "2dsphere"));
     }
 }

@@ -17,7 +17,6 @@
 package org.geotools.xml.ogc;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.StringWriter;
 import java.net.URI;
 import java.util.HashMap;
@@ -43,7 +42,7 @@ import org.xml.sax.Attributes;
 public class GeometryEncoderTest {
 
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
 
     @Test
     public void testEncodeChoiceGeometryType() throws Exception {
@@ -80,24 +79,23 @@ public class GeometryEncoderTest {
                 new PrintHandler() {
 
                     @Override
-                    public void characters(char[] arg0, int arg1, int arg2) throws IOException {
+                    public void characters(char[] arg0, int arg1, int arg2) {
                         writer.write(arg0, arg1, arg2);
                     }
 
                     @Override
-                    public void characters(String s) throws IOException {
+                    public void characters(String s) {
                         writer.write(s);
                     }
 
                     @Override
-                    public void element(URI namespaceURI, String localName, Attributes attributes)
-                            throws IOException {}
+                    public void element(URI namespaceURI, String localName, Attributes attributes) {}
 
                     @Override
-                    public void endDocument() throws IOException {}
+                    public void endDocument() {}
 
                     @Override
-                    public void endElement(URI namespaceURI, String localName) throws IOException {
+                    public void endElement(URI namespaceURI, String localName) {
                         writer.write("</" + localName + ">");
                     }
 
@@ -122,16 +120,14 @@ public class GeometryEncoderTest {
                     }
 
                     @Override
-                    public void ignorableWhitespace(char[] arg0, int arg1, int arg2)
-                            throws IOException {}
+                    public void ignorableWhitespace(char[] arg0, int arg1, int arg2) {}
 
                     @Override
-                    public void startDocument() throws IOException {}
+                    public void startDocument() {}
 
                     @Override
                     public void startElement(
-                            URI namespaceURI, String localName, Attributes attributes)
-                            throws IOException {
+                            URI namespaceURI, String localName, Attributes attributes) {
                         writer.write("<" + localName);
                         if (attributes != null) {
                             for (int i = 0; i < attributes.getLength(); i++) {

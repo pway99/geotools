@@ -51,12 +51,12 @@ public class PanToolTest extends CursorToolTestBase {
     }
 
     @Test
-    public void doesNotDrawDragBox() throws Exception {
+    public void doesNotDrawDragBox() {
         assertFalse(tool.drawDragBox());
     }
 
     @Test
-    public void dragPanMap() throws Exception {
+    public void dragPanMap() {
         ReferencedEnvelope startEnv = mapPane.getDisplayArea();
         AffineTransform tr = mapPane.getScreenToWorldTransform();
 

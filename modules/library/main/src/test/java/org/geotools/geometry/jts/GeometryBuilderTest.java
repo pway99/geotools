@@ -44,7 +44,7 @@ public class GeometryBuilderTest {
     private static final GeometryBuilder builder = new GeometryBuilder();
 
     @Test
-    public void box() throws Exception {
+    public void box() {
         Polygon p =
                 builder.box(
                         RECT_ENV.getMinX(),
@@ -55,7 +55,7 @@ public class GeometryBuilderTest {
     }
 
     @Test
-    public void boxZ() throws Exception {
+    public void boxZ() {
         Polygon p =
                 builder.boxZ(
                         RECT_ENV.getMinX(),
@@ -68,7 +68,7 @@ public class GeometryBuilderTest {
     }
 
     @Test
-    public void circle() throws Exception {
+    public void circle() {
         double radius = SQUARE_ENV.getWidth() / 2;
 
         Polygon p =
@@ -82,7 +82,7 @@ public class GeometryBuilderTest {
     }
 
     @Test
-    public void ellipse() throws Exception {
+    public void ellipse() {
         Polygon p =
                 builder.ellipse(
                         RECT_ENV.getMinX(),
@@ -95,20 +95,20 @@ public class GeometryBuilderTest {
     }
 
     @Test
-    public void emptyLineString() throws Exception {
+    public void emptyLineString() {
         LineString line = builder.lineString();
         assertTrue(line.isEmpty());
         assertEquals(2, line.getCoordinateSequence().getDimension());
     }
 
     @Test
-    public void emptyLineStringZ() throws Exception {
+    public void emptyLineStringZ() {
         LineString line = builder.lineStringZ();
         assertEquals(3, line.getCoordinateSequence().getDimension());
     }
 
     @Test
-    public void lineStringFromOrdinates() throws Exception {
+    public void lineStringFromOrdinates() {
         double[] ordinates = {1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 0};
         LineString line = builder.lineString(ordinates);
 
@@ -117,7 +117,7 @@ public class GeometryBuilderTest {
     }
 
     @Test
-    public void lineStringZFromOrdinates() throws Exception {
+    public void lineStringZFromOrdinates() {
         double[] ordinates = {1, 2, -3, 4, 5, -6, 7, 8, -9};
         LineString line = builder.lineStringZ(ordinates);
 
@@ -126,21 +126,21 @@ public class GeometryBuilderTest {
     }
 
     @Test
-    public void linearRing() throws Exception {
+    public void linearRing() {
         LinearRing ring = builder.linearRing();
         assertTrue(ring.isEmpty());
         assertEquals(2, ring.getCoordinateSequence().getDimension());
     }
 
     @Test
-    public void linearRingZ() throws Exception {
+    public void linearRingZ() {
         LinearRing ring = builder.linearRingZ();
         assertTrue(ring.isEmpty());
         assertEquals(3, ring.getCoordinateSequence().getDimension());
     }
 
     @Test
-    public void linearRingFromOrdinates() throws Exception {
+    public void linearRingFromOrdinates() {
         double[] closedOrdinates = {1, 1, 1, 2, 2, 2, 2, 1, 1, 1};
         double[] openOrdinates = Arrays.copyOf(closedOrdinates, closedOrdinates.length - 2);
 
@@ -153,7 +153,7 @@ public class GeometryBuilderTest {
     }
 
     @Test
-    public void linearRingZFromOrdinates() throws Exception {
+    public void linearRingZFromOrdinates() {
         double[] closedOrdinates = {
             1, 1, -1,
             1, 2, -2,
@@ -172,7 +172,7 @@ public class GeometryBuilderTest {
     }
 
     @Test
-    public void multiPoint() throws Exception {
+    public void multiPoint() {
         double[] ords = {1, 2, 3, 4};
 
         MultiPoint mp = builder.multiPoint(ords[0], ords[1], ords[2], ords[3]);
@@ -183,7 +183,7 @@ public class GeometryBuilderTest {
     }
 
     @Test
-    public void multiPointZ() throws Exception {
+    public void multiPointZ() {
         double[] ords = {1, 2, 3, 4, 5, 6};
 
         MultiPoint mp = builder.multiPointZ(ords[0], ords[1], ords[2], ords[3], ords[4], ords[5]);

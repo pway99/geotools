@@ -24,7 +24,6 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.opengis.feature.simple.SimpleFeatureType;
@@ -40,11 +39,11 @@ public class MongoSchemaDBStore implements MongoSchemaStore {
     final MongoClient client;
     final DBCollection collection;
 
-    public MongoSchemaDBStore(String uri) throws IOException {
+    public MongoSchemaDBStore(String uri) {
         this(new MongoClientURI(uri));
     }
 
-    public MongoSchemaDBStore(MongoClientURI uri) throws IOException {
+    public MongoSchemaDBStore(MongoClientURI uri) {
         client = new MongoClient(uri);
 
         String databaseName = uri.getDatabase();
@@ -64,7 +63,7 @@ public class MongoSchemaDBStore implements MongoSchemaStore {
     }
 
     @Override
-    public void storeSchema(SimpleFeatureType schema) throws IOException {
+    public void storeSchema(SimpleFeatureType schema) {
         if (schema != null) {
             String typeName = schema.getTypeName();
             if (typeName != null) {
@@ -78,7 +77,7 @@ public class MongoSchemaDBStore implements MongoSchemaStore {
     }
 
     @Override
-    public SimpleFeatureType retrieveSchema(Name name) throws IOException {
+    public SimpleFeatureType retrieveSchema(Name name) {
         if (name == null) {
             return null;
         }
@@ -100,7 +99,7 @@ public class MongoSchemaDBStore implements MongoSchemaStore {
     }
 
     @Override
-    public void deleteSchema(Name name) throws IOException {
+    public void deleteSchema(Name name) {
         if (name == null) {
             return;
         }

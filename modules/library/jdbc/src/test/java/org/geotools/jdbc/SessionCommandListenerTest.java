@@ -17,10 +17,10 @@ public class SessionCommandListenerTest {
         List<String> commands = new ArrayList<>();
 
         @Override
-        public java.sql.Statement createStatement() throws java.sql.SQLException {
+        public java.sql.Statement createStatement() {
             return new MockStatement(this) {
                 @Override
-                public boolean execute(String sql) throws java.sql.SQLException {
+                public boolean execute(String sql) {
                     commands.add(sql);
                     return false;
                 }
@@ -99,7 +99,7 @@ public class SessionCommandListenerTest {
     }
 
     @Test
-    public void testInvalid() throws Exception {
+    public void testInvalid() {
         try {
             new SessionCommandsListener("startSession('${user')", null);
             fail("This should have failed, the syntax is not valid");

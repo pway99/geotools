@@ -33,7 +33,7 @@ public class HanaGeographyOnlineTest extends JDBCGeographyOnlineTest {
     }
 
     @Override
-    public void testDistanceGreatCircle() throws Exception {
+    public void testDistanceGreatCircle() {
         // Currently, HANA only supports point-point distances
     }
 

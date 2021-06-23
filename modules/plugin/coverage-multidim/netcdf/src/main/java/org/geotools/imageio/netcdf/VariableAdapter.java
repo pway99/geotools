@@ -190,7 +190,7 @@ public class VariableAdapter extends CoverageSourceDescriptor {
 
         @Override
         public Set<? extends BoundingBox> getSpatialElements(
-                boolean overall, ProgressListener listener) throws IOException {
+                boolean overall, ProgressListener listener) {
             return Collections.singleton(referencedEnvelope);
         }
 
@@ -200,14 +200,13 @@ public class VariableAdapter extends CoverageSourceDescriptor {
         }
 
         @Override
-        public MathTransform2D getGridToWorldTransform(ProgressListener listener)
-                throws IOException {
+        public MathTransform2D getGridToWorldTransform(ProgressListener listener) {
             return gridGeometry.getGridToCRS2D(PixelOrientation.CENTER);
         }
 
         @Override
         public Set<? extends RasterLayout> getRasterElements(
-                boolean overall, ProgressListener listener) throws IOException {
+                boolean overall, ProgressListener listener) {
             Rectangle bounds = gridGeometry.getGridRange2D().getBounds();
             return Collections.singleton(new RasterLayout(bounds));
         }
@@ -245,7 +244,7 @@ public class VariableAdapter extends CoverageSourceDescriptor {
 
         @Override
         public SortedSet<? extends DateRange> getTemporalElements(
-                boolean overall, ProgressListener listener) throws IOException {
+                boolean overall, ProgressListener listener) {
             if (overall) {
 
                 // Getting overall Extent
@@ -299,7 +298,7 @@ public class VariableAdapter extends CoverageSourceDescriptor {
 
         @Override
         public SortedSet<? extends NumberRange<Double>> getVerticalElements(
-                boolean overall, ProgressListener listener) throws IOException {
+                boolean overall, ProgressListener listener) {
 
             if (overall) {
                 // Getting overall Extent
@@ -411,8 +410,7 @@ public class VariableAdapter extends CoverageSourceDescriptor {
         }
 
         @Override
-        public Set<Object> getElements(boolean overall, ProgressListener listener)
-                throws IOException {
+        public Set<Object> getElements(boolean overall, ProgressListener listener) {
             if (overall) {
                 return globalDomainExtent;
             } else {
@@ -489,7 +487,7 @@ public class VariableAdapter extends CoverageSourceDescriptor {
     }
 
     /** @throws Exception */
-    private void initSlicesInfo() throws Exception {
+    private void initSlicesInfo() {
         int[] shape = variableDS.getShape();
         numberOfSlices = 1;
         for (int i = 0; i < variableDS.getShape().length - 2; i++) {
@@ -572,8 +570,7 @@ public class VariableAdapter extends CoverageSourceDescriptor {
      * Update the dimensionDescriptor attributes mapping by checking the actual attribute names from
      * the schema
      */
-    public void updateMapping(SimpleFeatureType indexSchema, List<DimensionDescriptor> descriptors)
-            throws IOException {
+    public void updateMapping(SimpleFeatureType indexSchema, List<DimensionDescriptor> descriptors) {
         DimensionMapper mapper = reader.georeferencing.getDimensionMapper();
         Set<String> dimensionNames = mapper.getDimensionNames();
         // No need to do the mapping update in case one of these conditions apply
@@ -737,8 +734,7 @@ public class VariableAdapter extends CoverageSourceDescriptor {
     }
 
     /** */
-    private void initVerticalDomain(CoordinateVariable<?> cv, List<DimensionDescriptor> dimensions)
-            throws IOException {
+    private void initVerticalDomain(CoordinateVariable<?> cv, List<DimensionDescriptor> dimensions) {
         this.setHasVerticalDomain(true);
         final UnidataVerticalDomain verticalDomain = new UnidataVerticalDomain(cv);
         this.setVerticalDomain(verticalDomain);
@@ -753,8 +749,7 @@ public class VariableAdapter extends CoverageSourceDescriptor {
     }
 
     /** */
-    private void initTemporalDomain(CoordinateVariable<?> cv, List<DimensionDescriptor> dimensions)
-            throws IOException {
+    private void initTemporalDomain(CoordinateVariable<?> cv, List<DimensionDescriptor> dimensions) {
         if (!cv.getType().equals(Date.class)) {
             throw new IllegalArgumentException(
                     "Unable to init temporal domain from CoordinateVariable that does not bind to Date");

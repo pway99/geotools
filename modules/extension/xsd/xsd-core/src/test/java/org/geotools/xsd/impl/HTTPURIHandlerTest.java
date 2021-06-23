@@ -40,7 +40,7 @@ public class HTTPURIHandlerTest {
                 new HTTPURIHandler() {
 
                     @Override
-                    protected HttpURLConnection getConnection(URI uri) throws IOException {
+                    protected HttpURLConnection getConnection(URI uri) {
                         // TODO Auto-generated method stub
                         return conn;
                     }
@@ -50,7 +50,7 @@ public class HTTPURIHandlerTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         verify(conn, is);
     }
 
@@ -73,7 +73,7 @@ public class HTTPURIHandlerTest {
     }
 
     @Test
-    public void testCantHandleFtp() throws Exception {
+    public void testCantHandleFtp() {
         URI uri = URI.createURI("ftp://example.com");
 
         assertThat(handler.canHandle(uri), is(false));

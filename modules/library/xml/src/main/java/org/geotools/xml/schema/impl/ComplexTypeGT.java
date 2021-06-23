@@ -28,7 +28,6 @@ import org.geotools.xml.schema.ElementValue;
 import org.geotools.xml.schema.Schema;
 import org.geotools.xml.schema.Type;
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 
 /**
  * Provides ...TODO summary sentence
@@ -218,7 +217,7 @@ public class ComplexTypeGT implements ComplexType {
     @Override
     public Object getValue(
             Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints)
-            throws OperationNotSupportedException, SAXException {
+            throws OperationNotSupportedException {
         throw new OperationNotSupportedException();
     }
 

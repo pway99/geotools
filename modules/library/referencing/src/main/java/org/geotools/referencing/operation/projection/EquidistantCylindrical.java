@@ -31,7 +31,6 @@ import org.opengis.parameter.ParameterDescriptor;
 import org.opengis.parameter.ParameterDescriptorGroup;
 import org.opengis.parameter.ParameterNotFoundException;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.operation.CylindricalProjection;
 import org.opengis.referencing.operation.MathTransform;
 
@@ -122,8 +121,7 @@ public class EquidistantCylindrical extends MapProjection {
      * @param y The latitude of the coordinate, in <strong>radians</strong>.
      */
     @Override
-    protected Point2D transformNormalized(double x, double y, final Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double x, double y, final Point2D ptDst) {
         x *= cosStandardParallel;
         if (ptDst != null) {
             ptDst.setLocation(x, y);
@@ -137,8 +135,7 @@ public class EquidistantCylindrical extends MapProjection {
      * {@code ptDst}.
      */
     @Override
-    protected Point2D inverseTransformNormalized(double x, double y, final Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D inverseTransformNormalized(double x, double y, final Point2D ptDst) {
         x /= cosStandardParallel;
         if (ptDst != null) {
             ptDst.setLocation(x, y);
@@ -238,7 +235,7 @@ public class EquidistantCylindrical extends MapProjection {
          */
         @Override
         protected MathTransform createMathTransform(final ParameterValueGroup parameters)
-                throws ParameterNotFoundException, FactoryException {
+                throws ParameterNotFoundException {
             if (!isSpherical(parameters)) {
                 LOGGER.log(
                         Level.FINE,
@@ -309,7 +306,7 @@ public class EquidistantCylindrical extends MapProjection {
          */
         @Override
         protected MathTransform createMathTransform(final ParameterValueGroup parameters)
-                throws ParameterNotFoundException, FactoryException {
+                throws ParameterNotFoundException {
             return new EquidistantCylindrical(parameters) {
                 @Override
                 public ParameterDescriptorGroup getParameterDescriptors() {

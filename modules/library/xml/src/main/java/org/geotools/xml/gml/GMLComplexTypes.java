@@ -82,7 +82,6 @@ import org.opengis.feature.type.GeometryDescriptor;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.helpers.AttributesImpl;
 
 /**
@@ -1025,7 +1024,7 @@ public class GMLComplexTypes {
                     0,
                     1,
                     true,
-                    null),
+                    null)
         };
 
         // static child sequence
@@ -1200,7 +1199,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             true,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -1377,7 +1376,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             true,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -1555,7 +1554,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             true,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -1734,7 +1733,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             true,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -2837,7 +2836,7 @@ public class GMLComplexTypes {
                     1,
                     ElementGrouping.UNBOUNDED,
                     false,
-                    null),
+                    null)
         };
 
         // static sequence
@@ -2996,7 +2995,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             false,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -3160,7 +3159,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             false,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -3324,7 +3323,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             false,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -3853,7 +3852,7 @@ public class GMLComplexTypes {
 
         // static attribute list
         protected static final Attribute[] attributes = {
-            new GMLAttribute("fid", XSISimpleTypes.ID.getInstance(), Attribute.OPTIONAL),
+            new GMLAttribute("fid", XSISimpleTypes.ID.getInstance(), Attribute.OPTIONAL)
         };
 
         // static element list
@@ -3881,7 +3880,7 @@ public class GMLComplexTypes {
                 public boolean isNillable() {
                     return true;
                 }
-            },
+            }
         };
 
         // static sequence
@@ -4091,7 +4090,7 @@ public class GMLComplexTypes {
         }
 
         private void stream(SimpleFeature feature, FCBuffer featureCollectionBuffer)
-                throws SAXNotSupportedException, SAXException {
+                throws SAXException {
             if (!featureCollectionBuffer.addFeature(feature)) {
                 throw new SAXException("Buffer overflow");
             }
@@ -4298,7 +4297,7 @@ public class GMLComplexTypes {
                     1,
                     1,
                     false,
-                    null),
+                    null)
         };
 
         // static sequence
@@ -4398,7 +4397,7 @@ public class GMLComplexTypes {
                     0,
                     ElementGrouping.UNBOUNDED,
                     false,
-                    null),
+                    null)
         };
 
         // static sequence
@@ -4656,7 +4655,7 @@ public class GMLComplexTypes {
                     0,
                     1,
                     true,
-                    null),
+                    null)
         };
 
         // static sequence
@@ -4825,7 +4824,7 @@ public class GMLComplexTypes {
                     0,
                     1,
                     true,
-                    null),
+                    null)
         };
 
         // static sequence
@@ -4996,7 +4995,7 @@ public class GMLComplexTypes {
         // static element list
         private static final Element[] elements = {
             new GMLElement("Box", GMLComplexTypes.BoxType.getInstance(), 1, 1, false, null),
-            new GMLElement("null", new GMLNullType(), 1, 1, false, null),
+            new GMLElement("null", new GMLNullType(), 1, 1, false, null)
         };
 
         // static choice
@@ -5173,7 +5172,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             true,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -5330,7 +5329,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             true,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -5487,7 +5486,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             true,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -5644,7 +5643,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             true,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -5810,7 +5809,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             true,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -5978,7 +5977,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             true,
-                            null)),
+                            null))
         };
 
         // static sequence
@@ -6146,7 +6145,7 @@ public class GMLComplexTypes {
                             1,
                             1,
                             true,
-                            null)),
+                            null))
         };
 
         // static sequence

@@ -672,7 +672,7 @@ public class Import extends AbstractCmd {
         return spatialTableName.equals(tileTableName);
     }
 
-    private void insertImage(URL imageUrl, byte[] imageBytes) throws SQLException, IOException {
+    private void insertImage(URL imageUrl, byte[] imageBytes) throws SQLException {
         try {
             sqlInsertImage.setBytes(1, imageBytes);
 

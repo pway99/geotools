@@ -400,8 +400,7 @@ public class ImageMosaicConfigHandler {
     }
 
     private static GranuleCatalog createGranuleCatalogFromDatastore(
-            File parent, Properties properties, boolean create, boolean wraps, Hints hints)
-            throws IOException {
+            File parent, Properties properties, boolean create, boolean wraps, Hints hints) {
         GranuleCatalog catalog = null;
         // SPI
         final String SPIClass = properties.getProperty("SPI");
@@ -1322,7 +1321,7 @@ public class ImageMosaicConfigHandler {
      * @param coverageName the name of the coverage to be searched
      * @return {@code true} in case that coverage already exists
      */
-    protected boolean coverageExists(String coverageName) throws IOException {
+    protected boolean coverageExists(String coverageName) {
         String[] coverages = getParentReader().getGridCoverageNames();
         for (String coverage : coverages) {
             if (coverage.equals(coverageName)) {
@@ -1362,7 +1361,7 @@ public class ImageMosaicConfigHandler {
             int fileIndex,
             double numFiles,
             DefaultTransaction transaction)
-            throws IOException, GranuleHandlingException, NoSuchAuthorityCodeException,
+            throws IOException,
                     FactoryException, TransformException {
 
         final String targetCoverageName = getTargetCoverageName(coverageReader, inputCoverageName);
@@ -1605,7 +1604,7 @@ public class ImageMosaicConfigHandler {
             GridCoverage2DReader coverageReader,
             final String inputCoverageName,
             CoordinateReferenceSystem mosaicCRS)
-            throws IOException, FactoryException, TransformException {
+            throws IOException {
         double[][] resolutionLevels = coverageReader.getResolutionLevels(inputCoverageName);
         final CoordinateReferenceSystem readerCRS = coverageReader.getCoordinateReferenceSystem();
         if (mosaicCRS != null
@@ -1627,7 +1626,7 @@ public class ImageMosaicConfigHandler {
             CoordinateReferenceSystem fromCRS,
             CoordinateReferenceSystem toCRS,
             GeneralEnvelope sourceEnvelope)
-            throws FactoryException, TransformException {
+            throws TransformException {
 
         // prepare a set of points at middle of the envelope and their
         // corresponding offsets based on resolutions

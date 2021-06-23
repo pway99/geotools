@@ -26,7 +26,6 @@
  */
 package org.geotools.data.vpf.io;
 
-import java.io.IOException;
 import org.geotools.data.vpf.ifc.DataTypesDefinition;
 import org.geotools.data.vpf.ifc.FileConstants;
 import org.junit.Assert;
@@ -51,7 +50,7 @@ public class TableColumnDefTest implements DataTypesDefinition, FileConstants {
      * tested class and it can perform some more actions which are necessary for performs tests.
      */
     @Before
-    public void setUp() throws IOException {
+    public void setUp() {
 
         // File file = TestData.file( this, "dnc13/dht" );
         // TableInputStream tis = new TableInputStream( file.getPath() );
@@ -149,4 +148,4 @@ public class TableColumnDefTest implements DataTypesDefinition, FileConstants {
         // TODO delete this when this file has been updated - prevents maven from throwing an
         // exception
     }
-} // end of TableColumnDefTest
+}// end of TableColumnDefTest

@@ -783,7 +783,7 @@ public class RasterLayerResponse {
      *
      * @throws TransformException In case transformation fails during the process.
      */
-    private void initRasterBounds() throws TransformException {
+    private void initRasterBounds() {
         final GeneralEnvelope tempRasterBounds = CRS.transform(finalWorldToGridCorner, mosaicBBox);
         rasterBounds = tempRasterBounds.toRectangle2D().getBounds();
 

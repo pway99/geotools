@@ -100,7 +100,7 @@ public class AutoCRSFactory extends DirectAuthorityFactory implements CRSAuthori
      * @return The fatclet for the specified code.
      * @throws NoSuchAuthorityCodeException if no factlet has been found for the specified code.
      */
-    private Factlet findFactlet(final Code code) throws NoSuchAuthorityCodeException {
+    private Factlet findFactlet(final Code code) {
         if (code.authority.equalsIgnoreCase("AUTO") || code.authority.equalsIgnoreCase("AUTO2")) {
             final Integer key = code.code;
             final Factlet fac = factlets.get(key);
@@ -130,8 +130,7 @@ public class AutoCRSFactory extends DirectAuthorityFactory implements CRSAuthori
      * factory}.
      */
     @Override
-    public Set<String> getAuthorityCodes(final Class<? extends IdentifiedObject> type)
-            throws FactoryException {
+    public Set<String> getAuthorityCodes(final Class<? extends IdentifiedObject> type) {
         if (type.isAssignableFrom(ProjectedCRS.class)) {
             final Set<String> set = new LinkedHashSet<>();
             for (Integer code : factlets.keySet()) {

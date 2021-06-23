@@ -16,7 +16,6 @@
  */
 package org.geotools.parameter;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -445,7 +444,7 @@ public class MatrixParameters extends ParameterGroup implements ParameterDescrip
      * @throws IOException if an error occurs during output operation.
      */
     @Override
-    protected void write(final TableWriter table) throws IOException {
+    protected void write(final TableWriter table) {
         table.write(getName(descriptor));
         table.nextColumn();
         table.write('=');

@@ -75,7 +75,7 @@ public class PostGISHStoreTestSetup extends JDBCDelegatingTestSetup {
         run(sql);
     }
 
-    private void dropTestHStoreTable() throws Exception {
+    private void dropTestHStoreTable() {
         runSafe("DROP TABLE \"hstoretest\" cascade");
     }
 }

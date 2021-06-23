@@ -56,7 +56,7 @@ public abstract class FilterTestSupport {
         setup = true;
     }
 
-    protected void prepareFeatures() throws SchemaException, IllegalAttributeException {
+    protected void prepareFeatures() throws IllegalAttributeException {
         // _log.getLoggerRepository().setThreshold(Level.INFO);
         // Create the schema attributes
         LOGGER.finer("creating flat feature...");

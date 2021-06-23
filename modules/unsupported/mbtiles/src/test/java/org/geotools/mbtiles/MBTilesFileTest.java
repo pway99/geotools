@@ -114,7 +114,7 @@ public class MBTilesFileTest {
     }
 
     @Test
-    public void testMBTilesMinMaxZoomLevelMetaData() throws IOException, SQLException {
+    public void testMBTilesMinMaxZoomLevelMetaData() throws IOException {
         try (MBTilesFile file = new MBTilesFile()) {
             file.init();
             file.saveMinMaxZoomMetadata(0, 14);
@@ -166,7 +166,7 @@ public class MBTilesFileTest {
     }
 
     @Test
-    public void testMBTilesGrid() throws IOException, SQLException {
+    public void testMBTilesGrid() throws IOException {
 
         try (MBTilesFile file = new MBTilesFile()) {
             file.init();
@@ -215,7 +215,7 @@ public class MBTilesFileTest {
     }
 
     @Test
-    public void testMBTilesMetadataCenter() throws IOException, SQLException {
+    public void testMBTilesMetadataCenter() throws IOException {
         try (MBTilesFile mbTilesFile =
                 new MBTilesFile(
                         new File("./src/test/resources/org/geotools/mbtiles/madagascar.mbtiles"))) {

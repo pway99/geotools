@@ -44,7 +44,7 @@ public class GeometryJSONTest extends GeoJSONTestSupport {
     GeometryJSON gjson = new GeometryJSON();
 
     @Test
-    public void testPointWrite() throws Exception {
+    public void testPointWrite() {
         assertEquals(pointText(), gjson.toString(point()));
         assertEquals(point3dText(), gjson.toString(point3d()));
     }
@@ -84,7 +84,7 @@ public class GeometryJSONTest extends GeoJSONTestSupport {
     }
 
     @Test
-    public void testLineWrite() throws Exception {
+    public void testLineWrite() {
         assertEquals(lineText(), gjson.toString(line()));
         assertEquals(line2Text(), gjson.toString(line2()));
         assertEquals(line3dText(), gjson.toString(line3d()));
@@ -136,7 +136,7 @@ public class GeometryJSONTest extends GeoJSONTestSupport {
     }
 
     @Test
-    public void testPolyWrite() throws Exception {
+    public void testPolyWrite() {
         assertEquals(polygonText1(), gjson.toString(polygon1()));
         assertEquals(polygonText2(), gjson.toString(polygon2()));
         assertEquals(polygonText3(), gjson.toString(polygon3()));
@@ -262,7 +262,7 @@ public class GeometryJSONTest extends GeoJSONTestSupport {
     }
 
     @Test
-    public void testMultiPointWrite() throws Exception {
+    public void testMultiPointWrite() {
         assertEquals(multiPointText(), gjson.toString(multiPoint()));
         assertEquals(multiPoint3dText(), gjson.toString(multiPoint3d()));
     }
@@ -302,7 +302,7 @@ public class GeometryJSONTest extends GeoJSONTestSupport {
     }
 
     @Test
-    public void testMultiLineWrite() throws Exception {
+    public void testMultiLineWrite() {
         assertEquals(multiLineText(), gjson.toString(multiLine()));
         assertEquals(multiLine3dText(), gjson.toString(multiLine3d()));
     }
@@ -356,7 +356,7 @@ public class GeometryJSONTest extends GeoJSONTestSupport {
     }
 
     @Test
-    public void testMultiPolygonWrite() throws Exception {
+    public void testMultiPolygonWrite() {
         assertEquals(multiPolygonText(), gjson.toString(multiPolygon()));
         assertEquals(multiPolygon3dText(), gjson.toString(multiPolygon3d()));
     }
@@ -470,7 +470,7 @@ public class GeometryJSONTest extends GeoJSONTestSupport {
     }
 
     @Test
-    public void testGeometryCollectionWrite() throws Exception {
+    public void testGeometryCollectionWrite() {
         assertEquals(collectionText(), gjson.toString(collection()));
         assertEquals(collection3dText(), gjson.toString(collection3d()));
     }

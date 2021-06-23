@@ -44,7 +44,6 @@ import org.geotools.referencing.CRS;
 import org.geotools.util.URLs;
 import org.junit.Test;
 import org.opengis.parameter.GeneralParameterValue;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 public class GeoPackageReaderTest {
@@ -84,7 +83,7 @@ public class GeoPackageReaderTest {
     }
 
     @Test
-    public void testCoverageSRS() throws IOException, FactoryException {
+    public void testCoverageSRS() throws IOException {
         GeoPackageReader reader =
                 new GeoPackageReader(
                         GeoPackageTest.class.getResource("test_tiles_srid.gpkg"), null);

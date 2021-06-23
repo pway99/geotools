@@ -35,8 +35,6 @@ import org.locationtech.jts.io.WKTReader;
 import org.mockito.Mockito;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.operation.TransformException;
 
 public class LabelCacheImplTest {
 
@@ -173,7 +171,7 @@ public class LabelCacheImplTest {
     }
 
     @Test
-    public void testCustomBehaviour() throws TransformException, FactoryException {
+    public void testCustomBehaviour() {
         final List<String> labels = new ArrayList<>();
         Graphics2D graphics = Mockito.mock(Graphics2D.class);
         LabelCacheImpl myCache =

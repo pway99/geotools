@@ -74,7 +74,7 @@ class WFSFeatureReader implements FeatureReader<SimpleFeatureType, SimpleFeature
 
     /** @see FeatureReader#hasNext() */
     @Override
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() {
         return next != null;
     }
 

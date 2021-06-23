@@ -13,7 +13,7 @@ import org.junit.Test;
 
 public class ExtendedDataTypeBindingTest extends KMLTestSupport {
     @Test
-    public void testExecutionMode() throws Exception {
+    public void testExecutionMode() {
         assertEquals(Binding.OVERRIDE, binding(KML.ExtendedDataType).getExecutionMode());
     }
 

@@ -95,7 +95,7 @@ public class FeatureTypeTest extends DataTestCase {
     }
 
     @Test
-    public void testEquals() throws Exception {
+    public void testEquals() {
         SimpleFeatureTypeBuilder tb = new SimpleFeatureTypeBuilder();
         tb.setName("Thing");
         tb.setNamespaceURI("http://www.nowhereinparticular.net");
@@ -121,7 +121,7 @@ public class FeatureTypeTest extends DataTestCase {
     }
 
     @Test
-    public void testCopyFeature() throws Exception {
+    public void testCopyFeature() {
         SimpleFeature feature = lakeFeatures[0];
         assertDuplicate("feature", feature, SimpleFeatureBuilder.copy(feature));
     }
@@ -194,7 +194,7 @@ public class FeatureTypeTest extends DataTestCase {
     }
 
     @Test
-    public void testDeepCopy() throws Exception {
+    public void testDeepCopy() {
         // primative
         String str = "FooBar";
         Integer i = Integer.valueOf(3);

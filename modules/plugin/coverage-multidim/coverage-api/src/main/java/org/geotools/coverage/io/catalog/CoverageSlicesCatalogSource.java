@@ -82,7 +82,7 @@ public class CoverageSlicesCatalogSource implements GranuleSource {
     }
 
     @Override
-    public void dispose() throws IOException {
+    public void dispose() {
         // do nothing
     }
 }

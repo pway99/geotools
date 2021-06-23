@@ -17,7 +17,6 @@
  */
 package org.geotools.process.raster;
 
-import java.io.IOException;
 import javax.media.jai.Interpolation;
 import org.geotools.coverage.grid.GridCoverage2D;
 import org.geotools.coverage.processing.CoverageProcessor;
@@ -58,8 +57,7 @@ public class ScaleCoverage implements RasterProcess {
                                 "Interpolation function to use.  Values are NEAREST, BILINEAR, BICUBIC2, BICUBIC",
                         min = 0
                     )
-                    Interpolation interpolation)
-            throws IOException {
+                    Interpolation interpolation) {
         final ParameterValueGroup param = PROCESSOR.getOperation("Scale").getParameters();
 
         param.parameter("Source").setValue(coverage);

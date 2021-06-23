@@ -35,7 +35,7 @@ public class BasicGraphTest {
     private BasicGraph m_graph;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         BasicNode n1 = new BasicNode();
         BasicNode n2 = new BasicNode();
         BasicNode n3 = new BasicNode();

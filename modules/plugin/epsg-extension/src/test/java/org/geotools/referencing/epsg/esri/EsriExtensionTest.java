@@ -27,7 +27,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.opengis.metadata.Identifier;
 import org.opengis.metadata.citation.Citation;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.IdentifiedObject;
 import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
@@ -45,7 +44,7 @@ public class EsriExtensionTest {
 
     /** Get the authority factory for ESRI. */
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = (EsriExtension) ReferencingFactoryFinder.getCRSAuthorityFactory("ESRI", null);
     }
 
@@ -68,7 +67,7 @@ public class EsriExtensionTest {
 
     /** Tests the codes. */
     @org.junit.Test
-    public void testCodes() throws FactoryException {
+    public void testCodes() {
         final Set<String> codes = factory.getAuthorityCodes(IdentifiedObject.class);
         final Set<String> subset = factory.getAuthorityCodes(CoordinateReferenceSystem.class);
         Assert.assertNotNull(codes);
@@ -81,7 +80,7 @@ public class EsriExtensionTest {
 
     /** Checks for duplication with EPSG-HSQL. */
     @org.junit.Test
-    public void testDuplication() throws FactoryException {
+    public void testDuplication() {
         final StringWriter buffer = new StringWriter();
         final PrintWriter writer = new PrintWriter(buffer);
         final Set duplicated = factory.reportDuplicatedCodes(writer);
@@ -90,7 +89,7 @@ public class EsriExtensionTest {
 
     /** Checks for CRS instantiations. */
     @org.junit.Test
-    public void testInstantiation() throws FactoryException {
+    public void testInstantiation() {
         final StringWriter buffer = new StringWriter();
         final PrintWriter writer = new PrintWriter(buffer);
         final Set duplicated = factory.reportInstantiationFailures(writer);
@@ -100,31 +99,31 @@ public class EsriExtensionTest {
 
     /** Tests an EPSG code. */
     @org.junit.Test(expected = NoSuchAuthorityCodeException.class)
-    public void test26910() throws FactoryException {
+    public void test26910() {
         factory.createCoordinateReferenceSystem("26910");
     }
 
     /** Tests an EPSG code. */
     @org.junit.Test(expected = NoSuchAuthorityCodeException.class)
-    public void test4326() throws FactoryException {
+    public void test4326() {
         factory.createCoordinateReferenceSystem("4326");
     }
 
     /** Tests an EPSG code. */
     @org.junit.Test(expected = NoSuchAuthorityCodeException.class)
-    public void test4269() throws FactoryException {
+    public void test4269() {
         factory.createCoordinateReferenceSystem("4269");
     }
 
     /** Tests an extra code (neither EPSG or ESRI). */
     @org.junit.Test(expected = NoSuchAuthorityCodeException.class)
-    public void test42333() throws FactoryException {
+    public void test42333() {
         factory.createCoordinateReferenceSystem("42333");
     }
 
     /** Tests an ESRI code. */
     @org.junit.Test
-    public void test30591() throws FactoryException {
+    public void test30591() {
         final CoordinateReferenceSystem crs = factory.createCoordinateReferenceSystem("30591");
         Assert.assertSame(crs, factory.createCoordinateReferenceSystem("ESRI:30591"));
         Assert.assertSame(crs, factory.createCoordinateReferenceSystem("esri:30591"));

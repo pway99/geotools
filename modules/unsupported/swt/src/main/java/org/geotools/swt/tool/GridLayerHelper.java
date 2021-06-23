@@ -89,7 +89,7 @@ public class GridLayerHelper extends InfoToolHelper<List<Number>> {
      * @throws Exception if the grid coverage could not be queried
      */
     @Override
-    public List<Number> getInfo(DirectPosition2D pos, Object... params) throws Exception {
+    public List<Number> getInfo(DirectPosition2D pos, Object... params) {
 
         List<Number> list = new ArrayList<>();
 

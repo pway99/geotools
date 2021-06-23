@@ -50,7 +50,7 @@ public class JDBCClosingFeatureReader
 
     @Override
     public SimpleFeature next()
-            throws IOException, IllegalArgumentException, NoSuchElementException {
+            throws IllegalArgumentException, NoSuchElementException {
         return reader.next();
     }
 

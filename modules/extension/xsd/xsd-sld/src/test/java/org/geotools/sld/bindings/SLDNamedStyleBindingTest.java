@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class SLDNamedStyleBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(NamedStyle.class, new SLDNamedStyleBinding(null).getType());
     }
 

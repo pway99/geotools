@@ -90,7 +90,7 @@ public class DimensionNameValueBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         DimensionNameValueType name = factory.createDimensionNameValueType();
         name.setName((String) node.getChildValue("name"));
         name.setValue((String) node.getChildValue("value"));

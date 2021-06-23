@@ -49,20 +49,20 @@ public class DB2EmptyGeometryOnlineTest extends JDBCEmptyGeometryOnlineTest {
      * JDBCEmptyGeometryOnlineTest::testInsertEmptyGeometry but this is declared private.
      */
     @Override
-    public void testEmptyPoint() throws Exception {}
+    public void testEmptyPoint() {}
 
     @Override
-    public void testEmptyLine() throws Exception {}
+    public void testEmptyLine() {}
 
     @Override
-    public void testEmptyPolygon() throws Exception {}
+    public void testEmptyPolygon() {}
 
     @Override
-    public void testEmptyMultiPoint() throws Exception {}
+    public void testEmptyMultiPoint() {}
 
     @Override
-    public void testEmptyMultiLine() throws Exception {}
+    public void testEmptyMultiLine() {}
 
     @Override
-    public void testEmptyMultiPolygon() throws Exception {}
+    public void testEmptyMultiPolygon() {}
 }

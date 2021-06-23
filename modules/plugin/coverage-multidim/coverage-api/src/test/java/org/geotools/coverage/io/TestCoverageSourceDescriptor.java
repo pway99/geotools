@@ -16,7 +16,6 @@
  */
 package org.geotools.coverage.io;
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -66,7 +65,7 @@ public class TestCoverageSourceDescriptor extends CoverageSourceDescriptor {
 
         @Override
         public Set<? extends BoundingBox> getSpatialElements(
-                boolean overall, ProgressListener listener) throws IOException {
+                boolean overall, ProgressListener listener) {
             // TODO Auto-generated method stub
             return null;
         }
@@ -77,15 +76,14 @@ public class TestCoverageSourceDescriptor extends CoverageSourceDescriptor {
         }
 
         @Override
-        public MathTransform2D getGridToWorldTransform(ProgressListener listener)
-                throws IOException {
+        public MathTransform2D getGridToWorldTransform(ProgressListener listener) {
             // TODO Auto-generated method stub
             return null;
         }
 
         @Override
         public Set<? extends RasterLayout> getRasterElements(
-                boolean overall, ProgressListener listener) throws IOException {
+                boolean overall, ProgressListener listener) {
             return layout;
         }
     }
@@ -103,7 +101,7 @@ public class TestCoverageSourceDescriptor extends CoverageSourceDescriptor {
 
         @Override
         public SortedSet<? extends DateRange> getTemporalElements(
-                boolean overall, ProgressListener listener) throws IOException {
+                boolean overall, ProgressListener listener) {
             return new DateRangeTreeSet(dates);
         }
 

@@ -123,7 +123,7 @@ public class DiffContentFeatureWriter implements FeatureWriter<SimpleFeatureType
 
     /** @see org.geotools.data.FeatureWriter#remove() */
     @Override
-    public void remove() throws IOException {
+    public void remove() {
         if (live != null) {
             // mark live as removed
             diff.remove(live.getID());

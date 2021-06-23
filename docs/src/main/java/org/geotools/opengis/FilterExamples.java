@@ -222,7 +222,7 @@ public class FilterExamples {
         // temporal end
     }
 
-    void caseSensitive() throws Exception {
+    void caseSensitive() {
         // caseSensitive start
         FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
 

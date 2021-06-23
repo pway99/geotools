@@ -68,7 +68,7 @@ public abstract class SDMXFeatureSource extends ContentFeatureSource {
      * @throws FactoryException
      */
     public SDMXFeatureSource(ContentEntry entry, Dataflow dataflowIn, Query query)
-            throws IOException, FactoryException {
+            throws FactoryException {
 
         super(entry, query);
         this.dataStore = (SDMXDataStore) entry.getDataStore();
@@ -147,12 +147,12 @@ public abstract class SDMXFeatureSource extends ContentFeatureSource {
 
     // TODO: it shuold return the bounds of the query, if not null
     @Override
-    protected ReferencedEnvelope getBoundsInternal(Query arg0) throws IOException {
+    protected ReferencedEnvelope getBoundsInternal(Query arg0) {
         return this.getInfo().getBounds();
     }
 
     @Override
-    protected int getCountInternal(Query query) throws IOException {
+    protected int getCountInternal(Query query) {
         // FIXME: I think SDMNX does not support that
         return 1;
     }
@@ -167,14 +167,13 @@ public abstract class SDMXFeatureSource extends ContentFeatureSource {
 
     // Method stub, implemented by subclass
     @Override
-    protected FeatureReader<SimpleFeatureType, SimpleFeature> getReaderInternal(Query query)
-            throws IOException {
+    protected FeatureReader<SimpleFeatureType, SimpleFeature> getReaderInternal(Query query) {
         return null;
     }
 
     // Method stub, implemented by subclass
     @Override
-    protected SimpleFeatureType buildFeatureType() throws IOException {
+    protected SimpleFeatureType buildFeatureType() {
         return null;
     }
 }

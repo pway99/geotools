@@ -75,14 +75,14 @@ public abstract class OnlineTestSupport {
      *
      * @see OnlineTestCase#connect()
      */
-    protected void connect() throws Exception {}
+    protected void connect() {}
 
     /**
      * Override this method to disconnect from an online resource. Throw an exception on failure.
      *
      * @see OnlineTestCase#disconnect()
      */
-    protected void disconnect() throws Exception {}
+    protected void disconnect() {}
 
     /**
      * Override this method to return false if you can detect that an online resource required for
@@ -91,7 +91,7 @@ public abstract class OnlineTestSupport {
      * @return false if a required resource is not online
      * @see OnlineTestCase#isOnline()
      */
-    protected boolean isOnline() throws Exception {
+    protected boolean isOnline() {
         return true;
     }
 
@@ -100,14 +100,14 @@ public abstract class OnlineTestSupport {
      *
      * @see OnlineTestCase#setUpInternal()
      */
-    protected void setUpInternal() throws Exception {}
+    protected void setUpInternal() {}
 
     /**
      * Method for subclasses to latch onto the teardown phase.
      *
      * @see OnlineTestCase#tearDownInternal()
      */
-    protected void tearDownInternal() throws Exception {}
+    protected void tearDownInternal() {}
 
     /**
      * Allows tests to create an offline fixture in cases where the user has not specified an

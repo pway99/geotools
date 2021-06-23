@@ -152,8 +152,7 @@ public class Robinson extends MapProjection {
      * radians) and stores the result in {@code ptDst} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D transformNormalized(double lam, double phi, final Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double lam, double phi, final Point2D ptDst) {
 
         double dphi = abs(phi);
         int i = (int) floor(dphi * C1);

@@ -44,7 +44,7 @@ public class UuidConverterFactory implements ConverterFactory {
                 return new Converter() {
 
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         return target.cast(UUID.fromString((String) source));
                     }
                 };
@@ -55,7 +55,7 @@ public class UuidConverterFactory implements ConverterFactory {
                 return new Converter() {
 
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         return target.cast(UUID.nameUUIDFromBytes((byte[]) source));
                     }
                 };

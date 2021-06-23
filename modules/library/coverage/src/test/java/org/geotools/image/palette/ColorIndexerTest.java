@@ -94,7 +94,7 @@ public class ColorIndexerTest {
     }
 
     @Test
-    public void testTranslatedImage() throws Exception {
+    public void testTranslatedImage() {
         BufferedImage bi = new BufferedImage(256, 256, BufferedImage.TYPE_BYTE_GRAY);
         TiledImage image =
                 new TiledImage(

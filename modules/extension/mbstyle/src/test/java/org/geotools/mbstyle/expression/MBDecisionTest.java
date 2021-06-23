@@ -52,7 +52,7 @@ public class MBDecisionTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testDecisionNot() throws Exception {
+    public void testDecisionNot() {
         final JSONObject j = getObjectByLayerId("decisionNot", "layout");
         // get the notFalse-field, which should evaluate to true
         assertTrue(getExpressionEvaluationAsBoolean(j, "notFalse-field"));
@@ -63,7 +63,7 @@ public class MBDecisionTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testDecisionNotEqualTo() throws Exception {
+    public void testDecisionNotEqualTo() {
         final JSONObject j = getObjectByLayerId("decisionNotEqualTo", "layout");
         // get the compareStrings-equal, which should evaluate to false
         assertFalse(getExpressionEvaluationAsBoolean(j, "compareStrings-equal"));
@@ -88,7 +88,7 @@ public class MBDecisionTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testDecisionEqualTo() throws Exception {
+    public void testDecisionEqualTo() {
         final JSONObject j = getObjectByLayerId("decisionEqualTo", "layout");
         // get the compareStrings-equal, which should evaluate to true
         assertTrue(getExpressionEvaluationAsBoolean(j, "compareStrings-equal"));
@@ -113,7 +113,7 @@ public class MBDecisionTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testDecisionLessThan() throws Exception {
+    public void testDecisionLessThan() {
         final JSONObject j = getObjectByLayerId("decisionLessThan", "layout");
         // get the lessThan-numericField, which should evaluate to true
         assertTrue(getExpressionEvaluationAsBoolean(j, "lessThan-numericField"));
@@ -130,7 +130,7 @@ public class MBDecisionTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testDecisionLessThanEquals() throws Exception {
+    public void testDecisionLessThanEquals() {
         final JSONObject j = getObjectByLayerId("decisionLessThanEquals", "layout");
         // get the lessThan-numericField, which should evaluate to true
         assertTrue(getExpressionEvaluationAsBoolean(j, "lessThan-numericField"));
@@ -147,7 +147,7 @@ public class MBDecisionTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testDecisionGreaterThan() throws Exception {
+    public void testDecisionGreaterThan() {
         final JSONObject j = getObjectByLayerId("decisionGreaterThan", "layout");
         // get the lessThan-numericField, which should evaluate to false
         assertFalse(getExpressionEvaluationAsBoolean(j, "lessThan-numericField"));
@@ -164,7 +164,7 @@ public class MBDecisionTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testDecisionGreaterThanEquals() throws Exception {
+    public void testDecisionGreaterThanEquals() {
         final JSONObject j = getObjectByLayerId("decisionGreaterThanEquals", "layout");
         // get the lessThan-numericField, which should evaluate to false
         assertFalse(getExpressionEvaluationAsBoolean(j, "lessThan-numericField"));
@@ -181,7 +181,7 @@ public class MBDecisionTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testDecisionAny() throws Exception {
+    public void testDecisionAny() {
         final JSONObject j = getObjectByLayerId("decisionAny", "layout");
         // get the any-trueFalseFalse, which should evaluate to true
         assertTrue(getExpressionEvaluationAsBoolean(j, "any-trueFalseFalse"));
@@ -202,7 +202,7 @@ public class MBDecisionTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testDecisionAll() throws Exception {
+    public void testDecisionAll() {
         final JSONObject j = getObjectByLayerId("decisionAll", "layout");
         // get the all-trueFalseFalse, which should evaluate to false
         assertFalse(getExpressionEvaluationAsBoolean(j, "all-trueFalseFalse"));
@@ -225,7 +225,7 @@ public class MBDecisionTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testDecisionCase() throws Exception {
+    public void testDecisionCase() {
         final JSONObject j = getObjectByLayerId("decisionCase", "layout");
         // get the case-trueFalseDefault, which should evaluate to 10
         assertEquals(10L, getExpressionEvaluation(j, "case-trueFalseDefault"));
@@ -242,7 +242,7 @@ public class MBDecisionTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testDecisionCoalesce() throws Exception {
+    public void testDecisionCoalesce() {
         final JSONObject j = getObjectByLayerId("decisionCoalesce", "layout");
         // get the coalesce-stringNull, which should evaluate to "aString"
         assertEquals("aString", getExpressionEvaluation(j, "coalesce-stringNull"));
@@ -257,7 +257,7 @@ public class MBDecisionTest extends AbstractMBExpressionTest {
     }
 
     @Test
-    public void testDecisionMatch() throws Exception {
+    public void testDecisionMatch() {
         final JSONObject j = getObjectByLayerId("decisionMatch", "layout");
         // get the match-thirdLabel, which should evaluate to "thirdLabel"
         assertEquals("thirdLabel", getExpressionEvaluation(j, "match-thirdLabel"));

@@ -9,7 +9,6 @@
  */
 package org.opengis.filter;
 
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 
 /**
@@ -55,7 +54,7 @@ public final class IncludeFilter implements Filter, Serializable {
     }
 
     /** Returns the canonical instance on deserialization. */
-    private Object readResolve() throws ObjectStreamException {
+    private Object readResolve() {
         return Filter.INCLUDE;
     }
 }

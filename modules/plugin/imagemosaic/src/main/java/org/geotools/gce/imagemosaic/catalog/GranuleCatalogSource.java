@@ -112,7 +112,7 @@ public class GranuleCatalogSource implements GranuleSource {
     }
 
     @Override
-    public void dispose() throws IOException {
+    public void dispose() {
         // TODO: check if we need to dispose it or not
         // Does nothing, the catalog should be disposed by the user
 

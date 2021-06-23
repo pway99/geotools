@@ -48,7 +48,7 @@ public class GMLParsing {
     }
 
     /** Parses GML3 without specifying a schema location. */
-    public static void parseGML3() throws Exception {
+    public static void parseGML3() {
         InputStream in = GMLParsing.class.getResourceAsStream("states.xml");
         GMLConfiguration gml = new GMLConfiguration();
         Parser parser = new Parser(gml);
@@ -71,7 +71,7 @@ public class GMLParsing {
      * Parses GML3 without specifying a schema location, and illusrates the use of the streaming
      * parser.
      */
-    public static void streamParseGML3() throws Exception {
+    public static void streamParseGML3() {
         InputStream in = GMLParsing.class.getResourceAsStream("states.xml");
         GMLConfiguration gml = new GMLConfiguration();
         StreamingParser parser = new StreamingParser(gml, in, SimpleFeature.class);

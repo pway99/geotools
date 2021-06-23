@@ -49,7 +49,7 @@ public class GeobufDataStore extends ContentDataStore {
     }
 
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         String name = file.getName();
         name = name.substring(0, name.lastIndexOf('.'));
         Name typeName = new NameImpl(name);
@@ -65,8 +65,7 @@ public class GeobufDataStore extends ContentDataStore {
     }
 
     @Override
-    protected ContentFeatureSource createFeatureSource(ContentEntry contentEntry)
-            throws IOException {
+    protected ContentFeatureSource createFeatureSource(ContentEntry contentEntry) {
         if (!file.exists() || file.canWrite()) {
             return new GeobufFeatureStore(contentEntry, Query.ALL, precision, dimension);
         } else {

@@ -63,14 +63,14 @@ public class ArcGISRestDataStoreTest {
     private PostMethod postMock;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         this.clientMock = PowerMockito.mock(HttpClient.class);
         this.getMock = PowerMockito.mock(GetMethod.class);
         this.postMock = PowerMockito.mock(PostMethod.class);
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         this.clientMock = PowerMockito.mock(HttpClient.class);
         this.getMock = PowerMockito.mock(GetMethod.class);
         this.postMock = PowerMockito.mock(PostMethod.class);

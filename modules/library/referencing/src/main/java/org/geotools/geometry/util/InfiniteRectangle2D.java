@@ -19,7 +19,6 @@ package org.geotools.geometry.util;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 
 /**
@@ -219,7 +218,7 @@ final class InfiniteRectangle2D extends Rectangle2D implements Serializable {
     }
 
     /** Returns the singleton instance of {@code InfiniteRectangle2D}. */
-    private Object readResolve() throws ObjectStreamException {
+    private Object readResolve() {
         return INFINITY;
     }
 }

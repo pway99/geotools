@@ -93,7 +93,7 @@ public class GeometryOperandTypeBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         QName name = (QName) value;
 
         return GeometryOperand.get(name.getNamespaceURI(), name.getLocalPart());

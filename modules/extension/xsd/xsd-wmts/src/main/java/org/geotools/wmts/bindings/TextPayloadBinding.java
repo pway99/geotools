@@ -93,7 +93,7 @@ public class TextPayloadBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         TextPayloadType payload = factory.createTextPayloadType();
         payload.setFormat((String) node.getChildValue("Format"));
         payload.setTextContent((String) node.getChildValue("TextContent"));

@@ -517,7 +517,7 @@ public class Console extends AbstractConsole {
      * @param point The point to print, or {@code null} if none.
      * @throws IOException if an error occured while writting to the output stream.
      */
-    private void print(final DirectPosition point, final TableWriter table) throws IOException {
+    private void print(final DirectPosition point, final TableWriter table) {
         if (point != null) {
             table.nextColumn();
             table.write("  (");
@@ -538,8 +538,7 @@ public class Console extends AbstractConsole {
             final CoordinateReferenceSystem crs,
             final DirectPosition position1,
             final DirectPosition position2,
-            final TableWriter table)
-            throws IOException {
+            final TableWriter table) {
         if (position1 == null) {
             // Note: 'position2' is checked below, *after* blank columns insertion.
             return;

@@ -17,7 +17,6 @@
 package org.geotools.feature.collection;
 
 import java.io.Closeable;
-import java.io.IOException;
 import java.util.Iterator;
 import org.geotools.data.DataUtilities;
 import org.geotools.feature.FeatureIterator;
@@ -51,7 +50,7 @@ public class BridgeIterator<F extends Feature> implements Iterator<F>, Closeable
     public void remove() {}
 
     @Override
-    public void close() throws IOException {
+    public void close() {
         delegate.close();
     }
 }

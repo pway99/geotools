@@ -79,7 +79,7 @@ public class GeneralDirectPosition extends AbstractDirectPosition
      * @param numDim Number of dimensions.
      * @throws NegativeArraySizeException if {@code numDim} is negative.
      */
-    public GeneralDirectPosition(final int numDim) throws NegativeArraySizeException {
+    public GeneralDirectPosition(final int numDim) {
         ordinates = new double[numDim];
     }
 

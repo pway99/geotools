@@ -18,7 +18,6 @@ package org.geotools.graph.build.feature;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
 import org.geotools.graph.build.line.LineStringGraphGenerator;
@@ -79,7 +78,7 @@ public class FeatureGraphGeneratorTest {
         return lines;
     }
 
-    SimpleFeature[] features(LineString[] lines) throws SchemaException, IllegalAttributeException {
+    SimpleFeature[] features(LineString[] lines) throws IllegalAttributeException {
 
         SimpleFeatureTypeBuilder b = new SimpleFeatureTypeBuilder();
         b.setName("test");

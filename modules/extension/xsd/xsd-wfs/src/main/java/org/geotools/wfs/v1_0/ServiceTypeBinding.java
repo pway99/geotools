@@ -41,7 +41,7 @@ public class ServiceTypeBinding extends AbstractComplexEMFBinding {
     }
 
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Ows10Factory ows10Factory = Ows10Factory.eINSTANCE;
         ServiceIdentificationType service = ows10Factory.createServiceIdentificationType();
 

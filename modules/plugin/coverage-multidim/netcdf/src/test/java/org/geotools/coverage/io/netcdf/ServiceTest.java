@@ -31,8 +31,6 @@ import org.geotools.imageio.netcdf.NetCDFImageReader;
 import org.geotools.test.TestData;
 import org.geotools.util.logging.Logging;
 import org.junit.Test;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 
 /**
  * Class for testing availability of NetCDF format factory
@@ -45,7 +43,7 @@ public class ServiceTest {
     private static final Logger LOGGER = Logging.getLogger(ServiceTest.class);
 
     @Test
-    public void isAvailable() throws NoSuchAuthorityCodeException, FactoryException {
+    public void isAvailable() {
         CoverageIO.scanForPlugins();
         Set<Driver> drivers = CoverageIO.getAvailableDrivers();
         Driver driverFound = null;

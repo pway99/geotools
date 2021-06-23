@@ -274,7 +274,7 @@ public class GML3FeatureCollectionEncoderDelegate
         }
 
         @Override
-        public String getGmlPrefix() throws Exception {
+        public String getGmlPrefix() {
             return gmlPrefix;
         }
 

@@ -98,8 +98,7 @@ class EmfAppSchemaParser {
     public static SimpleFeatureType parse(
             Configuration configuration,
             XSDElementDeclaration elementDecl,
-            CoordinateReferenceSystem crs)
-            throws IOException {
+            CoordinateReferenceSystem crs) {
 
         Map<QName, Object> bindings = configuration.setupBindings();
         BindingLoader bindingLoader = new BindingLoader(bindings);

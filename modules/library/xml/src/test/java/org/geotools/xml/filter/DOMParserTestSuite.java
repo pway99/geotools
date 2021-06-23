@@ -24,8 +24,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import junit.framework.Test; // NOPMD
 import junit.framework.TestResult; // NOPMD
-import junit.framework.TestSuite; // NOPMD
-import org.geotools.feature.SchemaException;
+import junit.framework.TestSuite;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
 import org.geotools.filter.FilterDOMParser;
@@ -61,7 +60,7 @@ public class DOMParserTestSuite extends TestSuite {
         super("DOM Parser Test Suite");
     }
 
-    static void prepareFeatures() throws SchemaException, IllegalAttributeException {
+    static void prepareFeatures() throws IllegalAttributeException {
         // _log.getLoggerRepository().setThreshold(Level.INFO);
         // Create the schema attributes
         LOGGER.finer("creating flat feature...");

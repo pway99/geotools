@@ -25,7 +25,7 @@ import org.junit.Test;
 
 public class SLDFillBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(Fill.class, new SLDFillBinding(null, null).getType());
     }
 

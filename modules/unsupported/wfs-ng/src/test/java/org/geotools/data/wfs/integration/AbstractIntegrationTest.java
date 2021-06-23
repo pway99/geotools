@@ -710,7 +710,7 @@ public abstract class AbstractIntegrationTest {
     }
 
     boolean covers(SimpleFeatureIterator reader, SimpleFeature[] array)
-            throws NoSuchElementException, IOException {
+            throws NoSuchElementException {
         SimpleFeature feature;
         int count = 0;
 

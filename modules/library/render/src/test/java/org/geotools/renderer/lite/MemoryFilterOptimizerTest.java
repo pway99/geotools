@@ -165,7 +165,7 @@ public class MemoryFilterOptimizerTest extends DataTestCase {
     }
 
     @Test
-    public void testInFunctionOptimizer() throws Exception {
+    public void testInFunctionOptimizer() {
         String name = "name";
         PropertyName property = ff.property(name);
         SimpleFeatureType subtype1 = SimpleFeatureTypeBuilder.retype(roadType, name);
@@ -197,7 +197,7 @@ public class MemoryFilterOptimizerTest extends DataTestCase {
     }
 
     @Test
-    public void testInFunctionOptimizerNotUsed() throws Exception {
+    public void testInFunctionOptimizerNotUsed() {
         String name = "name";
         PropertyName property = ff.property(name);
         PropertyName property2 = ff.property("other");
@@ -214,7 +214,7 @@ public class MemoryFilterOptimizerTest extends DataTestCase {
     }
 
     @Test
-    public void testInFunctionOptimizerNotUsedOtherFilter() throws Exception {
+    public void testInFunctionOptimizerNotUsedOtherFilter() {
         String name = "name";
         PropertyName property = ff.property(name);
         SimpleFeatureType subtype1 = SimpleFeatureTypeBuilder.retype(roadType, name);
@@ -230,7 +230,7 @@ public class MemoryFilterOptimizerTest extends DataTestCase {
     }
 
     @Test
-    public void testInFunctionOptimizerExpression() throws Exception {
+    public void testInFunctionOptimizerExpression() {
         String name = "name";
         PropertyName property = ff.property(name);
         FilterFunction_strConcat concat = new FilterFunction_strConcat();

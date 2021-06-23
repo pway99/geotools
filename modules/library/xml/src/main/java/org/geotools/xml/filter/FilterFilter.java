@@ -251,7 +251,7 @@ public class FilterFilter extends XMLFilterImpl implements GMLHandlerJTS {
      * @throws SAXException Some parsing error occurred while reading coordinates.
      */
     @Override
-    public void characters(char[] chars, int start, int length) throws SAXException {
+    public void characters(char[] chars, int start, int length) {
         // accumulate partial strings in the instance StringBuffer
         // so we make sure the message is collected as a whole before
         // passing it to expression factory

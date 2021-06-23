@@ -62,7 +62,7 @@ public class ShapefileWriter implements Closeable {
     private GeometryFactory gf = new GeometryFactory();
 
     /** Creates a new instance of ShapeFileWriter */
-    public ShapefileWriter(FileChannel shpChannel, FileChannel shxChannel) throws IOException {
+    public ShapefileWriter(FileChannel shpChannel, FileChannel shxChannel) {
         this.shpChannel = shpChannel;
         this.shxChannel = shxChannel;
         shpLogger.open();
@@ -226,7 +226,7 @@ public class ShapefileWriter implements Closeable {
         return length;
     }
 
-    protected int writeNullGeometry() throws IOException {
+    protected int writeNullGeometry() {
         // two for the headers + the null shape mark
         int length = 4;
         checkShapeBuffer(8 + length);

@@ -19,8 +19,6 @@ package org.geotools.swing.control;
 
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
-import java.awt.datatransfer.UnsupportedFlavorException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -79,8 +77,7 @@ public class DnDListItemsTransferable<T> implements Transferable {
      * @throws UnsupportedFlavorException if the requested data flavor is not supported.
      */
     @Override
-    public List<T> getTransferData(DataFlavor flavor)
-            throws UnsupportedFlavorException, IOException {
+    public List<T> getTransferData(DataFlavor flavor) {
         return items;
     }
 }

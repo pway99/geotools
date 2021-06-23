@@ -34,7 +34,7 @@ public class HTTPClientFinderTest {
     }
 
     @Test
-    public void findingSimpleHttpClientAsDefault() throws Exception {
+    public void findingSimpleHttpClientAsDefault() {
         HTTPClient client = HTTPClientFinder.createClient();
 
         assertNotNull(client);
@@ -42,7 +42,7 @@ public class HTTPClientFinderTest {
     }
 
     @Test
-    public void findingCustomHttpClientTestByHints() throws Exception {
+    public void findingCustomHttpClientTestByHints() {
 
         HTTPClient client =
                 HTTPClientFinder.createClient(new Hints(Hints.HTTP_CLIENT, CustomHttpClient.class));
@@ -51,7 +51,7 @@ public class HTTPClientFinderTest {
     }
 
     @Test
-    public void usingSystemPropertiesToSetLogging() throws Exception {
+    public void usingSystemPropertiesToSetLogging() {
 
         Hints.putSystemDefault(Hints.HTTP_LOGGING, "True");
         try {
@@ -63,7 +63,7 @@ public class HTTPClientFinderTest {
     }
 
     @Test
-    public void avoidLoggingInspiteSystemProperty() throws Exception {
+    public void avoidLoggingInspiteSystemProperty() {
         Hints.putSystemDefault(Hints.HTTP_LOGGING, "True");
         try {
 
@@ -76,7 +76,7 @@ public class HTTPClientFinderTest {
     }
 
     @Test
-    public void usingSystemPropertiesToSetLoggingWithCharset() throws Exception {
+    public void usingSystemPropertiesToSetLoggingWithCharset() {
 
         Hints.putSystemDefault(Hints.HTTP_LOGGING, "utf-8");
         try {
@@ -96,7 +96,7 @@ public class HTTPClientFinderTest {
     }
 
     @Test
-    public void askingForNonExistingBehavior() throws Exception {
+    public void askingForNonExistingBehavior() {
         try {
             HTTPClientFinder.createClient(HTTPConnectionPooling.class);
         } catch (RuntimeException ex) {
@@ -112,7 +112,7 @@ public class HTTPClientFinderTest {
      * HTTPFactoryException, because SimpleHttpClient doesn't support it. In support of GEOT-6850.
      */
     @Test
-    public void createClientWithSystemProxyHost() throws Exception {
+    public void createClientWithSystemProxyHost() {
         final boolean nullInitially = System.getProperty("http.proxyHost") == null;
         if (nullInitially) {
             System.setProperty("http.proxyHost", "http://proxy.dummy/");

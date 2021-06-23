@@ -44,7 +44,6 @@ import org.opengis.parameter.ParameterValue;
 import org.opengis.parameter.ParameterValueGroup;
 import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.operation.MathTransform;
-import org.opengis.referencing.operation.TransformException;
 import org.opengis.referencing.operation.Transformation;
 
 /**
@@ -301,8 +300,7 @@ public final class EarthGravitationalModel extends VerticalTransform {
 
     /** {@inheritDoc} */
     @Override
-    public double heightOffset(final double longitude, final double latitude, final double height)
-            throws TransformException {
+    public double heightOffset(final double longitude, final double latitude, final double height) {
         /*
          * Note: no need to ensure that longitude is in [-180..+180°] range, because its value
          * is used only in trigonometric functions (sin / cos), which roll it as we would expect.

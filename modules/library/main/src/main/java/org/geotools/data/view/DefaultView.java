@@ -93,7 +93,7 @@ public class DefaultView implements SimpleFeatureSource {
      * @param source a FeatureSource
      * @param query Filter used to limit results
      */
-    public DefaultView(SimpleFeatureSource source, Query query) throws SchemaException {
+    public DefaultView(SimpleFeatureSource source, Query query) {
         this.source = source;
         this.constraintQuery = query;
 

@@ -63,7 +63,7 @@ public class JDBCUpdateInsertFeatureWriter extends JDBCUpdateFeatureWriter {
 
     @Override
     public SimpleFeature next()
-            throws IOException, IllegalArgumentException, NoSuchElementException {
+            throws IllegalArgumentException, NoSuchElementException {
         if (inserter != null) {
             return inserter.next();
         }

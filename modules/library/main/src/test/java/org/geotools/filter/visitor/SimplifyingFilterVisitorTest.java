@@ -53,7 +53,7 @@ public class SimplifyingFilterVisitorTest {
     PropertyIsEqualTo property;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         emptyFid = ff.id(new HashSet<>());
         property = ff.equal(ff.property("test"), ff.literal("oneTwoThree"), false);
         // visitor assuming simple features
@@ -70,7 +70,7 @@ public class SimplifyingFilterVisitorTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         EnvFunction.clearLocalValues();
     }
 

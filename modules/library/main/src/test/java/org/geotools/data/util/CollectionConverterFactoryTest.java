@@ -25,7 +25,7 @@ import org.junit.Test;
 public class CollectionConverterFactoryTest {
 
     @Test
-    public void testCollectionToCollection() throws Exception {
+    public void testCollectionToCollection() {
         List<Integer> source = new ArrayList<>();
         source.add(1);
         source.add(2);
@@ -40,7 +40,7 @@ public class CollectionConverterFactoryTest {
     }
 
     @Test
-    public void testCollectionToArray() throws Exception {
+    public void testCollectionToArray() {
         List<Integer> source = new ArrayList<>();
         source.add(1);
         source.add(2);
@@ -54,7 +54,7 @@ public class CollectionConverterFactoryTest {
     }
 
     @Test
-    public void testArrayToCollection() throws Exception {
+    public void testArrayToCollection() {
         Integer[] source = {1, 2};
 
         Object converted = CollectionConverterFactory.ArrayToCollection.convert(source, List.class);
@@ -65,7 +65,7 @@ public class CollectionConverterFactoryTest {
     }
 
     @Test
-    public void testArrayToArray() throws Exception {
+    public void testArrayToArray() {
         Integer[] source = {1, 2};
 
         Object converted = CollectionConverterFactory.ArrayToArray.convert(source, Number[].class);

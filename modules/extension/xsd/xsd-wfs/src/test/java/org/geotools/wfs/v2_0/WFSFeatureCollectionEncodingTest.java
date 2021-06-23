@@ -195,7 +195,7 @@ public class WFSFeatureCollectionEncodingTest {
     }
 
     @Test
-    public void testEncodeNumberMatchedReturned() throws Exception {
+    public void testEncodeNumberMatchedReturned() {
         // prepare empty result
         net.opengis.wfs20.FeatureCollectionType fc =
                 Wfs20Factory.eINSTANCE.createFeatureCollectionType();

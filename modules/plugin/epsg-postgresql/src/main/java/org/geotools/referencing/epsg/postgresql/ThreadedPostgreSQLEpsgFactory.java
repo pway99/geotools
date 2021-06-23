@@ -198,7 +198,7 @@ public class ThreadedPostgreSQLEpsgFactory extends ThreadedEpsgFactory {
      * @throws SQLException if connection to the database failed.
      */
     @Override
-    protected AbstractAuthorityFactory createBackingStore(final Hints hints) throws SQLException {
+    protected AbstractAuthorityFactory createBackingStore(final Hints hints) {
         final FactoryUsingAnsiSQL factory = new FactoryUsingAnsiSQL(hints, getDataSource());
         factory.setValidationQuery("select now()");
         if (schema != null) {

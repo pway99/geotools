@@ -87,7 +87,7 @@ public class QuickTileViewer {
 
     private LayerDialog layerDialog;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         String baseURL = "http://localhost:9090/geoserver/ogc/";
 
@@ -119,7 +119,7 @@ public class QuickTileViewer {
     }
 
     void addLayer(String identifier, String style, String format)
-            throws IOException, SAXException, ParserConfigurationException {
+            throws IOException {
         CollectionType col = collections.collections.get(identifier);
         for (Link l : col.links) {
             if ("items".equalsIgnoreCase(l.rel) && format.equalsIgnoreCase(l.type)) {

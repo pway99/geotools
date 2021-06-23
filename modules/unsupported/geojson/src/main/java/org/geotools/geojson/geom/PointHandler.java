@@ -16,7 +16,6 @@
  */
 package org.geotools.geojson.geom;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import org.json.simple.parser.ParseException;
 import org.locationtech.jts.geom.Coordinate;
@@ -30,7 +29,7 @@ public class PointHandler extends GeometryHandlerBase<Point> {
     }
 
     @Override
-    public boolean startObjectEntry(String key) throws ParseException, IOException {
+    public boolean startObjectEntry(String key) {
         if ("coordinates".equals(key)) {
             ordinates = new ArrayList<>();
         }
@@ -39,7 +38,7 @@ public class PointHandler extends GeometryHandlerBase<Point> {
     }
 
     @Override
-    public boolean endObject() throws ParseException, IOException {
+    public boolean endObject() throws ParseException {
         if (ordinates != null) {
             Coordinate c = coordinate(ordinates);
             value = factory.createPoint(c);

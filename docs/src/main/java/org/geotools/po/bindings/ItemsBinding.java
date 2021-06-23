@@ -84,7 +84,7 @@ public class ItemsBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @SuppressWarnings("unchecked")
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Items items = factory.createItems();
         items.getItem().addAll(node.getChildValues("item"));
         return items;

@@ -651,7 +651,7 @@ public class GML3MockData {
         return feature;
     }
 
-    public static SimpleFeature feature() throws Exception {
+    public static SimpleFeature feature() {
         SimpleFeatureTypeBuilder typeBuilder = new SimpleFeatureTypeBuilder();
         typeBuilder.setName(TEST.TestFeature.getLocalPart());
         typeBuilder.setNamespaceURI(TEST.TestFeature.getNamespaceURI());

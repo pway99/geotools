@@ -129,7 +129,7 @@ public class OracleOnlineTestCase extends OnlineTestCase {
         }
     }
 
-    protected void disconnect() throws Exception {
+    protected void disconnect() {
         datasource = null;
     }
 }

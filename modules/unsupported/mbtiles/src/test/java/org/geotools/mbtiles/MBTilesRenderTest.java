@@ -50,7 +50,6 @@ import org.geotools.xml.styling.SLDParser;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 /** Checks clip masks are doing their job */
@@ -105,7 +104,7 @@ public class MBTilesRenderTest {
     }
 
     @Test
-    public void testRenderReprojected() throws IOException, FactoryException {
+    public void testRenderReprojected() throws IOException {
         // get a generic style that works will all layer types
         URL styleResource = MBTilesRenderTest.class.getResource("generic.sld");
         StyleFactory styleFactory = CommonFactoryFinder.getStyleFactory();

@@ -35,12 +35,12 @@ import org.junit.Test;
 public class ShpFilesLockingTest implements FileWriter {
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         getClass().getClassLoader().setDefaultAssertionStatus(true);
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         Runtime.getRuntime().runFinalization();
     }
 

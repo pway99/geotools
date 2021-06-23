@@ -68,7 +68,7 @@ public class StyleTest {
 
     @SuppressWarnings("deprecation")
     @Test
-    public void font() throws Exception {
+    public void font() {
         List<Expression> family = new ArrayList<>();
         family.add(ff.literal("ariel"));
         family.add(ff.literal("Helvetica"));
@@ -90,7 +90,7 @@ public class StyleTest {
     }
 
     @Test
-    public void graphic() throws Exception {
+    public void graphic() {
         List<GraphicalSymbol> symbols = new ArrayList<>();
         symbols.add(sf.mark(ff.literal("square"), null, null));
         symbols.add(sf.mark(ff.literal("circle"), null, null));

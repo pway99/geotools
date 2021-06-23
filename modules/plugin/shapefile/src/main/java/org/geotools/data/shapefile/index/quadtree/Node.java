@@ -16,7 +16,6 @@
  */
 package org.geotools.data.shapefile.index.quadtree;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -87,7 +86,7 @@ public class Node {
      * @param pos The position
      * @return A Node
      */
-    public Node getSubNode(int pos) throws StoreException {
+    public Node getSubNode(int pos) {
         return this.subNodes.get(pos);
     }
 
@@ -167,7 +166,7 @@ public class Node {
         this.childrenVisited = childrenVisited;
     }
 
-    public Node copy() throws IOException {
+    public Node copy() {
         Node copy = new Node(bounds);
         copy.setShapesId(shapesId);
         copy.numShapesId = numShapesId;

@@ -148,7 +148,7 @@ public class WKTParser {
      * @param text A string containing the well known text to be parsed.
      * @return Geometry indicated by text (as created with current factories)
      */
-    public Geometry parse(String text) throws ParseException {
+    public Geometry parse(String text) {
         return read(new StringReader(text));
     }
 
@@ -446,7 +446,7 @@ public class WKTParser {
      * @throws IOException if an I/O error occurs
      * @throws ParseException if an unexpected token was encountered
      */
-    private Curve readLineStringText(StreamTokenizer tokenizer) throws IOException, ParseException {
+    private Curve readLineStringText(StreamTokenizer tokenizer) {
         List<Position> coordList = getCoordinates(tokenizer);
         LineString lineString = geometryFactory.createLineString(coordList);
         List<CurveSegment> curveSegmentList = Collections.singletonList(lineString);
@@ -464,7 +464,7 @@ public class WKTParser {
      * @throws ParseException if the coordinates used to create the <code>Curve</code> do not form a
      *     closed linestring, or if an unexpected token was encountered
      */
-    private Curve readLinearRingText(StreamTokenizer tokenizer) throws IOException, ParseException {
+    private Curve readLinearRingText(StreamTokenizer tokenizer) {
         List<Position> coordList = getCoordinates(tokenizer);
         LineString lineString = geometryFactory.createLineString(coordList);
         List<CurveSegment> curveSegmentList = Collections.singletonList(lineString);

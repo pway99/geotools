@@ -173,23 +173,22 @@ public class MappingFeatureSource implements FeatureSource<FeatureType, Feature>
     }
 
     @Override
-    public FeatureCollection<FeatureType, Feature> getFeatures(Query query) throws IOException {
+    public FeatureCollection<FeatureType, Feature> getFeatures(Query query) {
         return new MappingFeatureCollection(store, mapping, namedQuery(query));
     }
 
     @Override
-    public FeatureCollection<FeatureType, Feature> getFeatures(Filter filter) throws IOException {
+    public FeatureCollection<FeatureType, Feature> getFeatures(Filter filter) {
         return new MappingFeatureCollection(store, mapping, namedQuery(filter, Integer.MAX_VALUE));
     }
 
-    public FeatureCollection<FeatureType, Feature> getFeatures(Filter filter, Hints hints)
-            throws IOException {
+    public FeatureCollection<FeatureType, Feature> getFeatures(Filter filter, Hints hints) {
         return new MappingFeatureCollection(
                 store, mapping, namedQuery(filter, Integer.MAX_VALUE, hints));
     }
 
     @Override
-    public FeatureCollection<FeatureType, Feature> getFeatures() throws IOException {
+    public FeatureCollection<FeatureType, Feature> getFeatures() {
         return new MappingFeatureCollection(
                 store, mapping, namedQuery(Filter.INCLUDE, Integer.MAX_VALUE));
     }

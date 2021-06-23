@@ -30,7 +30,7 @@ public abstract class JDBCMeasuredGeometriesTestSetup extends JDBCDelegatingTest
     }
 
     @Override
-    protected final void setUpData() throws Exception {
+    protected final void setUpData() {
         // quietly drop the tables if they already exist
         dropTables();
         // create the necessary tables as well the data

@@ -26,7 +26,7 @@ public class BufferTest {
     Buffer buffer;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         buffer = new Buffer(10);
     }
 

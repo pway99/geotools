@@ -16,7 +16,6 @@
  */
 package org.geotools.data.oracle;
 
-import java.sql.SQLException;
 import org.geotools.jdbc.JDBCGeometrylessTestSetup;
 import org.geotools.jdbc.JDBCTestSetup;
 
@@ -41,13 +40,13 @@ public class OracleGeometrylessTestSetup extends JDBCGeometrylessTestSetup {
     }
 
     @Override
-    protected void dropPersonTable() throws SQLException {
+    protected void dropPersonTable() {
         runSafe("DROP SEQUENCE person_fid_seq");
         runSafe("DROP TABLE person");
     }
 
     @Override
-    protected void dropZipCodeTable() throws SQLException {
+    protected void dropZipCodeTable() {
         runSafe("DROP TABLE zipcode");
     }
 }

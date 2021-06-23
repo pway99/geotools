@@ -423,7 +423,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      * Replaces the specified unit, if applicable. To be overridden with {@code protected} access by
      * {@link TransformedAuthorityFactory}.
      */
-    Unit<?> replace(Unit<?> units) throws FactoryException {
+    Unit<?> replace(Unit<?> units) {
         return units;
     }
 
@@ -431,7 +431,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      * Replaces (if needed) the specified axis by a new one. To be overridden with {@code protected}
      * access by {@link TransformedAuthorityFactory}.
      */
-    CoordinateSystemAxis replace(CoordinateSystemAxis axis) throws FactoryException {
+    CoordinateSystemAxis replace(CoordinateSystemAxis axis) {
         return axis;
     }
 
@@ -439,7 +439,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      * Replaces (if needed) the specified coordinate system by a new one. To be overridden with
      * {@code protected} access by {@link TransformedAuthorityFactory}.
      */
-    CoordinateSystem replace(CoordinateSystem cs) throws FactoryException {
+    CoordinateSystem replace(CoordinateSystem cs) {
         return cs;
     }
 
@@ -447,7 +447,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      * Replaces (if needed) the specified datum by a new one. To be overridden with {@code
      * protected} access by {@link TransformedAuthorityFactory}.
      */
-    Datum replace(Datum datum) throws FactoryException {
+    Datum replace(Datum datum) {
         return datum;
     }
 
@@ -455,7 +455,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      * Replaces (if needed) the specified coordinate reference system. To be overridden with {@code
      * protected} access by {@link TransformedAuthorityFactory}.
      */
-    CoordinateReferenceSystem replace(CoordinateReferenceSystem crs) throws FactoryException {
+    CoordinateReferenceSystem replace(CoordinateReferenceSystem crs) {
         return crs;
     }
 
@@ -463,7 +463,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      * Replaces (if needed) the specified coordinate operation. To be overridden with {@code
      * protected} access by {@link TransformedAuthorityFactory}.
      */
-    CoordinateOperation replace(CoordinateOperation operation) throws FactoryException {
+    CoordinateOperation replace(CoordinateOperation operation) {
         return operation;
     }
 
@@ -1108,7 +1108,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      * @throws FactoryException if no suitable factory were found.
      * @since 2.4
      */
-    protected AuthorityFactory getAuthorityFactory(final String code) throws FactoryException {
+    protected AuthorityFactory getAuthorityFactory(final String code) {
         if (crsFactory != null) return crsFactory;
         if (csFactory != null) return csFactory;
         if (datumFactory != null) return datumFactory;
@@ -1127,8 +1127,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      * @throws FactoryException if no datum factory were specified at construction time.
      * @since 2.4
      */
-    protected DatumAuthorityFactory getDatumAuthorityFactory(final String code)
-            throws FactoryException {
+    protected DatumAuthorityFactory getDatumAuthorityFactory(final String code) {
         if (datumFactory == null) {
             throw missingFactory(DatumAuthorityFactory.class, code);
         }
@@ -1147,7 +1146,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      * @throws FactoryException if no coordinate system factory were specified at construction time.
      * @since 2.4
      */
-    protected CSAuthorityFactory getCSAuthorityFactory(final String code) throws FactoryException {
+    protected CSAuthorityFactory getCSAuthorityFactory(final String code) {
         if (csFactory == null) {
             throw missingFactory(CSAuthorityFactory.class, code);
         }
@@ -1167,8 +1166,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      *     construction time.
      * @since 2.4
      */
-    protected CRSAuthorityFactory getCRSAuthorityFactory(final String code)
-            throws FactoryException {
+    protected CRSAuthorityFactory getCRSAuthorityFactory(final String code) {
         if (crsFactory == null) {
             throw missingFactory(CRSAuthorityFactory.class, code);
         }
@@ -1189,7 +1187,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      * @since 2.4
      */
     protected CoordinateOperationAuthorityFactory getCoordinateOperationAuthorityFactory(
-            final String code) throws FactoryException {
+            final String code) {
         if (operationFactory == null) {
             throw missingFactory(CoordinateOperationAuthorityFactory.class, code);
         }
@@ -1201,7 +1199,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      * information from the coordinate operation authority factory, or will returns the default one
      * if no explicit factory were found.
      */
-    final CoordinateOperationFactory getCoordinateOperationFactory() throws FactoryException {
+    final CoordinateOperationFactory getCoordinateOperationFactory() {
         if (operationFactory instanceof Factory) {
             final Factory factory = (Factory) operationFactory;
             final Map hints = factory.getImplementationHints();
@@ -1249,7 +1247,7 @@ public class AuthorityFactoryAdapter extends AbstractAuthorityFactory implements
      * @throws FactoryException if the code can't be converted.
      * @since 2.4
      */
-    protected String toBackingFactoryCode(final String code) throws FactoryException {
+    protected String toBackingFactoryCode(final String code) {
         return code;
     }
 

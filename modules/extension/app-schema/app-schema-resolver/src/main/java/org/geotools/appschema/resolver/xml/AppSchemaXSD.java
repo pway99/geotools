@@ -17,7 +17,6 @@
 
 package org.geotools.appschema.resolver.xml;
 
-import java.io.IOException;
 import java.util.Set;
 import org.eclipse.xsd.XSDSchema;
 import org.eclipse.xsd.util.XSDSchemaLocator;
@@ -108,7 +107,7 @@ public class AppSchemaXSD extends XSD {
     }
 
     @Override
-    protected XSDSchema buildSchema() throws IOException {
+    protected XSDSchema buildSchema() {
         // check if schema already exists in registry, if so do not build
         XSDSchema schema = AppSchemaXSDRegistry.getInstance().lookUp(schemaLocation);
         if (schema == null) {

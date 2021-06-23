@@ -61,7 +61,7 @@ public class GMLWriterTest extends GMLTestSupport {
 
     @Override
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         Map<String, String> namespaces = new HashMap<>();
         namespaces.put("xs", "http://www.w3.org/2001/XMLSchema");
         namespaces.put("xsd", "http://www.w3.org/2001/XMLSchema");

@@ -17,7 +17,6 @@
 package org.geotools.coverage.io.netcdf;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.Serializable;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -169,8 +168,7 @@ public class NetCDFAccess extends DefaultFileCoverageAccess
     }
 
     @Override
-    public boolean delete(Name name, Map<String, Serializable> params, Hints hints)
-            throws IOException {
+    public boolean delete(Name name, Map<String, Serializable> params, Hints hints) {
         // Right now, simply delete the name
         return names.remove(name);
     }
@@ -181,8 +179,7 @@ public class NetCDFAccess extends DefaultFileCoverageAccess
             Map<String, Serializable> params,
             AccessType accessType,
             Hints hints,
-            ProgressListener listener)
-            throws IOException {
+            ProgressListener listener) {
         if (listener == null) {
             listener = new NullProgressListener();
         }
@@ -237,7 +234,7 @@ public class NetCDFAccess extends DefaultFileCoverageAccess
 
     @Override
     @SuppressWarnings("deprecation") // finalize is deprecated in Java 9
-    protected void finalize() throws Throwable {
+    protected void finalize() {
         if (reader != null) {
             LOGGER.warning(
                     "There is code leaving netcdf readers open, this might cause "

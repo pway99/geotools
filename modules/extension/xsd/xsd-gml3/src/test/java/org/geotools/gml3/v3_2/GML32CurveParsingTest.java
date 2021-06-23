@@ -29,7 +29,7 @@ public class GML32CurveParsingTest extends GML3CurveParsingTest {
 
     @Override
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         GMLConfiguration configuration = new GMLConfiguration(true);
         configuration.setGeometryFactory(new CurvedGeometryFactory(TOLERANCE));
         this.gml = configuration;

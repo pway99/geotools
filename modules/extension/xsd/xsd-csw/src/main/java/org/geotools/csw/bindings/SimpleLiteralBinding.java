@@ -36,7 +36,7 @@ public class SimpleLiteralBinding extends SimpleContentComplexEMFBinding {
     }
 
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         SimpleLiteral sl = Csw20Factory.eINSTANCE.createSimpleLiteral();
         sl.setName(instance.getName());
         sl.setValue(value);

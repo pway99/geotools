@@ -35,7 +35,7 @@ public class BboxtypeBindingTest extends GPKGTestSupport {
     }
 
     @Test
-    public void testParse() throws Exception {
+    public void testParse() {
         buildDocument("<bbox><minx>0</minx><maxx>100</maxx><miny>10</miny><maxy>50</maxy></bbox>");
         Object result = parse(GPKG.bboxtype);
         assertTrue(result instanceof Envelope);

@@ -60,11 +60,11 @@ public class MapMouseEventTest extends GraphicsTestBase {
     private MapMouseEvent mapEv;
 
     @Before
-    public void setup() throws Exception {
+    public void setup() {
         GuiActionRunner.execute(
                 new GuiTask() {
                     @Override
-                    protected void executeInEDT() throws Throwable {
+                    protected void executeInEDT() {
                         pane = new MockMapPane();
                         pane.setMapContent(new MapContent());
                         pane.setScreenArea(SCREEN);
@@ -118,11 +118,11 @@ public class MapMouseEventTest extends GraphicsTestBase {
         assertRect(expected, actual);
     }
 
-    private void createEvent(final int x, final int y) throws Exception {
+    private void createEvent(final int x, final int y) {
         GuiActionRunner.execute(
                 new GuiTask() {
                     @Override
-                    protected void executeInEDT() throws Throwable {
+                    protected void executeInEDT() {
                         ev = new MouseEvent(pane, MouseEvent.MOUSE_PRESSED, 0L, 0, x, y, 1, false);
                         mapEv = new MapMouseEvent(pane, ev);
                     }

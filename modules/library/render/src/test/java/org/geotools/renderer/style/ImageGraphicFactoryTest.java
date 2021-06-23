@@ -31,20 +31,20 @@ public class ImageGraphicFactoryTest {
     private FilterFactory ff;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         image = new ImageGraphicFactory();
         ff = CommonFactoryFinder.getFilterFactory(null);
     }
 
     /** Check that at least the well known png and jpeg formats are supported */
     @Test
-    public void testFormats() throws Exception {
+    public void testFormats() {
         Assert.assertTrue(image.getSupportedMimeTypes().contains("image/png"));
         Assert.assertTrue(image.getSupportedMimeTypes().contains("image/jpeg"));
     }
 
     @Test
-    public void testInvalidPaths() throws Exception {
+    public void testInvalidPaths() {
         Assert.assertNull(
                 image.getIcon(null, ff.literal("http://www.nowhere.com"), "image/not!", 20));
         try {
@@ -55,7 +55,7 @@ public class ImageGraphicFactoryTest {
     }
 
     @Test
-    public void testLocalURL() throws Exception {
+    public void testLocalURL() {
         URL url = StreamingRenderer.class.getResource("test-data/draw.png");
         Assert.assertNotNull(url);
         // first call, non cached path
@@ -65,7 +65,7 @@ public class ImageGraphicFactoryTest {
     }
 
     @Test
-    public void testNaturalSize() throws Exception {
+    public void testNaturalSize() {
         URL url = StreamingRenderer.class.getResource("test-data/draw.png");
         Assert.assertNotNull(url);
         Icon icon = image.getIcon(null, ff.literal(url), "image/png", -1);

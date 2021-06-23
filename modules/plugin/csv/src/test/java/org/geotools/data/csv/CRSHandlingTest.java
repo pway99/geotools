@@ -26,8 +26,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.opengis.feature.simple.SimpleFeatureType;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 public class CRSHandlingTest {
@@ -38,7 +36,7 @@ public class CRSHandlingTest {
 
     /** Check that CRS are handled correctly */
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
 
     @AfterClass
     public static void cleanUp() {
@@ -81,8 +79,7 @@ public class CRSHandlingTest {
 
     @Test
     public void testPrjFileRead()
-            throws FileNotFoundException, IOException, NoSuchAuthorityCodeException,
-                    FactoryException {
+            throws FileNotFoundException, IOException {
         File f = TestData.file(this, "coastal2.csv");
         Map<String, Object> params = new HashMap<>();
         params.put(CSVDataStoreFactory.FILE_PARAM.key, f.toString());
@@ -100,7 +97,7 @@ public class CRSHandlingTest {
     }
 
     @Test
-    public void testWritePrj() throws IOException, FactoryException {
+    public void testWritePrj() throws IOException {
         File f = new File(tmp, "testcrs.csv");
         Map<String, Object> params = new HashMap<>();
         params.put(CSVDataStoreFactory.FILE_PARAM.key, f.toString());

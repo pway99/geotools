@@ -26,7 +26,7 @@ import org.junit.Test;
 
 public class SLDRuleBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(Rule.class, new SLDRuleBinding(null).getType());
     }
 

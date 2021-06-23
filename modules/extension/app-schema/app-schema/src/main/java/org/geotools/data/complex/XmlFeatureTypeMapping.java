@@ -207,7 +207,7 @@ public class XmlFeatureTypeMapping extends FeatureTypeMapping {
         return null;
     }
 
-    public void populateFeatureData() throws IOException {
+    public void populateFeatureData() {
 
         List<AttributeMapping> attMap = getAttributeMappings();
         if (attOrderedTypeList == null) {

@@ -40,7 +40,7 @@ import org.opengis.feature.simple.SimpleFeatureType;
 public class CSVWriteStrategyTest {
     // docs start attributes
     @Test
-    public void Attributes() throws Exception {
+    public void Attributes() {
         CSVFileState fileState = new CSVFileState("CITY, NUMBER, YEAR", "TEST");
         CSVStrategy strategy = new CSVAttributesOnlyStrategy(fileState);
 
@@ -67,7 +67,7 @@ public class CSVWriteStrategyTest {
 
     // docs start latlon
     @Test
-    public void LatLon() throws Exception {
+    public void LatLon() {
         CSVFileState fileState = new CSVFileState("LAT, LON, CITY, NUMBER, YEAR", "TEST");
         CSVLatLonStrategy strategy = new CSVLatLonStrategy(fileState);
 
@@ -95,7 +95,7 @@ public class CSVWriteStrategyTest {
 
     // docs start SpecifiedLatLon
     @Test
-    public void SpecifiedLatLon() throws Exception {
+    public void SpecifiedLatLon() {
         CSVFileState fileState = new CSVFileState("TAL, NOL, CITY, NUMBER, YEAR", "TEST");
         CSVStrategy strategy = new CSVLatLonStrategy(fileState, "TAL", "NOL");
 

@@ -32,10 +32,10 @@ import org.opengis.filter.identity.FeatureId;
 
 public class FilterEncodingPreProcessorTest {
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
 
     @Test
-    public void testNOTFids() throws Exception {
+    public void testNOTFids() {
         FilterFactory2 factory = CommonFactoryFinder.getFilterFactory2(null);
         String fid1 = "FID.1";
         // not id filter does not actually have a valid encoding
@@ -67,7 +67,7 @@ public class FilterEncodingPreProcessorTest {
     }
 
     @Test
-    public void testNOTANDFids() throws Exception {
+    public void testNOTANDFids() {
         FilterFactory2 factory = CommonFactoryFinder.getFilterFactory2(null);
         String fid1 = "FID.1";
 
@@ -117,7 +117,7 @@ public class FilterEncodingPreProcessorTest {
     }
 
     @Test
-    public void testStraightANDFids() throws Exception {
+    public void testStraightANDFids() {
         FilterFactory2 factory = CommonFactoryFinder.getFilterFactory2(null);
         String fid1 = "FID.1";
         String fid2 = "FID.2";
@@ -178,7 +178,7 @@ public class FilterEncodingPreProcessorTest {
     }
 
     @Test
-    public void testMixedAND() throws Exception {
+    public void testMixedAND() {
         FilterFactory2 factory = CommonFactoryFinder.getFilterFactory2(null);
         String fid1 = "FID.1";
         String fid2 = "FID.2";
@@ -218,7 +218,7 @@ public class FilterEncodingPreProcessorTest {
     }
 
     @Test
-    public void testStraightOrFids() throws Exception {
+    public void testStraightOrFids() {
         FilterFactory2 factory = CommonFactoryFinder.getFilterFactory2(null);
         String fid1 = "FID.1";
         String fid2 = "FID.2";
@@ -255,7 +255,7 @@ public class FilterEncodingPreProcessorTest {
     }
 
     @Test
-    public void testMixedOr() throws Exception {
+    public void testMixedOr() {
         FilterFactory2 factory = CommonFactoryFinder.getFilterFactory2(null);
         String fid1 = "FID.1";
         String fid2 = "FID.2";
@@ -308,7 +308,7 @@ public class FilterEncodingPreProcessorTest {
      * <p>and the fids should be included.
      */
     @Test
-    public void testMixedAndOr() throws Exception {
+    public void testMixedAndOr() {
         FilterFactory2 factory = CommonFactoryFinder.getFilterFactory2(null);
         String fid1 = "FID.1";
         Filter nullFilter1 = factory.isNull(factory.property("att"));
@@ -351,7 +351,7 @@ public class FilterEncodingPreProcessorTest {
     }
 
     @Test
-    public void testStrictlyLegalFilter() throws Exception {
+    public void testStrictlyLegalFilter() {
         FilterFactory2 factory = CommonFactoryFinder.getFilterFactory2(null);
         Filter nullFilter1 = factory.isNull(factory.property("att"));
 

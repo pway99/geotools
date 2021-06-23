@@ -26,7 +26,7 @@ import org.junit.Test;
 
 public class SLDStrokeBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(Stroke.class, new SLDStrokeBinding(null, null).getType());
     }
 

@@ -18,7 +18,6 @@
 package org.geotools.gce.imagemosaic.acceptors;
 
 import java.io.File;
-import java.io.IOException;
 import org.geotools.coverage.grid.io.GridCoverage2DReader;
 import org.geotools.gce.imagemosaic.ImageMosaicConfigHandler;
 import org.geotools.gce.imagemosaic.MosaicConfigurationBean;
@@ -38,8 +37,7 @@ public class HomogeneousCRSAcceptor implements GranuleAcceptor {
             GridCoverage2DReader reader,
             String inputCoverageName,
             File fileBeingProcessed,
-            ImageMosaicConfigHandler mosaicConfigHandler)
-            throws IOException {
+            ImageMosaicConfigHandler mosaicConfigHandler) {
         String targetCoverageName =
                 mosaicConfigHandler.getTargetCoverageName(reader, inputCoverageName);
         MosaicConfigurationBean config =

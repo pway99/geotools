@@ -34,7 +34,7 @@ public class PostgisLobTestSetup extends JDBCLobTestSetup {
     }
 
     @Override
-    protected void dropLobTable() throws Exception {
+    protected void dropLobTable() {
         runSafe("DROP TABLE \"testlob\"");
     }
 }

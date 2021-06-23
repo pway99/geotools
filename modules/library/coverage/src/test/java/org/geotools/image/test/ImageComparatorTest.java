@@ -8,7 +8,6 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import org.geotools.image.test.ImageComparator.Mode;
 import org.junit.Test;
 
@@ -79,7 +78,7 @@ public class ImageComparatorTest {
         compareAntialiasedImage(BufferedImage.TYPE_BYTE_INDEXED);
     }
 
-    private void compareAntialiasedImage(int imageType) throws IOException {
+    private void compareAntialiasedImage(int imageType) {
         BufferedImage image1 = new BufferedImage(200, 200, imageType);
         Graphics2D gr = image1.createGraphics();
         gr.setColor(Color.BLUE);
@@ -112,7 +111,7 @@ public class ImageComparatorTest {
         compareDifferentColor(BufferedImage.TYPE_BYTE_INDEXED);
     }
 
-    private void compareDifferentColor(int imageType) throws IOException {
+    private void compareDifferentColor(int imageType) {
         BufferedImage image1 = new BufferedImage(200, 200, imageType);
         Graphics2D gr = image1.createGraphics();
         gr.setColor(new Color(0, 0, 255));

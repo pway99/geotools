@@ -324,7 +324,7 @@ public class DefaultTransaction implements Transaction {
      * @see org.geotools.data.Transaction#addProperty(java.lang.Object, java.lang.Object)
      */
     @Override
-    public void putProperty(Object key, Object value) throws IOException {
+    public void putProperty(Object key, Object value) {
         if (propertyLookup == null) {
             throw new IllegalStateException("Transaction has been closed");
         }

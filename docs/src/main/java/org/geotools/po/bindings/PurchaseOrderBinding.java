@@ -50,7 +50,7 @@ public class PurchaseOrderBinding extends AbstractComplexBinding {
      *
      * @generated modifiable
      */
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         PurchaseOrderType po = new PurchaseOrderType();
 
         po.setBillTo((USAddress) node.getChildValue("billTo"));

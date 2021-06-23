@@ -383,7 +383,7 @@ public class LineWriter extends FilterWriter {
      * @throws IOException if this method can not determine if the character is ignoreable.
      * @since 2.5
      */
-    protected boolean isWhitespace(final char c) throws IOException {
+    protected boolean isWhitespace(final char c) {
         return Character.isSpaceChar(c);
     }
 }

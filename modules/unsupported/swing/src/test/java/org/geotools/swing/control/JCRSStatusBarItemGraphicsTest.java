@@ -59,7 +59,7 @@ public class JCRSStatusBarItemGraphicsTest
                         new GuiQuery<JFrame>() {
 
                             @Override
-                            protected JFrame executeInEDT() throws Throwable {
+                            protected JFrame executeInEDT() {
                                 JFrame frame = new JFrame();
                                 frame.setLayout(new BorderLayout());
                                 mapContent = new MapContent();

@@ -31,7 +31,7 @@ public class MySQLDataStoreOnlineTest extends JDBCDataStoreOnlineTest {
     }
 
     @Override
-    public void testCreateSchemaWithConstraints() throws Exception {
+    public void testCreateSchemaWithConstraints() {
         // MySql does not complain if the string is too long, so we cannot run this test
     }
 }

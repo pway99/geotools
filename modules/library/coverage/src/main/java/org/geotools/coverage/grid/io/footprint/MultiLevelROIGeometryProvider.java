@@ -16,7 +16,6 @@
  */
 package org.geotools.coverage.grid.io.footprint;
 
-import java.io.IOException;
 import org.locationtech.jts.geom.Geometry;
 import org.opengis.feature.simple.SimpleFeature;
 
@@ -59,7 +58,7 @@ public class MultiLevelROIGeometryProvider implements MultiLevelROIProvider {
     }
 
     @Override
-    public MultiLevelROI getMultiScaleROI(SimpleFeature sf) throws IOException {
+    public MultiLevelROI getMultiScaleROI(SimpleFeature sf) {
         Geometry footprint = geometryProvider.getFootprint(sf);
         if (footprint == null) {
             return null;

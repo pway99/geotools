@@ -178,8 +178,7 @@ public class PolarStereographic extends Stereographic {
      * @param y The latitude of the coordinate, in <strong>radians</strong>.
      */
     @Override
-    protected Point2D transformNormalized(double x, double y, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double x, double y, Point2D ptDst) {
         final double sinlat = sin(y);
         final double coslon = cos(x);
         final double sinlon = sin(x);

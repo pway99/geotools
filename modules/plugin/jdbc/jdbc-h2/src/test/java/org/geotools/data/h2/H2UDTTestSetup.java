@@ -40,7 +40,7 @@ public class H2UDTTestSetup extends JDBCUDTTestSetup {
     }
 
     @Override
-    protected void dropUdtTable() throws Exception {
+    protected void dropUdtTable() {
         runSafe("DROP TABLE \"udt\"");
         runSafe("DROP DOMAIN \"foo\"");
     }

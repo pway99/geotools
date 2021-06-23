@@ -16,7 +16,6 @@
  */
 package org.geotools.data;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.NoSuchElementException;
 import org.geotools.data.simple.SimpleFeatureCollection;
@@ -90,7 +89,7 @@ class SimpleFeatureCollectionBridge implements SimpleFeatureCollection {
     }
 
     @Override
-    public void accepts(FeatureVisitor visitor, ProgressListener progress) throws IOException {
+    public void accepts(FeatureVisitor visitor, ProgressListener progress) {
         collection.accepts(visitor, progress);
     }
 

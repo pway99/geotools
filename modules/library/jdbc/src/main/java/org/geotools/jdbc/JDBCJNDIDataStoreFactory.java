@@ -79,7 +79,7 @@ public abstract class JDBCJNDIDataStoreFactory extends JDBCDataStoreFactory {
      * identified by the JNDI name.
      */
     @Override
-    protected String getJDBCUrl(Map<String, ?> params) throws IOException {
+    protected String getJDBCUrl(Map<String, ?> params) {
         return null;
     }
 

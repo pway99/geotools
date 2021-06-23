@@ -21,8 +21,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
-
-import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.Calendar;
@@ -100,14 +98,14 @@ public class TimeSeriesTest extends AppSchemaTestSupport {
 
     /** */
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         reader = EmfComplexFeatureReader.newInstance();
 
         // Logging.GEOTOOLS.forceMonolineConsoleOutput(Level.FINEST);
     }
 
     /** @param location schema location path discoverable through getClass().getResource() */
-    private SchemaIndex loadSchema(URL location) throws IOException {
+    private SchemaIndex loadSchema(URL location) {
         URL catalogLocation = getClass().getResource(schemaBase + "observations.oasis.xml");
         reader.setResolver(catalogLocation);
         return reader.parse(location);

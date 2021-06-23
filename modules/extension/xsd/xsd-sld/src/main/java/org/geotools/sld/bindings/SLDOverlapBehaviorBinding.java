@@ -101,7 +101,7 @@ public class SLDOverlapBehaviorBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // &lt;xsd:element ref="sld:LATEST_ON_TOP"/&gt;
         if (node.hasChild("LATEST_ON_TOP")) {
             return OverlapBehavior.LATEST_ON_TOP;

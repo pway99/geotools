@@ -21,7 +21,6 @@ import java.util.NoSuchElementException;
 import org.geotools.data.simple.SimpleFeatureIterator;
 import org.geotools.feature.FeatureIterator;
 import org.geotools.feature.FeatureTypes;
-import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
 import org.opengis.feature.IllegalAttributeException;
 import org.opengis.feature.simple.SimpleFeature;
@@ -69,8 +68,7 @@ public class ForceCoordinateSystemIterator
     public ForceCoordinateSystemIterator(
             FeatureIterator<SimpleFeature> reader,
             SimpleFeatureType type,
-            CoordinateReferenceSystem cs)
-            throws SchemaException {
+            CoordinateReferenceSystem cs) {
         if (cs == null) {
             throw new NullPointerException("CoordinateSystem required");
         }

@@ -17,7 +17,6 @@
 package org.geotools.geopkg;
 
 import java.awt.geom.AffineTransform;
-import java.io.IOException;
 import java.util.Collections;
 import org.geotools.data.Query;
 import org.geotools.data.simple.SimpleFeatureIterator;
@@ -45,14 +44,14 @@ public class GeoPkgDataStoreAPIOnlineTest extends JDBCDataStoreAPIOnlineTest {
     }
 
     @Override
-    public void testGetFeaturesWriterAdd() throws IOException {
+    public void testGetFeaturesWriterAdd() {
         // cannot work because the resultset metadata is not available on an empty resultset
         // see: https://www.sqlite.org/datatype3.html
         // and: https://github.com/xerial/sqlite-jdbc/issues/112
     }
 
     @Override
-    public void testTransactionIsolation() throws Exception {
+    public void testTransactionIsolation() {
         // sqlite does not allow two transactions from two different connections writing
         // at the same time
     }

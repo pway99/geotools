@@ -32,7 +32,7 @@ public class OasisCatalogTest extends AppSchemaTestSupport {
     org.apache.xml.resolver.Catalog catalog;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         catalog = new Catalog();
         catalog.setupReaders();
     }

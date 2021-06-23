@@ -303,7 +303,7 @@ public class FilterToSQL implements FilterVisitor, ExpressionVisitor {
      * @return a string representing the filter encoded to SQL.
      */
     @SuppressWarnings("PMD.CloseResource")
-    public String encodeToString(Filter filter) throws FilterToSQLException {
+    public String encodeToString(Filter filter) {
         StringWriter out = new StringWriter();
         this.out = out;
         this.encode(filter);
@@ -332,7 +332,7 @@ public class FilterToSQL implements FilterVisitor, ExpressionVisitor {
      * @return a string representing the filter encoded to SQL.
      */
     @SuppressWarnings("PMD.CloseResource")
-    public String encodeToString(Expression expression) throws FilterToSQLException {
+    public String encodeToString(Expression expression) {
         StringWriter out = new StringWriter();
         this.out = out;
         this.encode(expression);
@@ -1016,7 +1016,7 @@ public class FilterToSQL implements FilterVisitor, ExpressionVisitor {
     }
 
     /** Writes out an expression, wrapping it in parenthesis if it's a binary one */
-    protected void writeBinaryExpressionMember(Expression exp, Class context) throws IOException {
+    protected void writeBinaryExpressionMember(Expression exp, Class context) {
         if (context != null && isBinaryExpression(exp)) {
             writeBinaryExpression(exp, context);
         } else {
@@ -1607,7 +1607,7 @@ public class FilterToSQL implements FilterVisitor, ExpressionVisitor {
      * Gives the opportunity to subclasses to force the property to the desired type. By default it
      * simply writes out the property as-is (the property must be already escaped).
      */
-    protected String cast(String encodedProperty, Class target) throws IOException {
+    protected String cast(String encodedProperty, Class target) {
         return encodedProperty;
     }
 
@@ -1756,7 +1756,7 @@ public class FilterToSQL implements FilterVisitor, ExpressionVisitor {
      * Subclasses must implement this method in order to encode geometry filters according to the
      * specific database implementation
      */
-    protected void visitLiteralGeometry(Literal expression) throws IOException {
+    protected void visitLiteralGeometry(Literal expression) {
         throw new RuntimeException(
                 "Subclasses must implement this method in order to handle geometries");
     }

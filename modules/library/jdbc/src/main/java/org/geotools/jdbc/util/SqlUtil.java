@@ -49,7 +49,7 @@ public class SqlUtil {
 
         StringBuilder log = new StringBuilder();
 
-        public PreparedStatementBuilder(PreparedStatement ps) throws SQLException {
+        public PreparedStatementBuilder(PreparedStatement ps) {
             this.ps = ps;
         }
 

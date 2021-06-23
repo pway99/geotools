@@ -16,7 +16,6 @@
  */
 package org.geotools.geojson.geom;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.parser.ParseException;
@@ -35,7 +34,7 @@ public class PolygonHandler extends GeometryHandlerBase<Polygon> {
     }
 
     @Override
-    public boolean startObjectEntry(String key) throws ParseException, IOException {
+    public boolean startObjectEntry(String key) {
         if ("coordinates".equals(key)) {
             rings = new ArrayList<>();
         }
@@ -43,7 +42,7 @@ public class PolygonHandler extends GeometryHandlerBase<Polygon> {
     }
 
     @Override
-    public boolean endObject() throws ParseException, IOException {
+    public boolean endObject() {
         if (rings != null) {
             if (rings.isEmpty()) {
                 throw new IllegalArgumentException("Polygon specified with no rings.");
@@ -65,7 +64,7 @@ public class PolygonHandler extends GeometryHandlerBase<Polygon> {
     }
 
     @Override
-    public boolean startArray() throws ParseException, IOException {
+    public boolean startArray() {
         if (coordinates == null) {
             coordinates = new ArrayList<>();
         } else if (ordinates == null) {
@@ -75,7 +74,7 @@ public class PolygonHandler extends GeometryHandlerBase<Polygon> {
     }
 
     @Override
-    public boolean endArray() throws ParseException, IOException {
+    public boolean endArray() throws ParseException {
         if (ordinates != null) {
             Coordinate c = coordinate(ordinates);
             coordinates.add(c);

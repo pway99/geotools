@@ -79,7 +79,7 @@ public class QueryLab extends JFrame {
     private JTable table;
     private JTextField text;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         JFrame frame = new QueryLab();
         frame.setVisible(true);
     }
@@ -118,13 +118,13 @@ public class QueryLab extends JFrame {
         // docs start file menu
         fileMenu.add(
                 new SafeAction("Open shapefile...") {
-                    public void action(ActionEvent e) throws Throwable {
+                    public void action(ActionEvent e) {
                         connect(new ShapefileDataStoreFactory());
                     }
                 });
         fileMenu.add(
                 new SafeAction("Connect to PostGIS database...") {
-                    public void action(ActionEvent e) throws Throwable {
+                    public void action(ActionEvent e) {
                         connect(new PostgisNGDataStoreFactory());
                     }
                 });
@@ -137,7 +137,7 @@ public class QueryLab extends JFrame {
         fileMenu.addSeparator();
         fileMenu.add(
                 new SafeAction("Exit") {
-                    public void action(ActionEvent e) throws Throwable {
+                    public void action(ActionEvent e) {
                         System.exit(0);
                     }
                 });
@@ -188,7 +188,7 @@ public class QueryLab extends JFrame {
     // docs end connect
 
     // docs start update
-    private void updateUI() throws Exception {
+    private void updateUI() {
         ComboBoxModel<String> cbm = new DefaultComboBoxModel<>(dataStore.getTypeNames());
         featureTypeCBox.setModel(cbm);
 
@@ -197,7 +197,7 @@ public class QueryLab extends JFrame {
     // docs end update
 
     // docs start filterFeatures
-    private void filterFeatures() throws Exception {
+    private void filterFeatures() {
         String typeName = (String) featureTypeCBox.getSelectedItem();
         SimpleFeatureSource source = dataStore.getFeatureSource(typeName);
 
@@ -209,7 +209,7 @@ public class QueryLab extends JFrame {
     // docs end filterFeatures
 
     // docs start countFeatures
-    private void countFeatures() throws Exception {
+    private void countFeatures() {
         String typeName = (String) featureTypeCBox.getSelectedItem();
         SimpleFeatureSource source = dataStore.getFeatureSource(typeName);
 
@@ -222,7 +222,7 @@ public class QueryLab extends JFrame {
     // docs end countFeatures
 
     // docs start queryFeatures
-    private void queryFeatures() throws Exception {
+    private void queryFeatures() {
         String typeName = (String) featureTypeCBox.getSelectedItem();
         SimpleFeatureSource source = dataStore.getFeatureSource(typeName);
 
@@ -241,7 +241,7 @@ public class QueryLab extends JFrame {
     // docs end queryFeatures
 
     // docs start centerFeatures
-    private void centerFeatures() throws Exception {
+    private void centerFeatures() {
         String typeName = (String) featureTypeCBox.getSelectedItem();
         SimpleFeatureSource source = dataStore.getFeatureSource(typeName);
 

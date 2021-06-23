@@ -49,7 +49,7 @@ public class TransactionResponseTypeBindingTest extends WFSTestSupport {
     @SuppressWarnings("unchecked")
     @Override
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         final TransactionResponseType tr = factory.createTransactionResponseType();
         {
             tr.setVersion("1.1.0");

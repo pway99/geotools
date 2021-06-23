@@ -670,8 +670,7 @@ public abstract class DirectEpsgFactory extends DirectAuthorityFactory
      * Implementation of {@link #getAuthorityCodes} as a private method, for protecting {@link
      * #getDescriptionText} from user overriding of {@link #getAuthorityCodes}.
      */
-    private synchronized Set<String> getAuthorityCodes0(final Class<?> type)
-            throws FactoryException {
+    private synchronized Set<String> getAuthorityCodes0(final Class<?> type) {
         /*
          * If the set were already requested previously for the given type, returns it.
          * Otherwise, a new one will be created (but will not use the database connection yet).
@@ -3189,7 +3188,7 @@ public abstract class DirectEpsgFactory extends DirectAuthorityFactory
      */
     @Override
     public IdentifiedObjectFinder getIdentifiedObjectFinder(
-            final Class<? extends IdentifiedObject> type) throws FactoryException {
+            final Class<? extends IdentifiedObject> type) {
         return new Finder(buffered, type);
     }
 
@@ -3370,7 +3369,7 @@ public abstract class DirectEpsgFactory extends DirectAuthorityFactory
      * @return {@code true} if the code is probably a primary key.
      * @throws FactoryException if an unexpected error occured while inspecting the code.
      */
-    protected boolean isPrimaryKey(final String code) throws FactoryException {
+    protected boolean isPrimaryKey(final String code) {
         final int length = code.length();
         for (int i = 0; i < length; i++) {
             final char c = code.charAt(i);
@@ -3496,7 +3495,7 @@ public abstract class DirectEpsgFactory extends DirectAuthorityFactory
      *     second time with {@code active} set to {@code false}.
      * @throws SQLException if this method failed to shutdown the database engine.
      */
-    protected void shutdown(final boolean active) throws SQLException {}
+    protected void shutdown(final boolean active) {}
 
     /**
      * Invokes {@link #dispose} when this factory is garbage collected.

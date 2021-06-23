@@ -89,7 +89,7 @@ public class LinearRingTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         CoordinateSequence coordinates =
                 (CoordinateSequence) node.getChildValue(KML.coordinates.getLocalPart());
 
@@ -111,7 +111,7 @@ public class LinearRingTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (KML.coordinates.getLocalPart().equals(name.getLocalPart())) {
             LinearRing l = (LinearRing) object;
             return l.getCoordinateSequence();

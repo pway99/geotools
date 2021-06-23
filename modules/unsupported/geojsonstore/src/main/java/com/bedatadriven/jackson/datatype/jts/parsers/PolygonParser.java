@@ -21,8 +21,6 @@
 package com.bedatadriven.jackson.datatype.jts.parsers;
 
 import static com.bedatadriven.jackson.datatype.jts.GeoJson.COORDINATES;
-
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.LinearRing;
@@ -56,7 +54,7 @@ public class PolygonParser extends BaseParser implements GeometryParser<Polygon>
     }
 
     @Override
-    public Polygon geometryFromJson(JsonNode node) throws JsonMappingException {
+    public Polygon geometryFromJson(JsonNode node) {
         return polygonFromJson(node);
     }
 }

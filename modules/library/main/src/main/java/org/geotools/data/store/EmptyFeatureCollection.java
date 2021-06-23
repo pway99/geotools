@@ -16,7 +16,6 @@
  */
 package org.geotools.data.store;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
 import org.geotools.geometry.jts.ReferencedEnvelope;
@@ -43,7 +42,7 @@ public class EmptyFeatureCollection extends DataFeatureCollection {
     }
 
     @Override
-    public int getCount() throws IOException {
+    public int getCount() {
         return 0;
     }
 

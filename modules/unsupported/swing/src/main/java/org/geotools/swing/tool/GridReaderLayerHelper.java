@@ -73,7 +73,7 @@ public class GridReaderLayerHelper extends InfoToolHelper {
     }
 
     @Override
-    public InfoToolResult getInfo(DirectPosition2D pos) throws Exception {
+    public InfoToolResult getInfo(DirectPosition2D pos) {
         InfoToolResult result = new InfoToolResult();
 
         if (isValid()) {

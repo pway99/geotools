@@ -110,7 +110,7 @@ public class MemoryFeatureCollectionTest extends DataTestCase {
 
     /** This feature collection is still implementing Collection so we best check it works */
     @Test
-    public void testIterator() throws Exception {
+    public void testIterator() {
         int count = 0;
         Iterator<SimpleFeature> it = roads.iterator();
         try {

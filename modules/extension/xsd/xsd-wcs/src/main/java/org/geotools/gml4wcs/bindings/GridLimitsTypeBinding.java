@@ -71,7 +71,7 @@ public class GridLimitsTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         GridEnvelope envelope = (GridEnvelope) node.getChildValue("GridEnvelope");
 
         return envelope;

@@ -89,7 +89,7 @@ public class MapContentTest {
      * default settings.
      */
     @Test
-    public void getDefaultViewport() throws Exception {
+    public void getDefaultViewport() {
         mapContent.addLayer(new MockLayer(WORLD));
         MapViewport viewport = mapContent.getViewport();
 
@@ -208,21 +208,21 @@ public class MapContentTest {
     }
 
     @Test
-    public void addingLayerViaLayersListFiresEvent() throws Exception {
+    public void addingLayerViaLayersListFiresEvent() {
         listener.setExpected(WaitingMapListener.Type.ADDED);
         mapContent.layers().add(new MockLayer(WORLD));
         listener.await(WaitingMapListener.Type.ADDED, LISTENER_TIMEOUT);
     }
 
     @Test
-    public void addLayerWithMethodAndRemoveViaLayersList() throws Exception {
+    public void addLayerWithMethodAndRemoveViaLayersList() {
         Layer layer = new MockLayer(WORLD);
         mapContent.addLayer(layer);
         assertTrue(mapContent.layers().remove(layer));
     }
 
     @Test
-    public void addLayerAtPosViaLayerList() throws Exception {
+    public void addLayerAtPosViaLayerList() {
         Layer layer1 = new MockLayer(WORLD);
         Layer layer2 = new MockLayer(WORLD);
 
@@ -270,7 +270,7 @@ public class MapContentTest {
     }
 
     @Test
-    public void removeLayerViaLayerListByPosition() throws Exception {
+    public void removeLayerViaLayerListByPosition() {
         MockLayer layer1 = new MockLayer(WORLD);
         mapContent.layers().add(layer1);
 
@@ -287,7 +287,7 @@ public class MapContentTest {
     }
 
     @Test
-    public void removeLayerViaLayerListByReference() throws Exception {
+    public void removeLayerViaLayerListByReference() {
         MockLayer layer1 = new MockLayer(WORLD);
         mapContent.layers().add(layer1);
 
@@ -303,18 +303,18 @@ public class MapContentTest {
     }
 
     @Test(expected = ArrayIndexOutOfBoundsException.class)
-    public void removeLayerIndexOutOfRangeThrowsException() throws Exception {
+    public void removeLayerIndexOutOfRangeThrowsException() {
         mapContent.layers().add(new MockLayer(WORLD));
         mapContent.layers().remove(1);
     }
 
     @Test
-    public void removeLayerNotInListReturnsFalse() throws Exception {
+    public void removeLayerNotInListReturnsFalse() {
         assertFalse(mapContent.layers().remove(new MockLayer(WORLD)));
     }
 
     @Test
-    public void removeAllLayersInCollection() throws Exception {
+    public void removeAllLayersInCollection() {
         MockLayer layerFirst = new MockLayer(WORLD);
         mapContent.addLayer(layerFirst);
 
@@ -343,7 +343,7 @@ public class MapContentTest {
     }
 
     @Test
-    public void retainAllLayersInCollection() throws Exception {
+    public void retainAllLayersInCollection() {
         MockLayer layerFirst = new MockLayer(WORLD);
         mapContent.addLayer(layerFirst);
 
@@ -373,7 +373,7 @@ public class MapContentTest {
     }
 
     @Test
-    public void setLayerInLayerList() throws Exception {
+    public void setLayerInLayerList() {
         MockLayer layer1 = new MockLayer(WORLD);
         MockLayer layer2 = new MockLayer(WORLD);
         mapContent.addLayer(layer1);
@@ -393,13 +393,13 @@ public class MapContentTest {
     }
 
     @Test(expected = UnsupportedOperationException.class)
-    public void addingLayerViaListIteratorIsNotSupported() throws Exception {
+    public void addingLayerViaListIteratorIsNotSupported() {
         ListIterator<Layer> listIterator = mapContent.layers().listIterator();
         listIterator.add(new MockLayer(WORLD));
     }
 
     @Test(expected = UnsupportedOperationException.class)
-    public void removingLayerViaListIteratorIsNotSupported() throws Exception {
+    public void removingLayerViaListIteratorIsNotSupported() {
         mapContent.addLayer(new MockLayer(WORLD));
         ListIterator<Layer> listIterator = mapContent.layers().listIterator();
         listIterator.next();

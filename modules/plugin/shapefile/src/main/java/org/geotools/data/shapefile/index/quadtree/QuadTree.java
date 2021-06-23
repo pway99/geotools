@@ -175,7 +175,7 @@ public class QuadTree implements Closeable {
     }
 
     /** @return A List of Integer */
-    public CloseableIterator<Data> search(Envelope bounds) throws StoreException {
+    public CloseableIterator<Data> search(Envelope bounds) {
         if (LOGGER.isLoggable(Level.FINEST)) {
             LOGGER.log(Level.FINEST, "Querying " + bounds);
         }
@@ -189,7 +189,7 @@ public class QuadTree implements Closeable {
     }
 
     /** Closes this QuadTree after use... */
-    public void close(Iterator<Data> iter) throws IOException {
+    public void close(Iterator<Data> iter) {
         iterators.remove(iter);
     }
 

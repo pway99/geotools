@@ -87,8 +87,7 @@ public class DataExamples {
     // alter end
 
     // exportToShapefile start
-    DataStore exportToShapefile(MemoryDataStore memory, String typeName, File directory)
-            throws IOException {
+    DataStore exportToShapefile(MemoryDataStore memory, String typeName, File directory) {
         // existing feature source from MemoryDataStore
         SimpleFeatureSource featureSource = memory.getFeatureSource(typeName);
         SimpleFeatureType ft = featureSource.getSchema();
@@ -142,8 +141,7 @@ public class DataExamples {
     }
 
     // exportToShapefile2 start
-    DataStore exportToShapefile2(MemoryDataStore memory, String typeName, File directory)
-            throws IOException {
+    DataStore exportToShapefile2(MemoryDataStore memory, String typeName, File directory) {
         // existing feature source from MemoryDataStore
         SimpleFeatureSource featureSource = memory.getFeatureSource(typeName);
         SimpleFeatureType ft = featureSource.getSchema();

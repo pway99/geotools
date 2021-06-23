@@ -36,7 +36,6 @@ import org.opengis.filter.spatial.Equals;
 import org.opengis.filter.spatial.Intersects;
 import org.opengis.filter.spatial.Overlaps;
 import org.opengis.filter.spatial.Touches;
-import org.opengis.referencing.FactoryException;
 
 /**
  * ECQL Geo Operation Test
@@ -137,7 +136,7 @@ public final class ECQLGeoOperationTest extends CQLGeoOperationTest {
 
     @Override
     @Test
-    public void overlaps() throws Exception {
+    public void overlaps() {
 
         Filter resultFilter = CompilerUtil.parseFilter(language, "OVERLAPS(the_geom, POINT(1 2))");
 
@@ -187,7 +186,7 @@ public final class ECQLGeoOperationTest extends CQLGeoOperationTest {
     }
 
     @Test
-    public void intersectsWithReferencedGeometry() throws CQLException, FactoryException {
+    public void intersectsWithReferencedGeometry() throws CQLException {
 
         Filter resultFilter =
                 CompilerUtil.parseFilter(language, "INTERSECTS(the_geom, SRID=4326;POINT(1 2))");

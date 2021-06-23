@@ -17,8 +17,6 @@
  */
 package org.geotools.ysld.transform.sld;
 
-import java.io.IOException;
-import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 /**
@@ -28,8 +26,7 @@ import javax.xml.stream.XMLStreamReader;
  */
 public class SymbolizersHandler extends SldTransformHandler {
     @Override
-    public void element(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+    public void element(XMLStreamReader xml, SldTransformContext context) {
         String name = xml.getLocalName();
         if ("PointSymbolizer".equals(name)) {
             context.push(new PointSymbolizerHandler());
@@ -45,8 +42,7 @@ public class SymbolizersHandler extends SldTransformHandler {
     }
 
     @Override
-    public void endElement(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+    public void endElement(XMLStreamReader xml, SldTransformContext context) {
         String name = xml.getLocalName();
         if (name.equals("Rule")) {
             context.pop();

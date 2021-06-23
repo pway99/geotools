@@ -225,7 +225,7 @@ class FeatureTypeMapper {
     }
 
     /** Returns the OGR geometry type constant given a geometry attribute type */
-    public long getOGRGeometryType(GeometryDescriptor descriptor) throws IOException {
+    public long getOGRGeometryType(GeometryDescriptor descriptor) {
         Class binding = descriptor.getType().getBinding();
         if (GeometryCollection.class.isAssignableFrom(binding)) {
             if (MultiPoint.class.isAssignableFrom(binding)) {
@@ -287,7 +287,7 @@ class FeatureTypeMapper {
     }
 
     /** Returns the GeoTools {@link CoordinateReferenceSystem} equivalent to the layer native one */
-    private CoordinateReferenceSystem getCRS(Object layer) throws IOException {
+    private CoordinateReferenceSystem getCRS(Object layer) {
         Object spatialReference = null;
         CoordinateReferenceSystem crs = null;
         try {

@@ -36,11 +36,11 @@ public class IngresBooleanTest extends JDBCBooleanTest {
         return new IngresBooleanTestSetup(new IngresTestSetup());
     }
     
-    public void testGetSchema() throws Exception {
+    public void testGetSchema() {
     	//not supported yet
     }
     
-    public void testGetFeatures() throws Exception {
+    public void testGetFeatures() {
     	//not supported yet
     }
 }

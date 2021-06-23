@@ -90,7 +90,7 @@ public class MeasureTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         Measure measure = (Measure) object;
         value.appendChild(document.createTextNode("" + measure.doubleValue()));
 

@@ -41,7 +41,7 @@ public class Quickstart {
      * GeoTools Quickstart demo application. Prompts the user for a shapefile and displays its
      * contents on the screen in a map frame
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         // display a data store file chooser dialog for shapefiles
         File file = JFileDataStoreChooser.showOpenFile("shp", null);
         if (file == null) {

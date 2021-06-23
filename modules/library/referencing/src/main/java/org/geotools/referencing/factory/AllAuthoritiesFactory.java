@@ -139,8 +139,7 @@ public class AllAuthoritiesFactory extends ManyAuthoritiesFactory {
      * @since 2.4
      */
     @Override
-    public IdentifiedObjectFinder getIdentifiedObjectFinder(Class<? extends IdentifiedObject> type)
-            throws FactoryException {
+    public IdentifiedObjectFinder getIdentifiedObjectFinder(Class<? extends IdentifiedObject> type) {
         return new Finder(this, type);
     }
 

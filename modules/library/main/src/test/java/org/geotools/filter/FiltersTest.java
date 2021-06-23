@@ -37,7 +37,7 @@ public class FiltersTest {
     private static Filter d;
 
     @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
+    public static void setUpBeforeClass() {
         ff = CommonFactoryFinder.getFilterFactory2(null);
         filters = new Filters(ff);
         a = ff.greater(ff.property("zone"), ff.literal(7));
@@ -47,7 +47,7 @@ public class FiltersTest {
     }
 
     @AfterClass
-    public static void tearDownAfterClass() throws Exception {
+    public static void tearDownAfterClass() {
         ff = null;
         filters = null;
     }

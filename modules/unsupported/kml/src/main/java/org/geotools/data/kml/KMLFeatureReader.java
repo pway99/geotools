@@ -87,7 +87,7 @@ public class KMLFeatureReader implements FeatureReader<SimpleFeatureType, Simple
 
     /** */
     @Override
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() {
         return f != null;
     }
 

@@ -9,7 +9,6 @@
  */
 package org.geotools.tutorial.csv3;
 
-import java.io.IOException;
 import org.geotools.data.FeatureReader;
 import org.geotools.data.FeatureWriter;
 import org.geotools.data.Query;
@@ -49,7 +48,7 @@ public class CSVFeatureStore extends ContentFeatureStore {
     //
     @Override
     protected FeatureWriter<SimpleFeatureType, SimpleFeature> getWriterInternal(
-            Query query, int flags) throws IOException {
+            Query query, int flags) {
         return new CSVFeatureWriter(this.csvFileState, this.csvStrategy, query);
     }
     // getWriter end
@@ -84,23 +83,22 @@ public class CSVFeatureStore extends ContentFeatureStore {
     // Implement FeatureSource methods using CSVFeatureSource implementation
     //
     @Override
-    protected SimpleFeatureType buildFeatureType() throws IOException {
+    protected SimpleFeatureType buildFeatureType() {
         return delegate.buildFeatureType();
     }
 
     @Override
-    protected ReferencedEnvelope getBoundsInternal(Query query) throws IOException {
+    protected ReferencedEnvelope getBoundsInternal(Query query) {
         return delegate.getBoundsInternal(query);
     }
 
     @Override
-    protected int getCountInternal(Query query) throws IOException {
+    protected int getCountInternal(Query query) {
         return delegate.getCountInternal(query);
     }
 
     @Override
-    protected FeatureReader<SimpleFeatureType, SimpleFeature> getReaderInternal(Query query)
-            throws IOException {
+    protected FeatureReader<SimpleFeatureType, SimpleFeature> getReaderInternal(Query query) {
         return delegate.getReaderInternal(query);
     }
     // internal end

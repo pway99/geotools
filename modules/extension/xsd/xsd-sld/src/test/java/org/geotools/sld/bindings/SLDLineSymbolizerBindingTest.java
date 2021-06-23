@@ -25,7 +25,7 @@ import org.opengis.filter.expression.Function;
 
 public class SLDLineSymbolizerBindingTest extends SLDTestSupport {
     @Test
-    public void testType() throws Exception {
+    public void testType() {
         assertEquals(LineSymbolizer.class, new SLDLineSymbolizerBinding(null).getType());
     }
 

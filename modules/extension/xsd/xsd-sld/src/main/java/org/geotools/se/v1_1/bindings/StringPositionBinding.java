@@ -95,7 +95,7 @@ public class StringPositionBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         // &lt;xsd:element ref="se:LookupString"/&gt;
         Expression lookup = (Expression) node.getChildValue("LookupString");

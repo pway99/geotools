@@ -41,8 +41,7 @@ public class BufferFeatureCollectionProcess extends FeatureToFeatureProcess {
     }
 
     @Override
-    protected void processFeature(SimpleFeature feature, Map<String, Object> input)
-            throws Exception {
+    protected void processFeature(SimpleFeature feature, Map<String, Object> input) {
         Double buffer = (Double) input.get(BufferFeatureCollectionFactory.BUFFER.key);
 
         Geometry g = (Geometry) feature.getDefaultGeometry();

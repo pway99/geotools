@@ -317,8 +317,7 @@ public final class ImagePyramidReader extends AbstractGridCoverage2DReader
     }
 
     @Override
-    public GridCoverage2D read(final String coverageName, GeneralParameterValue[] params)
-            throws IOException {
+    public GridCoverage2D read(final String coverageName, GeneralParameterValue[] params) {
 
         GeneralEnvelope requestedEnvelope = null;
         Rectangle dim = null;
@@ -530,8 +529,7 @@ public final class ImagePyramidReader extends AbstractGridCoverage2DReader
      *
      * @return ImageMosaicReader for level
      */
-    public ImageMosaicReader getImageMosaicReaderForLevel(String coverageName, Integer imageChoice)
-            throws IOException {
+    public ImageMosaicReader getImageMosaicReaderForLevel(String coverageName, Integer imageChoice) {
         return imageLevelsMapper.getReader(imageChoice, coverageName, sourceURL, hints);
     }
 

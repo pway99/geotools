@@ -20,7 +20,6 @@ import java.io.IOException;
 import org.geotools.geojson.HandlerBase;
 import org.geotools.geojson.IContentHandler;
 import org.geotools.referencing.CRS;
-import org.json.simple.parser.ParseException;
 import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
@@ -30,7 +29,7 @@ public class CRSHandler extends HandlerBase implements IContentHandler<Coordinat
     int state = 0;
 
     @Override
-    public boolean startObjectEntry(String key) throws ParseException, IOException {
+    public boolean startObjectEntry(String key) {
         if ("properties".equals(key)) {
             state = 1;
         } else if (("name".equals(key) || "code".equals(key)) && state == 1) {
@@ -40,7 +39,7 @@ public class CRSHandler extends HandlerBase implements IContentHandler<Coordinat
     }
 
     @Override
-    public boolean primitive(Object value) throws ParseException, IOException {
+    public boolean primitive(Object value) {
         if (state == 2) {
             try {
                 try {

@@ -76,12 +76,12 @@ public class ShpFilesTestStream implements org.geotools.data.shapefile.files.Fil
     }
 
     @Test
-    public void testIsLocalFiles() throws IOException {
+    public void testIsLocalFiles() {
         assertTrue(files.isLocal());
     }
 
     @Test
-    public void testDelete() throws IOException {
+    public void testDelete() {
 
         assertTrue(files.delete());
 
@@ -264,7 +264,7 @@ public class ShpFilesTestStream implements org.geotools.data.shapefile.files.Fil
     }
 
     @Test
-    public void testGetTypeName() throws Exception {
+    public void testGetTypeName() {
         assertEquals(typeName, files.getTypeName());
     }
 

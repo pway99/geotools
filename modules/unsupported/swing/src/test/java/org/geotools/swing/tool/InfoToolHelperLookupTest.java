@@ -46,7 +46,7 @@ public class InfoToolHelperLookupTest {
     }
 
     @Test
-    public void gridCoverageLayerHelper() throws Exception {
+    public void gridCoverageLayerHelper() {
         float[][] data = {
             {1, 2, 3, 4},
             {5, 6, 7, 8}

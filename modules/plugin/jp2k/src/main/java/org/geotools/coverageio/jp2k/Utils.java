@@ -28,7 +28,6 @@ import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 import org.apache.commons.io.filefilter.FileFilterUtils;
 import org.apache.commons.io.filefilter.IOFileFilter;
-import org.geotools.data.DataSourceException;
 import org.geotools.util.URLs;
 import org.geotools.util.Utilities;
 
@@ -45,7 +44,7 @@ class Utils {
     /** Logger. */
     static final Logger LOGGER = org.geotools.util.logging.Logging.getLogger(Utils.class);
 
-    static URL checkSource(Object source) throws MalformedURLException, DataSourceException {
+    static URL checkSource(Object source) throws MalformedURLException {
         URL sourceURL = null;
         // /////////////////////////////////////////////////////////////////////
         //

@@ -89,14 +89,14 @@ public class MultiLineStringTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         List<LineString> lines = node.getChildValues(LineString.class);
 
         return gFactory.createMultiLineString(lines.toArray(new LineString[lines.size()]));
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (GML.lineStringMember.equals(name)) {
             MultiLineString multiLineString = (MultiLineString) object;
             LineString[] members = new LineString[multiLineString.getNumGeometries()];

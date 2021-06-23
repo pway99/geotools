@@ -463,7 +463,7 @@ public class SLDInlineFeatureParser {
      * simple way of getting epsg #. We cache them so that we dont have to keep reading the DB or
      * the epsg.properties file. I cannot image a system with more than a dozen CRSs in it...
      */
-    private CoordinateReferenceSystem getSRS(int epsg) throws Exception {
+    private CoordinateReferenceSystem getSRS(int epsg) {
         CoordinateReferenceSystem result = SRSLookup.get(Integer.valueOf(epsg));
         if (result == null) {
             // make and add to hash

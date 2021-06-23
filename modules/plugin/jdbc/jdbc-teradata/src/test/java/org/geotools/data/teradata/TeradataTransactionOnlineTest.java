@@ -16,7 +16,6 @@
  */
 package org.geotools.data.teradata;
 
-import java.io.IOException;
 import org.geotools.jdbc.JDBCTestSetup;
 import org.geotools.jdbc.JDBCTransactionOnlineTest;
 
@@ -28,12 +27,12 @@ public class TeradataTransactionOnlineTest extends JDBCTransactionOnlineTest {
     }
 
     @Override
-    public void testConcurrentTransactions() throws IOException {
+    public void testConcurrentTransactions() {
         // TODO enable this
     }
 
     @Override
-    public void testSerialTransactions() throws IOException {
+    public void testSerialTransactions() {
         // Teradata will block
         // TODO enable this
     }

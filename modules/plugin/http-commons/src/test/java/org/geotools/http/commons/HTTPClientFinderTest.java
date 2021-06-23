@@ -61,7 +61,7 @@ public class HTTPClientFinderTest {
     }
 
     @Test
-    public void testBehaviors() throws Exception {
+    public void testBehaviors() {
         HTTPClient client = HTTPClientFinder.createClient(HTTPConnectionPooling.class);
         Assert.assertTrue(client instanceof HTTPConnectionPooling);
     }

@@ -24,7 +24,6 @@ import org.locationtech.jts.geom.impl.CoordinateArraySequence;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
 
 /**
  * We need to ensure that the CoordinateWriter can output Z ordinates (if they are actually around).
@@ -179,53 +178,52 @@ public class CoordinateWriterTest {
         String received;
 
         @Override
-        public void characters(char[] ch, int start, int length) throws SAXException {
+        public void characters(char[] ch, int start, int length) {
             buffer.append(new String(ch, start, length));
         }
 
         @Override
-        public void endElement(String uri, String localName, String name) throws SAXException {
+        public void endElement(String uri, String localName, String name) {
             buffer.append("</");
             buffer.append(localName);
             buffer.append(">");
         }
 
         @Override
-        public void endDocument() throws SAXException {
+        public void endDocument() {
             received = buffer.toString();
         }
 
         @Override
-        public void endPrefixMapping(String prefix) throws SAXException {}
+        public void endPrefixMapping(String prefix) {}
 
         @Override
-        public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {}
+        public void ignorableWhitespace(char[] ch, int start, int length) {}
 
         @Override
-        public void processingInstruction(String target, String data) throws SAXException {}
+        public void processingInstruction(String target, String data) {}
 
         @Override
         public void setDocumentLocator(Locator locator) {}
 
         @Override
-        public void skippedEntity(String name) throws SAXException {}
+        public void skippedEntity(String name) {}
 
         @Override
-        public void startDocument() throws SAXException {
+        public void startDocument() {
             buffer = new StringBuffer();
         }
 
         @Override
-        public void startElement(String uri, String localName, String name, Attributes atts)
-                throws SAXException {
+        public void startElement(String uri, String localName, String name, Attributes atts) {
             buffer.append("<");
             buffer.append(localName);
             buffer.append(">");
         }
 
         @Override
-        public void startPrefixMapping(String prefix, String uri) throws SAXException {}
-    };
+        public void startPrefixMapping(String prefix, String uri) {}
+    }
 
     Coordinate[] coords2D(int[] array) {
         Coordinate[] coords = new Coordinate[array.length / 2];

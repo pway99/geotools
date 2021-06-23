@@ -104,7 +104,7 @@ public class CoordinatesTypeBinding extends AbstractSimpleBinding {
     }
 
     @Override
-    public String encode(Object object, String value) throws Exception {
+    public String encode(Object object, String value) {
         StringBuffer sb = new StringBuffer();
         CoordinateSequence cs = (CoordinateSequence) object;
         for (int i = 0; i < cs.size(); i++) {

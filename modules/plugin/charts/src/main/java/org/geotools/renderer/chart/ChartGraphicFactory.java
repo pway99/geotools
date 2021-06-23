@@ -61,8 +61,7 @@ public class ChartGraphicFactory implements ExternalGraphicFactory {
     private static final String HTTP_CHART = "http://chart?";
 
     @Override
-    public Icon getIcon(Feature feature, Expression urlExpression, String format, int size)
-            throws Exception {
+    public Icon getIcon(Feature feature, Expression urlExpression, String format, int size) {
         // evaluate the expression as a string, get the query params
         String url = urlExpression.evaluate(feature, String.class);
         if (!validRequest(url, format)) return null;
@@ -79,8 +78,7 @@ public class ChartGraphicFactory implements ExternalGraphicFactory {
     }
 
     /** This method has been provided as a test utility only */
-    JFreeChart getChart(Feature feature, Expression urlExpression, String format, int size)
-            throws Exception {
+    JFreeChart getChart(Feature feature, Expression urlExpression, String format, int size) {
         // evaluate the expression as a string, get the query params
         String url = urlExpression.evaluate(feature, String.class);
         if (!validRequest(url, format)) return null;

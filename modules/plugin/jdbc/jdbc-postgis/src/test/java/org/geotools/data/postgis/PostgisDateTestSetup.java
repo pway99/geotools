@@ -36,7 +36,7 @@ public class PostgisDateTestSetup extends JDBCDateTestSetup {
     }
 
     @Override
-    protected void dropDateTable() throws Exception {
+    protected void dropDateTable() {
         runSafe("DROP TABLE DATES");
     }
 }

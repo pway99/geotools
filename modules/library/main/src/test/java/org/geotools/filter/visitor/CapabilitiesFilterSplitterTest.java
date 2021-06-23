@@ -45,13 +45,13 @@ public class CapabilitiesFilterSplitterTest extends AbstractCapabilitiesFilterSp
     private CapabilitiesFilterSplitter visitor;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         simpleLogicalCaps.addAll(Capabilities.SIMPLE_COMPARISONS_OPENGIS);
         simpleLogicalCaps.addAll(Capabilities.LOGICAL_OPENGIS);
     }
 
     @Test
-    public void testVisitBetweenFilter() throws Exception {
+    public void testVisitBetweenFilter() {
         PropertyIsBetween filter = ff.between(ff.literal(0), ff.property(numAtt), ff.literal(4));
 
         runTest(filter, newCapabilities(PropertyIsBetween.class), numAtt);
@@ -142,19 +142,19 @@ public class CapabilitiesFilterSplitterTest extends AbstractCapabilitiesFilterSp
     }
 
     @Test
-    public void testVisitLikeFilter() throws Exception {
+    public void testVisitLikeFilter() {
         Filter filter = ff.like(ff.property(nameAtt), "j*", "*", "?", "\\");
         runTest(filter, newCapabilities(PropertyIsLike.class), nameAtt);
     }
 
     @Test
-    public void testVisitNullFilter() throws Exception {
+    public void testVisitNullFilter() {
         Filter filter = ff.isNull(ff.property(nameAtt));
         runTest(filter, newCapabilities(PropertyIsNull.class), nameAtt);
     }
 
     @Test
-    public void testVisitFidFilter() throws Exception {
+    public void testVisitFidFilter() {
         HashSet ids = new HashSet();
         ids.add(ff.featureId("david"));
         Filter filter = ff.id(ids);
@@ -297,7 +297,7 @@ public class CapabilitiesFilterSplitterTest extends AbstractCapabilitiesFilterSp
     }
 
     @Test
-    public void testComplicatedOrFilter() throws Exception {
+    public void testComplicatedOrFilter() {
         Filter c1 = ff.equals(ff.property("eventstatus"), ff.literal("deleted"));
 
         Filter c2 = ff.equals(ff.property("eventtype"), ff.literal("road hazard"));

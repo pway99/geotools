@@ -16,7 +16,6 @@
  */
 package org.geotools.data.directory;
 
-import java.io.IOException;
 import java.util.List;
 import org.geotools.data.FeatureListener;
 import org.geotools.data.FeatureReader;
@@ -44,23 +43,22 @@ public class DirectoryFeatureStore extends DirectoryFeatureSource implements Sim
     }
 
     @Override
-    public void modifyFeatures(Name attributeName, Object attributeValue, Filter filter)
-            throws IOException {
+    public void modifyFeatures(Name attributeName, Object attributeValue, Filter filter) {
         fstore.modifyFeatures(attributeName, attributeValue, filter);
     }
 
     @Override
-    public void modifyFeatures(Name[] name, Object[] value, Filter filter) throws IOException {
+    public void modifyFeatures(Name[] name, Object[] value, Filter filter) {
         fstore.modifyFeatures(name, value, filter);
     }
 
     @Override
-    public void modifyFeatures(String name, Object value, Filter filter) throws IOException {
+    public void modifyFeatures(String name, Object value, Filter filter) {
         fstore.modifyFeatures(name, value, filter);
     }
 
     @Override
-    public void modifyFeatures(String[] names, Object[] values, Filter filter) throws IOException {
+    public void modifyFeatures(String[] names, Object[] values, Filter filter) {
         fstore.modifyFeatures(names, values, filter);
     }
 
@@ -70,13 +68,12 @@ public class DirectoryFeatureStore extends DirectoryFeatureSource implements Sim
     }
 
     @Override
-    public void removeFeatures(Filter filter) throws IOException {
+    public void removeFeatures(Filter filter) {
         fstore.removeFeatures(filter);
     }
 
     @Override
-    public void setFeatures(FeatureReader<SimpleFeatureType, SimpleFeature> reader)
-            throws IOException {
+    public void setFeatures(FeatureReader<SimpleFeatureType, SimpleFeature> reader) {
         fstore.setFeatures(reader);
     }
 
@@ -87,7 +84,7 @@ public class DirectoryFeatureStore extends DirectoryFeatureSource implements Sim
 
     @Override
     public List<FeatureId> addFeatures(
-            FeatureCollection<SimpleFeatureType, SimpleFeature> collection) throws IOException {
+            FeatureCollection<SimpleFeatureType, SimpleFeature> collection) {
         return fstore.addFeatures(collection);
     }
 

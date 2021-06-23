@@ -277,10 +277,10 @@ public class IndexedFidWriter implements FileWriter, AutoCloseable {
     public static final IndexedFidWriter EMPTY_WRITER =
             new IndexedFidWriter() {
                 @Override
-                public void close() throws IOException {}
+                public void close() {}
 
                 @Override
-                public boolean hasNext() throws IOException {
+                public boolean hasNext() {
                     return false;
                 }
 
@@ -290,14 +290,14 @@ public class IndexedFidWriter implements FileWriter, AutoCloseable {
                 }
 
                 @Override
-                public void write() throws IOException {}
+                public void write() {}
 
                 @Override
-                public long next() throws IOException {
+                public long next() {
                     return 0;
                 }
 
                 @Override
-                public void remove() throws IOException {}
+                public void remove() {}
             };
 }

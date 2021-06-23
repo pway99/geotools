@@ -58,7 +58,7 @@ public class ECQLLikePredicateTest extends CQLLikePredicateTest {
      * <p>Sample: strConcat('aa', 'bbcc') like '%bb%'
      */
     @Test
-    public void functionlikePredicate() throws Exception {
+    public void functionlikePredicate() {
 
         // Like strConcat('aa', 'bbcc') like '%bb%'
         Filter resultFilter =
@@ -111,7 +111,7 @@ public class ECQLLikePredicateTest extends CQLLikePredicateTest {
     }
 
     @Test
-    public void likePredicateCaseSensitive() throws Exception {
+    public void likePredicateCaseSensitive() {
 
         // iLike
         Filter resultFilter = CompilerUtil.parseFilter(this.language, "ATTR1 LIKE 'abc%'");
@@ -125,7 +125,7 @@ public class ECQLLikePredicateTest extends CQLLikePredicateTest {
     }
 
     @Test
-    public void ilikePredicate() throws Exception {
+    public void ilikePredicate() {
 
         // iLike
         Filter resultFilter = CompilerUtil.parseFilter(this.language, "ATTR1 ILIKE 'abc%'");
@@ -139,7 +139,7 @@ public class ECQLLikePredicateTest extends CQLLikePredicateTest {
     }
 
     @Test
-    public void notilikePredicate() throws Exception {
+    public void notilikePredicate() {
 
         // not iLike
         Filter resultFilter = CompilerUtil.parseFilter(this.language, "not ATTR1 ILIKE 'abc%'");
@@ -157,7 +157,7 @@ public class ECQLLikePredicateTest extends CQLLikePredicateTest {
      * <p>Sample: 'aabbcc' like '%bb%'
      */
     @Test
-    public void literallikePredicate() throws Exception {
+    public void literallikePredicate() {
 
         Filter resultFilter =
                 CompilerUtil.parseFilter(this.language, FilterECQLSample.LITERAL_LIKE_ECQL_PATTERN);
@@ -174,7 +174,7 @@ public class ECQLLikePredicateTest extends CQLLikePredicateTest {
     }
 
     @Test
-    public void literalNotlikePredicate() throws Exception {
+    public void literalNotlikePredicate() {
 
         Filter resultFilter =
                 CompilerUtil.parseFilter(

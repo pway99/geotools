@@ -42,7 +42,6 @@ import org.opengis.parameter.ParameterDescriptor;
 import org.opengis.parameter.ParameterDescriptorGroup;
 import org.opengis.parameter.ParameterNotFoundException;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.operation.MathTransform;
 import org.opengis.referencing.operation.PlanarProjection;
 
@@ -166,8 +165,7 @@ public class EquidistantConic extends MapProjection {
      * radians) and stores the result in {@code ptDst} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D transformNormalized(double x, double y, final Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double x, double y, final Point2D ptDst) {
         final double cosphi = cos(y);
         final double sinphi = sin(y);
         final double rho = c - (this.isSpherical ? y : mlfn(y, sinphi, cosphi));
@@ -274,7 +272,7 @@ public class EquidistantConic extends MapProjection {
          */
         @Override
         protected MathTransform createMathTransform(final ParameterValueGroup parameters)
-                throws ParameterNotFoundException, FactoryException {
+                throws ParameterNotFoundException {
             return new EquidistantConic(parameters);
         }
     }

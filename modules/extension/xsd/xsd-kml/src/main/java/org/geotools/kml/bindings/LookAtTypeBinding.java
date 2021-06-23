@@ -88,7 +88,7 @@ public class LookAtTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Coordinate c = new Coordinate();
 
         // &lt;element default="0" minOccurs="0" name="longitude" type="kml:angle180"/&gt;

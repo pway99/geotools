@@ -42,7 +42,7 @@ public class ForceCoordinateSystemFeatureReaderTest {
     private static final String FEATURE_TYPE_NAME = "testType";
 
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
 
     /**
      * create a feature collection with 1 feature in it.
@@ -51,7 +51,7 @@ public class ForceCoordinateSystemFeatureReaderTest {
      * @param p the point to add, should be same CRS as crs
      */
     private SimpleFeatureCollection createTestFeatureCollection(
-            CoordinateReferenceSystem crs, Point p) throws Exception {
+            CoordinateReferenceSystem crs, Point p) {
 
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
         builder.setName(FEATURE_TYPE_NAME);

@@ -43,7 +43,7 @@ public class AttributeRoundtripTest {
     }
 
     String getResource(String name)
-            throws URISyntaxException, UnsupportedEncodingException, IOException {
+            throws UnsupportedEncodingException, IOException {
         File file =
                 URLs.urlToFile(
                         getClass()

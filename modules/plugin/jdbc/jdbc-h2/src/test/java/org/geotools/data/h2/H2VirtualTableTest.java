@@ -11,7 +11,7 @@ public class H2VirtualTableTest extends JDBCVirtualTableOnlineTest {
     }
 
     @Override
-    public void testGuessGeometry() throws Exception {
+    public void testGuessGeometry() {
         // skip it, H2 does not have enough metadata on a query column to determine
         // it is a geometry
     }

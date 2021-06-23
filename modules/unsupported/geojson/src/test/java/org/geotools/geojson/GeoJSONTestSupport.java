@@ -16,7 +16,6 @@
  */
 package org.geotools.geojson;
 
-import java.io.IOException;
 import java.io.StringReader;
 import java.util.List;
 import org.geotools.util.Converters;
@@ -26,7 +25,7 @@ import org.opengis.feature.simple.SimpleFeature;
 
 public abstract class GeoJSONTestSupport {
 
-    protected StringReader reader(String json) throws IOException {
+    protected StringReader reader(String json) {
         return new StringReader(json);
     }
 

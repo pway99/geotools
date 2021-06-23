@@ -43,8 +43,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.opengis.geometry.Envelope;
 import org.opengis.metadata.spatial.PixelOrientation;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.ReferenceIdentifier;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.crs.GeographicCRS;
@@ -52,7 +50,6 @@ import org.opengis.referencing.datum.Ellipsoid;
 import org.opengis.referencing.datum.PixelInCell;
 import org.opengis.referencing.datum.PrimeMeridian;
 import org.opengis.referencing.operation.MathTransform;
-import org.opengis.referencing.operation.TransformException;
 import si.uom.SI;
 
 /** Class testing the {@link Utilities} methods. */
@@ -117,8 +114,7 @@ public class UtilitiesTest extends Assert {
     }
 
     @Test
-    public void testEnvelopes()
-            throws NoSuchAuthorityCodeException, FactoryException, TransformException {
+    public void testEnvelopes() {
         // Setting up an UTM and WGS84 CRSs
 
         // Setup a 3D envelope and return it as 2D, making sure there is no 3rd dimension anymore
@@ -142,7 +138,7 @@ public class UtilitiesTest extends Assert {
     }
 
     @Test
-    public void testGetEnvelope() throws FactoryException, TransformException {
+    public void testGetEnvelope() {
 
         // Setup an envelope in WGS84
         GeneralEnvelope envelope = new GeneralEnvelope(DefaultGeographicCRS.WGS84);
@@ -170,7 +166,7 @@ public class UtilitiesTest extends Assert {
     }
 
     @Test
-    public void testCropRegion() throws TransformException {
+    public void testCropRegion() {
         // Setup an envelope in WGS84
         GeneralEnvelope envelope = new GeneralEnvelope(DefaultGeographicCRS.WGS84);
         envelope.setEnvelope(0, 0, 10, 10);

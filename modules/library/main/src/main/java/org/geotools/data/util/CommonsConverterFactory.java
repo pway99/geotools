@@ -145,7 +145,7 @@ public class CommonsConverterFactory implements ConverterFactory {
 
     static class BigIntegerConverter implements Converter {
         @Override
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             if (source == null) return null;
             String string = (String) source;
             try {
@@ -191,7 +191,7 @@ public class CommonsConverterFactory implements ConverterFactory {
 
     static class BigDecimalConverter implements Converter {
         @Override
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             if (source == null) return null;
             String string = (String) source;
             try {
@@ -212,7 +212,7 @@ public class CommonsConverterFactory implements ConverterFactory {
         // target.cast won't work for both the object wrapper and the primitive class
         @Override
         @SuppressWarnings("unchecked")
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             if (source == null) return null;
             String string = (String) source;
             //            string = string.toUpperCase();
@@ -245,7 +245,7 @@ public class CommonsConverterFactory implements ConverterFactory {
 
     static class CharacterConverter implements Converter {
         @Override
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             if (source == null) return null;
             String string = (String) source;
             if (string.length() > 0) {
@@ -313,7 +313,7 @@ public class CommonsConverterFactory implements ConverterFactory {
 
     static class SQLDateConverter implements Converter {
         @Override
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             if (source == null) return null;
             String string = (String) source;
             try {
@@ -327,7 +327,7 @@ public class CommonsConverterFactory implements ConverterFactory {
 
     static class SQLTimeConverter implements Converter {
         @Override
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             if (source == null) return null;
             String string = (String) source;
             try {
@@ -341,7 +341,7 @@ public class CommonsConverterFactory implements ConverterFactory {
 
     static class SQLTimestampConverter implements Converter {
         @Override
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             if (source == null) return null;
             String string = (String) source;
             try {
@@ -355,7 +355,7 @@ public class CommonsConverterFactory implements ConverterFactory {
 
     static class FileConverter implements Converter {
         @Override
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             if (source == null) return null;
             String string = (String) source;
             try {
@@ -369,7 +369,7 @@ public class CommonsConverterFactory implements ConverterFactory {
 
     static class TimeZoneConverter implements Converter {
         @Override
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             if (source == null) return null;
             String string = (String) source;
             TimeZone timezone = TimeZone.getTimeZone(string);

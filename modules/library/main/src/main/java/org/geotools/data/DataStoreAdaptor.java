@@ -49,12 +49,12 @@ final class DataStoreAdaptor implements DataStore {
     }
 
     @Override
-    public void updateSchema(Name name, SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(Name name, SimpleFeatureType featureType) {
         throw new UnsupportedOperationException("DataStoreAdaptor does not support modification");
     }
 
     @Override
-    public void removeSchema(Name name) throws IOException {
+    public void removeSchema(Name name) {
         throw new UnsupportedOperationException("DataStoreAdaptor does not support modification");
     }
 
@@ -68,7 +68,7 @@ final class DataStoreAdaptor implements DataStore {
     }
 
     @Override
-    public List<Name> getNames() throws IOException {
+    public List<Name> getNames() {
         return Collections.singletonList(this.name);
     }
 
@@ -94,17 +94,17 @@ final class DataStoreAdaptor implements DataStore {
     }
 
     @Override
-    public void createSchema(SimpleFeatureType featureType) throws IOException {
+    public void createSchema(SimpleFeatureType featureType) {
         throw new UnsupportedOperationException("DataStoreAdaptor does not support modification");
     }
 
     @Override
-    public void updateSchema(String typeName, SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(String typeName, SimpleFeatureType featureType) {
         throw new UnsupportedOperationException("DataStoreAdaptor does not support modification");
     }
 
     @Override
-    public void removeSchema(String typeName) throws IOException {
+    public void removeSchema(String typeName) {
         throw new UnsupportedOperationException("DataStoreAdaptor does not support modification");
     }
 
@@ -133,16 +133,15 @@ final class DataStoreAdaptor implements DataStore {
                     String typeName,
                     String authID,
                     Transaction transaction,
-                    FeatureLock featureLock)
-                    throws IOException {}
+                    FeatureLock featureLock) {}
 
             @Override
-            public boolean release(String authID, Transaction transaction) throws IOException {
+            public boolean release(String authID, Transaction transaction) {
                 return false;
             }
 
             @Override
-            public boolean refresh(String authID, Transaction transaction) throws IOException {
+            public boolean refresh(String authID, Transaction transaction) {
                 return false;
             }
 
@@ -151,8 +150,7 @@ final class DataStoreAdaptor implements DataStore {
                     String typeName,
                     String authID,
                     Transaction transaction,
-                    FeatureLock featureLock)
-                    throws IOException {}
+                    FeatureLock featureLock) {}
 
             @Override
             public boolean exists(String authID) {
@@ -163,19 +161,19 @@ final class DataStoreAdaptor implements DataStore {
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriterAppend(
-            String typeName, Transaction transaction) throws IOException {
+            String typeName, Transaction transaction) {
         throw new UnsupportedOperationException("DataStoreAdaptor does not support modification");
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            String typeName, Transaction transaction) throws IOException {
+            String typeName, Transaction transaction) {
         throw new UnsupportedOperationException("DataStoreAdaptor does not support modification");
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            String typeName, Filter filter, Transaction transaction) throws IOException {
+            String typeName, Filter filter, Transaction transaction) {
         throw new UnsupportedOperationException("DataStoreAdaptor does not support modification");
     }
 

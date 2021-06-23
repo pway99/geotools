@@ -106,7 +106,7 @@ public class CurveTypeBinding extends AbstractComplexBinding implements Comparab
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         LineString[] segments = (LineString[]) node.getChildValue("segments");
 
         if (segments.length == 0) {

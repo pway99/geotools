@@ -55,7 +55,7 @@ public class AreaGridProcessTest {
     }
 
     @Test
-    public void testWorldArea() throws Exception {
+    public void testWorldArea() {
         logger.info("AREAGRIDPROCESS: Performing process execute test");
         int cx = 180;
         int cy = 90;
@@ -71,7 +71,7 @@ public class AreaGridProcessTest {
     }
 
     @Test
-    public void testColoradoArea() throws Exception {
+    public void testColoradoArea() {
         logger.info("AREAGRIDPROCESS: Performing process execute test");
         CoordinateReferenceSystem crs = org.geotools.referencing.crs.DefaultGeographicCRS.WGS84;
         ReferencedEnvelope envelope = new ReferencedEnvelope(-102.05, -109.05, 37, 41, crs);

@@ -60,7 +60,7 @@ public class FolderBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         folderStack.pop();
         return value;
     }

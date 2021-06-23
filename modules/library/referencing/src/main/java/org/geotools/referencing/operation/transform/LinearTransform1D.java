@@ -26,7 +26,6 @@ import org.opengis.parameter.ParameterValueGroup;
 import org.opengis.referencing.operation.MathTransform1D;
 import org.opengis.referencing.operation.Matrix;
 import org.opengis.referencing.operation.NoninvertibleTransformException;
-import org.opengis.referencing.operation.TransformException;
 
 /**
  * A one dimensional, linear transform. Input values <var>x</var> are converted into output values
@@ -167,7 +166,7 @@ public class LinearTransform1D extends AbstractMathTransform
      * is required and {@link Double#NaN} may be a legal output value for some users.
      */
     @Override
-    public Matrix derivative(final DirectPosition point) throws TransformException {
+    public Matrix derivative(final DirectPosition point) {
         return new Matrix1(scale);
     }
 

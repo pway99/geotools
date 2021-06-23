@@ -341,22 +341,22 @@ class LifecycleConnection implements Connection {
     }
 
     @Override
-    public void setSchema(String schema) throws SQLException {
+    public void setSchema(String schema) {
         invokeMethodQuietly("setSchema", new Class[] {String.class}, new Object[] {schema}, null);
     }
 
     @Override
-    public String getSchema() throws SQLException {
+    public String getSchema() {
         return (String) invokeMethodQuietly("getSchema", null, null, null);
     }
 
     @Override
-    public void abort(Executor executor) throws SQLException {
+    public void abort(Executor executor) {
         invokeMethodQuietly("abort", new Class[] {Executor.class}, new Object[] {executor}, null);
     }
 
     @Override
-    public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
+    public void setNetworkTimeout(Executor executor, int milliseconds) {
         invokeMethodQuietly(
                 "setNetworkTimeout",
                 new Class[] {Executor.class, int.class},
@@ -365,7 +365,7 @@ class LifecycleConnection implements Connection {
     }
 
     @Override
-    public int getNetworkTimeout() throws SQLException {
+    public int getNetworkTimeout() {
         return (Integer) invokeMethodQuietly("getNetworkTimeout", null, null, 0);
     }
 

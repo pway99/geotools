@@ -100,7 +100,7 @@ public class SLDSelectedChannelTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return styleFactory.createSelectedChannelType(
                 (Expression) node.getChildValue("SourceChannelName"),
                 (ContrastEnhancement) node.getChildValue("ContrastEnhancement"));

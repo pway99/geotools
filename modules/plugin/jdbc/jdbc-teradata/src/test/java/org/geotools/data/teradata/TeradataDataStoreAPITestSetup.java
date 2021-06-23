@@ -171,7 +171,7 @@ public class TeradataDataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropBuildingTable() throws Exception {
+    protected void dropBuildingTable() {
         runSafe("DELETE FROM  SYSSPATIAL.GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'building'");
         runSafe("DROP TRIGGER \"building_the_geom_mi\"");
         runSafe("DROP TRIGGER \"building_the_geom_mu\"");
@@ -181,7 +181,7 @@ public class TeradataDataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropLakeTable() throws Exception {
+    protected void dropLakeTable() {
         runSafe("DELETE FROM SYSSPATIAL.GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'lake'");
         runSafe("DROP TRIGGER \"lake_geom_mi\"");
         runSafe("DROP TRIGGER \"lake_geom_mu\"");
@@ -191,7 +191,7 @@ public class TeradataDataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropRiverTable() throws Exception {
+    protected void dropRiverTable() {
         runSafe("DELETE FROM SYSSPATIAL.GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'river'");
         runSafe("DROP TRIGGER \"river_geom_mi\"");
         runSafe("DROP TRIGGER \"river_geom_mu\"");
@@ -201,7 +201,7 @@ public class TeradataDataStoreAPITestSetup extends JDBCDataStoreAPITestSetup {
     }
 
     @Override
-    protected void dropRoadTable() throws Exception {
+    protected void dropRoadTable() {
         runSafe("DELETE FROM SYSSPATIAL.GEOMETRY_COLUMNS WHERE F_TABLE_NAME = 'road'");
         runSafe("DROP TRIGGER \"road_geom_mi\"");
         runSafe("DROP TRIGGER \"road_geom_mu\"");

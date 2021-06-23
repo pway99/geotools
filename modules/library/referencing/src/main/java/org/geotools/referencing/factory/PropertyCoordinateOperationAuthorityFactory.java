@@ -328,8 +328,7 @@ public class PropertyCoordinateOperationAuthorityFactory extends DirectAuthority
      * @throws FactoryException if the query failed for some other reason.
      */
     @Override
-    public InternationalString getDescriptionText(String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+    public InternationalString getDescriptionText(String code) {
 
         final String wkt = definitions.getProperty(trimAuthority(code));
 

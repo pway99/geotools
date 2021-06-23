@@ -69,7 +69,7 @@ public class CRSEvaluatorTest {
     }
 
     @Test
-    public void testAttribute() throws Exception {
+    public void testAttribute() {
         PropertyName pn = ff.property("the_geom");
         CRSEvaluator evaluator = new CRSEvaluator(STATES_SCHEMA);
         CoordinateReferenceSystem crs = (CoordinateReferenceSystem) pn.accept(evaluator, null);

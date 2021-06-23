@@ -22,8 +22,6 @@ import org.geotools.coverage.grid.io.GridFormatFactorySpi;
 import org.geotools.coverage.grid.io.GridFormatFinder;
 import org.junit.Assert;
 import org.junit.Test;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 
 /**
  * Class for testing availaibility of arcgrid format factory
@@ -34,7 +32,7 @@ import org.opengis.referencing.NoSuchAuthorityCodeException;
 public class ServiceTest {
 
     @Test
-    public void testIsAvailable() throws NoSuchAuthorityCodeException, FactoryException {
+    public void testIsAvailable() {
         GridFormatFinder.scanForPlugins();
         Iterator<GridFormatFactorySpi> list = GridFormatFinder.getAvailableFormats().iterator();
         boolean found = false;

@@ -30,7 +30,7 @@ import org.geotools.ows.ServiceException;
 public abstract class Response {
     protected HTTPResponse httpResponse;
 
-    public Response(HTTPResponse httpResponse) throws ServiceException, IOException {
+    public Response(HTTPResponse httpResponse) throws IOException {
         if (httpResponse.getResponseStream() == null) {
             throw new NullPointerException(
                     "An inputStream is required for " + getClass().getName());

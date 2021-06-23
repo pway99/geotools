@@ -38,8 +38,7 @@ public class ExpressionHandler extends SldTransformHandler {
     }
 
     @Override
-    public void element(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+    public void element(XMLStreamReader xml, SldTransformContext context) {
         String name = xml.getLocalName();
         if ("Literal".equals(name)) {
             context.push(new LiteralHandler(scalar));
@@ -51,14 +50,13 @@ public class ExpressionHandler extends SldTransformHandler {
     }
 
     @Override
-    public void characters(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+    public void characters(XMLStreamReader xml, SldTransformContext context) {
         scalar.append(xml.getText());
     }
 
     @Override
     public void endElement(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+            throws IOException {
         String name = xml.getLocalName();
         if ("Literal".equals(name) || "PropertyName".equals(name) || "Function".equals(name)) {
             onValue(scalar.toString().trim(), context).pop();
@@ -88,14 +86,12 @@ public class ExpressionHandler extends SldTransformHandler {
         }
 
         @Override
-        public void characters(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+        public void characters(XMLStreamReader xml, SldTransformContext context) {
             scalar.append(xml.getText());
         }
 
         @Override
-        public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+        public void endElement(XMLStreamReader xml, SldTransformContext context) {
             if ("Literal".equals(xml.getLocalName())) {
                 context.pop();
             }
@@ -117,14 +113,12 @@ public class ExpressionHandler extends SldTransformHandler {
         }
 
         @Override
-        public void characters(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+        public void characters(XMLStreamReader xml, SldTransformContext context) {
             scalar.append("${").append(xml.getText()).append("}");
         }
 
         @Override
-        public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+        public void endElement(XMLStreamReader xml, SldTransformContext context) {
             if ("PropertyName".equals(xml.getLocalName())) {
                 context.pop();
             }
@@ -149,8 +143,7 @@ public class ExpressionHandler extends SldTransformHandler {
         }
 
         @Override
-        public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+        public void endElement(XMLStreamReader xml, SldTransformContext context) {
             String name = xml.getLocalName();
             if ("Function".equals(name)) {
                 if ('.' == scalar.charAt(scalar.length() - 1)) {

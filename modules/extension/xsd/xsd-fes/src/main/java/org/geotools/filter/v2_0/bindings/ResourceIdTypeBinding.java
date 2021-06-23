@@ -47,7 +47,7 @@ public class ResourceIdTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         final String rid = (String) node.getAttributeValue("rid");
         // final String previousRid = (String) node.getAttributeValue("previousRid");
         final Version version = (Version) node.getAttributeValue("version");
@@ -75,7 +75,7 @@ public class ResourceIdTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (object == null) {
             return null;
         }

@@ -43,7 +43,7 @@ import org.opengis.feature.simple.SimpleFeature;
 
 public class SnapToLine {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         /*
          * Open a shapefile. You should choose one with line features

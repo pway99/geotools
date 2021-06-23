@@ -40,7 +40,7 @@ import org.xml.sax.SAXException;
 @SuppressWarnings("PMD") // (not sure what's going on here...)
 public class ServersTest {
     @Test
-    public void testServers() throws Exception {
+    public void testServers() {
 
         List servers = new ArrayList();
         /*

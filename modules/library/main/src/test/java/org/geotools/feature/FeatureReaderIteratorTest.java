@@ -1,6 +1,5 @@
 package org.geotools.feature;
 
-import java.io.IOException;
 import java.util.NoSuchElementException;
 import org.geotools.data.FeatureReader;
 import org.junit.Assert;
@@ -23,7 +22,7 @@ public class FeatureReaderIteratorTest {
     class BreakingFeatureReader implements FeatureReader<SimpleFeatureType, SimpleFeature> {
 
         @Override
-        public void close() throws IOException {
+        public void close() {
             throw new IllegalStateException("The exception we saw in GEOT-2068");
         }
 
@@ -33,13 +32,13 @@ public class FeatureReaderIteratorTest {
         }
 
         @Override
-        public boolean hasNext() throws IOException {
+        public boolean hasNext() {
             throw new IllegalStateException("The exception we saw in GEOT-2068");
         }
 
         @Override
         public SimpleFeature next()
-                throws IOException, IllegalArgumentException, NoSuchElementException {
+                throws IllegalArgumentException, NoSuchElementException {
             return null;
         }
     }

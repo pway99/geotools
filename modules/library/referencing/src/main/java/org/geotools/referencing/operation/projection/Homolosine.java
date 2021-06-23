@@ -109,7 +109,7 @@ public class Homolosine extends MapProjection {
      * @return Longitude angle within the [-PI, PI] interval.
      * @throws ProjectionException
      */
-    protected double wrapLongitude(double lam) throws ProjectionException {
+    protected double wrapLongitude(double lam) {
 
         if (lam > Math.PI) {
             double quoc = lam / Math.PI;
@@ -127,7 +127,7 @@ public class Homolosine extends MapProjection {
      * @return Latitude angle within the [-PI/2, PI/2] interval.
      * @throws ProjectionException
      */
-    protected double wrapLatitude(double phi) throws ProjectionException {
+    protected double wrapLatitude(double phi) {
 
         double halfPI = Math.PI / 2;
 

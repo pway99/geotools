@@ -99,7 +99,7 @@ class CogGranuleAccessProvider extends DefaultGranuleAccessProvider
     }
 
     @Override
-    public void setGranuleInput(Object input) throws IOException {
+    public void setGranuleInput(Object input) {
         this.inputUrl = (URL) input;
         BasicAuthURI cogUri = cogConfig.createUri(inputUrl.toString());
         String rangeReader = cogConfig.getRangeReader();
@@ -125,14 +125,14 @@ class CogGranuleAccessProvider extends DefaultGranuleAccessProvider
     }
 
     @Override
-    public ImageInputStreamSpi getInputStreamSpi() throws IOException {
+    public ImageInputStreamSpi getInputStreamSpi() {
         // The COG Granule Access Provider only works with COG Streams SPI.
         // only the suggested COG Stream SPI will be useful
         return imageInputStreamSpi;
     }
 
     @Override
-    public ImageReaderSpi getImageReaderSpi() throws IOException {
+    public ImageReaderSpi getImageReaderSpi() {
         // The COG Granule Access Provider only works with COG ImageReader SPI.
         // only the suggested COG ImageReader SPI will be useful
         return imageReaderSpi;

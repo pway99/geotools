@@ -27,26 +27,26 @@ public class GeoPkgFeatureLockingOnlineTest extends JDBCFeatureLockingOnlineTest
     }
 
     @Override
-    public void testLockFeatures() throws Exception {}
+    public void testLockFeatures() {}
 
     @Override
-    public void testLockFeaturesWithFilter() throws Exception {}
+    public void testLockFeaturesWithFilter() {}
 
     @Override
-    public void testLockFeaturesWithInvalidFilter() throws Exception {}
+    public void testLockFeaturesWithInvalidFilter() {}
 
     @Override
-    public void testLockFeaturesWithInvalidQuery() throws Exception {}
+    public void testLockFeaturesWithInvalidQuery() {}
 
     @Override
-    public void testUnlockFeatures() throws Exception {}
+    public void testUnlockFeatures() {}
 
     @Override
-    public void testUnlockFeaturesInvalidFilter() throws Exception {}
+    public void testUnlockFeaturesInvalidFilter() {}
 
     @Override
-    public void testDeleteLockedFeatures() throws Exception {}
+    public void testDeleteLockedFeatures() {}
 
     @Override
-    public void testModifyLockedFeatures() throws Exception {}
+    public void testModifyLockedFeatures() {}
 }

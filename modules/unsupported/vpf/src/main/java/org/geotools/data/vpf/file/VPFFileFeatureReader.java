@@ -42,7 +42,7 @@ public class VPFFileFeatureReader implements FeatureReader<SimpleFeatureType, Si
         if (this.file != null) this.file.reset();
     }
 
-    public VPFFileFeatureReader(ContentState contentState, VPFFile file) throws IOException {
+    public VPFFileFeatureReader(ContentState contentState, VPFFile file) {
         this.state = contentState;
         this.file = file;
         this.currentFeature = null;
@@ -74,7 +74,7 @@ public class VPFFileFeatureReader implements FeatureReader<SimpleFeatureType, Si
      * @see org.geotools.data.FeatureReader#hasNext()
      */
     @Override
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() {
 
         // Ask the stream if it has space for another object
         boolean result = file != null ? file.hasNext() : false;

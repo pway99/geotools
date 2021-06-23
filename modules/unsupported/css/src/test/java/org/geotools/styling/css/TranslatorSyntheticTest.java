@@ -29,7 +29,6 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.awt.Color;
-import java.io.IOException;
 import java.util.List;
 import javax.xml.transform.TransformerException;
 import org.geotools.filter.function.EnvFunction;
@@ -116,7 +115,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void fillBasic() throws IOException {
+    public void fillBasic() {
         String css = "* { fill: orange; }";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -128,7 +127,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void fillOpacity() throws Exception {
+    public void fillOpacity() {
         String css = "* { fill: orange; fill-opacity: 0.5; }";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -140,7 +139,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void fillCircleDefaults() throws Exception {
+    public void fillCircleDefaults() {
         String css = "* { fill: symbol('circle'); }";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -161,7 +160,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void fillCircleFilledMark() throws Exception {
+    public void fillCircleFilledMark() {
         String css = "* { fill: symbol('circle');} :fill { fill: yellow;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -179,7 +178,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void fillCircleStrokedMark() throws Exception {
+    public void fillCircleStrokedMark() {
         String css = "* { fill: symbol('circle');} :fill { stroke: black;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -197,7 +196,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void fillCircleFilledStrokedMark() throws Exception {
+    public void fillCircleFilledStrokedMark() {
         String css =
                 "* { fill: symbol('circle');} :fill { fill: yellow; stroke: black; stroke-width: 3;}";
         Style style = translate(css);
@@ -217,7 +216,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void fillExternalGraphic() throws Exception {
+    public void fillExternalGraphic() {
         String css = "* { fill: url(test.svg); fill-rotation: 45; fill-size: 35;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -233,7 +232,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void fillVendorOptions() throws Exception {
+    public void fillVendorOptions() {
         String css = "* { fill: yellow; -gt-fill-label-obstacle: true;} ";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -244,7 +243,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void fillGeometry() throws Exception {
+    public void fillGeometry() {
         String css = "* { fill-geometry: [centroid(theGeom)]; fill: red;} ";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -255,7 +254,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void strokeBasic() throws IOException {
+    public void strokeBasic() {
         String css = "* { stroke: orange; }";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -273,7 +272,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void strokeDashed() throws IOException {
+    public void strokeDashed() {
         String css =
                 "* { stroke: orange; stroke-width: 10; stroke-dasharray: 10 5 1 5; stroke-dashoffset: 2; stroke-linecap: round; stroke-linejoin: round;}";
         Style style = translate(css);
@@ -292,7 +291,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void strokeRepeatedMark() throws IOException {
+    public void strokeRepeatedMark() {
         String css = "* { stroke: symbol('square');} :stroke { fill: red; }";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -306,7 +305,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void strokeFillMark() throws IOException {
+    public void strokeFillMark() {
         String css =
                 "* { stroke: symbol('square'); stroke-size: 20; stroke-repeat: stipple;} :stroke { fill: red; }";
         Style style = translate(css);
@@ -322,7 +321,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void fillStroke() throws Exception {
+    public void fillStroke() {
         String css = "* { fill: red; stroke: yellow;} ";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -334,7 +333,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void fillStrokeLabelObstacle() throws Exception {
+    public void fillStrokeLabelObstacle() {
         String css = "* { fill: red; stroke: yellow; -gt-stroke-label-obstacle: true;} ";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -350,7 +349,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void mark() throws Exception {
+    public void mark() {
         String css =
                 "* { mark: symbol(circle); mark-size: 10; mark-rotation: 45; mark-geometry: [centroid(the_geom)];} :mark { fill: blue; }";
         Style style = translate(css);
@@ -368,7 +367,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void markAnchorDisplacement() throws Exception {
+    public void markAnchorDisplacement() {
         String css =
                 "* { mark: symbol(circle); mark-size: 10; mark-anchor: 0 1; mark-offset: 10 20;}";
         Style style = translate(css);
@@ -386,7 +385,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void markAnchorDisplacementExpressions() throws Exception {
+    public void markAnchorDisplacementExpressions() {
         String css =
                 "* { mark: symbol(circle); mark-size: 10; mark-anchor: [a1] [a2]; mark-offset: [o1] [o2];}";
         Style style = translate(css);
@@ -404,7 +403,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void markAnchorDisplacementSingleValue() throws Exception {
+    public void markAnchorDisplacementSingleValue() {
         String css = "* { mark: symbol(circle); mark-size: 10; mark-anchor: 0.5; mark-offset: 10;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -421,7 +420,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void externalGraphic() throws Exception {
+    public void externalGraphic() {
         String css =
                 "* { mark: url(test.svg); mark-size: 10; mark-rotation: 45; mark-mime: 'image/png';}";
         Style style = translate(css);
@@ -438,7 +437,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void labelBasic() throws Exception {
+    public void labelBasic() {
         String css = "* { label: 'test'; label-geometry: [centroid(the_geom)];}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -448,7 +447,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void labelPointPlacement() throws Exception {
+    public void labelPointPlacement() {
         String css =
                 "* { label: 'test'; label-offset: 5 5; label-rotation: 45; label-anchor: 0.1 0.9;}";
         Style style = translate(css);
@@ -464,7 +463,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void labelLinePlacement() throws Exception {
+    public void labelLinePlacement() {
         String css = "* { label: 'test'; label-offset: 5;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -475,7 +474,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void labelHalo() throws Exception {
+    public void labelHalo() {
         String css = "* { label: 'test'; halo-color: white; halo-radius: 3; halo-opacity: 0.8;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -488,7 +487,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void labelFont() throws Exception {
+    public void labelFont() {
         String css =
                 "* { label: 'test'; font-family: 'Arial'; font-fill: blue; font-weight: normal; font-style: italic; font-size: 20;}";
         Style style = translate(css);
@@ -506,7 +505,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
      * Don't seem to be able to set font-size with out setting font-style
      */
     @Test
-    public void testGEOS9808() throws Exception {
+    public void testGEOS9808() {
         String css = "* { label: 'test'; font-fill: black; font-size: 20;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -519,7 +518,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void labelShield() throws Exception {
+    public void labelShield() {
         String css = "* { label: 'test'; shield: symbol(square);} :shield {fill:black;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -533,7 +532,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void labelPriority() throws Exception {
+    public void labelPriority() {
         String css = "* { label: 'test'; -gt-label-priority: [priority];}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -543,7 +542,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void labelVendorOptions() throws Exception {
+    public void labelVendorOptions() {
         String css = "* { label: 'test'; -gt-label-follow-line: true;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -553,7 +552,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void labelMixedMode() throws Exception {
+    public void labelMixedMode() {
         String css = "* { label: [att1]'\n('[att2]')';}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -562,7 +561,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void rasterBasic() throws Exception {
+    public void rasterBasic() {
         String css = "* { raster-channels: auto;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -572,7 +571,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void rasterGammaContrastEnhancement() throws Exception {
+    public void rasterGammaContrastEnhancement() {
         String css =
                 "* { raster-channels: auto; raster-contrast-enhancement: normalize; raster-gamma: 0.5;}";
         Style style = translate(css);
@@ -585,7 +584,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void rasterChannelSelection() throws Exception {
+    public void rasterChannelSelection() {
         String css =
                 "* { raster-channels: 'band1'; raster-contrast-enhancement: normalize; raster-gamma: 0.5;}";
         Style style = translate(css);
@@ -599,7 +598,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void rasterChannelSelectionRGB() throws Exception {
+    public void rasterChannelSelectionRGB() {
         String css = "* { raster-channels: 'band1' 'band5' 'band3';}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -625,7 +624,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
         rasterChannelSelectionExpression(css);
     }
 
-    private void rasterChannelSelectionExpression(String css) throws Exception {
+    private void rasterChannelSelectionExpression(String css) {
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
         RasterSymbolizer rs = assertSingleSymbolizer(rule, RasterSymbolizer.class);
@@ -644,7 +643,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void rasterColorMap() throws Exception {
+    public void rasterColorMap() {
         String css =
                 "* { raster-channels: 'auto'; raster-color-map: color-map-entry(black, 100) color-map-entry(white, 1000) color-map-entry(red, 10000, 0);}";
         Style style = translate(css);
@@ -664,7 +663,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void rasterColorMapWithLabels() throws Exception {
+    public void rasterColorMapWithLabels() {
         String css =
                 "* { raster-channels: 'auto'; raster-color-map: color-map-entry(black, 100, 0, label1) "
                         + "color-map-entry(white, 1000, 2.0, label2) color-map-entry(red, 10000);}";
@@ -688,7 +687,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void multiComment() throws Exception {
+    public void multiComment() {
         String css =
                 "/* This is an initial comment */\n"
                         + //
@@ -712,7 +711,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void scaleWithinOr() throws IOException, CQLException {
+    public void scaleWithinOr() {
         String css = "[@scale < 10000],[foo='bar'] { fill: orange; }";
         // used to just blow
         Style style = translate(css);
@@ -726,7 +725,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testParseQuotedURL() throws Exception {
+    public void testParseQuotedURL() {
         String css = "* { mark: url('file://BidirectionShield-High.svg');}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -737,7 +736,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testEmptyStyle() throws Exception {
+    public void testEmptyStyle() {
         String css = "* { line: gray }";
         try {
             translate(css);
@@ -748,7 +747,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testEnvFunction() throws Exception {
+    public void testEnvFunction() {
         String css = "[env('foo', 'default') = 'bar'] { fill: blue; }";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -756,7 +755,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testBlendPoint() throws Exception {
+    public void testBlendPoint() {
         String css = "* { mark: symbol(circle); mark-composite: multiply;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -767,7 +766,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testBlendLine() throws Exception {
+    public void testBlendLine() {
         String css = "* { stroke: red; stroke-composite: multiply;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -778,7 +777,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testBlendPolygon() throws Exception {
+    public void testBlendPolygon() {
         String css = "* { fill: red; fill-composite: multiply;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -789,7 +788,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testBlendRaster() throws Exception {
+    public void testBlendRaster() {
         String css = "* { raster-channels: auto; raster-composite : multiply; }";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -800,7 +799,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testBlendFTS() throws Exception {
+    public void testBlendFTS() {
         String css = "* { stroke: red; composite : multiply; }";
         Style style = translate(css);
         // should not be in the symbolizer this time
@@ -817,7 +816,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testCompositeBaseFTS() throws Exception {
+    public void testCompositeBaseFTS() {
         String css = "* { stroke: red; composite-base : true; }";
         Style style = translate(css);
         // should not be in the symbolizer this time
@@ -833,7 +832,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testCompositeAndBaseFTS() throws Exception {
+    public void testCompositeAndBaseFTS() {
         String css = "* { stroke: red; composite: multiply; composite-base : true; }";
         Style style = translate(css);
         // should not be in the symbolizer this time
@@ -849,7 +848,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testSortBy() throws Exception {
+    public void testSortBy() {
         String css = "* { stroke: red; sort-by: \"cat A, name D\"; }";
         Style style = translate(css);
         // should not be in the symbolizer this time
@@ -866,7 +865,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testSortByGroup() throws Exception {
+    public void testSortByGroup() {
         String css = "* { stroke: red; sort-by: \"cat A, name D\"; sort-by-group: \"theGroup\"}";
         Style style = translate(css);
         // should not be in the symbolizer this time
@@ -886,7 +885,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testMultipleFonts() throws Exception {
+    public void testMultipleFonts() {
         String css = "* { label: \"static\"; font-family: \"Serif\" \"Sans\"; font-size: 10 15; }";
         Style style = translate(css);
         // should not be in the symbolizer this time
@@ -904,7 +903,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testMultipleFontsDefaltSize() throws Exception {
+    public void testMultipleFontsDefaltSize() {
         String css = "* { label: \"static\"; font-family: \"Serif\" \"Sans\"}";
         Style style = translate(css);
         // should not be in the symbolizer this time
@@ -922,7 +921,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testMultipleFontsSingleSize() throws Exception {
+    public void testMultipleFontsSingleSize() {
         String css = "* { label: \"static\"; font-family: \"Serif\" \"Sans\"; font-size: 10 }";
         Style style = translate(css);
         // should not be in the symbolizer this time
@@ -940,7 +939,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void perpendicularOffset() throws Exception {
+    public void perpendicularOffset() {
         String css = "* { stroke: black, yellow; stroke-offset: 0, 5;} ";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -953,21 +952,21 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void styleTitle() throws Exception {
+    public void styleTitle() {
         String css = "@styleTitle \"test title\";\n" + "* { mark: symbol('circle'); }";
         Style style = translate(css);
         assertEquals("test title", style.getDescription().getTitle().toString());
     }
 
     @Test
-    public void styleAbstract() throws Exception {
+    public void styleAbstract() {
         String css = "@styleAbstract \"style description\";\n" + "* { mark: symbol('circle'); }";
         Style style = translate(css);
         assertEquals("style description", style.getDescription().getAbstract().toString());
     }
 
     @Test
-    public void testModeFlat() throws CQLException, TransformerException {
+    public void testModeFlat() throws CQLException {
         String css =
                 "@mode \"Flat\"; " + "[value1=1] { fill: green; } " + "[value2=2] { stroke: red; }";
         Style style = translate(css);
@@ -1019,7 +1018,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testModeFlat_include() throws CQLException, TransformerException {
+    public void testModeFlat_include() throws CQLException {
         String css =
                 "@mode \"Flat\"; "
                         + "* { fill: blue; } "
@@ -1040,7 +1039,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testModeFlat_pseudoRules() throws Exception {
+    public void testModeFlat_pseudoRules() {
         String css = "@mode \"Flat\"; " + "* { fill: symbol('circle');} :fill { stroke: black;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -1058,7 +1057,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testModeFlat1() throws CQLException, TransformerException {
+    public void testModeFlat1() throws CQLException {
         String css =
                 "@mode \"Flat\"; "
                         + "[value1=1] { stroke: green; stroke-width:2px;}"
@@ -1157,7 +1156,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testModeFlat1_1() throws CQLException, TransformerException {
+    public void testModeFlat1_1() throws CQLException {
         String css =
                 "@mode \"Flat\"; "
                         + "[value1=1] { stroke: green; stroke-width:2px;z-index:1;}"
@@ -1250,7 +1249,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testModeFlat2_mark() throws Exception {
+    public void testModeFlat2_mark() {
         String css =
                 "@mode \"Flat\"; "
                         + "[value1=1] { mark: symbol(circle); } [value1=1] :mark { fill: green; } [value1=1] [value2=2] :mark { fill: blue; }";
@@ -1264,7 +1263,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testModeFlat3_mark() throws CQLException, TransformerException {
+    public void testModeFlat3_mark() throws CQLException {
         String css =
                 "@mode \"Flat\"; "
                         + "* { fill: blue; } "
@@ -1304,7 +1303,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testModeFlat4_multiValued() throws CQLException, TransformerException {
+    public void testModeFlat4_multiValued() throws CQLException {
         String css = "@mode \"Flat\"; " + "[value1=1] { fill: green, red; }";
         Style style = translate(css);
         assertEquals(1, style.featureTypeStyles().size());
@@ -1317,7 +1316,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testModeFlat5_mark() throws Exception {
+    public void testModeFlat5_mark() {
         String css =
                 "@mode \"Flat\"; "
                         + "* { mark: symbol(circle); mark-size: 10; mark-rotation: 45; mark-geometry: [centroid(the_geom)];} :mark { fill: blue; }";
@@ -1336,7 +1335,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testSimpleTransform() throws Exception {
+    public void testSimpleTransform() {
         String css = "* { transform: ras:Contour(levels: 1100 1200 1300); stroke: black}";
         Style style = translate(css);
 
@@ -1347,7 +1346,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testTwoLevelTransform() throws Exception {
+    public void testTwoLevelTransform() {
         String css =
                 "* { transform: ras:Contour(levels: 1100 1200 1300); stroke: black; z-index: 0}\n"
                         + "* { transform: ras:RasterAsPointCollection(); mark: symbol('square'); z-index: 1}";
@@ -1369,7 +1368,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testPerpendicularOffsetExpression() throws Exception {
+    public void testPerpendicularOffsetExpression() {
         String css = "* { stroke: red; stroke-offset: [a * 2]; }";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -1400,7 +1399,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testNestedFunction() throws Exception {
+    public void testNestedFunction() {
         String css = "* {stroke: saturate(darken(#b5d0d0, 40%), 30%)}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -1412,7 +1411,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testScaleDependencyUnits() throws Exception {
+    public void testScaleDependencyUnits() {
         // k
         assertScaleMinMax("[@scale < 1k] {stroke: black}", null, 1e3);
         assertScaleMinMax("[@scale > 1k] {stroke: black}", 1e3, null);
@@ -1425,13 +1424,13 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testScaleDenominatorPseudoVariable() throws Exception {
+    public void testScaleDenominatorPseudoVariable() {
         assertScaleMinMax("[@sd < 1k] {stroke: black}", null, 1e3);
         assertScaleMinMax("[@sd > 1k] {stroke: black}", 1e3, null);
     }
 
     @Test
-    public void testCQLErrorSelector() throws Exception {
+    public void testCQLErrorSelector() {
         String css = "[thisFunctionDoesNotExists() > 10] {\nstroke: blue\n}";
         try {
             translate(css);
@@ -1445,7 +1444,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testCQLErrorProperty() throws Exception {
+    public void testCQLErrorProperty() {
         String css = "* \n{stroke: blue; \nstroke-width: [thisFunctionDoesNotExists()]}";
         try {
             translate(css);
@@ -1459,7 +1458,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testDashArraySingleExpression() throws CQLException {
+    public void testDashArraySingleExpression() {
         String css = "* { stroke: orange; stroke-dasharray: [foo]}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -1470,7 +1469,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testDashArrayMixedExpression() throws CQLException {
+    public void testDashArrayMixedExpression() {
         String css = "* { stroke: orange; stroke-dasharray: [foo] 5 [bar]}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -1565,7 +1564,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testNotVariablePropertyValue() throws CQLException {
+    public void testNotVariablePropertyValue() {
         String css = "* { label: 'not@env'}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -1574,7 +1573,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testNotVariableCql() throws CQLException {
+    public void testNotVariableCql() {
         String css = "* { label: ['not@env']}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -1615,7 +1614,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testMeasuredExpression() throws CQLException {
+    public void testMeasuredExpression() {
         String css = "* { stroke: black; stroke-width: [a * 10]m;}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -1690,7 +1689,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testNoneFillStroke() throws CQLException {
+    public void testNoneFillStroke() {
         String css = "* { fill: red; stroke: none }";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -1705,7 +1704,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testNoneOverrideAndDisable() throws CQLException {
+    public void testNoneOverrideAndDisable() {
         String css = "* { stroke: red; [@sd < 10k] { stroke: none }}";
         Style style = translate(css);
         Rule rule = assertSingleRule(style);
@@ -1718,7 +1717,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testAlternateNone() throws CQLException {
+    public void testAlternateNone() {
         String css =
                 "* {"
                         + "    fill-geometry: [the_geom], [boundary(the_geom)];"
@@ -1736,7 +1735,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testBackgroundColor() throws CQLException {
+    public void testBackgroundColor() {
         String css = "* { background: yellow; background-opacity: 0.5; stroke: red }";
         Style style = translate(css);
         Fill background = ((org.geotools.styling.Style) style).getBackground();
@@ -1746,7 +1745,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void testBackgroundGraphic() throws CQLException {
+    public void testBackgroundGraphic() {
         String css = "* {background: symbol('circle'); :background {fill: yellow}; stroke: red}";
         Style style = translate(css);
         Fill background = ((org.geotools.styling.Style) style).getBackground();
@@ -1759,7 +1758,7 @@ public class TranslatorSyntheticTest extends CssBaseTest {
     }
 
     @Test
-    public void labelShieldIndependent() throws Exception {
+    public void labelShieldIndependent() {
         String css =
                 "* { label: 'test'; shield: symbol(square); shield-placement: independent; shield-anchor: 0.5 1} :shield {fill:black}";
         Style style = translate(css);

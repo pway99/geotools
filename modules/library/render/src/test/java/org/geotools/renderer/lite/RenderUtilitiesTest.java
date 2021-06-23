@@ -109,7 +109,7 @@ public class RenderUtilitiesTest {
     }
 
     @Test
-    public void testOGCScaleProjected() throws Exception {
+    public void testOGCScaleProjected() {
         ReferencedEnvelope re =
                 new ReferencedEnvelope(
                         new Envelope(0, 10, 0, 10), DefaultEngineeringCRS.CARTESIAN_2D);
@@ -119,7 +119,7 @@ public class RenderUtilitiesTest {
     }
 
     @Test
-    public void testOGCScaleFeet() throws Exception {
+    public void testOGCScaleFeet() {
         try {
             ReferencedEnvelope re =
                     new ReferencedEnvelope(
@@ -139,7 +139,7 @@ public class RenderUtilitiesTest {
     }
 
     @Test
-    public void testOGCScaleGeographic() throws Exception {
+    public void testOGCScaleGeographic() {
         // same example as page 29 in the SLD OGC spec, but with the expected scale corrected
         // since the OGC document contains a very imprecise one
         ReferencedEnvelope re =

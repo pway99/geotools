@@ -1127,7 +1127,7 @@ public class Encoder {
      * and loads the entire encoded result into memory.
      */
     public Document encodeAsDOM(Object object, QName name)
-            throws IOException, SAXException, TransformerException {
+            throws IOException, TransformerException {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         encode(object, name, out);
 
@@ -1252,7 +1252,7 @@ public class Encoder {
                         || e.getSchema().getElementFormDefault() == XSDForm.QUALIFIED_LITERAL);
     }
 
-    protected void comment(Element element) throws SAXException, IOException {
+    protected void comment(Element element) throws SAXException {
         if (serializer instanceof LexicalHandler) {
             NodeList children = element.getChildNodes();
 

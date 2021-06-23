@@ -55,7 +55,6 @@ import org.opengis.filter.expression.PropertyName;
 import org.opengis.filter.spatial.Disjoint;
 import org.opengis.filter.spatial.DistanceBufferOperator;
 import org.opengis.filter.temporal.Before;
-import org.opengis.referencing.FactoryException;
 
 /**
  * CQL Test
@@ -86,7 +85,7 @@ public class CQLTest {
      * @see ECQLComparisonPredicateTest
      */
     @Test
-    public void comparisonPredicate() throws Exception {
+    public void comparisonPredicate() {
 
         Filter filter = CQL.toFilter("POP_RANK > 6");
 
@@ -122,7 +121,7 @@ public class CQLTest {
     }
 
     @Test
-    public void dwithinGeometry() throws Exception {
+    public void dwithinGeometry() {
 
         // DWITHIN
         Filter resultFilter = CQL.toFilter("DWITHIN(the_geom, POINT(1 2), 10, kilometers)");
@@ -136,7 +135,7 @@ public class CQLTest {
      * @see ECQLTemporalPredicateTest
      */
     @Test
-    public void temporalPredicate() throws Exception {
+    public void temporalPredicate() {
 
         Filter filter = CQL.toFilter("DATE BEFORE 2006-12-31T01:30:00Z");
 
@@ -149,7 +148,7 @@ public class CQLTest {
      * @see ECQLBooleanValueExpressionTest
      */
     @Test
-    public void booleanPredicate() throws Exception {
+    public void booleanPredicate() {
 
         // and sample
         Filter filter = CQL.toFilter("QUANTITY < 10 AND QUANTITY < 2 ");
@@ -173,7 +172,7 @@ public class CQLTest {
      * @see ECQLLikePredicateTest
      */
     @Test
-    public void likePredicate() throws Exception {
+    public void likePredicate() {
 
         Filter filter = CQL.toFilter("NAME like '%new%'");
 
@@ -186,7 +185,7 @@ public class CQLTest {
      * @see ECQLNullPredicateTest
      */
     @Test
-    public void isNullPredicate() throws Exception {
+    public void isNullPredicate() {
 
         Filter filter = CQL.toFilter("SHAPE IS NULL");
 
@@ -199,7 +198,7 @@ public class CQLTest {
      * @see ECQLExistenceTest
      */
     @Test
-    public void existProperty() throws Exception {
+    public void existProperty() {
 
         Filter resultFilter = CQL.toFilter("NAME EXISTS");
 
@@ -213,7 +212,7 @@ public class CQLTest {
     }
 
     @Test
-    public void addExpression() throws Exception {
+    public void addExpression() {
 
         Expression expr = CQL.toExpression("QUANTITY + 1");
 
@@ -221,7 +220,7 @@ public class CQLTest {
     }
 
     @Test
-    public void listOfPredicates() throws Exception {
+    public void listOfPredicates() {
 
         List<Filter> list = CQL.toFilterList("QUANTITY=1; YEAR<1963");
 
@@ -233,7 +232,7 @@ public class CQLTest {
     }
 
     @Test
-    public void filterListToCQL() throws Exception {
+    public void filterListToCQL() {
 
         String expectedCQL = "QUANTITY = 1; YEAR < 1963";
         List<Filter> list = CQL.toFilterList(expectedCQL);
@@ -246,7 +245,7 @@ public class CQLTest {
     }
 
     @Test
-    public void filterToCQL() throws Exception {
+    public void filterToCQL() {
 
         String expectedCQL = "QUANTITY = 1";
         Filter list = CQL.toFilter(expectedCQL);
@@ -256,7 +255,7 @@ public class CQLTest {
     }
 
     @Test
-    public void expressionToCQLExpression() throws Exception {
+    public void expressionToCQLExpression() {
 
         String expectedCQL = "abs(-10) + 1";
         Expression list = CQL.toExpression(expectedCQL);
@@ -267,7 +266,7 @@ public class CQLTest {
 
     /** Verify the parser uses the provided FilterFactory implementation */
     @Test
-    public void toFilterUsesProvidedFilterFactory() throws Exception {
+    public void toFilterUsesProvidedFilterFactory() {
         final boolean[] called = {false};
 
         FilterFactory ff =
@@ -285,7 +284,7 @@ public class CQLTest {
     }
     /** Verify the parser uses the provided FilterFactory implementation */
     @Test
-    public void toExpressionUsesProvidedFilterFactory() throws Exception {
+    public void toExpressionUsesProvidedFilterFactory() {
         final boolean[] called = {false};
 
         FilterFactory ff =
@@ -311,7 +310,7 @@ public class CQLTest {
         assertEquals("POINT (1 2)", cql);
     }
 
-    private Literal getWgs84PointLiteral() throws FactoryException {
+    private Literal getWgs84PointLiteral() {
         Point p = new GeometryFactory().createPoint(new Coordinate(1, 2));
         p.setUserData(CRS.decode("EPSG:4326", true));
         return CommonFactoryFinder.getFilterFactory2().literal(p);

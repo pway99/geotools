@@ -134,7 +134,7 @@ public class S3ChunkEntryFactory implements CacheEntryFactory, CacheLoader {
     }
 
     @Override
-    public CacheLoader clone(Ehcache cache) throws CloneNotSupportedException {
+    public CacheLoader clone(Ehcache cache) {
         throw new UnsupportedOperationException("Can't load chunk without loader argument.");
     }
 

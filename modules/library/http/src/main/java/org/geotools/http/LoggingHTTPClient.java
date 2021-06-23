@@ -100,7 +100,7 @@ public class LoggingHTTPClient extends DelegateHTTPClient {
         }
 
         @Override
-        public InputStream getResponseStream() throws IOException {
+        public InputStream getResponseStream() {
             return input;
         }
     }

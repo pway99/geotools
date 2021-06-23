@@ -50,7 +50,7 @@ public class TransformProcessTest {
     }
 
     @Test
-    public void testDefinition() throws Exception {
+    public void testDefinition() {
         String definition = "the_geom=the_geom";
         List<Definition> def = TransformProcess.toDefinition(definition);
 
@@ -61,7 +61,7 @@ public class TransformProcessTest {
     }
 
     @Test
-    public void testDefinitionListLF() throws Exception {
+    public void testDefinitionListLF() {
         String definition = "the_geom=the_geom\ncat=cat+1";
         List<Definition> def = TransformProcess.toDefinition(definition);
 
@@ -73,7 +73,7 @@ public class TransformProcessTest {
     }
 
     @Test
-    public void testDefinitionListDelimiter() throws Exception {
+    public void testDefinitionListDelimiter() {
         String definition = "the_geom=the_geom; cat=cat+1";
         List<Definition> def = TransformProcess.toDefinition(definition);
 
@@ -85,7 +85,7 @@ public class TransformProcessTest {
     }
 
     @Test
-    public void testDefinitionListDelimiterExtra() throws Exception {
+    public void testDefinitionListDelimiterExtra() {
         String definition = "the_geom=the_geom; cat=cat+1;";
         List<Definition> def = TransformProcess.toDefinition(definition);
 
@@ -97,7 +97,7 @@ public class TransformProcessTest {
     }
 
     @Test
-    public void testDefinitionListDelimiterLF() throws Exception {
+    public void testDefinitionListDelimiterLF() {
         String definition = "the_geom=the_geom;\n cat=cat+1;";
         List<Definition> def = TransformProcess.toDefinition(definition);
 

@@ -37,7 +37,7 @@ public class GeoPkgDateTestSetup extends JDBCDateTestSetup {
     }
 
     @Override
-    protected void dropDateTable() throws Exception {
+    protected void dropDateTable() {
         ((GeoPkgTestSetup) delegate).removeTable("dates");
     }
 }

@@ -393,8 +393,7 @@ public class AppSchemaDataAccessConfigurator {
         return featureTypeMappings;
     }
 
-    private AttributeDescriptor getTargetDescriptor(TypeMapping dto, CoordinateReferenceSystem crs)
-            throws IOException {
+    private AttributeDescriptor getTargetDescriptor(TypeMapping dto, CoordinateReferenceSystem crs) {
         String prefixedTargetName = dto.getTargetElementName();
         Name targetNodeName = Types.degloseName(prefixedTargetName, namespaces);
 

@@ -33,7 +33,7 @@ public class GraphFuserTest {
     private GraphGenerator m_gen;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         m_gen = createGenerator();
     }
 

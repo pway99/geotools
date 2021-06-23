@@ -108,7 +108,7 @@ public class PostGISCurvesTestSetup extends JDBCCurvesTestSetup {
     }
 
     @Override
-    protected void dropCurvesTable() throws Exception {
+    protected void dropCurvesTable() {
         runSafe("DROP TABLE \"curves\" cascade");
     }
 

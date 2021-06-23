@@ -186,8 +186,7 @@ public class IntersectionFeatureCollection implements VectorProcess {
         return false;
     }
 
-    static Geometry densify(Geometry geom, CoordinateReferenceSystem crs, double maxAreaError)
-            throws FactoryException, TransformException {
+    static Geometry densify(Geometry geom, CoordinateReferenceSystem crs, double maxAreaError) {
         // basic checks
         if (maxAreaError <= 0) {
             throw new IllegalArgumentException("maxAreaError must be greater than 0");

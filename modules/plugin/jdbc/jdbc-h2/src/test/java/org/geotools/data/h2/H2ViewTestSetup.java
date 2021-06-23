@@ -29,7 +29,7 @@ public class H2ViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void dropLakesTable() throws Exception {
+    protected void dropLakesTable() {
         runSafe("CALL DropGeometryColumn(NULL, 'lakes', 'geom')");
         runSafe("DROP TABLE \"lakes\"");
     }
@@ -47,13 +47,13 @@ public class H2ViewTestSetup extends JDBCViewTestSetup {
     }
 
     @Override
-    protected void createLakesViewPk() throws Exception {
+    protected void createLakesViewPk() {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    protected void dropLakesViewPk() throws Exception {
+    protected void dropLakesViewPk() {
         // TODO Auto-generated method stub
 
     }

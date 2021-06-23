@@ -98,20 +98,20 @@ public class PreGeneralizedDataStore implements DataStore {
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            String typeName, Transaction transaction) throws IOException {
+            String typeName, Transaction transaction) {
 
         throw new UnsupportedOperationException("getFeatureWriter");
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriter(
-            String typeName, Filter filter, Transaction transaction) throws IOException {
+            String typeName, Filter filter, Transaction transaction) {
         throw new UnsupportedOperationException("getFeatureWriter");
     }
 
     @Override
     public FeatureWriter<SimpleFeatureType, SimpleFeature> getFeatureWriterAppend(
-            String typeName, Transaction transaction) throws IOException {
+            String typeName, Transaction transaction) {
         throw new UnsupportedOperationException("getFeatureWriterAppend");
     }
 
@@ -126,18 +126,18 @@ public class PreGeneralizedDataStore implements DataStore {
     }
 
     @Override
-    public String[] getTypeNames() throws IOException {
+    public String[] getTypeNames() {
         Set<String> keys = featureSources.keySet();
         return keys.toArray(new String[keys.size()]);
     }
 
     @Override
-    public void updateSchema(String typeName, SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(String typeName, SimpleFeatureType featureType) {
         throw new UnsupportedOperationException("updateSchema");
     }
 
     @Override
-    public void createSchema(SimpleFeatureType featureType) throws IOException {
+    public void createSchema(SimpleFeatureType featureType) {
         throw new UnsupportedOperationException("createSchema");
     }
 
@@ -169,7 +169,7 @@ public class PreGeneralizedDataStore implements DataStore {
     }
 
     @Override
-    public List<Name> getNames() throws IOException {
+    public List<Name> getNames() {
         List<Name> nameList = new ArrayList<>();
         for (PreGeneralizedFeatureSource fs : featureSources.values()) {
             nameList.add(fs.getName());
@@ -183,17 +183,17 @@ public class PreGeneralizedDataStore implements DataStore {
     }
 
     @Override
-    public void updateSchema(Name typeName, SimpleFeatureType featureType) throws IOException {
+    public void updateSchema(Name typeName, SimpleFeatureType featureType) {
         throw new UnsupportedOperationException("updateSchema");
     }
 
     @Override
-    public void removeSchema(Name typeName) throws IOException {
+    public void removeSchema(Name typeName) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public void removeSchema(String typeName) throws IOException {
+    public void removeSchema(String typeName) {
         throw new UnsupportedOperationException();
     }
 }

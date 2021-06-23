@@ -89,7 +89,7 @@ public class TimeSequenceTypeBinding extends AbstractComplexBinding {
      */
     @Override
     @SuppressWarnings("unchecked")
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         List<Node> timePositions = node.getChildren("timePosition");
         TimeSequenceType results = Wcs111Factory.eINSTANCE.createTimeSequenceType();
 
@@ -136,7 +136,7 @@ public class TimeSequenceTypeBinding extends AbstractComplexBinding {
      *      org.w3c.dom.Document, org.w3c.dom.Element)
      */
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         List timeSequence = (List) object;
 
         if (timeSequence == null) {

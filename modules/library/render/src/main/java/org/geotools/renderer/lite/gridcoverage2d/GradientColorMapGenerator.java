@@ -218,7 +218,7 @@ public class GradientColorMapGenerator {
      *     use syntaxes as rgb(r0,g0,b0), rgba(r0,g0,b0,alpha_0_to_1), #RRGGBB or 0xRRGGBB
      */
     public static GradientColorMapGenerator getColorMapGenerator(String colorValues)
-            throws IOException, ParserConfigurationException {
+            throws IOException {
         Utilities.ensureNonNull("colorValues", colorValues);
         if (colorValues.startsWith(RGB_INLINEVALUE_MARKER)
                 || colorValues.startsWith(RGBA_INLINEVALUE_MARKER)

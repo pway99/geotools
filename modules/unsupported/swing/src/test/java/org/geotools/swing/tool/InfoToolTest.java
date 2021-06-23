@@ -73,7 +73,7 @@ public class InfoToolTest extends CursorToolTestBase {
     }
 
     @Test
-    public void doesNotDrawDragBox() throws Exception {
+    public void doesNotDrawDragBox() {
         assertFalse(tool.drawDragBox());
     }
 

@@ -99,7 +99,7 @@ public class SLDNormalizeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         NormalizeContrastMethodStrategy ret = new NormalizeContrastMethodStrategy();
         if (node.getChildValue("Algorithm") != null) {

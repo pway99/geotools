@@ -100,8 +100,7 @@ public abstract class ContentFeatureStore extends ContentFeatureSource
      *
      * @param filter The filter
      */
-    public final FeatureWriter<SimpleFeatureType, SimpleFeature> getWriter(Filter filter)
-            throws IOException {
+    public final FeatureWriter<SimpleFeatureType, SimpleFeature> getWriter(Filter filter) {
         return getWriter(filter, WRITER_ADD | WRITER_UPDATE);
     }
 
@@ -111,8 +110,7 @@ public abstract class ContentFeatureStore extends ContentFeatureSource
      * @param filter The filter
      * @param flags flags specifying writing mode
      */
-    public final FeatureWriter<SimpleFeatureType, SimpleFeature> getWriter(Filter filter, int flags)
-            throws IOException {
+    public final FeatureWriter<SimpleFeatureType, SimpleFeature> getWriter(Filter filter, int flags) {
         return getWriter(new Query(getSchema().getTypeName(), filter), flags);
     }
 
@@ -121,8 +119,7 @@ public abstract class ContentFeatureStore extends ContentFeatureSource
      *
      * @param query The query
      */
-    public final FeatureWriter<SimpleFeatureType, SimpleFeature> getWriter(Query query)
-            throws IOException {
+    public final FeatureWriter<SimpleFeatureType, SimpleFeature> getWriter(Query query) {
         return getWriter(query, WRITER_ADD | WRITER_UPDATE);
     }
 
@@ -132,8 +129,7 @@ public abstract class ContentFeatureStore extends ContentFeatureSource
      * @param query The query
      * @param flags flags specifying writing mode
      */
-    public final FeatureWriter<SimpleFeatureType, SimpleFeature> getWriter(Query query, int flags)
-            throws IOException {
+    public final FeatureWriter<SimpleFeatureType, SimpleFeature> getWriter(Query query, int flags) {
         query = joinQuery(query);
         query = resolvePropertyNames(query);
 
@@ -337,8 +333,7 @@ public abstract class ContentFeatureStore extends ContentFeatureSource
         }
     }
 
-    public void modifyFeatures(AttributeDescriptor[] type, Object[] value, Filter filter)
-            throws IOException {
+    public void modifyFeatures(AttributeDescriptor[] type, Object[] value, Filter filter) {
         Name[] attributeNames = new Name[type.length];
         for (int i = 0; i < type.length; i++) {
             attributeNames[i] = type[i].getName();
@@ -379,8 +374,7 @@ public abstract class ContentFeatureStore extends ContentFeatureSource
     }
 
     @Override
-    public final void modifyFeatures(String name, Object attributeValue, Filter filter)
-            throws IOException {
+    public final void modifyFeatures(String name, Object attributeValue, Filter filter) {
         modifyFeatures(
                 new Name[] {
                     new NameImpl(name),
@@ -392,8 +386,7 @@ public abstract class ContentFeatureStore extends ContentFeatureSource
     }
 
     @Override
-    public final void modifyFeatures(String[] names, Object[] values, Filter filter)
-            throws IOException {
+    public final void modifyFeatures(String[] names, Object[] values, Filter filter) {
         Name[] attributeNames = new Name[names.length];
         for (int i = 0; i < names.length; i++) {
             attributeNames[i] = new NameImpl(names[i]);
@@ -402,15 +395,14 @@ public abstract class ContentFeatureStore extends ContentFeatureSource
     }
 
     /** Calls through to {@link #modifyFeatures(Name[], Object[], Filter)}. */
-    public final void modifyFeatures(AttributeDescriptor type, Object value, Filter filter)
-            throws IOException {
+    public final void modifyFeatures(AttributeDescriptor type, Object value, Filter filter) {
 
         modifyFeatures(new Name[] {type.getName()}, new Object[] {value}, filter);
     }
 
     /** Calls through to {@link #modifyFeatures(Name[], Object[], Filter)}. */
     @Override
-    public final void modifyFeatures(Name name, Object value, Filter filter) throws IOException {
+    public final void modifyFeatures(Name name, Object value, Filter filter) {
 
         modifyFeatures(new Name[] {name}, new Object[] {value}, filter);
     }

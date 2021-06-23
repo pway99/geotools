@@ -1,8 +1,6 @@
 package org.geotools.data.complex.config;
 
 import static org.junit.Assert.assertTrue;
-
-import java.io.IOException;
 import org.geotools.data.complex.util.EmfComplexFeatureReader;
 import org.geotools.feature.NameImpl;
 import org.geotools.gml3.v3_2.GML;
@@ -31,7 +29,7 @@ public class AppSchemaFeatureTypeRegistryTest extends AppSchemaTestSupport {
     private static NamespaceSupport gml32NS;
 
     @BeforeClass
-    public static void oneTimeSetUp() throws IOException {
+    public static void oneTimeSetUp() {
         SchemaResolver resolver = new SchemaResolver();
         String schemalocation =
                 SchemaResolver.resolveClasspathLocation(

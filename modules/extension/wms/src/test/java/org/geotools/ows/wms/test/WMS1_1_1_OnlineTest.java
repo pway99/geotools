@@ -305,7 +305,7 @@ public class WMS1_1_1_OnlineTest extends WMS1_1_0_OnlineTest {
     private class CustomWMS extends WebMapServer {
 
         /** */
-        public CustomWMS(URL serverURL) throws SAXException, URISyntaxException, IOException {
+        public CustomWMS(URL serverURL) throws SAXException, IOException {
             super(serverURL);
             // TODO Auto-generated constructor stub
         }

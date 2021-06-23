@@ -111,7 +111,7 @@ public class SLDChannelSelectionBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         ChannelSelection cs = styleFactory.createChannelSelection(null);
 

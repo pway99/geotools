@@ -78,14 +78,14 @@ public class Spatial_CapabilitiesTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         return factory.spatialCapabilities(
                 node.getChildValue(GeometryOperand[].class),
                 node.getChildValue(SpatialOperators.class));
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         SpatialCapabilities spatial = (SpatialCapabilities) object;
 
         if ("SpatialOperators".equals(name.getLocalPart())) {

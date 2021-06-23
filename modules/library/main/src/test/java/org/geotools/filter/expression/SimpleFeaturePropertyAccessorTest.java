@@ -37,7 +37,7 @@ public class SimpleFeaturePropertyAccessorTest {
     PropertyAccessor accessor = SimpleFeaturePropertyAccessorFactory.ATTRIBUTE_ACCESS;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         SimpleFeatureTypeBuilder typeBuilder = new SimpleFeatureTypeBuilder();
 
         typeBuilder.setName("test");
@@ -135,7 +135,7 @@ public class SimpleFeaturePropertyAccessorTest {
     }
 
     @Test
-    public void testGetAnyGeometry() throws Exception {
+    public void testGetAnyGeometry() {
         SimpleFeatureTypeBuilder tb = new SimpleFeatureTypeBuilder();
         tb.setName("test");
         tb.setCRS(null);

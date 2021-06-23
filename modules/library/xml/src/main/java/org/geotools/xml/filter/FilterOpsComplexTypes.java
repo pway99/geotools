@@ -86,7 +86,6 @@ import org.opengis.filter.spatial.Touches;
 import org.opengis.filter.spatial.Within;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.helpers.AttributesImpl;
 
 /**
@@ -551,8 +550,7 @@ public class FilterOpsComplexTypes {
          */
         @Override
         public Object getValue(
-                Element element, ElementValue[] value, Attributes attrs, Map<String, Object> hints)
-                throws SAXException {
+                Element element, ElementValue[] value, Attributes attrs, Map<String, Object> hints) {
             return null; // child (BBox, BinarySpatialOpType, etc ... ) will handle this
             //        	FilterFactory factory = FilterSchema.filterFactory( hints );
             //
@@ -845,7 +843,7 @@ public class FilterOpsComplexTypes {
                 public int getMaxOccurs() {
                     return Integer.MAX_VALUE;
                 }
-            },
+            }
         };
         private static Choice choice = new ChoiceGT(elems);
         private static final ComplexType instance = new FilterType();
@@ -1012,7 +1010,7 @@ public class FilterOpsComplexTypes {
         //    	</xsd:complexType>
         private static final ComplexType instance = new FeatureIdType();
         private static Attribute[] attrs = {
-            new FilterAttribute("fid", XSISimpleTypes.AnyURI.getInstance(), Attribute.REQUIRED),
+            new FilterAttribute("fid", XSISimpleTypes.AnyURI.getInstance(), Attribute.REQUIRED)
         };
 
         public static ComplexType getInstance() {
@@ -1046,7 +1044,7 @@ public class FilterOpsComplexTypes {
         @Override
         public Object getValue(
                 Element element, ElementValue[] value, Attributes attrs1, Map<String, Object> hints)
-                throws SAXException, SAXNotSupportedException {
+                throws SAXException {
             if ((element == null) || (value == null) || (element.getType() == null)) {
                 throw new SAXException("Invalid parameters : null found");
             }
@@ -1160,7 +1158,7 @@ public class FilterOpsComplexTypes {
                 public int getMinOccurs() {
                     return 2;
                 }
-            },
+            }
         };
         private static Sequence seq = new SequenceGT(elems);
 
@@ -1192,7 +1190,7 @@ public class FilterOpsComplexTypes {
         @Override
         public Object getValue(
                 Element element, ElementValue[] value, Attributes attrs, Map<String, Object> hints)
-                throws SAXException, OperationNotSupportedException {
+                throws SAXException {
 
             FilterFactory2 factory = FilterSchema.filterFactory(hints);
 
@@ -1294,7 +1292,7 @@ public class FilterOpsComplexTypes {
         private static final ComplexType instance = new PropertyIsLikeType();
         private static Element[] elems = {
             new FilterElement("PropertyName", PropertyNameType.getInstance()),
-            new FilterElement("Literal", LiteralType.getInstance()),
+            new FilterElement("Literal", LiteralType.getInstance())
         };
         private static Sequence seq = new SequenceGT(elems);
         private static Attribute[] attr = {
@@ -1302,7 +1300,7 @@ public class FilterOpsComplexTypes {
                     "wildCard", XSISimpleTypes.String.getInstance(), Attribute.REQUIRED),
             new FilterAttribute(
                     "singleChar", XSISimpleTypes.String.getInstance(), Attribute.REQUIRED),
-            new FilterAttribute("escape", XSISimpleTypes.String.getInstance(), Attribute.REQUIRED),
+            new FilterAttribute("escape", XSISimpleTypes.String.getInstance(), Attribute.REQUIRED)
         };
 
         public static ComplexType getInstance() {
@@ -1451,7 +1449,7 @@ public class FilterOpsComplexTypes {
         private static final ComplexType instance = new PropertyIsNullType();
         private static Element[] elems = {
             new FilterElement("PropertyName", PropertyNameType.getInstance()),
-            new FilterElement("Literal", LiteralType.getInstance()),
+            new FilterElement("Literal", LiteralType.getInstance())
         };
         private static Choice seq = new ChoiceGT(elems);
 
@@ -1566,7 +1564,7 @@ public class FilterOpsComplexTypes {
         private static Element[] elems = {
             new FilterElement("expression", ExpressionType.getInstance()),
             new FilterElement("LowerBoundary", LowerBoundaryType.getInstance()),
-            new FilterElement("UpperBoundary", UpperBoundaryType.getInstance()),
+            new FilterElement("UpperBoundary", UpperBoundaryType.getInstance())
         };
         private static Sequence seq = new SequenceGT(elems);
 
@@ -1690,7 +1688,7 @@ public class FilterOpsComplexTypes {
         //		</xsd:choice>
         //		</xsd:complexType>
         private static Element[] elems = {
-            new FilterElement("expression", ExpressionType.getInstance()),
+            new FilterElement("expression", ExpressionType.getInstance())
         };
         private static Choice choice = new ChoiceGT(elems);
 
@@ -1779,7 +1777,7 @@ public class FilterOpsComplexTypes {
         //    		</xsd:sequence>
         //    	</xsd:complexType>
         private static Element[] elems = {
-            new FilterElement("expression", ExpressionType.getInstance()),
+            new FilterElement("expression", ExpressionType.getInstance())
         };
         private static Sequence choice = new SequenceGT(elems);
 
@@ -2374,7 +2372,7 @@ public class FilterOpsComplexTypes {
         //    		<xsd:attribute name="units" type="xsd:string" use="required"/>
         //    	</xsd:complexType>
         private static Attribute[] attrs = {
-            new FilterAttribute("units", XSISimpleTypes.String.getInstance(), Attribute.REQUIRED),
+            new FilterAttribute("units", XSISimpleTypes.String.getInstance(), Attribute.REQUIRED)
         };
 
         public static ComplexType getInstance() {

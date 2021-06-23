@@ -31,7 +31,7 @@ public class TeradataPrimaryKeyFinderOnlineTest extends JDBCPrimaryKeyFinderOnli
     }
 
     @Override
-    public void testSequencedPrimaryKey() throws Exception {
+    public void testSequencedPrimaryKey() {
         // sequences not a distinct type in teradata (at least as far as I can tell)
     }
 

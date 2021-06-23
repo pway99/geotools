@@ -393,8 +393,7 @@ public class IntegrationTestWFSClient extends WFSClient {
     }
 
     @SuppressWarnings("unchecked")
-    private String createTransactionResponseXml(List<String> added, int updated, int deleted)
-            throws IOException {
+    private String createTransactionResponseXml(List<String> added, int updated, int deleted) {
 
         if ("2.0.0".equals(getStrategy().getVersion())) {
 

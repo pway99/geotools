@@ -29,7 +29,7 @@ public class URConverterFactoryTest {
     URConverterFactory f;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         f = new URConverterFactory();
     }
 

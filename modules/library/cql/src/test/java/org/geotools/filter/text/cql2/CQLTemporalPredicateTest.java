@@ -71,7 +71,7 @@ public class CQLTemporalPredicateTest {
 
     /** This test for BEFORE rule */
     @Test
-    public void before() throws Exception {
+    public void before() {
 
         // -------------------------------------------------------------
         // <attribute_name> BEFORE <date-time expression>
@@ -329,7 +329,7 @@ public class CQLTemporalPredicateTest {
      * </pre>
      */
     @Test
-    public void beforeOrDuring() throws Exception {
+    public void beforeOrDuring() {
         // -------------------------------------------------------------
         // <attribute_name> BEFORE OR DURING <period>
         // -------------------------------------------------------------
@@ -394,7 +394,7 @@ public class CQLTemporalPredicateTest {
      * </pre>
      */
     @Test
-    public void duringOrAfter() throws Exception {
+    public void duringOrAfter() {
         // -------------------------------------------------------------
         // <attribute_name> BEFORE OR DURING <period>
         // -------------------------------------------------------------
@@ -462,7 +462,7 @@ public class CQLTemporalPredicateTest {
      * </pre>
      */
     @Test
-    public void during() throws Exception {
+    public void during() {
 
         // ATTR1 DURING 2006-11-30T01:30:00Z/2006-12-31T01:30:00Z
         Filter resultFilter =
@@ -519,7 +519,7 @@ public class CQLTemporalPredicateTest {
      * </pre>
      */
     @Test
-    public void after() throws Exception {
+    public void after() {
 
         // -------------------------------------------------------------
         // <attribute_name> AFTER <date-time expression>
@@ -645,7 +645,7 @@ public class CQLTemporalPredicateTest {
      * <p>Note: this test is ignored to avoid to add cycles in the geotools general build.
      */
     @Ignore
-    public void issueCOT2157() throws Exception {
+    public void issueCOT2157() {
 
         Runnable cqlRunner =
                 () -> {
@@ -671,7 +671,7 @@ public class CQLTemporalPredicateTest {
     }
 
     @Test
-    public void equal() throws Exception {
+    public void equal() {
         // -------------------------------------------------------------
         // <attribute_name> TEQUALS <date-time expression>
         // -------------------------------------------------------------

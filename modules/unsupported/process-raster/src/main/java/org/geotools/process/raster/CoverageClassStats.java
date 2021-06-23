@@ -21,7 +21,6 @@ import it.geosolutions.jaiext.classbreaks.ClassBreaksRIF;
 import it.geosolutions.jaiext.classbreaks.Classification;
 import java.awt.image.RenderedImage;
 import java.awt.image.renderable.ParameterBlock;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -92,7 +91,7 @@ public class CoverageClassStats implements RasterProcess {
                     )
                     Double noData,
             ProgressListener progressListener)
-            throws ProcessException, IOException {
+            throws ProcessException {
 
         //
         // initial checks/defaults

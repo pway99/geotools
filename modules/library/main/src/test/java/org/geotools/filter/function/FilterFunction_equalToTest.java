@@ -35,7 +35,7 @@ public class FilterFunction_equalToTest {
     protected final GeometryFactory gf = JTSFactoryFinder.getGeometryFactory(null);
 
     @Test
-    public void testNoMatchActionStrings() throws Exception {
+    public void testNoMatchActionStrings() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func = ff.function("equalTo", ff.literal("string1"), ff.literal("string1"));
         assertTrue((Boolean) func.evaluate(new Object()));
@@ -45,7 +45,7 @@ public class FilterFunction_equalToTest {
     }
 
     @Test
-    public void testNoMatchActionNumbers() throws Exception {
+    public void testNoMatchActionNumbers() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func = ff.function("equalTo", ff.literal(123), ff.literal(123));
         assertTrue((Boolean) func.evaluate(new Object()));
@@ -58,7 +58,7 @@ public class FilterFunction_equalToTest {
     }
 
     @Test
-    public void testAnyMatch() throws Exception {
+    public void testAnyMatch() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func =
                 ff.function(
@@ -70,7 +70,7 @@ public class FilterFunction_equalToTest {
     }
 
     @Test
-    public void testAnyMatchArrays() throws Exception {
+    public void testAnyMatchArrays() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func =
                 ff.function(
@@ -94,7 +94,7 @@ public class FilterFunction_equalToTest {
     }
 
     @Test
-    public void testAnyMatchPrimitiveArrays() throws Exception {
+    public void testAnyMatchPrimitiveArrays() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func =
                 ff.function(
@@ -106,7 +106,7 @@ public class FilterFunction_equalToTest {
     }
 
     @Test
-    public void testAnyDoesNotMatch() throws Exception {
+    public void testAnyDoesNotMatch() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func =
                 ff.function(
@@ -118,7 +118,7 @@ public class FilterFunction_equalToTest {
     }
 
     @Test
-    public void testAllMatch() throws Exception {
+    public void testAllMatch() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func =
                 ff.function(
@@ -130,7 +130,7 @@ public class FilterFunction_equalToTest {
     }
 
     @Test
-    public void testAllDoesNotMatch() throws Exception {
+    public void testAllDoesNotMatch() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func =
                 ff.function(
@@ -142,7 +142,7 @@ public class FilterFunction_equalToTest {
     }
 
     @Test
-    public void testOneMatch() throws Exception {
+    public void testOneMatch() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func =
                 ff.function(
@@ -154,7 +154,7 @@ public class FilterFunction_equalToTest {
     }
 
     @Test
-    public void testOneDoesNotMatch() throws Exception {
+    public void testOneDoesNotMatch() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func =
                 ff.function(

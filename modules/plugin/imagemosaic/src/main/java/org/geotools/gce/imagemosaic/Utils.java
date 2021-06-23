@@ -123,7 +123,6 @@ import org.opengis.feature.type.AttributeDescriptor;
 import org.opengis.filter.FilterFactory2;
 import org.opengis.filter.spatial.BBOX;
 import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.MathTransform;
 import org.opengis.referencing.operation.TransformException;
@@ -223,8 +222,7 @@ public class Utils {
     }
 
     /** Check if the provided reader is a MultiCRS Reader and it can support the specified crs. */
-    public static boolean isSupportedCRS(GridCoverage2DReader reader, CoordinateReferenceSystem crs)
-            throws FactoryException, IOException {
+    public static boolean isSupportedCRS(GridCoverage2DReader reader, CoordinateReferenceSystem crs) {
         String multiCrsReader =
                 reader.getMetadataValue(AbstractGridCoverage2DReader.MULTICRS_READER);
         boolean isMultiCRS = multiCrsReader != null && Boolean.valueOf(multiCrsReader);
@@ -1000,7 +998,7 @@ public class Utils {
         }
     }
 
-    private static CoordinateReferenceSystem decodeSrs(String property) throws FactoryException {
+    private static CoordinateReferenceSystem decodeSrs(String property) {
         return CRS.decode(property, true);
     }
 
@@ -2243,7 +2241,7 @@ public class Utils {
         return readerSPI;
     }
 
-    public static ImageInputStreamSpi getInputStreamSPIFromURL(URL granuleUrl) throws IOException {
+    public static ImageInputStreamSpi getInputStreamSPIFromURL(URL granuleUrl) {
 
         ImageInputStreamSpi streamSPI = ImageIOExt.getImageInputStreamSPI(granuleUrl, true);
         if (streamSPI == null) {
@@ -2354,8 +2352,7 @@ public class Utils {
         return JTS.toGeometry(sourceEnvelope);
     }
 
-    private static org.opengis.geometry.Envelope getCRSEnvelope(CoordinateReferenceSystem targetCRS)
-            throws FactoryException, NoSuchAuthorityCodeException {
+    private static org.opengis.geometry.Envelope getCRSEnvelope(CoordinateReferenceSystem targetCRS) {
         if (targetCRS.getDomainOfValidity() == null) {
             Integer code = CRS.lookupEpsgCode(targetCRS, true);
             if (code != null) {
@@ -2367,7 +2364,7 @@ public class Utils {
     }
 
     /** Returns the File associated to the rootFolder if not absolute */
-    public static File getFile(String strValue, File rootFolder) throws IOException {
+    public static File getFile(String strValue, File rootFolder) {
         File file = new File(strValue);
         if (!file.isAbsolute()) {
             file = new File(rootFolder, strValue);

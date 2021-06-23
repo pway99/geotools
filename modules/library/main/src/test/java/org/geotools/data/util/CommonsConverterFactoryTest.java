@@ -31,7 +31,7 @@ public class CommonsConverterFactoryTest {
     CommonsConverterFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new CommonsConverterFactory();
         // Some locales are not compatible with the date formats tested below
         Locale.setDefault(new Locale("en", "US"));
@@ -85,7 +85,7 @@ public class CommonsConverterFactoryTest {
                         .convert("2011-08-02", Date.class));
     }
 
-    Object convert(Object source, Class<?> target) throws Exception {
+    Object convert(Object source, Class<?> target) {
         return factory.createConverter(source.getClass(), target, null).convert(source, target);
     }
 

@@ -709,7 +709,7 @@ public abstract class AbstractCachedAuthorityFactory extends AbstractAuthorityFa
 
     /** We will clear out our cache and factories reference */
     @Override
-    public void dispose() throws FactoryException {
+    public void dispose() {
         this.cache = null;
         this.factories = null;
     }
@@ -722,7 +722,7 @@ public abstract class AbstractCachedAuthorityFactory extends AbstractAuthorityFa
      */
     @Override
     public synchronized IdentifiedObjectFinder getIdentifiedObjectFinder(
-            final Class<? extends IdentifiedObject> type) throws FactoryException {
+            final Class<? extends IdentifiedObject> type) {
         return new CachedFinder(type);
     }
 

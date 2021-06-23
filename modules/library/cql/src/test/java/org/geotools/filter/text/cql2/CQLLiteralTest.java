@@ -75,7 +75,7 @@ public class CQLLiteralTest {
      * </pre>
      */
     @Test
-    public void geometryLiterals() throws Exception {
+    public void geometryLiterals() {
 
         // Point":" <time-second> "Z"
         BinarySpatialOperator result =
@@ -178,7 +178,7 @@ public class CQLLiteralTest {
      * </pre>
      */
     @Test
-    public void characterStringLiteral() throws Exception {
+    public void characterStringLiteral() {
 
         // space check
         final String strWithSpace = "ALL PRACTICES";
@@ -258,7 +258,7 @@ public class CQLLiteralTest {
         testCharacterString("環境");
     }
 
-    private void testCharacterString(final String str) throws Exception {
+    private void testCharacterString(final String str) {
 
         Filter filter = CompilerUtil.parseFilter(language, "NAME = '" + str + "'");
 
@@ -376,7 +376,7 @@ public class CQLLiteralTest {
     }
 
     @Test
-    public void dateLiteral() throws Exception {
+    public void dateLiteral() {
 
         // Date value
         final String expectedDate = "2009-08-01";
@@ -395,7 +395,7 @@ public class CQLLiteralTest {
     }
 
     @Test
-    public void timeLiteral() throws Exception {
+    public void timeLiteral() {
 
         final String expectedTime = "12:08:01";
 
@@ -413,7 +413,7 @@ public class CQLLiteralTest {
     }
 
     @Test
-    public void timeStampLiteral() throws Exception {
+    public void timeStampLiteral() {
 
         final String expectedDateTime = "2009-08-01 12:08:01";
 

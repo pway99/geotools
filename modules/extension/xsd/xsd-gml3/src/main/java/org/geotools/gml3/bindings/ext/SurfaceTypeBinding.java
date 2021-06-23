@@ -64,7 +64,7 @@ public class SurfaceTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Polygon[] patches = node.getChildValue(Polygon[].class);
         MultiPolygon mp = node.getChildValue(MultiPolygon.class);
         if (mp != null) {
@@ -75,7 +75,7 @@ public class SurfaceTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if ("patches".equals(name.getLocalPart())) {
             MultiPolygon multiSurface = (MultiPolygon) object;
             Polygon[] members = new Polygon[multiSurface.getNumGeometries()];

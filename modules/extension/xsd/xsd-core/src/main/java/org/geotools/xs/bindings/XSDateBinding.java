@@ -100,13 +100,13 @@ public class XSDateBinding implements SimpleBinding {
      * @generated modifiable
      */
     @Override
-    public java.sql.Date parse(InstanceComponent instance, Object value) throws Exception {
+    public java.sql.Date parse(InstanceComponent instance, Object value) {
         Calendar calendar = DatatypeConverterImpl.getInstance().parseDate((String) value);
         return new java.sql.Date(calendar.getTimeInMillis());
     }
 
     @Override
-    public String encode(Object object, String value) throws Exception {
+    public String encode(Object object, String value) {
         final Date date = (Date) object;
         Calendar calendar = XSUtils.getConfiguredCalendar();
         calendar.clear();

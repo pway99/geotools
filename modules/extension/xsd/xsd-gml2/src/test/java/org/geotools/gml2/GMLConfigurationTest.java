@@ -32,7 +32,7 @@ public class GMLConfigurationTest {
     GMLConfiguration configuration;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         configuration = new GMLConfiguration();
     }

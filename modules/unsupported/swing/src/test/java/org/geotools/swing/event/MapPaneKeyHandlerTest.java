@@ -63,7 +63,7 @@ public class MapPaneKeyHandlerTest extends GraphicsTestBase<FrameFixture, Frame,
                 GuiActionRunner.execute(
                         new GuiQuery<TestFrame>() {
                             @Override
-                            protected TestFrame executeInEDT() throws Throwable {
+                            protected TestFrame executeInEDT() {
                                 mapPane = new MockMapPane2();
                                 mapPane.setName("pane");
                                 handler = new MapPaneKeyHandler(mapPane);

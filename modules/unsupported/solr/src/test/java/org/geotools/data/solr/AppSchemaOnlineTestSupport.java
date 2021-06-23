@@ -18,7 +18,6 @@ package org.geotools.data.solr;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.HashMap;
@@ -76,14 +75,14 @@ public abstract class AppSchemaOnlineTestSupport extends OnlineTestCase {
     protected HttpSolrClient client;
     protected DataAccess<FeatureType, Feature> mappingDataStore;
 
-    protected void copyTestData(String baseFileName, File destDir) throws IOException {
+    protected void copyTestData(String baseFileName, File destDir) {
         destDir.mkdirs();
         FileUtils.copyFileToDirectory(
                 URLs.urlToFile(this.getClass().getResource(testData + baseFileName)), destDir);
     }
 
     /** Clone entire folder to temp for possible modifications */
-    private void createTestFolder() throws IOException {
+    private void createTestFolder() {
         tempfolder.create();
         tempDir = tempfolder.newFolder(this.getClass().getSimpleName());
         // create app-schema-cache folder

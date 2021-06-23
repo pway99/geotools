@@ -300,7 +300,7 @@ public class ThreadedEpsgFactory extends DeferredAuthorityFactory
      * @return The EPSG data source, or {@code null} if none where found.
      * @throws SQLException if an error occured while creating the data source.
      */
-    protected DataSource createDataSource() throws SQLException {
+    protected DataSource createDataSource() {
         InitialContext context = null;
         DataSource source = null;
         try {

@@ -16,12 +16,10 @@
  */
 package org.geotools.ows.wms.xml;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Collections;
 import java.util.Map;
-import javax.naming.OperationNotSupportedException;
 import org.geotools.ows.wms.xml.WMSComplexTypes.LatitudeType;
 import org.geotools.ows.wms.xml.WMSComplexTypes.LongitudeType;
 import org.geotools.ows.wms.xml.WMSComplexTypes.OperationType;
@@ -108,7 +106,6 @@ import org.geotools.xml.schema.impl.SimpleTypeGT;
 import org.geotools.xml.xLink.XLinkSchema;
 import org.geotools.xml.xsi.XSISimpleTypes;
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 
 /**
  * @author Richard Gould
@@ -253,7 +250,7 @@ public class WMSSchema implements Schema {
                 new Facet[] {
                     new FacetGT(Facet.MININCLUSIVE, "-90"), new FacetGT(Facet.MAXINCLUSIVE, "90")
                 },
-                SimpleType.NONE),
+                SimpleType.NONE)
     };
 
     @Override
@@ -596,8 +593,7 @@ public class WMSSchema implements Schema {
         }
 
         @Override
-        public AttributeValue toAttribute(Attribute attribute, Object value, Map hints)
-                throws OperationNotSupportedException {
+        public AttributeValue toAttribute(Attribute attribute, Object value, Map hints) {
             return new AttributeValueGT(attribute, value.toString());
         }
     }
@@ -616,8 +612,7 @@ public class WMSSchema implements Schema {
          * @see org.geotools.xml.schema.Type#encode(org.geotools.xml.schema.Element, java.lang.Object, org.geotools.xml.PrintHandler, java.util.Map)
          */
         @Override
-        public void encode(Element element, Object value, PrintHandler output, Map hints)
-                throws IOException, OperationNotSupportedException {
+        public void encode(Element element, Object value, PrintHandler output, Map hints) {
             // TODO Auto-generated method stub
 
         }
@@ -656,8 +651,7 @@ public class WMSSchema implements Schema {
          * @see org.geotools.xml.schema.Type#getValue(org.geotools.xml.schema.Element, org.geotools.xml.schema.ElementValue[], org.xml.sax.Attributes, java.util.Map)
          */
         @Override
-        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints)
-                throws SAXException, OperationNotSupportedException {
+        public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) {
             // TODO Auto-generated method stub
             return null;
         }

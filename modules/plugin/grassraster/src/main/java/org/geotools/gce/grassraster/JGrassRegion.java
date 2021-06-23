@@ -317,8 +317,7 @@ public class JGrassRegion {
     public JGrassRegion reproject(
             CoordinateReferenceSystem sourceCRS,
             CoordinateReferenceSystem targetCRS,
-            boolean lenient)
-            throws Exception {
+            boolean lenient) {
 
         MathTransform transform = CRS.findMathTransform(sourceCRS, targetCRS, lenient);
         Envelope envelope = getEnvelope();

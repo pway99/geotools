@@ -47,7 +47,7 @@ public class XmlSimpleFeatureParserTest extends AbstractGetFeatureParserTest {
     @Override
     @Test
     @Ignore
-    public void testParseWfs200Gml32() throws Exception {
+    public void testParseWfs200Gml32() {
         // parser is not supporting wfs 2.0.0/gml 3.2 so this impl is empty
     }
 }

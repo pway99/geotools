@@ -18,8 +18,6 @@ package org.geotools.process.vector;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import org.geotools.feature.DefaultFeatureCollection;
@@ -59,7 +57,7 @@ public class FeatureClassStatsTest {
     DefaultFeatureCollection features;
 
     @Before
-    public void setup() throws IOException {
+    public void setup() {
         SimpleFeatureTypeBuilder tb = new SimpleFeatureTypeBuilder();
         tb.setName("data");
         tb.add("name", String.class);

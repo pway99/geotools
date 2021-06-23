@@ -82,7 +82,7 @@ public class InterpolationMethodTypeBinding extends AbstractSimpleBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
 
         return InterpolationMethodType.get((String) value);
     }

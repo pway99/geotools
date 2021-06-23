@@ -202,13 +202,13 @@ public class OffsetCurveBuilderTest {
     }
 
     @Test
-    public void testAllDiagonalsLeft() throws Exception {
+    public void testAllDiagonalsLeft() {
         double offset = 2;
         testAllDiagonals(offset);
     }
 
     @Test
-    public void testAllDiagonalsRight() throws Exception {
+    public void testAllDiagonalsRight() {
         double offset = -2;
         testAllDiagonals(offset);
     }
@@ -250,14 +250,14 @@ public class OffsetCurveBuilderTest {
     }
 
     @Test
-    public void testClockArmsRight() throws ParseException {
+    public void testClockArmsRight() {
         for (int i = 30; i < 360; i++) {
             testClockArms(-2, i);
         }
     }
 
     @Test
-    public void testClockArmsLeft() throws ParseException {
+    public void testClockArmsLeft() {
         for (int i = 1; i < 330; i++) {
             testClockArms(2, i);
         }

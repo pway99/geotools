@@ -89,7 +89,7 @@ public class VPFFileStore extends ContentDataStore {
     }
 
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         // return Collections.singletonList(getTypeName());
         return this.getNames();
     }

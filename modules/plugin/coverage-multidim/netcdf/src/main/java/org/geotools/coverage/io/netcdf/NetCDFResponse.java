@@ -322,8 +322,7 @@ class NetCDFResponse extends CoverageResponse {
     private void additionalParamsManagement(
             Query query,
             Map<String, Set<?>> domainsSubset,
-            List<DimensionDescriptor> dimensionDescriptors)
-            throws IOException {
+            List<DimensionDescriptor> dimensionDescriptors) {
         if (domainsSubset.isEmpty()) {
             return;
         }
@@ -496,7 +495,7 @@ class NetCDFResponse extends CoverageResponse {
      *
      * @throws TransformException In case transformation fails during the process.
      */
-    private void initRasterBounds() throws TransformException {
+    private void initRasterBounds() {
         final GeneralEnvelope tempRasterBounds = CRS.transform(finalWorldToGridCorner, targetBBox);
         rasterBounds = tempRasterBounds.toRectangle2D().getBounds();
 
@@ -571,8 +570,7 @@ class NetCDFResponse extends CoverageResponse {
      * This method is responsible for creating a coverage from the supplied {@link RenderedImage}.
      */
     private GridCoverage2D prepareCoverage(
-            RenderedImage image, GridSampleDimension[] sampleDimensions, double[] noData)
-            throws IOException {
+            RenderedImage image, GridSampleDimension[] sampleDimensions, double[] noData) {
         Map<String, Object> properties = new HashMap<>();
         if (noData != null && noData.length > 0) {
             CoverageUtilities.setNoDataProperty(properties, noData[0]);

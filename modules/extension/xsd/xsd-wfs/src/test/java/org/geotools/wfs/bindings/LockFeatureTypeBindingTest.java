@@ -45,7 +45,7 @@ public class LockFeatureTypeBindingTest extends WFSTestSupport {
     @Override
     @SuppressWarnings("unchecked")
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         LockFeatureType lockFeature = factory.createLockFeatureType();
         lockFeature.setExpiry(BigInteger.valueOf(1000));
         lockFeature.setLockAction(AllSomeType.ALL_LITERAL);

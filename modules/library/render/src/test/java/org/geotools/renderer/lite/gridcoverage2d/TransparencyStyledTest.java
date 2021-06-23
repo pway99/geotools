@@ -73,8 +73,7 @@ public class TransparencyStyledTest {
             CommonFactoryFinder.getStyleFactory(GeoTools.getDefaultHints());
 
     private GridCoverage2D readCoverage(
-            File mosaicDirectory, FootprintBehavior fp, Color transparentColor)
-            throws NoSuchAuthorityCodeException, FactoryException, IOException {
+            File mosaicDirectory, FootprintBehavior fp, Color transparentColor) {
 
         ImageMosaicReader reader =
                 (ImageMosaicReader)
@@ -200,7 +199,7 @@ public class TransparencyStyledTest {
      */
     @Test
     public void testRGBAWithContrastEnhancementInChannelSelect()
-            throws IOException, NoSuchAuthorityCodeException, FactoryException {
+            throws IOException {
         GeoTiffReader reader = new GeoTiffReader(TestData.file(this, "map.tif"));
         GridCoverage2D gc = reader.read(null);
 

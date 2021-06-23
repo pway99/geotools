@@ -55,7 +55,7 @@ public class BinaryComparisonOpTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         BinaryComparisonOperator op = (BinaryComparisonOperator) object;
         if ("matchAction".equals(name.getLocalPart())) {
             return op.getMatchAction().name();

@@ -25,21 +25,20 @@ import org.junit.Test;
 import org.locationtech.jts.geom.Envelope;
 import org.opengis.filter.FilterFactory2;
 import org.opengis.filter.spatial.BBOX;
-import org.opengis.referencing.FactoryException;
 
 public class ExtractMultiBoundsFilterVisitorTest {
     private static final String CRS = "EPSG:404000";
     FilterFactory2 FF = CommonFactoryFinder.getFilterFactory2();
 
     @Test
-    public void testBoundsSimple() throws FactoryException {
+    public void testBoundsSimple() {
         BBOX bbox = FF.bbox(FF.property(""), -10, -10, 10, 10, CRS);
         List<Envelope> bounds = ExtractMultiBoundsFilterVisitor.getBounds(bbox);
         assertThat(bounds, Matchers.contains(new Envelope(-10, 10, -10, 10)));
     }
 
     @Test
-    public void testBoundsSeparateOr() throws FactoryException {
+    public void testBoundsSeparateOr() {
         BBOX bbox1 = FF.bbox(FF.property(""), -10, -10, 10, 10, CRS);
         BBOX bbox2 = FF.bbox(FF.property(""), 50, -10, 60, 10, CRS);
         List<Envelope> bounds = ExtractMultiBoundsFilterVisitor.getBounds(FF.or(bbox1, bbox2));
@@ -49,7 +48,7 @@ public class ExtractMultiBoundsFilterVisitorTest {
     }
 
     @Test
-    public void testBoundsSeparateAnd() throws FactoryException {
+    public void testBoundsSeparateAnd() {
         BBOX bbox1 = FF.bbox(FF.property(""), -10, -10, 10, 10, CRS);
         BBOX bbox2 = FF.bbox(FF.property(""), 50, -10, 60, 10, CRS);
         // and-ing disjoint, should be empty
@@ -58,7 +57,7 @@ public class ExtractMultiBoundsFilterVisitorTest {
     }
 
     @Test
-    public void testBoundsSeparateOrIntersect() throws FactoryException {
+    public void testBoundsSeparateOrIntersect() {
         BBOX bbox1 = FF.bbox(FF.property(""), -10, -10, 10, 10, CRS);
         BBOX bbox2 = FF.bbox(FF.property(""), 50, -10, 70, 10, CRS);
         BBOX bbox3 = FF.bbox(FF.property(""), 0, -10, 60, 10, CRS);
@@ -76,7 +75,7 @@ public class ExtractMultiBoundsFilterVisitorTest {
      * way that the result should be the same
      */
     @Test
-    public void testBoundsSeparateOrIntersectFlipped() throws FactoryException {
+    public void testBoundsSeparateOrIntersectFlipped() {
         BBOX bbox1 = FF.bbox(FF.property(""), -10, -10, 10, 10, CRS);
         BBOX bbox2 = FF.bbox(FF.property(""), 50, -10, 70, 10, CRS);
         BBOX bbox3 = FF.bbox(FF.property(""), 0, -10, 60, 10, CRS);
@@ -90,7 +89,7 @@ public class ExtractMultiBoundsFilterVisitorTest {
     }
 
     @Test
-    public void testBoundsMultiOrAnd() throws FactoryException {
+    public void testBoundsMultiOrAnd() {
         BBOX bbox1 = FF.bbox(FF.property(""), -10, -10, 10, 10, CRS);
         BBOX bbox2 = FF.bbox(FF.property(""), 50, -10, 70, 10, CRS);
         BBOX bbox3 = FF.bbox(FF.property(""), 0, -5, 5, 5, CRS);

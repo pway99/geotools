@@ -37,7 +37,7 @@ public class BasicDirectedNodeTest {
     private BasicDirectedEdge m_loop;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         m_node = new BasicDirectedNode();
         m_inNode1 = new BasicDirectedNode();

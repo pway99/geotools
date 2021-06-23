@@ -50,7 +50,7 @@ public class DataUrlHandlerTest {
     }
 
     @Test
-    public void testDataUrlConverterFail() throws Exception {
+    public void testDataUrlConverterFail() {
         String wrongUrl = "wkt://Polygon (1 1, 1 0, 0 3)";
         URL url = Converters.convert(wrongUrl, URL.class);
         Assert.assertNull(url);

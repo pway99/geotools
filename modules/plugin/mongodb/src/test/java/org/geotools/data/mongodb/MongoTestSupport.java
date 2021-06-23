@@ -52,7 +52,7 @@ public abstract class MongoTestSupport extends OnlineTestCase {
         setUp(doConnect());
     }
 
-    DB doConnect() throws Exception {
+    DB doConnect() {
         MongoClientURI clientURI =
                 new MongoClientURI(fixture.getProperty(MongoDataStoreFactory.DATASTORE_URI.key));
         client = new MongoClient(clientURI);

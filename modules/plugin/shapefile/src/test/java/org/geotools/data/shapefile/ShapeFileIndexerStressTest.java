@@ -10,9 +10,6 @@ import org.geotools.data.DataUtilities;
 import org.geotools.data.FeatureWriter;
 import org.geotools.data.Transaction;
 import org.geotools.data.shapefile.files.ShpFiles;
-import org.geotools.data.shapefile.index.LockTimeoutException;
-import org.geotools.data.shapefile.index.TreeException;
-import org.geotools.data.shapefile.index.quadtree.StoreException;
 import org.geotools.data.util.NullProgressListener;
 import org.geotools.feature.SchemaException;
 import org.geotools.util.logging.Logging;
@@ -152,7 +149,7 @@ public class ShapeFileIndexerStressTest {
 
     @Test
     public void testIndex()
-            throws TreeException, StoreException, IOException, LockTimeoutException {
+            throws IOException {
         ShapeFileIndexer indexer = new ShapeFileIndexer();
         indexer.setShapeFileName(new ShpFiles(file));
         Stopwatch sw = new Stopwatch();

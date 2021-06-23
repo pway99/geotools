@@ -76,7 +76,7 @@ public class RingTypeBinding extends AbstractComplexBinding implements Comparabl
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         List members = node.getChildValues("curveMember");
 
         if (members.isEmpty()) {
@@ -109,7 +109,7 @@ public class RingTypeBinding extends AbstractComplexBinding implements Comparabl
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         // System.out.println(name.getLocalPart());
         if ("curveMember".equals(name.getLocalPart())) {
             if (object instanceof CompoundCurvedGeometry<?>) {

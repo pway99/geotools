@@ -138,7 +138,7 @@ public class MockHttpResponse implements HTTPResponse {
     }
 
     @Override
-    public InputStream getResponseStream() throws IOException {
+    public InputStream getResponseStream() {
         return stream;
     }
 

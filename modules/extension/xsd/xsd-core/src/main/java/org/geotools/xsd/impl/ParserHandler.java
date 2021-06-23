@@ -895,12 +895,12 @@ public class ParserHandler extends DefaultHandler2 {
     }
 
     @Override
-    public void startCDATA() throws SAXException {
+    public void startCDATA() {
         setCDATA(true);
     }
 
     @Override
-    public void endCDATA() throws SAXException {
+    public void endCDATA() {
         setCDATAEnding(true);
     }
 

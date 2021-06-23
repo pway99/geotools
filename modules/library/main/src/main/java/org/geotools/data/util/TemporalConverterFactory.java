@@ -90,7 +90,7 @@ public class TemporalConverterFactory implements ConverterFactory {
 
                 return new Converter() {
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         Calendar calendar = Calendar.getInstance();
                         calendar.setTime((Date) source);
 
@@ -112,7 +112,7 @@ public class TemporalConverterFactory implements ConverterFactory {
                 return new Converter() {
 
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         Date date = (Date) source;
                         return target.cast(timeMillisToDate(date.getTime(), target));
                     }
@@ -122,7 +122,7 @@ public class TemporalConverterFactory implements ConverterFactory {
             if (XMLGregorianCalendar.class.isAssignableFrom(target)) {
                 return new Converter() {
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         Date date = (Date) source;
                         Calendar calendar =
                                 createConverter(Date.class, Calendar.class, null)
@@ -138,7 +138,7 @@ public class TemporalConverterFactory implements ConverterFactory {
             if (Long.class.equals(target)) {
                 return new Converter() {
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         return target.cast(Long.valueOf(((Date) source).getTime()));
                     }
                 };
@@ -155,7 +155,7 @@ public class TemporalConverterFactory implements ConverterFactory {
                 }
                 return new Converter() {
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         Calendar calendar = (Calendar) source;
 
                         return target.cast(
@@ -186,7 +186,7 @@ public class TemporalConverterFactory implements ConverterFactory {
             if (Calendar.class.isAssignableFrom(target)) {
                 return new Converter() {
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         XMLGregorianCalendar calendar = (XMLGregorianCalendar) source;
                         return target.cast(calendar.toGregorianCalendar());
                     }
@@ -195,7 +195,7 @@ public class TemporalConverterFactory implements ConverterFactory {
             if (Date.class.isAssignableFrom(target)) {
                 return new Converter() {
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         Calendar calendar =
                                 createConverter(XMLGregorianCalendar.class, Calendar.class, null)
                                         .convert(source, Calendar.class);
@@ -214,7 +214,7 @@ public class TemporalConverterFactory implements ConverterFactory {
             if (String.class == target) {
                 return new Converter() {
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         if (source == null) {
                             return null;
                         }
@@ -229,7 +229,7 @@ public class TemporalConverterFactory implements ConverterFactory {
                 return new Converter() {
 
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         Instant instant = (Instant) source;
                         return target.cast(instant.getPosition().getDate());
                     }
@@ -240,7 +240,7 @@ public class TemporalConverterFactory implements ConverterFactory {
         if (Long.class.isAssignableFrom(source) && java.util.Date.class.equals(target)) {
             return new Converter() {
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     if (source != null) {
                         return target.cast(new java.util.Date((Long) source));
                     } else {

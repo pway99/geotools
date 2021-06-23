@@ -38,12 +38,12 @@ public class GeoPkgGeometrylessTestSetup extends org.geotools.jdbc.JDBCGeometryl
     }
 
     @Override
-    protected void dropPersonTable() throws Exception {
+    protected void dropPersonTable() {
         ((GeoPkgTestSetup) delegate).removeTable("person");
     }
 
     @Override
-    protected void dropZipCodeTable() throws Exception {
+    protected void dropZipCodeTable() {
         ((GeoPkgTestSetup) delegate).removeTable("zipcode");
     }
 

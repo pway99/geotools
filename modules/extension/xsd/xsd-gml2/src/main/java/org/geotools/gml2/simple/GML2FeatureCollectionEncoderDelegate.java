@@ -178,7 +178,7 @@ public class GML2FeatureCollectionEncoderDelegate extends FeatureCollectionEncod
         }
 
         @Override
-        public String getGmlPrefix() throws Exception {
+        public String getGmlPrefix() {
             return gmlPrefix;
         }
 

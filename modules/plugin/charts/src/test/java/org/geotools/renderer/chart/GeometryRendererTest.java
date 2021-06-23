@@ -78,7 +78,7 @@ public class GeometryRendererTest {
                 wkt.read("POLYGON((1 1,5 1,5 5,1 5,1 1))"));
     }
 
-    void render(Geometry... geoms) throws Exception {
+    void render(Geometry... geoms) {
         GeometryDataset dataset = new GeometryDataset(geoms);
         GeometryRenderer r = new GeometryRenderer();
 

@@ -28,5 +28,5 @@ public class TeradataLobOnlineTest extends JDBCLobOnlineTest {
 
     @Override
     // write lob without prepared statements not supported on Teradata
-    public void testWrite() throws Exception {}
+    public void testWrite() {}
 }

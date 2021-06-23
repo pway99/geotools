@@ -62,7 +62,7 @@ public class CompositeCurveTypeBinding extends LineStringTypeBinding {
     }
 
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         List children = node.getChildren("curveMember");
         List<LineString> components = new ArrayList<>();
         for (Object o : children) {

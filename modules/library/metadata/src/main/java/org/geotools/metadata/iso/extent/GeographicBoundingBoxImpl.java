@@ -138,7 +138,7 @@ public class GeographicBoundingBoxImpl extends GeographicExtentImpl
      * @throws TransformException if the envelope can't be transformed.
      * @since 2.2
      */
-    public GeographicBoundingBoxImpl(final Envelope envelope) throws TransformException {
+    public GeographicBoundingBoxImpl(final Envelope envelope) {
         super(true);
         if (constructor == null) {
             // No need to synchronize; not a big deal if we set this field twice.

@@ -61,7 +61,7 @@ public class GradientColorMapGeneratorTest {
 
     @Test
     public void testHEXcolors()
-            throws FileNotFoundException, IOException, SAXException, ParserConfigurationException {
+            throws IOException, ParserConfigurationException {
         GradientColorMapGenerator colorMapGenerator =
                 GradientColorMapGenerator.getColorMapGenerator("#0000ff;#00ffff;#ffff00;#ff0000");
         testBlueAcquaYellowRed(colorMapGenerator);
@@ -69,7 +69,7 @@ public class GradientColorMapGeneratorTest {
 
     @Test
     public void testHEXcolors2()
-            throws FileNotFoundException, IOException, SAXException, ParserConfigurationException {
+            throws IOException, ParserConfigurationException {
         GradientColorMapGenerator colorMapGenerator =
                 GradientColorMapGenerator.getColorMapGenerator(
                         "0x0000ff;0x00ffff;0xffff00;0xff0000");
@@ -78,7 +78,7 @@ public class GradientColorMapGeneratorTest {
 
     @Test
     public void testRGBcolors()
-            throws FileNotFoundException, IOException, SAXException, ParserConfigurationException {
+            throws IOException, ParserConfigurationException {
         GradientColorMapGenerator colorMapGenerator =
                 GradientColorMapGenerator.getColorMapGenerator(
                         "rgb(0,0,255);rgb(0,255,255);rgb(255,255,0);rgb(255,0,0)");
@@ -109,7 +109,7 @@ public class GradientColorMapGeneratorTest {
 
     @Test
     public void testRGBAcolors()
-            throws FileNotFoundException, IOException, SAXException, ParserConfigurationException {
+            throws IOException, ParserConfigurationException {
         GradientColorMapGenerator colorMapGenerator =
                 GradientColorMapGenerator.getColorMapGenerator(
                         "rgba(0,0,0,1);rgba(255,0,0,0.1);rgba(0,0,255,0)");
@@ -131,7 +131,7 @@ public class GradientColorMapGeneratorTest {
 
     @Test
     public void testBeforeAfterColors()
-            throws FileNotFoundException, IOException, SAXException, ParserConfigurationException {
+            throws IOException, ParserConfigurationException {
         GradientColorMapGenerator colorMapGenerator =
                 GradientColorMapGenerator.getColorMapGenerator(
                         "rgba(0,0,0,1);rgba(255,0,0,0.5);rgba(0,0,255,0.1)");
@@ -153,7 +153,7 @@ public class GradientColorMapGeneratorTest {
 
     @Test
     public void testBeforeAfterColorsString()
-            throws FileNotFoundException, IOException, SAXException, ParserConfigurationException {
+            throws IOException, ParserConfigurationException {
         GradientColorMapGenerator colorMapGenerator =
                 GradientColorMapGenerator.getColorMapGenerator(
                         "rgba(0,0,0,1);rgba(255,0,0,0.5);rgba(0,0,255,0.1)");
@@ -175,7 +175,7 @@ public class GradientColorMapGeneratorTest {
 
     @Test
     public void testBeforeAfterNullColors()
-            throws FileNotFoundException, IOException, SAXException, ParserConfigurationException {
+            throws IOException, ParserConfigurationException {
         GradientColorMapGenerator colorMapGenerator =
                 GradientColorMapGenerator.getColorMapGenerator(
                         "rgba(0,0,0,1);rgba(255,0,0,0.5);rgba(0,0,255,0.1)");

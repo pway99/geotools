@@ -109,7 +109,7 @@ public class PostgisNGCreateDatabaseOnlineTest extends OnlineTestCase {
         }
     }
 
-    public void testCreateDrop() throws IOException, SQLException, SchemaException {
+    public void testCreateDrop() throws IOException, SchemaException {
         PostgisNGDataStoreFactory factory = new PostgisNGDataStoreFactory();
         Properties db = fixture;
 

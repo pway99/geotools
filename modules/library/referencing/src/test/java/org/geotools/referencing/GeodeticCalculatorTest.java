@@ -42,7 +42,6 @@ import org.geotools.test.TestData;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.opengis.geometry.DirectPosition;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.GeographicCRS;
 import org.opengis.referencing.operation.TransformException;
 import si.uom.SI;
@@ -140,7 +139,7 @@ public final class GeodeticCalculatorTest {
      * CRS with only the axis order interchanged.
      */
     @Test
-    public void testUsingTransform() throws FactoryException, TransformException {
+    public void testUsingTransform() throws TransformException {
         final GeographicCRS crs =
                 new DefaultGeographicCRS(
                         "Test",

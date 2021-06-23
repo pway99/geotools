@@ -37,7 +37,7 @@ public class OracleDateOnlineTest extends JDBCDateOnlineTest {
     }
 
     @Override
-    public void testFilterByTime() throws Exception {
+    public void testFilterByTime() {
         // Oracle makes you go through various stages of pain to work simply against Time,
         // not worth supporting it until someone has real time to deal with it
     }

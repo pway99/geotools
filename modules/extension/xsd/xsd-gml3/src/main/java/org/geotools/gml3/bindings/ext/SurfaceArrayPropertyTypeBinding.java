@@ -55,7 +55,7 @@ public class SurfaceArrayPropertyTypeBinding
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         List<Polygon> polygons = new ArrayList<>();
 

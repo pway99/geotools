@@ -254,8 +254,7 @@ public class DefaultFileDriver extends DefaultDriver implements FileDriver {
             java.net.URL url,
             Map<String, Serializable> params,
             Hints hints,
-            ProgressListener listener)
-            throws IOException {
+            ProgressListener listener) {
         throw new UnsupportedOperationException("Operation not currently implemented");
     }
 
@@ -263,8 +262,7 @@ public class DefaultFileDriver extends DefaultDriver implements FileDriver {
             java.net.URL url,
             Map<String, Serializable> params,
             Hints hints,
-            ProgressListener listener)
-            throws IOException {
+            ProgressListener listener) {
         throw new UnsupportedOperationException("Operation not currently implemented");
     }
 
@@ -272,8 +270,7 @@ public class DefaultFileDriver extends DefaultDriver implements FileDriver {
             java.net.URL url,
             Map<String, Serializable> params,
             Hints hints,
-            ProgressListener listener)
-            throws IOException {
+            ProgressListener listener) {
         throw new UnsupportedOperationException("Operation not currently implemented");
     }
 

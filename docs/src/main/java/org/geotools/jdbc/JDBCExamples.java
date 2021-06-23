@@ -18,7 +18,6 @@
 
 package org.geotools.jdbc;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.geotools.data.DataStore;
@@ -26,7 +25,7 @@ import org.geotools.data.DataStoreFinder;
 
 public class JDBCExamples {
 
-    void h2Example() throws IOException {
+    void h2Example() {
         // h2Example start
         Map<String, Object> params = new HashMap<>();
         params.put("dbtype", "h2");
@@ -36,7 +35,7 @@ public class JDBCExamples {
         // h2Example end
     }
 
-    void h2AbsPathExample() throws IOException {
+    void h2AbsPathExample() {
         // h2AbsPathExample start
         Map<String, Object> params = new HashMap<>();
         params.put("dbtype", "h2");
@@ -46,7 +45,7 @@ public class JDBCExamples {
         // h2AbsPathExample end
     }
 
-    void h2TcpExample() throws IOException {
+    void h2TcpExample() {
         // h2TcpExample start
         Map<String, Object> params = new HashMap<>();
         params.put("dbtype", "h2");
@@ -60,7 +59,7 @@ public class JDBCExamples {
         // h2TcpExample end
     }
 
-    void postgisExample() throws IOException {
+    void postgisExample() {
         // postgisExample start
         Map<String, Object> params = new HashMap<>();
         params.put("dbtype", "postgis");

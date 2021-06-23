@@ -127,7 +127,7 @@ public class LayerTypeBinding extends AbstractComplexEMFBinding {
      */
     @Override
     @SuppressWarnings("unchecked")
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         LayerType layer = factory.createLayerType();
 
         List<Node> children = node.getChildren("Abstract");

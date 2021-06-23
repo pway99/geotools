@@ -102,7 +102,7 @@ public class OGCBBOXTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // TODO: crs
         PropertyName propertyName = node.getChildValue(PropertyName.class);
         Envelope box = node.getChildValue(Envelope.class);
@@ -137,7 +137,7 @@ public class OGCBBOXTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         BBOX box = (BBOX) object;
 
         // &lt;xsd:element ref="ogc:PropertyName"/&gt;

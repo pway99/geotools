@@ -74,12 +74,12 @@ public class FunctionToStringTest {
                     Collection_UniqueFunction.NAME.getName());
 
     @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
+    public static void setUpBeforeClass() {
         ff = CommonFactoryFinder.getFilterFactory(null);
     }
 
     @AfterClass
-    public static void tearDownAfterClass() throws Exception {
+    public static void tearDownAfterClass() {
         ff = null;
     }
 

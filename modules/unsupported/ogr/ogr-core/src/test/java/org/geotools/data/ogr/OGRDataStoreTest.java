@@ -22,7 +22,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -85,14 +84,14 @@ public abstract class OGRDataStoreTest extends TestCaseSupport {
 
     @Override
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         for (OGRDataStore store : stores) {
             store.dispose();
         }
     }
 
     @Test
-    public void testGetTypeNames() throws FileNotFoundException, IOException {
+    public void testGetTypeNames() throws IOException {
         OGRDataStore store = createDataStore(getAbsolutePath(STATE_POP), null);
         assertEquals(1, store.getTypeNames().length);
         assertEquals("statepop", store.getTypeNames()[0]);
@@ -767,8 +766,7 @@ public abstract class OGRDataStoreTest extends TestCaseSupport {
         assertEquals(fc.size(), c);
     }
 
-    protected ListFeatureCollection createFeatureCollectionWithUpperCaseAttributes()
-            throws Exception {
+    protected ListFeatureCollection createFeatureCollectionWithUpperCaseAttributes() {
         SimpleFeatureTypeBuilder tbuilder = new SimpleFeatureTypeBuilder();
         tbuilder.setName("points");
         tbuilder.add("geom", Point.class);
@@ -878,7 +876,7 @@ public abstract class OGRDataStoreTest extends TestCaseSupport {
         return fs.getFeatures();
     }
 
-    protected ListFeatureCollection createFeatureCollection() throws Exception {
+    protected ListFeatureCollection createFeatureCollection() {
         SimpleFeatureTypeBuilder tbuilder = new SimpleFeatureTypeBuilder();
         tbuilder.setName("junk");
         tbuilder.add("point", Point.class);

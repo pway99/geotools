@@ -91,7 +91,7 @@ public class OGCFunctionTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Expression[] args = new Expression[node.getChildren().size()];
 
         for (int i = 0; i < node.getChildren().size(); i++) {
@@ -105,7 +105,7 @@ public class OGCFunctionTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         Function function = (Function) object;
 
         // &lt;xsd:element maxOccurs="unbounded" minOccurs="0" ref="ogc:expression"/&gt;

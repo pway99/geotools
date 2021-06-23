@@ -254,7 +254,7 @@ public class Slice2DIndex {
             }
         }
 
-        public int getNumberOfRecords() throws IOException {
+        public int getNumberOfRecords() {
             return numberOfRecords;
         }
 

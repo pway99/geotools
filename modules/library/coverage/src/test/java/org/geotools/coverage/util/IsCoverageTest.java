@@ -41,7 +41,7 @@ public class IsCoverageTest extends GridCoverageTestBase {
     static final FilterFactory2 FF = CommonFactoryFinder.getFilterFactory2();
 
     @Test
-    public void testEvaluateFeature() throws Exception {
+    public void testEvaluateFeature() {
         Filter isCoverage = FF.equals(FF.function("isCoverage"), FF.literal("true"));
         Filter isNotCoverage = FF.equals(FF.function("isCoverage"), FF.literal("false"));
 
@@ -64,7 +64,7 @@ public class IsCoverageTest extends GridCoverageTestBase {
     }
 
     @Test
-    public void testSimplify() throws Exception {
+    public void testSimplify() {
         Filter isCoverage = FF.equals(FF.function("isCoverage"), FF.literal("true"));
 
         SimplifyingFilterVisitor visitor = new SimplifyingFilterVisitor();

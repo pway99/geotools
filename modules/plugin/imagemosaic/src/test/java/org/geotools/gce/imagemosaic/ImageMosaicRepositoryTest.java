@@ -331,22 +331,22 @@ public class ImageMosaicRepositoryTest {
         }
 
         @Override
-        public void createSchema(FeatureType featureType) throws IOException {
+        public void createSchema(FeatureType featureType) {
             throw new UnsupportedOperationException();
         }
 
         @Override
-        public void updateSchema(Name typeName, FeatureType featureType) throws IOException {
+        public void updateSchema(Name typeName, FeatureType featureType) {
             throw new UnsupportedOperationException();
         }
 
         @Override
-        public void removeSchema(Name typeName) throws IOException {
+        public void removeSchema(Name typeName) {
             throw new UnsupportedOperationException();
         }
 
         @Override
-        public List<Name> getNames() throws IOException {
+        public List<Name> getNames() {
             return Arrays.asList(name);
         }
 
@@ -387,7 +387,7 @@ public class ImageMosaicRepositoryTest {
         }
 
         @Override
-        public List<Name> getNames() throws IOException {
+        public List<Name> getNames() {
             return Arrays.asList(name, complexType.getName());
         }
 

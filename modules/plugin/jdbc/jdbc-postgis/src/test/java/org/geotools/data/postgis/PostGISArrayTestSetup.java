@@ -49,7 +49,7 @@ public class PostGISArrayTestSetup extends JDBCDelegatingTestSetup {
         run("INSERT INTO \"arraytest\" VALUES (2, NULL, NULL, NULL, NULL)");
     }
 
-    private void dropTestArrayTable() throws Exception {
+    private void dropTestArrayTable() {
         runSafe("DROP TABLE \"arraytest\" cascade");
     }
 }

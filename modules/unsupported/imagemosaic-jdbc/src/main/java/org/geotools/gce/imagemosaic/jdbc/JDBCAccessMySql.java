@@ -215,8 +215,7 @@ class JDBCAccessMySql extends JDBCAccessBase {
      *      java.sql.Connection)
      */
     @Override
-    protected CoordinateReferenceSystem getCRS(ImageLevelInfo li, Connection con)
-            throws IOException {
+    protected CoordinateReferenceSystem getCRS(ImageLevelInfo li, Connection con) {
         return null;
     }
 }

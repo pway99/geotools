@@ -47,7 +47,7 @@ public class GEOT5036RegressionTest {
         }
 
         @Override
-        public String call() throws Exception {
+        public String call() {
             final StringBuilder sb = new StringBuilder();
             GeoJSONUtil.literal(date, sb);
             return sb.toString();
@@ -55,7 +55,7 @@ public class GEOT5036RegressionTest {
     }
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         // perform 50 conversions
         for (int i = 0; i < 50; i++) {
             final Date date =

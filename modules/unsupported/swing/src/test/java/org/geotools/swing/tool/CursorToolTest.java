@@ -42,17 +42,17 @@ public class CursorToolTest extends GraphicsTestBase {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void nullMapPaneArgCausesException() throws Exception {
+    public void nullMapPaneArgCausesException() {
         tool.setMapPane(null);
     }
 
     @Test
-    public void defaultIsNotToDrawDragBox() throws Exception {
+    public void defaultIsNotToDrawDragBox() {
         assertFalse(tool.drawDragBox());
     }
 
     @Test
-    public void returnsDefaultCursor() throws Exception {
+    public void returnsDefaultCursor() {
         Cursor.getDefaultCursor().equals(tool.getCursor());
     }
 }

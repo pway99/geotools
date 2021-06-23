@@ -50,7 +50,7 @@ public class WFSContentComplexFeatureCollection
     private Filter filter;
 
     public WFSContentComplexFeatureCollection(
-            GetFeatureRequest request, FeatureType schema, QName name) throws IOException {
+            GetFeatureRequest request, FeatureType schema, QName name) {
 
         this.request = request;
         this.name = name;
@@ -58,8 +58,7 @@ public class WFSContentComplexFeatureCollection
     }
 
     public WFSContentComplexFeatureCollection(
-            GetFeatureRequest request, FeatureType schema, QName name, Filter filter)
-            throws IOException {
+            GetFeatureRequest request, FeatureType schema, QName name, Filter filter) {
 
         this.request = request;
         this.name = name;

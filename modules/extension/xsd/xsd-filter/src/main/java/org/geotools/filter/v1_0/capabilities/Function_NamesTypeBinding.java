@@ -68,14 +68,14 @@ public class Function_NamesTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         List<FunctionName> functions = node.getChildValues(FunctionName.class);
 
         return functions.toArray(new FunctionName[functions.size()]);
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (name.getLocalPart().equals("Function_Name")
                 || name.getLocalPart().equals("FunctionName") /* 1.1 */) {
             return object;

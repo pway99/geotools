@@ -129,7 +129,7 @@ public class StringFunctionTest {
     }
 
     @Test
-    public void testStrTrim2() throws Exception {
+    public void testStrTrim2() {
         assertEquals(
                 "hello",
                 ff.function(
@@ -165,7 +165,7 @@ public class StringFunctionTest {
     }
 
     @Test
-    public void testStrPosition() throws Exception {
+    public void testStrPosition() {
         assertEquals(
                 "1",
                 ff.function(
@@ -217,7 +217,7 @@ public class StringFunctionTest {
     }
 
     @Test
-    public void testStrSubstring() throws Exception {
+    public void testStrSubstring() {
         // test bad ranges return null
         assertNull(
                 ff.function("strSubstring", ff.literal("ABCD"), ff.literal(-1), ff.literal(2))
@@ -274,7 +274,7 @@ public class StringFunctionTest {
     }
 
     @Test
-    public void testStrSubstringStart() throws Exception {
+    public void testStrSubstringStart() {
         // test bad index returns null
         assertNull(
                 ff.function("strSubstringStart", ff.literal("ABCD"), ff.literal(-1))
@@ -301,7 +301,7 @@ public class StringFunctionTest {
     }
 
     @Test
-    public void testConcatenate() throws Exception {
+    public void testConcatenate() {
         assertEquals(
                 "ab", ff.function("strConcat", ff.literal("a"), ff.literal("b")).evaluate(null));
         assertEquals(

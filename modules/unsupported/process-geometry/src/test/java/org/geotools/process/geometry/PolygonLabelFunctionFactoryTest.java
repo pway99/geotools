@@ -36,7 +36,7 @@ public class PolygonLabelFunctionFactoryTest {
 
     /** @throws java.lang.Exception */
     @Before
-    public void setUp() throws Exception {}
+    public void setUp() {}
 
     /**
      * Test method for {@link

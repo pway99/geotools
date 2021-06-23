@@ -41,7 +41,7 @@ public class DBCPDataSource extends AbstractManageableDataSource {
     }
 
     @Override
-    public boolean isWrapperFor(Class c) throws SQLException {
+    public boolean isWrapperFor(Class c) {
         if (DataSource.class.isAssignableFrom(c)) {
             return true;
         }

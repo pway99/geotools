@@ -93,7 +93,7 @@ public class GMLPolygonTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         LinearRing shell = (LinearRing) node.getChild("outerBoundaryIs").getValue();
 
         List innerRings = node.getChildren("innerBoundaryIs");
@@ -108,7 +108,7 @@ public class GMLPolygonTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         Polygon polygon = (Polygon) object;
 
         if (GML.outerBoundaryIs.equals(name)) {

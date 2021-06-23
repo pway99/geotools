@@ -126,7 +126,7 @@ public class GetTileBinding extends AbstractComplexEMFBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         GetTileType getTile = factory.createGetTileType();
 
         getTile.setLayer((String) node.getChildValue("Layer"));

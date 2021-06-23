@@ -51,7 +51,6 @@ import org.opengis.parameter.ParameterValue;
 import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.datum.PixelInCell;
-import org.opengis.referencing.operation.NoninvertibleTransformException;
 
 /**
  * Testing {@link GranuleDescriptor} class.
@@ -152,7 +151,7 @@ public class GranuleTest extends Assert {
 
     @Test
     public void testLoadRaster()
-            throws FileNotFoundException, IOException, NoninvertibleTransformException {
+            throws FileNotFoundException, IOException {
 
         // get some test data
         final File testMosaic = TestData.file(this, "/rgb");

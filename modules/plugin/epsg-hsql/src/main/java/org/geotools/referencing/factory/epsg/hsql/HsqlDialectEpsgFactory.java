@@ -41,7 +41,7 @@ final class HsqlDialectEpsgFactory extends AnsiDialectEpsgFactory {
             Pattern.compile("\\s+FROM\\s*\\(", Pattern.CASE_INSENSITIVE);
 
     /** Constructs the factory for the given connection to the HSQL database. */
-    public HsqlDialectEpsgFactory(final Hints hints) throws SQLException {
+    public HsqlDialectEpsgFactory(final Hints hints) {
         super(hints, HsqlEpsgDatabase.createDataSource());
     }
 

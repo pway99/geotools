@@ -31,7 +31,7 @@ public class IngresGeometryTestSetup extends JDBCGeometryTestSetup {
     }
 
     @Override
-    protected void dropSpatialTable(String tableName) throws Exception {
+    protected void dropSpatialTable(String tableName) {
         runSafe("DROP TABLE \"" + tableName + "\"");
     }
 }

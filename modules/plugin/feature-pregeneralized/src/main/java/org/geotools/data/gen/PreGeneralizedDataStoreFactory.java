@@ -94,7 +94,7 @@ public class PreGeneralizedDataStoreFactory implements DataStoreFactorySpi {
     }
 
     @Override
-    public DataStore createNewDataStore(Map<String, ?> params) throws IOException {
+    public DataStore createNewDataStore(Map<String, ?> params) {
         throw new UnsupportedOperationException();
     }
 

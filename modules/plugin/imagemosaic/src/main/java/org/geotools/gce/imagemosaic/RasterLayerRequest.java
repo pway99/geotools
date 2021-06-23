@@ -329,7 +329,7 @@ public class RasterLayerRequest {
         }
     }
 
-    private void computeRequestedGridGeometry() throws IOException {
+    private void computeRequestedGridGeometry() {
         if (requestedGridGeometry != null) {
             if (heterogeneousCRS && !useAlternativeCRS) {
                 GridEnvelope2D paddedRange =
@@ -617,7 +617,7 @@ public class RasterLayerRequest {
      * @param param the input {@code ParamaterValue} object
      * @param name the name of the parameter
      */
-    private void extractParameter(ParameterValue<?> param, Identifier name) throws IOException {
+    private void extractParameter(ParameterValue<?> param, Identifier name) {
 
         // //
         //

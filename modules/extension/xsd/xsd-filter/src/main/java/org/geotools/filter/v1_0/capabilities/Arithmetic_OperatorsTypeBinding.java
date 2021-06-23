@@ -76,7 +76,7 @@ public class Arithmetic_OperatorsTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // &lt;xsd:element ref="ogc:Simple_Arithmetic"/&gt;
         boolean simpleArithmetic =
                 node.hasChild("Simple_Arithmetic") || node.hasChild("SimpleArithmetic"); // 1.1
@@ -88,7 +88,7 @@ public class Arithmetic_OperatorsTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         ArithmeticOperators arithmetic = (ArithmeticOperators) object;
 
         if ((name.equals(OGC.Simple_Arithmetic)

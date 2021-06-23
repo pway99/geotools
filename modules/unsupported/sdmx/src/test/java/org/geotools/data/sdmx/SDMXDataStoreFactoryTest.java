@@ -37,13 +37,13 @@ public class SDMXDataStoreFactoryTest {
     private Map<String, Serializable> params;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         dsf = new SDMXDataStoreFactory();
         params = new HashMap<String, Serializable>();
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         dsf = null;
         params = null;
     }

@@ -36,22 +36,22 @@ public class CoverageUpdateRequest extends CoverageRequest {
     private Map<String, String> metadata;
 
     /** @see org.geotools.coverage.io.CoverageUpdateRequest#getMetadataNames() */
-    public java.lang.String[] getMetadataNames() throws java.io.IOException {
+    public java.lang.String[] getMetadataNames() {
         return null;
     }
 
     /** @see org.geotools.coverage.io.CoverageUpdateRequest#getMetadataValue(java.lang.String) */
-    public java.lang.String getMetadataValue(java.lang.String arg0) throws java.io.IOException {
+    public java.lang.String getMetadataValue(java.lang.String arg0) {
         return arg0;
     }
 
     /** @see org.geotools.coverage.io.CoverageUpdateRequest#setMetadata(java.util.Map) */
-    public void setMetadata(Map<String, String> metadata) throws java.io.IOException {
+    public void setMetadata(Map<String, String> metadata) {
         this.metadata = new HashMap<>(metadata);
     }
 
     /** @see org.geotools.coverage.io.CoverageUpdateRequest#getMetadata() */
-    public Map<String, String> getMetadata() throws java.io.IOException {
+    public Map<String, String> getMetadata() {
         return new HashMap<>(this.metadata);
     }
 

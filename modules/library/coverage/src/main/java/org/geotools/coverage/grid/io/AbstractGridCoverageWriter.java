@@ -100,7 +100,7 @@ public abstract class AbstractGridCoverageWriter implements GridCoverageWriter {
 
     /** @see org.opengis.coverage.grid.GridCoverageWriter#setCurrentSubname(java.lang.String) */
     @Override
-    public void setCurrentSubname(String name) throws IOException {
+    public void setCurrentSubname(String name) {
         throw new UnsupportedOperationException("Unsupported method");
     }
 
@@ -109,7 +109,7 @@ public abstract class AbstractGridCoverageWriter implements GridCoverageWriter {
      *     java.lang.String)
      */
     @Override
-    public void setMetadataValue(String name, String value) throws IOException {
+    public void setMetadataValue(String name, String value) {
         throw new UnsupportedOperationException("Unsupported method");
     }
 

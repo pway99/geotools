@@ -16,8 +16,6 @@
  */
 package org.geotools.data.ingres;
 
-import java.io.IOException;
-
 import org.geotools.data.DefaultTransaction;
 import org.geotools.data.FeatureWriter;
 import org.geotools.data.Query;
@@ -45,7 +43,7 @@ public class IngresTransactionTest extends JDBCTransactionTest {
     }
 
     @Override
-    public void testConcurrentTransactions() throws IOException {
+    public void testConcurrentTransactions() {
     	// disabled, doesn't work on Ingres
     }
 }

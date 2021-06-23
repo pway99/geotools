@@ -24,7 +24,6 @@ import org.opengis.parameter.ParameterDescriptor;
 import org.opengis.parameter.ParameterDescriptorGroup;
 import org.opengis.parameter.ParameterNotFoundException;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.operation.MathTransform;
 
 public class CylindricalEqualArea extends MapProjection {
@@ -81,8 +80,7 @@ public class CylindricalEqualArea extends MapProjection {
      * radians) and stores the result in {@code xy} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D transformNormalized(double lam, double phi, final Point2D xy)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double lam, double phi, final Point2D xy) {
         double x, y;
         if (isSpherical) {
             x = scaleFactor * lam;
@@ -104,8 +102,7 @@ public class CylindricalEqualArea extends MapProjection {
      * {@code lp}.
      */
     @Override
-    protected Point2D inverseTransformNormalized(double x, double y, final Point2D lp)
-            throws ProjectionException {
+    protected Point2D inverseTransformNormalized(double x, double y, final Point2D lp) {
         double lam, phi;
         if (isSpherical) {
 
@@ -149,7 +146,7 @@ public class CylindricalEqualArea extends MapProjection {
 
         @Override
         protected MathTransform createMathTransform(final ParameterValueGroup parameters)
-                throws ParameterNotFoundException, FactoryException {
+                throws ParameterNotFoundException {
             return new CylindricalEqualArea(parameters);
         }
 
@@ -189,7 +186,7 @@ public class CylindricalEqualArea extends MapProjection {
 
         @Override
         protected MathTransform createMathTransform(final ParameterValueGroup parameters)
-                throws ParameterNotFoundException, FactoryException {
+                throws ParameterNotFoundException {
             parameters.parameter("standard_parallel_1").setValue(30);
             return new CylindricalEqualArea(parameters);
         }
@@ -202,7 +199,7 @@ public class CylindricalEqualArea extends MapProjection {
                         new NamedIdentifier[] {
                             new NamedIdentifier(
                                     Citations.GEOTOOLS,
-                                    "Lambert Cylindrical Equal Area (Spherical)"),
+                                    "Lambert Cylindrical Equal Area (Spherical)")
                         },
                         Provider.getParameterDescriptors());
 
@@ -212,7 +209,7 @@ public class CylindricalEqualArea extends MapProjection {
 
         @Override
         protected MathTransform createMathTransform(final ParameterValueGroup parameters)
-                throws ParameterNotFoundException, FactoryException {
+                throws ParameterNotFoundException {
             return new CylindricalEqualArea(parameters);
         }
     }

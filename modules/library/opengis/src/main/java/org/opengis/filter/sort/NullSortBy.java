@@ -9,7 +9,6 @@
  */
 package org.opengis.filter.sort;
 
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 import org.opengis.filter.expression.PropertyName;
 
@@ -59,7 +58,7 @@ final class NullSortBy implements SortBy, Serializable {
     }
 
     /** Returns a single instance after deserialization. */
-    private Object readResolve() throws ObjectStreamException {
+    private Object readResolve() {
         if (order.equals(SortOrder.ASCENDING)) return SortBy.NATURAL_ORDER;
         if (order.equals(SortOrder.DESCENDING)) return SortBy.REVERSE_ORDER;
         return this;

@@ -40,7 +40,7 @@ public class SDOCreateTest {
     private static final int NULL = 0;
 
     @Test
-    public void testXY_Point() throws Exception {
+    public void testXY_Point() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         2001,
@@ -52,7 +52,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYM_Point() throws Exception {
+    public void testXYM_Point() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         3301,
@@ -64,7 +64,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYZM_Point() throws Exception {
+    public void testXYZM_Point() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         4001,
@@ -76,7 +76,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYZ_LineString() throws Exception {
+    public void testXYZ_LineString() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         3002,
@@ -88,7 +88,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYM_LineString() throws Exception {
+    public void testXYM_LineString() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         3302,
@@ -100,7 +100,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYMZ_LineString() throws Exception {
+    public void testXYMZ_LineString() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         4302,
@@ -112,7 +112,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYZ_MultiPoint() throws Exception {
+    public void testXYZ_MultiPoint() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         3005,
@@ -124,7 +124,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYZ_MultiLineString() throws Exception {
+    public void testXYZ_MultiLineString() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         3006,
@@ -136,7 +136,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYMZ_MultiLineString() throws Exception {
+    public void testXYMZ_MultiLineString() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         4306,
@@ -149,7 +149,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYZM_MultiLineString() throws Exception {
+    public void testXYZM_MultiLineString() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         4406,
@@ -162,7 +162,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXY_Polygon() throws Exception {
+    public void testXY_Polygon() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         2003,
@@ -174,7 +174,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXY_Polygon_With_Unclosed_Ring() throws Exception {
+    public void testXY_Polygon_With_Unclosed_Ring() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         2003,
@@ -188,7 +188,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXY_Polygon_With_Single_Point_Ring() throws Exception {
+    public void testXY_Polygon_With_Single_Point_Ring() {
         // geometries will be automatically fixed by appending three copies
         // of the start point
         SDO_GEOMETRY onePointOraGeom =
@@ -203,7 +203,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXY_Polygon_With_Closed_Two_Points_Ring() throws Exception {
+    public void testXY_Polygon_With_Closed_Two_Points_Ring() {
         // geometries will be automatically fixed by appending two copies
         // of the start point
         SDO_GEOMETRY twoPointsOraGeom =
@@ -218,7 +218,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXY_Polygon_With_Closed_Three_Points_Ring() throws Exception {
+    public void testXY_Polygon_With_Closed_Three_Points_Ring() {
         // geometries will be automatically fixed by appending one copy
         // of the start point
         SDO_GEOMETRY threePointsOraGeom =
@@ -233,7 +233,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYZ_Polygon() throws Exception {
+    public void testXYZ_Polygon() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         3003,
@@ -246,7 +246,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYM_Polygon() throws Exception {
+    public void testXYM_Polygon() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         3303,
@@ -259,7 +259,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYZ_PolygonWithHole() throws Exception {
+    public void testXYZ_PolygonWithHole() {
         checkValue(
                 MDSYS.SDO_GEOMETRY(
                         3003,
@@ -274,7 +274,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYM_PolygonWithHole() throws Exception {
+    public void testXYM_PolygonWithHole() {
         checkValue(
                 MDSYS.SDO_GEOMETRY(
                         3303,
@@ -290,7 +290,7 @@ public class SDOCreateTest {
 
     /** Checks num of internal rings (holes) */
     @Test
-    public void testXY_PolygonWithTwoHoles_numInteriorRing() throws Exception {
+    public void testXY_PolygonWithTwoHoles_numInteriorRing() {
         SDO_GEOMETRY oraGeom =
                 MDSYS.SDO_GEOMETRY(
                         2003,
@@ -312,7 +312,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXY_MultiPolygon() throws Exception {
+    public void testXY_MultiPolygon() {
         checkValue(
                 MDSYS.SDO_GEOMETRY(
                         2007,
@@ -325,7 +325,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYZ_MultiPolygon() throws Exception {
+    public void testXYZ_MultiPolygon() {
         checkValue(
                 MDSYS.SDO_GEOMETRY(
                         3007,
@@ -339,7 +339,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYM_MultiPolygon() throws Exception {
+    public void testXYM_MultiPolygon() {
         checkValue(
                 MDSYS.SDO_GEOMETRY(
                         3307,
@@ -353,7 +353,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYZM_MultiPolygon() throws Exception {
+    public void testXYZM_MultiPolygon() {
         checkValue(
                 MDSYS.SDO_GEOMETRY(
                         4307,
@@ -367,7 +367,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXY_GeometryCollection_Doc() throws Exception {
+    public void testXY_GeometryCollection_Doc() {
         checkValue(
                 MDSYS.SDO_GEOMETRY(
                         2004,
@@ -382,7 +382,7 @@ public class SDOCreateTest {
     }
 
     @Test
-    public void testXYM_GeometryCollection_Doc() throws Exception {
+    public void testXYM_GeometryCollection_Doc() {
         checkValue(
                 MDSYS.SDO_GEOMETRY(
                         3304,

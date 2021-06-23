@@ -279,7 +279,7 @@ enum HarvestedResource {
         final ImageMosaicConfigHandler catalogHandler =
                 new ImageMosaicConfigHandler(configuration, eventHandler) {
                     @Override
-                    protected GranuleCatalog buildCatalog() throws IOException {
+                    protected GranuleCatalog buildCatalog() {
                         return reader.granuleCatalog;
                     };
                 };
@@ -347,7 +347,7 @@ enum HarvestedResource {
         final ImageMosaicConfigHandler catalogHandler =
                 new ImageMosaicConfigHandler(configuration, eventHandler) {
                     @Override
-                    protected GranuleCatalog buildCatalog() throws IOException {
+                    protected GranuleCatalog buildCatalog() {
                         return reader.granuleCatalog;
                     }
                 };
@@ -483,7 +483,7 @@ enum HarvestedResource {
         }
 
         @Override
-        protected GranuleCatalog buildCatalog() throws IOException {
+        protected GranuleCatalog buildCatalog() {
             return reader.granuleCatalog;
         }
 

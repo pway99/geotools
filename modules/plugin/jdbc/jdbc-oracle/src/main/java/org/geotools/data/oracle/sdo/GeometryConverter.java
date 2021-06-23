@@ -358,12 +358,12 @@ public class GeometryConverter {
      *
      * @see #asInteger(Datum, int)
      */
-    private int asInteger(Number datum, final int DEFAULT) throws SQLException {
+    private int asInteger(Number datum, final int DEFAULT) {
         if (datum == null) return DEFAULT;
         return datum.intValue();
     }
     /** Presents datum as a double */
-    protected double asDouble(Datum datum, final double DEFAULT) throws SQLException {
+    protected double asDouble(Datum datum, final double DEFAULT) {
         if (datum == null) return DEFAULT;
         return ((NUMBER) datum).doubleValue();
     }
@@ -373,7 +373,7 @@ public class GeometryConverter {
      *
      * @see #asDouble(Datum, double)
      */
-    private double asDouble(Number datum, final double DEFAULT) throws SQLException {
+    private double asDouble(Number datum, final double DEFAULT) {
         if (datum == null) return DEFAULT;
         return datum.doubleValue();
     }

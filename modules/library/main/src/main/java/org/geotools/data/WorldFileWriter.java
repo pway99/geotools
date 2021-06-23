@@ -82,8 +82,7 @@ public class WorldFileWriter {
      * @param transform the transformation that we want to write out.
      * @throws IOException in case something bad happens.
      */
-    public WorldFileWriter(final File outLocation, final AffineTransform transform)
-            throws IOException {
+    public WorldFileWriter(final File outLocation, final AffineTransform transform) {
         this(
                 outLocation,
                 ProjectiveTransform.create(checkTransform(transform)),
@@ -99,8 +98,7 @@ public class WorldFileWriter {
      * @throws IOException in case something bad happens.
      */
     public WorldFileWriter(
-            final File outLocation, final AffineTransform transform, final int buffSize)
-            throws IOException {
+            final File outLocation, final AffineTransform transform, final int buffSize) {
         this(outLocation, ProjectiveTransform.create(checkTransform(transform)), buffSize);
     }
 
@@ -111,8 +109,7 @@ public class WorldFileWriter {
      * @param transform the transformation that we want to write out.
      * @throws IOException in case something bad happens.
      */
-    public WorldFileWriter(final OutputStream outLocation, final AffineTransform transform)
-            throws IOException {
+    public WorldFileWriter(final OutputStream outLocation, final AffineTransform transform) {
         this(outLocation, ProjectiveTransform.create(checkTransform(transform)));
     }
 
@@ -125,8 +122,7 @@ public class WorldFileWriter {
      * @throws IOException in case something bad happens.
      */
     public WorldFileWriter(
-            final OutputStream outLocation, final AffineTransform transform, final int buffSize)
-            throws IOException {
+            final OutputStream outLocation, final AffineTransform transform, final int buffSize) {
         this(outLocation, ProjectiveTransform.create(checkTransform(transform)), buffSize);
     }
 
@@ -139,8 +135,7 @@ public class WorldFileWriter {
      * @param transform the transformation that we want to write out.
      * @throws IOException in case something bad happens.
      */
-    public WorldFileWriter(final OutputStream outLocation, final MathTransform transform)
-            throws IOException {
+    public WorldFileWriter(final OutputStream outLocation, final MathTransform transform) {
         this(outLocation, transform, DEFAULT_BUFFER_SIZE);
     }
 
@@ -155,8 +150,7 @@ public class WorldFileWriter {
      * @throws IOException in case something bad happens.
      */
     public WorldFileWriter(
-            final OutputStream outLocation, final MathTransform transform, final int buffSize)
-            throws IOException {
+            final OutputStream outLocation, final MathTransform transform, final int buffSize) {
         if (outLocation == null)
             throw new NullPointerException(
                     Errors.format(ErrorKeys.NULL_ARGUMENT_$1, "outLocation"));
@@ -275,8 +269,7 @@ public class WorldFileWriter {
      * @param transform the transformation that we want to write out.
      * @throws IOException in case something bad happens.
      */
-    public WorldFileWriter(final File outLocation, final MathTransform transform)
-            throws IOException {
+    public WorldFileWriter(final File outLocation, final MathTransform transform) {
         this(outLocation, transform, DEFAULT_BUFFER_SIZE);
     }
 }

@@ -96,7 +96,7 @@ public final class DataSourceFinder {
      * @throws IOException If a suitable loader can be found, but it can not be attached to the
      *     specified resource without errors.
      */
-    public static synchronized UnWrapper getUnWrapper(Connection conn) throws IOException {
+    public static synchronized UnWrapper getUnWrapper(Connection conn) {
         Iterator ps = getUnWrappers();
         UnWrapper uw;
         while (ps.hasNext()) {
@@ -130,7 +130,7 @@ public final class DataSourceFinder {
      * @throws IOException If a suitable loader can be found, but it can not be attached to the
      *     specified resource without errors.
      */
-    public static synchronized UnWrapper getUnWrapper(Statement st) throws IOException {
+    public static synchronized UnWrapper getUnWrapper(Statement st) {
         Iterator ps = getUnWrappers();
         UnWrapper uw;
         while (ps.hasNext()) {

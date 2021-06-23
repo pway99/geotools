@@ -111,8 +111,7 @@ public class WinkelTripel extends MapProjection {
      * radians) and stores the result in {@code ptDst} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D transformNormalized(double lam, double phi, final Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double lam, double phi, final Point2D ptDst) {
         double c, d;
         double x, y;
 
@@ -138,8 +137,7 @@ public class WinkelTripel extends MapProjection {
     }
 
     @Override
-    protected Point2D inverseTransformNormalized(double x, double y, final Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D inverseTransformNormalized(double x, double y, final Point2D ptDst) {
         throw new UnsupportedOperationException("Cannot invert this transformation");
     }
 

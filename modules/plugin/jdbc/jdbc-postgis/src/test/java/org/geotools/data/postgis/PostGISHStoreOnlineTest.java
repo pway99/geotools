@@ -47,7 +47,7 @@ public class PostGISHStoreOnlineTest extends JDBCTestSupport {
     }
 
     @Test
-    public void testReportingException() throws Exception {
+    public void testReportingException() {
         if (skipTests()) {
             LOGGER.warning("HSTORE tests will be skipped due to previous exception");
         }

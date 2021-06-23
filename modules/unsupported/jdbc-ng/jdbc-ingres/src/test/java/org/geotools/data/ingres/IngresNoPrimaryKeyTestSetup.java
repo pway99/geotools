@@ -40,7 +40,7 @@ public class IngresNoPrimaryKeyTestSetup extends JDBCNoPrimaryKeyTestSetup {
     }
 
     @Override
-    protected void dropLakeTable() throws Exception {
+    protected void dropLakeTable() {
         runSafe("DROP TABLE \"lake\" CASCADE");
     }
 

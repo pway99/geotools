@@ -82,7 +82,7 @@ public class XPathTest extends AppSchemaTestSupport {
 
     /** Test that complex elements that can hold text content are correctly detected. */
     @Test
-    public void testCanHaveTextContent() throws Exception {
+    public void testCanHaveTextContent() {
         SchemaIndex schemaIndex =
                 reader.parse(getClass().getResource(COMPLEX_WITH_TEXT_CONTENT_SCHEMA_LOCATION));
 
@@ -115,7 +115,7 @@ public class XPathTest extends AppSchemaTestSupport {
      * @throws Exception
      */
     @Test
-    public void testXPathSetXlink() throws Exception {
+    public void testXPathSetXlink() {
         TypeBuilder typeBuilder = new TypeBuilder(CommonFactoryFinder.getFeatureTypeFactory(null));
         typeBuilder.addAttribute(
                 "simpleProp", typeBuilder.name("simplePropType").bind(String.class).attribute());

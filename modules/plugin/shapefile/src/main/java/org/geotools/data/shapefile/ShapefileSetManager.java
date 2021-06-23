@@ -40,7 +40,6 @@ import org.geotools.data.shapefile.shp.ShapefileException;
 import org.geotools.data.shapefile.shp.ShapefileReader;
 import org.geotools.util.logging.Logging;
 import org.locationtech.jts.geom.GeometryFactory;
-import org.opengis.referencing.FactoryException;
 
 /**
  * Provides access to the various reader/writers for the group of files making up a Shapefile
@@ -138,7 +137,7 @@ class ShapefileSetManager implements FileReader {
      * @return A new DbaseFileReader
      * @throws IOException If an error occurs during creation.
      */
-    protected PrjFileReader openPrjReader() throws IOException, FactoryException {
+    protected PrjFileReader openPrjReader() throws IOException {
 
         if (shpFiles.get(PRJ) == null) {
             return null;

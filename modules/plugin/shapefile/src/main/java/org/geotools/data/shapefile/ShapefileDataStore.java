@@ -130,7 +130,7 @@ public class ShapefileDataStore extends ContentDataStore implements FileDataStor
     }
 
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         return Collections.singletonList(getTypeName());
     }
 
@@ -148,7 +148,7 @@ public class ShapefileDataStore extends ContentDataStore implements FileDataStor
     }
 
     @Override
-    public ContentFeatureSource getFeatureSource() throws IOException {
+    public ContentFeatureSource getFeatureSource() {
         ContentEntry entry = ensureEntry(getTypeName());
         if (shpFiles.isWritable()) {
             return new ShapefileFeatureStore(entry, shpFiles);
@@ -235,7 +235,7 @@ public class ShapefileDataStore extends ContentDataStore implements FileDataStor
     }
 
     @Override
-    public SimpleFeatureType getSchema() throws IOException {
+    public SimpleFeatureType getSchema() {
         return getSchema(getTypeName());
     }
 
@@ -510,7 +510,7 @@ public class ShapefileDataStore extends ContentDataStore implements FileDataStor
     }
 
     @Override
-    public void removeSchema(String typeName) throws IOException {
+    public void removeSchema(String typeName) {
         removeSchema(new NameImpl(null, typeName));
     }
 

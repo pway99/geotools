@@ -43,7 +43,7 @@ public class ComplexAttributeConverterFactory implements ConverterFactory {
         if (ComplexAttribute.class.isAssignableFrom(source)) {
             return new Converter() {
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     if (source instanceof ComplexAttribute) {
                         Collection<? extends Property> valueMap =
                                 ((ComplexAttribute) source).getValue();
@@ -66,7 +66,7 @@ public class ComplexAttributeConverterFactory implements ConverterFactory {
         if (GeometryAttribute.class.isAssignableFrom(source)) {
             return new Converter() {
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     if (source instanceof GeometryAttribute) {
                         return Converters.convert(((GeometryAttribute) source).getValue(), target);
                     }
@@ -79,7 +79,7 @@ public class ComplexAttributeConverterFactory implements ConverterFactory {
         if (FeatureId.class.isAssignableFrom(target) && String.class.isAssignableFrom(source)) {
             return new Converter() {
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     if (source != null) {
                         return target.cast(new FeatureIdImpl((String) source));
                     }
@@ -92,7 +92,7 @@ public class ComplexAttributeConverterFactory implements ConverterFactory {
         if (Attribute.class.isAssignableFrom(source)) {
             return new Converter() {
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     if (source instanceof Attribute) {
                         // get the attribute value
                         Attribute attribute = (Attribute) source;
@@ -110,7 +110,7 @@ public class ComplexAttributeConverterFactory implements ConverterFactory {
         if (Collection.class.isAssignableFrom(source) && target == String.class) {
             return new Converter() {
                 @Override
-                public <T> T convert(Object source, Class<T> target) throws Exception {
+                public <T> T convert(Object source, Class<T> target) {
                     if (!isCollectionOf(source, Attribute.class)) {
                         // not a collection of attributes, we are done
                         return null;

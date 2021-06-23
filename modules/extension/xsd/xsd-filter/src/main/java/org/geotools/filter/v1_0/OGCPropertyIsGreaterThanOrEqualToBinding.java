@@ -77,7 +77,7 @@ public class OGCPropertyIsGreaterThanOrEqualToBinding extends AbstractComplexBin
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Expression e1 = (Expression) node.getChildValue(0);
         Expression e2 = (Expression) node.getChildValue(1);
 

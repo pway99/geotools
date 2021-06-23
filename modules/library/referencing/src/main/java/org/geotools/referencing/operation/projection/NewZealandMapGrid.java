@@ -137,8 +137,7 @@ public class NewZealandMapGrid extends MapProjection {
      * radians) and stores the result in {@code ptDst} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D transformNormalized(final double x, final double y, final Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(final double x, final double y, final Point2D ptDst) {
         final double dphi = (y - latitudeOfOrigin) * (180 / PI * 3600E-5);
         double dphi_pow_i = dphi;
         double dpsi = 0;
@@ -168,7 +167,7 @@ public class NewZealandMapGrid extends MapProjection {
      */
     @Override
     protected Point2D inverseTransformNormalized(
-            final double x, final double y, final Point2D ptDst) throws ProjectionException {
+            final double x, final double y, final Point2D ptDst) {
         // See implementation note in class javadoc.
         final Complex z = new Complex(y, x);
         final Complex power = new Complex(z);

@@ -21,7 +21,6 @@ import java.io.StringWriter;
 import java.io.Writer;
 import org.geotools.data.complex.FeatureTypeMapping;
 import org.geotools.data.jdbc.FilterToSQL;
-import org.geotools.data.jdbc.FilterToSQLException;
 import org.opengis.filter.Filter;
 import org.opengis.filter.expression.Expression;
 
@@ -39,22 +38,22 @@ public final class WrappedFilterToSql {
         filterToSql.setWriter(out);
     }
 
-    public void encode(Filter filter) throws FilterToSQLException {
+    public void encode(Filter filter) {
         filterToSql.encode(encodeJdbcMultipleValues(filter, out));
     }
 
-    public String encodeToString(Filter filter) throws FilterToSQLException {
+    public String encodeToString(Filter filter) {
         StringWriter out = new StringWriter();
         filterToSql.setWriter(out);
         filterToSql.encode(encodeJdbcMultipleValues(filter, out));
         return out.toString();
     }
 
-    public void encode(Expression expression) throws FilterToSQLException {
+    public void encode(Expression expression) {
         filterToSql.encode(encodeJdbcMultipleValues(expression, out));
     }
 
-    public String encodeToString(Expression expression) throws FilterToSQLException {
+    public String encodeToString(Expression expression) {
         return filterToSql.encodeToString(encodeJdbcMultipleValues(expression, out));
     }
 

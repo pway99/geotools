@@ -49,17 +49,17 @@ public class MySQLSpatialFiltersOnlineTest extends JDBCSpatialFiltersOnlineTest 
     }
 
     @Override
-    public void testBboxFilter() throws Exception {
+    public void testBboxFilter() {
         // super.testBboxFilter();
     }
 
     @Override
-    public void testBboxFilterDefault() throws Exception {
+    public void testBboxFilterDefault() {
         // super.testBboxFilterDefault();
     }
 
     @Override
-    public void testCrossesFilter() throws Exception {
+    public void testCrossesFilter() {
         // super.testCrossesFilter();
     }
 }

@@ -42,7 +42,7 @@ public class GetGmlObjectTypeBindingTest extends WFSTestSupport {
 
     @Override
     @Test
-    public void testEncode() throws Exception {
+    public void testEncode() {
         GetGmlObjectType req = factory.createGetGmlObjectType();
         {
             req.setService("WFS");

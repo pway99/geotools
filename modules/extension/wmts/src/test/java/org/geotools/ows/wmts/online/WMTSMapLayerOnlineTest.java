@@ -64,7 +64,7 @@ public class WMTSMapLayerOnlineTest extends OnlineTestCase {
     }
 
     /** */
-    private void checkEnv(ReferencedEnvelope env) throws FactoryException {
+    private void checkEnv(ReferencedEnvelope env) {
         assertEquals(
                 "wrong CRS",
                 "EPSG:3857",

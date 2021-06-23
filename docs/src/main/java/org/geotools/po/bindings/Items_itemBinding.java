@@ -78,7 +78,7 @@ public class Items_itemBinding extends AbstractComplexBinding {
      *
      * @generated modifiable
      */
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Items.Item item = factory.createItemsItem();
 
         // elements

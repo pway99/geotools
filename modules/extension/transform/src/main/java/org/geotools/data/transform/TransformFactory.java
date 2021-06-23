@@ -44,8 +44,7 @@ public class TransformFactory {
      *     invertible, a transformed SimpleFeatureSource otherwise
      */
     public static SimpleFeatureSource transform(
-            SimpleFeatureSource source, String name, List<Definition> definitions)
-            throws IOException {
+            SimpleFeatureSource source, String name, List<Definition> definitions) {
         return transform(
                 source,
                 new NameImpl(source.getSchema().getName().getNamespaceURI(), name),

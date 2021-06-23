@@ -17,8 +17,6 @@
 package org.geotools.data.wfs;
 
 import static org.geotools.data.wfs.internal.Loggers.MODULE;
-
-import java.io.IOException;
 import java.util.logging.Level;
 import org.geotools.data.Diff;
 import org.geotools.data.store.DiffTransactionState;
@@ -51,7 +49,7 @@ class WFSLocalTransactionState extends DiffTransactionState {
      * @see org.geotools.data.store.DiffTransactionState#commit()
      */
     @Override
-    public synchronized void commit() throws IOException {
+    public synchronized void commit() {
         if (MODULE.isLoggable(Level.FINER)) {
             MODULE.finer(
                     getClass().getSimpleName()

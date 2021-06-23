@@ -49,7 +49,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.opengis.coverage.grid.GridEnvelope;
 import org.opengis.geometry.MismatchedDimensionException;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.datum.PixelInCell;
 import org.opengis.referencing.operation.TransformException;
@@ -165,7 +164,7 @@ public class OverviewsControllerTest extends Assert {
      */
     @Test
     public void testHeterogeneousGranules()
-            throws IOException, MismatchedDimensionException, FactoryException, TransformException {
+            throws IOException, MismatchedDimensionException, TransformException {
 
         final CoordinateReferenceSystem WGS84 = CRS.decode("EPSG:4326", true);
         final ReferencedEnvelope TEST_BBOX_A = new ReferencedEnvelope(-180, 0, -90, 90, WGS84);

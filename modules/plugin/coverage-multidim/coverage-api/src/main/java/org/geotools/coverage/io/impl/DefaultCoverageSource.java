@@ -81,13 +81,12 @@ public abstract class DefaultCoverageSource implements CoverageSource {
     }
 
     @Override
-    public List<? extends RasterLayout> getOverviewsLayouts(ProgressListener listener)
-            throws IOException {
+    public List<? extends RasterLayout> getOverviewsLayouts(ProgressListener listener) {
         return Collections.emptyList();
     }
 
     @Override
-    public int getOverviewsNumber(ProgressListener listener) throws IOException {
+    public int getOverviewsNumber(ProgressListener listener) {
         return 0;
     }
 
@@ -109,7 +108,7 @@ public abstract class DefaultCoverageSource implements CoverageSource {
     }
 
     @Override
-    public RangeType getRangeType(ProgressListener listener) throws IOException {
+    public RangeType getRangeType(ProgressListener listener) {
         ensureNotDisposed();
         return coverageDescriptor.getRangeType();
     }
@@ -120,22 +119,22 @@ public abstract class DefaultCoverageSource implements CoverageSource {
     }
 
     @Override
-    public SpatialDomain getSpatialDomain() throws IOException {
+    public SpatialDomain getSpatialDomain() {
         return coverageDescriptor.getSpatialDomain();
     }
 
     @Override
-    public TemporalDomain getTemporalDomain() throws IOException {
+    public TemporalDomain getTemporalDomain() {
         return coverageDescriptor.getTemporalDomain();
     }
 
     @Override
-    public VerticalDomain getVerticalDomain() throws IOException {
+    public VerticalDomain getVerticalDomain() {
         return coverageDescriptor.getVerticalDomain();
     }
 
     @Override
-    public List<AdditionalDomain> getAdditionalDomains() throws IOException {
+    public List<AdditionalDomain> getAdditionalDomains() {
         return coverageDescriptor.getAdditionalDomains();
     }
 

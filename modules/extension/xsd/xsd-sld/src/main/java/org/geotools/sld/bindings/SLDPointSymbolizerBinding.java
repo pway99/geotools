@@ -113,7 +113,7 @@ public class SLDPointSymbolizerBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         PointSymbolizer ps = styleFactory.createPointSymbolizer();
 
         // &lt;xsd:element ref="sld:Geometry" minOccurs="0"/&gt;

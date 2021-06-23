@@ -48,7 +48,7 @@ public class BooleanConverterFactory implements ConverterFactory {
                 return new Converter() {
 
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         if ("true".equals(source) || "1".equals(source)) {
                             return target.cast(Boolean.TRUE);
                         }
@@ -66,7 +66,7 @@ public class BooleanConverterFactory implements ConverterFactory {
                 return new Converter() {
 
                     @Override
-                    public <T> T convert(Object source, Class<T> target) throws Exception {
+                    public <T> T convert(Object source, Class<T> target) {
                         if (Integer.valueOf(1).equals(source)) {
                             return target.cast(Boolean.TRUE);
                         }

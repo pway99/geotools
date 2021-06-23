@@ -27,7 +27,7 @@ public class TransformDataStoreTest extends AbstractTransformTest {
     }
 
     @Test
-    public void testStoreSourceRelationship() throws Exception {
+    public void testStoreSourceRelationship() {
         assertTrue(ds instanceof SingleFeatureSourceDataStore);
         assertSame(transformed, ds.getFeatureSource(transformed.getSchema().getTypeName()));
     }
@@ -71,7 +71,7 @@ public class TransformDataStoreTest extends AbstractTransformTest {
     }
 
     @Test
-    public void testLockingManager() throws Exception {
+    public void testLockingManager() {
         // there is no way to extract a locking manager from a feature source
         assertNull(ds.getLockingManager());
     }

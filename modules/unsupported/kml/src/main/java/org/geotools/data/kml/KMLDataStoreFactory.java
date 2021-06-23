@@ -17,7 +17,6 @@
 package org.geotools.data.kml;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Map;
 import org.geotools.data.DataStore;
@@ -137,7 +136,7 @@ public class KMLDataStoreFactory implements DataStoreFactorySpi {
      *     file does not exists.
      */
     private File fileLookup(Map params)
-            throws IOException, FileNotFoundException, IllegalArgumentException {
+            throws IOException, IllegalArgumentException {
         File file = (File) FILE.lookUp(params);
         if (file.exists()) {
             if (file.isDirectory()) {

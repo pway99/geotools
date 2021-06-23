@@ -143,7 +143,7 @@ public class UnmappingFilterVisitorTest extends AppSchemaTestSupport {
      * another which is the concatenation of the attributes "anzlic_no" and "project_no"
      */
     @SuppressWarnings("unchecked")
-    private FeatureTypeMapping createSampleDerivedAttributeMappings() throws Exception {
+    private FeatureTypeMapping createSampleDerivedAttributeMappings() {
         // create the target type
         FeatureTypeFactory tf = new UniqueNameFeatureTypeFactoryImpl();
         TypeBuilder builder = new TypeBuilder(tf);
@@ -259,7 +259,7 @@ public class UnmappingFilterVisitorTest extends AppSchemaTestSupport {
      * FidFilter.
      */
     @Test
-    public void testUnrollGetidToGetid() throws Exception {
+    public void testUnrollGetidToGetid() {
         checkUnrollIdExpression(
                 CommonFactoryFinder.getFilterFactory(null)
                         .function("getID", new org.opengis.filter.expression.Expression[0]));
@@ -431,7 +431,7 @@ public class UnmappingFilterVisitorTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testBetweenFilter() throws Exception {
+    public void testBetweenFilter() {
         PropertyIsBetween bf =
                 ff.between(
                         ff.property("measurement/result"),
@@ -448,7 +448,7 @@ public class UnmappingFilterVisitorTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testCompareFilter() throws Exception {
+    public void testCompareFilter() {
         PropertyIsEqualTo complexFilter =
                 ff.equal(ff.property("measurement/result"), ff.literal(1.1), true, MatchAction.ALL);
 
@@ -546,7 +546,7 @@ public class UnmappingFilterVisitorTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testLogicFilterAnd() throws Exception {
+    public void testLogicFilterAnd() {
         PropertyIsEqualTo equals = ff.equals(ff.property("measurement/result"), ff.literal(1.1));
         PropertyIsGreaterThan greater =
                 ff.greater(ff.property("measurement/determinand_description"), ff.literal("desc1"));
@@ -585,7 +585,7 @@ public class UnmappingFilterVisitorTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testFunction() throws Exception {
+    public void testFunction() {
         Function fe =
                 ff.function(
                         "strIndexOf",
@@ -634,7 +634,7 @@ public class UnmappingFilterVisitorTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testLikeFilter() throws Exception {
+    public void testLikeFilter() {
         final String wildcard = "%";
         final String single = "?";
         final String escape = "\\";
@@ -662,7 +662,7 @@ public class UnmappingFilterVisitorTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testLiteralExpression() throws Exception {
+    public void testLiteralExpression() {
         Expression literal = ff.literal(Integer.valueOf(0));
         List unrolledExpressions = (List) literal.accept(visitor, null);
         assertEquals(1, unrolledExpressions.size());
@@ -725,7 +725,7 @@ public class UnmappingFilterVisitorTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testMathExpression() throws Exception {
+    public void testMathExpression() {
         Literal literal = ff.literal(Integer.valueOf(2));
         Multiply mathExp = ff.multiply(ff.property("measurement/result"), literal);
 
@@ -742,7 +742,7 @@ public class UnmappingFilterVisitorTest extends AppSchemaTestSupport {
     }
 
     @Test
-    public void testNullFilter() throws Exception {
+    public void testNullFilter() {
         PropertyIsNull nullFilter = ff.isNull(ff.property("measurement/result"));
 
         Filter unrolled = (Filter) nullFilter.accept(visitor, null);
@@ -757,7 +757,7 @@ public class UnmappingFilterVisitorTest extends AppSchemaTestSupport {
 
     @Test
     @SuppressWarnings("PMD.UseAssertEqualsInsteadOfAssertTrue")
-    public void testBBox3D() throws Exception {
+    public void testBBox3D() {
         BBOX bbox = ff.bbox("location", new ReferencedEnvelope3D(0, 10, 20, 50, 60, 70, null));
 
         assertTrue(bbox instanceof BBOX3DImpl);

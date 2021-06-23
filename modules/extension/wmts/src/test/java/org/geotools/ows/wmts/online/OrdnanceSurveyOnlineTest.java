@@ -56,7 +56,7 @@ public class OrdnanceSurveyOnlineTest extends OnlineTestCase {
     }
 
     @Override
-    protected void setUpInternal() throws Exception {
+    protected void setUpInternal() {
         wmtsUrl = fixture.getProperty("wmts_url");
         key = fixture.getProperty("key");
     }

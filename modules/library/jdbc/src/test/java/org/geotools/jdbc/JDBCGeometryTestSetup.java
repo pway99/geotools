@@ -50,7 +50,7 @@ public abstract class JDBCGeometryTestSetup extends JDBCDelegatingTestSetup {
     }
 
     @Override
-    protected void setUpData() throws Exception {
+    protected void setUpData() {
         // nothing to do, the tables are setup within the test
         // this method is overridden so that we avoid calling the delegate setUpData method
     }

@@ -75,7 +75,7 @@ class DirectoryTypeCache {
      *
      * @param directory a non null File pointing to an existing directory
      */
-    DirectoryTypeCache(File directory, FileStoreFactory factory) throws IOException {
+    DirectoryTypeCache(File directory, FileStoreFactory factory) {
         // some basic checks
         if (directory == null)
             throw new NullPointerException("Directory parameter should be not null");

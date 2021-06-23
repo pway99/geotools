@@ -433,14 +433,14 @@ public class SLDParserTest {
     static StyleFactory styleFactory = CommonFactoryFinder.getStyleFactory(null);
 
     @Test
-    public void testBasic() throws Exception {
+    public void testBasic() {
         SLDParser parser = new SLDParser(styleFactory, input(SLD));
         Style[] styles = parser.readXML();
         assertStyles(styles);
     }
 
     @Test
-    public void testLocalizedRuleTitle() throws Exception {
+    public void testLocalizedRuleTitle() {
         SLDParser parser = new SLDParser(styleFactory, input(LocalizedSLD));
         Style[] styles = parser.readXML();
         assertEquals(
@@ -577,7 +577,7 @@ public class SLDParserTest {
     }
 
     @Test
-    public void testEmptyTitle() throws Exception {
+    public void testEmptyTitle() {
         SLDParser parser = new SLDParser(styleFactory, input(EmptyTitleSLD));
         Style[] styles = parser.readXML();
         assertEquals(
@@ -593,7 +593,7 @@ public class SLDParserTest {
     }
 
     @Test
-    public void testEmptyAbstract() throws Exception {
+    public void testEmptyAbstract() {
         SLDParser parser = new SLDParser(styleFactory, input(EmptyAbstractSLD));
         Style[] styles = parser.readXML();
         assertEquals(
@@ -609,7 +609,7 @@ public class SLDParserTest {
     }
 
     @Test
-    public void testMultipleParse() throws Exception {
+    public void testMultipleParse() {
         SLDParser parser = new SLDParser(styleFactory, input(SLD));
         Style[] styles = parser.readXML();
         assertStyles(styles);
@@ -625,7 +625,7 @@ public class SLDParserTest {
     }
 
     @Test
-    public void testDefaultPoint() throws Exception {
+    public void testDefaultPoint() {
         // fixes for GEOS-3111 broke default point symbsolizer handling
         SLDParser parser = new SLDParser(styleFactory, input(SLD_DEFAULT_POINT));
         Style[] styles = parser.readXML();
@@ -828,7 +828,7 @@ public class SLDParserTest {
     }
 
     @Test
-    public void testNullVendorObject() throws Exception {
+    public void testNullVendorObject() {
 
         final String OK_KEY = "OkVendor";
 
@@ -845,7 +845,7 @@ public class SLDParserTest {
     }
 
     @Test
-    public void testVendorOptionsInRasterSymbolizer() throws Exception {
+    public void testVendorOptionsInRasterSymbolizer() {
         // tests that VendorOptions placed under a RasterSymbolizer
         // are correctly parsed
         SLDParser parser =
@@ -865,7 +865,7 @@ public class SLDParserTest {
     }
 
     @Test
-    public void testVendorOptionsInRule() throws Exception {
+    public void testVendorOptionsInRule() {
         // tests that VendorOptions placed under a RasterSymbolizer
         // are correctly parsed
         SLDParser parser = new SLDParser(styleFactory, input(SLD_RULE_WITH_VENDOR_OPTIONS));

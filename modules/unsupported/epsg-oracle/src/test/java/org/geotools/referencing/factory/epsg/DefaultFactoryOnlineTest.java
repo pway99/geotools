@@ -222,7 +222,7 @@ public class DefaultFactoryOnlineTest extends OracleOnlineTestCase {
      * Tests closing the factory after the timeout. <strong>IMPORTANT:</strong> This test must be
      * run after {@link #testCreation} and before any call to {@code getAuthorityCodes()}.
      */
-    public void testTimeout() throws FactoryException {
+    public void testTimeout() {
         System.gc(); // If there is any object holding a connection to the EPSG
         System.runFinalization(); // database, running finalizers may help to close them.
         factory.setTimeout(200);
@@ -253,7 +253,7 @@ public class DefaultFactoryOnlineTest extends OracleOnlineTestCase {
      * call to {@code getDescriptionText(...)}, and concequently must be run after {@link
      * #testTimeout}. See {@link #testDescriptionText}.
      */
-    public void testNameUsage() throws FactoryException {
+    public void testNameUsage() {
         /*
          * Tests unit
          */
@@ -307,7 +307,7 @@ public class DefaultFactoryOnlineTest extends OracleOnlineTestCase {
      * implementation of {@code getDescriptionText(...)} invokes {@code getAuthorityCodes()}, and
      * concequently this test must be run after {@link #testTimeout}.
      */
-    public void testDescriptionText() throws FactoryException {
+    public void testDescriptionText() {
         assertEquals(
                 "World Geodetic System 1984",
                 factory.getDescriptionText("6326").toString(Locale.ENGLISH));
@@ -320,7 +320,7 @@ public class DefaultFactoryOnlineTest extends OracleOnlineTestCase {
     }
 
     /** Tests the {@code getAuthorityCodes()} method. */
-    public void testAuthorityCodes() throws FactoryException {
+    public void testAuthorityCodes() {
         final Set crs = factory.getAuthorityCodes(CoordinateReferenceSystem.class);
         assertFalse(crs.isEmpty());
         assertEquals("Check size() consistency", crs.size(), crs.size());
@@ -418,7 +418,7 @@ public class DefaultFactoryOnlineTest extends OracleOnlineTestCase {
     }
 
     /** Tests {@link CRS#getEnvelope} and {@link CRS#getGeographicBoundingBox}. */
-    public void testValidArea() throws FactoryException, TransformException {
+    public void testValidArea() throws TransformException {
         final CoordinateReferenceSystem crs = factory.createCoordinateReferenceSystem("7400");
         final GeographicBoundingBox bbox = CRS.getGeographicBoundingBox(crs);
         assertNotNull(
@@ -507,7 +507,7 @@ public class DefaultFactoryOnlineTest extends OracleOnlineTestCase {
     }
 
     /** Tests the creation of {@link Conversion} objects. */
-    public void testConversions() throws FactoryException {
+    public void testConversions() {
         /*
          * UTM zone 10N
          */
@@ -546,7 +546,7 @@ public class DefaultFactoryOnlineTest extends OracleOnlineTestCase {
     }
 
     /** Tests the creation of {@link Transformation} objects. */
-    public void testTransformations() throws FactoryException {
+    public void testTransformations() {
         /*
          * Longitude rotation
          */
@@ -695,7 +695,7 @@ public class DefaultFactoryOnlineTest extends OracleOnlineTestCase {
      *
      * @see http://jira.codehaus.org/browse/GEOT-1268
      */
-    public void testEquivalent() throws FactoryException {
+    public void testEquivalent() {
         final String wkt =
                 "PROJCS[\"NAD_1983_StatePlane_Massachusetts_Mainland_FIPS_2001\", "
                         + "GEOGCS[\"GCS_North_American_1983\", "
@@ -727,7 +727,7 @@ public class DefaultFactoryOnlineTest extends OracleOnlineTestCase {
     }
 
     /** Tests {@link ThreadedEpsgFactory#find} method. */
-    public void testFind() throws FactoryException {
+    public void testFind() {
         final IdentifiedObjectFinder finder =
                 factory.getIdentifiedObjectFinder(CoordinateReferenceSystem.class);
         assertTrue("Full scan should be enabled by default.", finder.isFullScanAllowed());

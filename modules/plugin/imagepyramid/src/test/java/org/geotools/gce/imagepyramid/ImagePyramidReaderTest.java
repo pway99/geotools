@@ -57,7 +57,6 @@ import org.opengis.geometry.MismatchedDimensionException;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.InvalidParameterValueException;
 import org.opengis.parameter.ParameterValue;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 
 /**
  * Testing {@link ImagePyramidReader}.
@@ -177,7 +176,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
 
     @Test
     public void testDefaultParameterValue()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException {
+            throws IOException, MismatchedDimensionException {
 
         //
         // Get the resource.
@@ -210,7 +209,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
 
     @Test
     public void testDefaultParameterValueFile()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException {
+            throws IOException, MismatchedDimensionException {
         //
         // Get the resource.
         //
@@ -240,7 +239,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
 
     @Test
     public void testDefaultParameterValueString()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException {
+            throws IOException, MismatchedDimensionException {
 
         //
         // Get the resource.
@@ -272,7 +271,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
 
     @Test
     public void testForErrors()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException {
+            throws IOException, MismatchedDimensionException {
         //
         // Get the resource.
         //
@@ -317,7 +316,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
 
     @Test
     public void testComplete()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException {
+            throws IOException, MismatchedDimensionException {
 
         //
         // Get the resource.
@@ -359,7 +358,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
      */
     @Test
     public void testRequestOutsideBounds()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException {
+            throws IOException, MismatchedDimensionException {
         // grab the reader
         final URL testFile = TestData.getResource(this, "goodpyramid/" + TEST_FILE);
         assertNotNull(testFile);
@@ -395,7 +394,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
      */
     @Test
     public void testCropHighestLevel()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException {
+            throws IOException, MismatchedDimensionException {
         //
         // Get the resource.
         //
@@ -452,7 +451,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
      */
     @Test
     public void testCropLevel1()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException {
+            throws IOException, MismatchedDimensionException {
 
         //
         // Get the resource.
@@ -507,7 +506,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
      */
     @Test
     public void testCropLevel2()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException {
+            throws IOException, MismatchedDimensionException {
 
         // /////////////////////////////////////////////////////////////////
         //
@@ -563,7 +562,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
      */
     @Test
     public void testCropLevel3()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException {
+            throws IOException, MismatchedDimensionException {
 
         // Get the resource.
         //
@@ -613,7 +612,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
 
     /** Tests that we recognize gdal_retile structure */
     @Test
-    public void badPyramid1() throws IOException {
+    public void badPyramid1() {
         final URL sourceDir = TestData.getResource(this, "badpyramid1");
         // now make sure we can actually rebuild the mosaic
         final AbstractGridFormat format = new ImagePyramidFormat();
@@ -626,7 +625,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
 
     /** Tests that we recognize gdal_retile structure */
     @Test
-    public void badPyramid2() throws IOException {
+    public void badPyramid2() {
         final URL sourceDir = TestData.getResource(this, "badpyramid2");
         // now make sure we can actually rebuild the mosaic
         final AbstractGridFormat format = new ImagePyramidFormat();
@@ -639,7 +638,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
 
     @Test
     public void timePyramid()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException,
+            throws IOException, MismatchedDimensionException,
                     InvalidParameterValueException, ParseException {
 
         //
@@ -726,7 +725,7 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
      */
     @Test
     public void timePyramidForGeoserver()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException,
+            throws IOException, MismatchedDimensionException,
                     InvalidParameterValueException, ParseException {
 
         //
@@ -811,8 +810,8 @@ public class ImagePyramidReaderTest extends ImageLevelsMapperTest {
     /** */
     @Test
     public void multicoveragePyramid()
-            throws IOException, MismatchedDimensionException, NoSuchAuthorityCodeException,
-                    InvalidParameterValueException, ParseException {
+            throws IOException, MismatchedDimensionException,
+                    InvalidParameterValueException {
 
         //
         // Get the resource.

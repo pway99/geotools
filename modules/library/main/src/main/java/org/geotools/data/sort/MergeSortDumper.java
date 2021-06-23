@@ -70,8 +70,7 @@ class MergeSortDumper {
         return true;
     }
 
-    static SimpleFeatureReader getDelegateReader(SimpleFeatureReader reader, Query query)
-            throws IOException {
+    static SimpleFeatureReader getDelegateReader(SimpleFeatureReader reader, Query query) {
         int maxFeatures = getMaxFeatures(query);
 
         return getDelegateReader(reader, query.getSortBy(), maxFeatures);

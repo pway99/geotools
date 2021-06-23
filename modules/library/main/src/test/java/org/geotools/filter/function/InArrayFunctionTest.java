@@ -25,7 +25,7 @@ import org.opengis.filter.expression.Function;
 
 public class InArrayFunctionTest {
     @Test
-    public void testMatchIntegers() throws Exception {
+    public void testMatchIntegers() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func =
                 ff.function(
@@ -36,7 +36,7 @@ public class InArrayFunctionTest {
     }
 
     @Test
-    public void testMatchStrings() throws Exception {
+    public void testMatchStrings() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func =
                 ff.function(
@@ -45,7 +45,7 @@ public class InArrayFunctionTest {
     }
 
     @Test
-    public void testDoesNotMatchIntegers() throws Exception {
+    public void testDoesNotMatchIntegers() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func =
                 ff.function(
@@ -56,7 +56,7 @@ public class InArrayFunctionTest {
     }
 
     @Test
-    public void testDoesNotMatchStrings() throws Exception {
+    public void testDoesNotMatchStrings() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func =
                 ff.function(
@@ -65,7 +65,7 @@ public class InArrayFunctionTest {
     }
 
     @Test
-    public void testDoesNotMatchIfNotArray() throws Exception {
+    public void testDoesNotMatchIfNotArray() {
         FilterFactoryImpl ff = new FilterFactoryImpl();
         Function func = ff.function("inArray", ff.literal("a"), ff.literal("g"));
         assertFalse((Boolean) func.evaluate(new Object()));

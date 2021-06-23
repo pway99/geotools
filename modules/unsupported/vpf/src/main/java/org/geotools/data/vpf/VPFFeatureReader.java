@@ -46,8 +46,7 @@ public class VPFFeatureReader implements FeatureReader<SimpleFeatureType, Simple
         this.featureType = type;
     }
 
-    public VPFFeatureReader(ContentState contentState, VPFFeatureType featureType)
-            throws IOException {
+    public VPFFeatureReader(ContentState contentState, VPFFeatureType featureType) {
         this.state = contentState;
         this.featureType = featureType;
     }
@@ -56,7 +55,7 @@ public class VPFFeatureReader implements FeatureReader<SimpleFeatureType, Simple
      * @see org.geotools.data.FeatureReader#close()
      */
     @Override
-    public synchronized void close() throws IOException {
+    public synchronized void close() {
         reset();
     }
 
@@ -72,7 +71,7 @@ public class VPFFeatureReader implements FeatureReader<SimpleFeatureType, Simple
      * @see org.geotools.data.FeatureReader#hasNext()
      */
     @Override
-    public synchronized boolean hasNext() throws IOException {
+    public synchronized boolean hasNext() {
         VPFFeatureClass featureClass = featureType.getFeatureClass();
         if (!resetCalled) {
             this.reset();
@@ -97,7 +96,7 @@ public class VPFFeatureReader implements FeatureReader<SimpleFeatureType, Simple
      *
      * @return Whether we need to read again
      */
-    private synchronized boolean readNext() throws IOException {
+    private synchronized boolean readNext() {
         VPFFeatureClass featureClass = featureType.getFeatureClass();
         if (!resetCalled) {
             this.reset();

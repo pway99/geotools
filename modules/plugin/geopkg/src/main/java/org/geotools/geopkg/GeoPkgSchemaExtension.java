@@ -78,7 +78,7 @@ public class GeoPkgSchemaExtension extends GeoPkgExtension {
     }
 
     List<DataColumn> getDataColumns(String tableName, Connection cx)
-            throws IOException, SQLException {
+            throws SQLException {
         List<DataColumn> result = new ArrayList<>();
         if (!isRegistered(cx)) {
             return Collections.emptyList();
@@ -196,7 +196,7 @@ public class GeoPkgSchemaExtension extends GeoPkgExtension {
     }
 
     void addDataColumn(String tableName, DataColumn dataColumn, Connection cx)
-            throws IOException, SQLException {
+            throws SQLException {
         DataColumnConstraint constraint = dataColumn.getConstraint();
         String constraintName = null;
         if (constraint != null) {

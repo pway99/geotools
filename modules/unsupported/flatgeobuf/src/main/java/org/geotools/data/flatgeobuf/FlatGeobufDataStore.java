@@ -133,8 +133,7 @@ public class FlatGeobufDataStore extends ContentDataStore {
     }
 
     @Override
-    protected ContentFeatureSource createFeatureSource(ContentEntry contentEntry)
-            throws IOException {
+    protected ContentFeatureSource createFeatureSource(ContentEntry contentEntry) {
         if (file != null && !file.exists()) {
             return new FlatGeobufFeatureStore(contentEntry, Query.ALL);
         } else {

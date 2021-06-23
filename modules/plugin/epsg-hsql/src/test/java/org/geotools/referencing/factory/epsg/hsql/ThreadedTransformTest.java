@@ -17,7 +17,6 @@
 package org.geotools.referencing.factory.epsg.hsql;
 
 import java.awt.geom.Rectangle2D;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -36,7 +35,6 @@ import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.CoordinateOperation;
 import org.opengis.referencing.operation.CoordinateOperationFactory;
 import org.opengis.referencing.operation.OperationNotFoundException;
-import org.opengis.referencing.operation.TransformException;
 
 /**
  * Unit test for <a href="https://jira.codehaus.org/browse/GEOT-4780">GEOT-4780</>.<br>
@@ -79,14 +77,14 @@ public class ThreadedTransformTest {
      * @throws java.lang.Exception
      */
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         nad83 = CRS.decode("EPSG:4269");
         wgs84 = CRS.decode("EPSG:4326");
         envelope = new Envelope2D(wgs84, new Rectangle2D.Double(-77.145996, 39.04541, 0.1, 0.1));
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         EXECUTOR.shutdown();
     }
 
@@ -97,8 +95,7 @@ public class ThreadedTransformTest {
     }
 
     protected void transform()
-            throws URISyntaxException, OperationNotFoundException, FactoryException,
-                    TransformException {
+            throws OperationNotFoundException, FactoryException {
         for (int iter = 0; iter < NUM_ITERATIONS; iter++) {
             CoordinateOperationFactory coordinateOperationFactory =
                     ReferencingFactoryFinder.getCoordinateOperationFactory(HINTS);

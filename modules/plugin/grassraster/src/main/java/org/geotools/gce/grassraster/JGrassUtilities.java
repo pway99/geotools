@@ -52,10 +52,8 @@ import org.geotools.referencing.CRS;
 import org.geotools.util.factory.GeoTools;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Envelope;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.MathTransform;
-import org.opengis.referencing.operation.TransformException;
 
 /**
  * A facade of often used methods by the JGrass engine
@@ -143,8 +141,7 @@ public class JGrassUtilities {
         return new BufferedImage(cm, wr, false, null);
     }
 
-    public static Envelope reprojectEnvelopeByEpsg(int srcEpsg, int destEpsg, Envelope srcEnvelope)
-            throws FactoryException, TransformException {
+    public static Envelope reprojectEnvelopeByEpsg(int srcEpsg, int destEpsg, Envelope srcEnvelope) {
 
         CoordinateReferenceSystem sourceCRS = CRS.decode("EPSG:" + srcEpsg); // $NON-NLS-1$
         CoordinateReferenceSystem targetCRS = CRS.decode("EPSG:" + destEpsg); // $NON-NLS-1$
@@ -509,7 +506,7 @@ public class JGrassUtilities {
     }
 
     public static JGrassRegion getJGrassRegionFromGridCoverage(GridCoverage2D gridCoverage2D)
-            throws InvalidGridGeometryException, TransformException {
+            throws InvalidGridGeometryException {
         Envelope2D env = gridCoverage2D.getEnvelope2D();
         GridEnvelope2D worldToGrid = gridCoverage2D.getGridGeometry().worldToGrid(env);
 

@@ -47,7 +47,7 @@ public class UnitBinding extends AbstractSimpleBinding {
 
     /** @override */
     @Override
-    public Object parse(InstanceComponent instance, Object value) throws Exception {
+    public Object parse(InstanceComponent instance, Object value) {
         // Object parseObject = UnitFormat.getInstance().parseObject((String) value);
         // Object parseObject = UnitFormat.getAsciiInstance().parseObject((String) value);
         Unit<?> valueOf = lookup((String) value);
@@ -109,7 +109,7 @@ public class UnitBinding extends AbstractSimpleBinding {
      * @override
      */
     @Override
-    public String encode(Object object, String value) throws Exception {
+    public String encode(Object object, String value) {
         return object.toString();
     }
 }

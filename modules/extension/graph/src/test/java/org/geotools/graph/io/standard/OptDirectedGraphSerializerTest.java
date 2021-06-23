@@ -33,7 +33,7 @@ public class OptDirectedGraphSerializerTest {
     private SerializedReaderWriter m_serializer;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         m_builder = createBuilder();
         m_rebuilder = createBuilder();

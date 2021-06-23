@@ -41,7 +41,7 @@ public class CapabilitiesFilterSplitterSpatialTest extends AbstractCapabilitiesF
     private Geometry geom = new MockGeometryImpl();
 
     @Test
-    public void testBBOX() throws Exception {
+    public void testBBOX() {
         // JE:  this test fails but I am not sure if it is a bug or expected behaviour
         // I wrote this test so it may be correct but it maybe wrong.  Someone that knows should
         // look at this.
@@ -50,61 +50,61 @@ public class CapabilitiesFilterSplitterSpatialTest extends AbstractCapabilitiesF
     }
 
     @Test
-    public void testBEYOND() throws Exception {
+    public void testBEYOND() {
         Filter f = ff.beyond(geomAtt, geom, 10, "");
         runTest(f, newCapabilities(Beyond.class), geomAtt);
     }
 
     @Test
-    public void testCONTAINS() throws Exception {
+    public void testCONTAINS() {
         Filter f = ff.contains(geomAtt, geom);
         runTest(f, newCapabilities(Contains.class), geomAtt);
     }
 
     @Test
-    public void testCROSSES() throws Exception {
+    public void testCROSSES() {
         Filter f = ff.crosses(geomAtt, geom);
         runTest(f, newCapabilities(Crosses.class), geomAtt);
     }
 
     @Test
-    public void testDISJOINT() throws Exception {
+    public void testDISJOINT() {
         Filter f = ff.disjoint(geomAtt, geom);
         runTest(f, newCapabilities(Disjoint.class), geomAtt);
     }
 
     @Test
-    public void tesDWITHINt() throws Exception {
+    public void tesDWITHINt() {
         Filter f = ff.dwithin(geomAtt, geom, 10, "");
         runTest(f, newCapabilities(DWithin.class), geomAtt);
     }
 
     @Test
-    public void testEQUALS() throws Exception {
+    public void testEQUALS() {
         Filter f = ff.equals(geomAtt, geom);
         runTest(f, newCapabilities(Equals.class), geomAtt);
     }
 
     @Test
-    public void testINTERSECTS() throws Exception {
+    public void testINTERSECTS() {
         Filter f = ff.intersects(geomAtt, geom);
         runTest(f, newCapabilities(Intersects.class), geomAtt);
     }
 
     @Test
-    public void testOVERLAPS() throws Exception {
+    public void testOVERLAPS() {
         Filter f = ff.overlaps(geomAtt, geom);
         runTest(f, newCapabilities(Overlaps.class), geomAtt);
     }
 
     @Test
-    public void testTOUCHES() throws Exception {
+    public void testTOUCHES() {
         Filter f = ff.touches(geomAtt, geom);
         runTest(f, newCapabilities(Touches.class), geomAtt);
     }
 
     @Test
-    public void testWITHIN() throws Exception {
+    public void testWITHIN() {
         Filter f = ff.within(geomAtt, geom);
         runTest(f, newCapabilities(Within.class), geomAtt);
     }

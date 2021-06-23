@@ -181,7 +181,7 @@ public class StreamingParser {
      * <p>We do this to allow the jxpath component to be removed... and avoid its dependencies.
      */
     static StreamingParserHandler createJXpathStreamingParserHandler(
-            Configuration configuration, String xpath) throws ParserConfigurationException {
+            Configuration configuration, String xpath) {
 
         Class<?> clazz;
         try {

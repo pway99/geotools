@@ -61,7 +61,7 @@ public class FilterToMongoTest {
     MongoGeometryBuilder geometryBuilder;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         ff = CommonFactoryFinder.getFilterFactory2();
         filterToMongo = new FilterToMongo(new GeoJSONMapper());
 
@@ -76,7 +76,7 @@ public class FilterToMongoTest {
     }
 
     @Test
-    public void testEqualTo() throws Exception {
+    public void testEqualTo() {
         PropertyIsEqualTo equalTo = ff.equals(ff.property("foo"), ff.literal("bar"));
         BasicDBObject obj = (BasicDBObject) equalTo.accept(filterToMongo, null);
         Assert.assertNotNull(obj);
@@ -211,7 +211,7 @@ public class FilterToMongoTest {
     }
 
     @Test
-    public void testLike() throws Exception {
+    public void testLike() {
         PropertyIsLike like = ff.like(ff.property("stringProperty"), "on%", "%", "_", "\\");
         BasicDBObject obj = (BasicDBObject) like.accept(filterToMongo, null);
 
@@ -219,7 +219,7 @@ public class FilterToMongoTest {
     }
 
     @Test
-    public void testLikeUnsupported() throws Exception {
+    public void testLikeUnsupported() {
         PropertyIsLike likeLiteral = ff.like(ff.literal("once upon a time"), "on%", "%", "_", "\\");
         PropertyIsLike likeFunction =
                 ff.like(
@@ -315,7 +315,7 @@ public class FilterToMongoTest {
     }
 
     @Test
-    public void testEqualToInteger() throws Exception {
+    public void testEqualToInteger() {
         PropertyIsEqualTo equalTo = ff.equals(ff.property("foo"), ff.literal(10));
         BasicDBObject obj = (BasicDBObject) equalTo.accept(filterToMongo, null);
         Assert.assertNotNull(obj);
@@ -325,7 +325,7 @@ public class FilterToMongoTest {
     }
 
     @Test
-    public void testEqualToLong() throws Exception {
+    public void testEqualToLong() {
         PropertyIsEqualTo equalTo = ff.equals(ff.property("foo"), ff.literal(10L));
         BasicDBObject obj = (BasicDBObject) equalTo.accept(filterToMongo, null);
         Assert.assertNotNull(obj);
@@ -335,7 +335,7 @@ public class FilterToMongoTest {
     }
 
     @Test
-    public void testEqualToBigInteger() throws Exception {
+    public void testEqualToBigInteger() {
         PropertyIsEqualTo equalTo =
                 ff.equals(ff.property("foo"), ff.literal(BigInteger.valueOf(10L)));
         BasicDBObject obj = (BasicDBObject) equalTo.accept(filterToMongo, null);
@@ -346,7 +346,7 @@ public class FilterToMongoTest {
     }
 
     @Test
-    public void testLiteralsHandling() throws Exception {
+    public void testLiteralsHandling() {
         // test NULL properties, supported primitives types should be preserved
         testLiteralEncoding(null, null, null);
         testLiteralEncoding(null, Object.class, null);

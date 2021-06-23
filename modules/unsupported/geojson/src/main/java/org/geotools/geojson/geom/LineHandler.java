@@ -16,7 +16,6 @@
  */
 package org.geotools.geojson.geom;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import org.json.simple.parser.ParseException;
 import org.locationtech.jts.geom.Coordinate;
@@ -32,7 +31,7 @@ public class LineHandler extends GeometryHandlerBase<LineString> {
     }
 
     @Override
-    public boolean startObjectEntry(String key) throws ParseException, IOException {
+    public boolean startObjectEntry(String key) {
         if ("coordinates".equals(key)) {
             coordinates = new ArrayList<>();
         }
@@ -40,7 +39,7 @@ public class LineHandler extends GeometryHandlerBase<LineString> {
     }
 
     @Override
-    public boolean endObject() throws ParseException, IOException {
+    public boolean endObject() {
         if (coordinates != null) {
             Coordinate[] cs = coordinates(coordinates);
             value = factory.createLineString(cs);
@@ -50,7 +49,7 @@ public class LineHandler extends GeometryHandlerBase<LineString> {
     }
 
     @Override
-    public boolean startArray() throws ParseException, IOException {
+    public boolean startArray() {
         if (ordinates == null) {
             ordinates = new ArrayList<>();
         }
@@ -58,7 +57,7 @@ public class LineHandler extends GeometryHandlerBase<LineString> {
     }
 
     @Override
-    public boolean endArray() throws ParseException, IOException {
+    public boolean endArray() throws ParseException {
         if (ordinates != null) {
             Coordinate c = coordinate(ordinates);
             coordinates.add(c);

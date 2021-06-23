@@ -10,7 +10,7 @@ public class H2GeometryTestSetup extends JDBCGeometryTestSetup {
     }
 
     @Override
-    protected void dropSpatialTable(String tableName) throws Exception {
+    protected void dropSpatialTable(String tableName) {
         runSafe("CALL DropGeometryColumns('geotools', '" + tableName + "'");
     }
 }

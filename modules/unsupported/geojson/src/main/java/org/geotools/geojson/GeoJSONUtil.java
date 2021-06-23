@@ -131,7 +131,7 @@ public class GeoJSONUtil {
                 }
 
                 @Override
-                public void close() throws IOException {}
+                public void close() {}
             };
         }
 

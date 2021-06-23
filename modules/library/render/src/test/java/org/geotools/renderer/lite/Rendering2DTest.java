@@ -19,7 +19,6 @@ package org.geotools.renderer.lite;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -106,7 +105,7 @@ public class Rendering2DTest {
         rendererHints.put("optimizedDataLoadingEnabled", Boolean.TRUE);
     }
 
-    Style loadTestStyle() throws IOException {
+    Style loadTestStyle() {
         StyleFactory factory = CommonFactoryFinder.getStyleFactory(null);
 
         URL surl = TestData.getResource(this, "test-sld.xml");
@@ -646,7 +645,7 @@ public class Rendering2DTest {
      * <p>This method relies on the features created on createTestFeatureCollection()
      */
     @Test
-    public void testDefinitionQueryProcessing() throws Exception {
+    public void testDefinitionQueryProcessing() {
 
         // LOGGER.info("starting definition query test");
         // final SimpleFeatureCollection ft = createTestDefQueryFeatureCollection();
@@ -763,7 +762,7 @@ public class Rendering2DTest {
     }
 
     @Test
-    public void testDefinitionQuerySLDProcessing() throws Exception {
+    public void testDefinitionQuerySLDProcessing() {
         // final SimpleFeatureCollection ft = createTestDefQueryFeatureCollection();
         // final Style style = createDefQueryTestStyle();
         // FeatureResults results;

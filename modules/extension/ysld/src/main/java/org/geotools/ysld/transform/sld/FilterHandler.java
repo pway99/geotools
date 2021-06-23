@@ -35,7 +35,7 @@ public class FilterHandler extends SldTransformHandler {
 
     @Override
     public void element(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+            throws XMLStreamException {
         try {
             if (delegate == null && "Filter".equals(xml.getLocalName())) {
                 delegate = new ParserHandler(config(context));
@@ -55,7 +55,7 @@ public class FilterHandler extends SldTransformHandler {
 
     @Override
     public void characters(XMLStreamReader xml, SldTransformContext context)
-            throws XMLStreamException, IOException {
+            throws XMLStreamException {
         if (delegate != null) {
             try {
                 delegate.characters(

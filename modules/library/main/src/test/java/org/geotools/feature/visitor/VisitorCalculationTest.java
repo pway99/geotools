@@ -582,7 +582,7 @@ public class VisitorCalculationTest extends DataTestCase {
 
     // try merging 2 incompatible CalcResults and check for the exception
     @Test
-    public void testBadMerge() throws IllegalFilterException, IOException {
+    public void testBadMerge() throws IllegalFilterException {
         // count + max = boom!
         CountVisitor countVisitor = new CountVisitor();
         countVisitor.setValue(8);

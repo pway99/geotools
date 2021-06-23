@@ -341,7 +341,7 @@ class RandomFillBuilder {
 
         @Override
         public boolean checkAndReserve(List<AffineTransform2D> transforms)
-                throws MismatchedDimensionException, TransformException {
+                throws MismatchedDimensionException {
             List<Geometry> transformedConflictBounds = new ArrayList<>();
             boolean conflict = false;
             for (AffineTransform2D tx2d : transforms) {

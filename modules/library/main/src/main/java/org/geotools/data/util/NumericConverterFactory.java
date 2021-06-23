@@ -89,7 +89,7 @@ public class NumericConverterFactory implements ConverterFactory {
         // target.cast won't work for both the object wrapper and the primitive class
         @Override
         @SuppressWarnings("unchecked")
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             return (T) convertInternal(source, target);
         }
 
@@ -195,7 +195,7 @@ public class NumericConverterFactory implements ConverterFactory {
         // target.cast won't work for both the object wrapper and the primitive class
         @Override
         @SuppressWarnings("unchecked")
-        public <T> T convert(Object source, Class<T> target) throws Exception {
+        public <T> T convert(Object source, Class<T> target) {
             return (T) convertInternal(source, target);
         }
 

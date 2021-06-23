@@ -18,7 +18,6 @@ package org.geotools.util;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.nio.file.Path;
 import java.util.AbstractQueue;
@@ -145,7 +144,7 @@ public final class Utilities {
         }
 
         /** Returns the singleton instance of deserialization. */
-        protected Object readResolve() throws ObjectStreamException {
+        protected Object readResolve() {
             return EMPTY_QUEUE;
         }
     }
@@ -308,7 +307,7 @@ public final class Utilities {
      * @return {@code true} if both objects are equal.
      * @throws AssertionError If assertions are enabled and at least one argument is an array.
      */
-    public static boolean equals(final Object object1, final Object object2) throws AssertionError {
+    public static boolean equals(final Object object1, final Object object2) {
         assert object1 == null || !object1.getClass().isArray() : object1;
         assert object2 == null || !object2.getClass().isArray() : object2;
         return (object1 == object2) || (object1 != null && object1.equals(object2));
@@ -484,7 +483,7 @@ public final class Utilities {
      * @return An updated hash code value.
      * @throws AssertionError If assertions are enabled and the given value is an array.
      */
-    public static int hash(Object value, int seed) throws AssertionError {
+    public static int hash(Object value, int seed) {
         seed *= PRIME_NUMBER;
         if (value != null) {
             assert !value.getClass().isArray() : value;

@@ -112,7 +112,7 @@ public class SLDUserStyleBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         Style style = styleFactory.createStyle();
 
         // &lt;xsd:element ref="sld:Name" minOccurs="0"/&gt;

@@ -46,7 +46,7 @@ public class EpsgFallbackTest {
      * authority factory}.
      */
     @org.junit.Test
-    public void test26910() throws FactoryException {
+    public void test26910() {
         final String code = "EPSG:26910";
         final CoordinateReferenceSystem crs = CRS.decode(code);
         Assert.assertNotNull(crs);
@@ -59,7 +59,7 @@ public class EpsgFallbackTest {
      * EPSG authority factory}.
      */
     @org.junit.Test
-    public void test4326() throws FactoryException {
+    public void test4326() {
         final String code = "EPSG:4326";
         final CoordinateReferenceSystem crs = CRS.decode(code);
         Assert.assertNotNull(crs);
@@ -72,7 +72,7 @@ public class EpsgFallbackTest {
      * EPSG authority factory}.
      */
     @org.junit.Test
-    public void test4269() throws FactoryException {
+    public void test4269() {
         final String code = "EPSG:4269";
         final CoordinateReferenceSystem crs = CRS.decode(code);
         Assert.assertNotNull(crs);
@@ -82,7 +82,7 @@ public class EpsgFallbackTest {
 
     /** UDIG requires this to work. This CRS is defined in {@code unnamed.properties}. */
     @org.junit.Test
-    public void test42102() throws FactoryException {
+    public void test42102() {
         final String code = "EPSG:42102";
         final CoordinateReferenceSystem crs = CRS.decode(code);
         Assert.assertNotNull(crs);
@@ -102,7 +102,7 @@ public class EpsgFallbackTest {
      * authority factory}.
      */
     @org.junit.Test
-    public void test26910Lower() throws FactoryException {
+    public void test26910Lower() {
         final String code = "epsg:26910";
         final CoordinateReferenceSystem crs = CRS.decode(code);
         Assert.assertNotNull(crs);
@@ -115,7 +115,7 @@ public class EpsgFallbackTest {
      * authority factory}.
      */
     @org.junit.Test
-    public void test26986Lower() throws FactoryException {
+    public void test26986Lower() {
         final String code = "epsg:26986";
         final CoordinateReferenceSystem crs = CRS.decode(code);
         Assert.assertNotNull(crs);
@@ -128,7 +128,7 @@ public class EpsgFallbackTest {
      * authority factory}.
      */
     @org.junit.Test
-    public void test4326Lower() throws FactoryException {
+    public void test4326Lower() {
         final String code = "epsg:4326";
         final CoordinateReferenceSystem crs = CRS.decode(code);
         Assert.assertNotNull(crs);
@@ -141,7 +141,7 @@ public class EpsgFallbackTest {
      * authority factory}.
      */
     @org.junit.Test
-    public void test26742Lower() throws FactoryException {
+    public void test26742Lower() {
         final String code = "epsg:26742";
         final CoordinateReferenceSystem crs = CRS.decode(code);
         Assert.assertNotNull(crs);
@@ -154,7 +154,7 @@ public class EpsgFallbackTest {
      * authority factory}.
      */
     @org.junit.Test
-    public void test4269Lower() throws FactoryException {
+    public void test4269Lower() {
         final String code = "epsg:4269";
         final CoordinateReferenceSystem crs = CRS.decode(code);
         Assert.assertNotNull(crs);
@@ -164,7 +164,7 @@ public class EpsgFallbackTest {
 
     /** WFS requires this to work. This CRS is defined in {@code unnamed.properties}. */
     @org.junit.Test
-    public void test42304Lower() throws FactoryException {
+    public void test42304Lower() {
         final String code = "epsg:42304";
         final CoordinateReferenceSystem crs = CRS.decode(code);
         Assert.assertNotNull(crs);
@@ -173,7 +173,7 @@ public class EpsgFallbackTest {
 
     /** WFS requires this to work. This CRS is defined in {@code unnamed.properties}. */
     @org.junit.Test
-    public void test42102Lower() throws FactoryException {
+    public void test42102Lower() {
         final String code = "epsg:42102";
         final CoordinateReferenceSystem crs = CRS.decode(code);
         Assert.assertNotNull(crs);

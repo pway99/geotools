@@ -80,8 +80,7 @@ public class EckertIV extends MapProjection {
      * radians) and stores the result in {@code ptDst} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D transformNormalized(double lam, double phi, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double lam, double phi, Point2D ptDst) {
 
         double p = C_p * sin(phi);
         double V = phi * phi;
@@ -111,8 +110,7 @@ public class EckertIV extends MapProjection {
      * {@code ptDst}.
      */
     @Override
-    protected Point2D inverseTransformNormalized(double x, double y, Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D inverseTransformNormalized(double x, double y, Point2D ptDst) {
 
         double phi = aasin(y / C_y);
         double c = cos(phi);

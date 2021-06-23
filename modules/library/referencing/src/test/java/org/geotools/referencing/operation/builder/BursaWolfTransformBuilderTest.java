@@ -85,7 +85,7 @@ public final class BursaWolfTransformBuilderTest {
      * builder and compared against original.
      */
     @Test
-    public void test2BursaWolfParamCalculater() throws FactoryException, TransformException {
+    public void test2BursaWolfParamCalculater() throws FactoryException {
         double R = 6370000;
         Random random = new Random(143477662);
 

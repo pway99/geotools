@@ -139,7 +139,7 @@ public abstract class AbstractAuthorityFactory extends ReferencingFactory
      * @return The description of the underlying backing store, or {@code null}.
      * @throws FactoryException if a failure occurs while fetching the engine description.
      */
-    public String getBackingStoreDescription() throws FactoryException {
+    public String getBackingStoreDescription() {
         return null;
     }
 
@@ -159,8 +159,7 @@ public abstract class AbstractAuthorityFactory extends ReferencingFactory
      * @see #createUnit
      */
     @Override
-    public IdentifiedObject createObject(final String code)
-            throws NoSuchAuthorityCodeException, FactoryException {
+    public IdentifiedObject createObject(final String code) {
         ensureNonNull("code", code);
         throw noSuchAuthorityCode(IdentifiedObject.class, code);
     }
@@ -812,8 +811,7 @@ public abstract class AbstractAuthorityFactory extends ReferencingFactory
      * @since 2.2
      */
     public Set<CoordinateOperation> createFromCoordinateReferenceSystemCodes(
-            String sourceCRS, String targetCRS)
-            throws NoSuchAuthorityCodeException, FactoryException {
+            String sourceCRS, String targetCRS) {
         return Collections.emptySet();
     }
 
@@ -832,8 +830,7 @@ public abstract class AbstractAuthorityFactory extends ReferencingFactory
      * @throws FactoryException if the finder can not be created.
      * @since 2.4
      */
-    public IdentifiedObjectFinder getIdentifiedObjectFinder(Class<? extends IdentifiedObject> type)
-            throws FactoryException {
+    public IdentifiedObjectFinder getIdentifiedObjectFinder(Class<? extends IdentifiedObject> type) {
         return new IdentifiedObjectFinder(this, type);
     }
 
@@ -844,7 +841,7 @@ public abstract class AbstractAuthorityFactory extends ReferencingFactory
      *
      * @throws FactoryException if an error occured while disposing the factory.
      */
-    public void dispose() throws FactoryException {
+    public void dispose() {
         // To be overridden by subclasses.
     }
 

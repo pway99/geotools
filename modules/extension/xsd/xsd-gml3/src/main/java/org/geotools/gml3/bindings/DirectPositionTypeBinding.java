@@ -128,7 +128,7 @@ public class DirectPositionTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Element encode(Object object, Document document, Element value) throws Exception {
+    public Element encode(Object object, Document document, Element value) {
         CoordinateSequence cs = (CoordinateSequence) object;
         boolean hasm = cs.hasM();
         StringBuffer sb = new StringBuffer();

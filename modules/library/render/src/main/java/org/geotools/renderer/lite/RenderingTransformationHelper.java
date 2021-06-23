@@ -38,7 +38,6 @@ import org.geotools.data.Query;
 import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.factory.CommonFactoryFinder;
 import org.geotools.feature.FeatureCollection;
-import org.geotools.feature.SchemaException;
 import org.geotools.feature.collection.ClippingFeatureCollection;
 import org.geotools.filter.function.RenderingTransformation;
 import org.geotools.filter.visitor.ExtractBoundsFilterVisitor;
@@ -58,12 +57,10 @@ import org.opengis.filter.expression.Expression;
 import org.opengis.metadata.extent.GeographicBoundingBox;
 import org.opengis.parameter.GeneralParameterValue;
 import org.opengis.parameter.ParameterValueGroup;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.datum.PixelInCell;
 import org.opengis.referencing.operation.MathTransform;
 import org.opengis.referencing.operation.MathTransform2D;
-import org.opengis.referencing.operation.TransformException;
 
 /**
  * Helper class that transforms the input data via rendering transformations. Rolled out so that it
@@ -86,7 +83,7 @@ public abstract class RenderingTransformationHelper {
             GridGeometry2D gridGeometry,
             CoordinateReferenceSystem sourceCrs,
             RenderingHints hints)
-            throws IOException, SchemaException, TransformException, FactoryException {
+            throws IOException {
         Object result = null;
 
         // check if it's a wrapper coverage or a wrapped reader

@@ -255,7 +255,7 @@ public class ImageMosaicFileResourceInfo extends DefaultResourceInfo implements 
         }
 
         @Override
-        public void close() throws IOException {
+        public void close() {
             featureIterator.close();
         }
     }

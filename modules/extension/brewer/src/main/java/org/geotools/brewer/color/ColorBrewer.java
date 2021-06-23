@@ -78,7 +78,7 @@ public class ColorBrewer {
      * @param type A PaletteType object which will be used to configure the returned ColorBrewer.
      * @return The ColorBrewer instance with the palette from the parameter.
      */
-    public static ColorBrewer instance(PaletteType type) throws IOException {
+    public static ColorBrewer instance(PaletteType type) {
         ColorBrewer me = new ColorBrewer();
         me.loadPalettes(type);
 

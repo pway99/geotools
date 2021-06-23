@@ -22,8 +22,6 @@ import it.bancaditalia.oss.sdmx.api.DataFlowStructure;
 import it.bancaditalia.oss.sdmx.api.Dataflow;
 import it.bancaditalia.oss.sdmx.api.GenericSDMXClient;
 import it.bancaditalia.oss.sdmx.api.PortableTimeSeries;
-import it.bancaditalia.oss.sdmx.exceptions.SdmxException;
-import java.io.IOException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.logging.Logger;
@@ -53,8 +51,7 @@ public abstract class SDMXFeatureReader implements FeatureReader<SimpleFeatureTy
             SimpleFeatureType featureTypeIn,
             Dataflow dataflowIn,
             DataFlowStructure dfStructureIn,
-            Logger logger)
-            throws IOException, SdmxException {
+            Logger logger) {
 
         this.featureType = featureTypeIn;
         this.featIndex = 0;
@@ -84,7 +81,7 @@ public abstract class SDMXFeatureReader implements FeatureReader<SimpleFeatureTy
      * @see FeatureReader#next()
      */
     @Override
-    public SimpleFeature next() throws NoSuchElementException, IOException {
+    public SimpleFeature next() throws NoSuchElementException {
         return null;
     }
 

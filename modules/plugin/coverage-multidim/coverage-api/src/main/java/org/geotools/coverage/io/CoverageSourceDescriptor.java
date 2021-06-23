@@ -16,7 +16,6 @@
  */
 package org.geotools.coverage.io;
 
-import java.io.IOException;
 import java.util.List;
 import org.geotools.coverage.grid.io.DimensionDescriptor;
 import org.geotools.coverage.io.CoverageSource.AdditionalDomain;
@@ -128,7 +127,7 @@ public class CoverageSourceDescriptor {
         this.additionalDomains = additionalDomains;
     }
 
-    public List<DimensionDescriptor> getDimensionDescriptors() throws IOException {
+    public List<DimensionDescriptor> getDimensionDescriptors() {
         return dimensionDescriptors;
     }
 

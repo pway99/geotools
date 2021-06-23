@@ -110,7 +110,7 @@ public class GridCoverageReaderHelper {
             ReferencedEnvelope mapExtent,
             Interpolation interpolation,
             Hints hints)
-            throws FactoryException, IOException {
+            throws IOException {
         this.reader = reader;
         this.mapExtent = mapExtent;
         this.requestedGridGeometry =
@@ -162,7 +162,7 @@ public class GridCoverageReaderHelper {
      * Returns true if the reader is a reprojecting one, that is, one that can handle the coverage
      * reprojection on its own
      */
-    public static boolean isReprojectingReader(GridCoverage2DReader reader) throws IOException {
+    public static boolean isReprojectingReader(GridCoverage2DReader reader) {
         return "true".equals(reader.getMetadataValue(GridCoverage2DReader.REPROJECTING_READER));
     }
 
@@ -171,7 +171,7 @@ public class GridCoverageReaderHelper {
      * any target CRS, but internally is working with several CRSs and could use some extra padding
      * on the requests
      */
-    boolean isMultiCRSReader(GridCoverage2DReader reader) throws IOException {
+    boolean isMultiCRSReader(GridCoverage2DReader reader) {
         return "true".equals(reader.getMetadataValue(GridCoverage2DReader.MULTICRS_READER));
     }
 
@@ -542,7 +542,7 @@ public class GridCoverageReaderHelper {
     }
 
     boolean isAccurateResolutionComputationSafe(ReferencedEnvelope readEnvelope)
-            throws MismatchedDimensionException, FactoryException, TransformException {
+            throws MismatchedDimensionException {
         // accurate resolution computation depends on reprojection working, we need
         // to make sure the read envelope is sane for the source data at hand
         CoordinateReferenceSystem readCRS = readEnvelope.getCoordinateReferenceSystem();

@@ -42,7 +42,7 @@ class SimpleFeatureLockingBridge extends SimpleFeatureStoreBridge implements Sim
     }
 
     @Override
-    public int lockFeatures(Filter filter) throws IOException {
+    public int lockFeatures(Filter filter) {
         return delegate().lockFeatures(filter);
     }
 
@@ -62,7 +62,7 @@ class SimpleFeatureLockingBridge extends SimpleFeatureStoreBridge implements Sim
     }
 
     @Override
-    public void unLockFeatures(Filter filter) throws IOException {
+    public void unLockFeatures(Filter filter) {
         delegate().unLockFeatures(filter);
     }
 

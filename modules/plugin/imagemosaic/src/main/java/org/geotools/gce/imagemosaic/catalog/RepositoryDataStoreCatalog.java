@@ -17,7 +17,6 @@
 package org.geotools.gce.imagemosaic.catalog;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
@@ -86,8 +85,7 @@ public class RepositoryDataStoreCatalog extends AbstractGTDataStoreGranuleCatalo
     }
 
     @Override
-    protected void initTileIndexStore(Properties params, boolean create, DataStoreFactorySpi spi)
-            throws IOException, MalformedURLException {
+    protected void initTileIndexStore(Properties params, boolean create, DataStoreFactorySpi spi) {
         // nothing to do here, the store is provided on demand
         if (create) {
             // don't go looking for feature types, there are none

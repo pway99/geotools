@@ -80,7 +80,7 @@ public class FlatGeobufDirectoryDataStore extends ContentDataStore {
     }
 
     @Override
-    protected List<Name> createTypeNames() throws IOException {
+    protected List<Name> createTypeNames() {
         File[] files = directory.listFiles((dir, name) -> name.endsWith(".fgb"));
         List<Name> names = new ArrayList<>();
         if (files != null) {
@@ -97,7 +97,7 @@ public class FlatGeobufDirectoryDataStore extends ContentDataStore {
     }
 
     @Override
-    public void createSchema(SimpleFeatureType featureType) throws IOException {
+    public void createSchema(SimpleFeatureType featureType) {
         createFeatureTypes.put(featureType.getTypeName(), featureType);
     }
 

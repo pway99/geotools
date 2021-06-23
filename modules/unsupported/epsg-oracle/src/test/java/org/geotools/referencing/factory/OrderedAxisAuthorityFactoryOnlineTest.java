@@ -292,7 +292,7 @@ public class OrderedAxisAuthorityFactoryOnlineTest extends OracleOnlineTestCase 
     }
 
     /** Tests the creation of EPSG:4326 CRS with different axis order. */
-    public void testLongitudeFirst() throws FactoryException {
+    public void testLongitudeFirst() {
         final CoordinateReferenceSystem standard = CRS.decode("EPSG:4326", false);
         final CoordinateReferenceSystem modified = CRS.decode("EPSG:4326", true);
         assertEquals("Expected a left-handed CS.", -90, getAngle(standard), EPS);
@@ -311,7 +311,7 @@ public class OrderedAxisAuthorityFactoryOnlineTest extends OracleOnlineTestCase 
     }
 
     /** Tests the {@link IdentifiedObjectFinder#find} method with axis order forced. */
-    public void testFind() throws FactoryException {
+    public void testFind() {
         final CRSAuthorityFactory factory =
                 ReferencingFactoryFinder.getCRSAuthorityFactory(
                         "EPSG", new Hints(Hints.FORCE_LONGITUDE_FIRST_AXIS_ORDER, Boolean.TRUE));

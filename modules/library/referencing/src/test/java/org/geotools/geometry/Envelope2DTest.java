@@ -85,7 +85,7 @@ public class Envelope2DTest {
     }
 
     @Test
-    public void testInclude() throws Exception {
+    public void testInclude() {
 
         assertEquals("unexpected bounds x min after include", 10, australia.x, 0);
         assertEquals("unexpected bounds y min after include", 110, australia.y, 0);

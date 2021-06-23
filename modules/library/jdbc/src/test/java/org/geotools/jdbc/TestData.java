@@ -70,7 +70,7 @@ public class TestData {
     public SimpleFeature newRiver;
     public boolean forceLongitudeFirst = false;
 
-    public TestData(int initialFidValue) throws Exception {
+    public TestData(int initialFidValue) {
         this.initialFidValue = initialFidValue;
 
         gf = new GeometryFactory();

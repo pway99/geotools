@@ -346,7 +346,7 @@ public class IdentifiedObjectFinder {
         return null;
     }
 
-    protected Set getSpecificCodeCandidates(final IdentifiedObject object) throws FactoryException {
+    protected Set getSpecificCodeCandidates(final IdentifiedObject object) {
         return Collections.emptySet();
     }
 
@@ -408,8 +408,7 @@ public class IdentifiedObjectFinder {
      * @throws FactoryException if an error occured while creating a derived object.
      */
     protected IdentifiedObject deriveEquivalent(
-            final IdentifiedObject candidate, final IdentifiedObject model)
-            throws FactoryException {
+            final IdentifiedObject candidate, final IdentifiedObject model) {
         return CRS.equalsIgnoreMetadata(candidate, model) ? candidate : null;
     }
 

@@ -74,7 +74,7 @@ public class TupleTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName name) throws Exception {
+    public Object getProperty(Object object, QName name) {
         if (WFS.member.equals(name)) {
             return object;
         }

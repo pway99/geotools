@@ -35,21 +35,21 @@ public class SortedFeatureCollectionTest extends FeatureCollectionWrapperTestSup
     FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2(null);
 
     @Test
-    public void testNaturalSort() throws Exception {
+    public void testNaturalSort() {
         SortedSimpleFeatureCollection sorted =
                 new SortedSimpleFeatureCollection(delegate, new SortBy[] {SortBy.NATURAL_ORDER});
         checkSorted(sorted, DataUtilities.sortComparator(SortBy.NATURAL_ORDER));
     }
 
     @Test
-    public void testReverseSort() throws Exception {
+    public void testReverseSort() {
         SortedSimpleFeatureCollection sorted =
                 new SortedSimpleFeatureCollection(delegate, new SortBy[] {SortBy.REVERSE_ORDER});
         checkSorted(sorted, DataUtilities.sortComparator(SortBy.REVERSE_ORDER));
     }
 
     @Test
-    public void testSortAttribute() throws Exception {
+    public void testSortAttribute() {
         SortBy sort = ff.sort("someAtt", SortOrder.ASCENDING);
         SortedSimpleFeatureCollection sorted =
                 new SortedSimpleFeatureCollection(delegate, new SortBy[] {sort});
@@ -57,7 +57,7 @@ public class SortedFeatureCollectionTest extends FeatureCollectionWrapperTestSup
     }
 
     @Test
-    public void testSortAttributeDescending() throws Exception {
+    public void testSortAttributeDescending() {
         SortBy sort = ff.sort("someAtt", SortOrder.DESCENDING);
         SortedSimpleFeatureCollection sorted =
                 new SortedSimpleFeatureCollection(delegate, new SortBy[] {sort});

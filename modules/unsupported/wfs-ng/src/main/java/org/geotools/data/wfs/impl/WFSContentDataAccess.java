@@ -99,20 +99,20 @@ public class WFSContentDataAccess implements DataAccess<FeatureType, Feature> {
     }
 
     @Override
-    public void createSchema(FeatureType featureType) throws IOException {
+    public void createSchema(FeatureType featureType) {
         throw new UnsupportedOperationException(
                 "WFSContentDataAccess does not support createSchema.");
     }
 
     @Override
-    public void updateSchema(Name typeName, FeatureType featureType) throws IOException {
+    public void updateSchema(Name typeName, FeatureType featureType) {
         throw new UnsupportedOperationException(
                 "WFSContentDataAccess does not support update schema.");
     }
 
     /** Populates the names map and returns a list of names. */
     @Override
-    public List<Name> getNames() throws IOException {
+    public List<Name> getNames() {
         // the WFSContentDataStore version inherits an implementation of this
         // method from ContentDataStore, that method calls getTypeNames which
         // calls an abstract method (i.e. one that's implemented in
@@ -187,7 +187,7 @@ public class WFSContentDataAccess implements DataAccess<FeatureType, Feature> {
     }
 
     @Override
-    public FeatureSource<FeatureType, Feature> getFeatureSource(Name typeName) throws IOException {
+    public FeatureSource<FeatureType, Feature> getFeatureSource(Name typeName) {
         // There is an implementation of this in ContentDataStore which gets
         // inherited by WFSContentDataStore.
         FeatureSource<FeatureType, Feature> contentComplexFeatureSource =
@@ -246,7 +246,7 @@ public class WFSContentDataAccess implements DataAccess<FeatureType, Feature> {
     }
 
     @Override
-    public void removeSchema(Name typeName) throws IOException {
+    public void removeSchema(Name typeName) {
         throw new UnsupportedOperationException(
                 "WFSContentDataAccess does not support remove schema.");
     }

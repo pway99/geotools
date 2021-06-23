@@ -1319,7 +1319,7 @@ public class StreamingRenderer implements GTRenderer {
             Map<String, Object> projectionHints,
             double tolerance,
             ReferencedEnvelope sourceEnvelope)
-            throws NoninvertibleTransformException, FactoryException {
+            throws NoninvertibleTransformException {
         AffineTransform at = worldToScreenTransform;
         AffineTransform screenToWorldTransform = new AffineTransform(at);
         screenToWorldTransform.invert();
@@ -1422,8 +1422,7 @@ public class StreamingRenderer implements GTRenderer {
     }
 
     protected ReferencedEnvelope transformEnvelope(
-            ReferencedEnvelope envelope, CoordinateReferenceSystem crs)
-            throws TransformException, FactoryException {
+            ReferencedEnvelope envelope, CoordinateReferenceSystem crs) {
         try {
             ProjectionHandler projectionHandler =
                     ProjectionHandlerFinder.getHandler(envelope, crs, isMapWrappingEnabled());
@@ -1552,8 +1551,7 @@ public class StreamingRenderer implements GTRenderer {
      * @throws FactoryException If no transform is available to the destCRS
      */
     private MathTransform buildTransform(
-            CoordinateReferenceSystem sourceCRS, CoordinateReferenceSystem destCRS)
-            throws FactoryException {
+            CoordinateReferenceSystem sourceCRS, CoordinateReferenceSystem destCRS) {
         MathTransform transform = null;
         if (sourceCRS != null && sourceCRS.getCoordinateSystem().getDimension() >= 3) {
             // We are going to transform over to DefaultGeographic.WGS84 on the fly
@@ -1983,8 +1981,7 @@ public class StreamingRenderer implements GTRenderer {
      * @return ArrayList<LiteFeatureTypeStyle>
      */
     ArrayList<LiteFeatureTypeStyle> createLiteFeatureTypeStyles(
-            Layer layer, Graphics2D graphics, boolean optimizedFTSRendering)
-            throws IOException, FactoryException {
+            Layer layer, Graphics2D graphics, boolean optimizedFTSRendering) {
         if (LOGGER.isLoggable(Level.FINE))
             LOGGER.fine(
                     "creating rules for scale denominator - "
@@ -2518,7 +2515,7 @@ public class StreamingRenderer implements GTRenderer {
     }
 
     /** Computes the declared SRS of a layer based on the layer schema and the EPSG forcing flag */
-    private CoordinateReferenceSystem getDeclaredSRS(FeatureType schema) throws FactoryException {
+    private CoordinateReferenceSystem getDeclaredSRS(FeatureType schema) {
         // compute the default SRS of the feature source
         CoordinateReferenceSystem declaredCRS = schema.getCoordinateReferenceSystem();
         if (isEPSGAxisOrderForced()) {
@@ -3545,7 +3542,7 @@ public class StreamingRenderer implements GTRenderer {
 
         private LiteShape2 getTransformedShape(
                 Geometry originalGeom, SymbolizerAssociation sa, boolean clone)
-                throws TransformException, FactoryException {
+                throws TransformException {
             int idx = getGeometryIndex(originalGeom);
             if (idx != -1) {
                 return (LiteShape2) shapes.get(idx);

@@ -142,7 +142,7 @@ public class CSVDataStoreFactory implements FileDataStoreFactorySpi {
         return FILE_TYPE.equalsIgnoreCase(extension);
     }
 
-    private File fileFromParams(Map<String, ?> params) throws IOException {
+    private File fileFromParams(Map<String, ?> params) {
         File file = (File) FILE_PARAM.lookUp(params);
         if (file != null) {
             return file;
@@ -186,11 +186,11 @@ public class CSVDataStoreFactory implements FileDataStoreFactorySpi {
     }
 
     // docs start createDataStoreFromFile
-    public FileDataStore createDataStoreFromFile(File file) throws IOException {
+    public FileDataStore createDataStoreFromFile(File file) {
         return createDataStoreFromFile(file, null);
     }
 
-    public FileDataStore createDataStoreFromFile(File file, URI namespace) throws IOException {
+    public FileDataStore createDataStoreFromFile(File file, URI namespace) {
         if (file == null) {
             throw new IllegalArgumentException("Cannot create store from null file");
         } else if (!file.exists()) {
@@ -212,8 +212,7 @@ public class CSVDataStoreFactory implements FileDataStoreFactorySpi {
         return createDataStoreFromFile(file, namespace, params);
     }
 
-    private FileDataStore createDataStoreFromFile(File file, URI namespace, Map<String, ?> params)
-            throws IOException {
+    private FileDataStore createDataStoreFromFile(File file, URI namespace, Map<String, ?> params) {
         CSVFileState csvFileState = new CSVFileState(file, namespace);
         Object strategyParam = STRATEGYP.lookUp(params);
         CSVStrategy csvStrategy = null;
@@ -259,12 +258,12 @@ public class CSVDataStoreFactory implements FileDataStoreFactorySpi {
     }
 
     @Override
-    public DataStore createNewDataStore(Map<String, ?> params) throws IOException {
+    public DataStore createNewDataStore(Map<String, ?> params) {
         return createDataStore(params);
     }
 
     @Override
-    public FileDataStore createDataStore(URL url) throws IOException {
+    public FileDataStore createDataStore(URL url) {
         File file = URLs.urlToFile(url);
         return createDataStoreFromFile(file);
     }

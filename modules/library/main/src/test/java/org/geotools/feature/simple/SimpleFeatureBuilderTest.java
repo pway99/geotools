@@ -36,7 +36,7 @@ public class SimpleFeatureBuilderTest {
     SimpleFeatureBuilder builder;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         SimpleFeatureTypeBuilder typeBuilder = new SimpleFeatureTypeBuilder();
         typeBuilder.setName("test");
         typeBuilder.add("point", Point.class, (CoordinateReferenceSystem) null);
@@ -50,7 +50,7 @@ public class SimpleFeatureBuilderTest {
     }
 
     @Test
-    public void testSanity() throws Exception {
+    public void testSanity() {
         GeometryFactory gf = new GeometryFactory();
         builder.add(gf.createPoint(new Coordinate(0, 0)));
         builder.add(Integer.valueOf(1));
@@ -67,7 +67,7 @@ public class SimpleFeatureBuilderTest {
     }
 
     @Test
-    public void testTooFewAttributes() throws Exception {
+    public void testTooFewAttributes() {
         GeometryFactory gf = new GeometryFactory();
         builder.add(gf.createPoint(new Coordinate(0, 0)));
         builder.add(Integer.valueOf(1));
@@ -83,7 +83,7 @@ public class SimpleFeatureBuilderTest {
     }
 
     @Test
-    public void testSetSequential() throws Exception {
+    public void testSetSequential() {
         GeometryFactory gf = new GeometryFactory();
         builder.set("point", gf.createPoint(new Coordinate(0, 0)));
         builder.set("integer", Integer.valueOf(1));
@@ -100,7 +100,7 @@ public class SimpleFeatureBuilderTest {
     }
 
     @Test
-    public void testSetNonSequential() throws Exception {
+    public void testSetNonSequential() {
         GeometryFactory gf = new GeometryFactory();
         builder.set("float", Float.valueOf(2.0f));
         builder.set("point", gf.createPoint(new Coordinate(0, 0)));
@@ -117,7 +117,7 @@ public class SimpleFeatureBuilderTest {
     }
 
     @Test
-    public void testSetTooFew() throws Exception {
+    public void testSetTooFew() {
         builder.set("integer", Integer.valueOf(1));
         SimpleFeature feature = builder.buildFeature("fid");
         Assert.assertNotNull(feature);
@@ -130,7 +130,7 @@ public class SimpleFeatureBuilderTest {
     }
 
     @Test
-    public void testConverting() throws Exception {
+    public void testConverting() {
         builder.set("integer", "1");
         builder.buildFeature("fid");
         try {
@@ -141,7 +141,7 @@ public class SimpleFeatureBuilderTest {
     }
 
     @Test
-    public void testCreateFeatureWithLength() throws Exception {
+    public void testCreateFeatureWithLength() {
 
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder(); // $NON-NLS-1$
         builder.setName("test");
@@ -162,7 +162,7 @@ public class SimpleFeatureBuilderTest {
     }
 
     @Test
-    public void testCreateFeatureWithRestriction() throws Exception {
+    public void testCreateFeatureWithRestriction() {
         FilterFactory fac = CommonFactoryFinder.getFilterFactory(null);
 
         String attributeName = "string";
@@ -189,7 +189,7 @@ public class SimpleFeatureBuilderTest {
     }
 
     @Test
-    public void testCreateFeatureWithOptions() throws Exception {
+    public void testCreateFeatureWithOptions() {
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
         builder.setName("test");
         builder.options("a", "b", "c").add("name", String.class);
@@ -216,7 +216,7 @@ public class SimpleFeatureBuilderTest {
      * @throws Exception
      */
     @Test
-    public void testCreateFeatureWithOptionsOnAttributeTypeBuilder() throws Exception {
+    public void testCreateFeatureWithOptionsOnAttributeTypeBuilder() {
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
         builder.setName("test");
         AttributeTypeBuilder atb = new AttributeTypeBuilder();
@@ -240,7 +240,7 @@ public class SimpleFeatureBuilderTest {
     }
 
     @Test
-    public void testUserData() throws Exception {
+    public void testUserData() {
         SimpleFeature feature = buildUserDataFeature();
         Assert.assertNotNull(feature);
         Assert.assertEquals("bar", feature.getUserData().get("foo"));
@@ -263,7 +263,7 @@ public class SimpleFeatureBuilderTest {
     }
 
     @Test
-    public void testCopyUserData() throws Exception {
+    public void testCopyUserData() {
         SimpleFeature template = buildUserDataFeature();
         builder = new SimpleFeatureBuilder(template.getFeatureType());
         GeometryFactory gf = new GeometryFactory();

@@ -110,7 +110,7 @@ public class OGCBinaryLogicOpTypeBinding extends AbstractComplexBinding {
      * @generated modifiable
      */
     @Override
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
         // implemented by element bindigns
         return null;
 
@@ -135,7 +135,7 @@ public class OGCBinaryLogicOpTypeBinding extends AbstractComplexBinding {
     }
 
     @Override
-    public Object getProperty(Object object, QName qName) throws Exception {
+    public Object getProperty(Object object, QName qName) {
         BinaryLogicOperator operator = (BinaryLogicOperator) object;
 
         // this method is acutally used by later version of the filter spec, so it handles

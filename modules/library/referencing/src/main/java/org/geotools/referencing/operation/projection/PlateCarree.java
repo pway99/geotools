@@ -67,8 +67,7 @@ public class PlateCarree extends EquidistantCylindrical {
      * radians) and stores the result in {@code ptDst} (linear distance on a unit sphere).
      */
     @Override
-    protected Point2D transformNormalized(double x, double y, final Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D transformNormalized(double x, double y, final Point2D ptDst) {
         if (ptDst != null) {
             ptDst.setLocation(x, y);
             return ptDst;
@@ -81,8 +80,7 @@ public class PlateCarree extends EquidistantCylindrical {
      * {@code ptDst}.
      */
     @Override
-    protected Point2D inverseTransformNormalized(double x, double y, final Point2D ptDst)
-            throws ProjectionException {
+    protected Point2D inverseTransformNormalized(double x, double y, final Point2D ptDst) {
         if (ptDst != null) {
             ptDst.setLocation(x, y);
             return ptDst;

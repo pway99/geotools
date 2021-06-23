@@ -204,8 +204,7 @@ public class H2DialectBasic extends BasicSQLDialect {
     }
 
     @Override
-    public void encodeGeometryValue(Geometry value, int dimension, int srid, StringBuffer sql)
-            throws IOException {
+    public void encodeGeometryValue(Geometry value, int dimension, int srid, StringBuffer sql) {
         if (value != null && !value.isEmpty()) {
             sql.append("ST_GeomFromText ('");
             sql.append(new WKTWriter().write(value));
@@ -225,7 +224,7 @@ public class H2DialectBasic extends BasicSQLDialect {
             GeometryFactory factory,
             Connection cx,
             Hints hints)
-            throws IOException, SQLException {
+            throws SQLException {
         byte[] bytes = rs.getBytes(column);
 
         if (bytes == null) {

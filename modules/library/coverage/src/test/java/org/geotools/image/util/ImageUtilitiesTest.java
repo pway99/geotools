@@ -144,14 +144,14 @@ public class ImageUtilitiesTest {
     }
 
     @Test
-    public void testPixelRescaleNoArrays() throws Exception {
+    public void testPixelRescaleNoArrays() {
         BufferedImage bi = new BufferedImage(100, 100, BufferedImage.TYPE_BYTE_GRAY);
         bi.getData().getDataBuffer().setElemDouble(0, 0, 10);
         assertSame(bi, ImageUtilities.applyRescaling(null, null, bi, null));
     }
 
     @Test
-    public void testPixelRescaleFull() throws Exception {
+    public void testPixelRescaleFull() {
         BufferedImage bi = new BufferedImage(100, 100, BufferedImage.TYPE_BYTE_GRAY);
         bi.getRaster().getDataBuffer().setElemDouble(0, 0, 10);
         RenderedImage result =
@@ -164,7 +164,7 @@ public class ImageUtilitiesTest {
     }
 
     @Test
-    public void testPixelRescaleCustomHints() throws Exception {
+    public void testPixelRescaleCustomHints() {
         BufferedImage bi = new BufferedImage(100, 100, BufferedImage.TYPE_BYTE_GRAY);
         bi.getRaster().getDataBuffer().setElemDouble(0, 0, 10);
         ImageLayout layout = new ImageLayout(bi);
@@ -186,7 +186,7 @@ public class ImageUtilitiesTest {
     }
 
     @Test
-    public void testPixelRescaleOnlyScales() throws Exception {
+    public void testPixelRescaleOnlyScales() {
         BufferedImage bi = new BufferedImage(100, 100, BufferedImage.TYPE_BYTE_GRAY);
         bi.getRaster().getDataBuffer().setElemDouble(0, 0, 10);
         RenderedImage result = ImageUtilities.applyRescaling(new Double[] {10d}, null, bi, null);
@@ -198,7 +198,7 @@ public class ImageUtilitiesTest {
     }
 
     @Test
-    public void testPixelRescaleOnlyOffset() throws Exception {
+    public void testPixelRescaleOnlyOffset() {
         BufferedImage bi = new BufferedImage(100, 100, BufferedImage.TYPE_BYTE_GRAY);
         bi.getRaster().getDataBuffer().setElemDouble(0, 0, 10);
         RenderedImage result = ImageUtilities.applyRescaling(null, new Double[] {10d}, bi, null);

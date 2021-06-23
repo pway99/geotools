@@ -54,7 +54,7 @@ public abstract class AbstractPreGeneralizedFeatureSourceTest {
     static Map<String, PreGeneralizedDataStore> DSMap = new HashMap<>();
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         TestSetup.initialize();
     }
 

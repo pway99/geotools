@@ -62,7 +62,7 @@ public abstract class TransformerBase {
     public abstract Translator createTranslator(ContentHandler handler);
 
     /** Create a Transformer which is initialized with the settings of this TransformerBase. */
-    public Transformer createTransformer() throws TransformerException {
+    public Transformer createTransformer() {
         TransformerFactory tFactory = TransformerFactory.newInstance();
         if (indentation > -1) {
             try {

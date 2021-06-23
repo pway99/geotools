@@ -59,8 +59,7 @@ public class PullParserFeatureReader implements GetParser<SimpleFeature> {
             final Configuration wfsConfiguration,
             final InputStream getFeatureResponseStream,
             final FeatureType featureType,
-            String axisOrder)
-            throws IOException {
+            String axisOrder) {
         this.inputStream = getFeatureResponseStream;
         this.featureType = featureType;
         this.axisOrder = axisOrder;
@@ -115,7 +114,7 @@ public class PullParserFeatureReader implements GetParser<SimpleFeature> {
         return feature;
     }
 
-    private Geometry invertGeometryCoordinates(Geometry geometry) throws TransformException {
+    private Geometry invertGeometryCoordinates(Geometry geometry) {
         return transformer.transform(geometry);
     }
 

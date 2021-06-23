@@ -141,43 +141,43 @@ public abstract class DelegatingHandler<T> implements IContentHandler<T> {
     static class NullHandler implements ContentHandler {
 
         @Override
-        public void startJSON() throws ParseException, IOException {}
+        public void startJSON() {}
 
         @Override
-        public void endJSON() throws ParseException, IOException {}
+        public void endJSON() {}
 
         @Override
-        public boolean endArray() throws ParseException, IOException {
+        public boolean endArray() {
             return true;
         }
 
         @Override
-        public boolean endObject() throws ParseException, IOException {
+        public boolean endObject() {
             return true;
         }
 
         @Override
-        public boolean endObjectEntry() throws ParseException, IOException {
+        public boolean endObjectEntry() {
             return true;
         }
 
         @Override
-        public boolean startArray() throws ParseException, IOException {
+        public boolean startArray() {
             return true;
         }
 
         @Override
-        public boolean startObject() throws ParseException, IOException {
+        public boolean startObject() {
             return true;
         }
 
         @Override
-        public boolean startObjectEntry(String key) throws ParseException, IOException {
+        public boolean startObjectEntry(String key) {
             return true;
         }
 
         @Override
-        public boolean primitive(Object value) throws ParseException, IOException {
+        public boolean primitive(Object value) {
             return true;
         }
     }

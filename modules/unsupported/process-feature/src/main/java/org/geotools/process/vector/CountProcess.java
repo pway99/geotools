@@ -45,8 +45,7 @@ public class CountProcess implements VectorProcess {
     @DescribeResult(name = "result", description = "Number of features")
     public Number execute(
             @DescribeParameter(name = "features", description = "Input feature collection")
-                    SimpleFeatureCollection features)
-            throws Exception {
+                    SimpleFeatureCollection features) {
 
         return features.size();
     }

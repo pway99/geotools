@@ -101,7 +101,7 @@ public class ScreenMapShapefileTest {
     }
 
     @Test
-    public void testFeatureCollection() throws IOException {
+    public void testFeatureCollection() {
         SimpleFeatureSource featureSource = DataUtilities.source(feature);
         checkTiles(featureSource);
     }

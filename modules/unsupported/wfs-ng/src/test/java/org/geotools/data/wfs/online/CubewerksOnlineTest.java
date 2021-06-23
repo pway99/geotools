@@ -91,7 +91,7 @@ public class CubewerksOnlineTest {
     }
 
     @AfterClass
-    public static void oneTimeTearDown() throws Exception {
+    public static void oneTimeTearDown() {
         if (wfs100 != null) {
             wfs100.dispose();
         }

@@ -16,7 +16,6 @@
  */
 package org.geotools.data.db2;
 
-import java.io.IOException;
 import org.geotools.jdbc.JDBCDataStoreAPIOnlineTest;
 import org.geotools.jdbc.JDBCDataStoreAPITestSetup;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
@@ -53,7 +52,7 @@ public class DB2DataStoreAPIOnlineTest extends JDBCDataStoreAPIOnlineTest {
      * hard-coded as "fid".
      */
     @Override
-    public void testGetFeatureStoreAddFeatures() throws IOException {
+    public void testGetFeatureStoreAddFeatures() {
         // TODO skip
     }
 
@@ -63,17 +62,17 @@ public class DB2DataStoreAPIOnlineTest extends JDBCDataStoreAPIOnlineTest {
     }
 
     @Override
-    public void testGetFeaturesWriterAdd() throws IOException {
+    public void testGetFeaturesWriterAdd() {
         // TODO skip
     }
 
     @Override
-    public void testTransactionIsolation() throws Exception {
+    public void testTransactionIsolation() {
         // TODO skip, check for DB2
     }
 
     @Override
-    public void testGetFeatureWriterConcurrency() throws Exception {
+    public void testGetFeatureWriterConcurrency() {
         // TODO skip , check for DB2
     }
 

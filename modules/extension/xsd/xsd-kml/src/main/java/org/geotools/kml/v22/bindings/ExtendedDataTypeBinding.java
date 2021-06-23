@@ -80,7 +80,7 @@ public class ExtendedDataTypeBinding extends AbstractComplexBinding {
      */
     @Override
     @SuppressWarnings("unchecked")
-    public Object parse(ElementInstance instance, Node node, Object value) throws Exception {
+    public Object parse(ElementInstance instance, Node node, Object value) {
 
         Map<String, Object> extendedData = new HashMap<>();
 

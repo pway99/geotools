@@ -58,8 +58,7 @@ public class TextSymbolizerHandler extends SymbolizerHandler {
     static class FontHandler extends SldTransformHandler {
 
         @Override
-        public void element(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+        public void element(XMLStreamReader xml, SldTransformContext context) {
             String name = xml.getLocalName();
             if ("CssParameter".equals(name) || "SvgParameter".equals(name)) {
                 context.push(new ParameterHandler());
@@ -67,8 +66,7 @@ public class TextSymbolizerHandler extends SymbolizerHandler {
         }
 
         @Override
-        public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+        public void endElement(XMLStreamReader xml, SldTransformContext context) {
             String name = xml.getLocalName();
             if ("Font".equals(name)) {
                 context.pop();
@@ -111,7 +109,7 @@ public class TextSymbolizerHandler extends SymbolizerHandler {
 
         @Override
         public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if ("LabelPlacement".equals(name)) {
                 context.endMapping().pop();
@@ -122,7 +120,7 @@ public class TextSymbolizerHandler extends SymbolizerHandler {
     static class HaloHandler extends SldTransformHandler {
         @Override
         public void element(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if ("Halo".equals(name)) {
                 context.mapping();
@@ -135,7 +133,7 @@ public class TextSymbolizerHandler extends SymbolizerHandler {
 
         @Override
         public void endElement(XMLStreamReader xml, SldTransformContext context)
-                throws XMLStreamException, IOException {
+                throws IOException {
             String name = xml.getLocalName();
             if ("Halo".equals(name)) {
                 context.endMapping().pop();

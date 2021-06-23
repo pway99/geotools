@@ -19,7 +19,6 @@ package org.geotools.gce.imagemosaic.jdbc;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.text.MessageFormat;
 import org.geotools.geometry.GeneralEnvelope;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
@@ -150,7 +149,7 @@ class JDBCAccessUniversal extends JDBCAccessBase {
      */
     @Override
     protected void setGridSelectParams(
-            PreparedStatement s, GeneralEnvelope envelope, ImageLevelInfo li) throws SQLException {
+            PreparedStatement s, GeneralEnvelope envelope, ImageLevelInfo li) {
         s.setDouble(1, envelope.getMaximum(0));
         s.setDouble(2, envelope.getMaximum(1));
         s.setDouble(3, envelope.getMinimum(0));
@@ -164,8 +163,7 @@ class JDBCAccessUniversal extends JDBCAccessBase {
      *      java.sql.Connection)
      */
     @Override
-    protected CoordinateReferenceSystem getCRS(ImageLevelInfo li, Connection con)
-            throws IOException {
+    protected CoordinateReferenceSystem getCRS(ImageLevelInfo li, Connection con) {
         return null;
     }
 }

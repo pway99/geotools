@@ -694,7 +694,7 @@ public class JDBCPGRasterConfigurationBuilder {
      * @param filesToBeDeleted a List which will contains files to be deleted
      */
     private void importTilesIntoDB(final Connection connection, final List<File> filesToBeDeleted)
-            throws SQLException, IOException {
+            throws IOException {
         final File configDirectory = URLs.urlToFile(configDir);
 
         // Preliminary check on configuration directory validity

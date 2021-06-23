@@ -17,7 +17,6 @@
 package org.geotools.gce.grassraster.spi;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Locale;
 import javax.imageio.spi.ImageReaderSpi;
 import javax.imageio.stream.ImageInputStream;
@@ -103,7 +102,7 @@ public class GrassBinaryImageReaderSpi extends ImageReaderSpi {
     }
 
     @Override
-    public boolean canDecodeInput(Object source) throws IOException {
+    public boolean canDecodeInput(Object source) {
         if (source instanceof File) {
             return true;
         }
@@ -111,7 +110,7 @@ public class GrassBinaryImageReaderSpi extends ImageReaderSpi {
     }
 
     @Override
-    public GrassBinaryImageReader createReaderInstance(Object extension) throws IOException {
+    public GrassBinaryImageReader createReaderInstance(Object extension) {
         return new GrassBinaryImageReader(this);
     }
 }

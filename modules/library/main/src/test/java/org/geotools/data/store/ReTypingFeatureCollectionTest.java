@@ -39,7 +39,7 @@ import org.opengis.filter.FilterFactory2;
 public class ReTypingFeatureCollectionTest extends FeatureCollectionWrapperTestSupport {
 
     @Test
-    public void testSchema() throws Exception {
+    public void testSchema() {
         // see http://jira.codehaus.org/browse/GEOT-1616
         SimpleFeatureType schema = delegate.getSchema();
         SimpleFeatureType renamed = buildRenamedFeatureType(schema, schema.getTypeName() + "xxx");
@@ -134,7 +134,7 @@ public class ReTypingFeatureCollectionTest extends FeatureCollectionWrapperTestS
     }
 
     @Test
-    public void testPreserveUserData() throws Exception {
+    public void testPreserveUserData() {
         SimpleFeatureType schema = delegate.getSchema();
         SimpleFeatureType renamed = buildRenamedFeatureType(schema, schema.getTypeName() + "xxx");
         ReTypingFeatureCollection rtc = new ReTypingFeatureCollection(delegate, renamed);

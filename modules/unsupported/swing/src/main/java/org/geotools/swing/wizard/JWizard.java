@@ -20,7 +20,6 @@ import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.awt.Dialog;
-import java.awt.HeadlessException;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -92,13 +91,13 @@ public class JWizard extends JDialog {
 
     private int returnCode;
 
-    public JWizard(String title) throws HeadlessException {
+    public JWizard(String title) {
         super();
         setTitle(title);
         initComponents();
     }
 
-    public JWizard(Dialog owner, String title) throws HeadlessException {
+    public JWizard(Dialog owner, String title) {
         super(owner, title, true, null);
         initComponents();
     }

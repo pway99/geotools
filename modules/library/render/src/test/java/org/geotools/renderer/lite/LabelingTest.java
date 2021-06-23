@@ -22,7 +22,6 @@ import static java.awt.RenderingHints.VALUE_ANTIALIAS_ON;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import org.geotools.data.memory.MemoryDataStore;
 import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.factory.CommonFactoryFinder;
@@ -78,7 +77,7 @@ public class LabelingTest {
      * @see TestCase#tearDown()
      */
     @After
-    public void tearDown() throws Exception {}
+    public void tearDown() {}
 
     @Test
     public void testPointLabeling() throws Exception {
@@ -102,7 +101,7 @@ public class LabelingTest {
         RendererBaseTest.showRender("testPointLabeling", renderer, timout, env);
     }
 
-    private Style loadStyle(String sldFilename) throws IOException {
+    private Style loadStyle(String sldFilename) {
         StyleFactory factory = CommonFactoryFinder.getStyleFactory();
 
         java.net.URL surl = TestData.getResource(this, sldFilename);
@@ -134,8 +133,7 @@ public class LabelingTest {
             String name,
             CoordinateReferenceSystem crs,
             GeometryFactory geomFac,
-            AttributeDescriptor[] types)
-            throws Exception {
+            AttributeDescriptor[] types) {
         Coordinate c = new Coordinate(x, y);
         Point point = geomFac.createPoint(c);
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
@@ -337,8 +335,7 @@ public class LabelingTest {
             String name,
             CoordinateReferenceSystem crs,
             GeometryFactory geomFac,
-            double... ordinates)
-            throws Exception {
+            double... ordinates) {
         LiteCoordinateSequence cs = new LiteCoordinateSequence(ordinates);
         LineString line = geomFac.createLineString(cs);
         SimpleFeatureTypeBuilder builder = new SimpleFeatureTypeBuilder();
@@ -405,13 +402,12 @@ public class LabelingTest {
             int height,
             String name,
             CoordinateReferenceSystem crs,
-            GeometryFactory geomFac)
-            throws Exception {
+            GeometryFactory geomFac) {
         Coordinate[] c = {
             new Coordinate(startx, starty),
             new Coordinate(startx + width, starty),
             new Coordinate(startx + width, starty + height),
-            new Coordinate(startx, starty),
+            new Coordinate(startx, starty)
         };
         LinearRing line = geomFac.createLinearRing(c);
         Polygon poly = geomFac.createPolygon(line, null);

@@ -27,12 +27,12 @@ public class AbbreviatedTimeUnitConverterFactoryTest {
     AbbreviatedTimeUnitConverterFactory factory;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         factory = new AbbreviatedTimeUnitConverterFactory();
     }
 
     @Test
-    public void testAbbreviatedTimeUnitsToTimeUnitConversion() throws Exception {
+    public void testAbbreviatedTimeUnitsToTimeUnitConversion() {
         Converter converter = factory.createConverter(String.class, TimeUnit.class, null);
         assertConversion(converter, "ms", TimeUnit.MILLISECONDS);
         assertConversion(converter, "s", TimeUnit.SECONDS);
@@ -44,8 +44,7 @@ public class AbbreviatedTimeUnitConverterFactoryTest {
     }
 
     private void assertConversion(
-            Converter converter, String timeUnitString, TimeUnit expectedTimeUnit)
-            throws Exception {
+            Converter converter, String timeUnitString, TimeUnit expectedTimeUnit) {
         TimeUnit convertedTimeUnit = converter.convert(timeUnitString, TimeUnit.class);
         Assert.assertEquals(convertedTimeUnit, expectedTimeUnit);
     }

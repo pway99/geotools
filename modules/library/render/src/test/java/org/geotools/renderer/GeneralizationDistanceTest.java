@@ -45,7 +45,6 @@ import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTReader;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 public class GeneralizationDistanceTest {
@@ -76,7 +75,7 @@ public class GeneralizationDistanceTest {
     }
 
     @Before
-    public void setupData() throws SchemaException, ParseException, FactoryException {
+    public void setupData() throws SchemaException, ParseException {
         // buildings in 3857, a troublesome CRS to back-project to for query and
         SimpleFeatureType buildingType =
                 DataUtilities.createType("building", "id:0,geom:Polygon:srid=3857,name:String");
@@ -102,7 +101,7 @@ public class GeneralizationDistanceTest {
     }
 
     @Test
-    public void testDistanceNoReprojection() throws Exception {
+    public void testDistanceNoReprojection() {
         MapContent mc = new MapContent();
         mc.addLayer(new FeatureLayer(source, style));
         StreamingRenderer sr = new StreamingRenderer();
@@ -116,7 +115,7 @@ public class GeneralizationDistanceTest {
     }
 
     @Test
-    public void testDistanceReprojectionValidArea() throws Exception {
+    public void testDistanceReprojectionValidArea() {
         MapContent mc = new MapContent();
         mc.addLayer(new FeatureLayer(source, style));
         StreamingRenderer sr = new StreamingRenderer();
@@ -134,7 +133,7 @@ public class GeneralizationDistanceTest {
     }
 
     @Test
-    public void testDistanceReprojectionWholeWorld() throws Exception {
+    public void testDistanceReprojectionWholeWorld() {
         // when APH is disabled the calculation will fail, disabling generalization
         assertDistanceWholeWorldRendering(Collections.emptyMap(), 0);
 

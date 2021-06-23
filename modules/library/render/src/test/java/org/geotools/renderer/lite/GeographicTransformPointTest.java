@@ -82,7 +82,7 @@ public class GeographicTransformPointTest {
     }
 
     @Test
-    public void testToGeographicGeometry() throws Exception {
+    public void testToGeographicGeometry() {
         // This time we are in north / east order
         CoordinateReferenceSystem gda94 = CRS.decode("EPSG:4939", true);
 

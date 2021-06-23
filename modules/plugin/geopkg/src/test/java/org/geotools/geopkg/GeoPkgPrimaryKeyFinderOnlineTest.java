@@ -27,7 +27,7 @@ public class GeoPkgPrimaryKeyFinderOnlineTest extends JDBCPrimaryKeyFinderOnline
     }
 
     @Override
-    public void testSequencedPrimaryKey() throws Exception {
+    public void testSequencedPrimaryKey() {
         // GeoPkg does not do sequences
     }
 }

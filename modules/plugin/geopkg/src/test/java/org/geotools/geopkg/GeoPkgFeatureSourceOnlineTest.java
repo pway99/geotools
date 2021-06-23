@@ -23,14 +23,13 @@ import org.geotools.referencing.CRS;
 import org.junit.Test;
 import org.opengis.filter.FilterFactory2;
 import org.opengis.filter.PropertyIsLike;
-import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 public class GeoPkgFeatureSourceOnlineTest extends JDBCFeatureSourceOnlineTest {
 
     /** Allows subclasses to use a axis order specific version of it */
     @Override
-    protected CoordinateReferenceSystem getWGS84() throws FactoryException {
+    protected CoordinateReferenceSystem getWGS84() {
         return CRS.decode("EPSG:4326", true);
     }
 
@@ -41,13 +40,13 @@ public class GeoPkgFeatureSourceOnlineTest extends JDBCFeatureSourceOnlineTest {
 
     @Override
     @Test
-    public void testGetFeaturesWithArithmeticOpFilter() throws Exception {
+    public void testGetFeaturesWithArithmeticOpFilter() {
         // seems there are rounding issues here - consider new test
     }
 
     @Override
     @Test
-    public void testConversionFilter() throws Exception {
+    public void testConversionFilter() {
         // seems there are rounding issues here - consider new test
     }
     /**
